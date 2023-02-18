@@ -488,21 +488,37 @@ the preferred type of fruit between the two regions.
 
 ## Application in R
 
+-   Let’s create two vectors first
+
+<!-- -->
+
     # Entering the data into vectors
     men = c(150, 120, 45)
     women = c(320, 270, 100)
 
+-   Creating data frames from 2 vectors using rbind
+
+<!-- -->
+
     # combining the row vectors in matrices, then converting the matrix into a data frame
     food.survey = as.data.frame(rbind(men, women))
+
+-   Assigning name column to the data frame
+
+<!-- -->
 
     # assigning column names to this data frame
     names(food.survey) = c('Chicken', 'Salad', 'Cake')
 
-    food.survey
+Checking 2 by 2 tables
+
+    food.survey 
 
     ##       Chicken Salad Cake
     ## men       150   120   45
     ## women     320   270  100
+
+Performing chi-aquare test
 
     chisq.test(food.survey)
 
@@ -512,11 +528,15 @@ the preferred type of fruit between the two regions.
     ## data:  food.survey
     ## X-squared = 0.13751, df = 2, p-value = 0.9336
 
+Using in built data set survey
+
     #frequencies
     library(MASS)   
     levels(survey$Smoke) 
 
     ## [1] "Heavy" "Never" "Occas" "Regul"
+
+Creting table
 
     sfreq = table(survey$Smoke) 
     sfreq
@@ -527,8 +547,8 @@ the preferred type of fruit between the two regions.
 
     library(gmodels)
 
-    #2 way cross-tabulation- multivariate frequency table
-    #
+2 way cross-tabulation- multivariate frequency table
+
     #frequencies and relative frequencies
     head(mtcars)
 
@@ -540,6 +560,8 @@ the preferred type of fruit between the two regions.
     ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
     ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
+Creating table between carb and cyl
+
     table(mtcars$carb, mtcars$cyl) 
 
     ##    
@@ -550,6 +572,8 @@ the preferred type of fruit between the two regions.
     ##   4 0 4 6
     ##   6 0 1 0
     ##   8 0 0 1
+
+Creating cross tabulation using R
 
     CrossTable(mtcars$carb, mtcars$cyl, prop.t=TRUE, prop.r=TRUE, prop.c=TRUE)
 
