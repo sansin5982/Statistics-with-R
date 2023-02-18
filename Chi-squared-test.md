@@ -31,7 +31,7 @@ The chi-squared test is commonly used in fields such as biology,
 psychology, social sciences, and marketing research, among others, to
 analyze and interpret categorical data.
 
-<img src="Chi-Squared_value.png" width="60%" style="display: block; margin: auto;" />
+<img src="Chi-Squared_value.png" width="20%" style="display: block; margin: auto;" />
 
 ## Application of the Chi-squared test
 
