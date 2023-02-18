@@ -26,28 +26,44 @@ individuals and obtain the following data:
 </thead>
 <tbody>
 <tr class="odd">
-<td>42</td>
-<td>190</td>
+<td>45</td>
+<td>210</td>
 </tr>
 <tr class="even">
-<td>31</td>
-<td>170</td>
+<td>38</td>
+<td>185</td>
 </tr>
 <tr class="odd">
-<td>55</td>
+<td>52</td>
 <td>240</td>
 </tr>
 <tr class="even">
-<td>46</td>
+<td>60</td>
+<td>250</td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td>175</td>
+</tr>
+<tr class="even">
+<td>42</td>
 <td>200</td>
 </tr>
 <tr class="odd">
-<td>28</td>
-<td>150</td>
+<td>48</td>
+<td>220</td>
 </tr>
 <tr class="even">
-<td>…</td>
-<td>…</td>
+<td>55</td>
+<td>235</td>
+</tr>
+<tr class="odd">
+<td>50</td>
+<td>230</td>
+</tr>
+<tr class="even">
+<td>47</td>
+<td>210</td>
 </tr>
 </tbody>
 </table>
