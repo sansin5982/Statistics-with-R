@@ -1,12 +1,20 @@
 # Linear regression
 
-Linear regression is a statistical technique used to analyze the
+Linear regression is a statistical technique used to analyze the linear
 relationship between a continuous dependent variable and one or more
 numerical or categorical independent variables. It is a commonly used
 method in data analysis and modeling to predict the value of the
 dependent variable based on the values of the independent variables.
 
 ![](Linear-regression_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
+In this particular example, you can calculate the cholesterol level of a
+person if you know his/her age:
+
+Cholesterol = a + b\*age + e
+
+where `y` is the response variable, age is the predictor variable, `a`
+is the intercept, and `b` is the slope coefficient.
 
 In a **simple linear regression**, there is only one independent
 variable and one dependent variable. The relationship between the two
