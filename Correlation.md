@@ -68,10 +68,64 @@ individuals and obtain the following data:
 </tbody>
 </table>
 
-We can use Pearson’s correlation coefficient to determine whether there
-is a linear relationship between age and cholesterol level. To do this,
-we can use a statistical software package, such as R or Python, to
-calculate the correlation coefficient and associated p-value. The
-p-value indicates the statistical significance of the correlation, with
-smaller p-values indicating stronger evidence against the null
-hypothesis of no correlation.
+![](Correlation_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
+## Pearson Correlation Coefficient
+
+Pearson correlation is a statistical technique used to measure the
+strength and direction of the linear relationship between two continuous
+variables. It assumes that both variables are normally distributed and
+have a linear relationship. The Pearson correlation coefficient (r)
+ranges from -1 to +1, where a value of -1 indicates a perfect negative
+correlation, 0 indicates no correlation, and +1 indicates a perfect
+positive correlation.
+
+There are a few assumptions that must be met in order to use Pearson
+correlation:
+
+**1. Normality:** Both variables should be normally distributed. You can
+check for normality using a histogram, a Q-Q plot, or a normal
+probability plot.
+
+**2. Linearity:** The relationship between the two variables should be
+linear. You can check for linearity by creating a scatter plot of the
+two variables and visually inspecting the plot to see if there is a
+linear relationship.
+
+**3. Level of measurement:** Both variables should be continuous.
+
+**4. Realted pairs:** Each observation in the dataset should have a pair
+of values.
+
+**5. No outliers:** here should be no extreme outliers in the dataset.
+
+**6. Independence:** The observations should be independent of each
+other. This means that there should be no relationship between the
+observations that could influence the correlation coefficient.
+
+If these assumptions are not met, the results of the Pearson correlation
+may be biased or misleading. If the normality assumption is not met, you
+may need to transform the data or use a nonparametric correlation
+technique such as **Spearman’s rank correlation**. If the independence
+assumption is not met, you may need to use a different statistical
+technique or account for the non-independence using a mixed-effects
+model or other appropriate method.
+
+    # Check for normality
+    hist(mydata$age)
+
+![](Correlation_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+
+    hist(mydata$cholesterol)
+
+![](Correlation_files/figure-markdown_strict/unnamed-chunk-3-2.png)
+
+    # Check for linearity
+    plot(mydata$age, mydata$cholesterol)
+
+![](Correlation_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+
+    # Calculate Pearson correlation coefficient
+    cor(mydata$age, mydata$cholesterol)
+
+    ## [1] 0.9792846
