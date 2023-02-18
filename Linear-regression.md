@@ -6,6 +6,20 @@ numerical or categorical independent variables. It is a commonly used
 method in data analysis and modeling to predict the value of the
 dependent variable based on the values of the independent variables.
 
+    ##    age cholesterol
+    ## 1   45         210
+    ## 2   38         185
+    ## 3   52         240
+    ## 4   60         250
+    ## 5   35         175
+    ## 6   42         200
+    ## 7   48         220
+    ## 8   55         235
+    ## 9   50         230
+    ## 10  47         210
+
+![](Linear-regression_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
 In a **simple linear regression**, there is only one independent
 variable and one dependent variable. The relationship between the two
 variables is represented by a straight line, which is fitted to the data
