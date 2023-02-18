@@ -113,16 +113,20 @@ model or other appropriate method.
 
     # Check for normality
     ggplot(mydata, aes(x = age)) +
-      geom_histogram(binwidth = 4, fill = "lightblue", color = "black") +
+      geom_histogram(fill = "lightblue", color = "black") +
       labs(title = "Histogram of Age", x = "Age", y = "Frequency")+
       theme_classic()
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
     ggplot(mydata, aes(x = cholesterol)) +
-      geom_histogram(binwidth = 4, fill = "lightblue", color = "black") +
+      geom_histogram(fill = "lightblue", color = "black") +
       labs(title = "Histogram of Cholesterol", x = "Cholesterol", y = "Frequency")+
       theme_classic()
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
