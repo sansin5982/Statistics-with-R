@@ -11,9 +11,9 @@ dependent variable based on the values of the independent variables.
 In this particular example, you can calculate the cholesterol level of a
 person if you know his/her age:
 
-**y = a+bx1**
+**y = a+bx1+e**
 
-\_\_Cholesterol = a + b\*age + e\_\_
+Cholesterol = a + b\*age + e
 
 where `y` is the response variable, `age` is the predictor variable, `a`
 is the intercept, and `b` is the slope coefficient.
@@ -50,6 +50,13 @@ variable when the independent variable is zero.
     ## Residual standard error: 5.198 on 8 degrees of freedom
     ## Multiple R-squared:  0.959,  Adjusted R-squared:  0.9539 
     ## F-statistic: 187.1 on 1 and 8 DF,  p-value: 7.858e-07
+
+-   a = 68.5429
+-   b = 3.1135
+
+In this case, if there is a 50 years old person, `a` is 68.5429, and `b`
+is 3.1135, the model predicts (on average) that its cholesterol is
+around `68.5429 + (3.113 * 50) = 224.1929`.
 
 **Multiple linear regression** is an extension of simple linear
 regression and is used when there are two or more independent variables.
