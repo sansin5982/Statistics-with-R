@@ -112,18 +112,27 @@ technique or account for the non-independence using a mixed-effects
 model or other appropriate method.
 
     # Check for normality
-    hist(mydata$age)
+    ggplot(mydata, aes(x = age)) +
+      geom_histogram(binwidth = 5, fill = "lightblue", color = "black") +
+      labs(title = "Histogram of Age", x = "Data", y = "Frequency")+
+      theme_classic()
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
-    hist(mydata$cholesterol)
-
-![](Correlation_files/figure-markdown_strict/unnamed-chunk-3-2.png)
-
-    # Check for linearity
-    plot(mydata$age, mydata$cholesterol)
+    ggplot(mydata, aes(x = cholesterol)) +
+      geom_histogram(binwidth = 5, fill = "lightblue", color = "black") +
+      labs(title = "Histogram of Cholesterol", x = "Data", y = "Frequency")+
+      theme_classic()
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+
+    # Check for linearity
+    ggplot(mydata, aes(x = age, y = cholesterol)) + 
+      geom_point() + 
+      labs(title = "Relationship between Age and Cholesterol", x = "Age", y = "Cholesterol")+
+      theme_classic()
+
+![](Correlation_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
     # Calculate Pearson correlation coefficient
     cor(mydata$age, mydata$cholesterol)
