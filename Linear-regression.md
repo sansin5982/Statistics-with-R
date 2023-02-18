@@ -8,8 +8,6 @@ dependent variable based on the values of the independent variables.
 
 ![](Linear-regression_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
-<img src="Linear-regression_files/figure-markdown_strict/unnamed-chunk-2-1.png" width="20%" style="display: block; margin: auto;" />
-
 In a **simple linear regression**, there is only one independent
 variable and one dependent variable. The relationship between the two
 variables is represented by a straight line, which is fitted to the data
