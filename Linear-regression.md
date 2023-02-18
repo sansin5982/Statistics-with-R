@@ -13,7 +13,7 @@ person if you know his/her age:
 
 **y = a+bx1**
 
-\*\*Cholesterol = a + b\*age + e\*\*
+\_\_Cholesterol = a + b\*age + e\_\_
 
 where `y` is the response variable, `age` is the predictor variable, `a`
 is the intercept, and `b` is the slope coefficient.
@@ -30,12 +30,27 @@ variable when the independent variable is zero.
 
     # Create a linear regression model
     model <- lm(cholesterol ~ age, data = mydata)
+    summary(model) #Review the results
 
-    # Plot the data and the regression line
-    plot(mydata$age, mydata$cholesterol, xlab = "Age", ylab = "Cholesterol", main = "Linear Regression Plot")
-    abline(model, col = "red")
+    ## 
+    ## Call:
+    ## lm(formula = cholesterol ~ age, data = mydata)
+    ## 
+    ## Residuals:
+    ##     Min      1Q  Median      3Q     Max 
+    ## -5.3528 -4.2178 -0.5828  1.8443  9.5552 
+    ## 
+    ## Coefficients:
+    ##             Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)  68.5429    10.8683   6.307 0.000231 ***
+    ## age           3.1135     0.2276  13.679 7.86e-07 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Residual standard error: 5.198 on 8 degrees of freedom
+    ## Multiple R-squared:  0.959,  Adjusted R-squared:  0.9539 
+    ## F-statistic: 187.1 on 1 and 8 DF,  p-value: 7.858e-07
 
-![](Linear-regression_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 **Multiple linear regression** is an extension of simple linear
 regression and is used when there are two or more independent variables.
 In this case, the relationship between the dependent variable and the
