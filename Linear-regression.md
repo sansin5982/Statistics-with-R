@@ -6,14 +6,65 @@ numerical or categorical independent variables. It is a commonly used
 method in data analysis and modeling to predict the value of the
 dependent variable based on the values of the independent variables.
 
+<table>
+<thead>
+<tr class="header">
+<th>Age (in years)</th>
+<th>Cholesterol Level (in mg/dL)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>45</td>
+<td>210</td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td>185</td>
+</tr>
+<tr class="odd">
+<td>52</td>
+<td>240</td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td>250</td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td>175</td>
+</tr>
+<tr class="even">
+<td>42</td>
+<td>200</td>
+</tr>
+<tr class="odd">
+<td>48</td>
+<td>220</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>235</td>
+</tr>
+<tr class="odd">
+<td>50</td>
+<td>230</td>
+</tr>
+<tr class="even">
+<td>47</td>
+<td>210</td>
+</tr>
+</tbody>
+</table>
+
 ![](Linear-regression_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 In this particular example, you can calculate the cholesterol level of a
 person if you know his/her age:
 
-**y = a+bx1+e**
+**y = a+bx1**
 
-Cholesterol = a + b\*age + e
+Cholesterol = a + b\*age
 
 where `y` is the response variable, `age` is the predictor variable, `a`
 is the intercept, and `b` is the slope coefficient.
@@ -56,7 +107,7 @@ variable when the independent variable is zero.
 
 In this case, if there is a 50 years old person, `a` is 68.5429, and `b`
 is 3.1135, the model predicts (on average) that its cholesterol is
-around `68.5429 + (3.113 * 50) = 224.1929`.
+around `68.5429 + (3.113 * 50) = 224.1929` mg/dL.
 
 **Multiple linear regression** is an extension of simple linear
 regression and is used when there are two or more independent variables.
