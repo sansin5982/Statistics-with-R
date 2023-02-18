@@ -11,9 +11,11 @@ dependent variable based on the values of the independent variables.
 In this particular example, you can calculate the cholesterol level of a
 person if you know his/her age:
 
-Cholesterol = a + b\*age + e
+**y = a+bx1**
 
-where `y` is the response variable, age is the predictor variable, `a`
+\*\*Cholesterol = a + b\*age + e\*\*
+
+where `y` is the response variable, `age` is the predictor variable, `a`
 is the intercept, and `b` is the slope coefficient.
 
 In a **simple linear regression**, there is only one independent
@@ -24,6 +26,16 @@ change in the dependent variable for a unit change in the independent
 variable, while the intercept represents the value of the dependent
 variable when the independent variable is zero.
 
+### Simple linear regression in R
+
+    # Create a linear regression model
+    model <- lm(cholesterol ~ age, data = mydata)
+
+    # Plot the data and the regression line
+    plot(mydata$age, mydata$cholesterol, xlab = "Age", ylab = "Cholesterol", main = "Linear Regression Plot")
+    abline(model, col = "red")
+
+![](Linear-regression_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 **Multiple linear regression** is an extension of simple linear
 regression and is used when there are two or more independent variables.
 In this case, the relationship between the dependent variable and the
