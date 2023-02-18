@@ -486,6 +486,134 @@ that the distribution of preferred fruit is the same in both regions.
 Therefore, we can conclude that there is no significant difference in
 the preferred type of fruit between the two regions.
 
+## Application in R
+
+    # Entering the data into vectors
+    men = c(150, 120, 45)
+    women = c(320, 270, 100)
+
+    # combining the row vectors in matrices, then converting the matrix into a data frame
+    food.survey = as.data.frame(rbind(men, women))
+
+    # assigning column names to this data frame
+    names(food.survey) = c('Chicken', 'Salad', 'Cake')
+
+    food.survey
+
+    ##       Chicken Salad Cake
+    ## men       150   120   45
+    ## women     320   270  100
+
+    chisq.test(food.survey)
+
+    ## 
+    ##  Pearson's Chi-squared test
+    ## 
+    ## data:  food.survey
+    ## X-squared = 0.13751, df = 2, p-value = 0.9336
+
+    #frequencies
+    library(MASS)   
+    levels(survey$Smoke) 
+
+    ## [1] "Heavy" "Never" "Occas" "Regul"
+
+    sfreq = table(survey$Smoke) 
+    sfreq
+
+    ## 
+    ## Heavy Never Occas Regul 
+    ##    11   189    19    17
+
+    library(gmodels)
+
+    #2 way cross-tabulation- multivariate frequency table
+    #
+    #frequencies and relative frequencies
+    head(mtcars)
+
+    ##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+    ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+    ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+    ## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+    ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+    ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+    ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+
+    table(mtcars$carb, mtcars$cyl) 
+
+    ##    
+    ##     4 6 8
+    ##   1 5 2 0
+    ##   2 6 0 4
+    ##   3 0 0 3
+    ##   4 0 4 6
+    ##   6 0 1 0
+    ##   8 0 0 1
+
+    CrossTable(mtcars$carb, mtcars$cyl, prop.t=TRUE, prop.r=TRUE, prop.c=TRUE)
+
+    ## 
+    ##  
+    ##    Cell Contents
+    ## |-------------------------|
+    ## |                       N |
+    ## | Chi-square contribution |
+    ## |           N / Row Total |
+    ## |           N / Col Total |
+    ## |         N / Table Total |
+    ## |-------------------------|
+    ## 
+    ##  
+    ## Total Observations in Table:  32 
+    ## 
+    ##  
+    ##              | mtcars$cyl 
+    ##  mtcars$carb |         4 |         6 |         8 | Row Total | 
+    ## -------------|-----------|-----------|-----------|-----------|
+    ##            1 |         5 |         2 |         0 |         7 | 
+    ##              |     2.796 |     0.143 |     3.062 |           | 
+    ##              |     0.714 |     0.286 |     0.000 |     0.219 | 
+    ##              |     0.455 |     0.286 |     0.000 |           | 
+    ##              |     0.156 |     0.062 |     0.000 |           | 
+    ## -------------|-----------|-----------|-----------|-----------|
+    ##            2 |         6 |         0 |         4 |        10 | 
+    ##              |     1.910 |     2.188 |     0.032 |           | 
+    ##              |     0.600 |     0.000 |     0.400 |     0.312 | 
+    ##              |     0.545 |     0.000 |     0.286 |           | 
+    ##              |     0.188 |     0.000 |     0.125 |           | 
+    ## -------------|-----------|-----------|-----------|-----------|
+    ##            3 |         0 |         0 |         3 |         3 | 
+    ##              |     1.031 |     0.656 |     2.170 |           | 
+    ##              |     0.000 |     0.000 |     1.000 |     0.094 | 
+    ##              |     0.000 |     0.000 |     0.214 |           | 
+    ##              |     0.000 |     0.000 |     0.094 |           | 
+    ## -------------|-----------|-----------|-----------|-----------|
+    ##            4 |         0 |         4 |         6 |        10 | 
+    ##              |     3.438 |     1.502 |     0.604 |           | 
+    ##              |     0.000 |     0.400 |     0.600 |     0.312 | 
+    ##              |     0.000 |     0.571 |     0.429 |           | 
+    ##              |     0.000 |     0.125 |     0.188 |           | 
+    ## -------------|-----------|-----------|-----------|-----------|
+    ##            6 |         0 |         1 |         0 |         1 | 
+    ##              |     0.344 |     2.790 |     0.438 |           | 
+    ##              |     0.000 |     1.000 |     0.000 |     0.031 | 
+    ##              |     0.000 |     0.143 |     0.000 |           | 
+    ##              |     0.000 |     0.031 |     0.000 |           | 
+    ## -------------|-----------|-----------|-----------|-----------|
+    ##            8 |         0 |         0 |         1 |         1 | 
+    ##              |     0.344 |     0.219 |     0.723 |           | 
+    ##              |     0.000 |     0.000 |     1.000 |     0.031 | 
+    ##              |     0.000 |     0.000 |     0.071 |           | 
+    ##              |     0.000 |     0.000 |     0.031 |           | 
+    ## -------------|-----------|-----------|-----------|-----------|
+    ## Column Total |        11 |         7 |        14 |        32 | 
+    ##              |     0.344 |     0.219 |     0.438 |           | 
+    ## -------------|-----------|-----------|-----------|-----------|
+    ## 
+    ## 
+
 # Reference:
 
-<https://datatab.net/tutorial/chi-square-test>
+<https://datatab.net/tutorial/chi-square-test> More reference to be
+added.
