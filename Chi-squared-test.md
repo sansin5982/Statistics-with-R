@@ -197,10 +197,10 @@ Since our calculated chi-squared value (7.19) is greater than the 5.99.
 Hence, there is an association between gender and favorite ice cream
 flavor.
 
-2- Goodness of fit test: The chi-squared goodness of fit test is a
-hypothesis test that is used to determine if a set of observed data
-follows a theoretical distribution. To illustrate this, let’s consider
-an example.
+2- **Goodness of fit test**: The chi-squared goodness of fit test, also
+known as distribution test, is a hypothesis test that is used to
+determine if a set of observed data follows a theoretical distribution.
+To illustrate this, let’s consider an example.
 
 Suppose a candy company claims that their bags of candy contain an equal
 number of red, blue, green, and yellow candies. To test this claim, we
@@ -342,7 +342,7 @@ Since our calculated chi-squared value (0.82) is less than the critical
 value (7.815), it means p value is &gt; 0.05, hence null hypothesis is
 true.
 
-3- Homogeneity test: The chi-squared test for homogeneity is used to
+3- **Homogeneity test**: The chi-squared test for homogeneity is used to
 determine if two or more populations have the same distribution of a
 categorical variable. To illustrate this, let’s consider an example.
 
