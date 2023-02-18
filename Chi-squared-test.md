@@ -547,7 +547,7 @@ Creting table
 
     library(gmodels)
 
-2 way cross-tabulation- multivariate frequency table
+Exploring first few observations
 
     #frequencies and relative frequencies
     head(mtcars)
@@ -560,7 +560,8 @@ Creting table
     ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
     ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
-Creating table between carb and cyl
+2 way cross-tabulation- multivariate frequency table. Creating table
+between carb and cyl.
 
     table(mtcars$carb, mtcars$cyl) 
 
