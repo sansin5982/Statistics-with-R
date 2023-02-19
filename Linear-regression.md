@@ -1,10 +1,14 @@
 # Linear regression
 
-Linear regression is a statistical technique used to analyze the linear
-relationship between a continuous dependent variable and one or more
-numerical or categorical independent variables. It is a commonly used
-method in data analysis and modeling to predict the value of the
-dependent variable based on the values of the independent variables.
+-   Linear regression is a statistical technique used to analyze the
+    linear relationship between a continuous dependent variable and one
+    or more numerical or categorical independent variables.
+-   Linear regression helps answer to answer the question, if an how a
+    change in X influence a change in Y.
+-   We model changes in Y=f(X)
+-   It is a commonly used method in data analysis and modeling to
+    predict the value of the dependent variable based on the values of
+    the independent variables.
 
 <table>
 <thead>
@@ -70,12 +74,14 @@ where `y` is the response variable, `age` is the predictor variable, `a`
 is the intercept, and `b` is the slope coefficient.
 
 In a **simple linear regression**, there is only one independent
-variable and one dependent variable. The relationship between the two
-variables is represented by a straight line, which is fitted to the data
-using the least squares method. The slope of the line represents the
-change in the dependent variable for a unit change in the independent
-variable, while the intercept represents the value of the dependent
-variable when the independent variable is zero.
+variable `(X)` and one dependent variable `(Y)`. The relationship
+between the two variables is represented by a straight line `(y=mx+c)`,
+which is fitted to the data using the least squares method. The slope of
+the line represents the change in the dependent variable for a unit
+change in the independent variable, while the intercept represents the
+value of the dependent variable when the independent variable is zero.
+
+<img src="Simple Linear regression eq.png" width="50%" style="display: block; margin: auto;" />
 
 ### Simple linear regression in R
 
