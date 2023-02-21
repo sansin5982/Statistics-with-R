@@ -414,10 +414,91 @@ need to rank the data for both variables, from lowest to highest:
 </table>
 
 Next, we calculate the differences in ranks for each pair of
-observations: |Hours Studied|Rank|Test Score|Rank|Difference|
-|—|—|—|—|—| |2|1|60|1|0| |3|2|70|2|0| |5|3|80|3|0| |6|4|85|4|0|
-|7|5|90|5|0| |8|6|95|6|0| |9|7|98|7|0| |10|8|100|8|0| |12|9|99|9|0|
-|14|10|95|6|4|
+observations:
+
+<table>
+<thead>
+<tr class="header">
+<th>Hours Studied</th>
+<th>Rank</th>
+<th>Test Score</th>
+<th>Rank</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>60</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>2</td>
+<td>70</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>3</td>
+<td>80</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>4</td>
+<td>85</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>5</td>
+<td>90</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>6</td>
+<td>95</td>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>7</td>
+<td>98</td>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>8</td>
+<td>100</td>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>9</td>
+<td>99</td>
+<td>9</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>10</td>
+<td>95</td>
+<td>6</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
 
 Finally, we can use the formula for the Spearman rank correlation
 coefficient to calculate the strength and direction of the relationship:
