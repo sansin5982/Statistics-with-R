@@ -508,12 +508,6 @@ coefficient to calculate the strength and direction of the relationship:
 where ρ is the correlation coefficient, d is the difference in ranks for
 each pair of observations, and n is the sample size.
 
-In this case, we have:
-
-ρ = 1 - 6(0² + 0² + 0² + 0² + 0² + 0² + 0² + 0² + 0² + 4²) / 10(10²-1)
-
-ρ = 1 - 6(16) / 990 ρ = 1 - 0.097 ρ = 0.903
-
 The Spearman rank correlation coefficient ranges from -1 to 1, with -1
 indicating a perfectly negative correlation, 0 indicating no
 correlation, and 1 indicating a perfectly positive correlation. In this
