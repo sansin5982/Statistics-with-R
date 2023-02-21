@@ -1,6 +1,6 @@
 # Correlation
 
-Correlation analysis is a statistical method used to examine the
+A *correlation analysis* is a statistical method used to examine the
 strength and direction of the relationship between two continuous
 variables. The most commonly used correlation coefficient is **Pearson’s
 correlation coefficient**, which measures the linear relationship
@@ -9,13 +9,13 @@ between two variables. Pearson’s correlation coefficient, denoted by
 perfect negative correlation, a value of 0 indicates no correlation, and
 a value of 1 indicates a perfect positive correlation.
 
-To perform a correlation analysis, we first need to collect data on the
-two variables of interest. Once we have the data, we can calculate the
+To perform a correlation analysis, we first must collect data on the two
+variables of interest. Once we have the data, we can calculate the
 correlation coefficient using R.
 
 For example, suppose we want to examine the relationship between a
 person’s age and their cholesterol level. We collect data on 100
-individuals and obtain the following data:
+individuals and obtained the following data:
 
 <table>
 <thead>
@@ -94,22 +94,22 @@ linear relationship.
 
 **3. Level of measurement:** Both variables should be continuous.
 
-**4. Realted pairs:** Each observation in the dataset should have a pair
+**4. Related pairs:** Each observation in the dataset should have a pair
 of values.
 
-**5. No outliers:** here should be no extreme outliers in the dataset.
+**5. No outliers:** there should be no extreme outliers in the dataset.
 
 **6. Independence:** The observations should be independent of each
 other. This means that there should be no relationship between the
 observations that could influence the correlation coefficient.
 
 If these assumptions are not met, the results of the Pearson correlation
-may be biased or misleading. If the normality assumption is not met, you
+may be biased or misleading. If the normality assumption is not met, we
 may need to transform the data or use a nonparametric correlation
 technique such as **Spearman’s rank correlation**. If the independence
 assumption is not met, you may need to use a different statistical
 technique or account for the non-independence using a mixed-effects
-model or other appropriate method.
+model or other appropriate methods.
 
     # Check for normality
     ggplot(mydata, aes(x = age)) +
@@ -126,6 +126,33 @@ model or other appropriate method.
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
+### Shapiro-wilk test
+
+The Shapiro-Wilk test is a statistical test used to check the normality
+assumption of a population or a sample. It was developed by Samuel
+Shapiro and Martin Wilk in 1965.
+
+The null hypothesis of the Shapiro-Wilk test is that the population is
+normally distributed. The alternative hypothesis is that the population
+is not normally distributed.
+
+The test is based on the correlation between the data and the normal
+probability plot (also known as the normal quantile plot). The normal
+probability plot is a graphical method to check the normality
+assumption. It plots the observed data against the expected values from
+a normal distribution. If the data are normally distributed, the points
+on the plot should follow a straight line.
+
+The Shapiro-Wilk test is widely used in many fields, such as psychology,
+biology, economics, and finance, to check the normality assumption
+before applying parametric statistical methods that assume normality,
+such as t-tests and ANOVA.
+
+There are several alternative tests that can be used to assess normality
+assumptions, depending on the type of data and the research question.
+Here are a few examples: Anderson-Darling test, Kolmogorov-Smirnov test,
+Normal probability plots, etc
+
     # Shapiro-Wilk normality test for mpg
     #H0: data are normally distributed
     shapiro.test(mydata$age) 
@@ -136,8 +163,8 @@ model or other appropriate method.
     ## data:  mydata$age
     ## W = 0.99077, p-value = 0.9977
 
-p value is 0.9977 which is greater than 0.05. Hence, null hypothesis is
-true
+The p-value is 0.9977, which is greater than 0.05. Hence, null
+hypothesis is true
 
     # Shapiro-Wilk normality test for wt
     shapiro.test(mydata$cholesterol)
@@ -148,8 +175,8 @@ true
     ## data:  mydata$cholesterol
     ## W = 0.96909, p-value = 0.8823
 
-p value is 0.8823 which is greater than 0.05. Hence, null hypothesis is
-true
+The p-valueis 0.8823, which is greater than 0.05. Hence, null hypothesis
+is true
 
     # Check for linearity
     ggplot(mydata, aes(x = age, y = cholesterol)) + 
@@ -164,15 +191,15 @@ true
 
     ## [1] 0.9792846
 
-Correlation value is 0.98 Hence, there is a strong positive correlation
-between age and cholesterol level
+The Correlation value is 0.98 Hence, there is a strong positive
+correlation between age and cholesterol level
 
     cor(mydata$age, mydata$cholesterol, method="pearson") #specify the method
 
     ## [1] 0.9792846
 
-Correlation value is 0.98 Hence, there is a strong positive correlation
-between age and cholesterol level
+The Correlation value is 0.98 Hence, there is a strong positive
+correlation between age and cholesterol level
 
     cor(mydata$age, mydata$cholesterol, method="pearson",use = "complete.obs")
 
@@ -180,8 +207,8 @@ between age and cholesterol level
 
     #in case of NAs being present, specify complete.obs
 
-Correlation value is 0.98 Hence, there is a strong positive correlation
-between age and cholesterol level
+The Correlation value is 0.98 Hence, there is a strong positive
+correlation between age and cholesterol level
 
     #is my correlation statistically significant?
     #Ho=there is no association between the two variables
@@ -199,10 +226,10 @@ between age and cholesterol level
     ##       cor 
     ## 0.9792846
 
-Correlation value is 0.98 Hence, there is a strong positive correlation
-between age and cholesterol level. P value is 7.858e-07. Hence,
-relationship is also statistically significant. Confidence interval is
-between 0.9119540 and 0.9952539.
+The Correlation value is 0.98 Hence, there is a strong positive
+correlation between age and cholesterol level. P value is 7.858e-07.
+Hence, relationship is also statistically significant. Confidence
+interval is between 0.9119540 and 0.9952539.
 
     library(corrplot)
 
@@ -243,3 +270,196 @@ between 0.9119540 and 0.9952539.
     corrplot(corr1, method="color")
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-13-2.png)
+
+### Spearman Rank correlation
+
+The spearman rank correlation is a non-parametric statistical method
+used to measure the strength and direction of the association between
+two variables. It is calculated by ranking the values of each variable
+and calculating the correlation coefficient between their ranks. It is
+robust to outliers and can be used with ordinal or non-normally
+distributed data.
+
+Let’s say we want to investigate the relationship between the amount of
+hours that students spend studying for a test and their corresponding
+test scores. We collect data from 10 students and get the following
+results:
+
+<table>
+<thead>
+<tr class="header">
+<th>Hours</th>
+<th>Studied Test Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>70</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>80</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>85</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>90</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>95</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>98</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>99</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>95</td>
+</tr>
+</tbody>
+</table>
+
+To determine if there is a relationship between hours studied and test
+scores, we can use the Spearman rank correlation coefficient. First, we
+need to rank the data for both variables, from lowest to highest:
+
+<table>
+<thead>
+<tr class="header">
+<th>Hours Studied</th>
+<th>Rank</th>
+<th>Test Score</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>60</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>2</td>
+<td>70</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>3</td>
+<td>80</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>4</td>
+<td>85</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>5</td>
+<td>90</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>6</td>
+<td>95</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>7</td>
+<td>98</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>8</td>
+<td>100</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>9</td>
+<td>99</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>10</td>
+<td>95</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+
+Next, we calculate the differences in ranks for each pair of
+observations: |Hours Studied|Rank|Test Score|Rank|Difference|
+|—|—|—|—|—| |2|1|60|1|0| |3|2|70|2|0| |5|3|80|3|0| |6|4|85|4|0|
+|7|5|90|5|0| |8|6|95|6|0| |9|7|98|7|0| |10|8|100|8|0| |12|9|99|9|0|
+|14|10|95|6|4|
+
+Finally, we can use the formula for the Spearman rank correlation
+coefficient to calculate the strength and direction of the relationship:
+
+ρ = 1 - 6∑d² / n(n²-1)
+
+where ρ is the correlation coefficient, d is the difference in ranks for
+each pair of observations, and n is the sample size.
+
+In this case, we have:
+
+ρ = 1 - 6(0² + 0² + 0² + 0² + 0² + 0² + 0² + 0² + 0² + 4²) / 10(10²-1)
+
+ρ = 1 - 6(16) / 990 ρ = 1 - 0.097 ρ = 0.903
+
+The Spearman rank correlation coefficient ranges from -1 to 1, with -1
+indicating a perfectly negative correlation, 0 indicating no
+correlation, and 1 indicating a perfectly positive correlation. In this
+case, we have a strong positive correlation between hours studied and
+test scores, with a coefficient of 0.903. This suggests that as the
+number of hours a student spends studying increases, their test score
+also tends to increase.
+
+    # Creating two vectors
+    Hr_St <- c(2, 3, 5, 6, 7, 8, 9, 10, 12, 14)
+    Test_score <- c(60, 70, 80, 85, 90, 95, 98, 100, 99, 95)
+
+    # Combine the vectors into a dataframe
+    mydata <- data.frame(Hr_St = Hr_St, Test_score = Test_score)
+
+    # Compute the Spearman rank correlation between mpg and wt
+    cor.test(mydata$Hr_St, mydata$Test_score, method = "spearman")
+
+    ## Warning in cor.test.default(mydata$Hr_St, mydata$Test_score, method =
+    ## "spearman"): Cannot compute exact p-value with ties
+
+    ## 
+    ##  Spearman's rank correlation rho
+    ## 
+    ## data:  mydata$Hr_St and mydata$Test_score
+    ## S = 17.553, p-value = 0.0004919
+    ## alternative hypothesis: true rho is not equal to 0
+    ## sample estimates:
+    ##       rho 
+    ## 0.8936211
