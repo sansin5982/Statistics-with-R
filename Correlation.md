@@ -538,3 +538,11 @@ also tends to increase.
     ## sample estimates:
     ##       rho 
     ## 0.8936211
+
+The Spearman rank correlation coefficient ranges from -1 to 1, with -1
+indicating a perfectly negative correlation, 0 indicating no
+correlation, and 1 indicating a perfectly positive correlation. In this
+case, we have a strong positive correlation between hours studied and
+test scores, with a coefficient of 0.894. This suggests that as the
+number of hours a student spends studying increases, their test score
+also tends to increase.
