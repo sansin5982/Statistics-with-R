@@ -1,22 +1,15 @@
 # Chi-squared test
 
-The chi-squared test (χ² test) is a statistical hypothesis test that is
-used to determine if there is a significant association between two
-categorical variables. The test is used to determine whether the
-observed frequencies of the categories in the sample differ
-significantly from the expected frequencies based on a theoretical
-distribution.
+The chi-squared test (χ² test) is a statistical hypothesis test used to
+determine if there is a significant association between two categorical
+variables. The test determines whether the observed frequencies of the
+categories in the sample differ significantly from the expected
+frequencies based on a theoretical distribution.
 
-The test works by comparing the observed frequencies to the expected
-frequencies that would be obtained if the null hypothesis were true. The
-null hypothesis in this case is that there is no association between the
-two variables.
-
-The test statistic for the chi-squared test is the sum of the squared
-differences between the observed and expected frequencies, divided by
-the expected frequencies. The resulting value is compared to a
-chi-squared distribution with degrees of freedom equal to the number of
-categories minus one.
+The chi-squared test works by comparing the observed frequencies to the
+expected frequencies that would be obtained if the null hypothesis were
+true. The null hypothesis, in this case, is that there is no association
+between the two variables.
 
 If the calculated value of the chi-squared test statistic is larger than
 the critical value from the chi-squared distribution with the
@@ -37,13 +30,13 @@ analyze and interpret categorical data.
 
 1- **Test of Independence**: The chi-squared test of independence is
 used to determine if there is a significant association between two
-categorical variables. To illustrate this, let’s consider an example.
+categorical variables. To illustrate this, let us consider an example.
 
 Suppose we are interested in whether there is an association between
 gender and favorite ice cream flavor. We survey a group of 100 people
 and ask them to choose their favorite ice cream flavor from vanilla,
 chocolate, and strawberry, and also ask for their gender. The data we
-collect is shown in the table below:
+collected is shown in the table below:
 
 <table>
 <thead>
@@ -189,23 +182,23 @@ Finally, we can compare the chi-squared statistic to a chi-squared
 distribution with (r - 1) \* (c - 1) degrees of freedom, where r is the
 number of rows and c is the number of columns. In this case, we have
 (2 - 1) \* (3 - 1) = 2 degrees of freedom. Using a chi-squared
-distribution table or a calculator, we can find the critical value of
-chi-squared with 2 degrees of freedom and a significance level of 0.05
-to be 5.99.
+distribution table or a calculator, we can find the critical chi-squared
+value with 2 degrees of freedom and a significance level of 0.05 to be
+5.99.
 
-Since our calculated chi-squared value (7.19) is greater than the 5.99.
+Since our calculated chi-squared value (7.19) is greater than 5.99.
 Hence, there is an association between gender and favorite ice cream
 flavor.
 
 2- **Goodness of fit test**: The chi-squared goodness of fit test, also
-known as distribution test, is a hypothesis test that is used to
-determine if a set of observed data follows a theoretical distribution.
-To illustrate this, let’s consider an example.
+known as the distribution test, is a hypothesis test used to determine
+if a set of observed data follows a theoretical distribution. To
+illustrate this, let us consider an example.
 
-Suppose a candy company claims that their bags of candy contain an equal
+Suppose a candy company claims that its candy bags contain an equal
 number of red, blue, green, and yellow candies. To test this claim, we
-randomly select a bag of candy and count the number of each color of
-candy in the bag. The data we collect is shown in the table below:
+randomly selected a bag of candy and counted the number of each color of
+candy in the bag. The data we collected is shown in the table below:
 
 <table>
 <thead>
@@ -234,7 +227,7 @@ contain an equal number of each color. To do this, we can perform a
 chi-squared goodness of fit test. The null hypothesis is that the
 observed distribution is consistent with the expected distribution,
 while the alternative hypothesis is that the observed distribution is
-not consistent with the expected distribution.
+inconsistent with the expected distribution.
 
 The first step is to calculate the expected frequencies for each
 category under the assumption that the null hypothesis is true. To do
@@ -339,18 +332,18 @@ can find the critical value of chi-squared with 3 degrees of freedom and
 a significance level of 0.05 to be 7.815.
 
 Since our calculated chi-squared value (0.82) is less than the critical
-value (7.815), it means p value is &gt; 0.05, hence null hypothesis is
-true.
+value (7.815), it means the p-value is &gt; 0.05; hence null hypothesis
+is true.
 
 3- **Homogeneity test**: The chi-squared test for homogeneity is used to
 determine if two or more populations have the same distribution of a
-categorical variable. To illustrate this, let’s consider an example.
+categorical variable. To illustrate this, let us consider an example.
 
 Suppose we want to determine if there is a difference in the preferred
 type of fruit between two different regions. We randomly sample
 individuals from each region and ask them which type of fruit they
-prefer: apples, bananas, or oranges. The data we collect is shown in the
-table below:
+prefer: apples, bananas, or oranges. The data we collected is shown in
+the table below:
 
 <table>
 <thead>
@@ -393,9 +386,9 @@ category in both regions)
 
 The total number of observations is the sum of the counts in both
 regions, which is 200. We can calculate the proportion of each category
-in both regions by adding the counts in both regions and dividing by the
-total number of observations. Using this information, we can calculate
-the expected frequency for each category in each region:
+in both regions by adding the counts in both regions and dividing them
+by the total number of observations. Using this information, we can
+calculate the expected frequency for each category in each region:
 
 <table>
 <thead>
@@ -488,7 +481,7 @@ the preferred type of fruit between the two regions.
 
 ## Application in R
 
--   Let’s create two vectors first
+-   Let’s create two vectors first.
 
 <!-- -->
 
@@ -496,7 +489,7 @@ the preferred type of fruit between the two regions.
     men = c(150, 120, 45)
     women = c(320, 270, 100)
 
--   Creating data frames from 2 vectors using rbind
+-   Creating a data frame from 2 vectors using rbind
 
 <!-- -->
 
@@ -510,7 +503,7 @@ the preferred type of fruit between the two regions.
     # assigning column names to this data frame
     names(food.survey) = c('Chicken', 'Salad', 'Cake')
 
-Checking 2 by 2 tables
+Checking the frequency 2 by 2 tables
 
     food.survey 
 
@@ -518,7 +511,7 @@ Checking 2 by 2 tables
     ## men       150   120   45
     ## women     320   270  100
 
-Performing chi-aquare test
+Performing chi-square test
 
     chisq.test(food.survey)
 
@@ -528,7 +521,7 @@ Performing chi-aquare test
     ## data:  food.survey
     ## X-squared = 0.13751, df = 2, p-value = 0.9336
 
-Using in built data set survey
+Using in-built data set survey
 
     #frequencies
     library(MASS)   
@@ -536,7 +529,7 @@ Using in built data set survey
 
     ## [1] "Heavy" "Never" "Occas" "Regul"
 
-Creting table
+Creating a table
 
     sfreq = table(survey$Smoke) 
     sfreq
@@ -547,7 +540,7 @@ Creting table
 
     library(gmodels)
 
-Exploring first few observations
+Exploring the first few observations
 
     #frequencies and relative frequencies
     head(mtcars)
@@ -560,8 +553,8 @@ Exploring first few observations
     ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
     ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
-2 way cross-tabulation- multivariate frequency table. Creating table
-between carb and cyl.
+Two way cross-tabulation- multivariate frequency table. We are creating
+a table between carb and cyl.
 
     table(mtcars$carb, mtcars$cyl) 
 
@@ -574,7 +567,7 @@ between carb and cyl.
     ##   6 0 1 0
     ##   8 0 0 1
 
-Creating cross tabulation using R
+Creating cross-tabulation using R
 
     CrossTable(mtcars$carb, mtcars$cyl, prop.t=TRUE, prop.r=TRUE, prop.c=TRUE)
 
@@ -640,5 +633,6 @@ Creating cross tabulation using R
 
 # Reference:
 
-<https://datatab.net/tutorial/chi-square-test> More reference to be
-added.
+<https://datatab.net/tutorial/chi-square-test>
+
+More reference to be added.
