@@ -24,7 +24,7 @@ in many different fields.
 
 ![](Chapter-1-Introduction_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
-## Descriptive vs Inferential Statistics
+## Descriptive and Inferential Statistics
 
 Descriptive statistics and inferential statistics are two branches of
 statistics that are used to analyze and interpret data.
@@ -52,3 +52,35 @@ is used to make inferences and conclusions about a population based on
 data from a sample. Both branches of statistics are important in data
 analysis and interpretation, and they complement each other in providing
 a comprehensive understanding of the data.
+
+## Sample and population
+
+Sample and population are two terms used in statistics to refer to
+groups of individuals or objects.
+
+A population is the entire group of individuals or objects that we want
+to study or make inferences about. It is a well-defined group that
+exhibits certain characteristics of interest to the researcher. For
+example, the population of interest might be all college students in a
+particular country or all employees working in a particular company.
+
+A sample, on the other hand, is a subset of the population that is
+selected for study or analysis. The sample is selected in a way that it
+is representative of the population and allows us to make inferences
+about the population. For example, if the population of interest is all
+college students in a particular country, a sample might be a randomly
+selected group of 100 college students from different colleges across
+the country.
+
+The main difference between population and sample is that the population
+includes all the individuals or objects of interest, whereas the sample
+includes only a subset of the population. In most cases, it is not
+feasible or practical to collect data from the entire population, so we
+select a sample that is representative of the population and use
+statistical methods to make inferences about the population based on the
+sample data.
+
+It is important to ensure that the sample is representative of the
+population in order to make valid inferences. The process of selecting a
+representative sample is called sampling, and it is a crucial step in
+the research process.
