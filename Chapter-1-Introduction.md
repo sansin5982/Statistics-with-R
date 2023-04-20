@@ -36,7 +36,7 @@ or conclusions beyond the data itself. It involves using measures such
 as measures of central tendency (e.g. mean, median, mode) and measures
 of dispersion (e.g. standard deviation, range) to summarize the data.
 Descriptive statistics are often used to provide a general overview of a
-dataset, to identify patterns and trends, and to summarize key features
+data set, to identify patterns and trends, and to summarize key features
 of the data.
 
 Inferential statistics, on the other hand, involves making conclusions
@@ -54,18 +54,18 @@ data from a sample. Both branches of statistics are important in data
 analysis and interpretation, and they complement each other in providing
 a comprehensive understanding of the data.
 
-## Sample and population
+## Sample and Population
 
 Sample and population are two terms used in statistics to refer to
 groups of individuals or objects.
 
-A population is the entire group of individuals or objects that we want
-to study or make inferences about. It is a well-defined group that
+A **population** is the entire group of individuals or objects that we
+want to study or make inferences about. It is a well-defined group that
 exhibits certain characteristics of interest to the researcher. For
 example, the population of interest might be all college students in a
 particular country or all employees working in a particular company.
 
-A sample, on the other hand, is a subset of the population that is
+A **sample**, on the other hand, is a subset of the population that is
 selected for study or analysis. The sample is selected in a way that it
 is representative of the population and allows us to make inferences
 about the population. For example, if the population of interest is all
