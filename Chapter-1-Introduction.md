@@ -83,10 +83,44 @@ sample data.
 
 It is important to ensure that the sample is representative of the
 population in order to make valid inferences. The process of selecting a
-representative sample is called sampling, and it is a crucial step in
-the research process.
+representative sample is called **sampling**, and it is a crucial step
+in the research process.
 
 <img src="Sample vs population.png" alt="Figure 1.2: Sample vs Population"  />
 <p class="caption">
 Figure 1.2: Sample vs Population
 </p>
+
+Parameter and statistic are two terms used in statistics to describe
+numerical measures of a population and a sample, respectively.
+
+### Parameter
+
+A parameter is a numerical measure that describes a characteristic of a
+population. For example, the population mean, population variance, or
+population proportion are all examples of population parameters.
+Parameters are often unknown and must be estimated from sample data.
+
+### Statistics
+
+A statistic is a numerical measure that describes a characteristic of a
+sample. For example, the sample mean, sample variance, or sample
+proportion are all examples of sample statistics. Statistics are
+calculated from sample data and are used to estimate population
+parameters.
+
+The main difference between parameter and statistic is that parameter
+describes a characteristic of a population and is typically unknown,
+while statistic describes a characteristic of a sample and is known
+based on the data collected from the sample.
+
+In inferential statistics, the goal is to use the sample statistics to
+make inferences about population parameters. This is done by using
+statistical methods to estimate the population parameters and to
+determine the uncertainty associated with those estimates.
+
+It is important to distinguish between parameters and statistics in
+order to make valid inferences about a population based on a sample. By
+understanding the difference between these two terms, we can use
+statistical methods to estimate population parameters and make
+inferences about the population based on the sample data.
