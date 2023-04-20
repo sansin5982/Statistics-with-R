@@ -1,3 +1,7 @@
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](Chapter-1-Introduction_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
 # Introduction
 
 Statistics is a branch of mathematics that deals with the collection,
