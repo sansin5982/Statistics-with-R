@@ -1,7 +1,3 @@
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](Chapter-1-Introduction_files/figure-markdown_strict/unnamed-chunk-2-1.png)
-
 # Introduction
 
 Statistics is a branch of mathematics that deals with the collection,
@@ -25,3 +21,7 @@ In summary, statistics provides us with a powerful set of tools for
 analyzing data and making informed decisions based on that information.
 It is an essential tool for anyone working with data, and is widely used
 in many different fields.
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](Chapter-1-Introduction_files/figure-markdown_strict/unnamed-chunk-2-1.png)
