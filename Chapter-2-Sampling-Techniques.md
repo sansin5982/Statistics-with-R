@@ -55,6 +55,11 @@ techniques, each with their own strengths and weaknesses, and the choice
 of sampling technique depends on the research question, the population
 of interest, and the available resources.
 
+<img src="Sampling Methods.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods"  />
+<p class="caption">
+Figure 2.2: Probability and Non-probability sampling methods
+</p>
+
 ## Probability Sampling Techniques
 
 Probability sampling techniques are methods of selecting a sample from a
@@ -67,6 +72,11 @@ techniques. Here are some examples of probability sampling techniques:
 **1- Simple random sampling**: In simple random sampling, a sample is
 selected randomly from the population, with each member of the
 population having an equal chance of being selected for the sample.
+
+<img src="Simple Random Sample.png" alt="Figure 2.3: Simple Random Sampling"  />
+<p class="caption">
+Figure 2.3: Simple Random Sampling
+</p>
 
 **2- Systematic sampling**: In systematic sampling, the population is
 divided into a list and a sample is selected at a fixed interval. For
