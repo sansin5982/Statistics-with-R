@@ -6,7 +6,7 @@ lead to inaccurate or misleading results because the sample may not
 accurately reflect the opinions, characteristics, or behaviors of the
 entire population.
 
-<img src="Bias.png" alt="Figure 2.1: Bias in statistics"  />
+<img src="Bias.png" alt="Figure 2.1: Bias in statistics" width="50%" />
 <p class="caption">
 Figure 2.1: Bias in statistics
 </p>
@@ -55,7 +55,7 @@ techniques, each with their own strengths and weaknesses, and the choice
 of sampling technique depends on the research question, the population
 of interest, and the available resources.
 
-<img src="Sampling Methods.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods" width="50%" />
+<img src="Sampling Methods.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods" width="30%" />
 <p class="caption">
 Figure 2.2: Probability and Non-probability sampling methods
 </p>
