@@ -73,7 +73,7 @@ techniques. Here are some examples of probability sampling techniques:
 selected randomly from the population, with each member of the
 population having an equal chance of being selected for the sample.
 
-<img src="Simple Random Sample.png" alt="Figure 2.3: Simple Random Sampling" width="120%" />
+<img src="Simple Random Sample.png" alt="Figure 2.3: Simple Random Sampling" width="50%" />
 <p class="caption">
 Figure 2.3: Simple Random Sampling
 </p>
