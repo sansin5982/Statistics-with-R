@@ -6,6 +6,11 @@ lead to inaccurate or misleading results because the sample may not
 accurately reflect the opinions, characteristics, or behaviors of the
 entire population.
 
+<img src="Bias.png" alt="Figure 2.1: Bias in statistics"  />
+<p class="caption">
+Figure 2.1: Bias in statistics
+</p>
+
 There are several types of bias that can occur in sample selection:
 
 **1- Selection bias**: This occurs when certain groups or individuals
