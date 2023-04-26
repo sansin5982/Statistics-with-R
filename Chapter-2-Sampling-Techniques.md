@@ -11,6 +11,9 @@ entire population.
 Figure 2.1: Bias in statistics
 </p>
 
+Image source:
+<https://datatron.com/what-is-statistical-bias-and-why-is-it-so-important-in-data-science/>
+
 There are several types of bias that can occur in sample selection:
 
 **1- Selection bias**: This occurs when certain groups or individuals
