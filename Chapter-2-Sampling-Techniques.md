@@ -55,7 +55,7 @@ techniques, each with their own strengths and weaknesses, and the choice
 of sampling technique depends on the research question, the population
 of interest, and the available resources.
 
-<img src="Sampling Methods.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods"  />
+<img src="Sampling Methods.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods" width="50%" />
 <p class="caption">
 Figure 2.2: Probability and Non-probability sampling methods
 </p>
