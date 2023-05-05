@@ -142,7 +142,7 @@ researcher wants to study college students, they might select a
 convenience sample of students who are available and willing to
 participate in the study.
 
-<img src="IMAGE/Convenience sampling.jpg" alt="Figure 2.8: Convenience Sampling" width="50%" />
+<img src="Convenience sampling.jpg" alt="Figure 2.8: Convenience Sampling" width="50%" />
 <p class="caption">
 Figure 2.8: Convenience Sampling
 </p>
