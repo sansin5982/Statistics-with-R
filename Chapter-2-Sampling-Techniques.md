@@ -83,9 +83,9 @@ divided into a list and a sample is selected at a fixed interval. For
 example, if a population has 1000 members and a sample of 100 is
 desired, every 10th member of the population would be selected.
 
-<img src="IMAGE/Systematic sampling.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods" width="50%" />
+<img src="IMAGE/Systematic sampling.jpg" alt="Figure 2.4: Systematic Sampling" width="50%" />
 <p class="caption">
-Figure 2.2: Probability and Non-probability sampling methods
+Figure 2.4: Systematic Sampling
 </p>
 
 **3- Stratified sampling**: In stratified sampling, the population is
