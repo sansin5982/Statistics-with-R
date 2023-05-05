@@ -83,7 +83,7 @@ divided into a list and a sample is selected at a fixed interval. For
 example, if a population has 1000 members and a sample of 100 is
 desired, every 10th member of the population would be selected.
 
-<img src="IMAGE/Systematic sampling.jpg" alt="Figure 2.4: Systematic Sampling" width="50%" />
+<img src="Systematic sampling.jpg" alt="Figure 2.4: Systematic Sampling" width="50%" />
 <p class="caption">
 Figure 2.4: Systematic Sampling
 </p>
@@ -92,6 +92,11 @@ Figure 2.4: Systematic Sampling
 divided into strata based on some characteristic of interest, and a
 random sample is selected from each stratum. Stratified sampling ensures
 that the sample is representative of each stratum in the population.
+
+<img src="stratified sampling.jpg" alt="Figure 2.5: Stratified Sampling" width="50%" />
+<p class="caption">
+Figure 2.5: Stratified Sampling
+</p>
 
 **4- Cluster sampling**: In cluster sampling, the population is divided
 into clusters, and a random sample of clusters is selected for study.
