@@ -55,7 +55,7 @@ techniques, each with their own strengths and weaknesses, and the choice
 of sampling technique depends on the research question, the population
 of interest, and the available resources.
 
-<img src="Sampling Methods.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods" width="30%" />
+<img src="Sampling Methods.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods" width="50%" />
 <p class="caption">
 Figure 2.2: Probability and Non-probability sampling methods
 </p>
@@ -82,6 +82,11 @@ Figure 2.3: Simple Random Sampling
 divided into a list and a sample is selected at a fixed interval. For
 example, if a population has 1000 members and a sample of 100 is
 desired, every 10th member of the population would be selected.
+
+<img src="IMAGE/Systematic sampling.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods" width="50%" />
+<p class="caption">
+Figure 2.2: Probability and Non-probability sampling methods
+</p>
 
 **3- Stratified sampling**: In stratified sampling, the population is
 divided into strata based on some characteristic of interest, and a
