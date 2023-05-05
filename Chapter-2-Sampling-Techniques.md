@@ -102,12 +102,22 @@ Figure 2.5: Stratified Sampling
 into clusters, and a random sample of clusters is selected for study.
 Within each selected cluster, all members of the population are sampled.
 
+<img src="IMAGE/Cluster sampling.jpg" alt="Figure 2.6: Cluster Sampling" width="50%" />
+<p class="caption">
+Figure 2.6: Cluster Sampling
+</p>
+
 **5- Multi-stage sampling**: Multi-stage sampling is a combination of
 several sampling techniques, such as cluster sampling and stratified
 sampling. In multi-stage sampling, the population is divided into
 clusters, and a random sample of clusters is selected. Within each
 selected cluster, sub-clusters are randomly selected, and the process
 continues until individual members of the population are selected.
+
+<img src="IMAGE/Multistage sampling.png" alt="Figure 2.7: Multistage Sampling" width="50%" />
+<p class="caption">
+Figure 2.7: Multistage Sampling
+</p>
 
 Probability sampling techniques are preferred over non-probability
 sampling techniques because they provide a more representative sample of
@@ -131,6 +141,11 @@ selected based on convenience or accessibility. For example, if a
 researcher wants to study college students, they might select a
 convenience sample of students who are available and willing to
 participate in the study.
+
+<img src="IMAGE/Convenience sampling.jpg" alt="Figure 2.8: Convenience Sampling" width="50%" />
+<p class="caption">
+Figure 2.8: Convenience Sampling
+</p>
 
 **2- Quota sampling**: In quota sampling, the researcher sets quotas for
 certain subgroups of the population, and then selects individuals to
