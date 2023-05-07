@@ -19,31 +19,78 @@ inferential statistics can be used to make predictions or test
 hypotheses about the population based on the data collected from a
 sample.
 
-### Variable
+## Variable
 
 In statistics, a variable is a characteristic or property that can vary
 or take on different values among individuals, objects, or events in a
 population or sample.Some examples are age, blood pressure, heart rate,
 height, gender etc.
 
-## Data Types
+# Data Types
 
 Qualitative data and quantitative data are two types of data used in
 research, analysis, and statistics.
 
-### Quantitative Data
+## Quantitative Data
 
 Quantitative data refers to numerical data that can be measured and
 analyzed using statistical methods. Quantitative data can provide
 precise and objective information about a particular phenomenon or
 population, and can help researchers test hypotheses and make
-predictions. For example, age, height, blood pressure, etc.
+predictions. For example, age, height, blood pressure, etc. Quantitative
+data is further divided into discrete and continuous.
+
+### Discrete variable
+
+Discrete data refers to numerical data that can only take on certain
+specific values, typically integers. This means that there are a limited
+number of possible values that a discrete variable can take on. Examples
+of discrete data include the number of siblings a person has, the number
+of cars in a parking lot, and the number of children in a family.
+
+### Continuous variable
+
+Continuous data refers to numerical data that can take on any value
+within a range, and can be measured with infinite precision. This means
+that there are an infinite number of possible values that a continuous
+variable can take on. Examples of continuous data include height,
+weight, temperature, and time. Continuous variable is further divided
+into interval and ration scale.
+
+#### Interval scale
+
+Interval data are continuous data where the differences between the
+values are equal, but there is no true zero point. Examples of interval
+data include temperature (measured in Celsius or Fahrenheit), time
+(measured in hours or minutes), and IQ scores.
+
+#### Ratio Scale
+
+Ratio data are numerical data where there is a true zero point, and the
+ratios between the values are meaningful. Examples of ratio data include
+weight, height, age, and income (measured in dollars).
 
 ### Qualitative Data
 
 There are some characteristics that cannot be measured as height, weight
 and blood pressure. These variables can be categorized only. For
-example: gender, ethnicity, race etc.
+example: gender, ethnicity, race etc. Qualitative data is further
+divided into nominal and ordinal.
+
+#### Nominal variable
+
+Nominal data are categorical data that cannot be ranked or ordered.
+Examples of nominal data include gender (male or female), race (Asian,
+Black, Hispanic, etc.), and favorite color (red, blue, green, etc.).
+
+#### Oridnal variable
+
+Ordinal data are categorical data that can be ranked or ordered.
+However, the differences between the ranks are not necessarily equal.
+Examples of ordinal data include education level (high school, some
+college, Bachelor’s degree, Master’s degree, etc.), income level (low,
+middle, high), and satisfaction level (very dissatisfied, somewhat
+dissatisfied, neutral, somewhat satisfied, very satisfied).
 
 ## Random Variable
 
