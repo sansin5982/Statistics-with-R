@@ -36,6 +36,8 @@ research, analysis, and statistics.
 Figure 3.1: Data Types in Statistics
 </p>
 
+##### Source: <https://www.studypug.com/statistics-help/classification-of-data>
+
 ## Quantitative Data
 
 Quantitative data refers to numerical data that can be measured and
