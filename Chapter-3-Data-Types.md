@@ -31,6 +31,11 @@ height, gender etc.
 Qualitative data and quantitative data are two types of data used in
 research, analysis, and statistics.
 
+<img src="IMAGE/Data type.png" alt="Figure 3.1: Data Types in Statistics" width="50%" />
+<p class="caption">
+Figure 3.1: Data Types in Statistics
+</p>
+
 ## Quantitative Data
 
 Quantitative data refers to numerical data that can be measured and
@@ -83,7 +88,7 @@ Nominal data are categorical data that cannot be ranked or ordered.
 Examples of nominal data include gender (male or female), race (Asian,
 Black, Hispanic, etc.), and favorite color (red, blue, green, etc.).
 
-#### Oridnal variable
+#### Ordinal variable
 
 Ordinal data are categorical data that can be ranked or ordered.
 However, the differences between the ranks are not necessarily equal.
@@ -115,3 +120,5 @@ Examples of random variables include the number of cars that pass
 through a particular intersection in an hour, the temperature of a room
 at a given time, or the number of people who purchase a particular
 product in a day.
+
+# Grouped Data: Frequency Distribution
