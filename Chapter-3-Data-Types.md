@@ -124,3 +124,157 @@ at a given time, or the number of people who purchase a particular
 product in a day.
 
 # Grouped Data: Frequency Distribution
+
+Frequency distribution is a statistical technique used to organize and
+summarize data in a clear and concise manner. It involves counting the
+number of times each value or category occurs in a dataset and
+presenting this information in a tabular form.
+
+Frequency distribution can be applied to both qualitative and
+quantitative data. For qualitative data, frequency distribution involves
+counting the number of times each category occurs in the data, while for
+quantitative data, it involves counting the number of times each value
+or range of values occurs in the data.
+
+The information obtained from a frequency distribution can be used to
+calculate various measures of central tendency (such as the mean,
+median, and mode) and measures of dispersion (such as the range and
+standard deviation) for the data.
+
+Frequency distributions can also be presented graphically using various
+charts and graphs, such as histograms, bar charts, and pie charts. These
+visual representations can help to highlight patterns and trends in the
+data and make it easier to understand and interpret.
+
+## Relative frequency
+
+Relative frequency is the proportion or percentage of times that a
+particular value or category appears in the data. It is calculated by
+dividing the frequency of a value or category by the total number of
+observations in the dataset. The result is expressed as a decimal or
+percentage. Relative frequency helps to compare the occurrence of
+different values or categories in the data.
+
+## Cumulative frequency
+
+Cumulative frequency is the frequency of all values up to a particular
+value or category. It is calculated by adding up the frequencies of each
+value or category up to the one in question. Cumulative frequency helps
+to track the progression of the data as values increase or decrease.
+
+To create a frequency distribution table for weight, we need a dataset
+that contains weight measurements. Here’s an example dataset:
+
+weights = \[62, 72, 65, 84, 75, 68, 71, 76, 69, 81, 73, 78, 77, 74, 70,
+67, 80, 79, 82, 66\]
+
+We can create a frequency distribution table for weight using the
+following steps:
+
+Determine the range of the data by finding the difference between the
+maximum and minimum values. In this case, the range is 84 - 62 = 22. 1.
+Determine the number of intervals (or bins) to use in the table. A
+common rule of thumb is to use 5-20 intervals, depending on the size of
+the dataset. For this example, we’ll use 5 intervals. 2. Determine the
+width of each interval by dividing the range by the number of intervals
+and rounding up to the nearest integer. In this case, the interval width
+is 5. 3. Create the frequency distribution table by counting the number
+of observations that fall within each interval. 4. Here’s the frequency
+distribution table for weight:
+
+<table>
+<thead>
+<tr class="header">
+<th>Weight Interval</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>62-66</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>67-71</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>72-76</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>77-81</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>82-86</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+To calculate the values for the relative frequency and cumulative
+frequency columns, we can use the following formulas:
+
+-   Relative frequency = frequency / total number of observations
+-   Cumulative frequency = sum of frequencies up to and including the
+    current interval
+
+Here’s the updated frequency distribution table with the relative and
+cumulative frequency columns:
+
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Weight Interval</th>
+<th>Frequency</th>
+<th>Relative Frequency</th>
+<th>Cumulative Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>62-66</td>
+<td>2</td>
+<td>0.1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>67-71</td>
+<td>4</td>
+<td>0.2</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>72-76</td>
+<td>5</td>
+<td>0.25</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td>77-81</td>
+<td>5</td>
+<td>0.25</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>82-86</td>
+<td>4</td>
+<td>0.2</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+
+We can see from the table that the majority of the weights fall within
+the 72-76 and 77-81 intervals, and the cumulative frequency of 16
+indicates that 16 out of the 20 observations fall within those two
+intervals.
+
+# Reference:
