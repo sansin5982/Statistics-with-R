@@ -12,22 +12,28 @@ tendency are:
 
 ### Mean
 
-The mean is the arithmetic average of a dataset. It is calculated by
-summing all the values in the dataset and dividing by the number of
-observations. The mean is a good measure of central tendency for
-datasets that are normally distributed or approximately symmetric.
-However, the mean can be influenced by outliers and extreme values,
-which can skew the results.
+-   The mean is the arithmetic average of a dataset.
+-   It is calculated by summing all the values in the dataset and
+    dividing by the number of observations.
+-   The mean is a good measure of central tendency for datasets that are
+    **normally distributed or approximately symmetric**.
+-   However, the **mean can be influenced by outliers and extreme
+    values**, which can skew the results.
 
 ## $\frac{1}{n}\sum\_\\ xi$
 
+$\sum\_$ = Summation (adding everything) <br><br> n = number of
+observations <br><br> xi = individual observations
+
 ### Median
 
-The median is the middle value in a dataset when the values are arranged
-in order. It is less sensitive to outliers than the mean and is a good
-measure of central tendency for datasets that are skewed or have
-outliers. The median divides the dataset into two equal parts, with 50%
-of the observations above and 50% below the median.
+-   The median is the middle value in a dataset when the values are
+    arranged in order.
+-   It is less sensitive to outliers than the mean and is a good measure
+    of central tendency for datasets that are skewed or have outliers.
+-   The median divides the dataset into two equal parts, with 50% of the
+    observations above and 50% below the median.
+-   Calculation of median also depends on
 
 ### Mode
 
