@@ -20,7 +20,11 @@ tendency are:
 -   However, the **mean can be influenced by outliers and extreme
     values**, which can skew the results.
 
-## $\frac{1}{n}\sum\_\\ xi$
+$\frac{1}{n}\sum\_\\ xi$
+
+-   ∑ = Summation (Adding all observations)
+-   n = Number of observations
+-   xi = Individual observation
 
 ### Median
 
