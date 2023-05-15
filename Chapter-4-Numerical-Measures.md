@@ -30,7 +30,8 @@ tendency are:
     of central tendency for datasets that are skewed or have outliers.
 -   The median divides the dataset into two equal parts, with 50% of the
     observations above and 50% below the median.
--   Calculation of median also depends on
+-   Calculation of median also depends on if the observations are odd or
+    even.
 
 ### Mode
 
