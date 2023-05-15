@@ -118,5 +118,40 @@ Therefore, the median age of this group of individuals is 40.
 
 -   The mode is the value that occurs most frequently in a dataset.
 -   It is a good measure of central tendency for datasets with a single
-    peak or mode. \* However, it is not always meaningful for datasets
-    with multiple modes or no clear mode.
+    peak or mode.
+-   However, it is not always meaningful for datasets with multiple
+    modes or no clear mode.
+
+Example: Find the mode of the set {5, 1, 3, 5, 9}.
+
+1.  Identify the most frequent number.
+2.  Here, 5 is present twice in the given set. Hence, mode is 5
+
+**Hands on in R**
+
+Suppose we have a vector of numbers representing the test scores of a
+group of students:
+
+    test_scores <- c(85, 72, 90, 68, 93, 80, 77, 88, 85)
+
+    score_table <- table(test_scores)
+    mode <- as.numeric(names(score_table)[score_table == max(score_table)])
+    print(mode)
+
+    ## [1] 85
+
+Let’s break down this code:
+
+1- table(test\_scores) generates a frequency table for the test\_scores
+vector, which counts the occurrences of each unique value.
+
+2- ax(score\_table) finds the maximum frequency in the table.
+
+3- names(score\_table)\[score\_table == max(score\_table)\] extracts the
+value(s) with the maximum frequency from the frequency table.
+
+4- as.numeric(…) converts the result to a numeric value.
+
+The variable mode will store the mode(s) of the test scores. Note that
+there can be multiple modes if multiple values have the same highest
+frequency.
