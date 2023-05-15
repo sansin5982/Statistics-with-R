@@ -19,7 +19,7 @@ datasets that are normally distributed or approximately symmetric.
 However, the mean can be influenced by outliers and extreme values,
 which can skew the results.
 
-$\frac{1}{n}\sum\_\\ xi$
+## $\frac{1}{n}\sum\_\\ xi$
 
 ### Median
 
