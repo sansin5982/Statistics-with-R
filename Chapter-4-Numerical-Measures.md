@@ -85,7 +85,7 @@ locations. - Then, we take the average of both values located at the
 middle.
 
 $$\huge location\left(\frac{n}{2}, \frac{n}{2}+{1}\right)$$
- - - n = Number of observations
+ - n = Number of observations
 
 Example: Find the median of the set {5, 1, 3, 7, 9, 11}.
 
@@ -97,8 +97,10 @@ Example: Find the median of the set {5, 1, 3, 7, 9, 11}.
 4.  Hence, 6 is the median value. Therefore, the median of the set {5,
     1, 3, 7, 9, 11} is 6.
 
-**Hands on in R** Suppose we have a vector of numbers representing the
-ages of a group of individuals:
+**Hands on in R**
+
+Suppose we have a vector of numbers representing the ages of a group of
+individuals:
 
     ages <- c(25, 30, 35, 40, 45, 50, 55)
 
@@ -109,6 +111,8 @@ function as follows:
     print(median_age)
 
     ## [1] 40
+
+Therefore, the median age of this group of individuals is 40.
 
 ### Mode
 
