@@ -22,9 +22,6 @@ tendency are:
 
 ## $\frac{1}{n}\sum\_\\ xi$
 
-$\sum\_$ = Summation (adding everything) <br><br> n = number of
-observations <br><br> xi = individual observations
-
 ### Median
 
 -   The median is the middle value in a dataset when the values are
