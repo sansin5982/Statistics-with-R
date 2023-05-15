@@ -20,7 +20,7 @@ tendency are:
 -   However, the **mean can be influenced by outliers and extreme
     values**, which can skew the results.
 
-$$\HUGE\frac{1}{n}\sum\_\\ xi$$
+$$\huge\frac{1}{n}\sum\_\\ xi$$
 
 -   ∑ = Summation (Adding all observations)
 -   n = Number of observations
@@ -39,7 +39,7 @@ group of students:
 
     test_scores <- c(85, 72, 90, 68, 93, 80, 77, 88)
 
-To calculate the mean of these test scores in R, we can use the mean()
+To calculate the mean of these test scores in R, we can use the `mean()`
 function:
 
     mean_score <- mean(test_scores)
@@ -47,14 +47,15 @@ function:
 
     ## [1] 81.625
 
-Therefore, the mean test score of these students is 81.125.
+Therefore, the mean test score of these students is 81.625.
 
 ### Median
 
 -   The median is the middle value in a dataset when the values are
     arranged in order.
--   It is less sensitive to outliers than the mean and is a good measure
-    of central tendency for datasets that are skewed or have outliers.
+-   It is **less sensitive to outliers than the mean** and is a good
+    measure of central tendency for datasets that are skewed or have
+    outliers.
 -   The median divides the dataset into two equal parts, with 50% of the
     observations above and 50% below the median.
 -   Calculation of median also depends on if the observations are odd or
@@ -62,10 +63,11 @@ Therefore, the mean test score of these students is 81.125.
 
 **ODD number of observations**: - Arrange the observations from smallest
 to largest number. - To calculate median value for odd number of
-observation, we have to identify middle location.
+observation, we have to identify middle location. - Observation located
+at middle location is will be considered as median value.
+
 $$\huge\frac{n + 1}{2}$$
- - Observation located at middle location is will be considered as
-median value.
+ - n = Number of observations
 
 Example: Find the median of the set {5, 1, 3, 7, 9}.
 
@@ -78,10 +80,35 @@ Example: Find the median of the set {5, 1, 3, 7, 9}.
 
 **Even number of observations**: - Arrange the observations from
 smallest to largest number. - To calculate median value for even number
-of observation, we have to identify middle location, here two. - Then,
-we take the average of both values located at middle.
+of observation, we have to identify middle location, here two middle
+locations. - Then, we take the average of both values located at the
+middle.
 
-$$\huge\frac{n}{2}, \frac{n}{2}+{1}$$
+$$\huge location\left(\frac{n}{2}, \frac{n}{2}+{1}\right)$$
+ - - n = Number of observations
+
+Example: Find the median of the set {5, 1, 3, 7, 9, 11}.
+
+1.  Arrange the numbers in order: {1, 3, 5, 7, 9, 11}.
+2.  Identify the middle number: Total number of observation is 6. Hence,
+    6/2 & (6/2) + 1 location. Here, it average of values located at 3rd
+    and 4th number.
+3.  Third value is 5 and fourth is 7. So, (5+7)/2 = 6
+4.  Hence, 6 is the median value. Therefore, the median of the set {5,
+    1, 3, 7, 9, 11} is 6.
+
+**Hands on in R** Suppose we have a vector of numbers representing the
+ages of a group of individuals:
+
+    ages <- c(25, 30, 35, 40, 45, 50, 55)
+
+To calculate the median of these ages in R, you can use the `median()`
+function as follows:
+
+    median_age <- median(ages)
+    print(median_age)
+
+    ## [1] 40
 
 ### Mode
 
