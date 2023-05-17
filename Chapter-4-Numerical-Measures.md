@@ -165,3 +165,9 @@ there can be multiple modes if multiple values have the same highest
 frequency.
 
 ## Measures of Dispersion
+
+Measures of dispersion, also known as measures of variability or
+measures of spread, are statistical measures that provide information
+about the spread or distribution of a dataset. They quantify how much
+individual data points deviate from the central tendency of the dataset,
+such as the mean or median.
