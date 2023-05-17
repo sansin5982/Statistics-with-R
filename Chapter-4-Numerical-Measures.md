@@ -42,6 +42,10 @@ group of students:
 To calculate the mean of these test scores in R, we can use the `mean()`
 function:
 
+-Syntax: `mean(x, na.rm = FALSE)`
+
+na.rm is used to remove the missing values from the input vector.
+
     mean_score <- mean(test_scores)
     print(mean_score)
 
@@ -107,6 +111,10 @@ individuals:
 To calculate the median of these ages in R, you can use the `median()`
 function as follows:
 
+-Syntax: `median(x, na.rm = FALSE)`
+
+na.rm is used to remove the missing values from the input vector.
+
     median_age <- median(ages)
     print(median_age)
 
@@ -145,7 +153,7 @@ Let’s break down this code:
 1- table(test\_scores) generates a frequency table for the test\_scores
 vector, which counts the occurrences of each unique value.
 
-2- ax(score\_table) finds the maximum frequency in the table.
+2- max(score\_table) finds the maximum frequency in the table.
 
 3- names(score\_table)\[score\_table == max(score\_table)\] extracts the
 value(s) with the maximum frequency from the frequency table.
@@ -155,3 +163,5 @@ value(s) with the maximum frequency from the frequency table.
 The variable mode will store the mode(s) of the test scores. Note that
 there can be multiple modes if multiple values have the same highest
 frequency.
+
+## Measures of Dispersion
