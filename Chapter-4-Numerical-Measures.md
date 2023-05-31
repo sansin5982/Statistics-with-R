@@ -30,8 +30,11 @@ $$\huge\overline{x}=\frac{1}{n}\sum\_\\ xi$$
 
 **Population mean calculation**
 $$\huge\mu=\frac{1}{N}\sum\_\\ xi$$
- - ∑ = Summation (Adding all observations) - n = Number of
-observations - xi = Individual observation - *μ* = Population mean
+
+-   ∑ = Summation (Adding all observations)
+-   n = Number of observations
+-   xi = Individual observation
+-   *μ* = Population mean
 
 Example: Find the mean of the set {5, 1, 3, 7, 9}.
 
@@ -77,7 +80,7 @@ to largest number. - To calculate median value for odd number of
 observation, we have to identify middle location. - Observation located
 at middle location is will be considered as median value.
 
-$$\huge\frac{n + 1}{2}$$
+$$\huge \frac{n + 1}{2} observation$$
  - n = Number of observations
 
 Example: Find the median of the set {5, 1, 3, 7, 9}.
@@ -95,7 +98,7 @@ of observation, we have to identify middle location, here two middle
 locations. - Then, we take the average of both values located at the
 middle.
 
-$$\huge location\left(\frac{n}{2}, \frac{n}{2}+{1}\right)$$
+$$\huge average\left(\frac{n}{2}, \frac{n}{2}+{1}\right) observations$$
  - n = Number of observations
 
 Example: Find the median of the set {5, 1, 3, 7, 9, 11}.
@@ -230,11 +233,14 @@ So, the range of the scores in this dataset is 27, just as calculated
 earlier.
 
 Before moving to interquartile range, it is important to understand
-**quartile**. \### Quartile Quartiles are statistical measures that
-divide a dataset into four equal parts. These parts are known as
-quartiles. The quartiles provide information about the distribution and
-spread of the data, particularly in terms of how it is divided into
-lower and upper halves.
+**quartile**.
+
+### Quartile
+
+Quartiles are statistical measures that divide a dataset into four equal
+parts. These parts are known as quartiles. The quartiles provide
+information about the distribution and spread of the data, particularly
+in terms of how it is divided into lower and upper halves.
 
 There are three quartiles: the first quartile (Q1), the second quartile
 (Q2), and the third quartile (Q3). The second quartile, Q2, is also
@@ -244,11 +250,13 @@ To calculate the quartiles, you typically arrange the dataset in
 ascending order and identify the values that divide it into four equal
 parts. The formula to calculate the position of each quartile is:
 
-$$\huge Q1 = frac{n + 1}{4}\\$$
+$$\huge Q1 = \frac{n + 1}{4}$$
 
-Q1 = (n + 1) / 4 Q2 = 2 \* (n + 1) / 4 Q3 = 3 \* (n + 1) / 4
+$$\huge Q2 = 2 \* \frac{n + 1}{4}$$
 
-where n is the total number of data points in the dataset.
+$$\huge Q3 = 3 \* \frac{n + 1}{4}$$
+
+where n is the total number of observations in the dataset.
 
 ### Interquartile Range
 
@@ -257,4 +265,34 @@ the spread or variability of a dataset. It specifically focuses on the
 middle 50% of the data and is calculated as the difference between the
 third quartile (Q3) and the first quartile (Q1).
 
-**Quartile**
+Here’s an example to illustrate how to calculate the interquartile
+range:
+
+Let’s consider a dataset representing the scores of 12 students on a
+physics exam:
+
+76, 80, 72, 85, 90, 65, 88, 82, 78, 70, 92, 76
+
+To calculate the interquartile range, you need to find the first
+quartile (Q1) and the third quartile (Q3) of the dataset. The first
+quartile represents the 25th percentile, and the third quartile
+represents the 75th percentile.
+
+Hands-On in R:
+
+    # Example dataset
+    scores <- c(76, 80, 72, 85, 90, 65, 88, 82, 78, 70, 92, 76)
+
+    # Calculate the interquartile range
+    iqr_scores <- IQR(scores)
+
+    # Print the interquartile range
+    iqr_scores
+
+    ## [1] 10.75
+
+In this example, the interquartile range is 10. This means that the
+middle 50% of the scores in the dataset is spread over a range of 10.
+The interquartile range is useful in describing the spread of data,
+especially when the dataset contains outliers or is not symmetrically
+distributed.
