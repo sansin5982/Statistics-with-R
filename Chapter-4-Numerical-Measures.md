@@ -20,11 +20,18 @@ tendency are:
 -   However, the **mean can be influenced by outliers and extreme
     values**, which can skew the results.
 
-$$\huge\frac{1}{n}\sum\_\\ xi$$
+**Sample mean calculation**
+$$\huge\overline{x}=\frac{1}{n}\sum\_\\ xi$$
 
 -   ∑ = Summation (Adding all observations)
 -   n = Number of observations
 -   xi = Individual observation
+-   $\overline{x}$ = sample mean
+
+**Population mean calculation**
+$$\huge\mu=\frac{1}{N}\sum\_\\ xi$$
+ - ∑ = Summation (Adding all observations) - n = Number of
+observations - xi = Individual observation - *μ* = Population mean
 
 Example: Find the mean of the set {5, 1, 3, 7, 9}.
 
@@ -222,4 +229,32 @@ the maximum value:
 So, the range of the scores in this dataset is 27, just as calculated
 earlier.
 
+Before moving to interquartile range, it is important to understand
+**quartile**. \### Quartile Quartiles are statistical measures that
+divide a dataset into four equal parts. These parts are known as
+quartiles. The quartiles provide information about the distribution and
+spread of the data, particularly in terms of how it is divided into
+lower and upper halves.
+
+There are three quartiles: the first quartile (Q1), the second quartile
+(Q2), and the third quartile (Q3). The second quartile, Q2, is also
+known as the median and divides the dataset into two equal halves.
+
+To calculate the quartiles, you typically arrange the dataset in
+ascending order and identify the values that divide it into four equal
+parts. The formula to calculate the position of each quartile is:
+
+$$\huge Q1 = frac{n + 1}{4}\\$$
+
+Q1 = (n + 1) / 4 Q2 = 2 \* (n + 1) / 4 Q3 = 3 \* (n + 1) / 4
+
+where n is the total number of data points in the dataset.
+
 ### Interquartile Range
+
+The interquartile range (IQR) is a statistical measure used to describe
+the spread or variability of a dataset. It specifically focuses on the
+middle 50% of the data and is calculated as the difference between the
+third quartile (Q3) and the first quartile (Q1).
+
+**Quartile**
