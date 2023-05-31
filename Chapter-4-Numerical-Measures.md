@@ -32,7 +32,7 @@ Example: Find the mean of the set {5, 1, 3, 7, 9}.
 -   Summation of all observation is (5 + 1 + 3 + 7 + 9) = 25
 -   Mean = 25/5 = 5
 
-**Hands on in R**
+**Hands-On in R**
 
 Suppose we have a vector of numbers representing the test scores of a
 group of students:
@@ -101,7 +101,7 @@ Example: Find the median of the set {5, 1, 3, 7, 9, 11}.
 4.  Hence, 6 is the median value. Therefore, the median of the set {5,
     1, 3, 7, 9, 11} is 6.
 
-**Hands on in R**
+**Hands-On in R**
 
 Suppose we have a vector of numbers representing the ages of a group of
 individuals:
@@ -135,7 +135,7 @@ Example: Find the mode of the set {5, 1, 3, 5, 9}.
 1.  Identify the most frequent number.
 2.  Here, 5 is present twice in the given set. Hence, mode is 5
 
-**Hands on in R**
+**Hands-On in R**
 
 Suppose we have a vector of numbers representing the test scores of a
 group of students:
@@ -172,4 +172,54 @@ about the spread or distribution of a dataset. They quantify how much
 individual data points deviate from the central tendency of the dataset,
 such as the mean or median.
 
-![](Chapter-4-Numerical-Measures_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![Figure 4.1: Measures of variability in five data sets having same
+mean](Chapter-4-Numerical-Measures_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+
+### Range
+
+The range refers to the difference between the maximum and minimum
+values in a dataset. It provides a simple measure of the spread or
+variability of the data. To calculate the range, you subtract the
+minimum value from the maximum value.
+
+$$\huge Range = Maximum - Minimum$$
+
+Here’s an example to illustrate the concept of range:
+
+Let’s say you have a dataset representing the scores of 10 students on a
+mathematics test:
+
+82, 78, 90, 65, 72, 88, 92, 76, 80, 85
+
+To find the range, you first identify the maximum and minimum values in
+the dataset. In this case, the maximum value is 92 and the minimum value
+is 65.
+
+Range = Maximum value - Minimum value = 92 - 65 = 27
+
+**Hands-On in R**
+
+    # Example dataset
+    scores <- c(82, 78, 90, 65, 72, 88, 92, 76, 80, 85)
+
+    # Calculate the range
+    range_scores <- range(scores)
+
+    # Print the range
+    range_scores
+
+    ## [1] 65 92
+
+The output indicates that the minimum value is 65 and the maximum value
+is 92. To calculate the range, you can subtract the minimum value from
+the maximum value:
+
+    range <- range_scores[2] - range_scores[1]
+    range
+
+    ## [1] 27
+
+So, the range of the scores in this dataset is 27, just as calculated
+earlier.
+
+### Interquartile Range
