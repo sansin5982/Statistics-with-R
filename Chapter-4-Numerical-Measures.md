@@ -321,12 +321,129 @@ Here are some additional things to keep in mind about variance:
 **Sample variance**
 
 $$\huge s^2 = \frac{1}{n-1} \sum\_{i=1}^{n} (x\_i - \bar{x})^2$$
-Where: - *s*<sup>2</sup> represents the sample variance. - *n* is the
-number of data points in the sample. - *x*<sub>*i*</sub> denotes each
-data point. - *x̄* is the sample mean.
 
-\*\*Population variance
+Where:
+
+-   *s*<sup>2</sup> represents the sample variance.
+-   *n* is the number of data points in the sample.
+-   *x*<sub>*i*</sub> denotes each data point.
+-   *x̄* is the sample mean.
+
+**Population variance**
 $$\huge \sigma^2 = \frac{1}{N} \sum\_{i=1}^{n} (x\_i - \mu)^2$$
-Where: - *σ*<sup>2</sup> represents the population variance. - *n* is
-the number of data points in the sample. - *x*<sub>*i*</sub> denotes
-each data point. - *μ* is the population mean.
+
+Where:
+
+-   *σ*<sup>2</sup> represents the population variance.
+-   *n* is the number of data points in the sample.
+-   *x*<sub>*i*</sub> denotes each data point.
+-   *μ* is the population mean.
+
+**Bessel’s correction**
+
+The reason why the sample variance is divided by n−1 instead of just n
+is due to a statistical concept called Bessel’s correction.
+
+When calculating the variance, we are estimating the population variance
+based on a sample of data. In this case, using the sample mean to
+estimate the population mean (μ) introduces some bias. Dividing by n
+instead of n−1 would underestimate the true variance.
+
+By dividing the sum of squared deviations by n−1 instead of n, we
+account for the fact that we are using the sample mean in our
+calculations, which introduces some uncertainty. This adjustment helps
+to provide an unbiased estimate of the population variance.
+
+The reasoning behind using n−1 is rooted in the **degrees of freedom**
+concept. In simple terms, degrees of freedom represent the number of
+independent pieces of information available for estimating a parameter.
+When estimating the population variance, one degree of freedom is used
+to calculate the sample mean, leaving n−1 degrees of freedom remaining
+for estimating the variance.
+
+Dividing by n−1 instead of n is a common practice in statistics when
+dealing with sample data. This adjustment helps to provide a more
+accurate estimate of the population variance, particularly when the
+sample size is small.
+
+    # Sample dataset
+    data <- c(6, 9, 14, 10, 5, 8, 11)
+
+    # Calculate sample variance
+    n <- length(data)  # Number of data points
+    mean_val <- mean(data)  # Mean of the sample
+    deviation <- data - mean_val  # Deviation from the mean
+    squared_deviation <- deviation^2  # Squared deviation
+    sum_squared_deviation <- sum(squared_deviation)  # Sum of squared deviation
+    sample_variance <- sum_squared_deviation / (n - 1)  # Sample variance
+
+    # Create a data frame for the variance calculation steps
+    variance_table <- data.frame(Data = data, Deviation = deviation, Squared_Deviation = squared_deviation)
+
+    # Add row for the sum of squared deviations
+    variance_table <- rbind(variance_table, c("Sum", "", sum_squared_deviation))
+
+    # Add row for sample variance
+    variance_table <- rbind(variance_table, c("Sample Variance", "", sample_variance))
+
+    knitr::kable(variance_table, caption = "Sample Variance Calculation", align = "c")
+
+<table>
+<caption>Sample Variance Calculation</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Data</th>
+<th style="text-align: center;">Deviation</th>
+<th style="text-align: center;">Squared_Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">-4</td>
+<td style="text-align: center;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Sum</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">56</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Sample Variance</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">9.33333333333333</td>
+</tr>
+</tbody>
+</table>
+
+Sample Variance Calculation
