@@ -433,4 +433,10 @@ class="math inline">∑<sub> </sub>(<em>x</em><sub><em>i</em></sub>−<em>x̄</
 </tbody>
 </table>
 
-    # Sample dataset
+$$\large s^2 = \frac{1}{n-1} \sum\_{i=1}^{n} (x\_i - \bar{x})^2$$
+
+$$\large s^2 = \frac{1}{7-1} \sum\_{i=1}^{n} 56$$
+
+$$\large s^2 = \frac{56}{6}$$
+
+$$\large s^2 = 9.33$$
