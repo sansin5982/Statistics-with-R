@@ -440,3 +440,41 @@ $$\large s^2 = \frac{1}{7-1} \sum\_{i=1}^{n} 56$$
 $$\large s^2 = \frac{56}{6}$$
 
 $$\large s^2 = 9.33$$
+
+**Hands on in R**
+
+    # Sample dataset
+    data <- c(6, 9, 14, 10, 5, 8, 11)
+
+    var(data)
+
+    ## [1] 9.333333
+
+### Standard deviation
+
+The standard deviation is a measure of the dispersion or spread of a set
+of data points. It quantifies the average distance between each data
+point and the mean. The standard deviation is commonly used to
+understand the variability or volatility of a dataset.
+
+The standard deviation is calculated by taking the square root of the
+variance. Here’s the formula for calculating the standard deviation:
+
+**Standard deviation for sample**
+$$\huge s = \sqrt{\frac{1}{n-1} \sum\_{i=1}^{n} (x\_i - \bar{x})^2}$$
+
+$$\huge s = \sqrt{({s})^2}$$
+
+**Standard deviation for population**
+$$\huge \sigma = \sqrt{\frac{1}{N} \sum\_{i=1}^{n} (x\_i - \mu)^2}$$
+$$\huge \sigma = \sqrt{\sigma^2}$$
+\*\*Standard deviation calculation
+$$\large s = \sqrt{({s})^2}$$
+$$\large s = \sqrt{9.33}$$
+$$\large s = 3.055$$
+
+**Hand-on in R**
+
+    sd(data)
+
+    ## [1] 3.05505
