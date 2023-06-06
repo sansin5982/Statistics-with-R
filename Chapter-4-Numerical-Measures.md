@@ -366,84 +366,63 @@ dealing with sample data. This adjustment helps to provide a more
 accurate estimate of the population variance, particularly when the
 sample size is small.
 
-    # Sample dataset
-    data <- c(6, 9, 14, 10, 5, 8, 11)
-
-    # Calculate sample variance
-    n <- length(data)  # Number of data points
-    mean_val <- mean(data)  # Mean of the sample
-    deviation <- data - mean_val  # Deviation from the mean
-    squared_deviation <- deviation^2  # Squared deviation
-    sum_squared_deviation <- sum(squared_deviation)  # Sum of squared deviation
-    sample_variance <- sum_squared_deviation / (n - 1)  # Sample variance
-
-    # Create a data frame for the variance calculation steps
-    variance_table <- data.frame(Data = data, Deviation = deviation, Squared_Deviation = squared_deviation)
-
-    # Add row for the sum of squared deviations
-    variance_table <- rbind(variance_table, c("Sum", "", sum_squared_deviation))
-
-    # Add row for sample variance
-    variance_table <- rbind(variance_table, c("Sample Variance", "", sample_variance))
-
-    knitr::kable(variance_table, caption = "Sample Variance Calculation", align = "c")
+**Sample variance calculation** Data = (6, 9, 14, 10, 5, 8, 11) Sample
+Mean = (6+9+14+10+5+8+11)/7 = 9
 
 <table>
-<caption>Sample Variance Calculation</caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Data</th>
-<th style="text-align: center;">Deviation</th>
-<th style="text-align: center;">Squared_Deviation</th>
+<th>Data</th>
+<th>Deviation from mean <span
+class="math inline">(<em>x</em><sub><em>i</em></sub>−<em>x̄</em>)</span></th>
+<th>Squared deviation from mean <span
+class="math inline">(<em>x</em><sub><em>i</em></sub>−<em>x̄</em>)<sup>2</sup></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">-3</td>
-<td style="text-align: center;">9</td>
+<td>6</td>
+<td>-3</td>
+<td>9</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">14</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">25</td>
+<td>14</td>
+<td>5</td>
+<td>25</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
+<td>10</td>
+<td>1</td>
+<td>1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">-4</td>
-<td style="text-align: center;">16</td>
+<td>5</td>
+<td>-4</td>
+<td>16</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">1</td>
+<td>8</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Sum</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">56</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Sample Variance</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">9.33333333333333</td>
+<td>11</td>
+<td>2</td>
+<td>4</td>
 </tr>
 </tbody>
 </table>
 
-Sample Variance Calculation
+Sample Mean = (6+9+14+10+5+8+11)/7
+
+    # Sample dataset
