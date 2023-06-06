@@ -284,15 +284,49 @@ Hands-On in R:
     scores <- c(76, 80, 72, 85, 90, 65, 88, 82, 78, 70, 92, 76)
 
     # Calculate the interquartile range
-    iqr_scores <- IQR(scores)
+    iqr_scores <- IQR(scores, type = 2)
 
     # Print the interquartile range
     iqr_scores
 
-    ## [1] 10.75
+    ## [1] 12.5
 
-In this example, the interquartile range is 10. This means that the
-middle 50% of the scores in the dataset is spread over a range of 10.
+In this example, the interquartile range is 12.5. This means that the
+middle 50% of the scores in the dataset is spread over a range of 12.5.
 The interquartile range is useful in describing the spread of data,
 especially when the dataset contains outliers or is not symmetrically
 distributed.
+
+### Variance
+
+Variance is a statistical measure that quantifies the dispersion or
+spread of a set of data points around their mean (average). It provides
+insight into how much the individual data points deviate from the
+average value.
+
+Here are some additional things to keep in mind about variance:
+
+-   Variance is a measure of variability, but it does not take into
+    account the shape of the distribution. For example, a bimodal
+    distribution (two distinct peaks) with the same variance as a
+    unimodal distribution (one peak) will have a different shape.
+-   Variance is sensitive to outliers. An outlier is a data point that
+    is very different from the rest of the data. Outliers can have a
+    large impact on the variance, so it is important to remove them
+    before calculating the variance.
+-   Variance is a sample statistic, which means that it is only an
+    estimate of the population variance. The population variance is the
+    variance of all the data in a population, not just a sample.
+
+**Sample variance**
+
+$$\huge s^2 = \frac{1}{n-1} \sum\_{i=1}^{n} (x\_i - \bar{x})^2$$
+Where: - *s*<sup>2</sup> represents the sample variance. - *n* is the
+number of data points in the sample. - *x*<sub>*i*</sub> denotes each
+data point. - *x̄* is the sample mean.
+
+\*\*Population variance
+$$\huge \sigma^2 = \frac{1}{N} \sum\_{i=1}^{n} (x\_i - \mu)^2$$
+Where: - *σ*<sup>2</sup> represents the population variance. - *n* is
+the number of data points in the sample. - *x*<sub>*i*</sub> denotes
+each data point. - *μ* is the population mean.
