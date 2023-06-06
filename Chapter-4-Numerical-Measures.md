@@ -366,8 +366,9 @@ dealing with sample data. This adjustment helps to provide a more
 accurate estimate of the population variance, particularly when the
 sample size is small.
 
-**Sample variance calculation** Data = (6, 9, 14, 10, 5, 8, 11) Sample
-Mean = (6+9+14+10+5+8+11)/7 = 9
+**Sample variance calculation**
+
+Data = (6, 9, 14, 10, 5, 8, 11)
 
 <table>
 <colgroup>
@@ -420,9 +421,16 @@ class="math inline">(<em>x</em><sub><em>i</em></sub>−<em>x̄</em>)<sup>2</sup>
 <td>2</td>
 <td>4</td>
 </tr>
+<tr class="even">
+<td><span class="math inline"><em>x̄</em></span> = 9</td>
+<td><span
+class="math inline">∑<sub> </sub>(<em>x</em><sub><em>i</em></sub>−<em>x̄</em>)</span>
+= 0</td>
+<td><span
+class="math inline">∑<sub> </sub>(<em>x</em><sub><em>i</em></sub>−<em>x̄</em>)<sup>2</sup></span>
+= 56</td>
+</tr>
 </tbody>
 </table>
-
-Sample Mean = (6+9+14+10+5+8+11)/7
 
     # Sample dataset
