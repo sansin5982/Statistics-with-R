@@ -441,7 +441,7 @@ $$\large s^2 = \frac{56}{6}$$
 
 $$\large s^2 = 9.33$$
 
-**Hands on in R**
+**Hands-on in R**
 
     # Sample dataset
     data <- c(6, 9, 14, 10, 5, 8, 11)
@@ -468,7 +468,7 @@ $$\huge s = \sqrt{({s})^2}$$
 **Standard deviation for population**
 $$\huge \sigma = \sqrt{\frac{1}{N} \sum\_{i=1}^{n} (x\_i - \mu)^2}$$
 $$\huge \sigma = \sqrt{\sigma^2}$$
-\*\*Standard deviation calculation
+**Standard deviation calculation**
 $$\large s = \sqrt{({s})^2}$$
 $$\large s = \sqrt{9.33}$$
 $$\large s = 3.055$$
@@ -478,3 +478,25 @@ $$\large s = 3.055$$
     sd(data)
 
     ## [1] 3.05505
+
+### Coefficient of variation
+
+The coefficient of variation (CV) is a statistical measure used to
+assess the relative variability of a dataset. It is expressed as a
+percentage and is calculated as the ratio of the standard deviation (SD)
+to the mean (μ), multiplied by 100:
+
+$$\huge CV = \frac{\sigma}{\mu} \* 100$$
+
+The coefficient of variation is commonly used in situations where you
+want to compare the variability of two or more datasets that have
+different units or scales. It allows you to determine which dataset has
+a higher relative variability, regardless of the magnitude of the
+values.
+
+A lower coefficient of variation indicates less relative variability,
+while a higher coefficient of variation indicates greater relative
+variability. It is particularly useful when comparing datasets with
+different means. For example, if you have two datasets with similar
+standard deviations but different means, the coefficient of variation
+can help you determine which dataset has a higher relative variability.
