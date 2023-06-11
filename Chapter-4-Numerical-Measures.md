@@ -501,11 +501,13 @@ different means. For example, if you have two datasets with similar
 standard deviations but different means, the coefficient of variation
 can help you determine which dataset has a higher relative variability.
 
-**Hands-on in R** Suppose we have a dataset representing the expression
-levels of a particular gene in a population of cells under different
-experimental conditions. The expression levels (in arbitrary units) for
-three conditions, labeled Condition A, Condition B, and Condition C, are
-as follows:
+**Hands-on in R**
+
+Suppose we have a dataset representing the expression levels of a
+particular gene in a population of cells under different experimental
+conditions. The expression levels (in arbitrary units) for three
+conditions, labeled Condition A, Condition B, and Condition C, are as
+follows:
 
     # Gene expression data for three conditions
     condition_A <- c(10, 12, 14, 16, 18)
@@ -539,3 +541,27 @@ as follows:
     cat("Condition C - CV:", cv_C, "%\n")
 
     ## Condition C - CV: 31.36738 %
+
+The coefficient of variation allows us to compare the variability of
+gene expression levels between different conditions. In this example,
+Condition B has the highest CV value (38.03%), indicating a higher
+relative variability in gene expression compared to its mean expression
+level. This suggests that Condition B may exhibit more diverse or
+inconsistent gene expression patterns compared to the other conditions.
+
+On the other hand, Condition A and Condition C have lower CV values
+(22.59% and 31.37%, respectively), suggesting relatively less
+variability in gene expression compared to their respective mean
+expression levels.
+
+It’s important to note that the interpretation of the CV values depends
+on the context and the specific biological system under investigation.
+The CV can help researchers assess the consistency or variability of
+gene expression levels, which can provide insights into the regulatory
+mechanisms, cellular responses, or potential experimental artifacts in
+the study.
+
+By calculating and analyzing the coefficient of variation, researchers
+can gain a better understanding of the relative variability within
+datasets, including biological data, facilitating comparisons and
+drawing meaningful conclusions.
