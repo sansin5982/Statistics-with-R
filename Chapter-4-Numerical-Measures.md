@@ -501,51 +501,11 @@ different means. For example, if you have two datasets with similar
 standard deviations but different means, the coefficient of variation
 can help you determine which dataset has a higher relative variability.
 
-Suppose we have a dataset representing the expression levels of a
-particular gene in a population of cells under different experimental
-conditions. The expression levels (in arbitrary units) for three
-conditions, labeled Condition A, Condition B, and Condition C, are as
-follows:
-
--   Condition A: 10, 12, 14, 16, 18
--   Condition B: 8, 9, 12, 15, 20
--   Condition C: 7, 10, 11, 15, 16
-
-**Step 1: Calculate the mean (μ) of each condition.**
-
--   For Condition A: (10 + 12 + 14 + 16 + 18) / 5 = 14
--   For Condition B: (8 + 9 + 12 + 15 + 20) / 5 = 12.8
--   For Condition C: (7 + 10 + 11 + 15 + 16) / 5 = 11.8
-
-**Step 2: Calculate the standard deviation (SD) of each condition.**
-
-**For Condition A:**
-
--   Calculate the difference between each value and the mean: <br>
-    (10−14)<sup>2</sup>, (12−14)<sup>2</sup>, (14−14)<sup>2</sup>, (16−14)<sup>2</sup>, (18−14)<sup>2</sup>
-
--   Sum the squared differences: 16 + 4 + 0 + 4 + 16 = 40
-
--   Divide the sum by (n-1) (n = 5, as we have 5 data points): 40 / 4 =
-    10
-
--   Take the square root of the result to get the standard deviation:
-    √10 ≈ 3.16
-
-**For Condition B:**
-
--   Calculate the difference between each value and the mean: <br>
-    (8−12.8)<sup>2</sup>, (9−12.8)<sup>2</sup>, (12−12.8)<sup>2</sup>, (15−12.8)<sup>2</sup>, (20−12.8)<sup>2</sup>
-
--   Sum the squared differences: 18.24 + 11.56 + 0.64 + 4.84 + 43.24 =
-    78.52
-
--   Divide the sum by (n-1) (n = 5): 78.52 / 4 = 19.63
-
--   Take the square root of the result to get the standard deviation:
-    √19.63 ≈ 4.43
-
-<!-- -->
+**Hands-on in R** Suppose we have a dataset representing the expression
+levels of a particular gene in a population of cells under different
+experimental conditions. The expression levels (in arbitrary units) for
+three conditions, labeled Condition A, Condition B, and Condition C, are
+as follows:
 
     # Gene expression data for three conditions
     condition_A <- c(10, 12, 14, 16, 18)
