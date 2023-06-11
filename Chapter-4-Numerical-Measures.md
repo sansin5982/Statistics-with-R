@@ -522,16 +522,19 @@ follows:
 **For Condition A:**
 
 -   Calculate the difference between each value and the mean: <br>
+    (10−14)<sup>2</sup>, (12−14)<sup>2</sup>, (14−14)<sup>2</sup>, (16−14)<sup>2</sup>, (18−14)<sup>2</sup>
 
-(10−14)<sup>2</sup>, (12−14)<sup>2</sup>, (14−14)<sup>2</sup>, (16−14)<sup>2</sup>, (18−14)<sup>2</sup>
+-   Sum the squared differences: 16 + 4 + 0 + 4 + 16 = 40
 
-, \* Sum the squared differences: 16 + 4 + 0 + 4 + 16 = 40 \* Divide the
-sum by (n-1) (n = 5, as we have 5 data points): 40 / 4 = 10 \* Take the
-square root of the result to get the standard deviation: √10 ≈ 3.16
+-   Divide the sum by (n-1) (n = 5, as we have 5 data points): 40 / 4 =
+    10
+
+-   Take the square root of the result to get the standard deviation:
+    √10 ≈ 3.16
 
 **For Condition B:**
 
--   Calculate the difference between each value and the mean:
+-   Calculate the difference between each value and the mean: <br>
     (8−12.8)<sup>2</sup>, (9−12.8)<sup>2</sup>, (12−12.8)<sup>2</sup>, (15−12.8)<sup>2</sup>, (20−12.8)<sup>2</sup>
 
 -   Sum the squared differences: 18.24 + 11.56 + 0.64 + 4.84 + 43.24 =
@@ -541,3 +544,38 @@ square root of the result to get the standard deviation: √10 ≈ 3.16
 
 -   Take the square root of the result to get the standard deviation:
     √19.63 ≈ 4.43
+
+<!-- -->
+
+    # Gene expression data for three conditions
+    condition_A <- c(10, 12, 14, 16, 18)
+    condition_B <- c(8, 9, 12, 15, 20)
+    condition_C <- c(7, 10, 11, 15, 16)
+
+    # Calculate the mean of each condition
+    mean_A <- mean(condition_A)
+    mean_B <- mean(condition_B)
+    mean_C <- mean(condition_C)
+
+    # Calculate the standard deviation of each condition
+    sd_A <- sd(condition_A)
+    sd_B <- sd(condition_B)
+    sd_C <- sd(condition_C)
+
+    # Calculate the coefficient of variation for each condition
+    cv_A <- (sd_A / mean_A) * 100
+    cv_B <- (sd_B / mean_B) * 100
+    cv_C <- (sd_C / mean_C) * 100
+
+    # Print the results
+    cat("Condition A - CV:", cv_A, "%\n")
+
+    ## Condition A - CV: 22.5877 %
+
+    cat("Condition B - CV:", cv_B, "%\n")
+
+    ## Condition B - CV: 38.03332 %
+
+    cat("Condition C - CV:", cv_C, "%\n")
+
+    ## Condition C - CV: 31.36738 %
