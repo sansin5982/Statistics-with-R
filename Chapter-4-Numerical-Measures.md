@@ -565,3 +565,38 @@ By calculating and analyzing the coefficient of variation, researchers
 can gain a better understanding of the relative variability within
 datasets, including biological data, facilitating comparisons and
 drawing meaningful conclusions.
+
+## Measures of Shape
+
+### Skewness
+
+Skewness is a statistical measure that describes the asymmetry or lack
+of symmetry in a distribution of data. It indicates the extent to which
+the data deviates from a symmetrical or bell-shaped distribution.
+Skewness can be positive, negative, or zero, indicating different types
+of asymmetry.
+
+**Positive skewness:** If the distribution has a long tail on the right
+side and the majority of the data is concentrated on the left side, it
+is said to have positive skewness. In a positively skewed distribution,
+the mean is typically greater than the median.
+
+**Negative skewness:** If the distribution has a long tail on the left
+side and the majority of the data is concentrated on the right side, it
+is said to have negative skewness. In a negatively skewed distribution,
+the mean is typically less than the median.
+
+**Zero skewness:** If the distribution is symmetric and evenly
+distributed around the mean, it has zero skewness. In this case, the
+mean and median are approximately equal.
+
+Skewness can be calculated using different formulas, but one commonly
+used formula is based on the third standardized moment. Here’s the
+formula to calculate skewness for a dataset:
+
+$$\huge Skewness = \frac{3 \* (Mean - Median)}{Standard Deviation}$$
+
+It’s important to note that skewness is just one measure of the shape of
+a distribution and should be interpreted in conjunction with other
+descriptive statistics and visualizations to gain a comprehensive
+understanding of the data distribution.
