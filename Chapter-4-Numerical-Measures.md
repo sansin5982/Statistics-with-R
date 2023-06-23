@@ -576,6 +576,11 @@ the data deviates from a symmetrical or bell-shaped distribution.
 Skewness can be positive, negative, or zero, indicating different types
 of asymmetry.
 
+<img src="IMAGE/Skewness.png" alt="Figure 4.1: Skewness and relationship between mean and median" width="50%" />
+<p class="caption">
+Figure 4.1: Skewness and relationship between mean and median
+</p>
+
 **Positive skewness:** If the distribution has a long tail on the right
 side and the majority of the data is concentrated on the left side, it
 is said to have positive skewness. In a positively skewed distribution,
@@ -592,9 +597,14 @@ mean and median are approximately equal.
 
 Skewness can be calculated using different formulas, but one commonly
 used formula is based on the third standardized moment. Here’s the
-formula to calculate skewness for a dataset:
+**Pearson’s second skewness coefficient (median skewness)** formula to
+calculate skewness for a data set:
 
 $$\huge Skewness = \frac{3 \* (Mean - Median)}{Standard Deviation}$$
+It is a simple multiple of the nonparametric skew.
+
+Here’s the **Pearson’s second skewness coefficient (median skewness)**
+formula to calculate skewness for a dataset:
 
 It’s important to note that skewness is just one measure of the shape of
 a distribution and should be interpreted in conjunction with other
