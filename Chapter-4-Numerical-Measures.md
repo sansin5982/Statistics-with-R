@@ -611,6 +611,46 @@ a distribution and should be interpreted in conjunction with other
 descriptive statistics and visualizations to gain a comprehensive
 understanding of the data distribution.
 
+### Interpreting skewness
+
+Skewness is a measure of the asymmetry of a distribution. It provides
+information about the shape of the distribution and the direction of its
+tail. The interpretation of skewness values depends on the sign and
+magnitude of the value:
+
+1.  **Skewness = 0**: A skewness value of 0 indicates a perfectly
+    symmetrical distribution. The distribution is balanced, and the left
+    and right tails are equal in length.
+
+2.  **Skewness &gt; 0**: A positive skewness value indicates a
+    right-skewed or positively skewed distribution. The tail of the
+    distribution extends towards the right, and the majority of the data
+    is concentrated on the left side. The mean is usually greater than
+    the median and the mode.
+
+3.  **Skewness &lt; 0**: A negative skewness value indicates a
+    left-skewed or negatively skewed distribution. The tail of the
+    distribution extends towards the left, and the majority of the data
+    is concentrated on the right side. The mean is usually less than the
+    median and the mode.
+
+The magnitude of the skewness value also provides information about the
+degree of skewness:
+
+-   A skewness value close to **0 (between -0.5 and 0.5)** suggests a
+    relatively small deviation from a perfectly **symmetrical
+    distribution**.
+-   A skewness value between **-1 and -0.5 or between 0.5 and 1**
+    indicates a moderate skewness.
+-   A skewness value **less than -1 or greater than 1** represents a
+    substantial skewness and indicates a highly skewed distribution.
+
+It’s important to note that the interpretation of skewness should be
+considered in conjunction with other measures of central tendency (such
+as mean, median) and visual examination of the distribution (such as
+histograms or density plots) to have a comprehensive understanding of
+the data’s distributional characteristics.
+
 **Hands-on in R**
 
     library(e1071) # library
@@ -625,3 +665,6 @@ understanding of the data distribution.
     print(skewness_value)
 
     ## [1] 0.419996
+
+As skewness value is 0.42 suggests that data is symmtrically
+distributed.
