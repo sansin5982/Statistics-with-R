@@ -610,3 +610,18 @@ It’s important to note that skewness is just one measure of the shape of
 a distribution and should be interpreted in conjunction with other
 descriptive statistics and visualizations to gain a comprehensive
 understanding of the data distribution.
+
+**Hands-on in R**
+
+    library(e1071) # library
+
+    # Height data of 20 people
+    height <- c(165, 170, 168, 172, 175, 180, 169, 173, 168, 166, 172, 174, 177, 171, 170, 168, 165, 172, 174, 169)
+
+    # Calculate skewness
+    skewness_value <- skewness(height)
+
+    # Print the skewness value
+    print(skewness_value)
+
+    ## [1] 0.419996
