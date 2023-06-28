@@ -6,7 +6,7 @@ lead to inaccurate or misleading results because the sample may not
 accurately reflect the opinions, characteristics, or behaviors of the
 entire population.
 
-<img src="Bias.png" alt="Figure 2.1: Bias in statistics" width="50%" />
+<img src="IMAGE/Bias.png" alt="Figure 2.1: Bias in statistics" width="50%" />
 <p class="caption">
 Figure 2.1: Bias in statistics
 </p>
@@ -55,7 +55,7 @@ techniques, each with their own strengths and weaknesses, and the choice
 of sampling technique depends on the research question, the population
 of interest, and the available resources.
 
-<img src="Sampling Methods.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods" width="50%" />
+<img src="IMAGE/Sampling Methods.jpg" alt="Figure 2.2: Probability and Non-probability sampling methods" width="50%" />
 <p class="caption">
 Figure 2.2: Probability and Non-probability sampling methods
 </p>
@@ -73,7 +73,7 @@ techniques. Here are some examples of probability sampling techniques:
 selected randomly from the population, with each member of the
 population having an equal chance of being selected for the sample.
 
-<img src="Simple Random Sample.png" alt="Figure 2.3: Simple Random Sampling" width="50%" />
+<img src="IMAGE/Simple Random Sample.png" alt="Figure 2.3: Simple Random Sampling" width="50%" />
 <p class="caption">
 Figure 2.3: Simple Random Sampling
 </p>
@@ -83,7 +83,7 @@ divided into a list and a sample is selected at a fixed interval. For
 example, if a population has 1000 members and a sample of 100 is
 desired, every 10th member of the population would be selected.
 
-<img src="Systematic sampling.jpg" alt="Figure 2.4: Systematic Sampling" width="50%" />
+<img src="IMAGE/Systematic sampling.jpg" alt="Figure 2.4: Systematic Sampling" width="50%" />
 <p class="caption">
 Figure 2.4: Systematic Sampling
 </p>
@@ -93,7 +93,7 @@ divided into strata based on some characteristic of interest, and a
 random sample is selected from each stratum. Stratified sampling ensures
 that the sample is representative of each stratum in the population.
 
-<img src="stratified sampling.jpg" alt="Figure 2.5: Stratified Sampling" width="50%" />
+<img src="IMAGE/stratified sampling.jpg" alt="Figure 2.5: Stratified Sampling" width="50%" />
 <p class="caption">
 Figure 2.5: Stratified Sampling
 </p>
@@ -142,7 +142,7 @@ researcher wants to study college students, they might select a
 convenience sample of students who are available and willing to
 participate in the study.
 
-<img src="Convenience sampling.jpg" alt="Figure 2.8: Convenience Sampling" width="50%" />
+<img src="IMAGE/Convenience sampling.jpg" alt="Figure 2.8: Convenience Sampling" width="50%" />
 <p class="caption">
 Figure 2.8: Convenience Sampling
 </p>
