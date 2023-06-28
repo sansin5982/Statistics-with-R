@@ -86,7 +86,7 @@ population in order to make valid inferences. The process of selecting a
 representative sample is called **sampling**, and it is a crucial step
 in the research process.
 
-<img src="Sample vs population.png" alt="Figure 1.2: Sample vs Population"  />
+<img src="IMAGE/Sample vs population.png" alt="Figure 1.2: Sample vs Population"  />
 <p class="caption">
 Figure 1.2: Sample vs Population
 </p>
