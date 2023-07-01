@@ -98,7 +98,8 @@ categories and identifying the most common or least common ones.
     ## 11  7 14
 
     ggplot(mtcars, aes(x = factor(cyl))) +
-     geom_bar()
+      geom_bar()+
+      theme_classic()
 
 ![](Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-7-1.png)
 
