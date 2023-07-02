@@ -190,6 +190,12 @@ Figure 5.3: Stacked bar chart examining the proportion of gears based on
 cylinder
 </p>
 
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-7-1.png" alt="Figure 5.4: Stacked bar chart examining the count of gears based on cylinder"  />
+<p class="caption">
+Figure 5.4: Stacked bar chart examining the count of gears based on
+cylinder
+</p>
+
 ## Pie Chart
 
 A pie chart represents the composition of a whole in terms of its parts.
