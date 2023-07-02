@@ -4,11 +4,6 @@ Graphs play a crucial role in statistics as they help visualize data,
 identify patterns, and communicate insights effectively. Here are some
 commonly used graphs in statistics:
 
-    library(ggplot2) # for data visualization
-    library(MASS)
-    library(tidyr)
-    library(scales)
-
 ### Grammar of graphics
 
 -   2 principals
@@ -35,73 +30,139 @@ categories and identifying the most common or least common ones.
 -   We are using mtcars dataset
 -   Before doing visualization a basic exploration of data is must
 
-<!-- -->
+<table style="width:100%;">
+<caption>Table 1: The first 6 rows of mtcars dataset</caption>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+<col style="width: 7%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">mpg</th>
+<th style="text-align: right;">cyl</th>
+<th style="text-align: right;">disp</th>
+<th style="text-align: right;">hp</th>
+<th style="text-align: right;">drat</th>
+<th style="text-align: right;">wt</th>
+<th style="text-align: right;">qsec</th>
+<th style="text-align: right;">vs</th>
+<th style="text-align: right;">am</th>
+<th style="text-align: right;">gear</th>
+<th style="text-align: right;">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.620</td>
+<td style="text-align: right;">16.46</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.875</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">2.320</td>
+<td style="text-align: right;">18.61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.215</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.460</td>
+<td style="text-align: right;">20.22</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
 
-    head(mtcars) # first 6 observations
-
-    ##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-    ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-    ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-    ## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-    ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-    ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-    ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
-
-    str(mtcars) # structure of all variables
-
-    ## 'data.frame':    32 obs. of  11 variables:
-    ##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
-    ##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
-    ##  $ disp: num  160 160 108 258 360 ...
-    ##  $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
-    ##  $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
-    ##  $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
-    ##  $ qsec: num  16.5 17 18.6 19.4 17 ...
-    ##  $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
-    ##  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
-    ##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
-    ##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
-
--   Some columns are read as numeric, however, they are categorical.
-    Hence, we have to convert them into factors first
-
-<!-- -->
-
-    # # Convert 'vs' column to factor
-    # mtcars$vs <- factor(mtcars$vs)
-    # 
-    # # Convert 'am' column to factor
-    # mtcars$am <- factor(mtcars$am)
-    # 
-    # # Convert 'gear' column to factor
-    # mtcars$gear <- factor(mtcars$gear)
-
-    str(mtcars)
-
-    ## 'data.frame':    32 obs. of  11 variables:
-    ##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
-    ##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
-    ##  $ disp: num  160 160 108 258 360 ...
-    ##  $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
-    ##  $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
-    ##  $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
-    ##  $ qsec: num  16.5 17 18.6 19.4 17 ...
-    ##  $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
-    ##  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
-    ##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
-    ##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
-
-    table(mtcars$cyl)
+Table 1: The first 6 rows of mtcars dataset
 
     ## 
     ##  4  6  8 
     ## 11  7 14
 
-    ggplot(mtcars, aes(x = factor(cyl))) +
-      geom_bar()+
-      theme_classic()
+-   11 vehicles have 4 cylinders, 7 vehicles have 6 cylinders and 14
+    vehicles have 8 cylinders
 
-![](Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-4-1.png" alt="Figure 5.1: Bar chart representing total count of cylinders"  />
+<p class="caption">
+Figure 5.1: Bar chart representing total count of cylinders
+</p>
 
 ## Pie Chart
 
