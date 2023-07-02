@@ -196,14 +196,6 @@ Figure 5.4: Stacked bar chart examining the count of gears based on
 cylinder
 </p>
 
-## Pie Chart
-
-A pie chart represents the composition of a whole in terms of its parts.
-It is a circular graph where each slice (or sector) represents a
-category, and the angle of the slice corresponds to the proportion of
-that category. Pie charts are useful for displaying proportions and
-relative contributions of different categories.
-
 ## Histogram
 
 A histogram displays the distribution of continuous or discrete data. It
@@ -211,6 +203,11 @@ consists of bars where the height represents the frequency or proportion
 of data falling within each interval. Histograms help identify the shape
 (e.g., symmetric, skewed), central tendency, and variability of a
 dataset.
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-8-1.png" alt="Figure 5.5: Histogram to see the distribution of Age variable"  />
+<p class="caption">
+Figure 5.5: Histogram to see the distribution of Age variable
+</p>
 
 ## Frequency Polygon
 
@@ -241,4 +238,9 @@ analysis.
 A line chart displays the relationship between two continuous variables
 over time or any other ordered variable. It shows the trend, patterns,
 and changes in the data over a specific period. Line charts are commonly
-used in time series analysis and tracking variables over time.
+used in time series analysis and tracking variables over time. \## Pie
+Chart A pie chart represents the composition of a whole in terms of its
+parts. It is a circular graph where each slice (or sector) represents a
+category, and the angle of the slice corresponds to the proportion of
+that category. Pie charts are useful for displaying proportions and
+relative contributions of different categories.
