@@ -209,19 +209,51 @@ dataset.
 Figure 5.5: Histogram to see the distribution of Age variable
 </p>
 
-## Frequency Polygon
-
 ## Density plot
 
-## Stem and Leaf plot
+A density plot, also known as a kernel density plot, is a graphical
+representation of the probability density function (PDF) of a continuous
+random variable. It is used to visualize the distribution of data in a
+smooth and continuous manner. They are particularly useful when dealing
+with continuous variables or comparing distributions across different
+groups or conditions.
 
-## Box plot
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-9-1.png" alt="Figure 5.6: Density plot to see the distribution of Age variable"  />
+<p class="caption">
+Figure 5.6: Density plot to see the distribution of Age variable
+</p>
+
+## Frequency Polygon
+
+A frequency polygon is a graphical representation of the frequency
+distribution of a dataset. It is created by connecting the midpoints of
+the tops of the bars in a histogram or by plotting the frequencies at
+specific points along the x-axis. A frequency polygon is a graphical
+tool that represents the frequency distribution of a dataset using
+connected line segments, providing a visual depiction of the shape and
+pattern of the data distribution.
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-10-1.png" alt="Figure 5.7: Frequency polygon plot to see the distribution of Age variable"  />
+<p class="caption">
+Figure 5.7: Frequency polygon plot to see the distribution of Age
+variable
+</p>
+
+## Box and Whisker plot
 
 A box plot, also known as a box-and-whisker plot, provides a visual
 summary of the distribution of continuous data. It displays the median,
 quartiles, and outliers of the dataset. Box plots are useful for
 comparing distributions, identifying skewness, and detecting potential
-outliers.
+outliers. Box plot also provides 5 data points summary:
+
+-   Minimum
+-   Quartile 1 (25th percentile value)
+-   Quartile 2 (Median or 50th percentile value)
+-   Quartile 3 (75th percentile value)
+-   Maximum
+
+![](Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
 ## Scatter plot
 
