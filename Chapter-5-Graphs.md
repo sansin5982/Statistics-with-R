@@ -8,8 +8,10 @@ commonly used graphs in statistics:
 
 A bar chart displays the distribution of categorical or discrete data.
 It consists of bars, where the height represents the frequency or
-proportion of each category. Bar charts are useful for comparing
-categories and identifying the most common or least common ones.
+proportion of each category. Bar charts are are effective in presenting
+comparisons between different categories or data points. They are
+especially useful when working with discrete data or when showcasing
+data that doesn’t have a continuous range..
 
 -   We are using mtcars dataset
 -   Before doing visualization a basic exploration of data is must
@@ -147,6 +149,40 @@ Table 1: The first 6 rows of mtcars dataset
 <p class="caption">
 Figure 5.1: Bar chart representing total count of cylinders
 </p>
+
+## Grouped Bar Chart
+
+A grouped bar chart is a type of chart that visually represents and
+compares multiple categories or groups across different variables. It
+consists of rectangular bars that are grouped together, with each group
+representing a specific category or group, and the bars within each
+group representing different variables.Grouped bar charts are useful for
+visualizing and comparing data when you want to show the relationship
+between multiple variables across different categories or groups. They
+are particularly effective in displaying data that has distinct
+categories and discrete values.
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-5-1.png" alt="Figure 5.2: Grouped bar chart examining the difference in cylinder based on transmission"  />
+<p class="caption">
+Figure 5.2: Grouped bar chart examining the difference in cylinder based
+on transmission
+</p>
+
+## Stacked Bar Chart
+
+A stacked bar chart, also known as a stacked bar graph, is a type of
+chart that represents multiple categories or data points as a series of
+horizontal bars stacked on top of each other. It visually shows the
+composition of each category by dividing each bar into segments that
+represent different subcategories or components.
+
+Stacked bar charts are useful for visualizing the composition or
+distribution of data within different categories. They allow you to
+easily compare the relative contributions of different subcategories or
+components to the overall total. Stacked bar charts are particularly
+effective in showing the relationship between parts and the whole, and
+they can be used to analyze data in various fields such as sales, market
+share, and demographic distributions.
 
 ## Pie Chart
 
