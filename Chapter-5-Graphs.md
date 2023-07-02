@@ -4,22 +4,6 @@ Graphs play a crucial role in statistics as they help visualize data,
 identify patterns, and communicate insights effectively. Here are some
 commonly used graphs in statistics:
 
-### Grammar of graphics
-
--   2 principals
-    -   Graphics = distinct layers of grammatical elements
-    -   Meaningful plots through aesthetic mappings
-
-### Essential grammatical elements
-
--   Data The dataset being plotted
--   Aesthetics The scales onto which we map our data
--   Geometries The visual elements used for our data
--   Facets Plotting small multiples
--   Statistics Representation of our data to aid understanding
--   Coordinates The space on which data will be plotted
--   Themes All non-data ink
-
 ## Bar Chart
 
 A bar chart displays the distribution of categorical or discrete data.
