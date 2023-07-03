@@ -286,6 +286,78 @@ over time or any other ordered variable. It shows the trend, patterns,
 and changes in the data over a specific period. Line charts are commonly
 used in time series analysis and tracking variables over time.
 
+<table>
+<caption>Table 2: The first 6 rows of gapminder dataset</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: left;">continent</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: right;">lifeExp</th>
+<th style="text-align: right;">pop</th>
+<th style="text-align: right;">gdpPercap</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">1952</td>
+<td style="text-align: right;">28.801</td>
+<td style="text-align: right;">8425333</td>
+<td style="text-align: right;">779.4453</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">1957</td>
+<td style="text-align: right;">30.332</td>
+<td style="text-align: right;">9240934</td>
+<td style="text-align: right;">820.8530</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">1962</td>
+<td style="text-align: right;">31.997</td>
+<td style="text-align: right;">10267083</td>
+<td style="text-align: right;">853.1007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">1967</td>
+<td style="text-align: right;">34.020</td>
+<td style="text-align: right;">11537966</td>
+<td style="text-align: right;">836.1971</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">1972</td>
+<td style="text-align: right;">36.088</td>
+<td style="text-align: right;">13079460</td>
+<td style="text-align: right;">739.9811</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">1977</td>
+<td style="text-align: right;">38.438</td>
+<td style="text-align: right;">14880372</td>
+<td style="text-align: right;">786.1134</td>
+</tr>
+</tbody>
+</table>
+
+Table 2: The first 6 rows of gapminder dataset
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-15-1.png" alt="Figure 5.11: Line chart showing the trend in GDP per capita in India from 1952 till 2007"  />
+<p class="caption">
+Figure 5.11: Line chart showing the trend in GDP per capita in India
+from 1952 till 2007
+</p>
+
 ## Pie Chart
 
 A pie chart represents the composition of a whole in terms of its parts.
