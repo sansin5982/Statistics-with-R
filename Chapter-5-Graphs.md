@@ -253,7 +253,11 @@ outliers. Box plot also provides 5 data points summary:
 -   Quartile 3 (75th percentile value)
 -   Maximum
 
-![](Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-11-1.png)
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-11-1.png" alt="Figure 5.8: Box and Whisker plot to see the distribution of miles per gallon variable"  />
+<p class="caption">
+Figure 5.8: Box and Whisker plot to see the distribution of miles per
+gallon variable
+</p>
 
 ## Scatter plot
 
@@ -263,16 +267,29 @@ identification of patterns, trends, and the strength of the association
 between the variables. Scatter plots are commonly used in correlation
 analysis.
 
-## Bubble plot
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-12-1.png" alt="Figure 5.9: Scatter plot to see the relationship between miles per gallon and weight column"  />
+<p class="caption">
+Figure 5.9: Scatter plot to see the relationship between miles per
+gallon and weight column
+</p>
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-13-1.png" alt="Figure 5.10: Scatter plot to see the relationship between horse power and weight"  />
+<p class="caption">
+Figure 5.10: Scatter plot to see the relationship between horse power
+and weight
+</p>
 
 ## Line Chart
 
 A line chart displays the relationship between two continuous variables
 over time or any other ordered variable. It shows the trend, patterns,
 and changes in the data over a specific period. Line charts are commonly
-used in time series analysis and tracking variables over time. \## Pie
-Chart A pie chart represents the composition of a whole in terms of its
-parts. It is a circular graph where each slice (or sector) represents a
+used in time series analysis and tracking variables over time.
+
+## Pie Chart
+
+A pie chart represents the composition of a whole in terms of its parts.
+It is a circular graph where each slice (or sector) represents a
 category, and the angle of the slice corresponds to the proportion of
 that category. Pie charts are useful for displaying proportions and
 relative contributions of different categories.
