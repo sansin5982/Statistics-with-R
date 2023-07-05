@@ -209,6 +209,14 @@ dataset.
 Figure 5.5: Histogram to see the distribution of Age variable
 </p>
 
+-   Histograms can also be used to compare categorical variables using
+    continuous data.
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-9-1.png" alt="5.6: Histogram comparing age distribution between males and females"  />
+<p class="caption">
+5.6: Histogram comparing age distribution between males and females
+</p>
+
 ## Density plot
 
 A density plot, also known as a kernel density plot, is a graphical
@@ -218,9 +226,9 @@ smooth and continuous manner. They are particularly useful when dealing
 with continuous variables or comparing distributions across different
 groups or conditions.
 
-<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-9-1.png" alt="Figure 5.6: Density plot to see the distribution of Age variable"  />
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-10-1.png" alt="Figure 5.7: Density plot to see the distribution of Age variable"  />
 <p class="caption">
-Figure 5.6: Density plot to see the distribution of Age variable
+Figure 5.7: Density plot to see the distribution of Age variable
 </p>
 
 ## Frequency Polygon
@@ -233,9 +241,9 @@ tool that represents the frequency distribution of a dataset using
 connected line segments, providing a visual depiction of the shape and
 pattern of the data distribution.
 
-<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-10-1.png" alt="Figure 5.7: Frequency polygon plot to see the distribution of Age variable"  />
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-11-1.png" alt="Figure 5.8: Frequency polygon plot to see the distribution of Age variable"  />
 <p class="caption">
-Figure 5.7: Frequency polygon plot to see the distribution of Age
+Figure 5.8: Frequency polygon plot to see the distribution of Age
 variable
 </p>
 
@@ -253,38 +261,11 @@ outliers. Box plot also provides 5 data points summary:
 -   Quartile 3 (75th percentile value)
 -   Maximum
 
-<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-11-1.png" alt="Figure 5.8: Box and Whisker plot to see the distribution of miles per gallon variable"  />
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-12-1.png" alt="Figure 5.9: Box and Whisker plot to see the distribution of miles per gallon variable"  />
 <p class="caption">
-Figure 5.8: Box and Whisker plot to see the distribution of miles per
+Figure 5.9: Box and Whisker plot to see the distribution of miles per
 gallon variable
 </p>
-
-## Scatter plot
-
-A scatter plot shows the relationship between two continuous variables.
-Each data point is represented as a point on the graph, allowing for the
-identification of patterns, trends, and the strength of the association
-between the variables. Scatter plots are commonly used in correlation
-analysis.
-
-<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-12-1.png" alt="Figure 5.9: Scatter plot to see the relationship between miles per gallon and weight column"  />
-<p class="caption">
-Figure 5.9: Scatter plot to see the relationship between miles per
-gallon and weight column
-</p>
-
-<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-13-1.png" alt="Figure 5.10: Scatter plot to see the relationship between horse power and weight"  />
-<p class="caption">
-Figure 5.10: Scatter plot to see the relationship between horse power
-and weight
-</p>
-
-## Line Chart
-
-A line chart displays the relationship between two continuous variables
-over time or any other ordered variable. It shows the trend, patterns,
-and changes in the data over a specific period. Line charts are commonly
-used in time series analysis and tracking variables over time.
 
 <table>
 <caption>Table 2: The first 6 rows of gapminder dataset</caption>
@@ -352,9 +333,50 @@ used in time series analysis and tracking variables over time.
 
 Table 2: The first 6 rows of gapminder dataset
 
-<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-15-1.png" alt="Figure 5.11: Line chart showing the trend in GDP per capita in India from 1952 till 2007"  />
+-   Box plot can also be used to compare multiple categories and a good
+    visualization for T test and ANOVA analysis
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-14-1.png" alt="5.10: Box plot used to compare continents based on life expectancy"  />
 <p class="caption">
-Figure 5.11: Line chart showing the trend in GDP per capita in India
+5.10: Box plot used to compare continents based on life expectancy
+</p>
+
+## Scatter plot
+
+A scatter plot shows the relationship between two continuous variables.
+Each data point is represented as a point on the graph, allowing for the
+identification of patterns, trends, and the strength of the association
+between the variables. Scatter plots are commonly used in correlation
+analysis.
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-15-1.png" alt="Figure 5.11: Scatter plot to see the relationship between miles per gallon and weight column"  />
+<p class="caption">
+Figure 5.11: Scatter plot to see the relationship between miles per
+gallon and weight column
+</p>
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-16-1.png" alt="Figure 5.12: Scatter plot to see the relationship between horse power and weight"  />
+<p class="caption">
+Figure 5.12: Scatter plot to see the relationship between horse power
+and weight
+</p>
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-17-1.png" alt="5.13 Scatter plot to see the relationship between GDP per capita and Life Expectancy in 2007 by continent"  />
+<p class="caption">
+5.13 Scatter plot to see the relationship between GDP per capita and
+Life Expectancy in 2007 by continent
+</p>
+
+## Line Chart
+
+A line chart displays the relationship between two continuous variables
+over time or any other ordered variable. It shows the trend, patterns,
+and changes in the data over a specific period. Line charts are commonly
+used in time series analysis and tracking variables over time.
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-18-1.png" alt="Figure 5.14: Line chart showing the trend in GDP per capita in India from 1952 till 2007"  />
+<p class="caption">
+Figure 5.14: Line chart showing the trend in GDP per capita in India
 from 1952 till 2007
 </p>
 
