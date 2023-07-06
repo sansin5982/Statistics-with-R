@@ -380,6 +380,12 @@ Figure 5.14: Line chart showing the trend in GDP per capita in India
 from 1952 till 2007
 </p>
 
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-19-1.png" alt="Figure 5.15: Line chart comparing the trend in GDP per capita between Austrailia and New Zeland from 1952 till 2007"  />
+<p class="caption">
+Figure 5.15: Line chart comparing the trend in GDP per capita between
+Austrailia and New Zeland from 1952 till 2007
+</p>
+
 ## Pie Chart
 
 A pie chart represents the composition of a whole in terms of its parts.
@@ -387,3 +393,8 @@ It is a circular graph where each slice (or sector) represents a
 category, and the angle of the slice corresponds to the proportion of
 that category. Pie charts are useful for displaying proportions and
 relative contributions of different categories.
+
+<img src="Chapter-5-Graphs_files/figure-markdown_strict/unnamed-chunk-21-1.png" alt="Figure 5.16: Pie chart showing the distribution of number of gears"  />
+<p class="caption">
+Figure 5.16: Pie chart showing the distribution of number of gears
+</p>
