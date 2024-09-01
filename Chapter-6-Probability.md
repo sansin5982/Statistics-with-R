@@ -25,7 +25,7 @@ states that as the number of trials or observations increases, the
 average of the results obtained from these trials will converge to the
 expected value.
 
-<img src="IMAGE/10_coin_flip.jpg" alt="Figure 6.1: 10 coin flips"  />
+<img src="IMAGE/10_coin_flip.jpg" alt="Figure 6.1: 10 coin flips" width="50%" />
 <p class="caption">
 Figure 6.1: 10 coin flips
 </p>
