@@ -23,11 +23,11 @@ $$\huge P(A) = \frac{m}{n}$$
 The Law of Large Numbers is a fundamental concept in probability that
 states that as the number of trials or observations increases, the
 average of the results obtained from these trials will converge to the
-expected value. <br> Imagine flipping a fair coin multiple times. The
-expected probability of getting heads is 0.5. According to the Law of
-Large Numbers, as you flip the coin more and more times, the proportion
-of heads (or tails) should get closer and closer to 0.5. <br> <br> Let’s
-start with 10 flips of a coin.
+expected value. <br> <br> Imagine flipping a fair coin multiple times.
+The expected probability of getting heads is 0.5. According to the Law
+of Large Numbers, as you flip the coin more and more times, the
+proportion of heads (or tails) should get closer and closer to 0.5. <br>
+<br> Let’s start with 10 flips of a coin.
 
 <img src="IMAGE/10_coin_flip.jpg" alt="Figure 6.1: 10 coin flips" width="50%" />
 <p class="caption">
@@ -45,4 +45,13 @@ Figure 6.2: 50 coin flips
 </p>
 
 Here is the bar chart illustrating the result of 50 coin flips, where
-the proportions are closer to the expected 0.5.
+the proportions are closer to the expected 0.5. <br> <br> Now 1000 flips
+of a coin.
+
+<img src="IMAGE/1000_coin_flips.webp" alt="Figure 6.3: 1000 coin flips" width="50%" />
+<p class="caption">
+Figure 6.3: 1000 coin flips
+</p>
+
+Here is the bar chart illustrating the result of 1000 coin flips,
+showing how the proportions of heads and tails converge closely to 0.5.
