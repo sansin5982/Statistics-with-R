@@ -15,3 +15,17 @@ A:
 The probability of event A is given by:
 
 $$\huge P(A) = \frac{m}{n}$$
+
+-   P(A) = Probability of event A
+
+## Law of large numbers
+
+The Law of Large Numbers is a fundamental concept in probability that
+states that as the number of trials or observations increases, the
+average of the results obtained from these trials will converge to the
+expected value.
+
+<img src="IMAGE/10_coin_flip.webp" alt="Figure 6.1: 10 coin flips"  />
+<p class="caption">
+Figure 6.1: 10 coin flips
+</p>
