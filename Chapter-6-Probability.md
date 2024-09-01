@@ -14,4 +14,4 @@ A:
 
 The probability of event A is given by:
 
-$$\huge P(A) = \frac{m}{n}$.
+$$\huge P(A) = \frac{m}{n}$$
