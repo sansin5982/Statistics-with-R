@@ -55,3 +55,19 @@ Figure 6.3: 1000 coin flips
 
 Here is the bar chart illustrating the result of 1000 coin flips,
 showing how the proportions of heads and tails converge closely to 0.5.
+
+## Important concepts used in probability
+
+### Event
+
+### Complement
+
+### Sample space
+
+### Disjoint event
+
+### Non-Disjoint event
+
+### Indepenet
+
+### Dependent
