@@ -2,5 +2,5 @@
 
 Chapters:
 
--   [Genetic Code](chapters/Genetic-Code)
--   [Cis-Regulatory Elements](chapters/Cis-Regulatory-Elements)
+-   [Introduction](chapters/Introduction)
+-   [Sampling Techniques](chapters/Sampling%20Techniques)
