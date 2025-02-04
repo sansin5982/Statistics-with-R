@@ -22,8 +22,13 @@ analyzing data and making informed decisions based on that information.
 It is an essential tool for anyone working with data, and is widely used
 in many different fields.
 
-![Figure 1.1: Different styles of plots in statistical
-analysis](Chapter-1-Introduction_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+<figure>
+<img
+src="Chapter-1-Introduction_files/figure-markdown_strict/unnamed-chunk-2-1.png"
+alt="Figure 1.1: Different styles of plots in statistical analysis" />
+<figcaption aria-hidden="true">Figure 1.1: Different styles of plots in
+statistical analysis</figcaption>
+</figure>
 
 ## Descriptive and Inferential Statistics
 
@@ -86,7 +91,7 @@ population in order to make valid inferences. The process of selecting a
 representative sample is called **sampling**, and it is a crucial step
 in the research process.
 
-<img src="IMAGE/Sample vs population.png" alt="Figure 1.2: Sample vs Population"  />
+<img src="IMAGE/Sample vs population.png" alt="Figure 1.2: Sample vs Population" width="565" />
 <p class="caption">
 Figure 1.2: Sample vs Population
 </p>
