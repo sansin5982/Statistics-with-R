@@ -1,4 +1,4 @@
-# Data
+# Data Types
 
 Data in statistics refers to any set of observations or measurements
 that are collected from a particular population or sample. This can
@@ -26,7 +26,7 @@ or take on different values among individuals, objects, or events in a
 population or sample.Some examples are age, blood pressure, heart rate,
 height, gender etc.
 
-# Data Types
+## Data Types
 
 Qualitative data and quantitative data are two types of data used in
 research, analysis, and statistics.

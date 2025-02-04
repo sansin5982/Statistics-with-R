@@ -1,4 +1,4 @@
-# Bias
+# Sampling Techniques
 
 Bias in sample selection occurs when the sample chosen for a study or
 survey is not representative of the population being studied. This can
