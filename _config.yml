@@ -1,0 +1,9 @@
+theme: jekyll-theme-cayman
+
+# Navigation (Optional)
+title: "Statistics with R"
+description: "Fundamentals of Statistics with R."
+
+# Enable navigation links
+include:
+  - chapters/
