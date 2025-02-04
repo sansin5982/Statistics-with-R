@@ -3,4 +3,5 @@
 Chapters:
 
 -   [Introduction](chapters/Introduction)
--   [Sampling Techniques](chapters/Sampling%20Techniques)
+-   [Sampling Techniques](chapters/Sampling-Techniques)
+-   [Data Types](chapters/Data-Types)
