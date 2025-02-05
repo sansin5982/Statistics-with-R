@@ -89,7 +89,7 @@ to largest number. - To calculate median value for odd number of
 observation, we have to identify middle location. - Observation located
 at middle location is will be considered as median value.
 
-$$\huge \frac{n + 1}{2} observation$$
+$$\large observations = \frac{n + 1}{2} $$
  - n = Number of observations
 
 Example: Find the median of the set {5, 1, 3, 7, 9}.
@@ -107,7 +107,7 @@ of observation, we have to identify middle location, here two middle
 locations. - Then, we take the average of both values located at the
 middle.
 
-$$\huge average\left(\frac{n}{2}, \frac{n}{2}+{1}\right) observations$$
+$$\large observations =  average\left(\frac{n}{2}, \frac{n}{2}+{1}\right) $$
  - n = Number of observations
 
 Example: Find the median of the set {5, 1, 3, 7, 9, 11}.
@@ -206,7 +206,7 @@ values in a dataset. It provides a simple measure of the spread or
 variability of the data. To calculate the range, you subtract the
 minimum value from the maximum value.
 
-$$\huge Range = Maximum - Minimum$$
+$$\large Range = Maximum - Minimum$$
 
 Here’s an example to illustrate the concept of range:
 
@@ -264,11 +264,11 @@ To calculate the quartiles, you typically arrange the dataset in
 ascending order and identify the values that divide it into four equal
 parts. The formula to calculate the position of each quartile is:
 
-$$\huge Q1 = \frac{n + 1}{4}$$
+$$\large Q1 = \frac{n + 1}{4}$$
 
-$$\huge Q2 = 2 \* \frac{n + 1}{4}$$
+$$\large Q2 = 2 \* (\frac{n + 1}{4})$$
 
-$$\huge Q3 = 3 \* \frac{n + 1}{4}$$
+$$\large Q3 = 3 \* (\frac{n + 1}{4})$$
 
 where n is the total number of observations in the dataset.
 
@@ -334,7 +334,7 @@ Here are some additional things to keep in mind about variance:
 
 **Sample variance**
 
-$$\huge s^2 = \frac{1}{n-1} \sum\_{i=1}^{n} (x\_i - \bar{x})^2$$
+$$\large s^2 = \frac{1}{n-1} \sum\_{i=1}^{n} (x\_{\scriptstyle i} - \bar{x})^2$$
 
 Where:
 
@@ -344,7 +344,7 @@ Where:
 -   *x̄* is the sample mean.
 
 **Population variance**
-$$\huge \sigma^2 = \frac{1}{N} \sum\_{i=1}^{n} (x\_i - \mu)^2$$
+$$\large \sigma^2 = \frac{1}{N} \sum\_{i=1}^{n} (x\_{\scriptstyle i} - \mu)^2$$
 
 Where:
 
@@ -475,13 +475,13 @@ The standard deviation is calculated by taking the square root of the
 variance. Here’s the formula for calculating the standard deviation:
 
 **Standard deviation for sample**
-$$\huge s = \sqrt{\frac{1}{n-1} \sum\_{i=1}^{n} (x\_i - \bar{x})^2}$$
+$$\large s = \sqrt{\frac{1}{n-1} \sum\_{i=1}^{n} (x\_i - \bar{x})^2}$$
 
-$$\huge s = \sqrt{({s})^2}$$
+$$\large s = \sqrt{({s})^2}$$
 
 **Standard deviation for population**
-$$\huge \sigma = \sqrt{\frac{1}{N} \sum\_{i=1}^{n} (x\_i - \mu)^2}$$
-$$\huge \sigma = \sqrt{\sigma^2}$$
+$$\large \sigma = \sqrt{\frac{1}{N} \sum\_{i=1}^{n} (x\_i - \mu)^2}$$
+$$\large \sigma = \sqrt{\sigma^2}$$
 **Standard deviation calculation**
 $$\large s = \sqrt{({s})^2}$$
 $$\large s = \sqrt{9.33}$$
