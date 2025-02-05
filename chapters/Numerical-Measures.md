@@ -26,7 +26,8 @@ tendency are:
 -   However, the **mean can be influenced by outliers and extreme
     values**, which can skew the results.
 
-**Sample mean calculation**
+\*\*Sample mean calculation
+
 $$\large\overline{x}=\frac{1}{n}\sum\_\\xi$$
 
 -   ∑ = Summation (Adding all observations)
