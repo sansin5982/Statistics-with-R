@@ -34,7 +34,7 @@ $$ \large \overline{x} = \frac{1}{n} \sum\\x{\scriptstyle i} $$
 -   ∑ = Summation (Adding all observations)
 -   n = Number of observations
 -   xi = Individual observation
--   $\overline{x}$ = sample mean
+-   *x̄* = sample mean
 
 **Population mean calculation**
 
