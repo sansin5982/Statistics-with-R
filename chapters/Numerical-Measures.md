@@ -334,7 +334,7 @@ Here are some additional things to keep in mind about variance:
 
 **Sample variance**
 
-$$\displaystyle s^2 = \frac{1}{n-1} \sum\_{i=1}^{n} (x{\scriptstyle i} - \bar{x})^2$$
+$$\large s^2 = \frac{1}{n-1} \sum\limits\_{i=1}^{n} (x{\scriptstyle i} - \bar{x})^2$$
 
 Where:
 
@@ -344,7 +344,8 @@ Where:
 -   *x̄* is the sample mean.
 
 **Population variance**
-$$\large \sigma^2 = \frac{1}{N} \sum\_{i=1}^{n} (x{\scriptstyle i} - \mu)^2$$
+
+$$\large \sigma^2 = \frac{1}{N} \\sum\limits\_{i=1}^{n} (x{\scriptstyle i} - \mu)^2$$
 
 Where:
 
