@@ -38,7 +38,7 @@ $$ \large \overline{x} = \frac{1}{n} \sum\\x\_{i} $$
 
 **Population mean calculation**
 
-$$\huge\mu=\frac{1}{N}\sum\\x\_{i}$$
+$$\large\mu=\frac{1}{N}\sum\\x\_{i}$$
 
 -   ∑ = Summation (Adding all observations)
 -   n = Number of observations
