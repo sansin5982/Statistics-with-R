@@ -27,7 +27,7 @@ tendency are:
     values**, which can skew the results.
 
 **Sample mean calculation**
-$$\huge\overline{x}=\frac{1}{n}\sum\_\\xi$$
+$$\large\overline{x}=\frac{1}{n}\sum\_\\xi$$
 
 -   ∑ = Summation (Adding all observations)
 -   n = Number of observations
