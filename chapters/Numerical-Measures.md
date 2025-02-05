@@ -28,7 +28,7 @@ tendency are:
 
 **Sample mean calculation**
 
-$$\large\overline{x}=\frac{1}{n}\sum\_\\xi$$
+$$ \large \overline{x} = \frac{1}{n} \sum\_{i=1}^{n} x\_i $$
 
 -   ∑ = Summation (Adding all observations)
 -   n = Number of observations
