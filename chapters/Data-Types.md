@@ -1,5 +1,7 @@
 # Data Types
 
+## Data
+
 Data in statistics refers to any set of observations or measurements
 that are collected from a particular population or sample. This can
 include numerical data, such as measurements of height, weight, or
@@ -123,7 +125,7 @@ through a particular intersection in an hour, the temperature of a room
 at a given time, or the number of people who purchase a particular
 product in a day.
 
-# Grouped Data: Frequency Distribution
+## Grouped Data: Frequency Distribution
 
 Frequency distribution is a statistical technique used to organize and
 summarize data in a clear and concise manner. It involves counting the
@@ -146,7 +148,7 @@ charts and graphs, such as histograms, bar charts, and pie charts. These
 visual representations can help to highlight patterns and trends in the
 data and make it easier to understand and interpret.
 
-## Relative frequency
+### Relative frequency
 
 Relative frequency is the proportion or percentage of times that a
 particular value or category appears in the data. It is calculated by
@@ -155,7 +157,7 @@ observations in the dataset. The result is expressed as a decimal or
 percentage. Relative frequency helps to compare the occurrence of
 different values or categories in the data.
 
-## Cumulative frequency
+### Cumulative frequency
 
 Cumulative frequency is the frequency of all values up to a particular
 value or category. It is calculated by adding up the frequencies of each

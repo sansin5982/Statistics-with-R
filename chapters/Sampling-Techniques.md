@@ -1,5 +1,7 @@
 # Sampling Techniques
 
+## Bias
+
 Bias in sample selection occurs when the sample chosen for a study or
 survey is not representative of the population being studied. This can
 lead to inaccurate or misleading results because the sample may not
@@ -46,7 +48,7 @@ studied, such as probability sampling techniques. It is also important
 to use valid and reliable measurement tools and techniques, and to
 analyze the data using appropriate statistical methods.
 
-# Sampling Techniques
+## Sampling Techniques
 
 Sampling techniques are methods used to select a representative subset
 of a population for study or analysis. There are several sampling
@@ -59,7 +61,7 @@ of interest, and the available resources.
 Figure 2.2: Probability and Non-probability sampling methods
 </p>
 
-## Probability Sampling Techniques
+### Probability Sampling Techniques
 
 Probability sampling techniques are methods of selecting a sample from a
 population that use random selection, **ensuring that every member of
@@ -125,7 +127,7 @@ complex and time-consuming than non-probability sampling techniques, and
 may require larger sample sizes to achieve the desired level of
 precision.
 
-## Non-probability Sampling Techniques
+### Non-probability Sampling Techniques
 
 Non-probability sampling techniques are methods of selecting a sample
 from a population that do not use random selection, and do not ensure
