@@ -347,7 +347,7 @@ Where:
 
 **Population variance**
 
-$$\large \sigma^2 = \frac{1}{N} \underset{i=1}{\sum}^{n}  (x{\scriptstyle i} - \mu)^2$$
+$$\large \sigma^2 = \frac{1}{N} \underset{i=1}{\sum}^{N}  (x{\scriptstyle i} - \mu)^2$$
 
 Where:
 
@@ -395,64 +395,67 @@ Data = (6, 9, 14, 10, 5, 8, 11)
 </colgroup>
 <thead>
 <tr class="header">
-<th>Data</th>
-<th>Deviation from mean <span
+<th style="text-align: left;">Data</th>
+<th style="text-align: left;">Deviation from mean <span
 class="math inline">(<em>x</em><sub><em>i</em></sub> − <em>x̄</em>)</span></th>
-<th>Squared deviation from mean <span
+<th style="text-align: left;">Squared deviation from mean <span
 class="math inline">(<em>x</em><sub><em>i</em></sub> − <em>x̄</em>)<sup>2</sup></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>6</td>
-<td>-3</td>
-<td>9</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">-3</td>
+<td style="text-align: left;">9</td>
 </tr>
 <tr class="even">
-<td>9</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
 </tr>
 <tr class="odd">
-<td>14</td>
-<td>5</td>
-<td>25</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">25</td>
 </tr>
 <tr class="even">
-<td>10</td>
-<td>1</td>
-<td>1</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td>5</td>
-<td>-4</td>
-<td>16</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">-4</td>
+<td style="text-align: left;">16</td>
 </tr>
 <tr class="even">
-<td>8</td>
-<td>-1</td>
-<td>1</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td>11</td>
-<td>2</td>
-<td>4</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
 </tr>
 <tr class="even">
-<td><span class="math inline"><em>x̄</em></span> = 9</td>
-<td><span
+<td style="text-align: left;"><span
+class="math inline"><em>x̄</em></span> = 9</td>
+<td style="text-align: left;"><span
 class="math inline">∑<sub> </sub>(<em>x</em><sub><em>i</em></sub> − <em>x̄</em>)</span>
 = 0</td>
-<td><span
+<td style="text-align: left;"><span
 class="math inline">∑<sub> </sub>(<em>x</em><sub><em>i</em></sub> − <em>x̄</em>)<sup>2</sup></span>
 = 56</td>
 </tr>
 </tbody>
 </table>
 
-$$\large s^2 = \frac{1}{n-1} \sum\_{i=1}^{n} (x\_i - \bar{x})^2$$
+$$
+\large s^2 = \frac{1}{n-1} \underset{i=1}{\sum}^{n} (x{\scriptstyle i} - \bar{x})^2
+$$
 
-$$\large s^2 = \frac{1}{7-1} \sum\_{i=1}^{n} 56$$
+$$\large s^2 = \frac{1}{7-1} \underset{i=1}{\sum}^{n} 56$$
 
 $$\large s^2 = \frac{56}{6}$$
 
@@ -478,16 +481,22 @@ The standard deviation is calculated by taking the square root of the
 variance. Here’s the formula for calculating the standard deviation:
 
 **Standard deviation for sample**
-$$\large s = \sqrt{\frac{1}{n-1} \sum\_{i=1}^{n} (x\_i - \bar{x})^2}$$
+
+$$\large s = \sqrt{\frac{1}{n-1} \underset{i=1}{\sum}^{n} (x{\scriptstyle i} - \bar{x})^2}$$
 
 $$\large s = \sqrt{({s})^2}$$
 
 **Standard deviation for population**
-$$\large \sigma = \sqrt{\frac{1}{N} \sum\_{i=1}^{n} (x\_i - \mu)^2}$$
+
+$$\large \sigma = \sqrt{\frac{1}{N} \underset{i=1}{\sum}^{N} (x{\scriptstyle i} - \mu)^2}$$
+
 $$\large \sigma = \sqrt{\sigma^2}$$
 **Standard deviation calculation**
+
 $$\large s = \sqrt{({s})^2}$$
+
 $$\large s = \sqrt{9.33}$$
+
 $$\large s = 3.055$$
 
 **Hand-on in R**
@@ -503,7 +512,7 @@ assess the relative variability of a dataset. It is expressed as a
 percentage and is calculated as the ratio of the standard deviation (SD)
 to the mean (μ), multiplied by 100:
 
-$$\huge CV = \frac{\sigma}{\mu} \* 100$$
+$$\large CV = \frac{\sigma}{\mu} \times 100$$
 
 The coefficient of variation is commonly used in situations where you
 want to compare the variability of two or more datasets that have
@@ -617,7 +626,7 @@ used formula is based on the third standardized moment. Here’s the
 **Pearson’s second skewness coefficient (median skewness)** formula to
 calculate skewness for a data set:
 
-$$\huge Skewness = \frac{3 \* (Mean - Median)}{Standard Deviation}$$
+$$\large Skewness = \frac{3 \times (Mean - Median)}{Standard Deviation}$$
 It is a simple multiple of the nonparametric skew.
 
 Here’s the **Pearson’s second skewness coefficient (median skewness)**
