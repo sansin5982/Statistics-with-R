@@ -266,9 +266,9 @@ parts. The formula to calculate the position of each quartile is:
 
 $$\large Q1 = \frac{n + 1}{4}$$
 
-$$\large Q2 = 2 \* (\frac{n + 1}{4})$$
+$$\large Q2 = 2 \times (\frac{n + 1}{4})$$
 
-$$\large Q3 = 3 \* (\frac{n + 1}{4})$$
+$$\large Q3 = 3 \times (\frac{n + 1}{4})$$
 
 where n is the total number of observations in the dataset.
 
@@ -334,7 +334,9 @@ Here are some additional things to keep in mind about variance:
 
 **Sample variance**
 
-$$\large s^2 = \frac{1}{n-1} \sum\limits\_{i=1}^{n} (x{\scriptstyle i} - \bar{x})^2$$
+$$
+\large s^2 = \frac{1}{n-1} \underset{i=1}{\sum}^{n} (x{\scriptstyle i} - \bar{x})^2
+$$
 
 Where:
 
@@ -345,7 +347,7 @@ Where:
 
 **Population variance**
 
-$$\large \sigma^2 = \frac{1}{N} \\sum\limits\_{i=1}^{n} (x{\scriptstyle i} - \mu)^2$$
+$$\large \sigma^2 = \frac{1}{N} \underset{i=1}{\sum}^{n}  (x{\scriptstyle i} - \mu)^2$$
 
 Where:
 
@@ -683,3 +685,5 @@ the data’s distributional characteristics.
 
 As skewness value is 0.42 suggests that data is symmtrically
 distributed.
+
+[⬅ Back to Home](../index.md)
