@@ -635,10 +635,8 @@ used formula is based on the third standardized moment. Here’s the
 calculate skewness for a data set:
 
 $$\large Skewness = \frac{3 \times (Mean - Median)}{Standard Deviation}$$
-It is a simple multiple of the nonparametric skew.
 
-Here’s the **Pearson’s second skewness coefficient (median skewness)**
-formula to calculate skewness for a dataset:
+It is a simple multiple of the nonparametric skew.
 
 It’s important to note that skewness is just one measure of the shape of
 a distribution and should be interpreted in conjunction with other
