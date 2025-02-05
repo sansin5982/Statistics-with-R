@@ -29,7 +29,7 @@ tendency are:
 
 **Sample mean calculation**
 
-$$ \large \overline{x} = \frac{1}{n} \sum\\x\_{i} $$
+$$ \large \overline{x} = \frac{1}{n} \sum\\x\_{\scriptstyle i} $$
 
 -   ∑ = Summation (Adding all observations)
 -   n = Number of observations
@@ -38,7 +38,7 @@ $$ \large \overline{x} = \frac{1}{n} \sum\\x\_{i} $$
 
 **Population mean calculation**
 
-$$\large\mu=\frac{1}{N}\sum\\x\_{i}$$
+$$ \large \mu = \frac{1}{N} \sum\\x\_{i} $$
 
 -   ∑ = Summation (Adding all observations)
 -   n = Number of observations
