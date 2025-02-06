@@ -482,7 +482,7 @@ $$
 -   The degrees of freedom (df) for Pearson correlation significance
     testing is calculated using the formula:
 
-*d**f* = *n* − 2
+-   df = n - 2
 
 where: \* n is the \*number of observations in the dataset.
 
@@ -495,7 +495,7 @@ where: \* n is the \*number of observations in the dataset.
 
 Using a **t-distribution table for 8 degrees of freedom** at *α* = 0.05:
 
-*t*<sub>*c**r**i**t*</sub> = 2.306
+*t*<sub>*c**r**i**t**i**c**a**l*</sub> = 2.306
 
 Since *t* = 13.94 &gt; 2.306, we **reject** *H*<sub>0</sub> and conclude
 that the correlation is **statistically significant**.
