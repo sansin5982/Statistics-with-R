@@ -271,37 +271,125 @@ Normal probability plots, etc
 The mean of a dataset is calculated as:
 
 $$
-\bar{X} = \frac{\sum X\_i}{n}, \quad \bar{Y} = \frac{\sum Y\_i}{n}
+\bar{x} = \frac{\sum x\_i}{n}, \quad \bar{y} = \frac{\sum y\_i}{n}
 $$
+
 For our dataset:
 
 $$
-\bar{X} = \frac{45+38+52+60+35+42+48+55+50+47}{10} = \frac{472}{10} = 47.2
+\bar{x} = \frac{45+38+52+60+35+42+48+55+50+47}{10} = \frac{472}{10} = 47.2
 $$
 
 $$
-\bar{Y} = \frac{210+185+240+250+175+200+220+235+230+210}{10} = \frac{2155}{10} = 215.5
+\bar{y} = \frac{210+185+240+250+175+200+220+235+230+210}{10} = \frac{2155}{10} = 215.5
 $$
 
 **Step 2: Compute Deviations and Squared Deviations**
 
+<table>
+<caption>Age, Cholesterol, and Deviations Table</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Age</th>
+<th style="text-align: right;">Cholesterol</th>
+<th style="text-align: right;">Age_Deviation</th>
+<th style="text-align: right;">Cholesterol_Deviation</th>
+<th style="text-align: right;">Cross_Product</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">210</td>
+<td style="text-align: right;">-2.2</td>
+<td style="text-align: right;">-5.5</td>
+<td style="text-align: right;">12.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">185</td>
+<td style="text-align: right;">-9.2</td>
+<td style="text-align: right;">-30.5</td>
+<td style="text-align: right;">280.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">24.5</td>
+<td style="text-align: right;">117.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">12.8</td>
+<td style="text-align: right;">34.5</td>
+<td style="text-align: right;">441.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">-12.2</td>
+<td style="text-align: right;">-40.5</td>
+<td style="text-align: right;">494.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">-5.2</td>
+<td style="text-align: right;">-15.5</td>
+<td style="text-align: right;">80.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">220</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">3.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">235</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: right;">19.5</td>
+<td style="text-align: right;">152.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">14.5</td>
+<td style="text-align: right;">40.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">210</td>
+<td style="text-align: right;">-0.2</td>
+<td style="text-align: right;">-5.5</td>
+<td style="text-align: right;">1.1</td>
+</tr>
+</tbody>
+</table>
+
+Age, Cholesterol, and Deviations Table
+
 The deviation from the mean is given by:
 
-*X*′<sub>*i*</sub> = *X*<sub>*i*</sub> − *X̄*,  *Y*′<sub>*i*</sub> = *Y*<sub>*i*</sub> − *Ȳ*
+*x*′<sub>*i*</sub> = (*x*<sub>*i*</sub> − *x̄*),  *y*′<sub>*i*</sub> = (*y*<sub>*i*</sub> − *ȳ*)
 
 The squared deviations are:
 
-(*X*′<sub>*i*</sub>)<sup>2</sup> = (*X*<sub>*i*</sub> − *X̄*)<sup>2</sup>,  (*Y*′<sub>*i*</sub>)<sup>2</sup> = (*Y*<sub>*i*</sub> − *Ȳ*)<sup>2</sup>
+(*x*′<sub>*i*</sub>)<sup>2</sup> = (*x*<sub>*i*</sub> − *x̄*)<sup>2</sup>,  (*y*′<sub>*i*</sub>)<sup>2</sup> = (*y*<sub>*i*</sub> − *ȳ*)<sup>2</sup>
 
 The cross-product of deviations:
 
-(*X*′<sub>*i*</sub>*Y*′<sub>*i*</sub>) = (*X*<sub>*i*</sub> − *X̄*)(*Y*<sub>*i*</sub> − *Ȳ*)
+(*x*′<sub>*i*</sub>*y*′<sub>*i*</sub>) = (*x*<sub>*i*</sub> − *x̄*)(*y*<sub>*i*</sub> − *ȳ*)
 
 ------------------------------------------------------------------------
 
 **Step 3: Compute Summations**
 
-∑(*X*′<sub>*i*</sub>*Y*′<sub>*i*</sub>),  ∑(*X*′<sub>*i*</sub>)<sup>2</sup>,  ∑(*Y*′<sub>*i*</sub>)<sup>2</sup>
+∑(*x*′<sub>*i*</sub>*y*′<sub>*i*</sub>),  ∑(*x*′<sub>*i*</sub>)<sup>2</sup>,  ∑(*y*′<sub>*i*</sub>)<sup>2</sup>
 
 ∑(*X*′<sub>*i*</sub>*Y*′<sub>*i*</sub>) = 1624.3
 
