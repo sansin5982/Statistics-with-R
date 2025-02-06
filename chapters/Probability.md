@@ -78,10 +78,12 @@ group of outcomes of an experiment.
  *S* = {1, 2, 3, 4, 5, 6}
 
 -   An event could be rolling an even number:
-     *E* = {2, 4, 6}
+
+ *E* = {2, 4, 6}
 
 -   Another event could be rolling a number greater than 4 :
-     *F* = {5, 6}
+
+ *F* = {5, 6}
 
 **Formula**: If an event *A* occurs with probability *P*(*A*), then:
 
@@ -92,13 +94,30 @@ $$
 -   If we define event *A* as rolling an even number, the probability
     is:
     -   Total even numbers = 3
-    -   Total number of outcome
+    -   Total number of outcomes = 6
 
 $$
 \large P(A) = \frac{3}{6} = 0.5
 $$
 
 ### Complement
+
+The **complement** of an event *A* (denoted as *A*<sup>*c*</sup> or *Ā*
+consists of all outcomes in the sample space that are **not** in *A*.
+
+-   Counting with the die roll:
+    -   *A* = Rolling an even number {2, 4, 6}
+    -   *A*<sup>*c*</sup> = Not rolling an even number {1, 3, 5}
+
+**Formula**:
+
+$$
+\Large P(A^c) = 1 - P(A)
+$$
+
+\*\*Example: If *P*(*A*) = 0.5, here rolling an even number then:
+
+$$ P(A^c) = 1 - 0.5 = 0.5
 
 ### Sample space
 
