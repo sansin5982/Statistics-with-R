@@ -602,19 +602,6 @@ the data deviates from a symmetrical or bell-shaped distribution.
 Skewness can be positive, negative, or zero, indicating different types
 of asymmetry.
 
-<img src="Figures/Skewness.png" alt="Figure 4.1: Skewness and relationship between mean and median" width="50%" />
-<p class="caption">
-Figure 4.1: Skewness and relationship between mean and median
-</p>
-
-<figure>
-<img
-src="Numerical-Measures_files/figure-markdown_strict/unnamed-chunk-19-1.png"
-alt="Figure 4.2: Left, Right and Symmetric Distribution" />
-<figcaption aria-hidden="true">Figure 4.2: Left, Right and Symmetric
-Distribution</figcaption>
-</figure>
-
 **Positive skewness:** If the distribution has a long tail on the right
 side and the majority of the data is concentrated on the left side, it
 is said to have positive skewness. In a positively skewed distribution,

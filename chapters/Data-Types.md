@@ -280,3 +280,5 @@ indicates that 16 out of the 20 observations fall within those two
 intervals.
 
 # Reference:
+
+[⬅ Back to Home](../index.md)
