@@ -442,6 +442,7 @@ $$
 $$
 r = \frac{1624.3}{1658.6}
 $$
+
 *r* = 0.98
 
 ------------------------------------------------------------------------
@@ -478,12 +479,28 @@ $$
 
 *t* = 13.94
 
+-   The degrees of freedom (df) for Pearson correlation significance
+    testing is calculated using the formula:
+
+*d**f* = *n* − 2
+
+where: \* n is the \*number of observations in the dataset.
+
+-   The Pearson correlation formula includes **two estimated means**
+    (*x̄* and *ȳ*, which reduces the independent data points available
+    for variability estimation.
+-   The correlation coefficient relies on **bivariate relationships**,
+    and removing **two degrees of freedom** accounts for the constraints
+    imposed by using means in the calculations.
+
 Using a **t-distribution table for 8 degrees of freedom** at *α* = 0.05:
 
-*t*<sub>*c**r**i**t**i**c**a**l*</sub> = 2.306
+*t*<sub>*c**r**i**t*</sub> = 2.306
 
 Since *t* = 13.94 &gt; 2.306, we **reject** *H*<sub>0</sub> and conclude
 that the correlation is **statistically significant**.
+
+**Performing Pearson Correlation in R**
 
     cor(mydata$age, mydata$cholesterol)
 
@@ -520,21 +537,362 @@ test scores. We collect data from 10 students and get the following
 results:
 
 $$
-\large \rho = 1 - \frac{6 \sum d\_i^2}{n(n^2 - 1)}
+\rho = 1 - \frac{6 \sum d\_i^2}{n(n^2 - 1)}
 $$
 
-where *d*<sub>*i*</sub> is the difference between ranks.
+where:
 
-### Example Data
+-   *d*<sub>*i*</sub> = difference between ranks of corresponding
+    values.
+-   *n* = number of observations.
+-   ∑*d*<sub>*i*</sub><sup>2</sup> = sum of squared rank differences.
 
-    # Creating two vectors
-    Hr_St <- c(2, 3, 5, 6, 7, 8, 9, 10, 12, 14)
-    Test_score <- c(60, 70, 80, 85, 90, 95, 98, 100, 99, 95)
+------------------------------------------------------------------------
 
-    # Combine the vectors into a dataframe
-    mydata_spearman <- data.frame(Hr_St = Hr_St, Test_score = Test_score)
+**Step 1: Given Dataset**
 
-### Spearman Correlation Calculation
+<table>
+<thead>
+<tr class="header">
+<th>Hours Studied (<span class="math inline"><em>x</em></span>)</th>
+<th>Test Score (<span class="math inline"><em>y</em></span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>70</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>80</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>85</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>90</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>95</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>98</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>99</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>95</td>
+</tr>
+</tbody>
+</table>
+
+------------------------------------------------------------------------
+
+**Step 2: Assign Ranks**
+
+We rank both variables from lowest to highest.
+
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 22%" />
+<col style="width: 25%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hours Studied (<span
+class="math inline"><em>x</em><sub><em>i</em></sub></span>)</th>
+<th>Rank (<span
+class="math inline"><em>R</em><sub><em>x</em></sub></span>)</th>
+<th>Test Score (<span
+class="math inline"><em>y</em><sub><em>i</em></sub></span>)</th>
+<th>Rank (<span
+class="math inline"><em>R</em><sub><em>y</em></sub></span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>60</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>2</td>
+<td>70</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>3</td>
+<td>80</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>4</td>
+<td>85</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>5</td>
+<td>90</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>6</td>
+<td>95</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>7</td>
+<td>98</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>8</td>
+<td>100</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>9</td>
+<td>99</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>10</td>
+<td>95</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+
+------------------------------------------------------------------------
+
+**Step 3: Compute Rank Differences and Squared Differences**
+
+The difference in ranks is:
+
+*d*<sub>*i*</sub> = *R*<sub>*x*</sub> − *R*<sub>*y*</sub>
+
+The squared difference is:
+
+*d*<sub>*i*</sub><sup>2</sup> = (*R*<sub>*x*</sub> − *R*<sub>*y*</sub>)<sup>2</sup>
+
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 18%" />
+<col style="width: 21%" />
+<col style="width: 18%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Hours Studied (<span
+class="math inline"><em>x</em><sub><em>i</em></sub></span>)</th>
+<th style="text-align: left;">Rank (<span
+class="math inline"><em>R</em><sub><em>x</em></sub></span>)</th>
+<th style="text-align: left;">Test Score (<span
+class="math inline"><em>y</em><sub><em>i</em></sub></span>)</th>
+<th style="text-align: left;">Rank (<span
+class="math inline"><em>R</em><sub><em>y</em></sub></span>)</th>
+<th style="text-align: left;"><span
+class="math inline"><em>d</em><sub><em>i</em></sub></span></th>
+<th style="text-align: left;"><span
+class="math inline"><em>d</em><sub><em>i</em></sub><sup>2</sup></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">85</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">95</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">98</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">99</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">95</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">16</td>
+</tr>
+</tbody>
+</table>
+
+------------------------------------------------------------------------
+
+## **Step 4: Compute Summation**
+
+∑*d*<sub>*i*</sub><sup>2</sup> = 0 + 0 + 0 + 0 + 0 + 1 + 1 + 1 + 1 + 16 = 20
+
+------------------------------------------------------------------------
+
+## **Step 5: Compute Spearman Correlation**
+
+Using the formula:
+
+$$
+\rho = 1 - \frac{6 \sum d\_i^2}{n(n^2 - 1)}
+$$
+
+Substituting values:
+
+$$
+\rho = 1 - \frac{6 \times 20}{10(10^2 - 1)}
+$$
+
+$$
+\rho = 1 - \frac{120}{10(100 - 1)}
+$$
+
+$$
+\rho = 1 - \frac{120}{10 \times 99}
+$$
+
+$$
+\rho = 1 - \frac{120}{990}
+$$
+
+*ρ* = 1 − 0.1212
+
+*ρ* = 0.8788
+
+------------------------------------------------------------------------
+
+**Step 6: Statistical Significance Test**
+
+We test the null hypothesis:
+
+*H*<sub>0</sub> : There is no correlation  (*ρ* = 0)
+
+The test statistic is:
+
+$$
+t = \frac{\rho \sqrt{n - 2}}{\sqrt{1 - \rho^2}}
+$$
+
+Substituting values:
+
+$$
+t = \frac{0.8788 \times \sqrt{10-2}}{\sqrt{1 - 0.8788^2}}
+$$
+
+$$
+t = \frac{0.8788 \times \sqrt{8}}{\sqrt{1 - 0.7722}}
+$$
+
+$$
+t = \frac{0.8788 \times 2.83}{\sqrt{0.2278}}
+$$
+
+$$
+t = \frac{2.487}{0.4773}
+$$
+
+*t* = 5.21
+
+Using a **t-distribution table for 8 degrees of freedom** at *α* = 0.05:
+
+*t*<sub>*c**r**i**t*</sub> = 2.306
+Since *t* = 5.21 &gt; 2.306, we **reject** *H*<sub>0</sub> and conclude
+that the correlation is **statistically significant**.
+
+------------------------------------------------------------------------
+
+### Spearman Correlation Calculation using R
 
     cor.test(mydata_spearman$Hr_St, mydata_spearman$Test_score, method = "spearman")
 
