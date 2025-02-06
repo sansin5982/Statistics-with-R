@@ -288,103 +288,125 @@ $$
 
 <table>
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 19%" />
-<col style="width: 19%" />
-<col style="width: 19%" />
-<col style="width: 26%" />
+<col style="width: 11%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 18%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Age (<span
-class="math inline"><em>X</em><sub><em>i</em></sub></span>)</th>
-<th>Cholesterol (<span
-class="math inline"><em>Y</em><sub><em>i</em></sub></span>)</th>
-<th><span
-class="math inline"><em>X</em><sub><em>i</em></sub> − <em>X̄</em></span></th>
-<th><span
-class="math inline"><em>Y</em><sub><em>i</em></sub> − <em>Ȳ</em></span></th>
-<th><span
-class="math inline">(<em>X</em><sub><em>i</em></sub> − <em>X̄</em>)(<em>Y</em><sub><em>i</em></sub> − <em>Ȳ</em>)</span></th>
+<th style="text-align: left;">Age (<span
+class="math inline"><em>x</em><sub><em>i</em></sub></span>)</th>
+<th style="text-align: left;">Cholesterol (<span
+class="math inline"><em>y</em><sub><em>i</em></sub></span>)</th>
+<th style="text-align: left;"><span
+class="math inline"><em>x</em><sub><em>i</em></sub> − <em>x̄</em></span></th>
+<th style="text-align: left;"><span
+class="math inline"><em>y</em><sub><em>i</em></sub> − <em>ȳ</em></span></th>
+<th style="text-align: left;"><span
+class="math inline">(<em>x</em><sub><em>i</em></sub> − <em>x̄</em>)<sup>2</sup></span></th>
+<th style="text-align: left;"><span
+class="math inline">(<em>y</em><sub><em>i</em></sub> − <em>ȳ</em>)<sup>2</sup></span></th>
+<th style="text-align: left;"><span
+class="math inline">(<em>x</em><sub><em>i</em></sub> − <em>x̄</em>)(<em>y</em><sub><em>i</em></sub> − <em>ȳ</em>)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>45</td>
-<td>210</td>
-<td>-2.2</td>
-<td>-5.5</td>
-<td>12.1</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">210</td>
+<td style="text-align: left;">-2.2</td>
+<td style="text-align: left;">-5.5</td>
+<td style="text-align: left;">4.84</td>
+<td style="text-align: left;">30.25</td>
+<td style="text-align: left;">12.1</td>
 </tr>
 <tr class="even">
-<td>38</td>
-<td>185</td>
-<td>-9.2</td>
-<td>-30.5</td>
-<td>280.6</td>
+<td style="text-align: left;">38</td>
+<td style="text-align: left;">185</td>
+<td style="text-align: left;">-9.2</td>
+<td style="text-align: left;">-30.5</td>
+<td style="text-align: left;">84.64</td>
+<td style="text-align: left;">930.25</td>
+<td style="text-align: left;">280.6</td>
 </tr>
 <tr class="odd">
-<td>52</td>
-<td>240</td>
-<td>4.8</td>
-<td>24.5</td>
-<td>117.6</td>
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">240</td>
+<td style="text-align: left;">4.8</td>
+<td style="text-align: left;">24.5</td>
+<td style="text-align: left;">23.04</td>
+<td style="text-align: left;">600.25</td>
+<td style="text-align: left;">117.6</td>
 </tr>
 <tr class="even">
-<td>60</td>
-<td>250</td>
-<td>12.8</td>
-<td>34.5</td>
-<td>441.6</td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">250</td>
+<td style="text-align: left;">12.8</td>
+<td style="text-align: left;">34.5</td>
+<td style="text-align: left;">163.84</td>
+<td style="text-align: left;">1190.25</td>
+<td style="text-align: left;">441.6</td>
 </tr>
 <tr class="odd">
-<td>35</td>
-<td>175</td>
-<td>-12.2</td>
-<td>-40.5</td>
-<td>494.1</td>
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">175</td>
+<td style="text-align: left;">-12.2</td>
+<td style="text-align: left;">-40.5</td>
+<td style="text-align: left;">148.84</td>
+<td style="text-align: left;">1640.25</td>
+<td style="text-align: left;">494.1</td>
 </tr>
 <tr class="even">
-<td>42</td>
-<td>200</td>
-<td>-5.2</td>
-<td>-15.5</td>
-<td>80.6</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">-5.2</td>
+<td style="text-align: left;">-15.5</td>
+<td style="text-align: left;">27.04</td>
+<td style="text-align: left;">240.25</td>
+<td style="text-align: left;">80.6</td>
 </tr>
 <tr class="odd">
-<td>48</td>
-<td>220</td>
-<td>0.8</td>
-<td>4.5</td>
-<td>3.6</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">220</td>
+<td style="text-align: left;">0.8</td>
+<td style="text-align: left;">4.5</td>
+<td style="text-align: left;">0.64</td>
+<td style="text-align: left;">20.25</td>
+<td style="text-align: left;">3.6</td>
 </tr>
 <tr class="even">
-<td>55</td>
-<td>235</td>
-<td>7.8</td>
-<td>19.5</td>
-<td>152.1</td>
+<td style="text-align: left;">55</td>
+<td style="text-align: left;">235</td>
+<td style="text-align: left;">7.8</td>
+<td style="text-align: left;">19.5</td>
+<td style="text-align: left;">60.84</td>
+<td style="text-align: left;">380.25</td>
+<td style="text-align: left;">152.1</td>
 </tr>
 <tr class="odd">
-<td>50</td>
-<td>230</td>
-<td>2.8</td>
-<td>14.5</td>
-<td>40.6</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">230</td>
+<td style="text-align: left;">2.8</td>
+<td style="text-align: left;">14.5</td>
+<td style="text-align: left;">7.84</td>
+<td style="text-align: left;">210.25</td>
+<td style="text-align: left;">40.6</td>
 </tr>
 <tr class="even">
-<td>47</td>
-<td>210</td>
-<td>-0.2</td>
-<td>-5.5</td>
-<td>1.1</td>
+<td style="text-align: left;">47</td>
+<td style="text-align: left;">210</td>
+<td style="text-align: left;">-0.2</td>
+<td style="text-align: left;">-5.5</td>
+<td style="text-align: left;">0.04</td>
+<td style="text-align: left;">30.25</td>
+<td style="text-align: left;">1.1</td>
 </tr>
 </tbody>
 </table>
-
-The deviation from the mean is given by:
-
-*x*′<sub>*i*</sub> = (*x*<sub>*i*</sub> − *x̄*),  *y*′<sub>*i*</sub> = (*y*<sub>*i*</sub> − *ȳ*)
 
 The squared deviations are:
 
