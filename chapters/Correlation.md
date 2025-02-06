@@ -283,6 +283,7 @@ $$
 $$
 \bar{y} = \frac{210+185+240+250+175+200+220+235+230+210}{10} = \frac{2155}{10} = 215.5
 $$
+—
 
 **Step 2: Compute Deviations and Squared Deviations**
 
@@ -408,25 +409,15 @@ class="math inline">(<em>x</em><sub><em>i</em></sub> − <em>x̄</em>)(<em>y
 </tbody>
 </table>
 
-The squared deviations are:
-
-(*x*′<sub>*i*</sub>)<sup>2</sup> = (*x*<sub>*i*</sub> − *x̄*)<sup>2</sup>,  (*y*′<sub>*i*</sub>)<sup>2</sup> = (*y*<sub>*i*</sub> − *ȳ*)<sup>2</sup>
-
-The cross-product of deviations:
-
-(*x*′<sub>*i*</sub>*y*′<sub>*i*</sub>) = (*x*<sub>*i*</sub> − *x̄*)(*y*<sub>*i*</sub> − *ȳ*)
-
 ------------------------------------------------------------------------
 
 **Step 3: Compute Summations**
 
-∑(*x*′<sub>*i*</sub>*y*′<sub>*i*</sub>),  ∑(*x*′<sub>*i*</sub>)<sup>2</sup>,  ∑(*y*′<sub>*i*</sub>)<sup>2</sup>
+∑(*x*<sub>*i*</sub> − *x̄*)(*y*<sub>*i*</sub> − *ȳ*) = 1624.3
 
-∑(*X*′<sub>*i*</sub>*Y*′<sub>*i*</sub>) = 1624.3
+∑(*x*<sub>*i*</sub> − *x̄*)<sup>2</sup> = 521.76
 
-∑(*X*′<sub>*i*</sub>)<sup>2</sup> = 521.76
-
-∑(*Y*′<sub>*i*</sub>)<sup>2</sup> = 5272.5
+∑(*y*<sub>*i*</sub> − *ȳ*)<sup>2</sup> = 5272.5
 
 ------------------------------------------------------------------------
 
@@ -435,7 +426,7 @@ The cross-product of deviations:
 The Pearson correlation coefficient is calculated as:
 
 $$
-r = \frac{\sum (X\_i - \bar{X}) (Y\_i - \bar{Y})}{\sqrt{\sum (X\_i - \bar{X})^2 \sum (Y\_i - \bar{Y})^2}}
+r = \frac{\sum (x\_i - \bar{x}) (y\_i - \bar{y})}{\sqrt{\sum (x\_i - \bar{x})^2 \sum (y\_i - \bar{y})^2}}
 $$
 
 Substituting values:
@@ -451,7 +442,6 @@ $$
 $$
 r = \frac{1624.3}{1658.6}
 $$
-
 *r* = 0.98
 
 ------------------------------------------------------------------------
