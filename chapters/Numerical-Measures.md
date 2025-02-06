@@ -693,7 +693,7 @@ the data’s distributional characteristics.
 
     ## [1] 0.419996
 
-As skewness value is 0.42 suggests that data is symmtrically
+As skewness value is 0.42 suggests that data is symmetrically
 distributed.
 
 [⬅ Back to Home](../index.md)
