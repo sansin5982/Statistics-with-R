@@ -1,3 +1,10 @@
+<script type="text/javascript" async
+    src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
 # Probability
 
 The foundation of statistical inference is the theory of probability. It
@@ -14,7 +21,9 @@ A:
 
 The probability of event A is given by:
 
-$$\huge P(A) = \frac{m}{n}$$
+$$
+\large P(A) = \frac{m}{n}
+$$
 
 -   P(A) = Probability of event A
 
@@ -59,6 +68,19 @@ showing how the proportions of heads and tails converge closely to 0.5.
 ## Important concepts used in probability
 
 ### Event
+
+An event in probability theory is a subset of the sample space (the set
+of all possible outcomes). It represents a specific outcome or a group
+of outcomes of an experiment.
+
+-   Suppose we roll a six-sided die. The sample space is:
+
+ *S* = {1, 2, 3, 4, 5, 6}
+\* An event could be rolling an even number:
+
+ *E* = {2, 4, 6}
+\* Another event could be rolling a number greater than 4 :
+ *F* = {5, 6}
 
 ### Complement
 
