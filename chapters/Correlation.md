@@ -895,15 +895,15 @@ that the correlation is **statistically significant**.
 
 ### Spearman Correlation Calculation using R
 
-    cor.test(mydata_spearman$Hr_St, mydata_spearman$Test_score, method = "spearman")
+    cor.test(mydata$Hr_St, mydata$Test_score, method = "spearman")
 
-    ## Warning in cor.test.default(mydata_spearman$Hr_St, mydata_spearman$Test_score,
-    ## : Cannot compute exact p-value with ties
+    ## Warning in cor.test.default(mydata$Hr_St, mydata$Test_score, method =
+    ## "spearman"): Cannot compute exact p-value with ties
 
     ## 
     ##  Spearman's rank correlation rho
     ## 
-    ## data:  mydata_spearman$Hr_St and mydata_spearman$Test_score
+    ## data:  mydata$Hr_St and mydata$Test_score
     ## S = 17.553, p-value = 0.0004919
     ## alternative hypothesis: true rho is not equal to 0
     ## sample estimates:
