@@ -887,6 +887,7 @@ $$
 Using a **t-distribution table for 8 degrees of freedom** at *α* = 0.05:
 
 *t*<sub>*c**r**i**t*</sub> = 2.306
+
 Since *t* = 5.21 &gt; 2.306, we **reject** *H*<sub>0</sub> and conclude
 that the correlation is **statistically significant**.
 
