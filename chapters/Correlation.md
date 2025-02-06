@@ -203,8 +203,9 @@ Normal probability plots, etc
 ## Pearson Correlation Calculation
 
 The Pearson correlation coefficient is calculated using:
+
 $$
-r = \frac{\sum (X\_i - \bar{X}) (Y\_i - \bar{Y})}{\sqrt{\sum (X\_i - \bar{X})^2 \sum (Y\_i - \bar{Y})^2}}
+\large r = \frac{\sum (X\_i - \bar{X}) (Y\_i - \bar{Y})}{\sqrt{\sum (X\_i - \bar{X})^2 \sum (Y\_i - \bar{Y})^2}}
 $$
 
     cor(mydata$age, mydata$cholesterol)
@@ -242,8 +243,9 @@ test scores. We collect data from 10 students and get the following
 results:
 
 $$
-\rho = 1 - \frac{6 \sum d\_i^2}{n(n^2 - 1)}
+\large \rho = 1 - \frac{6 \sum d\_i^2}{n(n^2 - 1)}
 $$
+
 where *d*<sub>*i*</sub> is the difference between ranks.
 
 ### Example Data
