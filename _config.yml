@@ -4,6 +4,9 @@ theme: jekyll-theme-cayman
 title: "Statistics with R"
 description: "Fundamentals of Statistics with R."
 
+kramdown:
+  math_engine: mathjax
+
 # Enable navigation links
 include:
   - chapters/
