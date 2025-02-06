@@ -21,6 +21,16 @@ $$
 \large r = \frac{\sum (x\_i - \bar{x}) (y\_i - \bar{y})}{\sqrt{\sum (x\_i - \bar{x})^2 \sum (y\_i - \bar{y})^2}}
 $$
 
+where:
+
+-   *x*<sub>*i*</sub> and *y*<sub>*i*</sub> are the individual sample
+    points.
+-   *x̄* and *ȳ* are means of *x* and *y*.
+-   ∑(*x*<sub>*i*</sub> − *x̄*) ∑(*y*<sub>*i*</sub> − *ȳ*) is the
+    cross-product of deviations.
+-   ∑(*x*<sub>*i*</sub> − *x̄*)<sup>2</sup> and (y\_i - {y})^2 are the
+    sum of of squared deviations.
+
 The most commonly used correlation coefficient is **Pearson’s
 correlation coefficient**, which measures the linear relationship
 between two variables. Pearson’s correlation coefficient, denoted by
@@ -204,6 +214,167 @@ Normal probability plots, etc
     ## `geom_smooth()` using formula = 'y ~ x'
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">age</th>
+<th style="text-align: right;">cholesterol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">210</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">185</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">240</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">250</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">175</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">200</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">220</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">235</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">230</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">210</td>
+</tr>
+</tbody>
+</table>
+
+**Step 1: Compute the Means**
+
+The mean of a dataset is calculated as:
+
+$$
+\bar{X} = \frac{\sum X\_i}{n}, \quad \bar{Y} = \frac{\sum Y\_i}{n}
+$$
+For our dataset:
+
+$$
+\bar{X} = \frac{45+38+52+60+35+42+48+55+50+47}{10} = \frac{472}{10} = 47.2
+$$
+
+$$
+\bar{Y} = \frac{210+185+240+250+175+200+220+235+230+210}{10} = \frac{2155}{10} = 215.5
+$$
+
+**Step 2: Compute Deviations and Squared Deviations**
+
+The deviation from the mean is given by:
+
+*X*′<sub>*i*</sub> = *X*<sub>*i*</sub> − *X̄*,  *Y*′<sub>*i*</sub> = *Y*<sub>*i*</sub> − *Ȳ*
+
+The squared deviations are:
+
+(*X*′<sub>*i*</sub>)<sup>2</sup> = (*X*<sub>*i*</sub> − *X̄*)<sup>2</sup>,  (*Y*′<sub>*i*</sub>)<sup>2</sup> = (*Y*<sub>*i*</sub> − *Ȳ*)<sup>2</sup>
+
+The cross-product of deviations:
+
+(*X*′<sub>*i*</sub>*Y*′<sub>*i*</sub>) = (*X*<sub>*i*</sub> − *X̄*)(*Y*<sub>*i*</sub> − *Ȳ*)
+
+------------------------------------------------------------------------
+
+**Step 3: Compute Summations**
+
+∑(*X*′<sub>*i*</sub>*Y*′<sub>*i*</sub>),  ∑(*X*′<sub>*i*</sub>)<sup>2</sup>,  ∑(*Y*′<sub>*i*</sub>)<sup>2</sup>
+
+∑(*X*′<sub>*i*</sub>*Y*′<sub>*i*</sub>) = 1624.3
+
+∑(*X*′<sub>*i*</sub>)<sup>2</sup> = 521.76
+
+∑(*Y*′<sub>*i*</sub>)<sup>2</sup> = 5272.5
+
+------------------------------------------------------------------------
+
+**Step 4: Compute Pearson Correlation Coefficient**
+
+The Pearson correlation coefficient is calculated as:
+
+$$
+r = \frac{\sum (X\_i - \bar{X}) (Y\_i - \bar{Y})}{\sqrt{\sum (X\_i - \bar{X})^2 \sum (Y\_i - \bar{Y})^2}}
+$$
+
+Substituting values:
+
+$$
+r = \frac{1624.3}{\sqrt{521.76 \times 5272.5}}
+$$
+
+$$
+r = \frac{1624.3}{\sqrt{2751143.6}}
+$$
+
+$$
+r = \frac{1624.3}{1658.6}
+$$
+
+*r* = 0.98
+
+------------------------------------------------------------------------
+
+**Step 5: Statistical Significance Test**
+
+We test the null hypothesis:
+
+*H*<sub>0</sub> : There is no correlation  (*r* = 0)
+
+The test statistic is calculated using:
+
+$$
+t = \frac{r \sqrt{n-2}}{\sqrt{1 - r^2}}
+$$
+
+Substituting values:
+
+$$
+t = \frac{0.98 \times \sqrt{10-2}}{\sqrt{1 - 0.98^2}}
+$$
+
+$$
+t = \frac{0.98 \times \sqrt{8}}{\sqrt{1 - 0.9604}}
+$$
+
+$$
+t = \frac{0.98 \times 2.83}{\sqrt{0.0396}}
+$$
+
+$$
+t = \frac{2.77}{0.199}
+$$
+
+*t* = 13.94
+
+Using a **t-distribution table for 8 degrees of freedom** at *α* = 0.05:
+
+*t*<sub>*c**r**i**t**i**c**a**l*</sub> = 2.306
+
+Since *t* = 13.94 &gt; 2.306, we **reject** *H*<sub>0</sub> and conclude
+that the correlation is **statistically significant**.
 
     cor(mydata$age, mydata$cholesterol)
 
