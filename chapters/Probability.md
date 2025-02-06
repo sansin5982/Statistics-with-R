@@ -75,15 +75,15 @@ group of outcomes of an experiment.
 
 -   Suppose we roll a six-sided die. The sample space is:
 
- *S* = {1, 2, 3, 4, 5, 6}
+*S* = {1, 2, 3, 4, 5, 6}
 
 -   An event could be rolling an even number:
 
- *E* = {2, 4, 6}
+*E* = {2, 4, 6}
 
 -   Another event could be rolling a number greater than 4 :
 
- *F* = {5, 6}
+*F* = {5, 6}
 
 **Formula**: If an event *A* occurs with probability *P*(*A*), then:
 
@@ -115,9 +115,13 @@ $$
 \Large P(A^c) = 1 - P(A)
 $$
 
-\*\*Example: If *P*(*A*) = 0.5, here rolling an even number then:
+**Example**:
 
-$$ P(A^c) = 1 - 0.5 = 0.5
+If *P*(*A*) = 0.5, here rolling an even number then:
+
+$$
+\large P(A^c) = 1 - 0.5 = 0.5
+$$
 
 ### Sample space
 
