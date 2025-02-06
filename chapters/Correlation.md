@@ -49,7 +49,7 @@ cholesterol level using sample data:
 ### Data Representation
 
 <table>
-<caption>Age vs. Cholesterol Data</caption>
+<caption>Age and Cholesterol</caption>
 <thead>
 <tr class="header">
 <th style="text-align: right;">age</th>
@@ -100,7 +100,7 @@ cholesterol level using sample data:
 </tbody>
 </table>
 
-Age vs. Cholesterol Data
+Age and Cholesterol
 
 ## Scatter Plot
 
