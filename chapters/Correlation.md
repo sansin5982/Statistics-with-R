@@ -13,7 +13,7 @@ A *correlation analysis* is a statistical method used to examine the
 strength and direction of the relationship between two continuous
 variables.
 
-## Pearson Correlation Calculation
+### Pearson Correlation Calculation
 
 The Pearson correlation coefficient is calculated using:
 
@@ -120,7 +120,7 @@ cholesterol level using sample data:
       geom_point(color = "blue", size = 3) + 
       geom_smooth(method = "lm", col = "red") +
       labs(title = "Relationship between Age and Cholesterol", x = "Age", y = "Cholesterol") +
-      theme_minimal()
+      theme_classic()
 
     ## `geom_smooth()` using formula = 'y ~ x'
 
@@ -135,7 +135,7 @@ cholesterol level using sample data:
     ggplot(mydata, aes(x = age)) +
       geom_histogram(binwidth = 5, fill = "lightblue", color = "black") +
       labs(title = "Histogram of Age", x = "Age", y = "Frequency") +
-      theme_minimal()
+      theme_classic()
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
@@ -144,7 +144,7 @@ cholesterol level using sample data:
     ggplot(mydata, aes(x = cholesterol)) +
       geom_histogram(binwidth = 20, fill = "lightblue", color = "black") +
       labs(title = "Histogram of Cholesterol", x = "Cholesterol", y = "Frequency") +
-      theme_minimal()
+      theme_classic()
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
@@ -199,7 +199,7 @@ Normal probability plots, etc
       geom_point(color = "blue", size = 3) + 
       geom_smooth(method = "lm", col = "red") +
       labs(title = "Linearity Check", x = "Age", y = "Cholesterol") +
-      theme_minimal()
+      theme_classic()
 
     ## `geom_smooth()` using formula = 'y ~ x'
 
