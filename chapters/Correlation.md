@@ -287,91 +287,100 @@ $$
 **Step 2: Compute Deviations and Squared Deviations**
 
 <table>
-<caption>Age, Cholesterol, and Deviations Table</caption>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 26%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: right;">Age</th>
-<th style="text-align: right;">Cholesterol</th>
-<th style="text-align: right;">Age_Deviation</th>
-<th style="text-align: right;">Cholesterol_Deviation</th>
-<th style="text-align: right;">Cross_Product</th>
+<th>Age (<span
+class="math inline"><em>X</em><sub><em>i</em></sub></span>)</th>
+<th>Cholesterol (<span
+class="math inline"><em>Y</em><sub><em>i</em></sub></span>)</th>
+<th><span
+class="math inline"><em>X</em><sub><em>i</em></sub> − <em>X̄</em></span></th>
+<th><span
+class="math inline"><em>Y</em><sub><em>i</em></sub> − <em>Ȳ</em></span></th>
+<th><span
+class="math inline">(<em>X</em><sub><em>i</em></sub> − <em>X̄</em>)(<em>Y</em><sub><em>i</em></sub> − <em>Ȳ</em>)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">210</td>
-<td style="text-align: right;">-2.2</td>
-<td style="text-align: right;">-5.5</td>
-<td style="text-align: right;">12.1</td>
+<td>45</td>
+<td>210</td>
+<td>-2.2</td>
+<td>-5.5</td>
+<td>12.1</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">185</td>
-<td style="text-align: right;">-9.2</td>
-<td style="text-align: right;">-30.5</td>
-<td style="text-align: right;">280.6</td>
+<td>38</td>
+<td>185</td>
+<td>-9.2</td>
+<td>-30.5</td>
+<td>280.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">52</td>
-<td style="text-align: right;">240</td>
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">24.5</td>
-<td style="text-align: right;">117.6</td>
+<td>52</td>
+<td>240</td>
+<td>4.8</td>
+<td>24.5</td>
+<td>117.6</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">60</td>
-<td style="text-align: right;">250</td>
-<td style="text-align: right;">12.8</td>
-<td style="text-align: right;">34.5</td>
-<td style="text-align: right;">441.6</td>
+<td>60</td>
+<td>250</td>
+<td>12.8</td>
+<td>34.5</td>
+<td>441.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">175</td>
-<td style="text-align: right;">-12.2</td>
-<td style="text-align: right;">-40.5</td>
-<td style="text-align: right;">494.1</td>
+<td>35</td>
+<td>175</td>
+<td>-12.2</td>
+<td>-40.5</td>
+<td>494.1</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: right;">-5.2</td>
-<td style="text-align: right;">-15.5</td>
-<td style="text-align: right;">80.6</td>
+<td>42</td>
+<td>200</td>
+<td>-5.2</td>
+<td>-15.5</td>
+<td>80.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">48</td>
-<td style="text-align: right;">220</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">3.6</td>
+<td>48</td>
+<td>220</td>
+<td>0.8</td>
+<td>4.5</td>
+<td>3.6</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">55</td>
-<td style="text-align: right;">235</td>
-<td style="text-align: right;">7.8</td>
-<td style="text-align: right;">19.5</td>
-<td style="text-align: right;">152.1</td>
+<td>55</td>
+<td>235</td>
+<td>7.8</td>
+<td>19.5</td>
+<td>152.1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">230</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">14.5</td>
-<td style="text-align: right;">40.6</td>
+<td>50</td>
+<td>230</td>
+<td>2.8</td>
+<td>14.5</td>
+<td>40.6</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">47</td>
-<td style="text-align: right;">210</td>
-<td style="text-align: right;">-0.2</td>
-<td style="text-align: right;">-5.5</td>
-<td style="text-align: right;">1.1</td>
+<td>47</td>
+<td>210</td>
+<td>-0.2</td>
+<td>-5.5</td>
+<td>1.1</td>
 </tr>
 </tbody>
 </table>
-
-Age, Cholesterol, and Deviations Table
 
 The deviation from the mean is given by:
 
