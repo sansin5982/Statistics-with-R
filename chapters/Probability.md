@@ -69,25 +69,24 @@ showing how the proportions of heads and tails converge closely to 0.5.
 
 ### Event
 
-An event in probability theory is a subset of the sample space (the set
-of all possible outcomes). It represents a specific outcome or a group
-of outcomes of an experiment.
+An **event** in probability theory is a subset of the sample space (the
+set of all possible outcomes). It represents a specific outcome or a
+group of outcomes of an experiment.
 
 -   Suppose we roll a six-sided die. The sample space is:
 
  *S* = {1, 2, 3, 4, 5, 6}
 
 -   An event could be rolling an even number:
-
- *E* = {2, 4, 6}
+     *E* = {2, 4, 6}
 
 -   Another event could be rolling a number greater than 4 :
+     *F* = {5, 6}
 
- *F* = {5, 6}
-Formula: If an event *A* occurs with probability *P*(*A*), then:
+**Formula**: If an event *A* occurs with probability *P*(*A*), then:
 
 $$
-\large P(A) = \frac{Number\\of\\Favorable\\outcome}{Total\\number\\of\\outcomes}
+\large P(A) = \frac{\text{Number of Favorable Outcomes}}{\text{Total Number of Outcomes}}
 $$
 
 -   If we define event *A* as rolling an even number, the probability
