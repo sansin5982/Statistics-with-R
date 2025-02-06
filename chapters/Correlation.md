@@ -136,6 +136,33 @@ Age and Cholesterol
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
+### Shapiro-Wilk Test
+
+The Shapiro-Wilk test is a statistical test used to check the normality
+assumption of a population or a sample. It was developed by Samuel
+Shapiro and Martin Wilk in 1965.
+
+The null hypothesis of the Shapiro-Wilk test is that the population is
+normally distributed. The alternative hypothesis is that the population
+is not normally distributed.
+
+The test is based on the correlation between the data and the normal
+probability plot (also known as the normal quantile plot). The normal
+probability plot is a graphical method to check the normality
+assumption. It plots the observed data against the expected values from
+a normal distribution. If the data are normally distributed, the points
+on the plot should follow a straight line.
+
+The Shapiro-Wilk test is widely used in many fields, such as psychology,
+biology, economics, and finance, to check the normality assumption
+before applying parametric statistical methods that assume normality,
+such as t-tests and ANOVA.
+
+There are several alternative tests that can be used to assess normality
+assumptions, depending on the type of data and the research question.
+Here are a few examples: Anderson-Darling test, Kolmogorov-Smirnov test,
+Normal probability plots, etc
+
 #### Shapiro-Wilk Test for Normality
 
     shapiro.test(mydata$age) 
@@ -195,8 +222,17 @@ $$
 
 ## Spearman Rank Correlation
 
-When normality assumptions are violated, we use **Spearman’s rank
-correlation**:
+The spearman rank correlation is a non-parametric statistical method
+used to measure the strength and direction of the association between
+two variables. It is calculated by ranking the values of each variable
+and calculating the correlation coefficient between their ranks. It is
+robust to outliers and can be used with ordinal or non-normally
+distributed data.
+
+Let’s say we want to investigate the relationship between the amount of
+hours that students spend studying for a test and their corresponding
+test scores. We collect data from 10 students and get the following
+results:
 
 $$
 \rho = 1 - \frac{6 \sum d\_i^2}{n(n^2 - 1)}
