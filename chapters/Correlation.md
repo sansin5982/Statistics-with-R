@@ -13,20 +13,20 @@ A *correlation analysis* is a statistical method used to examine the
 strength and direction of the relationship between two continuous
 variables.
 
+## Pearson Correlation Calculation
+
+The Pearson correlation coefficient is calculated using:
+
+$$
+\large r = \frac{\sum (x\_i - \bar{x}) (y\_i - \bar{y})}{\sqrt{\sum (x\_i - \bar{x})^2 \sum (y\_i - \bar{y})^2}}
+$$
+
 The most commonly used correlation coefficient is **Pearson’s
 correlation coefficient**, which measures the linear relationship
 between two variables. Pearson’s correlation coefficient, denoted by
 “r,” takes on values between -1 and 1, where a value of -1 indicates a
 perfect negative correlation, a value of 0 indicates no correlation, and
 a value of 1 indicates a perfect positive correlation.
-
-To perform a correlation analysis, we first must collect data on the two
-variables of interest. Once we have the data, we can calculate the
-correlation coefficient using R.
-
-For example, suppose we want to examine the relationship between a
-person’s age and their cholesterol level. We collect data on 100
-individuals and obtained the following data:
 
 $$
 \large -1 \leq r \leq 1
@@ -37,6 +37,14 @@ where:
 -   *r* = −1 indicates a perfect negative correlation,
 -   *r* = 0 indicates no correlation,
 -   *r* = 1 indicates a perfect positive correlation.
+
+To perform a correlation analysis, we first must collect data on the two
+variables of interest. Once we have the data, we can calculate the
+correlation coefficient using R.
+
+For example, suppose we want to examine the relationship between a
+person’s age and their cholesterol level. We collect data on 100
+individuals and obtained the following data:
 
 ## Example Dataset
 
@@ -56,7 +64,6 @@ cholesterol level using sample data:
 ### Data Representation
 
 <table>
-<caption>Age and Cholesterol</caption>
 <thead>
 <tr class="header">
 <th style="text-align: right;">age</th>
@@ -106,8 +113,6 @@ cholesterol level using sample data:
 </tr>
 </tbody>
 </table>
-
-Age and Cholesterol
 
 ## Scatter Plot
 
@@ -199,14 +204,6 @@ Normal probability plots, etc
     ## `geom_smooth()` using formula = 'y ~ x'
 
 ![](Correlation_files/figure-markdown_strict/unnamed-chunk-7-1.png)
-
-## Pearson Correlation Calculation
-
-The Pearson correlation coefficient is calculated using:
-
-$$
-\large r = \frac{\sum (X\_i - \bar{X}) (Y\_i - \bar{Y})}{\sqrt{\sum (X\_i - \bar{X})^2 \sum (Y\_i - \bar{Y})^2}}
-$$
 
     cor(mydata$age, mydata$cholesterol)
 
