@@ -283,7 +283,8 @@ $$
 $$
 \bar{y} = \frac{210+185+240+250+175+200+220+235+230+210}{10} = \frac{2155}{10} = 215.5
 $$
-—
+
+------------------------------------------------------------------------
 
 **Step 2: Compute Deviations and Squared Deviations**
 
@@ -495,7 +496,9 @@ where: \* n is the number of observations in the dataset.
 
 Using a **t-distribution table for 8 degrees of freedom** at *α* = 0.05:
 
-*t*<sub>*c**r**i**t**i**c**a**l*</sub> = 2.306
+*t*<sub>*c**r**i*</sub> = 2.306
+
+-   cri: critical
 
 Since *t* = 13.94 &gt; 2.306, we **reject** *H*<sub>0</sub> and conclude
 that the correlation is **statistically significant**.
@@ -886,7 +889,9 @@ $$
 
 Using a **t-distribution table for 8 degrees of freedom** at *α* = 0.05:
 
-*t*<sub>*c**r**i**t**i**c**a**l*</sub> = 2.306
+*t*<sub>*c**r**i*</sub> = 2.306
+
+-   cri: critical
 
 Since *t* = 5.21 &gt; 2.306, we **reject** *H*<sub>0</sub> and conclude
 that the correlation is **statistically significant**.
