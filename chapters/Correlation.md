@@ -484,7 +484,7 @@ $$
 
 -   df = n - 2
 
-where: \* n is the \*number of observations in the dataset.
+where: \* n is the number of observations in the dataset.
 
 -   The Pearson correlation formula includes **two estimated means**
     (*x̄* and *ȳ*, which reduces the independent data points available
