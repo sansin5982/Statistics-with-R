@@ -2,17 +2,34 @@
 
 ## Introduction
 
-Correlation analysis is a statistical method used to examine the
+A *correlation analysis* is a statistical method used to examine the
 strength and direction of the relationship between two continuous
-variables. The most commonly used correlation coefficient is **Pearson’s
-correlation coefficient** (denoted as *r*), which measures the linear
-relationship between two variables.
+variables.
 
-−1 ≤ *r* ≤ 1
+The most commonly used correlation coefficient is **Pearson’s
+correlation coefficient**, which measures the linear relationship
+between two variables. Pearson’s correlation coefficient, denoted by
+“r,” takes on values between -1 and 1, where a value of -1 indicates a
+perfect negative correlation, a value of 0 indicates no correlation, and
+a value of 1 indicates a perfect positive correlation.
 
-where: - *r* = −1 indicates a perfect negative correlation, - *r* = 0
-indicates no correlation, - *r* = 1 indicates a perfect positive
-correlation.
+To perform a correlation analysis, we first must collect data on the two
+variables of interest. Once we have the data, we can calculate the
+correlation coefficient using R.
+
+For example, suppose we want to examine the relationship between a
+person’s age and their cholesterol level. We collect data on 100
+individuals and obtained the following data:
+
+$$
+\large -1 \leq r \leq 1
+$$
+
+where:
+
+-   *r* = −1 indicates a perfect negative correlation,
+-   *r* = 0 indicates no correlation,
+-   *r* = 1 indicates a perfect positive correlation.
 
 ## Example Dataset
 
@@ -220,3 +237,18 @@ where *d*<sub>*i*</sub> is the difference between ranks.
     outliers.
 -   The results indicate a **strong positive correlation** in both
     cases, implying a significant association between the variables.
+
+#### References
+
+1.  Pearson, K. (1895). “Notes on Regression and Inheritance in the Case
+    of Two Parents.” *Proceedings of the Royal Society of London*,
+    58(1), 240–242.
+2.  Spearman, C. (1904). “The Proof and Measurement of Association
+    between Two Things.” *The American Journal of Psychology*, 15(1),
+    72–101.
+3.  Shapiro, S. S., & Wilk, M. B. (1965). “An Analysis of Variance Test
+    for Normality (Complete Samples).” *Biometrika*, 52(3-4), 591–611.
+4.  Cohen, J. (1988). *Statistical Power Analysis for the Behavioral
+    Sciences*. Routledge.
+
+[⬅ Back to Home](../index.md)
