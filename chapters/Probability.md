@@ -76,11 +76,28 @@ of outcomes of an experiment.
 -   Suppose we roll a six-sided die. The sample space is:
 
  *S* = {1, 2, 3, 4, 5, 6}
-\* An event could be rolling an even number:
+
+-   An event could be rolling an even number:
 
  *E* = {2, 4, 6}
-\* Another event could be rolling a number greater than 4 :
+
+-   Another event could be rolling a number greater than 4 :
+
  *F* = {5, 6}
+Formula: If an event *A* occurs with probability *P*(*A*), then:
+
+$$
+\large P(A) = \frac{Number\\of\\Favorable\\outcome}{Total\\number\\of\\outcomes}
+$$
+
+-   If we define event *A* as rolling an even number, the probability
+    is:
+    -   Total even numbers = 3
+    -   Total number of outcome
+
+$$
+\large P(A) = \frac{3}{6} = 0.5
+$$
 
 ### Complement
 
