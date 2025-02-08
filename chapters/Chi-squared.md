@@ -33,8 +33,8 @@ $$
 $$
 
 where:  
-- *O**i**j* = observed frequency  
-- *E**i**j* = expected frequency
+*O**i**j* = observed frequency  
+*E**i**j* = expected frequency
 
 ## Types of Chi-squared Tests
 
@@ -292,8 +292,8 @@ Thus, the final chi-squared value is **16.67**.
 
 ### Degrees of Freedom (df) Calculation
 
-The degrees of freedom (*d**f*) for a chi-squared test of independence
-is calculated using the formula:
+The degrees of freedom (df) for a chi-squared test of independence is
+calculated using the formula:
 
 *d**f* = (*r* − 1) × (*c* − 1)
 
@@ -308,13 +308,13 @@ Now, calculating df:
 
 To determine whether the observed association is statistically
 significant, we compare our calculated chi-squared value
-(*c**h**i*<sup>2</sup> = 16.67) to the **critical chi-squared** value
-from a chi-squared distribution table at a given significance level
-(*a**l**p**h**a*).
+(*χ*<sup>2</sup> = 16.67) to the **critical chi-squared** value from a
+chi-squared distribution table at a given significance level (*α*).
 
-**Step 1: Find the Critical Value** Using a chi-squared table at
-*d**f* = 3 and *a**l**p**h**a* = 0.05 (95% confidence level), the
-critical value is:
+**Step 1: Find the Critical Value**
+
+Using a chi-squared table at df = 3 and *α* = 0.05 (95% confidence
+level), the critical value is:
 
 *χ*<sub>*c**r**i**t**i**c**a**l*</sub><sup>2</sup> = 7.815
 **Step 2: Compare with Calculated Chi-square**
