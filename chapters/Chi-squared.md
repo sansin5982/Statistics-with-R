@@ -29,7 +29,7 @@ genetics to examine allele distributions or in epidemiology to assess
 disease prevalence across different groups.
 
 $$
-\large \chi^2 = \sum \frac{(O\_{\scriptstyle ij} - E\_{\scriptstyle ij})^2}{E\_{\scriptstyle ij}}
+\large \chi^2 = \sum \frac{(O{\scriptstyle ij} - E{\scriptstyle ij})^2}{E{\scriptstyle ij}}
 $$
 
 where:  
