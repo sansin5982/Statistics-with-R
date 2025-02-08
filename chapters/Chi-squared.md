@@ -32,9 +32,11 @@ $$
 \large \chi^2 = \sum \frac{(O{\scriptstyle ij} - E{\scriptstyle ij})^2}{E{\scriptstyle ij}}
 $$
 
-where:  
-\* *O*\_*i**j* = observed frequency  
-\* *E*\_*i**j* = expected frequency
+where:
+
+-   *O**i**j* = observed frequency
+
+-   *E**i**j* = expected frequency
 
 ## Types of Chi-squared Tests
 
