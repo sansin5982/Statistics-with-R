@@ -8,4 +8,5 @@ Chapters:
 -   [Numerical Measures](chapters/Numerical-Measures)
 -   [Graphs](chapters/Plots-and-Charts)
 -   [Probability](chapters/Probability)
+-   [Chi-squared](chapters/Chi-squared)
 -   [Correlation](chapters/Correlation)
