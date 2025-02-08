@@ -9,32 +9,27 @@
 
 ## Introduction
 
-The chi-squared test (χ² test) is a statistical hypothesis test used to
-determine if there is a significant association between two categorical
-variables. The test determines whether the observed frequencies of the
-categories in the sample differ significantly from the expected
-frequencies based on a theoretical distribution.
+The chi-squared test (χ² test) is a statistical hypothesis test **used
+to determine if there is a significant association between two
+categorical variables**. The test determines whether the observed
+frequencies of the categories in the sample differ significantly from
+the expected frequencies based on a theoretical distribution.
 
-The chi-squared test works by comparing the observed frequencies to the
-expected frequencies that would be obtained if the null hypothesis were
-true. The null hypothesis, in this case, is that there is no association
-between the two variables.
-
-If the calculated value of the chi-squared test statistic is larger than
-the critical value from the chi-squared distribution with the
-appropriate degrees of freedom, then the null hypothesis is rejected,
-and it can be concluded that there is a significant association between
-the two variables. On the other hand, if the calculated value is smaller
-than the critical value, then the null hypothesis is not rejected, and
-it can be concluded that there is no significant association between the
-two variables.
+If the **calculated value of the chi-squared test statistic is larger
+than the critical value** from the chi-squared distribution with the
+appropriate degrees of freedom, then the **null hypothesis is
+rejected**, and it can be concluded that there is a significant
+association between the two variables. On the other hand, if the
+calculated value is smaller than the critical value, then the null
+hypothesis is not rejected, and it can be concluded that there is no
+significant association between the two variables.
 
 Chi-squared tests are widely applied in biological research, such as in
 genetics to examine allele distributions or in epidemiology to assess
 disease prevalence across different groups.
 
 $$
-\large \chi^2 = \sum \frac{(O\_{ij} - E\_{ij})^2}{E\_{ij}}
+\large \chi^2 = \sum \frac{(O\_{\scriptstyle ij} - E\_{\scriptstyle ij})^2}{E\_{ij}}
 $$
 
 where:  
@@ -100,7 +95,7 @@ To test the independence of blood type and disease status, we compute
 expected frequencies using:
 
 $$
-\large E\_{ij} = \frac{(row\\total \times column\\total)}{grand\\total} 
+\large E\_{\scriptstyle ij} = \frac{(row\\total \times column\\total)}{grand\\total} 
 $$
 
 -   **Row Totals**:
@@ -124,13 +119,13 @@ $$
 -   **Disease**
 
 $$
-\\E\_{A,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
+\\E\_{\scriptstyle A,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
 $$
 
 -   **No Disease**
 
 $$
-\\E\_{A,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
+\\E\_{\scriptstyle A,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
 $$
 
 #### For blood type B:
@@ -138,13 +133,13 @@ $$
 -   **Disease**
 
 $$
-\\E\_{B,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
+\\E\_{\scriptstyle B,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
 $$
 
 -   **No Disease**
 
 $$
-\\E\_{B,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
+\\E\_{\scriptstyle B,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
 $$
 
 #### For blood type O:
@@ -152,13 +147,13 @@ $$
 -   **Disease**
 
 $$
-\\E\_{O,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
+\\E\_{\scriptstyle O,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
 $$
 
 -   **No Disease**
 
 $$
-\\E\_{O,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
+\\E\_{\scriptstyle O,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
 $$
 
 #### For blood type AB:
@@ -166,13 +161,13 @@ $$
 -   **Disease**
 
 $$
-\\E\_{AB,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
+\\E\_{\scriptstyle AB,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
 $$
 
 -   **No Disease**
 
 $$
-\\E\_{AB,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
+\\E\_{\scriptstyle AB,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
 $$
 
 #### Expected frequency calculated
@@ -220,17 +215,19 @@ $$
 </tbody>
 </table>
 
-Compute Chi-squared Contributions We compute:
+#### Compute Chi-squared Contributions
+
+We compute:
 
 $$
-\large \frac{(O\_{ij} - E\_{ij})^2}{E\_{ij}}
+\large \frac{(O\_{\scriptstyle ij} - E\_{\scriptstyle ij})^2}{E\_{\scriptstyle ij}}
 $$
 
 for each cell.
 
 #### **For Blood Type A:**
 
--   **Disease:**  
+-   **Disease:**
     $$
     \frac{(30 - 30.0)^2}{30.0} = \frac{0^2}{30.0} = 0.000
     $$
