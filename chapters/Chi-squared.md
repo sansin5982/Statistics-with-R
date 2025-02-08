@@ -33,8 +33,8 @@ $$
 $$
 
 where:  
-*O**i**j* = observed frequency  
-*E**i**j* = expected frequency
+\* *O*\_*i**j* = observed frequency  
+\* *E*\_*i**j* = expected frequency
 
 ## Types of Chi-squared Tests
 
