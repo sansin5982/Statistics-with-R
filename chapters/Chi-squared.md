@@ -33,8 +33,8 @@ $$
 $$
 
 where:  
-- *O*<sub>*i**j*</sub> = observed frequency  
-- *E*<sub>*i**j*</sub> = expected frequency
+- *O**i**j* = observed frequency  
+- *E**i**j* = expected frequency
 
 ## Types of Chi-squared Tests
 
@@ -95,7 +95,7 @@ To test the independence of blood type and disease status, we compute
 expected frequencies using:
 
 $$
-\large E\_{\scriptstyle ij} = \frac{(row\\total \times column\\total)}{grand\\total} 
+\large E{\scriptstyle ij} = \frac{(row\\total \times column\\total)}{grand\\total} 
 $$
 
 -   **Row Totals**:
@@ -119,13 +119,13 @@ $$
 -   **Disease**
 
 $$
-\\E\_{\scriptstyle A,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
+\\E{\scriptstyle A,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
 $$
 
 -   **No Disease**
 
 $$
-\\E\_{\scriptstyle A,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
+\\E{\scriptstyle A,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
 $$
 
 #### For blood type B:
@@ -133,13 +133,13 @@ $$
 -   **Disease**
 
 $$
-\\E\_{\scriptstyle B,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
+\\E{\scriptstyle B,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
 $$
 
 -   **No Disease**
 
 $$
-\\E\_{\scriptstyle B,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
+\\E{\scriptstyle B,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
 $$
 
 #### For blood type O:
@@ -147,13 +147,13 @@ $$
 -   **Disease**
 
 $$
-\\E\_{\scriptstyle O,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
+\\E{\scriptstyle O,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
 $$
 
 -   **No Disease**
 
 $$
-\\E\_{\scriptstyle O,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
+\\E{\scriptstyle O,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
 $$
 
 #### For blood type AB:
@@ -161,13 +161,13 @@ $$
 -   **Disease**
 
 $$
-\\E\_{\scriptstyle AB,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
+\\E{\scriptstyle AB,Disease} = \frac{(100 \times 120)}{400} \\= \frac{12000}{400} = 30
 $$
 
 -   **No Disease**
 
 $$
-\\E\_{\scriptstyle AB,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
+\\E{\scriptstyle AB,NoDisease} = \frac{(100 \times 280)}{400} \\= \frac{280000}{400} = 70
 $$
 
 #### Expected frequency calculated
@@ -220,7 +220,7 @@ $$
 We compute:
 
 $$
-\large \frac{(O\_{\scriptstyle ij} - E\_{\scriptstyle ij})^2}{E\_{\scriptstyle ij}}
+\large \frac{(O{\scriptstyle ij} - E{\scriptstyle ij})^2}{E{\scriptstyle ij}}
 $$
 
 for each cell.
@@ -228,50 +228,58 @@ for each cell.
 #### **For Blood Type A:**
 
 -   **Disease:**
-    $$
-    \frac{(30 - 30.0)^2}{30.0} = \frac{0^2}{30.0} = 0.000
-    $$
 
--   **No Disease:**  
-    $$
-    \frac{(70 - 70.0)^2}{70.0} = \frac{0^2}{70.0} = 0.000
-    $$
+$$
+\frac{(30 - 30.0)^2}{30.0} = \frac{0^2}{30.0} = 0.000
+$$
+
+-   **No Disease:**
+
+$$
+\frac{(70 - 70.0)^2}{70.0} = \frac{0^2}{70.0} = 0.000
+$$
 
 #### **For Blood Type B:**
 
--   **Disease:**  
-    $$
-    \frac{(25 - 30.0)^2}{30.0} = \frac{(-5)^2}{30.0} = \frac{25}{30.0} = 0.833
-    $$
+-   **Disease:**
 
--   **No Disease:**  
-    $$
-    \frac{(75 - 70.0)^2}{70.0} = \frac{5^2}{70.0} = \frac{25}{70.0} = 0.357
-    $$
+$$
+\frac{(25 - 30.0)^2}{30.0} = \frac{(-5)^2}{30.0} = \frac{25}{30.0} = 0.833
+$$
+
+-   **No Disease:**
+
+$$
+\frac{(75 - 70.0)^2}{70.0} = \frac{5^2}{70.0} = \frac{25}{70.0} = 0.357
+$$
 
 #### **For Blood Type O:**
 
--   **Disease:**  
-    $$
-    \frac{(45 - 30.0)^2}{30.0} = \frac{15^2}{30.0} = \frac{225}{30.0} = 7.500
-    $$
+-   **Disease:**
 
--   **No Disease:**  
-    $$
-    \frac{(55 - 70.0)^2}{70.0} = \frac{(-15)^2}{70.0} = \frac{225}{70.0} = 3.214
-    $$
+$$
+\frac{(45 - 30.0)^2}{30.0} = \frac{15^2}{30.0} = \frac{225}{30.0} = 7.500
+$$
+
+-   **No Disease:**
+
+$$
+\frac{(55 - 70.0)^2}{70.0} = \frac{(-15)^2}{70.0} = \frac{225}{70.0} = 3.214
+$$
 
 #### **For Blood Type AB:**
 
--   **Disease:**  
-    $$
-    \frac{(20 - 30.0)^2}{30.0} = \frac{(-10)^2}{30.0} = \frac{100}{30.0} = 3.333
-    $$
+-   **Disease:**
 
--   **No Disease:**  
-    $$
-    \frac{(80 - 70.0)^2}{70.0} = \frac{10^2}{70.0} = \frac{100}{70.0} = 1.429
-    $$
+$$
+\frac{(20 - 30.0)^2}{30.0} = \frac{(-10)^2}{30.0} = \frac{100}{30.0} = 3.333
+$$
+
+-   **No Disease:**
+
+$$
+\frac{(80 - 70.0)^2}{70.0} = \frac{10^2}{70.0} = \frac{100}{70.0} = 1.429
+$$
 
 ### Compute the Total Chi-squared Statistic
 
@@ -280,7 +288,6 @@ Summing all contributions:
 *χ*<sup>2</sup> = 0.000 + 0.000 + 0.833 + 0.357 + 7.500 + 3.214 + 3.333 + 1.429
 
 *χ*<sup>2</sup> = 16.67
-
 Thus, the final chi-squared value is **16.67**.
 
 ### Degrees of Freedom (df) Calculation
