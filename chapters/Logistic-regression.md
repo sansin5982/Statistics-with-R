@@ -131,7 +131,7 @@ outcomes. For a dataset with *n* observations, the likelihood function
 *L*(*β*) is given by:
 
 $$
-\large L(\beta) = \prod\_{i=1}^n P(y\_i | x\_i)^{y\_i} \cdot (1 - P(y\_i | x\_i))^{1 - y\_i}
+\large L(\beta) = \prod{\scriptstyle}{i=1}^n P(y{\scriptstyle i} | x{\scriptstyle i})^{y{\scriptstyle i}} \cdot (1 - P(y{\scriptstyle i} | x{\scriptstyle i}))^{1 - y{\scriptstyle i}}
 $$
 
 where:
@@ -146,7 +146,7 @@ Taking the log of the likelihood function, we obtain the log-likelihood
 function, which is easier to maximize:
 
 $$
-\large \text{log } L(\beta) = \sum\_{i=1}^n \left( y\_i \cdot \log(P(y\_i | x\_i)) + (1 - y\_i) \cdot \log(1 - P(y\_i | x\_i)) \right)
+\large \text{log } L(\beta) = \sum{\scriptstyle}{i=1}^n \left( y{\scriptstyle i} \cdot \log(P(y{\scriptstyle i} | x{\scriptstyle i})) + (1 - y{\scriptstyle i}) \cdot \log(1 - P(y{\scriptstyle i} | x{\scriptstyle i})) \right)
 $$
 
 This log-likelihood function is maximized to find the optimal values of
@@ -160,7 +160,7 @@ estimate the model coefficients *β*. The log-likelihood function is
 given by:
 
 $$
-\large \text{log } L(\beta) = \sum\_{i=1}^n \left( y\_i \cdot \log(P(y\_i | x\_i)) + (1 - y\_i) \cdot \log(1 - P(y\_i | x\_i)) \right)
+\large \text{log } L(\beta) = \sum{\scriptstyle}{i=1}^n \left( y{\scriptstyle i} \cdot \log(P(y{\scriptstyle i} | x{\scriptstyle i})) + (1 - y{\scriptstyle i}) \cdot \log(1 - P(y{\scriptstyle i} | x{\scriptstyle i})) \right)
 $$
 
 where:
