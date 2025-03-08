@@ -124,10 +124,13 @@ $$
 L(\beta) = \prod\_{i=1}^n P(y\_i | x\_i)^{y\_i} \cdot (1 - P(y\_i | x\_i))^{1 - y\_i}
 $$
 
-where: - *y*<sub>*i*</sub> represents the observed outcome for the
-*i*-th observation, - *P*(*y*<sub>*i*</sub>|*x*<sub>*i*</sub>) is the
-probability of *y*<sub>*i*</sub> = 1 given predictors
-*x*<sub>*i*</sub>, - *β* represents the model coefficients.
+where:
+
+-   *y*<sub>*i*</sub> represents the observed outcome for the *i*-th
+    observation,
+-   *P*(*y*<sub>*i*</sub>|*x*<sub>*i*</sub>) is the probability of
+    *y*<sub>*i*</sub> = 1 given predictors *x*<sub>*i*</sub>,
+-   *β* represents the model coefficients.
 
 Taking the log of the likelihood function, we obtain the log-likelihood
 function, which is easier to maximize:
@@ -150,10 +153,13 @@ $$
 \text{log } L(\beta) = \sum\_{i=1}^n \left( y\_i \cdot \log(P(y\_i | x\_i)) + (1 - y\_i) \cdot \log(1 - P(y\_i | x\_i)) \right)
 $$
 
-where: - *y*<sub>*i*</sub> is the observed outcome for the *i*-th
-observation, - *P*(*y*<sub>*i*</sub>|*x*<sub>*i*</sub>) is the
-probability of *y*<sub>*i*</sub> = 1 given predictors
-*x*<sub>*i*</sub>, - *β* represents the coefficients of the model.
+where:
+
+-   *y*<sub>*i*</sub> is the observed outcome for the *i*-th
+    observation,
+-   *P*(*y*<sub>*i*</sub>|*x*<sub>*i*</sub>) is the probability of
+    *y*<sub>*i*</sub> = 1 given predictors *x*<sub>*i*</sub>,
+-   *β* represents the coefficients of the model.
 
 The goal in logistic regression is to find the values of *β* that
 maximize this log-likelihood, thereby making the observed outcomes most
@@ -179,8 +185,10 @@ following formula:
 
 Odds Ratio = *e*<sup>*β*<sub>*j*</sub></sup>
 
-where: - *e*<sup>*β*<sub>*j*</sub></sup> gives the odds ratio for
-predictor *x*<sub>*j*</sub>.
+where:
+
+-   *e*<sup>*β*<sub>*j*</sub></sup> gives the odds ratio for predictor
+    *x*<sub>*j*</sub>.
 
 -   If *e*<sup>*β*<sub>*j*</sub></sup> &gt; 1, an increase in
     *x*<sub>*j*</sub> increases the odds of the outcome.
@@ -207,8 +215,10 @@ $$
 W\_j = \frac{\hat{\beta}\_j}{\text{SE}(\hat{\beta}\_j)}
 $$
 
-where: - *β̂*<sub>*j*</sub> is the estimated coefficient for
-*x*<sub>*j*</sub>,
+where:
+
+-   *β̂*<sub>*j*</sub> is the estimated coefficient for
+    *x*<sub>*j*</sub>,
 
 -   SE(*β̂*<sub>*j*</sub>) is the standard error of *β̂*<sub>*j*</sub>.
 
@@ -227,8 +237,10 @@ The likelihood ratio test statistic is calculated as:
 
 LR = −2(log *L*<sub>reduced</sub> − log *L*<sub>full</sub>)
 
-where: - log *L*<sub>reduced</sub> is the log-likelihood of the reduced
-model,
+where:
+
+-   log *L*<sub>reduced</sub> is the log-likelihood of the reduced
+    model,
 
 -   log *L*<sub>full</sub> is the log-likelihood of the full model.
 
@@ -255,8 +267,10 @@ $$
 R^2\_{\text{McFadden}} = 1 - \frac{\text{log } L\_{\text{full}}}{\text{log } L\_{\text{null}}}
 $$
 
-where: - log *L*<sub>full</sub> is the log-likelihood of the full model
-(with predictors),
+where:
+
+-   log *L*<sub>full</sub> is the log-likelihood of the full model (with
+    predictors),
 
 -   log *L*<sub>null</sub> is the log-likelihood of the null model (a
     model with no predictors).
