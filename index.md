@@ -10,3 +10,4 @@ Chapters:
 -   [Probability](chapters/Probability)
 -   [Chi-squared](chapters/Chi-squared)
 -   [Correlation](chapters/Correlation)
+-   [Logistic Regression](chapters/Logistic-Regression)
