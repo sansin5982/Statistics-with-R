@@ -278,7 +278,7 @@ explanatory power. One of the most commonly used metrics is **McFadden’s
 Pseudo-R²**, which is calculated as:
 
 $$
-\large R^2{\scriptstyle {\text{McFadden}}} = 1 - \frac{\text{log } L{\scriptstyle {\text{full}}}{\text{log } L{\scriptstyle{\text{null}}}
+\large R^2{\scriptstyle {\text{McFadden}}}= 1 - \frac{\text{log } L{\scriptstyle {\text{full}}}}{\text{log } L{\scriptstyle {\text{null}}}} 
 $$
 
 where:
