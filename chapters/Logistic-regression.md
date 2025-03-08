@@ -93,25 +93,25 @@ belongs to the class 1 (e.g., success) given the predictors *x* is
 calculated using the logistic function:
 
 $$
-\large P(y=1 | X) = \frac{1}{1 + e^{-(\beta{\scriptstyle 0} + \beta{\scriptstyle 1} X{\scriptstyle 1} + \beta{\scriptstyle 2} X{\scriptstyle 2} + \dots + \beta{\scriptstyle n} X{\scriptstyle n})}}
+\large P(Y=1 | X) = \frac{1}{1 + e^{-(\beta{\scriptstyle 0} + \beta{\scriptstyle 1} X{\scriptstyle 1} + \beta{\scriptstyle 2} X{\scriptstyle 2} + \dots + \beta{\scriptstyle n} X{\scriptstyle n})}}
 $$
 
 -   *β*<sub>0</sub> is the intercept,
 -   *β*<sub>1</sub>, *β*<sub>2</sub>, …, *β*<sub>*n*</sub> are the
     coefficients of the predictors
-    *x*<sub>1</sub>, *x*<sub>2</sub>, …, *x*<sub>*n*</sub>.
+    *X*<sub>1</sub>, *X*<sub>2</sub>, …, *X*<sub>*n*</sub>.
 
-This formula gives the probability of the positive class (e.g., *y* = 1)
+This formula gives the probability of the positive class (e.g., *Y* = 1)
 for a given set of predictor values.
 
 ### Classification Rule
 
 In logistic regression, we classify the outcome based on the predicted
-probability *P*(*y* = 1|*x*):
+probability *P*(*Y* = 1|*X*):
 
--   If *P*(*y* = 1|*x*) ≥ 0.5, we classify the outcome as *y* = 1 (e.g.,
+-   If *P*(*Y* = 1|*X*) ≥ 0.5, we classify the outcome as *Y* = 1 (e.g.,
     “positive”).
--   If *P*(*y* = 1|*x*) &lt; 0.5, we classify the outcome as *y* = 0
+-   If *P*(*Y* = 1|*X*) &lt; 0.5, we classify the outcome as *Y* = 0
     (e.g., “negative”).
 
 This threshold of 0.5 is standard, but it can be adjusted depending on
