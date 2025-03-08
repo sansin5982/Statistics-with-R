@@ -53,11 +53,11 @@ $$
 where:
 
 -   *z* is a linear combination of predictor variables (i.e.,
-    *z* = *β*<sub>0</sub> + *β*<sub>1</sub>*x*<sub>1</sub> + *β*<sub>2</sub>*x*<sub>2</sub> + … + *β*<sub>*n*</sub>*x*<sub>*n*</sub>)
+    *z* = *β*<sub>0</sub> + *β*<sub>1</sub>*X*<sub>1</sub> + *β*<sub>2</sub>*X*<sub>2</sub> + … + *β*<sub>*n*</sub>*X*<sub>*n*</sub>)
 
 Here:
 
--   x1,x2,…,Xn are the predictor variables.
+-   X1,X2,…,Xn are the predictor variables.
 
 -   *β*<sub>0</sub> is the intercept term,
 
@@ -93,7 +93,7 @@ belongs to the class 1 (e.g., success) given the predictors *x* is
 calculated using the logistic function:
 
 $$
-\large P(y=1 | x) = \frac{1}{1 + e^{-(\beta{\scriptstyle 0} + \beta{\scriptstyle 1} X{\scriptstyle 1} + \beta{\scriptstyle 2} X{\scriptstyle 2} + \dots + \beta{\scriptstyle n} X{\scriptstyle n})}}
+\large P(y=1 | X) = \frac{1}{1 + e^{-(\beta{\scriptstyle 0} + \beta{\scriptstyle 1} X{\scriptstyle 1} + \beta{\scriptstyle 2} X{\scriptstyle 2} + \dots + \beta{\scriptstyle n} X{\scriptstyle n})}}
 $$
 
 -   *β*<sub>0</sub> is the intercept,
