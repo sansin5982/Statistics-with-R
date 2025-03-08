@@ -93,7 +93,7 @@ belongs to the class 1 (e.g., success) given the predictors *x* is
 calculated using the logistic function:
 
 $$
-P(y=1 | x) = \frac{1}{1 + e^{-(\beta\_0 + \beta\_1 x\_1 + \beta\_2 x\_2 + \ldots + \beta\_n x\_n)}}
+\large P(y=1 | x) = \frac{1}{1 + e^{-(\beta\_0 + \beta\_1 x\_1 + \beta\_2 x\_2 + \ldots + \beta\_n x\_n)}}
 $$
 
 -   *β*<sub>0</sub> is the intercept,
@@ -131,7 +131,7 @@ outcomes. For a dataset with *n* observations, the likelihood function
 *L*(*β*) is given by:
 
 $$
-L(\beta) = \prod\_{i=1}^n P(y\_i | x\_i)^{y\_i} \cdot (1 - P(y\_i | x\_i))^{1 - y\_i}
+\large L(\beta) = \prod\_{i=1}^n P(y\_i | x\_i)^{y\_i} \cdot (1 - P(y\_i | x\_i))^{1 - y\_i}
 $$
 
 where:
@@ -146,7 +146,7 @@ Taking the log of the likelihood function, we obtain the log-likelihood
 function, which is easier to maximize:
 
 $$
-\text{log } L(\beta) = \sum\_{i=1}^n \left( y\_i \cdot \log(P(y\_i | x\_i)) + (1 - y\_i) \cdot \log(1 - P(y\_i | x\_i)) \right)
+\large \text{log } L(\beta) = \sum\_{i=1}^n \left( y\_i \cdot \log(P(y\_i | x\_i)) + (1 - y\_i) \cdot \log(1 - P(y\_i | x\_i)) \right)
 $$
 
 This log-likelihood function is maximized to find the optimal values of
@@ -160,7 +160,7 @@ estimate the model coefficients *β*. The log-likelihood function is
 given by:
 
 $$
-\text{log } L(\beta) = \sum\_{i=1}^n \left( y\_i \cdot \log(P(y\_i | x\_i)) + (1 - y\_i) \cdot \log(1 - P(y\_i | x\_i)) \right)
+\large \text{log } L(\beta) = \sum\_{i=1}^n \left( y\_i \cdot \log(P(y\_i | x\_i)) + (1 - y\_i) \cdot \log(1 - P(y\_i | x\_i)) \right)
 $$
 
 where:
@@ -222,7 +222,7 @@ significantly different from zero. The Wald test statistic for each
 predictor *x*<sub>*j*</sub> is calculated as:
 
 $$
-W\_j = \frac{\hat{\beta}\_j}{\text{SE}(\hat{\beta}\_j)}
+\large W\_j = \frac{\hat{\beta}\_j}{\text{SE}(\hat{\beta}\_j)}
 $$
 
 where:
@@ -245,7 +245,9 @@ significantly improve the model’s fit.
 
 The likelihood ratio test statistic is calculated as:
 
-LR = −2(log *L*<sub>reduced</sub> − log *L*<sub>full</sub>)
+$$
+\large \text{LR} = -2 \left( \text{log } L\_{\text{reduced}} - \text{log } L\_{\text{full}} \right)
+$$
 
 where:
 
@@ -274,7 +276,7 @@ explanatory power. One of the most commonly used metrics is **McFadden’s
 Pseudo-R²**, which is calculated as:
 
 $$
-R^2\_{\text{McFadden}} = 1 - \frac{\text{log } L\_{\text{full}}}{\text{log } L\_{\text{null}}}
+\large R^2\_{\text{McFadden}} = 1 - \frac{\text{log } L\_{\text{full}}}{\text{log } L\_{\text{null}}}
 $$
 
 where:
