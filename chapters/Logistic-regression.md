@@ -11,21 +11,22 @@ customer will purchase a product (buy/not buy).
 
 Here’s how it works in simple terms:
 
--   Input Information: First, you gather information (data) about things
-    that might affect the outcome. For instance, to predict rain, you’d
-    consider factors like humidity, temperature, and maybe even wind
-    speed.
+-   **Input Information**: First, we gather information (data) about
+    things that might affect the outcome. For instance, to predict rain,
+    we had consider factors like humidity, temperature, and maybe even
+    wind speed.
 
--   Calculate Probability: Logistic regression uses this data to
+-   **Calculate Probability**: Logistic regression uses this data to
     estimate the probability of a certain event happening. Instead of
     giving a precise “yes” or “no” right away, it calculates a
     probability between 0 and 1. For example, based on today’s humidity
     and temperature, there might be a 70% chance it will rain tomorrow.
 
--   Convert Probability to Decision: Once it has a probability, logistic
-    regression converts this into a category. If the probability is over
-    a certain threshold (like 50%), we could say, “Yes, it will rain.”
-    If it’s below 50%, we’d say, “No, it won’t rain.”
+-   **Convert Probability to Decision**: Once it has a probability,
+    logistic regression converts this into a category. If the
+    probability is over a certain threshold (like 50%), we could say,
+    “Yes, it will rain.” If it’s below 50%, we’d say, “No, it won’t
+    rain.”
 
 In technical terms, logistic regression works by finding a best-fit line
 (or curve) that separates different categories. So, instead of a
@@ -39,11 +40,13 @@ which maps any input to a value between 0 and 1. The logistic function
 is given by:
 
 $$
-f(z) = \frac{1}{1 + e^{-z}}
+\large f(z) = \frac{1}{1 + e^{-z}}
 $$
 
-where: - *z* is a linear combination of predictor variables (i.e.,
-*z* = *β*<sub>0</sub> + *β*<sub>1</sub>*x*<sub>1</sub> + *β*<sub>2</sub>*x*<sub>2</sub> + … + *β*<sub>*n*</sub>*x*<sub>*n*</sub>)
+where:
+
+-   *z* is a linear combination of predictor variables (i.e.,
+    *z* = *β*<sub>0</sub> + *β*<sub>1</sub>*x*<sub>1</sub> + *β*<sub>2</sub>*x*<sub>2</sub> + … + *β*<sub>*n*</sub>*x*<sub>*n*</sub>)
 
 Here:
 
