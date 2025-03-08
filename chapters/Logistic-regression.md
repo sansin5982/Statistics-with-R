@@ -92,9 +92,7 @@ In logistic regression, the probability that the dependent variable *y*
 belongs to the class 1 (e.g., success) given the predictors *x* is
 calculated using the logistic function:
 
-$$
-\large P(y=1 | x) = \frac{1}{1 + e^{-(\beta\_0 + \beta\_1 x\_1 + \beta\_2 x\_2 + \dots + \beta\_n x\_n)}}
-$$
+$ P(y=1 | x) = $
 
 -   *β*<sub>0</sub> is the intercept,
 -   *β*<sub>1</sub>, *β*<sub>2</sub>, …, *β*<sub>*n*</sub> are the
