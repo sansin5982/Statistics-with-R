@@ -93,7 +93,7 @@ belongs to the class 1 (e.g., success) given the predictors *x* is
 calculated using the logistic function:
 
 $$
-\large P(y=1 | x) = \frac{1}{1 + e^{-(\beta\_{0} + \beta\_{1} x\_{1} + \beta\_{2} x\_{2} + \ldots + \beta\_{n} x\_{n})}}
+\large P(y=1 | x) = \frac{1}{1 + e^{-(\beta\_0 + \beta\_1 x\_1 + \beta\_2 x\_2 + \dots + \beta\_n x\_n)}}
 $$
 
 -   *β*<sub>0</sub> is the intercept,
