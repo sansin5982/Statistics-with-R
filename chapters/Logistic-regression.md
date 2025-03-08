@@ -193,7 +193,9 @@ constant. Specifically:
 To interpret these coefficients in terms of **odds ratios**, we use the
 following formula:
 
-Odds Ratio = *e*<sup>*β*<sub>*j*</sub></sup>
+$$
+\large \text{Odds Ratio} = e^{\beta\_j}
+$$
 
 where:
 
@@ -222,7 +224,7 @@ significantly different from zero. The Wald test statistic for each
 predictor *x*<sub>*j*</sub> is calculated as:
 
 $$
-\large W\_j = \frac{\hat{\beta}\_j}{\text{SE}(\hat{\beta}\_j)}
+\large W{\scriptstyle j} = \frac{\hat{\beta}{\scriptstyle j}}{\text{SE}(\hat{\beta}{\scriptstyle j})}
 $$
 
 where:
@@ -246,7 +248,7 @@ significantly improve the model’s fit.
 The likelihood ratio test statistic is calculated as:
 
 $$
-\large \text{LR} = -2 \left( \text{log } L\_{\text{reduced}} - \text{log } L\_{\text{full}} \right)
+\large \text{LR} = -2 \left( \text{log } L{\scriptstyle {\text{reduced}}} - \text{log } L{\scriptstyle {\text{full}}} \right)
 $$
 
 where:
@@ -276,7 +278,7 @@ explanatory power. One of the most commonly used metrics is **McFadden’s
 Pseudo-R²**, which is calculated as:
 
 $$
-\large R^2\_{\text{McFadden}} = 1 - \frac{\text{log } L\_{\text{full}}}{\text{log } L\_{\text{null}}}
+\large R^2{\scriptstyle {\text{McFadden}}} = 1 - \frac{\text{log } L{\scriptstyle {\text{full}}}{\text{log } L{\scriptstyle{\text{null}}}
 $$
 
 where:
