@@ -76,6 +76,17 @@ $$
 
 ![](ANOVA_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
+#### Graph Interpretation
+
+-   **Blue dots**: Individual data points for each group (students’
+    scores).
+-   **Black dots**: Mean of each group (average class score).
+-   **Red dashed line**: Overall mean across all groups.
+-   **Between-Group Variance**: The difference between **group means**
+    (black dots).
+-   **Within-Group Variance**: The spread of blue dots **within each
+    group**.
+
 ### When to Use ANOVA?
 
 -   **Comparing More than Two Groups**: If you have **two groups**, a
