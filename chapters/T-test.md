@@ -13,28 +13,116 @@ them. It is based on **Student’s t-distribution** and is particularly
 useful when the sample size is small (**n &lt; 30**) or when the
 population standard deviation is unknown.
 
-### Why is T-Test Important?
+## Why is T-Test Important?
 
-#### 1. Small Sample Size:
+### 1. Small Sample Size:
 
 When the sample size is small, the Central Limit Theorem does not
 necessarily apply, so we cannot assume that the sample mean follows a
 normal distribution. The t-test helps in such cases.
 
-#### 2. Unknown Population Variance:
+### 2. Unknown Population Variance:
 
 Unlike the Z-test, which requires a known population variance, the
 t-test estimates the variance from the sample.
 
-#### 3. Hypothesis Testing:
+### 3. Hypothesis Testing:
 
 It helps determine if differences between sample means are statistically
 significant or due to random chance.
 
-#### 4. Widely Used in Research:
+### 4. Widely Used in Research:
 
 Common in medical studies, psychology, and social sciences for comparing
 two groups.
+
+## T-Distribution: Explanation and Characteristics
+
+The **t-distribution**, also known as **Student’s t-distribution**, is a
+**probability distribution** that arises when estimating the mean of a
+normally distributed population when the sample size is **small (n &lt;
+30)** and the **population variance is unknown**.
+
+It is a **bell-shaped, symmetric distribution**, similar to the normal
+distribution but with **heavier tails**. The heavier tails mean that
+there is a higher probability of observing values far from the mean
+compared to the normal distribution. This accounts for the increased
+uncertainty due to small sample sizes.
+
+#### Key Characteristics of T-Distribution
+
+1.  **Symmetric & Bell-shaped**: Like the normal distribution but with
+    more spread.
+2.  **Depends on Degrees of Freedom (df)**:
+
+-   **df = n - 1**, where n is the sample size.
+-   As **df increases**, the t-distribution **approaches the normal
+    distribution**.
+
+1.  **Heavy Tails**: More probability mass in the tails compared to the
+    normal distribution, making it more robust for small samples.
+2.  **Mean = 0** and **Variance = df / (df - 2)** for df &gt; 2.
+3.  **Used for Hypothesis Testing** when the population standard
+    deviation is unknown.
+
+#### Comparison of t-Distribution and Normal Distribution
+
+![](T-test_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
+#### Graph Interpretation
+
+-   The **dashed red line** represents the **normal distribution**.
+-   The **solid blue line** represents the **t-distribution (df=5)**.
+-   The **t-distribution has heavier tails**, indicating higher
+    variability when degrees of freedom are small.
+-   As **df increases**, the t-distribution converges to the normal
+    distribution.
+
+#### Convergence of t-Distribution to Normal Distribution
+
+![](T-test_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
+#### Graph Interpretation:
+
+-   The **red line (df=2)** has the heaviest tails, meaning more spread.
+    The **blue line (df=5)** still has noticeable heavy tails. The
+    **green line (df=10)** starts to resemble the normal distribution.
+    The **purple line (df=30)** is very close to the normal
+    distribution. The **black dashed line represents the standard normal
+    distribution.**
+
+As **df increases**, the **t-distribution becomes narrower and converges
+to the normal distribution**, demonstrating how with **large sample
+sizes**, the t-test behaves like a Z-test.
+
+### Discovery of T-Test and T-Distribution
+
+The t-test and t-distribution were introduced by **William Sealy
+Gosset** in 1908.
+
+#### Who was Gosset?
+
+-   A British statistician working for **Guinness Brewery** in Dublin.
+-   Due to company policy, **he published under the pseudonym
+    “Student”**, hence the name **“Student’s t-distribution**.”
+
+#### Why was it Developed?
+
+-   Gosset was interested in improving the quality of beer by analyzing
+    **small samples** of barley yields.
+-   Existing statistical methods relied on **large sample sizes**, which
+    were impractical for his work.
+-   He developed the **t-distribution** to handle small sample sizes
+    with **unknown population variance**, allowing for more reliable
+    inferences in quality control.
+
+#### Impact of T-Test
+
+-   His work laid the foundation for modern **inferential statistics**.
+-   It is widely used in medical research, psychology, economics, and
+    genetics.
+-   The concept was later expanded upon by **Ronald A. Fisher**, a
+    pioneer in modern statistics.
 
 #### Difference Between T-Test and Z-Test
 
@@ -76,55 +164,13 @@ from the sample</td>
 </tbody>
 </table>
 
+<br> <br>
+
 -   T-test is more commonly used than Z-test
 -   In real-world scenarios, population standard deviation is rarely
     known, making t-test more practical.
 -   Many studies work with small sample sizes, requiring the use of the
     t-test.
-
-### Distribution of T-Test
-
-The t-distribution:
-
--   **Bell-shaped and symmetric**, similar to the normal distribution.
--   **Heavier tails** than normal distribution, meaning it accounts for
-    more variability when sample size is small.
--   As **sample size increases, the t-distribution approaches the normal
-    distribution**.
-
-<!-- -->
-
-    ## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-    ## ℹ Please use `linewidth` instead.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
-![](T-test_files/figure-markdown_strict/unnamed-chunk-1-1.png)
-
-#### Graph Interpretation
-
--   The **dashed red line** represents the **normal distribution**.
--   The **solid blue line** represents the **t-distribution (df=5)**.
--   The **t-distribution has heavier tails**, indicating higher
-    variability when degrees of freedom are small.
--   As **df increases**, the t-distribution converges to the normal
-    distribution.
-
-![](T-test_files/figure-markdown_strict/unnamed-chunk-2-1.png)
-
-#### Graph Interpretation:
-
--   The **red line (df=2)** has the heaviest tails, meaning more spread.
-    The **blue line (df=5)** still has noticeable heavy tails. The
-    **green line (df=10)** starts to resemble the normal distribution.
-    The **purple line (df=30)** is very close to the normal
-    distribution. The **black dashed line represents the standard normal
-    distribution.**
-
-As **df increases**, the **t-distribution becomes narrower and converges
-to the normal distribution**, demonstrating how with **large sample
-sizes**, the t-test behaves like a Z-test.
 
 ## Types of T-test
 
