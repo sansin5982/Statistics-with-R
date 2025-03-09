@@ -52,9 +52,67 @@ The F-statistic is the ratio of these two:
 $$
 \large F = \frac{(Between \\Group \\Variance)}{(Within \\Group  \\Variance)}
 $$
-\* If F is large → The groups are likely different. \* If F is small →
-The groups are likely similar.
+
+-   If F is large → The groups are likely different.
+-   If F is small → The groups are likely similar.
 
 ![](ANOVA_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
+### When to Use ANOVA?
+
+-   **Comparing More than Two Groups**: If you have **two groups**, a
+    **t-test** is sufficient. If you have **three or more groups**,
+    ANOVA is needed.
+-   **Checking for Variability in Data**: ANOVA determines whether
+    **between-group variability** is greater than **within-group
+    variability**.
+-   **Experimental Studies**: Used when testing the effect of different
+    treatments, such as different drugs in clinical trials.
+
+#### Difference Between ANOVA and T-Test
+
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">T-Test</th>
+<th style="text-align: left;">ANOVA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Groups compared</td>
+<td style="text-align: left;">Compares two groups only</td>
+<td style="text-align: left;">Compares three or more groups</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Test used</td>
+<td style="text-align: left;">Uses <strong>t-statistic</strong></td>
+<td style="text-align: left;">Uses <strong>F-statistics</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hypothesis</td>
+<td style="text-align: left;">Tests if two means are different</td>
+<td style="text-align: left;">Tests if <strong>at least one
+mean</strong> is different among multiple groups</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Distribution used</td>
+<td style="text-align: left;"><strong>t-distribution</strong></td>
+<td style="text-align: left;"><strong>F-distribution</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Application</td>
+<td style="text-align: left;">Used for simple comparison</td>
+<td style="text-align: left;">Used for complex models (multiple gropus,
+factorial desing)</td>
+</tr>
+</tbody>
+</table>
 
 [⬅ Back to Home](../index.md)
