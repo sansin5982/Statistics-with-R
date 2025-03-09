@@ -94,26 +94,6 @@ The t-distribution:
 
 <!-- -->
 
-    # Load required library
-    library(ggplot2)
-
-    # Generate data
-    x <- seq(-4, 4, length=100)
-    t_dist <- dt(x, df=5) # t-distribution with df=5
-    normal_dist <- dnorm(x) # Standard normal distribution
-
-    # Create Data Frame
-    df <- data.frame(x, t_dist, normal_dist)
-
-    # Plot the Distributions
-    ggplot(df, aes(x)) +
-      geom_line(aes(y=t_dist, color="t-distribution (df=5)"), size=1) +
-      geom_line(aes(y=normal_dist, color="Normal Distribution"), size=1, linetype="dashed") +
-      labs(title="Comparison of t-Distribution and Normal Distribution",
-           x="Value", y="Density") +
-      scale_color_manual(name="Distributions", values=c("blue", "red")) +
-      theme_minimal()
-
     ## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
     ## ℹ Please use `linewidth` instead.
     ## This warning is displayed once every 8 hours.
@@ -124,14 +104,27 @@ The t-distribution:
 
 #### Graph Interpretation
 
--   The dashed red line represents the normal distribution.
--   The solid blue line represents the t-distribution (df=5).
--   The t-distribution has heavier tails, indicating higher variability
-    when degrees of freedom are small.
--   As df increases, the t-distribution converges to the normal
+-   The **dashed red line** represents the **normal distribution**.
+-   The **solid blue line** represents the **t-distribution (df=5)**.
+-   The **t-distribution has heavier tails**, indicating higher
+    variability when degrees of freedom are small.
+-   As **df increases**, the t-distribution converges to the normal
     distribution.
 
 ![](T-test_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
+#### Graph Interpretation:
+
+-   The **red line (df=2)** has the heaviest tails, meaning more spread.
+    The **blue line (df=5)** still has noticeable heavy tails. The
+    **green line (df=10)** starts to resemble the normal distribution.
+    The **purple line (df=30)** is very close to the normal
+    distribution. The **black dashed line represents the standard normal
+    distribution.**
+
+As **df increases**, the **t-distribution becomes narrower and converges
+to the normal distribution**, demonstrating how with **large sample
+sizes**, the t-test behaves like a Z-test.
 
 ## Types of T-test
 
@@ -146,3 +139,5 @@ Compare means of two independent groups.
 ### 3. Paired T-Test:
 
 Compare means of the same group before and after an intervention.
+
+[⬅ Back to Home](../index.md)
