@@ -36,6 +36,12 @@ The **F-distribution** is a probability distribution used mainly in
 between multiple groups** and determine if the differences between them
 are statistically significant.
 
+-   Is **positively skewed** (as F-values are always positive).
+-   Depends on **two degrees of freedom**:
+    -   **df₁** (numerator): Number of groups minus 1.
+    -   **df₂** (denominator): Total number of observations minus the
+        number of groups.
+
 #### F-Distribution for Different Degrees of Freedom
 
 ![](ANOVA_files/figure-markdown_strict/unnamed-chunk-1-1.png)
@@ -69,8 +75,8 @@ $$
 \large F = \frac{(Between \\Group \\Variance)}{(Within \\Group  \\Variance)}
 $$
 
--   If F is large → The groups are likely different.
--   If F is small → The groups are likely similar.
+-   If F statistics is large → The groups are likely different.
+-   If F statistics is small → The groups are likely similar.
 
 #### Visualize “Between-Group Variance vs. Within-Group Variance”
 
@@ -143,5 +149,48 @@ factorial desing)</td>
 </tr>
 </tbody>
 </table>
+
+## Types of ANOVA
+
+### 1. One-Way ANOVA
+
+-   **Compares means across three or more independent groups.**
+-   **Example**: Comparing **average exam scores** among students from
+    **three different schools**.
+
+### 2. Two-Way ANOVA
+
+-   **Compares means across two categorical independent variables.**
+-   **Example**: Studying the effect of **diet (vegetarian
+    vs. non-vegetarian)** and **exercise (yes vs. no)** on **weight
+    loss**.
+
+### 3. Repeated Measures ANOVA
+
+-   **Compares means of the same subjects under different conditions**.
+-   **Example**: Measuring **blood pressure** in **patients before,
+    during, and after** taking a new medication.
+
+### 4. MANOVA (Multivariate ANOVA)
+
+-   **Compares means for multiple dependent variables simultaneously.**
+-   **Example**: Studying the effect of **teaching methods** on
+    **student performance (math score, reading score, and science
+    score)**.
+
+#### Reference:
+
+-   Montgomery, D. C. (2017). Design and Analysis of Experiments (9th
+    ed.). Wiley.
+-   Ott, R. L., & Longnecker, M. (2015). An Introduction to Statistical
+    Methods and Data Analysis (7th ed.). Cengage Learning.
+-   Winer, B. J., Brown, D. R., & Michels, K. M. (1991). Statistical
+    Principles in Experimental Design (3rd ed.). McGraw-Hill.
+-   NIST/SEMATECH e-Handbook on ANOVA
+    <https://www.itl.nist.gov/div898/handbook/prc/section4/prc4.htm>
+-   Penn State Online Course (STAT 502: ANOVA and Experimental Design)
+    <https://online.stat.psu.edu/stat502/>
+-   SPSS ANOVA Guide (IBM SPSS Documentation)
+    <https://www.ibm.com/docs/en/spss-statistics/28.0.0?topic=tests-analysis-variance-anova>
 
 [⬅ Back to Home](../index.md)
