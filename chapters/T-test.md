@@ -184,4 +184,18 @@ Compare means of two independent groups.
 
 Compare means of the same group before and after an intervention.
 
+#### References:
+
+-   Gosset, W. S. (1908). The Probable Error of a Mean. Biometrika,
+    6(1), 1-25.
+-   Montgomery, D. C., & Runger, G. C. (2018). Applied Statistics and
+    Probability for Engineers (7th ed.). Wiley.
+-   Casella, G., & Berger, R. L. (2002). Statistical Inference (2nd
+    ed.). Duxbury Press.
+-   Wackerly, D., Mendenhall, W., & Scheaffer, R. L. (2014).
+    Mathematical Statistics with Applications (7th ed.). Cengage
+    Learning.
+-   Rice, J. A. (2006). Mathematical Statistics and Data Analysis (3rd
+    ed.). Cengage Learning.
+
 [⬅ Back to Home](../index.md)
