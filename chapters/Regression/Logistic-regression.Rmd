@@ -1,0 +1,313 @@
+---
+title: "Logistic regression"
+output: md_document
+---
+
+<script type="text/javascript" async
+    src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+
+## 1. Introduction
+
+Logistic regression is a statistical technique used to predict the probability of a binary outcome. Unlike linear regression, which estimates a continuous outcome, logistic regression is focused on classification problems where the goal is to categorize outcomes into distinct classes. The most common form of logistic regression is binary logistic regression, used for outcomes that fall into two categories, like predicting whether a patient has a disease (yes/no) or whether a customer will purchase a product (buy/not buy).
+
+Here’s how it works in simple terms:
+
+* **Input Information**: First, we gather information (data) about things that might affect the outcome. For instance, to predict rain, we had consider factors like humidity, temperature, and maybe even wind speed.
+
+* **Calculate Probability**: Logistic regression uses this data to estimate the probability of a certain event happening. Instead of giving a precise “yes” or “no” right away, it calculates a probability between 0 and 1. For example, based on today’s humidity and temperature, there might be a 70% chance it will rain tomorrow.
+
+* **Convert Probability to Decision**: Once it has a probability, logistic regression converts this into a category. If the probability is over a certain threshold (like 50%), we could say, “Yes, it will rain.” If it’s below 50%, we’d say, “No, it won’t rain.”
+
+In technical terms, logistic regression works by finding a best-fit line (or curve) that separates different categories. So, instead of a straight line, it creates an S-shaped curve that can classify data points into one of the two categories based on probability.
+
+## 2. The Logistic Function and the Sigmoid Curve
+The heart of logistic regression is the logistic (sigmoid) function, which maps any input to a value between 0 and 1. The logistic function is given by:
+
+
+$$
+\large f(z) = \frac{1}{1 + e^{-z}}
+$$
+
+where:
+
+- \( z \) is a linear combination of predictor variables (i.e., \( z = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_n X_n \))
+
+Here:
+
+- X1,X2,...,Xn are the predictor variables.
+- \( \beta_0 \) is the intercept term,
+- \( \beta_1, \ldots, \beta_n \) are the coefficients for each predictor variable.
+
+- \( f(z) \) gives the probability of the outcome being in one of the binary classes.
+
+Let's define and plot the logistic function in R.
+
+```{r}
+# Define the logistic (sigmoid) function
+logistic_function <- function(z) {
+  1 / (1 + exp(-z))
+}
+
+# Create a sequence of values for z to plot the curve
+z_values <- seq(-10, 10, length.out = 100)
+sigmoid_values <- logistic_function(z_values)
+
+# Plot the sigmoid curve
+plot(z_values, sigmoid_values, type = "l", lwd = 2, col = "blue",
+     main = "Logistic Function (Sigmoid Curve)",
+     xlab = "z", ylab = "f(z) = 1 / (1 + exp(-z))")
+abline(h = 0.5, col = "red", lty = 2)  # Add a horizontal line at 0.5
+```
+
+## 3. Probability Interpretation
+In logistic regression, the probability that the dependent variable \( y \) belongs to the class \( 1 \) (e.g., success) given the predictors \( x \) is calculated using the logistic function:
+
+$$
+\large P(Y=1 | X) = \frac{1}{1 + e^{-(\beta{\scriptstyle 0} + \beta{\scriptstyle 1} X{\scriptstyle 1} + \beta{\scriptstyle 2} X{\scriptstyle 2} + \dots + \beta{\scriptstyle n} X{\scriptstyle n})}}
+$$
+
+- \( \beta_0 \) is the intercept,
+- \( \beta_1, \beta_2, \ldots, \beta_n \) are the coefficients of the predictors \( X_1, X_2, \ldots, X_n \).
+
+This formula gives the probability of the positive class (e.g., \( Y = 1 \)) for a given set of predictor values.
+
+### Classification Rule
+
+In logistic regression, we classify the outcome based on the predicted probability \( P(Y=1 | X) \):
+
+- If \( P(Y=1 | X) \geq 0.5 \), we classify the outcome as \( Y = 1 \) (e.g., "positive").
+- If \( P(Y=1 | X) < 0.5 \), we classify the outcome as \( Y = 0 \) (e.g., "negative").
+
+This threshold of 0.5 is standard, but it can be adjusted depending on the context and the desired sensitivity of the classification.
+
+## 4. Maximum Likelihood Estimation (MLE)
+The coefficients \( \beta \) logistic regression are estimated using **Maximum Likelihood Estimation (MLE)**. This method finds the values of \( \beta \) that make the observed outcomes most probable under the logistic model.
+
+### 1. Likelihood Function:
+
+The likelihood function for logistic regression is used to estimate the model coefficients by maximizing the probability of observing the given outcomes. For a dataset with \( n \) observations, the likelihood function \( L(\beta) \) is given by:
+
+$$
+\large L(\beta) = \prod{\scriptstyle}{i=1}^n P(y{\scriptstyle i} | x{\scriptstyle i})^{y{\scriptstyle i}} \cdot (1 - P(y{\scriptstyle i} | x{\scriptstyle i}))^{1 - y{\scriptstyle i}}
+$$
+
+where:
+
+- \( y_i \) represents the observed outcome for the \( i \)-th observation,
+- \( P(y_i | x_i) \) is the probability of \( y_i = 1 \) given predictors \( x_i \),
+- \( \beta \) represents the model coefficients.
+
+Taking the log of the likelihood function, we obtain the log-likelihood function, which is easier to maximize:
+
+$$
+\large \text{log } L(\beta) = \sum{\scriptstyle}{i=1}^n \left( y{\scriptstyle i} \cdot \log(P(y{\scriptstyle i} | x{\scriptstyle i})) + (1 - y{\scriptstyle i}) \cdot \log(1 - P(y{\scriptstyle i} | x{\scriptstyle i})) \right)
+$$
+
+This log-likelihood function is maximized to find the optimal values of the coefficients \( \beta \) in logistic regression.
+
+### 3. Log-likelihood Function
+
+In logistic regression, we use the log-likelihood function, which is the logarithm of the likelihood function. This function is maximized to estimate the model coefficients \( \beta \). The log-likelihood function is given by:
+
+$$
+\large \text{log } L(\beta) = \sum{\scriptstyle}{i=1}^n \left( y{\scriptstyle i} \cdot \log(P(y{\scriptstyle i} | x{\scriptstyle i})) + (1 - y{\scriptstyle i}) \cdot \log(1 - P(y{\scriptstyle i} | x{\scriptstyle i})) \right)
+$$
+
+where:
+
+- \( y_i \) is the observed outcome for the \( i \)-th observation,
+- \( P(y_i | x_i) \) is the probability of \( y_i = 1 \) given predictors \( x_i \),
+- \( \beta \) represents the coefficients of the model.
+
+The goal in logistic regression is to find the values of \( \beta \) that maximize this log-likelihood, thereby making the observed outcomes most probable under the model.
+
+MLE aims to maximize this log-likelihood, often done using iterative algorithms like **Gradient Descent** or **Newton-Raphson**.
+
+### 5. Interpreting Coefficients and Odds Ratios 
+
+In logistic regression, each coefficient \( \beta_j \) represents the change in the **log odds** of the outcome for a one-unit increase in the predictor \( x_j \), while keeping other predictors constant. Specifically:
+
+- The **log odds** of the outcome is the natural logarithm of the odds. For a predictor \( x_j \), the coefficient \( \beta_j \) represents the effect of a one-unit increase in \( x_j \) on the log odds of \( y = 1 \).
+
+To interpret these coefficients in terms of **odds ratios**, we use the following formula:
+
+$$
+\large \text{Odds Ratio} = e^{\beta_j}
+$$
+
+where:
+
+- \( e^{\beta_j} \) gives the odds ratio for predictor \( x_j \).
+
+- If \( e^{\beta_j} > 1 \), an increase in \( x_j \) increases the odds of the outcome.
+
+- If \( e^{\beta_j} < 1 \), an increase in \( x_j \) decreases the odds of the outcome.
+
+- If \( e^{\beta_j} = 1 \), \( x_j \) has no effect on the odds.
+
+### 6. Model Evaluation: Wald Test, Likelihood Ratio Test, and Pseudo-R²
+
+Evaluating the effectiveness and significance of predictors in a logistic regression model involves several key metrics and tests.
+
+#### 1. Wald Test
+
+The **Wald Test** assesses the significance of individual predictors in the model by testing whether each coefficient \( \beta_j \) is significantly different from zero. The Wald test statistic for each predictor \( x_j \) is calculated as:
+
+$$
+\large W{\scriptstyle j} = \frac{\hat{\beta}{\scriptstyle j}}{\text{SE}(\hat{\beta}{\scriptstyle j})}
+$$
+
+where:
+
+- \( \hat{\beta}_j \) is the estimated coefficient for \( x_j \),
+
+- \( \text{SE}(\hat{\beta}_j) \) is the standard error of \( \hat{\beta}_j \).
+
+A large Wald statistic (or a small p-value) suggests that the predictor \( x_j \) has a significant effect on the outcome.
+
+#### 2. Likelihood Ratio Test
+
+The **Likelihood Ratio Test** (LRT) is used to compare the goodness-of-fit between two nested logistic regression models: a **full model** with all predictors and a **reduced model** that excludes certain predictors. This test helps determine if the excluded predictors significantly improve the model's fit.
+
+The likelihood ratio test statistic is calculated as:
+
+$$
+\large \text{LR} = -2 \left( \text{log } L{\scriptstyle {\text{reduced}}} - \text{log } L{\scriptstyle {\text{full}}} \right)
+$$
+
+where:
+
+- \( \text{log } L_{\text{reduced}} \) is the log-likelihood of the reduced model,
+
+- \( \text{log } L_{\text{full}} \) is the log-likelihood of the full model.
+
+A higher LR statistic (or a small p-value) indicates that the additional predictors in the full model significantly improve its fit.
+
+The output provides the LR statistic and p-value, indicating whether the full model fits the data significantly better than the null model.
+
+##### Interpretation
+If the p-value is small (typically < 0.05), we conclude that the predictors in the full model significantly improve the model fit compared to the null model.
+
+#### 4. Pseudo-R²
+
+In logistic regression, there is no direct equivalent to the R² metric from linear regression, so we use **Pseudo-R²** to assess the model's explanatory power. One of the most commonly used metrics is **McFadden's Pseudo-R²**, which is calculated as:
+
+$$
+\large R^2{\scriptstyle {\text{McFadden}}}= 1 - \frac{\text{log } L{\scriptstyle {\text{full}}}}{\text{log } L{\scriptstyle {\text{null}}}} 
+$$
+
+where:
+
+- \( \text{log } L_{\text{full}} \) is the log-likelihood of the full model (with predictors),
+
+- \( \text{log } L_{\text{null}} \) is the log-likelihood of the null model (a model with no predictors).
+
+The Pseudo-R² value ranges from 0 to 1, where higher values indicate better model fit, though values are typically lower than traditional R² values in linear regression.
+
+### 7. Assumptions of Logistic Regression
+Logistic regression relies on several key assumptions:
+
+**Linear Relationship**: The log-odds of the outcome are linearly related to the predictors.
+**Independent Observations**: Each observation should be independent of the others.
+**No Multicollinearity**: Predictors should not be highly correlated with each other.
+**Large Sample Size**: Logistic regression performs best with large sample sizes, which provide stable coefficient estimates.
+
+### 8. Importance of the Wald Test in Logistic Regression
+The Wald Test is crucial for identifying which predictors significantly impact the model. If a predictor's Wald statistic is high, it suggests that the predictor contributes valuable information. The Wald test provides both a test statistic and a p-value for each predictor, helping to determine whether each coefficient differs significantly from zero. However, for smaller samples, the likelihood ratio test may be preferred, as the Wald test can sometimes yield inaccurate results in such cases.
+
+###  Summary
+Logistic regression is a foundational tool for binary classification problems, helping us predict the likelihood of a particular outcome. Using concepts like maximum likelihood estimation, odds ratios, and the Wald test, logistic regression offers a comprehensive framework to make decisions and assess predictors' impact on binary outcomes. Understanding these key components provides a solid basis for applying logistic regression in diverse fields.
+
+#### Example
+
+Suppose \( \beta_1 = 0.5 \) for a predictor \( x_1 \). The odds ratio for \( x_1 \) is:
+
+\[
+e^{0.5} \approx 1.65
+\]
+
+This implies that a one-unit increase in \( x_1 \) is associated with a 65% increase in the odds of the outcome, holding other predictors constant.
+
+#### Interpreting Odds Ratios in Context
+
+Odds ratios allow us to understand the magnitude and direction of the effect of each predictor. They are particularly useful in fields like healthcare and finance, where understanding the impact of each factor on the likelihood of an outcome is critical.
+
+
+## Example:
+
+We will create a small dataset with two predictor variables (`age` and `income`) and a binary outcome (`purchase`, 1 if the purchase was made, 0 otherwise).
+
+#### Creating dataset
+```{r}
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate a sample dataset
+data <- data.frame(
+  age = sample(20:60, 50, replace = TRUE),
+  income = sample(20000:80000, 50, replace = TRUE)
+)
+
+# Simulate a binary outcome based on age and income
+data$purchase <- with(data, ifelse(age + 0.0001 * income + rnorm(50, sd = 5) > 45, 1, 0))
+
+# View the dataset
+head(data)
+```
+
+#### Fitting the logistic regression model
+
+```{r}
+# Fit the logistic regression model
+model <- glm(purchase ~ age + income, data = data, family = binomial)
+
+# Display the model summary
+summary(model)
+```
+
+* **Interpretation**: age has statistically significant coefficients (p-values < 0.05), meaning age is significant predictors of purchase. The intercept and both predictors are significantly associated with the likelihood of making a purchase.
+
+
+### Interpreting the coefficients as Odds ratio
+```{r}
+# Calculating Odds Ratios
+exp(coef(model))
+```
+
+* **Interpretation**:
+  * For age, the odds ratio of 2.03 indicates that each additional year of age increases the odds of making a purchase by approximately 103%, holding income constant.
+
+  * For income, the odds ratio of 0.9999824 suggests that each additional unit of income (dollar) slightly decreases the odds of making a purchase. However, the effect size is very small, given the scaling of income.
+
+
+### Wald test
+```{r}
+# Wald Test for individual predictors
+summary(model)$coefficients[, "Estimate"] / summary(model)$coefficients[, "Std. Error"]
+```
+
+* **Interpretation**: The Wald Test values indicate that age is significant predictor, consistent with the summary output. These z-values confirm that age coefficient is non-zero, supporting their inclusion in the model. The Wald test statistic for income is close to zero and negative, suggesting that income may have a very small, possibly non-significant effect on the outcome as p value is not significant.
+
+### Model evaluation
+```{r}
+# Calculate McFadden's Pseudo-R²
+logLik_full <- logLik(model)
+logLik_null <- logLik(glm(purchase ~ 1, data = data, family = binomial))
+
+pseudo_r2 <- 1 - as.numeric(logLik_full / logLik_null)
+pseudo_r2
+```
+
+* **Interpretation**: A Pseudo-R² value of 0.8733 (or approximately 87.33%) suggests that the logistic regression model provides a very good fit to the data. This high Pseudo-R² value indicates that the predictors in the model explain a substantial portion of the variability in the outcome (e.g., making a purchase).
+
+### Likelihood ratio test
+```{r}
+# Likelihood Ratio Test
+anova(glm(purchase ~ 1, data = data, family = binomial), model, test = "LRT")
+```
+* **Interpretation**: The Likelihood Ratio Test shows a significant result (p = 7.42e-14), suggesting that the predictor (age) improve the model fit significantly over the null model. This means that adding these predictors provides valuable information for predicting `purchase`.
