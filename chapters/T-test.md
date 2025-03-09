@@ -17,9 +17,9 @@ population standard deviation is unknown.
 
 ### 1. Small Sample Size:
 
-When the sample size is small, the Central Limit Theorem does not
-necessarily apply, so we cannot assume that the sample mean follows a
-normal distribution. The t-test helps in such cases.
+When the sample size is small, the **Central Limit Theorem** does not
+necessarily apply, so **we cannot assume that the sample mean follows a
+normal distribution**. The t-test helps in such cases.
 
 ### 2. Unknown Population Variance:
 
@@ -54,15 +54,13 @@ uncertainty due to small sample sizes.
 1.  **Symmetric & Bell-shaped**: Like the normal distribution but with
     more spread.
 2.  **Depends on Degrees of Freedom (df)**:
-
--   **df = n - 1**, where n is the sample size.
--   As **df increases**, the t-distribution **approaches the normal
-    distribution**.
-
-1.  **Heavy Tails**: More probability mass in the tails compared to the
+    -   **df = n - 1**, where n is the sample size.
+    -   As **df increases**, the t-distribution **approaches the normal
+        distribution**.
+3.  **Heavy Tails**: More probability mass in the tails compared to the
     normal distribution, making it more robust for small samples.
-2.  **Mean = 0** and **Variance = df / (df - 2)** for df &gt; 2.
-3.  **Used for Hypothesis Testing** when the population standard
+4.  **Mean = 0** and **Variance = df / (df - 2)** for df &gt; 2.
+5.  **Used for Hypothesis Testing** when the population standard
     deviation is unknown.
 
 #### Comparison of t-Distribution and Normal Distribution
