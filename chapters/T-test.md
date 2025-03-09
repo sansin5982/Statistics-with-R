@@ -197,5 +197,13 @@ Compare means of the same group before and after an intervention.
     Learning.
 -   Rice, J. A. (2006). Mathematical Statistics and Data Analysis (3rd
     ed.). Cengage Learning.
+-   NIST/SEMATECH e-Handbook of Statistical Methods
+    <https://www.itl.nist.gov/div898/handbook/eda/section3/eda3672.html>
+-   Penn State Online Statistics Course (STAT 500: Applied Statistics)
+    <https://online.stat.psu.edu/stat500/lesson/6/6.2>
+-   Khan Academy - T-Test and Hypothesis Testing
+    <https://www.khanacademy.org/math/statistics-probability/inference-categorical-data>
+-   R Documentation: t.test Function
+    <https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/t.test>
 
 [⬅ Back to Home](../index.md)
