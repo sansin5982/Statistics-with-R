@@ -501,3 +501,5 @@ differences.
 2.  Sokal, R. R., & Rohlf, F. J. (2012). *Biometry: The Principles and
     Practice of Statistics in Biological Research*. W. H. Freeman.
 3.  Zar, J. H. (2010). *Biostatistical Analysis*. Pearson.
+
+[⬅ Back to Home](../index.md)

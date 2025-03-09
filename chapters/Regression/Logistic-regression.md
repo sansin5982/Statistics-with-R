@@ -478,3 +478,5 @@ We will create a small dataset with two predictor variables (`age` and
     the model fit significantly over the null model. This means that
     adding these predictors provides valuable information for predicting
     `purchase`.
+
+[⬅ Back to Home](../index.md)
