@@ -5,9 +5,7 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
 </script>
 
-# T Test
-
-## Introduction
+# T-test
 
 A **T-test** is a statistical test used to compare the means of one or
 two groups to determine if there is a significant difference between
@@ -86,11 +84,15 @@ from the sample</td>
 
 ### Distribution of T-Test
 
-The t-distribution: \* **Bell-shaped and symmetric**, similar to the
-normal distribution. \* **Heavier tails** than normal distribution,
-meaning it accounts for more variability when sample size is small. \*
-As **sample size increases, the t-distribution approaches the normal
-distribution**.
+The t-distribution:
+
+-   **Bell-shaped and symmetric**, similar to the normal distribution.
+-   **Heavier tails** than normal distribution, meaning it accounts for
+    more variability when sample size is small.
+-   As **sample size increases, the t-distribution approaches the normal
+    distribution**.
+
+<!-- -->
 
     # Load required library
     library(ggplot2)
@@ -119,3 +121,28 @@ distribution**.
     ## generated.
 
 ![](T-test_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
+#### Graph Interpretation
+
+-   The dashed red line represents the normal distribution.
+-   The solid blue line represents the t-distribution (df=5).
+-   The t-distribution has heavier tails, indicating higher variability
+    when degrees of freedom are small.
+-   As df increases, the t-distribution converges to the normal
+    distribution.
+
+![](T-test_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
+## Types of T-test
+
+### 1. One Sample T-Test:
+
+Compare the sample mean to a known population mean.
+
+### 2. Independent (Unpaired) T-Test:
+
+Compare means of two independent groups.
+
+### 3. Paired T-Test:
+
+Compare means of the same group before and after an intervention.
