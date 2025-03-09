@@ -18,5 +18,5 @@ Chapters:
 -   [Chi-squared](chapters/Chi-squared)
 -   [Correlation](chapters/Correlation)
 -   [Regression](chapters/Regression)
-    -   [Linear Regression](chapters/Linear-regression)
-    -   [Logistic Regression](chapters/Logistic-regression)
+    -   [Linear Regression](chapters/Regression/Linear-regression)
+    -   [Logistic Regression](chapters/Regression/Logistic-regression)
