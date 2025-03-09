@@ -36,16 +36,32 @@ The **F-distribution** is a probability distribution used mainly in
 between multiple groups** and determine if the differences between them
 are statistically significant.
 
+#### F-Distribution for Different Degrees of Freedom
+
+![](ANOVA_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
+#### Graph Interpretation
+
+-   The **red line (df1=2, df2=10)** has a higher peak and is more
+    skewed.
+-   The **blue dashed line (df1=5, df2=10)** is closer to normal.
+-   The **green dot-dashed line (df1=10, df2=10)** is even closer to a
+    normal shape.
+-   As **degrees of freedom increase, the F-distribution becomes more
+    symmetric**.
+
 Imagine we are a teacher, and we have three different classes of
 students. You want to check:
 
 -   Are the average scores of these classes significantly different?
 -   Or are the differences just due to random variation?
 
-To do this, you compare: 1. **Between-Group Variance (Difference Between
-Classes)**: How much do the class averages differ from each other? 2.
-**Within-Group Variance (Difference Within Each Class)**: How much do
-individual students in the same class differ from each other?
+To do this, you compare:
+
+1.  **Between-Group Variance (Difference Between Classes)**: How much do
+    the class averages differ from each other?
+2.  **Within-Group Variance (Difference Within Each Class)**: How much
+    do individual students in the same class differ from each other?
 
 The F-statistic is the ratio of these two:
 
@@ -56,7 +72,9 @@ $$
 -   If F is large → The groups are likely different.
 -   If F is small → The groups are likely similar.
 
-![](ANOVA_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+#### Visualize “Between-Group Variance vs. Within-Group Variance”
+
+![](ANOVA_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 ### When to Use ANOVA?
 
