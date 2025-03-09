@@ -194,7 +194,7 @@ To interpret these coefficients in terms of **odds ratios**, we use the
 following formula:
 
 $$
-\large \text{Odds Ratio} = e^{\beta\_j}
+\large \text{Odds Ratio} = e^{\beta{\scriptstyle j}}
 $$
 
 where:
