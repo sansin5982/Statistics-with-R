@@ -14,7 +14,15 @@ Chapters:
     -   [Independent Sample
         T-test](chapters/T-test/Independent-Sample-Ttest)
     -   [Paired Sample T-test](chapters/T-test/Paired-Sample-Ttest)
--   [ANOVA](chapters/ANOVA)
+-   [ANOVA](chapters/ANOVA)\]
+    -   [ANOVA](chapters/ANOVA/One-Way-ANOVA)\]
+    -   [ANOVA](chapters/ANOVA/Two-Way-ANOVA)\]
+    -   [ANOVA](chapters/ANOVA/Repeated-Measures-ANOVA)\]
+    -   [ANOVA](chapters/ANOVA/Mixed-ANOVA)\]
+    -   [ANOVA](chapters/ANOVA/MANOVA)\]
+    -   [ANOVA](chapters/ANOVA/ANCOVA)\]
+    -   [ANOVA](chapters/ANOVA/One-Way-MANOVA)\]
+-   [Non-Parametric Tests](chapters/Non-Parametric-Test)
 -   [Chi-squared](chapters/Chi-squared)
 -   [Correlation](chapters/Correlation)
 -   [Regression](chapters/Regression)
