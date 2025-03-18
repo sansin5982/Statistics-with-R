@@ -69,3 +69,50 @@ Where:
 -   *n**i* = number of observations in group
 -   *X**i**j* = observation in group *i*, *j*
 -   *X̄**t**o**t**a**l* = overall mean
+
+#### 2. Between-Group Sum of Squares (SSB)
+
+$$
+\Large SSB = \underset{i=1}{\sum}^{k} \\n{i}  \\(\bar X{i} \\- \bar{X}{total} )^2
+$$
+
+-   *X̄**i* = mean of group *i*
+
+#### 3. Within-Gorup Sum of Squares (SSW)
+
+$$
+\Large SSW = \underset{i=1}{\sum}^{k} \underset{j=1}{\sum}^{ni} \\(X{ij} \\- \bar{X}{i} )^2
+$$
+
+#### 4. Degrees of Freedom
+
+-   df between groups = *k* − 1
+-   df within groups = *N* − *k*
+-   df total = *n* − 1
+    -   Where n is the total number of observations
+
+#### 5. Mean Square Between
+
+$$
+\Large MSB = \frac{SSB}{df {\scriptstyle between}}
+$$
+
+#### 5. Mean Square Between
+
+$$
+\Large MSB = \frac{SSB}{df {\scriptstyle between}}
+$$
+
+#### 6. Mean Square Within
+
+$$
+\Large MSW = \frac{SSW}{df {\scriptstyle within}}
+$$
+
+#### 7. F-statistics
+
+$$
+\Large F = \frac{MSB}{MSW}
+$$
+\* If *F* **is significantly large**, we reject the null hypothesis *H*0
+and conclude that **at least one group mean is different**.
