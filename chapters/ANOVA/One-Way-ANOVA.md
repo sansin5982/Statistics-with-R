@@ -395,9 +395,9 @@ $$
 
 ## Step 6: Critical F value comparion
 
-For a significance level *a**l**p**h**a* = 0.05 with *d**f*1 = 1 with
-*d**f*2 = 12, the critical value from an F-distribution table is
-approximately **3.89**.
+For a significance level *α* = 0.05 with *d**f*1 = 1 with *d**f*2 = 12,
+the critical value from an F-distribution table is approximately
+**3.89**.
 
 Since the computed F-statistic **(≈ 9.57)** is much greater than the
 critical value (3.89), we **reject the null hypothesis**. This indicates
