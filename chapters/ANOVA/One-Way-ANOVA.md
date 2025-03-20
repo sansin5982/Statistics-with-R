@@ -401,6 +401,21 @@ $$
 
 #### Performing One-Way ANOVA in R
 
+    # Data
+    diet_A <- c(2, 3, 5, 1, 4)
+    diet_B <- c(3, 5, 4, 6, 5)
+    diet_C <- c(6, 7, 8, 5, 7)
+
+    # Create Data Frame
+    data <- data.frame(
+      weight_loss = c(diet_A, diet_B, diet_C),
+      diet = factor(rep(c("A", "B", "C"), each=5))
+    )
+
+    # Perform ANOVA
+    anova_result <- aov(weight_loss ~ diet, data=data)
+    summary(anova_result)
+
     ##             Df Sum Sq Mean Sq F value  Pr(>F)   
     ## diet         2  32.53   16.27   9.569 0.00328 **
     ## Residuals   12  20.40    1.70                   
@@ -424,6 +439,12 @@ ones have significant differences in weight loss.
 
 #### Tukey’s HSD Test in R
 
+    # Perform Tukey's HSD Test
+    tukey_result <- TukeyHSD(anova_result)
+
+    # Print results
+    print(tukey_result)
+
     ##   Tukey multiple comparisons of means
     ##     95% family-wise confidence level
     ## 
@@ -434,6 +455,9 @@ ones have significant differences in weight loss.
     ## B-A  1.6 -0.5999767 3.799977 0.1699323
     ## C-A  3.6  1.4000233 5.799977 0.0024446
     ## C-B  2.0 -0.1999767 4.199977 0.0762244
+
+    # Plot Tukey HSD
+    plot(tukey_result, las=1)
 
 ![](One-Way-ANOVA_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
@@ -515,7 +539,13 @@ To validate the assumptions of One-Way ANOVA, we need to check:
 
 #### 1. Normality (Shapiro-Wilk Test & Q-Q Plot)
 
+    # Load necessary libraries
+    library(car)
+
     ## Loading required package: carData
+
+    # Perform Shapiro-Wilk test for each group
+    shapiro.test(subset(data, diet == "A")$weight_loss)
 
     ## 
     ##  Shapiro-Wilk normality test
@@ -523,11 +553,15 @@ To validate the assumptions of One-Way ANOVA, we need to check:
     ## data:  subset(data, diet == "A")$weight_loss
     ## W = 0.98676, p-value = 0.9672
 
+    shapiro.test(subset(data, diet == "B")$weight_loss)
+
     ## 
     ##  Shapiro-Wilk normality test
     ## 
     ## data:  subset(data, diet == "B")$weight_loss
     ## W = 0.96086, p-value = 0.814
+
+    shapiro.test(subset(data, diet == "C")$weight_loss)
 
     ## 
     ##  Shapiro-Wilk normality test
@@ -541,12 +575,29 @@ To validate the assumptions of One-Way ANOVA, we need to check:
 
 #### Q-Q Plot for Visual Check
 
+    # Q-Q Plot for Normality Check
+    par(mfrow=c(1,3))  # Arrange plots in one row
+    qqnorm(subset(data, diet == "A")$weight_loss, main="Q-Q Plot: Diet A")
+    qqline(subset(data, diet == "A")$weight_loss)
+
+    qqnorm(subset(data, diet == "B")$weight_loss, main="Q-Q Plot: Diet B")
+    qqline(subset(data, diet == "B")$weight_loss)
+
+    qqnorm(subset(data, diet == "C")$weight_loss, main="Q-Q Plot: Diet C")
+    qqline(subset(data, diet == "C")$weight_loss)
+
 ![](One-Way-ANOVA_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 -   Points closely follow the straight line for each diet, data is
     approximately normal.
 
 #### 2. Homogeneity of Variance (Levene’s Test)
+
+    # Load library
+    library(car)
+
+    # Perform Levene's Test
+    leveneTest(weight_loss ~ diet, data = data)
 
     ## Levene's Test for Homogeneity of Variance (center = median)
     ##       Df F value Pr(>F)
