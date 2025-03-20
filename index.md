@@ -8,6 +8,21 @@ Chapters:
 -   [Numerical Measures](chapters/Numerical-Measures)
 -   [Graphs](chapters/Plots-and-Charts)
 -   [Probability](chapters/Probability)
+-   [Theoretical Probability
+    Distribution](chapters/Probability-Distribution)
+    -   [Probability
+        Distribution](chapters/Probability-Distribution/Probability-Distribution)
+    -   [Bernoulli
+        Distribution](chapters/Probability-Distribution/Bernoulli-Distribution)
+    -   [Binomial
+        Distribution](chapters/Probability-Distribution/Binomial-Distribution)
+    -   [Poisson
+        Distribution](chapters/Probability-Distribution/Poisson-Distribution)
+    -   [Normal
+        Distribution](chapters/Probability-Distribution/Normal-Distribution)
+-   [Sampling Distribution of the
+    Mean](chapters/Sampling-Distribution-Mean)
+-   [Confidence Interval](chapters/Confidence-Interval)
 -   [Hypothesis Testing](chapters/Hypothesis-testing)
 -   [T Test](chapters/T-test)
     -   [One Sample T-test](chapters/T-test/One-Sample-Ttest)
