@@ -409,10 +409,33 @@ Since the computed F-statistic **(≈ 9.57)** is much greater than the
 critical value (3.89), we **reject the null hypothesis**. This indicates
 that at least one group mean is significantly different from the others.
 
+#### Performing One-Way ANOVA in R
+
+    ##             Df Sum Sq Mean Sq F value  Pr(>F)   
+    ## diet         2  32.53   16.27   9.569 0.00328 **
+    ## Residuals   12  20.40    1.70                   
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
 ## Step 7: Tukey’s HSD Post-Hoc Test Results
 
 The test compares all possible pairs of diet groups to identify which
 ones have significant differences in weight loss.
+
+#### Tukey’s HSD Test in R
+
+    ##   Tukey multiple comparisons of means
+    ##     95% family-wise confidence level
+    ## 
+    ## Fit: aov(formula = weight_loss ~ diet, data = data)
+    ## 
+    ## $diet
+    ##     diff        lwr      upr     p adj
+    ## B-A  1.6 -0.5999767 3.799977 0.1699323
+    ## C-A  3.6  1.4000233 5.799977 0.0024446
+    ## C-B  2.0 -0.1999767 4.199977 0.0762244
+
+![](One-Way-ANOVA_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 #### Interpretation
 
@@ -485,33 +508,6 @@ ones have significant differences in weight loss.
 This means Diet C leads to significantly higher weight loss compared to
 Diet A, but there is no clear evidence that Diet B and C differ
 significantly.
-
-#### F distribution
-
-![](One-Way-ANOVA_files/figure-markdown_strict/unnamed-chunk-1-1.png)
-
-#### Performing One-Way ANOVA in R
-
-    ##             Df Sum Sq Mean Sq F value  Pr(>F)   
-    ## diet         2  32.53   16.27   9.569 0.00328 **
-    ## Residuals   12  20.40    1.70                   
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-#### Tukey’s HSD Test in R
-
-    ##   Tukey multiple comparisons of means
-    ##     95% family-wise confidence level
-    ## 
-    ## Fit: aov(formula = weight_loss ~ diet, data = data)
-    ## 
-    ## $diet
-    ##     diff        lwr      upr     p adj
-    ## B-A  1.6 -0.5999767 3.799977 0.1699323
-    ## C-A  3.6  1.4000233 5.799977 0.0024446
-    ## C-B  2.0 -0.1999767 4.199977 0.0762244
-
-![](One-Way-ANOVA_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 #### Conclusion
 
