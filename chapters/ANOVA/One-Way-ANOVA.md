@@ -509,17 +509,47 @@ This means Diet C leads to significantly higher weight loss compared to
 Diet A, but there is no clear evidence that Diet B and C differ
 significantly.
 
-#### Conclusion
+#### Checking ANOVA Assumptions in R
 
--   **Diet C is significantly different from Diet A** in terms of weight
-    loss.
--   Diets A and B are **not significantly** different.
--   Diets B and C are not significantly different, but there is a slight
-    trend toward significance.
+To validate the assumptions of One-Way ANOVA, we need to check:
 
-This means Diet C leads to significantly higher weight loss compared to
-Diet A, but there is no clear evidence that Diet B and C differ
-significantly.
+#### 1. Normality (Shapiro-Wilk Test & Q-Q Plot)
+
+    ## Loading required package: carData
+
+    ## 
+    ##  Shapiro-Wilk normality test
+    ## 
+    ## data:  subset(data, diet == "A")$weight_loss
+    ## W = 0.98676, p-value = 0.9672
+
+    ## 
+    ##  Shapiro-Wilk normality test
+    ## 
+    ## data:  subset(data, diet == "B")$weight_loss
+    ## W = 0.96086, p-value = 0.814
+
+    ## 
+    ##  Shapiro-Wilk normality test
+    ## 
+    ## data:  subset(data, diet == "C")$weight_loss
+    ## W = 0.96086, p-value = 0.814
+
+#### Q-Q Plot for Visual Check
+
+![](One-Way-ANOVA_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+
+#### 2. Homogeneity of Variance (Levene’s Test)
+
+    ## Levene's Test for Homogeneity of Variance (center = median)
+    ##       Df F value Pr(>F)
+    ## group  2   0.381 0.6912
+    ##       12
+
+#### 3. Independence (Study Design - No direct test)
+
+-   Ensure independence through study design (random sampling, no
+    repeated measures, different subjects in each group).
 
 #### References
 
