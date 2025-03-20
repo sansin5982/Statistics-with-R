@@ -424,7 +424,7 @@ $$
 
 ## Step 6: Critical F value comparion
 
-For a significance level *α* = 0.05 with *d**f*1 = 1 with *d**f*1 = 12,
+For a significance level *α* = 0.05 with *d**f*1 = 1 with *d**f*2 = 12,
 the critical value from an F-distribution table is approximately
 **3.89**.
 
