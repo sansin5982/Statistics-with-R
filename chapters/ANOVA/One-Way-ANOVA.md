@@ -255,7 +255,7 @@ is recorded for each diet:
 </tbody>
 </table>
 
-#### Step 1: Calculate Group means
+## Step 1: Calculate Group means
 
 $$
 \large \bar{X{\scriptstyle A}} = \frac{2+3+5+1+4} {5} = 3
@@ -269,19 +269,21 @@ $$
 \large \bar{X{\scriptstyle C}} = \frac{6+7+8+5+7} {5} = 6.6
 $$
 
-#### Step 2: Calculate Overall Mean
+## Step 2: Calculate Overall Mean
 
 $$
 \large \bar{X{\scriptstyle Total}} = \frac{(2+3+5+1+4)+(3+5+4+6+5)+(6+7+8+5+7)} {15} = 4.73
 $$
 
-#### Step 3: Compute SST, SSB, SSW
+## Step 3: Compute SST, SSB, SSW
 
-#### Compute SSB
+### Compute SSB
 
 $$
 SSB = \underset{i=1}{\sum}^{k} \\n{i}  \\(\bar X{\scriptstyle i} \\- \bar{X}{\scriptstyle total} )^2
 $$
+
+Substituting values:
 
 #### For group A:
 
@@ -307,7 +309,7 @@ $$
 \large SSB = 14.96 + 0.09 + 17.49 = 32.54
 $$
 
-#### Compute SSW
+### Compute SSW
 
 $$
 SSW = \underset{i=1}{\sum}^{k} \underset{j=1}{\sum}^{ni} \\(X{ij} \\- \bar{X}{i} )^2
@@ -339,8 +341,28 @@ $$
 \large SSW = 10+5.2+5.2=20.4
 $$
 
-#### Compute SST
+### Compute SST
 
 $$
 SST = \underset{i=1}{\sum}^{k} \underset{j=1}{\sum}^{ni} \\(X{ij} \\- \bar{X}{total} )^2
+$$
+
+Substituting values:
+
+#### For Group A:
+
+(2 − 4.73)<sup>2</sup> + (3 − 4.73)<sup>2</sup> + (5 − 4.73)<sup>2</sup> + (1 − 4.73)<sup>2</sup> + (4 − 4.73)<sup>2</sup> = 24.95
+
+#### For Group B:
+
+(3 − 4.73)<sup>2</sup> + (5 − 4.73)<sup>2</sup> + (4 − 4.73)<sup>2</sup> + (6 − 4.73)<sup>2</sup> + (5 − 4.73)<sup>2</sup> = 5.27
+
+#### For Group C:
+
+(6 − 4.73)<sup>2</sup> + (7 − 4.73)<sup>2</sup> + (8 − 4.73)<sup>2</sup> + (5 − 4.73)<sup>2</sup> + (7 − 4.73)<sup>2</sup> = 22.67
+
+#### TOTAL SST
+
+$$
+\large SST = 24.95+5.27+22.67 = 52.89
 $$
