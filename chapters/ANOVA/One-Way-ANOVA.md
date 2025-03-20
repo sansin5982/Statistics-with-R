@@ -277,6 +277,8 @@ $$
 
 #### Step 3: Compute SST, SSB, SSW
 
+#### Compute SSB
+
 $$
 SSB = \underset{i=1}{\sum}^{k} \\n{i}  \\(\bar X{\scriptstyle i} \\- \bar{X}{\scriptstyle total} )^2
 $$
@@ -284,22 +286,61 @@ $$
 #### For group A:
 
 $$
-\large SSB = 5(3 - 4.73)^2 = 14.95
+\large 5(3 - 4.73)^2 = 14.96
 $$
-\#### For group B:
+
+#### For group B:
 
 $$
-\large SSB = 5(4.6 - 4.73)^2 = 0.10
+\large 5(4.6 - 4.73)^2 = 0.09
 $$
 
 #### For group C:
 
 $$
-\large SSB = 5(6.6 - 4.73)^2 = 17.50
+\large 5(6.6 - 4.73)^2 = 17.49
 $$
 
 #### TOTAL SSB:
 
 $$
-\large SSB = 14.95 + 0.10 + 17.50 = 30.93
+\large SSB = 14.96 + 0.09 + 17.49 = 32.54
+$$
+
+#### Compute SSW
+
+$$
+SSW = \underset{i=1}{\sum}^{k} \underset{j=1}{\sum}^{ni} \\(X{ij} \\- \bar{X}{i} )^2
+$$
+
+Substituting values:
+
+#### For Group A
+
+$$
+\large (2−3)^2 + (3−3)^2 + (5−3)^2 + (1−3)^2 + (4−3)^2 = 10
+$$
+
+#### For Group B
+
+$$
+\large (3−4.6)^2 + (5−4.6)^2 + (4−4.6)^2 + (6−4.6)^2 + (5−4.6)^2 = 5.20
+$$
+
+#### For Group C
+
+$$
+\large (6−6.6)^2 + (7−6.6)^2 + (8−6.6)^2 + (5−6.6)^2 + (7−6.6)^2 = 5.20
+$$
+
+#### TOTAL SSW
+
+$$
+\large SSW = 10+5.2+5.2=20.4
+$$
+
+#### Compute SST
+
+$$
+SST = \underset{i=1}{\sum}^{k} \underset{j=1}{\sum}^{ni} \\(X{ij} \\- \bar{X}{total} )^2
 $$
