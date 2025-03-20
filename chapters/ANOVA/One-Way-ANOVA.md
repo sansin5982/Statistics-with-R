@@ -52,7 +52,7 @@ ANOVA splits the total variation in data into two components:
 #### 2. Within-group variance (unexplained variance)
 
 $$
-\large Total Varaince = Between-Group \\Variance \\+ \\Within-Group  \\Variance
+\large \text{Total Varaince} = Between-Group \\Variance \\+ \\Within-Group  \\Variance
 $$
 
 #### Key Formulas
@@ -68,7 +68,7 @@ Where:
 -   *k* = number of groups
 -   *n**i* = number of observations in group
 -   *X**i**j* = observation in group *i*, *j*
--   *X̄**t**o**t**a**l* = overall mean
+-   $\bar X{\scriptstyle total{$ = overall mean
 
 #### 2. Between-Group Sum of Squares (SSB)
 
