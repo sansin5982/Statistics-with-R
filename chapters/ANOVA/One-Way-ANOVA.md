@@ -366,3 +366,39 @@ Substituting values:
 $$
 \large SST = 24.95+5.27+22.67 = 52.89
 $$
+
+## Step 4: Compute Degrees of Freedom
+
+$$
+\large df{\scriptstyle between} = k - 1 = 3 - 1 = 2
+$$
+
+$$
+\large df{\scriptstyle within} = N - k = 15 - 3 = 12
+$$
+
+## Step 5: Compute MSB and MSW
+
+$$
+\large MSB = \frac{SSB}{df {\scriptstyle between}} = \frac{32.54}{2} = 16.27
+$$
+
+$$
+\large MSW = \frac{SSW}{df {\scriptstyle within}} = \frac{20.4}{12} = 1.70 
+$$
+
+## Step 6: Compute F statistics
+
+$$
+\large F = \frac{16.27}{1.70} = 9.57
+$$
+
+## Step 6: Critical F value comparion
+
+For a significance level *a**l**p**h**a* = 0.05 with *d**f*1 = 1 with
+*d**f*2 = 12, the critical value from an F-distribution table is
+approximately **3.89**.
+
+Since the computed F-statistic **(≈ 9.57)** is much greater than the
+critical value (3.89), we **reject the null hypothesis**. This indicates
+that at least one group mean is significantly different from the others.
