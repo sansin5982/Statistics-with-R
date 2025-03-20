@@ -66,9 +66,9 @@ $$
 Where:
 
 -   *k* = number of groups
--   *n**i* = number of observations in group
--   *X**i**j* = observation in group *i*, *j*
--   *X̄**t**o**t**a**l* = overall mean
+-   ni = number of observations in group
+-   Xij = observation in group *i*, *j*
+-   *X̄*total = overall mean
 
 #### 2. Between-Group Sum of Squares (SSB)
 
@@ -153,7 +153,7 @@ error</td>
 <td style="text-align: left;">Assumes equal variance</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Bonferrono
+<td style="text-align: left;"><strong>Bonferroni
 correction</strong></td>
 <td style="text-align: left;">Adjusts significance level to reduce type
 1 error</td>
@@ -408,3 +408,129 @@ the critical value from an F-distribution table is approximately
 Since the computed F-statistic **(≈ 9.57)** is much greater than the
 critical value (3.89), we **reject the null hypothesis**. This indicates
 that at least one group mean is significantly different from the others.
+
+## Step 7: Tukey’s HSD Post-Hoc Test Results
+
+The test compares all possible pairs of diet groups to identify which
+ones have significant differences in weight loss.
+
+#### Interpretation
+
+-   If p-value &lt; 0.05, the difference is statistically significant.
+-   The confidence interval (CI) should not contain zero for
+    significance.
+-   Groups with significant differences mean their diets result in
+    different weight loss effects.
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Group1</th>
+<th style="text-align: left;">Group2</th>
+<th style="text-align: left;">meandiff</th>
+<th style="text-align: left;">padj</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">1.6</td>
+<td style="text-align: left;">0.1699</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">3.6</td>
+<td style="text-align: left;">0.0024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">2.0</td>
+<td style="text-align: left;">0.0762</td>
+</tr>
+</tbody>
+</table>
+
+#### Key Insights from Tukey’s HSD Test:
+
+#### A vs B:
+
+-   Mean Difference = 1.6, p = 0.1699
+-   Since \*\*p &gt; 0.05, no significant difference\* between Diet A
+    and Diet B.
+
+#### A vs C:
+
+-   Mean Difference = 3.6, p = 0.0024
+-   Since **p &lt; 0.05, significant difference between Diet A and Diet
+    C**.
+-   Diet C leads to significantly higher weight loss than Diet A.
+
+#### B vs C:
+
+-   Mean Difference = 2.0, p = 0.0762
+-   Since **p &gt; 0.05, no significant difference** between Diet B and
+    Diet C.
+
+#### Conclusion
+
+-   **Diet C is significantly different from Diet A** in terms of weight
+    loss.
+-   Diets A and B are **not significantly** different.
+-   Diets B and C are not significantly different, but there is a slight
+    trend toward significance.
+
+This means Diet C leads to significantly higher weight loss compared to
+Diet A, but there is no clear evidence that Diet B and C differ
+significantly.
+
+#### F distribution
+
+![](One-Way-ANOVA_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
+#### Performing One-Way ANOVA in R
+
+    ##             Df Sum Sq Mean Sq F value  Pr(>F)   
+    ## diet         2  32.53   16.27   9.569 0.00328 **
+    ## Residuals   12  20.40    1.70                   
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+#### Tukey’s HSD Test in R
+
+    ##   Tukey multiple comparisons of means
+    ##     95% family-wise confidence level
+    ## 
+    ## Fit: aov(formula = weight_loss ~ diet, data = data)
+    ## 
+    ## $diet
+    ##     diff        lwr      upr     p adj
+    ## B-A  1.6 -0.5999767 3.799977 0.1699323
+    ## C-A  3.6  1.4000233 5.799977 0.0024446
+    ## C-B  2.0 -0.1999767 4.199977 0.0762244
+
+![](One-Way-ANOVA_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+
+#### Conclusion
+
+-   **Diet C is significantly different from Diet A** in terms of weight
+    loss.
+-   Diets A and B are **not significantly** different.
+-   Diets B and C are not significantly different, but there is a slight
+    trend toward significance.
+
+This means Diet C leads to significantly higher weight loss compared to
+Diet A, but there is no clear evidence that Diet B and C differ
+significantly.
+
+#### References
+
+-   Montgomery, D.C. (2017). Design and Analysis of Experiments. Wiley.
+-   Fisher, R.A. (1925). Statistical Methods for Research Workers.
+    Oliver & Boyd.
+-   Online: Penn State ANOVA Course
+    (<https://online.stat.psu.edu/stat502/>)
+
+[⬅ Back to Home](../index.md)
