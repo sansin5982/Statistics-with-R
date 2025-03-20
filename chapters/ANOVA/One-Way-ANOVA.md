@@ -535,9 +535,16 @@ To validate the assumptions of One-Way ANOVA, we need to check:
     ## data:  subset(data, diet == "C")$weight_loss
     ## W = 0.96086, p-value = 0.814
 
+-   p &gt; 0.05 for diet A (p = 0.97), B (p = 0.81) and C(p = 0.81).
+    Hence, data is normally distributed.
+-   If p &lt; 0.05, data deviates from normality.
+
 #### Q-Q Plot for Visual Check
 
 ![](One-Way-ANOVA_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+
+-   Points closely follow the straight line for each diet, data is
+    approximately normal.
 
 #### 2. Homogeneity of Variance (Levene’s Test)
 
@@ -546,10 +553,16 @@ To validate the assumptions of One-Way ANOVA, we need to check:
     ## group  2   0.381 0.6912
     ##       12
 
+-   **p &gt; 0.05**, groups have equal variances (assumption met). Here,
+    p = 0.69
+-   
+
 #### 3. Independence (Study Design - No direct test)
 
 -   Ensure independence through study design (random sampling, no
     repeated measures, different subjects in each group).
+-   If p &lt; 0.05, groups do not have equal variances (assumption
+    violated).
 
 #### References
 
