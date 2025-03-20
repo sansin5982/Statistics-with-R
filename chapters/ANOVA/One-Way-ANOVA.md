@@ -73,7 +73,7 @@ Where:
 #### 2. Between-Group Sum of Squares (SSB)
 
 $$
-\Large SSB = \underset{i=1}{\sum}^{k} \\n{i}  \\(\bar X{i} \\- \bar{X}{total} )^2
+\Large SSB = \underset{i=1}{\sum}^{\overset{k}} \\n{i}  \\(\bar X{i} \\- \bar{X}{total} )^2
 $$
 
 -   *X̄**i* = mean of group *i*
