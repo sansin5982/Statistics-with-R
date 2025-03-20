@@ -76,7 +76,7 @@ $$
 \Large SSB = \underset{i=1}{\sum}^{k} \\n{i}  \\(\bar X{i} \\- \bar{X}{total} )^2
 $$
 
--   *X̄**i* = mean of group *i*
+-   *X̄*i = mean of group *i*
 
 #### 3. Within-Gorup Sum of Squares (SSW)
 
@@ -399,16 +399,6 @@ $$
 \large F = \frac{16.27}{1.70} = 9.57
 $$
 
-## Step 6: Critical F value comparion
-
-For a significance level *α* = 0.05 with *d**f*1 = 1 with *d**f*2 = 12,
-the critical value from an F-distribution table is approximately
-**3.89**.
-
-Since the computed F-statistic **(≈ 9.57)** is much greater than the
-critical value (3.89), we **reject the null hypothesis**. This indicates
-that at least one group mean is significantly different from the others.
-
 #### Performing One-Way ANOVA in R
 
     ##             Df Sum Sq Mean Sq F value  Pr(>F)   
@@ -416,6 +406,16 @@ that at least one group mean is significantly different from the others.
     ## Residuals   12  20.40    1.70                   
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+## Step 6: Critical F value comparion
+
+For a significance level *α* = 0.05 with *d**f*1 = 1 with *d**f*1 = 12,
+the critical value from an F-distribution table is approximately
+**3.89**.
+
+Since the computed F-statistic **(≈ 9.57)** is much greater than the
+critical value (3.89), we **reject the null hypothesis**. This indicates
+that at least one group mean is significantly different from the others.
 
 ## Step 7: Tukey’s HSD Post-Hoc Test Results
 
@@ -481,8 +481,8 @@ ones have significant differences in weight loss.
 #### A vs B:
 
 -   Mean Difference = 1.6, p = 0.1699
--   Since \*\*p &gt; 0.05, no significant difference\* between Diet A
-    and Diet B.
+-   Since **p &gt; 0.05, no significant difference** between Diet A and
+    Diet B.
 
 #### A vs C:
 
@@ -529,4 +529,4 @@ significantly.
 -   Online: Penn State ANOVA Course
     (<https://online.stat.psu.edu/stat502/>)
 
-[⬅ Back to Home](../index.md)
+[⬅ Back to Home](../ANOVA.md)

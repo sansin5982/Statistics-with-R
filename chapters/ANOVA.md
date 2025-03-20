@@ -36,10 +36,6 @@ The **F-distribution** is a probability distribution used mainly in
 between multiple groups** and determine if the differences between them
 are statistically significant.
 
-#### F distribution
-
-![](ANOVA_files/figure-markdown_strict/unnamed-chunk-1-1.png)
-
 -   Is **positively skewed** (as F-values are always positive).
 -   Depends on **two degrees of freedom**:
     -   **df₁** (numerator): Number of groups minus 1.
@@ -48,7 +44,7 @@ are statistically significant.
 
 #### F-Distribution for Different Degrees of Freedom
 
-![](ANOVA_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](ANOVA_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
 #### Graph Interpretation
 
@@ -84,7 +80,7 @@ $$
 
 #### Visualize “Between-Group Variance vs. Within-Group Variance”
 
-![](ANOVA_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](ANOVA_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 #### Graph Interpretation
 
