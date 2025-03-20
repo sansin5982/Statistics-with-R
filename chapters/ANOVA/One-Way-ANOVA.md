@@ -68,7 +68,7 @@ Where:
 -   *k* = number of groups
 -   *n**i* = number of observations in group
 -   *X**i**j* = observation in group *i*, *j*
--   $\bar X{\scriptstyle total{$ = overall mean
+-   *X̄**t**o**t**a**l* = overall mean
 
 #### 2. Between-Group Sum of Squares (SSB)
 
@@ -351,15 +351,21 @@ Substituting values:
 
 #### For Group A:
 
-(2 − 4.73)<sup>2</sup> + (3 − 4.73)<sup>2</sup> + (5 − 4.73)<sup>2</sup> + (1 − 4.73)<sup>2</sup> + (4 − 4.73)<sup>2</sup> = 24.95
+$$
+\large (2 − 4.73)^2 + (3 − 4.73)^2 + (5 − 4.73)^2 + (1 − 4.73)^2 + (4 − 4.73)^2 = 24.95
+$$
 
 #### For Group B:
 
-(3 − 4.73)<sup>2</sup> + (5 − 4.73)<sup>2</sup> + (4 − 4.73)<sup>2</sup> + (6 − 4.73)<sup>2</sup> + (5 − 4.73)<sup>2</sup> = 5.27
+$$
+\large (3 − 4.73)^2 + (5 − 4.73)^2 + (4 − 4.73)^2 + (6 − 4.73)^2 + (5 − 4.73)^2 = 5.27
+$$
 
 #### For Group C:
 
-(6 − 4.73)<sup>2</sup> + (7 − 4.73)<sup>2</sup> + (8 − 4.73)<sup>2</sup> + (5 − 4.73)<sup>2</sup> + (7 − 4.73)<sup>2</sup> = 22.67
+$$
+\large (6 − 4.73)^2 + (7 − 4.73)^2 + (8 − 4.73)^2 + (5 − 4.73)^2 + (7 − 4.73)^2 = 22.67
+$$
 
 #### TOTAL SST
 
