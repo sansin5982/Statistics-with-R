@@ -15,7 +15,7 @@ population mean (*μ*<sub>0</sub>).
 
 #### Null:
 
-*H*<sub>0</sub> : *μ* = *μ*<sub>0</sub>
+*H*<sub>0</sub> : *μ* = *μ*0
 
 #### Alternative:
 
