@@ -26,7 +26,7 @@ population mean (*μ*<sub>0</sub>).
 ### Formula
 
 $$
-\Large t = \frac{\bar{X} - \mu{\scriptstyle 0}{s / \sqrt{n}}
+\Large t = \frac{\bar{X} - \mu{\scriptstyle 0}}{s / \sqrt{n}}
 $$
 
 Where:
