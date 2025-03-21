@@ -34,7 +34,7 @@ $$
 ### Equal Variances Assumed (Pooled T-Test)
 
 $$
-\large t = \frac{\bar{X}\_1 - \bar{X}\_2}{s\_p \sqrt{\frac{1}{n{\scriptstyle 1}} + \frac{1}{n{\scriptstyle 2}}}
+\Large t = \frac{\bar{X}\_1 - \bar{X}\_2}{s\_p \sqrt{\frac{1}{n{\scriptstyle 1}} + \frac{1}{n{\scriptstyle 2}}}
 $$
 
 Where:
@@ -45,12 +45,13 @@ Where:
 ### Unequal Variances (Welch’s T-Test)
 
 $$
-t = \frac{\bar{X}\_1 - \bar{X}\_2}{\sqrt{\frac{s\_1^2}{n\_1} + \frac{s\_2^2}{n\_2}}}
+\Large t = \frac{\bar{X}\_1 - \bar{X}\_2}{\sqrt{\frac{s\_1^2}{n\_1} + \frac{s\_2^2}{n\_2}}}
 $$
 
 Degrees of Freedom (Welch–Satterthwaite approximation):
+
 $$
-df = \frac{\left(\frac{s\_1^2}{n\_1} + \frac{s\_2^2}{n\_2}\right)^2}{\frac{(s\_1^2/n\_1)^2}{n\_1 - 1} + \frac{(s\_2^2/n\_2)^2}{n\_2 - 1}}
+\Large df = \frac{\left(\frac{s\_1^2}{n\_1} + \frac{s\_2^2}{n\_2}\right)^2}{\frac{(s\_1^2/n\_1)^2}{n\_1 - 1} + \frac{(s\_2^2/n\_2)^2}{n\_2 - 1}}
 $$
  - Can be two-tailed (default) or one-tailed.
 
