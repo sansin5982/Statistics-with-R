@@ -34,7 +34,7 @@ $$
 ### Equal Variances Assumed (Pooled T-Test)
 
 $$
-\Large t = \frac{\bar{X{\scriptstyle 1}} - \bar{X{\scriptstyle 2}}}{s{\scriptstyle p} \sqrt{\frac{1}{n{\scriptstyle 1}} + \frac{1}{n{\scriptstyle 2}}}
+\Large t = \frac{\bar{X}\_1 - \bar{X}\_2}{s\_p \sqrt{\frac{1}{n\_1} + \frac{1}{n\_2}}}
 $$
 
 Where:
