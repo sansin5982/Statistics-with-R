@@ -22,15 +22,19 @@ separate patient group
 $$
 \large H{\scriptstyle 0}: \mu\_1 = \mu\_2
 $$
-\### Alternative Hypothesis (*H*<sub>1</sub>)
-*H*1 : *μ*<sub>1</sub> ≠ *μ*<sub>2</sub>
+
+### Alternative Hypothesis (*H*<sub>1</sub>)
+
+$$
+\large H{\scriptstyle 1}: \mu\_1 \ne \mu\_2
+$$
 
 ## Formulas
 
 ### Equal Variances Assumed (Pooled T-Test)
 
 $$
-t = \frac{\bar{X}\_1 - \bar{X}\_2}{s\_p \sqrt{\frac{1}{n{\scriptstyle 1} + \frac{1}{n{\scriptstyle 2}}}
+\large t = \frac{\bar{X}\_1 - \bar{X}\_2}{s\_p \sqrt{\frac{1}{n{\scriptstyle 1}} + \frac{1}{n{\scriptstyle 2}}}
 $$
 
 Where:
