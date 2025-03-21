@@ -16,13 +16,13 @@ population mean (*μ*<sub>0</sub>).
 #### Null:
 
 $$
-\large H\_0: \mu = \mu{\scriptstyle 0}
+\large H{\scriptstyle 0}: \mu = \mu{\scriptstyle 0}
 $$
 
 #### Alternative:
 
 $$
-\large H\_1: \mu \ne \mu\_0
+\large H{\scriptstyle 1}: \mu \ne \mu\_0
 $$
 
 -   Two-tailed by default, but can be one-tailed depending on context.
@@ -65,7 +65,7 @@ $$ t = \frac{69.5 - 70}{3.03 / \sqrt{10}} = \frac{-0.5}{0.958} \approx -0.522 $$
 
 **Step 4: Degrees of Freedom**
 
-*d**f* = 10 - 1 = 9
+df = 10 - 1 = 9
 
     x <- c(68, 72, 65, 70, 71, 69, 74, 73, 66, 67)
     t.test(x, mu = 70)
@@ -84,10 +84,11 @@ $$ t = \frac{69.5 - 70}{3.03 / \sqrt{10}} = \frac{-0.5}{0.958} \approx -0.522 $$
 
 **Step 5: Decision**
 
-Critical t-value at *α* = 0.05 (two-tailed, df = 9): ±2.262 Since
-−0.522 &lt; 2.262, we fail to reject *H*<sub>0</sub>. Results from R
-also showed p value is &gt; 0.05. Confidence interval (67.33 - 71.67)
-also contains hypothesized mean *μ*0 = 70.
+-   Critical t-value at *α* = 0.05 (two-tailed, df = 9): ±2.262.
+-   Since −0.522 &lt; 2.262, we fail to reject *H*<sub>0</sub>.
+-   Results from R also showed p value is &gt; 0.05.
+-   Confidence interval (67.33 - 71.67) also contains hypothesized mean
+    *μ*0 = 70. Hence suggests result is not statistically significant.
 
 ### Normality Test
 
