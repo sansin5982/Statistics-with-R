@@ -26,11 +26,15 @@ population mean (*μ*<sub>0</sub>).
 ### Formula
 
 $$
-\Large t = \frac{\bar{X} - \mu\_0}{s / \sqrt{n}}
+\Large t = \frac{\bar{X} - \mu{\scriptstyle 0}{s / \sqrt{n}}
 $$
 
-Where: - *X̄*: sample mean - *μ*<sub>0</sub>: hypothesized population
-mean - *s*: sample standard deviation - *n*: sample size
+Where:
+
+-   *X̄*: sample mean
+-   *μ*<sub>0</sub>: hypothesized population mean
+-   *s*: sample standard deviation
+-   *n*: sample size
 
 ### Assumptions
 
