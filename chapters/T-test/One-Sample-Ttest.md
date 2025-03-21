@@ -44,19 +44,25 @@ Sample: `x = c(68, 72, 65, 70, 71, 69, 74, 73, 66, 67)` Hypothesized
 mean *μ*<sub>0</sub> = 70
 
 **Step 1: Sample Mean**
+
 *X̄* = 69.5
 
 **Step 2: Sample Standard Deviation**
+
 *s* = 3.03
 
 **Step 3: Compute t-statistic**
+
 $$ t = \frac{69.5 - 70}{3.03 / \sqrt{10}} = \frac{-0.5}{0.958} \approx -0.522 $$
 
 **Step 4: Degrees of Freedom**
+
 *d**f* = 10 − 1 = 9
 
-**Step 5: Decision** Critical t-value at *α* = 0.05 (two-tailed, df =
-9): ±2.262 Since |−0.522| &lt; 2.262, we fail to reject *H*<sub>0</sub>.
+**Step 5: Decision**
+
+Critical t-value at *α* = 0.05 (two-tailed, df = 9): ±2.262 Since
+−0.522 &lt; 2.262, we fail to reject *H*<sub>0</sub>.
 
     x <- c(68, 72, 65, 70, 71, 69, 74, 73, 66, 67)
     t.test(x, mu = 70)
@@ -96,8 +102,13 @@ $$
 \Large d = \frac {\bar X - \mu{\scriptstyle 0}} {s}
 $$
 
-Where: \* *X̄*: Sample mean \* *μ*0: Hypothesized mean \* *s*: Sample
-standard deviation
+Where:
+
+-   *X̄*: Sample mean
+-   *μ*0: Hypothesized mean
+-   *s*: Sample standard deviation
+
+<!-- -->
 
     # Compute sample mean and standard deviation
     x_bar <- mean(x)
@@ -110,8 +121,15 @@ standard deviation
 
     ## [1] -0.1651446
 
-Interpretation: - d &lt; 0.2 → very small - 0.2–0.5 → small - 0.5–0.8 →
-medium - &gt; 0.8 → large
+Interpretation:
+
+-   d &lt; 0.2 → very small
+
+-   0.2–0.5 → small
+
+-   0.5–0.8 → medium
+
+-   0.8 → large
 
 ### Non-parametric Alternative
 
