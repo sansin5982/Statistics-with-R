@@ -24,6 +24,7 @@ Chapters:
     Mean](chapters/Sampling-Distribution-Mean)
 -   [Confidence Interval](chapters/Confidence-Interval)
 -   [Hypothesis Testing](chapters/Hypothesis-testing)
+-   [Z Test](chapters/Z-Test)
 -   [T Test](chapters/T-test)
     -   [One Sample T-test](chapters/T-test/One-Sample-Ttest)
     -   [Independent Sample
@@ -43,4 +44,8 @@ Chapters:
 -   [Correlation](chapters/Correlation)
 -   [Regression](chapters/Regression)
     -   [Linear Regression](chapters/Regression/Linear-regression)
+    -   [Polynomial
+        Regression](chapters/Regression/Polynomial-regression)
+    -   [Ridge Regression](chapters/Regression/Ridge-regression)
+    -   [Lasso Regression](chapters/Regression/Lasso-regression)
     -   [Logistic Regression](chapters/Regression/Logistic-regression)
