@@ -40,8 +40,8 @@ mean - *s*: sample standard deviation - *n*: sample size
 
 ## Example: Calculation
 
-Sample: `x = c(68, 72, 65, 70, 71, 69, 74, 73, 66, 67)` Hypothesized
-mean *μ*<sub>0</sub> = 70
+-   Sample: `x = c(68, 72, 65, 70, 71, 69, 74, 73, 66, 67)`
+-   Hypothesized mean *μ*<sub>0</sub> = 70
 
 **Step 1: Sample Mean**
 
@@ -59,11 +59,6 @@ $$ t = \frac{69.5 - 70}{3.03 / \sqrt{10}} = \frac{-0.5}{0.958} \approx -0.522 $$
 
 *d**f* = 10 − 1 = 9
 
-**Step 5: Decision**
-
-Critical t-value at *α* = 0.05 (two-tailed, df = 9): ±2.262 Since
-−0.522 &lt; 2.262, we fail to reject *H*<sub>0</sub>.
-
     x <- c(68, 72, 65, 70, 71, 69, 74, 73, 66, 67)
     t.test(x, mu = 70)
 
@@ -78,6 +73,13 @@ Critical t-value at *α* = 0.05 (two-tailed, df = 9): ±2.262 Since
     ## sample estimates:
     ## mean of x 
     ##      69.5
+
+**Step 5: Decision**
+
+Critical t-value at *α* = 0.05 (two-tailed, df = 9): ±2.262 Since
+−0.522 &lt; 2.262, we fail to reject *H*<sub>0</sub>. Results from R
+also showed p value is &gt; 0.05. Confidence interval (67.33 - 71.67)
+also contains hypothesized mean *μ*0 = 70.
 
 ### Normality Test
 
@@ -94,7 +96,15 @@ Critical t-value at *α* = 0.05 (two-tailed, df = 9): ±2.262 Since
 
 ![](One-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
+-   p value for Shapiro wilk test is &gt; 0.05. Hence, data is normally
+    distributed.
+-   Q-Q plot also suggests data is normally distributed.
+
 ### Effect Size (Cohen’s d)
+
+Cohen’s d measures the standardized difference between the sample mean
+and the hypothesized population mean. It tells us how large that
+difference is in units of standard deviation.
 
 For a One-Sample T-Test, **Cohen’s d** is defined as:
 
@@ -131,6 +141,11 @@ Interpretation:
 
 -   0.8 → large
 
+-   The **effect size is very small or negligible**. This means the
+    difference between the sample mean and the hypothesized value (70)
+    is small and likely not practically significant — even if it were
+    statistically significant (which it’s not in this case either).
+
 ### Non-parametric Alternative
 
     wilcox.test(x, mu = 70)
@@ -148,7 +163,9 @@ Interpretation:
     ## V = 18, p-value = 0.6344
     ## alternative hypothesis: true location is not equal to 70
 
--   Use when the normality assumption is violated.
+-   Used when the normality assumption is violated.
+-   p value is &gt; 0.05. Hence, null hypothesis is accepted.
+-   We will see in detail in nonparametric section.
 
 ## Conclusion
 
@@ -166,3 +183,5 @@ significance with effect size and assumptions check.
 -   R Documentation:
     <https://www.rdocumentation.org/packages/stats/topics/t.test>
 -   NIST Handbook: <https://www.itl.nist.gov/div898/handbook/>
+
+[⬅ Back to Home](../T-test.md)
