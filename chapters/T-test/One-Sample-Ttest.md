@@ -15,11 +15,15 @@ population mean (*μ*<sub>0</sub>).
 
 #### Null:
 
-*H*<sub>0</sub> : *μ* = *μ*0
+$$
+\large H\_0: \mu = \mu{\scriptstyle 0}
+$$
 
 #### Alternative:
 
-*H*<sub>1</sub> : *μ* ≠ *μ*<sub>0</sub>
+$$
+\large H\_1: \mu \ne \mu\_0
+$$
 
 -   Two-tailed by default, but can be one-tailed depending on context.
 
