@@ -20,13 +20,13 @@ separate patient group
 ### Null Hypothesis (*H*<sub>0</sub>)
 
 $$
-\large H{\scriptstyle 0}: \mu\_1 = \mu\_2
+\large H{\scriptstyle 0}: \mu{\scriptstyle 1} = \mu{\scriptstyle 2}
 $$
 
 ### Alternative Hypothesis (*H*<sub>1</sub>)
 
 $$
-\large H{\scriptstyle 1}: \mu\_1 \ne \mu\_2
+\large H{\scriptstyle 1}: \mu{\scriptstyle 1} \ne \mu{\scriptstyle 2}
 $$
 
 ## Formulas
@@ -34,7 +34,7 @@ $$
 ### Equal Variances Assumed (Pooled T-Test)
 
 $$
-\Large t = \frac{\bar{X}\_1 - \bar{X}\_2}{s\_p \sqrt{\frac{1}{n{\scriptstyle 1}} + \frac{1}{n{\scriptstyle 2}}}
+\Large t = \frac{\bar{X{\scriptstyle 1}} - \bar{X{\scriptstyle 2}}}{s{\scriptstyle p} \sqrt{\frac{1}{n{\scriptstyle 1}} + \frac{1}{n{\scriptstyle 2}}}
 $$
 
 Where:
@@ -48,7 +48,7 @@ $$
 \Large t = \frac{\bar{X}\_1 - \bar{X}\_2}{\sqrt{\frac{s\_1^2}{n\_1} + \frac{s\_2^2}{n\_2}}}
 $$
 
-Degrees of Freedom (Welch–Satterthwaite approximation):
+#### Degrees of Freedom (Welch–Satterthwaite approximation):
 
 $$
 \Large df = \frac{\left(\frac{s\_1^2}{n\_1} + \frac{s\_2^2}{n\_2}\right)^2}{\frac{(s\_1^2/n\_1)^2}{n\_1 - 1} + \frac{(s\_2^2/n\_2)^2}{n\_2 - 1}}
