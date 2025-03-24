@@ -46,7 +46,7 @@ $$S{\scriptstyle p} = \sqrt{\frac{(n{\scriptstyle 1} - 1)s{\scriptstyle 1^2} + (
 ### Unequal Variances (Welch’s T-Test)
 
 $$
-\Large t = \frac{\bar{X{\scriptstyle 1}} - \bar{X{\scriptstyle 2}}}{\sqrt{\frac{s\_1^2}{n\_1} + \frac{s\_2^2}{n\_2}}}
+\Large t = \frac{\bar{X{\scriptstyle 1}} - \bar{X{\scriptstyle 2}}}{\sqrt{\frac{s{\scriptstyle 1^2}}{n{\scriptstyle 1}} + \frac{s{\scriptstyle 2^2}}{n{\scriptstyle 2}}}}
 $$
 
 #### Degrees of Freedom (Welch–Satterthwaite approximation):
