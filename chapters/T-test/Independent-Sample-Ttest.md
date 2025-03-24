@@ -39,7 +39,7 @@ $$
 
 Where:
 
-$$S{\scriptstyle p} = \sqrt{\frac{(n{\scriptstyle 1} - 1)s\_1^2 + (n{\scriptstyle 2} - 1)s\_2^2}{n{\scriptstyle 1} + n{\scriptstyle 2} - 2}}$$
+$$S{\scriptstyle p} = \sqrt{\frac{(n{\scriptstyle 1} - 1)s{\scriptstyle 1^2} + (n{\scriptstyle 2} - 1)s{\scriptstyle 2^2}}{n{\scriptstyle 1} + n{\scriptstyle 2} - 2}}$$
 
 -   is the pooled standard deviation
 
