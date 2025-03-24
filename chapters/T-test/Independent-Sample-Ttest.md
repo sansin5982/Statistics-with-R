@@ -31,7 +31,23 @@ $$
 
 ## Formulas
 
-### Equal Variances Assumed (Pooled T-Test)
+### Pooled T-Test
+
+The **Pooled T-Test** is a version of the **Independent Two-Sample
+T-Test** used when you assume that the variances of both groups are
+equal.
+
+It uses a **pooled estimate** of the variance, which combines the
+variability from both groups into a single estimate.
+
+-   We used it when the assumption of equal variances holds (i.e., the
+    spread of values is similar in both groups).
+
+#### Equal variance assumed mean
+
+It means the two populations you’re comparing are believed to have
+**similar spread (variability)**. If this assumption is violated, it can
+affect the **validity** of the pooled t-test.
 
 $$
 \Large t = \frac{\bar{X{\scriptstyle 1}} - \bar{X{\scriptstyle 2}}}{s{\scriptstyle p} \sqrt{\frac{1}{n{\scriptstyle 1}} + \frac{1}{n{\scriptstyle 2}}}}
@@ -43,7 +59,20 @@ $$S{\scriptstyle p} = \sqrt{\frac{(n{\scriptstyle 1} - 1)s{\scriptstyle 1^2} + (
 
 -   is the pooled standard deviation
 
+-   *X̄*1, *X̄*2 : *S**a**m**p**l**e**m**e**a**n**s*
+
+-   *s*1<sup>2</sup>, *s*2<sup>2</sup> : *S**a**m**p**l**e**v**a**r**i**a**n**c**e*
+
+-   *n*1, *n*2 : *S**a**m**p**l**e**s**i**z**e**s*
+
 ### Unequal Variances (Welch’s T-Test)
+
+Welch’s T-Test is an **adjusted form** of the t-test that **does not
+assume equal variances**. It is more robust and conservative than the
+pooled version.
+
+-   When variances are unequal
+-   Sample sizes are unequal
 
 $$
 \Large t = \frac{\bar{X{\scriptstyle 1}} - \bar{X{\scriptstyle 2}}}{\sqrt{\frac{s{\scriptstyle 1^2}}{n{\scriptstyle 1}} + \frac{s{\scriptstyle 2^2}}{n{\scriptstyle 2}}}}
@@ -65,7 +94,7 @@ $$
     when they are not
 -   Data is on **interval/ratio** scale
 
-## Example (Unequal Variance Case)
+## Example
 
 ### Scenario:
 
@@ -128,9 +157,10 @@ $$ \large \alpha = 0.05, two-tailed: t\_{critical} = \pm 2.365$$
 
 **4. Decision**:
 
-Since:
+Since-
 
 $$\large 4.57 &gt; 2.365$$
+
 $$\large reject\\H{\scriptstyle 0}$$
 
 -   significant difference
@@ -185,6 +215,26 @@ $$\large reject\\H{\scriptstyle 0}$$
 ![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-2-2.png)
 
 ### Equal Variance (Levene’s Test)
+
+Levene’s Test checks the assumption of **equal variances** between two
+or more groups. It is a **pre-test** to help you decide whether to use
+the **pooled t-test** or **Welch’s t-test**.
+
+*N**u**l**l* *h**y**p**o**t**h**e**s**i**s* (*H*0)
+
+-   Variances are equal
+
+*A**l**t**e**r**n**a**t**i**v**e* *h**y**p**o**t**h**e**s**i**s* (*H*1)
+
+-   Variances are not equal
+
+#### Interpretation:
+
+-   **p &gt; 0.05**: Fail to reject H₀ → **Use pooled t-test**
+
+-   **p ≤ 0.05**: Reject H₀ → **Use Welch’s t-test**
+
+<!-- -->
 
     library(car)
 
