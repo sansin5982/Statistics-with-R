@@ -34,13 +34,14 @@ $$
 ### Equal Variances Assumed (Pooled T-Test)
 
 $$
-\Large t = \frac{\bar{X{\scriptstyle 1}} - \bar{X{\scriptstyle 2}}}{s\_p \sqrt{\frac{1}{n{\scriptstyle 1}} + \frac{1}{n\_2}}}
+\Large t = \frac{\bar{X{\scriptstyle 1}} - \bar{X{\scriptstyle 2}}}{s{\scriptstyle p} \sqrt{\frac{1}{n{\scriptstyle 1}} + \frac{1}{n{\scriptstyle 2}}}}
 $$
 
 Where:
 
-$$S\_p = \sqrt{\frac{(n\_1 - 1)s\_1^2 + (n\_2 - 1)s\_2^2}{n\_1 + n\_2 - 2}}$$
- - is the pooled standard deviation
+$$S{\scriptstyle p} = \sqrt{\frac{(n{\scriptstyle 1} - 1)s\_1^2 + (n{\scriptstyle 2} - 1)s\_2^2}{n{\scriptstyle 1} + n{\scriptstyle 2} - 2}}$$
+
+-   is the pooled standard deviation
 
 ### Unequal Variances (Welch’s T-Test)
 
