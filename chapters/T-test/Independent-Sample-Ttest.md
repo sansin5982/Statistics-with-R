@@ -104,8 +104,9 @@ You want to test whether men and women differ in protein intake.
 </tbody>
 </table>
 
-$$\bar{X{\scriptstyle 1}} = 74,\\s{\scriptstyle 1^2} = 6.5,\\n{\scriptstyle 1} = 5$$
-$$\bar{X{\scriptstyle 2}} = 67.6,\\s{\scriptstyle 2^2} = 3.3,\\n{\scriptstyle 2} = 5$$
+$$\large \bar{X{\scriptstyle 1}} = 74,\\s{\scriptstyle 1^2} = 6.5,\\n{\scriptstyle 1} = 5$$
+
+$$\large \bar{X{\scriptstyle 2}} = 67.6,\\s{\scriptstyle 2^2} = 3.3,\\n{\scriptstyle 2} = 5$$
 
 ### Step-by-step (Welch’s T-Test):
 
@@ -123,12 +124,77 @@ $$
 
 **3. Critical value**
 
-$$ \large \alpha = 0.05, two-tailed): t\_{critical} = \pm 2.365$$
+$$ \large \alpha = 0.05, two-tailed: t\_{critical} = \pm 2.365$$
 
 **4. Decision**:
 
 Since:
 
-$$\large 4.57 &gt; 2.365, \\reject H{\scriptstyle 0}$$
+$$\large 4.57 &gt; 2.365$$
+$$\large reject\\H{\scriptstyle 0}$$
 
 -   significant difference
+
+<!-- -->
+
+    # Data
+    men <- c(72, 75, 78, 71, 74)
+    women <- c(68, 66, 70, 65, 69)
+
+    # Welch's t-test (unequal variances)
+    t.test(men, women, var.equal = FALSE)
+
+    ## 
+    ##  Welch Two Sample t-test
+    ## 
+    ## data:  men and women
+    ## t = 4.166, df = 7.452, p-value = 0.003669
+    ## alternative hypothesis: true difference in means is not equal to 0
+    ## 95 percent confidence interval:
+    ##  2.811585 9.988415
+    ## sample estimates:
+    ## mean of x mean of y 
+    ##      74.0      67.6
+
+## Assumption Checks in R
+
+### Normality
+
+    shapiro.test(men)
+
+    ## 
+    ##  Shapiro-Wilk normality test
+    ## 
+    ## data:  men
+    ## W = 0.96358, p-value = 0.8327
+
+    shapiro.test(women)
+
+    ## 
+    ##  Shapiro-Wilk normality test
+    ## 
+    ## data:  women
+    ## W = 0.95235, p-value = 0.754
+
+    qqnorm(men); qqline(men)
+
+![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
+    qqnorm(women); qqline(women)
+
+![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-2-2.png)
+
+### Equal Variance (Levene’s Test)
+
+    library(car)
+
+    ## Loading required package: carData
+
+    data <- data.frame(group = factor(rep(c("Men", "Women"), each = 5)),
+                       value = c(men, women))
+    leveneTest(value ~ group, data)
+
+    ## Levene's Test for Homogeneity of Variance (center = median)
+    ##       Df F value Pr(>F)
+    ## group  1  0.2105 0.6586
+    ##        8
