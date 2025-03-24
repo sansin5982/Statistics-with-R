@@ -198,3 +198,47 @@ $$\large reject\\H{\scriptstyle 0}$$
     ##       Df F value Pr(>F)
     ## group  1  0.2105 0.6586
     ##        8
+
+## Effect Size (Cohen’s d)
+
+    library(effsize)
+
+    ## Warning: package 'effsize' was built under R version 4.4.3
+
+    cohen.d(men, women)
+
+    ## 
+    ## Cohen's d
+    ## 
+    ## d estimate: 2.634838 (large)
+    ## 95 percent confidence interval:
+    ##    lower    upper 
+    ## 0.641620 4.628057
+
+## Non-parametric Alternative
+
+Use when data is not normal:
+
+    wilcox.test(men, women)
+
+    ## 
+    ##  Wilcoxon rank sum exact test
+    ## 
+    ## data:  men and women
+    ## W = 25, p-value = 0.007937
+    ## alternative hypothesis: true location shift is not equal to 0
+
+### Interpretation
+
+-   **t = 4.57**, **p &lt; 0.01** → statistically significant
+-   **Cohen’s d** indicates effect size
+-   Confirm assumptions to validate inference
+
+#### References
+
+-   Casella & Berger (2002), *Statistical Inference*
+-   Montgomery & Runger (2018), *Applied Statistics and Probability for
+    Engineers*
+-   R Documentation:
+    <https://www.rdocumentation.org/packages/stats/topics/t.test>
+-   NIST Handbook: <https://www.itl.nist.gov/div898/handbook/>
