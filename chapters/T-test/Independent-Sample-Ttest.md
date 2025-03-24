@@ -52,7 +52,7 @@ $$
 #### Degrees of Freedom (Welch–Satterthwaite approximation):
 
 $$
-\Large df = \frac{\left(\frac{s\_1^2}{n\_1} + \frac{s\_2^2}{n\_2}\right)^2}{\frac{(s\_1^2/n\_1)^2}{n\_1 - 1} + \frac{(s\_2^2/n\_2)^2}{n\_2 - 1}}
+\Large df = \frac{\left(\frac{s{\scriptstyle 1^2}}{n{\scriptstyle 1}} + \frac{s{\scriptstyle 2^2}}{n{\scriptstyle 2}}\right)^2}{\frac{(s{\scriptstyle 1^2}/n{\scriptstyle 1})^2}{n{\scriptstyle 1} - 1} + \frac{(s{\scriptstyle 2^2}/n{\scriptstyle 2})^2}{n{\scriptstyle 2} - 1}}
 $$
 
 -   Can be two-tailed (default) or one-tailed.
