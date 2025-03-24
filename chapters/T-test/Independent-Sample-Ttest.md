@@ -78,6 +78,38 @@ $$
 \Large t = \frac{\bar{X{\scriptstyle 1}} - \bar{X{\scriptstyle 2}}}{\sqrt{\frac{s{\scriptstyle 1^2}}{n{\scriptstyle 1}} + \frac{s{\scriptstyle 2^2}}{n{\scriptstyle 2}}}}
 $$
 
+### Equal vs. Unequal Variance Visualization
+
+    # Set seed for reproducibility
+    set.seed(42)
+
+    # Simulate data
+    group1_equal <- rnorm(100, mean = 10, sd = 2)
+    group2_equal <- rnorm(100, mean = 12, sd = 2)
+
+    group1_unequal <- rnorm(100, mean = 10, sd = 2)
+    group2_unequal <- rnorm(100, mean = 12, sd = 5)
+
+    # Create plots
+    par(mfrow = c(1, 2))  # Side-by-side plots
+
+    # Plot 1: Equal Variance
+    boxplot(group1_equal, group2_equal,
+            names = c("Group 1", "Group 2"),
+            main = "Equal Variance Assumed",
+            col = c("lightblue", "lightgreen"),
+            ylab = "Values")
+
+    # Plot 2: Unequal Variance
+    boxplot(group1_unequal, group2_unequal,
+            names = c("Group 1", "Group 2"),
+            main = "Unequal Variance (Use Welch's Test)",
+            col = c("lightblue", "lightgreen"))
+
+    mtext("Visual Comparison: Equal vs Unequal Variance", outer = TRUE, line = -2, cex = 1.2)
+
+![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
 #### Degrees of Freedom (Welch–Satterthwaite approximation):
 
 $$
@@ -159,13 +191,7 @@ $$ \large \alpha = 0.05, two-tailed: t\_{critical} = \pm 2.365$$
 
 Since-
 
-$$\large 4.57 &gt; 2.365$$
-
-$$\large reject\\H{\scriptstyle 0}$$
-
--   significant difference
-
-<!-- -->
+4.57 &gt; 2.365, reject null hypothesis hence significant difference
 
     # Data
     men <- c(72, 75, 78, 71, 74)
@@ -208,11 +234,11 @@ $$\large reject\\H{\scriptstyle 0}$$
 
     qqnorm(men); qqline(men)
 
-![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
     qqnorm(women); qqline(women)
 
-![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-2-2.png)
+![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-3-2.png)
 
 ### Equal Variance (Levene’s Test)
 
@@ -249,7 +275,18 @@ the **pooled t-test** or **Welch’s t-test**.
     ## group  1  0.2105 0.6586
     ##        8
 
-## Effect Size (Cohen’s d)
+## Effect Size (Cohen’s d) for independent sample T test
+
+Cohen’s d quantifies the standardized difference between two group
+means.
+
+$$
+\Large d = \frac {\bar X{\scriptstyle 1}  - \bar X{\scriptstyle 2}} {s{\scriptstyle p}}
+$$
+
+Where:
+
+*s**p* = pooled standard deviation as defined earlier
 
     library(effsize)
 
