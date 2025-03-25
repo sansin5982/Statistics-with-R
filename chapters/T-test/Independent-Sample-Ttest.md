@@ -80,8 +80,6 @@ $$
 
 ### Equal vs. Unequal Variance Visualization
 
-![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-1-1.png)
-
 #### Degrees of Freedom (Welch–Satterthwaite approximation):
 
 $$
