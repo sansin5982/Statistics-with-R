@@ -80,7 +80,35 @@ $$
 
 ### Equal vs. Unequal Variance Visualization
 
+    # Set seed for reproducibility
+    set.seed(42)
+
+    # Simulate data
+    group1_equal <- rnorm(100, mean = 10, sd = 2)
+    group2_equal <- rnorm(100, mean = 12, sd = 2)
+
+    group1_unequal <- rnorm(100, mean = 10, sd = 2)
+    group2_unequal <- rnorm(100, mean = 12, sd = 5)
+
+    # Create plots
+    par(mfrow = c(1, 2))  # Side-by-side plots
+
+    # Plot 1: Equal Variance
+    boxplot(group1_equal, group2_equal,
+            names = c("Group 1", "Group 2"),
+            main = "Equal Variance",
+            col = c("lightblue", "lightgreen"),
+            ylab = "Values")
+
+    # Plot 2: Unequal Variance
+    boxplot(group1_unequal, group2_unequal,
+            names = c("Group 1", "Group 2"),
+            main = "Unequal Variance",
+            col = c("lightblue", "lightgreen"))
+
 ![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
+    #mtext("Visual Comparison: Equal vs Unequal Variance", outer = TRUE, line = 0, cex = 1.2)
 
 #### Degrees of Freedom (Welch–Satterthwaite approximation):
 
