@@ -157,7 +157,7 @@ $$
 
 **3. Critical value**
 
-$$ \large \alpha = 0.05, two-tailed: t\_{critical} = \pm 2.365$$
+$$ \large \alpha = 0.05, two-tailed: t{\scriptstyle critical} = \pm 2.365$$
 
 **4. Decision**:
 
