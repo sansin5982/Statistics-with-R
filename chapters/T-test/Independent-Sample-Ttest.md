@@ -65,6 +65,20 @@ $$S{\scriptstyle p} = \sqrt{\frac{(n{\scriptstyle 1} - 1)s{\scriptstyle 1^2} + (
 
 -   *n*1, *n*2: Sample sizes
 
+#### Degrees of Freedom (Equal Variance Assumed)
+
+-   If the variances in both groups are assumed to be equal, the degrees
+    of freedom are calculated as:
+
+$$
+\Large df = n{\scriptstyle 1} + n{\scriptstyle 2} - 2
+$$
+
+Where:
+
+-   *n*1 : sample size of group 1
+-   *n*2 : sample size of group 2
+
 ### Unequal Variances (Welch’s T-Test)
 
 Welch’s T-Test is an **adjusted form** of the t-test that **does not
@@ -80,41 +94,19 @@ $$
 
 ### Equal vs. Unequal Variance Visualization
 
-    # Set seed for reproducibility
-    set.seed(42)
-
-    # Simulate data
-    group1_equal <- rnorm(100, mean = 10, sd = 2)
-    group2_equal <- rnorm(100, mean = 12, sd = 2)
-
-    group1_unequal <- rnorm(100, mean = 10, sd = 2)
-    group2_unequal <- rnorm(100, mean = 12, sd = 5)
-
-    # Create plots
-    par(mfrow = c(1, 2))  # Side-by-side plots
-
-    # Plot 1: Equal Variance
-    boxplot(group1_equal, group2_equal,
-            names = c("Group 1", "Group 2"),
-            main = "Equal Variance",
-            col = c("lightblue", "lightgreen"),
-            ylab = "Values")
-
-    # Plot 2: Unequal Variance
-    boxplot(group1_unequal, group2_unequal,
-            names = c("Group 1", "Group 2"),
-            main = "Unequal Variance",
-            col = c("lightblue", "lightgreen"))
-
 ![](Independent-Sample-Ttest_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
-    #mtext("Visual Comparison: Equal vs Unequal Variance", outer = TRUE, line = 0, cex = 1.2)
+Figure 1: Equal variance shows that variability between group 1 and
+group 2 are similar. Unequal variance shows that there is a difference
+in variability between group 1 and group 2.
 
 #### Degrees of Freedom (Welch–Satterthwaite approximation):
 
 $$
 \Large df = \frac{\left(\frac{s{\scriptstyle 1^2}}{n{\scriptstyle 1}} + \frac{s{\scriptstyle 2^2}}{n{\scriptstyle 2}}\right)^2}{\frac{(s{\scriptstyle 1^2}/n{\scriptstyle 1})^2}{n{\scriptstyle 1} - 1} + \frac{(s{\scriptstyle 2^2}/n{\scriptstyle 2})^2}{n{\scriptstyle 2} - 1}}
 $$
+
+-   DF for unequal variance often result in non-integer
 
 -   Can be two-tailed (default) or one-tailed.
 
@@ -193,24 +185,31 @@ Since-
 
 4.57 &gt; 2.365, reject null hypothesis hence significant difference
 
+#### 
+
     # Data
     men <- c(72, 75, 78, 71, 74)
     women <- c(68, 66, 70, 65, 69)
 
-    # Welch's t-test (unequal variances)
-    t.test(men, women, var.equal = FALSE)
+    # POOLED T Test (Equal variance assumed)
+    t.test(men, women, var.equal = TRUE) 
 
     ## 
-    ##  Welch Two Sample t-test
+    ##  Two Sample t-test
     ## 
     ## data:  men and women
-    ## t = 4.166, df = 7.452, p-value = 0.003669
+    ## t = 4.166, df = 8, p-value = 0.003139
     ## alternative hypothesis: true difference in means is not equal to 0
     ## 95 percent confidence interval:
-    ##  2.811585 9.988415
+    ##  2.857449 9.942551
     ## sample estimates:
     ## mean of x mean of y 
     ##      74.0      67.6
+
+-   Here we are performing test assuming equal variance
+    (`var.equal = TRUE`).
+-   In case of unequal variance var.equal will be `var.equal = FALSE`
+-   We will check this assumption using `levene's` test
 
 ## Assumption Checks in R
 
