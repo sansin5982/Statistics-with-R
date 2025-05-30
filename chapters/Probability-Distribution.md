@@ -77,6 +77,13 @@ The probability of picking each color:
 This is a **discrete probability distribution** — because the outcomes
 (red, green, blue) are **countable and distinct**.
 
+    ##   Color Count Probability
+    ## 1   Red     5         0.5
+    ## 2 Green     3         0.3
+    ## 3  Blue     2         0.2
+
+![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
 ------------------------------------------------------------------------
 
 #### Example 2: Rolling a Die (Discrete Distribution)
