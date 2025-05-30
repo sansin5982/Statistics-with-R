@@ -211,6 +211,16 @@ Instead, we ask:
 
 That’s a **continuous** probability again!
 
+![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+
+-   The histogram shows how frequently ice creams melt in different time
+    ranges.
+
+-   The blue curve is the probability density function (PDF).
+
+-   The area under the curve between two times (e.g., 5 and 7 minutes)
+    shows the chance an ice cream melts within that window.
+
 ### Function: PDF (Probability Density Function)
 
 PDF tells you the **density of probability** across a range of values.
