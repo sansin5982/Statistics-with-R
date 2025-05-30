@@ -35,6 +35,64 @@ A probability distribution helps us **map out those chances**.
 This is a **discrete distribution** because we can count the possible
 outcomes.
 
+#### Example 1: Picking a Candy from a Jar (Discrete Distribution)
+
+Imagine we have a jar with:
+
+-   5 red candies  
+-   3 green candies  
+-   2 blue candies
+
+Total candies = 10
+
+The probability of picking each color:
+
+<table>
+<thead>
+<tr>
+<th>Candy Color</th>
+<th>Count</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>5</td>
+<td>5/10 = <strong>0.5</strong></td>
+</tr>
+<tr>
+<td>Green</td>
+<td>3</td>
+<td>3/10 = <strong>0.3</strong></td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>2</td>
+<td>2/10 = <strong>0.2</strong></td>
+</tr>
+</tbody>
+</table>
+
+This is a **discrete probability distribution** — because the outcomes
+(red, green, blue) are **countable and distinct**.
+
+------------------------------------------------------------------------
+
+#### Example 2: Rolling a Die (Discrete Distribution)
+
+When we roll a fair 6-sided die, the outcomes are: 1, 2, 3, 4, 5, 6
+
+Each number has an equal chance:
+
+$$
+P(1) = P(2) = \dots = P(6) = \frac{1}{6}
+$$
+
+This is another **discrete** probability distribution.
+
+------------------------------------------------------------------------
+
 ------------------------------------------------------------------------
 
 ### Function: PMF (Probability Mass Function)
@@ -57,6 +115,48 @@ PMF tells you the **probability of each exact value**.
 -   Instead, you find the probability **within a range**, like 160–170
     cm.
 
+#### Example 3: Measuring Height (Continuous Distribution)
+
+Now, let’s say you measure people’s **heights**.  
+You might get values like:
+
+-   160.1 cm  
+-   160.15 cm  
+-   160.152 cm  
+-   … and so on.
+
+Here, the possible values are **infinite** — you can’t count them.
+
+Instead of exact values, we ask:
+
+> “What’s the probability that a person’s height is **between 160 cm and
+> 170 cm**?”
+
+This is a **continuous probability distribution** — used when outcomes
+can take **any value in a range**.
+
+------------------------------------------------------------------------
+
+#### Example 4: Time Until Ice Cream Melts (Continuous Distribution)
+
+Suppose we want to know how long it takes for ice cream to melt in the
+sun.
+
+Possible values could be:
+
+-   5.1 minutes  
+-   5.15 minutes  
+-   5.152 minutes  
+-   etc.
+
+We don’t ask for the probability it melts **exactly** in 5.152 minutes
+(because it’s almost 0).  
+Instead, we ask:
+
+> “What’s the chance it melts **between 5 and 6 minutes**?”
+
+That’s a **continuous** probability again!
+
 ### Function: PDF (Probability Density Function)
 
 PDF tells you the **density of probability** across a range of values.
@@ -65,41 +165,31 @@ PDF tells you the **density of probability** across a range of values.
 
 #### Summary Table
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 13%" />
-<col style="width: 28%" />
-<col style="width: 11%" />
-<col style="width: 46%" />
+<col style="width: 14%" />
+<col style="width: 35%" />
+<col style="width: 50%" />
 </colgroup>
 <thead>
 <tr>
 <th>Type</th>
-<th>Use Case Examples</th>
-<th>Function</th>
-<th>Description</th>
+<th>Real-Life Example</th>
+<th>Key Idea</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Discrete</td>
-<td>Dice rolls, coin flips</td>
-<td>PMF</td>
-<td>Probability for <strong>each value</strong></td>
+<td>Dice roll, candy color</td>
+<td>Outcomes are <strong>countable</strong></td>
 </tr>
 <tr>
 <td>Continuous</td>
-<td>Height, weight, age</td>
-<td>PDF</td>
-<td>Probability for a <strong>range of values</strong></td>
+<td>Height, time, temperature</td>
+<td>Outcomes are <strong>infinite within a range</strong></td>
 </tr>
 </tbody>
 </table>
 
-#### Final Note
-
--   Use **discrete** distributions when you can **count the outcomes**.
--   Use **continuous** distributions when the outcomes can take **any
-    value in a range**.
--   Both are tools to help you understand how likely something is to
-    happen.
+[⬅ Back to Home](../index.md)
