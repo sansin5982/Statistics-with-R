@@ -88,13 +88,54 @@ This is a **discrete probability distribution** — because the outcomes
 
 #### Example 2: Rolling a Die (Discrete Distribution)
 
-When we roll a fair 6-sided die, the outcomes are: 1, 2, 3, 4, 5, 6
+When we roll a fair 6-sided die, the outcomes are: {1, 2, 3, 4, 5, 6}
 
 Each number has an equal chance:
 
 $$
 P(1) = P(2) = \dots = P(6) = \frac{1}{6}
 $$
+
+<table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1/6 ≈ 0.167</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1/6 ≈ 0.167</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1/6 ≈ 0.167</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1/6 ≈ 0.167</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1/6 ≈ 0.167</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1/6 ≈ 0.167</td>
+</tr>
+</tbody>
+</table>
+
+This is a classic **discrete distribution** because:
+
+-   You can **count** the outcomes.
+
+-   Each value has a **specific probability**.
 
 This is another **discrete** probability distribution.
 
@@ -141,6 +182,12 @@ Instead of exact values, we ask:
 
 This is a **continuous probability distribution** — used when outcomes
 can take **any value in a range**.
+
+![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+
+-   The histogram shows how many students fall in each height range
+
+-   The smooth curve is a probability density function (PDF)
 
 ------------------------------------------------------------------------
 
