@@ -137,30 +137,115 @@ This is a classic **discrete distribution** because:
 
 -   Each value has a **specific probability**.
 
-This is another **discrete** probability distribution.
+<!-- -->
 
-------------------------------------------------------------------------
+    ##   Outcome Probability
+    ## 1       1   0.1666667
+    ## 2       2   0.1666667
+    ## 3       3   0.1666667
+    ## 4       4   0.1666667
+    ## 5       5   0.1666667
+    ## 6       6   0.1666667
+
+![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
+This is another **discrete** probability distribution.
 
 ------------------------------------------------------------------------
 
 ### Function: PMF (Probability Mass Function)
 
+The **Probability Mass Function (PMF)** is a function that **gives the
+probability of each possible value** of a discrete random variable.
+
+In simpler words:
+
+> If we can **count the possible outcomes**, and we want to know **how
+> likely each one** is, we’re using a **PMF**.
+
 PMF tells you the **probability of each exact value**.
+
+#### Key Features of PMF
+
+-   It’s used for **discrete** random variables (like dice, coins,
+    number of children, etc.)
+
+-   The PMF tells you: **“What’s the probability that the variable
+    equals exactly some value?”**
+
+#### PMF Must Satisfy:
+
+1.  *P*(*X* = *x*) ≥ 0  for all *x* → Probabilities can’t be negative.
+
+2.  $P(X = x) = 1 $ → The total probability of all possible values must
+    be **exactly 1**.
+
+------------------------------------------------------------------------
+
+#### Example: PMF of Rolling a Fair Die
+
+When rolling a standard 6-sided die:
+
+<table>
+<thead>
+<tr>
+<th>X (Die Face)</th>
+<th>P(X = x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+<tr>
+<td>6</td>
+<td><span class="math inline">$\frac{1}{6}$</span></td>
+</tr>
+</tbody>
+</table>
+
+Each face is **equally likely**.
+
+We can write:
+$$
+\sum\_{x=1}^{6} P(X = x) = \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} = 1
+$$
+
+This confirms it is a **valid PMF**.
+
+![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 ------------------------------------------------------------------------
 
 ## 2. Continuous Probability Distribution
 
 -   Used when outcomes can be **any value within a range**.
--   You can’t list them all because there are **infinitely many** (like
+-   We can’t list them all because there are **infinitely many** (like
     1.2, 1.23, 1.234…).
 -   Think of things like **height, weight, or temperature**.
 
 ### Example: Measuring Height
 
 -   A person’s height could be 160.2 cm or 160.23 cm or 160.234 cm, etc.
--   You can’t give a probability to **one exact value**.
--   Instead, you find the probability **within a range**, like 160–170
+-   We can’t give a probability to **one exact value**.
+-   Instead, We find the probability **within a range**, like 160–170
     cm.
 
 #### Example 3: Measuring Height (Continuous Distribution)
@@ -183,7 +268,7 @@ Instead of exact values, we ask:
 This is a **continuous probability distribution** — used when outcomes
 can take **any value in a range**.
 
-![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 -   The histogram shows how many students fall in each height range
 
@@ -211,7 +296,7 @@ Instead, we ask:
 
 That’s a **continuous** probability again!
 
-![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
 -   The histogram shows how frequently ice creams melt in different time
     ranges.
@@ -223,7 +308,49 @@ That’s a **continuous** probability again!
 
 ### Function: PDF (Probability Density Function)
 
-PDF tells you the **density of probability** across a range of values.
+### Probability Density Function (PDF)
+
+A **Probability Density Function (PDF)** is used to describe the
+**probability distribution of a continuous random variable**.
+
+It tells us: &gt; “How likely is a value to occur **within a certain
+range**?”
+
+Unlike PMF (for discrete values), a PDF **does not give the probability
+of an exact value**, because:
+
+*P*(*X* = *x*) = 0  (for continuous variables)
+
+Instead, we compute:
+*P*(*a* ≤ *X* ≤ *b*) = ∫<sub>*a*</sub><sup>*b*</sup>*f*(*x*) *d**x*
+
+#### Example: Height of Students
+
+Let’s say we measure the height of 1000 students. The values could be:
+
+-   160.1 cm  
+-   160.15 cm  
+-   160.152 cm  
+-   and so on…
+
+You can’t list every possible value — they are **infinitely many**.
+
+So we ask: &gt; “What is the probability that a student’s height is
+between **160 cm and 170 cm**?”
+
+This is where PDF is used.
+
+#### Properties of a PDF
+
+1.  *f*(*x*) ≥ 0  for all *x*  
+    → The density must be non-negative
+
+2.  The total area under the curve is 1:
+    ∫<sub>−∞</sub><sup>∞</sup>*f*(*x*) *d**x* = 1
+
+We’ll simulate a **normal distribution** for height data.
+
+![](Probability-Distribution_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
 ------------------------------------------------------------------------
 
