@@ -189,34 +189,34 @@ When rolling a standard 6-sided die:
 <table>
 <thead>
 <tr>
-<th>X (Die Face)</th>
-<th>P(X = x)</th>
+<th>Outcome</th>
+<th>Probability</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td><span class="math inline">$\frac{1}{6}$</span></td>
+<td>1/6 ≈ 0.167</td>
 </tr>
 <tr>
 <td>2</td>
-<td><span class="math inline">$\frac{1}{6}$</span></td>
+<td>1/6 ≈ 0.167</td>
 </tr>
 <tr>
 <td>3</td>
-<td><span class="math inline">$\frac{1}{6}$</span></td>
+<td>1/6 ≈ 0.167</td>
 </tr>
 <tr>
 <td>4</td>
-<td><span class="math inline">$\frac{1}{6}$</span></td>
+<td>1/6 ≈ 0.167</td>
 </tr>
 <tr>
 <td>5</td>
-<td><span class="math inline">$\frac{1}{6}$</span></td>
+<td>1/6 ≈ 0.167</td>
 </tr>
 <tr>
 <td>6</td>
-<td><span class="math inline">$\frac{1}{6}$</span></td>
+<td>1/6 ≈ 0.167</td>
 </tr>
 </tbody>
 </table>
