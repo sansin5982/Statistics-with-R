@@ -8,8 +8,7 @@ Chapters:
 -   [Numerical Measures](chapters/Numerical-Measures)
 -   [Graphs](chapters/Plots-and-Charts)
 -   [Probability](chapters/Probability)
--   [Theoretical Probability
-    Distribution](chapters/Probability-Distribution)
+-   [Probability Distribution](chapters/Probability-Distribution)
     -   [Probability
         Distribution](chapters/Probability-Distribution/Probability-Distribution)
     -   [Bernoulli
