@@ -9,8 +9,6 @@ Chapters:
 -   [Graphs](chapters/Plots-and-Charts)
 -   [Probability](chapters/Probability)
 -   [Probability Distribution](chapters/Probability-Distribution)
-    -   [Probability
-        Distribution](chapters/Probability-Distribution/Probability-Distribution)
     -   [Bernoulli
         Distribution](chapters/Probability-Distribution/Bernoulli-Distribution)
     -   [Binomial
