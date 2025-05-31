@@ -98,6 +98,12 @@ This is very helpful for quickly estimating spread.
 
 ![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+
+------------------------------------------------------------------------
+
 ### What Does “Normal Distribution” Mean?
 
 -   It represents the **ideal pattern** for naturally varying data
@@ -106,11 +112,7 @@ This is very helpful for quickly estimating spread.
     real-world behavior
 
 -   It serves as the **foundation for many statistical techniques**
-    (like t-tests, confidence intervals, and regression) \`\`\`
-
-![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-3-1.png)
-
-![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+    (like t-tests, confidence intervals, and regression)
 
 ------------------------------------------------------------------------
 
