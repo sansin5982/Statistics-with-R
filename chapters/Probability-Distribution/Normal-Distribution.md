@@ -7,7 +7,16 @@
 
 # Normal Distribution?
 
-## The **Normal Distribution** is a **bell-shaped** curve that shows how values in a dataset are **evenly spread** around a central average (mean). Most values are close to the average, and fewer values appear as you move further away.
+The **Normal Distribution** is a **bell-shaped** curve that shows how
+values in a dataset are **evenly spread** around a central average
+(mean). Most values are close to the average, and fewer values appear as
+you move further away.
+
+### Normal Distribution Plot
+
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
+------------------------------------------------------------------------
 
 <table>
 <colgroup>
@@ -87,6 +96,8 @@ This rule helps understand how values fall within standard deviations:
 
 This is very helpful for quickly estimating spread.
 
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
 ### What Does “Normal Distribution” Mean?
 
 -   It represents the **ideal pattern** for naturally varying data
@@ -95,7 +106,11 @@ This is very helpful for quickly estimating spread.
     real-world behavior
 
 -   It serves as the **foundation for many statistical techniques**
-    (like t-tests, confidence intervals, and regression)
+    (like t-tests, confidence intervals, and regression) \`\`\`
+
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 ------------------------------------------------------------------------
 
@@ -113,7 +128,7 @@ it forms a **bell-shaped curve** — this is a normal distribution.
 The formula for the normal distribution is:
 
 $$
-\large f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+\Large f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
 $$
 
 Where:
@@ -144,10 +159,6 @@ probability.
 
 ------------------------------------------------------------------------
 
-### Normal Distribution Plot
-
-![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-1-1.png)
-
 ### Importance of Normal Distribution
 
 -   Many natural measurements (height, weight, IQ) follow it
@@ -173,7 +184,7 @@ $$
 
 #### Standard Normal Curve
 
-![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
 ### Real-Life Uses
 
