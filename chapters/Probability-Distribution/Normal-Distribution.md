@@ -5,7 +5,7 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
 </script>
 
-# Normal Distribution?
+# Normal Distribution
 
 The **Normal Distribution** is a **bell-shaped** curve that shows how
 values in a dataset are **evenly spread** around a central average
