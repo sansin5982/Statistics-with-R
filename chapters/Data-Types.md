@@ -57,6 +57,12 @@ number of possible values that a discrete variable can take on. Examples
 of discrete data include the number of siblings a person has, the number
 of cars in a parking lot, and the number of children in a family.
 
+**Meaning**:
+
+-   We can **count** the values, often whole numbers.
+-   There are **gaps** between possible values.
+-   We **can’t break it into smaller parts** that still make sense.
+
 ### Continuous variable
 
 Continuous data refers to numerical data that can take on any value
@@ -66,6 +72,13 @@ variable can take on. Examples of continuous data include height,
 weight, temperature, and time. Continuous variable is further divided
 into interval and ration scale.
 
+**Meaning**:
+
+-   We can **measure** it, not count it.
+-   It can take **any value** (including fractions and decimals) within
+    a range.
+-   It’s **infinitely divisible**.
+
 #### Interval scale
 
 Interval data are continuous data where the differences between the
@@ -73,11 +86,31 @@ values are equal, but there is no true zero point. Examples of interval
 data include temperature (measured in Celsius or Fahrenheit), time
 (measured in hours or minutes), and IQ scores.
 
+-   Think of a **thermometer** showing temperature in Celsius or
+    Fahrenheit.
+-   **Has equal intervals**: The difference between 20°C and 30°C is the
+    same as between 70°C and 80°C.
+    -   We can add and subtract.
+    -   No true zero: 0°C does not mean no temperature—it’s just a point
+        on the scale.
+    -   We can’t multiply/divide meaningfully: 40°C is not “twice as
+        hot” as 20°C.
+
 #### Ratio Scale
 
 Ratio data are numerical data where there is a true zero point, and the
 ratios between the values are meaningful. Examples of ratio data include
 weight, height, age, and income (measured in dollars).
+
+**Think of a ruler or a weight scale**. \* Has equal intervals and a
+true zero. \* We can add, subtract, multiply, and divide. \* means none
+of the quantity (e.g., 0 kg = no weight). \* 10 kg is truly twice as
+heavy as 5 kg.
+
+**Analogy**
+
+-   Interval is like measuring feelings (0 doesn’t mean no feeling).
+-   Ratio is like counting apples (0 apples = no apples).
 
 ### Qualitative Data
 
@@ -92,6 +125,40 @@ Nominal data are categorical data that cannot be ranked or ordered.
 Examples of nominal data include gender (male or female), race (Asian,
 Black, Hispanic, etc.), and favorite color (red, blue, green, etc.).
 
+**Meaning**:
+
+-   Just labels or names.
+-   No order, no ranking.
+-   We can’t say one is higher or lower than the other.
+
+#### Example
+
+<table>
+<thead>
+<tr>
+<th>Person</th>
+<th>Favorite Fruit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Apple</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Banana</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Mango</td>
+</tr>
+</tbody>
+</table>
+
+-   “Apple” isn’t better or higher than “Banana”—they’re just
+    **different categories**.
+
 #### Ordinal variable
 
 Ordinal data are categorical data that can be ranked or ordered.
@@ -100,6 +167,47 @@ Examples of ordinal data include education level (high school, some
 college, Bachelor’s degree, Master’s degree, etc.), income level (low,
 middle, high), and satisfaction level (very dissatisfied, somewhat
 dissatisfied, neutral, somewhat satisfied, very satisfied).
+
+**Meaning**:
+
+-   Categories **have a meaningful order**, but not equal spacing.
+-   We can **rank** them, but you can’t do math with them.
+
+#### Examples:
+
+<table>
+<thead>
+<tr>
+<th>Student</th>
+<th>Satisfaction Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Very Satisfied</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Satisfied</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Neutral</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Dissatisfied</td>
+</tr>
+</tbody>
+</table>
+
+We know the order:
+
+-   Very Satisfied &gt; Satisfied &gt; Neutral &gt; Dissatisfied
+
+But we **don’t know** if the **gap** between “Very Satisfied” and
+“Satisfied” is the same as between “Satisfied” and “Neutral.”
 
 ## Random Variable
 
@@ -186,29 +294,29 @@ distribution table for weight:
 
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Weight Interval</th>
 <th>Frequency</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>62-66</td>
 <td>2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>67-71</td>
 <td>4</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>72-76</td>
 <td>5</td>
 </tr>
-<tr class="even">
+<tr>
 <td>77-81</td>
 <td>5</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>82-86</td>
 <td>4</td>
 </tr>
@@ -233,7 +341,7 @@ cumulative frequency columns:
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Weight Interval</th>
 <th>Frequency</th>
 <th>Relative Frequency</th>
@@ -241,31 +349,31 @@ cumulative frequency columns:
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>62-66</td>
 <td>2</td>
 <td>0.1</td>
 <td>2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>67-71</td>
 <td>4</td>
 <td>0.2</td>
 <td>6</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>72-76</td>
 <td>5</td>
 <td>0.25</td>
 <td>11</td>
 </tr>
-<tr class="even">
+<tr>
 <td>77-81</td>
 <td>5</td>
 <td>0.25</td>
 <td>16</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>82-86</td>
 <td>4</td>
 <td>0.2</td>
