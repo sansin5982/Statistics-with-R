@@ -176,7 +176,37 @@ class="math inline"><em>σ</em><sup>2</sup> = <em>p</em>(1 − <em>p</em
 
 ## Bernoulli Distribution Plot
 
+    # Probability of success
+    p <- 0.3
+
+    # Possible outcomes and their probabilities
+    x <- c(0, 1)
+    prob <- c(1 - p, p)
+
+    # Plot
+    barplot(prob, names.arg = x,
+            col = c("orange", "steelblue"),
+            main = "Bernoulli Distribution (p = 0.3)",
+            xlab = "Outcome", ylab = "Probability")
+
 ![](Bernoulli-Distribution_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
+    # Set up layout for 3 plots side-by-side
+    par(mfrow = c(1, 3))
+
+    # Define values of p
+    p_values <- c(0.2, 0.5, 0.8)
+
+    # Generate and plot for each p
+    for (p in p_values) {
+      barplot(c(1 - p, p),
+              names.arg = c("0 (Failure)", "1 (Success)"),
+              col = c("orange", "steelblue"),
+              main = paste("Bernoulli Distribution\np =", p),
+              sub = "Probability Mass Function for different P values",
+              ylim = c(0, 1),
+              ylab = "Probability")
+    }
 
 ![](Bernoulli-Distribution_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
@@ -198,9 +228,23 @@ Here, each graph shows a different Bernoulli distribution.
 
 #### Simulation of Multiple Bernoulli Trials
 
+    # Simulate 100 Bernoulli trials with p = 0.3
+    set.seed(123)
+    sim_data <- rbinom(n = 100, size = 1, prob = 0.3)
+
+    # Frequency table
+    table(sim_data)
+
     ## sim_data
     ##  0  1 
     ## 71 29
+
+    # Plot the proportion of outcomes
+    barplot(table(sim_data)/length(sim_data),
+            names.arg = c("Failure (0)", "Success (1)"),
+            col = c("pink", "skyblue"),
+            main = "Simulation of 100 Bernoulli Trials",
+            ylab = "Proportion")
 
 ![](Bernoulli-Distribution_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
@@ -260,7 +304,7 @@ clicked/not clicked**, etc.
 Bernoulli distribution provides the foundation for:
 
 -   **Target variable** (label) in binary classification is modeled as
-    ***y* ∼ *B**e**r**n**o**u**l**l**i*(*p*)**
+    *y* ∼ *B**e**r**n**o**u**l**l**i*(*p*)
 -   **Predicted probabilities** (from models like logistic regression)
     estimate the success probability *p*
 
@@ -389,6 +433,128 @@ success/failure).
 
     -   It’s not flexible enough to accommodate uncertain or fuzzy
         outcomes.
+
+------------------------------------------------------------------------
+
+#### Comparison of Common Discrete Distributions
+
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 30%" />
+<col style="width: 8%" />
+<col style="width: 24%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Definition</th>
+<th>Possible Outcomes</th>
+<th>Parameters</th>
+<th>Real-Life Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bernoulli</strong></td>
+<td>Single trial with two outcomes</td>
+<td>0 or 1</td>
+<td><span class="math inline"><em>p</em></span>: probability of
+success</td>
+<td>Tossing a coin once (Heads = 1, Tails = 0)</td>
+</tr>
+<tr>
+<td><strong>Binomial</strong></td>
+<td>Number of successes in <strong>n</strong> independent Bernoulli
+trials</td>
+<td>0 to <span class="math inline"><em>n</em></span></td>
+<td><span class="math inline"><em>n</em></span>: number of trials, <span
+class="math inline"><em>p</em></span>: success probability</td>
+<td>Tossing a coin 10 times: how many heads?</td>
+</tr>
+<tr>
+<td><strong>Geometric</strong></td>
+<td>Number of trials <strong>until first success</strong></td>
+<td>1, 2, 3, …</td>
+<td><span class="math inline"><em>p</em></span>: probability of
+success</td>
+<td>How many times do you flip a coin until you get Heads?</td>
+</tr>
+<tr>
+<td><strong>Categorical</strong></td>
+<td>One trial with <strong>more than two possible outcomes</strong></td>
+<td>1, 2, …, k</td>
+<td>Vector of probabilities <span
+class="math inline">(<em>p</em><sub>1</sub>, <em>p</em><sub>2</sub>, …, <em>p</em><sub><em>k</em></sub>)</span></td>
+<td>Rolling a dice (1–6) once</td>
+</tr>
+</tbody>
+</table>
+
+------------------------------------------------------------------------
+
+#### Intuitions
+
+🔹 Bernoulli (binary decision) &gt; Are you **present (1)** or **absent
+(0)** in class today?
+
+    # One Bernoulli trial with p = 0.7
+    rbinom(n = 1, size = 1, prob = 0.7)
+
+    ## [1] 1
+
+🔹 Binomial (repeat Bernoulli) &gt; In **5 coin tosses**, how many times
+do you get **Heads**?
+
+    # 10 coin tosses (p = 0.5), how many heads?
+    rbinom(n = 1, size = 10, prob = 0.5)
+
+    ## [1] 8
+
+🔹 Geometric (wait for success) &gt; **How many attempts** until you
+pass a driving test?
+
+    # Number of tosses until first head (p = 0.3)
+    rgeom(n = 1, prob = 0.3) + 1  # R counts failures before success, so +1 for trials
+
+    ## [1] 1
+
+🔹 Categorical (multi-choice) &gt; Which **color** is picked from a bag:
+**Red**, **Green**, or **Blue**?
+
+    # Roll a fair 6-sided die
+    sample(1:6, size = 1, prob = rep(1/6, 6))
+
+    ## [1] 4
+
+#### Visualization of different distributions
+
+    par(mfrow = c(2, 2))
+
+    # Bernoulli
+    barplot(c(0.3, 0.7), names.arg = c(0, 1), col = c("orange", "skyblue"),
+            main = "Bernoulli (p = 0.7)", ylab = "Probability")
+
+    # Binomial (n = 10, p = 0.5)
+    x_binom <- 0:10
+    y_binom <- dbinom(x_binom, size = 10, prob = 0.5)
+    barplot(y_binom, names.arg = x_binom, col = "steelblue",
+            main = "Binomial (n=10, p=0.5)", ylab = "Probability")
+
+    # Geometric (p = 0.3)
+    x_geom <- 1:10
+    y_geom <- dgeom(x_geom - 1, prob = 0.3)
+    barplot(y_geom, names.arg = x_geom, col = "lightgreen",
+            main = "Geometric (p = 0.3)", ylab = "Probability")
+
+    # Categorical (1 to 6)
+    x_cat <- 1:6
+    y_cat <- rep(1/6, 6)
+    barplot(y_cat, names.arg = x_cat, col = rainbow(6),
+            main = "Categorical (Fair Die)", ylab = "Probability")
+
+![](Bernoulli-Distribution_files/figure-markdown_strict/unnamed-chunk-9-1.png)
 
 ------------------------------------------------------------------------
 
