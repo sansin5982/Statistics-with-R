@@ -34,8 +34,8 @@ X =
 \end{cases}
 $$
 
-Where: - *p* is the probability of success (i.e., getting a 1)  
-- 1 − *p* is the probability of failure (i.e., getting a 0)
+Where: - *p* is the **probability of success** (i.e., getting a 1)  
+- 1 − *p* is the **probability of failure** (i.e., getting a 0)
 
 ------------------------------------------------------------------------
 
@@ -81,6 +81,26 @@ class="math inline"><em>σ</em><sup>2</sup> = <em>p</em>(1 − <em>p</em
 -   Controlled by a **single parameter:*p***
 -   Used to model **binary events**
 -   Simple and forms the basis for other distributions like Binomial
+
+#### Simulation of Multiple Bernoulli Trials
+
+    ## sim_data
+    ##  0  1 
+    ## 71 29
+
+![](Bernoulli-Distribution_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
+### Connection to Hypothesis Testing
+
+In hypothesis testing, we often test whether the probability of success
+equals a specific value:
+
+-   Null Hypothesis *H*<sub>*o*</sub> : *p* = 0.5
+
+-   Alternative Hypothesis *H*<sub>1</sub> : *p* ≠ 0.5
+
+We use test statistics and p-values to decide whether to reject
+*H*<sub>*o*</sub>.
 
 #### Applications in Real Life
 
