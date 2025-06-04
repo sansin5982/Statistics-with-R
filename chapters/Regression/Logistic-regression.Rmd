@@ -137,7 +137,7 @@ In logistic regression, each coefficient \( \beta_j \) represents the change in 
 To interpret these coefficients in terms of **odds ratios**, we use the following formula:
 
 $$
-\large \text{Odds Ratio} = e^{\beta_j}
+\large \text{Odds Ratio} = e^{\beta{\scriptstyle j}}
 $$
 
 where:
@@ -311,3 +311,7 @@ pseudo_r2
 anova(glm(purchase ~ 1, data = data, family = binomial), model, test = "LRT")
 ```
 * **Interpretation**: The Likelihood Ratio Test shows a significant result (p = 7.42e-14), suggesting that the predictor (age) improve the model fit significantly over the null model. This means that adding these predictors provides valuable information for predicting `purchase`.
+
+
+
+[⬅ Back to Home](../index.md)
