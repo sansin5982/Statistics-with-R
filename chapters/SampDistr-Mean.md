@@ -320,6 +320,46 @@ Here, your **Standard Error is small**.
 > **Larger sample size (n) ⇒ Lower SE ⇒ More reliable estimate of true
 > mean.**
 
+#### Calculate Standard Error in R
+
+We collect a sample of 10 students’ test scores from a class and want to
+estimate how precise our sample mean is using Standard Error.
+
+    # Sample test scores of 10 students
+    scores <- c(78, 85, 90, 72, 88, 84, 79, 91, 73, 87)
+    # Calculate sample mean
+    mean_score <- mean(scores)
+
+    # Calculate sample standard deviation (s)
+    sd_score <- sd(scores)
+
+    # Sample size
+    n <- length(scores)
+
+    # Standard Error
+    SE <- sd_score / sqrt(n)
+
+    cat("Sample Mean:", mean_score, "\n")
+
+    ## Sample Mean: 82.7
+
+    cat("Sample Standard Deviation:", sd_score, "\n")
+
+    ## Sample Standard Deviation: 6.832114
+
+    cat("Standard Error of the Mean:", SE, "\n")
+
+    ## Standard Error of the Mean: 2.160504
+
+#### Interpretation:
+
+-   Your **sample mean** is 82.7
+-   Your **standard error** is **2.056**, which means:
+
+> If we took many samples of 10 students each, the average of each
+> sample would typically deviate from the true class average by around
+> 2.056 points.
+
 #### Importance:
 
 -   Smaller SE → more precise estimate of the population mean.
