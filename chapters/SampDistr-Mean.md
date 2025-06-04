@@ -203,14 +203,26 @@ cm. If we randomly **select samples of 50 students** and calculate their
 mean height every time, you get many different means. The **distribution
 of those sample means** is the **sampling distribution of the mean**.
 
-#### Left plot: Skewed exponential population (non-normal).
-
-#### Right plot: Sampling distribution of sample means → Looks like a bell curve due to the Central Limit Theorem.
-
 ![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
+-   The above figure shows exponential distribution (left plot) for
+    population.  
+
+-   Here, we selected multiple samples (n = 100) randomly from the
+    population of 10,000 and calculated mean for each sample.
+
+    -   Sample 1 (n = 100) → mean(Sample 1)
+    -   Sample 2 (n = 100) → mean(Sample 2)
+    -   Sample 3 (n = 100) → mean(Sample 3)
+    -   Sample 4 (n = 100) → mean(Sample 4)
+    -   Sample n (n = 100) → mean(Sample n)
+
+-   The right plot shows Sampling distribution of sample means. It looks
+    like a bell curve due to the **Central Limit Theorem**.
 
 -   It helps us **estimate population parameters** using sample
     statistics.
+
 -   Forms the basis of **confidence intervals** and **hypothesis
     testing**.
 
@@ -252,6 +264,8 @@ Then:
 </tbody>
 </table>
 
+------------------------------------------------------------------------
+
 ## Standard Error (SE)?
 
 The **Standard Error** is the **standard deviation of the sampling
@@ -263,11 +277,161 @@ $$
 \large SE = \frac {\sigma}{\sqrt n}
 $$
 
+Where:
+
+-   *σ*: Standard deviation of the population
+-   *n*: Sample size
+
+#### Explanation:
+
+Imagine we’re trying to find the average income of all families in our
+city. We can’t ask everyone — so we take a sample (say, 100 families),
+calculate the average, and repeat this sampling many times.
+
+Each time, our average is a little different. These differences are
+natural and expected due to sample-to-sample variability.
+
+> The **SE** measures **how much your sample means tend to vary** from
+> one sample to another.
+
+You own a bakery, and you bake cookies every day. You want to estimate
+the average weight of your cookies.
+
+#### Scenario A – Small Sample:
+
+You randomly pick **4 cookies**, weigh them, and compute the average.
+
+-   It might be 52g, but tomorrow, another sample of 4 might give 49g.
+
+-   There’s more **variation** (less reliable).
+
+So here, your **Standard Error is large**.
+
+#### Scenario B – Large Sample:
+
+You now pick **100 cookies** each day to compute the average weight.
+
+-   Today it’s 50.5g, tomorrow 50.7g — not much change.
+
+-   The averages are **more stable**.
+
+Here, your **Standard Error is small**.
+
+> **Larger sample size (n) ⇒ Lower SE ⇒ More reliable estimate of true
+> mean.**
+
 #### Importance:
 
 -   Smaller SE → more precise estimate of the population mean.
 -   As **sample size increases**, SE **decreases** (more reliable
     estimate).
+
+#### Why Does Standard Error Matter?
+
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Measures precision</strong></td>
+<td>Lower SE means your sample mean is likely closer to the true
+population mean</td>
+</tr>
+<tr>
+<td><strong>Builds confidence intervals</strong></td>
+<td>SE helps calculate how much “wiggle room” we have in our
+estimate</td>
+</tr>
+<tr>
+<td><strong>Used in hypothesis testing</strong></td>
+<td>Affects how we calculate test statistics and p-values</td>
+</tr>
+</tbody>
+</table>
+
+#### Impact of Sample Size on SE:
+
+Let’s say population standard deviation *σ* = 10
+
+<table>
+<thead>
+<tr>
+<th>Sample Size (n)</th>
+<th>Standard Error <span
+class="math inline">$\frac{10}{\sqrt{n}}$</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>5.00</td>
+</tr>
+<tr>
+<td>25</td>
+<td>2.00</td>
+</tr>
+<tr>
+<td>100</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>400</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+
+As sample size increases, **SE shrinks** — meaning your estimate becomes
+**more precise**.
+
+#### Standard deviation vs Standard error
+
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 34%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Measures what?</th>
+<th>Applies to what?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standard Deviation</strong></td>
+<td>Spread of individual data points</td>
+<td>Original dataset (population or sample)</td>
+</tr>
+<tr>
+<td><strong>Standard Error</strong></td>
+<td>Spread of sample means</td>
+<td>Sampling distribution of means</td>
+</tr>
+</tbody>
+</table>
+
+#### Summary:
+
+-   **SE tells** us how much we expect the sample mean to deviate from
+    the true population mean.
+
+-   **Larger samples** → More stable estimates → Smaller SE.
+
+-   Used in almost every confidence interval, hypothesis test, and
+    regression model in statistics
+
+------------------------------------------------------------------------
 
 ## Central Limit Theorem (CLT)
 
