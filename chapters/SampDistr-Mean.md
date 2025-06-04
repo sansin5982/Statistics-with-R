@@ -461,6 +461,41 @@ As sample size increases, **SE shrinks** — meaning your estimate becomes
 </tbody>
 </table>
 
+### Applications of Sampling Distribution of Mean
+
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Confidence Intervals</strong></td>
+<td>Estimate population mean using sample mean ± margin of error</td>
+</tr>
+<tr>
+<td><strong>Hypothesis Testing</strong></td>
+<td>Test claims about the population mean using sampling
+distribution</td>
+</tr>
+<tr>
+<td><strong>Quality Control</strong></td>
+<td>Identify whether production means vary significantly from
+standard</td>
+</tr>
+<tr>
+<td><strong>Polling &amp; Surveys</strong></td>
+<td>Generalize results from samples to entire population</td>
+</tr>
+</tbody>
+</table>
+
 #### Summary:
 
 -   **SE tells** us how much we expect the sample mean to deviate from
@@ -567,41 +602,6 @@ The **Central Limit Theorem** states that:
 -   Construction of **confidence intervals**
 -   **Hypothesis testing** (Z-tests, t-tests)
 -   Simplifies complex population distributions
-
-### Applications of Sampling Distribution of Mean
-
-<table>
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 73%" />
-</colgroup>
-<thead>
-<tr>
-<th>Use Case</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Confidence Intervals</strong></td>
-<td>Estimate population mean using sample mean ± margin of error</td>
-</tr>
-<tr>
-<td><strong>Hypothesis Testing</strong></td>
-<td>Test claims about the population mean using sampling
-distribution</td>
-</tr>
-<tr>
-<td><strong>Quality Control</strong></td>
-<td>Identify whether production means vary significantly from
-standard</td>
-</tr>
-<tr>
-<td><strong>Polling &amp; Surveys</strong></td>
-<td>Generalize results from samples to entire population</td>
-</tr>
-</tbody>
-</table>
 
 ## Real-Life Example:
 
