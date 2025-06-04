@@ -530,31 +530,52 @@ pass a driving test?
 
 #### Visualization of different distributions
 
+    # Set up a 2x2 plotting grid
     par(mfrow = c(2, 2))
 
-    # Bernoulli
-    barplot(c(0.3, 0.7), names.arg = c(0, 1), col = c("orange", "skyblue"),
-            main = "Bernoulli (p = 0.7)", ylab = "Probability")
+    # 1. Bernoulli Distribution
+    p <- 0.7
+    barplot(c(1 - p, p),
+            names.arg = c("0 (Failure)", "1 (Success)"),
+            col = c("orange", "skyblue"),
+            main = "Bernoulli (p = 0.7)",
+            ylab = "Probability",
+            ylim = c(0, 1))
 
-    # Binomial (n = 10, p = 0.5)
+    # 2. Binomial Distribution (n = 10, p = 0.5)
     x_binom <- 0:10
     y_binom <- dbinom(x_binom, size = 10, prob = 0.5)
-    barplot(y_binom, names.arg = x_binom, col = "steelblue",
-            main = "Binomial (n=10, p=0.5)", ylab = "Probability")
+    barplot(y_binom,
+            names.arg = x_binom,
+            col = "steelblue",
+            main = "Binomial (n=10, p=0.5)",
+            ylab = "Probability",
+            ylim = c(0, max(y_binom)))
 
-    # Geometric (p = 0.3)
+    # 3. Geometric Distribution (p = 0.3)
     x_geom <- 1:10
     y_geom <- dgeom(x_geom - 1, prob = 0.3)
-    barplot(y_geom, names.arg = x_geom, col = "lightgreen",
-            main = "Geometric (p = 0.3)", ylab = "Probability")
+    barplot(y_geom,
+            names.arg = x_geom,
+            col = "lightgreen",
+            main = "Geometric (p = 0.3)",
+            ylab = "Probability",
+            ylim = c(0, max(y_geom)))
 
-    # Categorical (1 to 6)
+    # 4. Categorical Distribution (Fair die)
     x_cat <- 1:6
     y_cat <- rep(1/6, 6)
-    barplot(y_cat, names.arg = x_cat, col = rainbow(6),
-            main = "Categorical (Fair Die)", ylab = "Probability")
+    barplot(y_cat,
+            names.arg = x_cat,
+            col = rainbow(6),
+            main = "Categorical (Fair Die)",
+            ylab = "Probability",
+            ylim = c(0, 1))
 
 ![](Bernoulli-Distribution_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+
+    # Reset plotting layout
+    par(mfrow = c(1, 1))
 
 ------------------------------------------------------------------------
 
