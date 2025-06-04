@@ -353,8 +353,8 @@ estimate how precise our sample mean is using Standard Error.
 
 #### Interpretation:
 
--   Your **sample mean** is 82.7
--   Your **standard error** is **2.056**, which means:
+-   Our **sample mean** is 82.7
+-   Our **standard error** is **2.056**, which means:
 
 > If we took many samples of 10 students each, the average of each
 > sample would typically deviate from the true class average by around
@@ -484,6 +484,8 @@ The **Central Limit Theorem** states that:
 -   **Population**: Could be skewed, uniform, etc.
 -   **Sample means**: As we take more and more samples, their
     distribution starts to look like a bell curve.
+
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 #### Key Points
 
