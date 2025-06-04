@@ -355,6 +355,14 @@ given value.
 
 ![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
+-   The **blue curve** is the normal distribution of student height.
+-   The **red vertical dashed line** shows where 170 cm falls.
+-   The **red point** marks the **density value** computed by
+    `dnorm(170, 166.6, 3.39)`.
+
+This makes it easy to interpret how common or rare a value like 170 cm
+is in that distribution.
+
 -   This means **170 cm** is a reasonably likely height, with a moderate
     density.
 
@@ -370,6 +378,15 @@ probabilities.
     pnorm(170, mean = 166.33, sd = 3.39)
 
     ## [1] 0.8605061
+
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-13-1.png)
+
+-   The **blue curve** is the normal distribution of student height.
+
+-   The **red vertical dashed line** shows where 170 cm falls.
+
+-   The **red point** marks the **density value** computed by dnorm(170,
+    166.6, 3.39).
 
 -   This means **~82.7% of students are shorter than or equal to 170
     cm**.
@@ -483,7 +500,7 @@ $$
 
 #### Standard Normal Curve
 
-![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-15-1.png)
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-16-1.png)
 
 ### Real-Life Uses
 
