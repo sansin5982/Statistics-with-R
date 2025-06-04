@@ -489,17 +489,45 @@ The **Central Limit Theorem** states that:
 
 ![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
+-   **Left plot**: The original population distribution
+
+-   **Right plot**: The distribution of sample means (n = 30)
+
 #### Negative Exponentail Distribution
 
 ![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+
+-   **Left plot**: The original population distribution
+
+-   **Right plot**: The distribution of sample means (n = 30)
 
 #### Uniform Distribution
 
 ![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
+-   **Left plot**: The original population distribution
+
+-   **Right plot**: The distribution of sample means (n = 30)
+
 #### Bimodal Distribution
 
 ![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+
+-   **Left plot**: The original population distribution
+
+-   **Right plot**: The distribution of sample means (n = 30)
+
+#### CLT with Varying Sample Sizes (Negative Exponential)
+
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+
+-   6 histograms: one for each sample size.
+
+-   Sample size increases ⇒ Distribution of sample means becomes more
+    symmetric and bell-shaped.
+
+-   Visual proof of the Central Limit Theorem in action, even though the
+    original population (negative exponential) is left-skewed.
 
 #### Key Points
 
