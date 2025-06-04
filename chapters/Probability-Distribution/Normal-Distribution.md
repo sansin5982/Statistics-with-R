@@ -161,6 +161,151 @@ probability.
 
 ------------------------------------------------------------------------
 
+Real-Life Scenario: Student Heights
+
+You measured the heights of **15 students** in cm:
+
+    heights <- c(160, 162, 164, 165, 166, 167, 165, 163, 168, 169, 170, 171, 172, 168, 165)
+    n <- length(heights)
+
+------------------------------------------------------------------------
+
+### Step 1: Mean and Standard Deviation
+
+We calculate:
+
+$$
+\mu = \frac{1}{n} \sum\_{i=1}^n x\_i
+\quad \text{and} \quad
+\sigma = \sqrt{\frac{1}{n-1} \sum\_{i=1}^n (x\_i - \mu)^2}
+$$
+
+    mu <- mean(heights)
+    sigma <- sd(heights)
+
+    print(mu)
+
+    ## [1] 166.3333
+
+    print(sigma)
+
+    ## [1] 3.394674
+
+------------------------------------------------------------------------
+
+### Step 2: Normal Distribution Formula
+
+The general formula for the **normal distribution** is:
+
+$$
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \cdot e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+$$
+
+We apply this manually to **each height value** to compute the
+probability density:
+
+    manual_density <- function(x, mu, sigma) {
+      num <- exp(-((x - mu)^2) / (2 * sigma^2))
+      den <- sqrt(2 * pi * sigma^2)
+      num / den
+    }
+
+    density_values <- sapply(heights, manual_density, mu = mu, sigma = sigma)
+
+    # Combine for table view
+    density_table <- data.frame(
+      Height = heights,
+      Density = round(density_values, 5)
+    )
+    density_table
+
+    ##    Height Density
+    ## 1     160 0.02062
+    ## 2     162 0.05203
+    ## 3     164 0.09279
+    ## 4     165 0.10880
+    ## 5     166 0.11695
+    ## 6     167 0.11528
+    ## 7     165 0.10880
+    ## 8     163 0.07257
+    ## 9     168 0.10418
+    ## 10    169 0.08632
+    ## 11    170 0.06558
+    ## 12    171 0.04568
+    ## 13    172 0.02918
+    ## 14    168 0.10418
+    ## 15    165 0.10880
+
+------------------------------------------------------------------------
+
+### Step 3: Verify with `dnorm()`
+
+    dnorm_values <- dnorm(heights, mean = mu, sd = sigma)
+
+    # Compare manual vs built-in
+    comparison_table <- data.frame(
+      Height = heights,
+      Manual = round(density_values, 5),
+      dnorm = round(dnorm_values, 5)
+    )
+    comparison_table
+
+    ##    Height  Manual   dnorm
+    ## 1     160 0.02062 0.02062
+    ## 2     162 0.05203 0.05203
+    ## 3     164 0.09279 0.09279
+    ## 4     165 0.10880 0.10880
+    ## 5     166 0.11695 0.11695
+    ## 6     167 0.11528 0.11528
+    ## 7     165 0.10880 0.10880
+    ## 8     163 0.07257 0.07257
+    ## 9     168 0.10418 0.10418
+    ## 10    169 0.08632 0.08632
+    ## 11    170 0.06558 0.06558
+    ## 12    171 0.04568 0.04568
+    ## 13    172 0.02918 0.02918
+    ## 14    168 0.10418 0.10418
+    ## 15    165 0.10880 0.10880
+
+------------------------------------------------------------------------
+
+### Step 4: Visualize the Curve and Data Points
+
+    x_vals <- seq(min(heights)-5, max(heights)+5, length.out = 300)
+    y_vals <- dnorm(x_vals, mean = mu, sd = sigma)
+
+    plot(x_vals, y_vals, type = "l", lwd = 2, col = "blue",
+         main = "Normal Distribution of Student Heights",
+         xlab = "Height (cm)", ylab = "Density")
+
+    # Add vertical lines for each observed value
+    abline(v = heights, col = "gray80", lty = 3)
+    points(heights, dnorm_values, col = "red", pch = 19)
+
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+
+------------------------------------------------------------------------
+
+### Interpretation
+
+-   Each value’s density reflects how **common or likely** that value is
+    under a normal distribution.
+
+-   For instance, values near the mean (~166.6 cm) have **higher
+    densities**.
+
+-   Extremes (e.g., 160 or 172) are **less likely** and have **lower
+    densities**.
+
+-   We used the normal distribution formula manually for each student
+    height
+
+-   We verified using R’s built-in `dnorm()` function
+
+-   Plotted the full normal curve and overlaid student data
+
+-   ## You now know how to compute and interpret probability **density**, not direct probability, for continuous distributions
+
 ### Importance of Normal Distribution
 
 -   Many natural measurements (height, weight, IQ) follow it
@@ -186,7 +331,7 @@ $$
 
 #### Standard Normal Curve
 
-![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
 ### Real-Life Uses
 
