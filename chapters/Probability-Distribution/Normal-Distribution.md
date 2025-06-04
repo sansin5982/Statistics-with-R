@@ -404,6 +404,17 @@ Used to find **cutoff scores** or **percentile thresholds**.
 
     ## [1] 169.8512
 
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-15-1.png)
+
+-   The **green curve** is the normal distribution.
+-   The **shaded region** shows the area under the curve from the far
+    left up to the **82.7th percentile**.
+-   The **red vertical** line marks the **quantile value (~170 cm)**,
+    which means:
+
+> About **82.7% of students** have heights **less than or equal to 170
+> cm**.
+
 -   So, if we want the height at the 82.7th percentile, it’s 170 cm.
 
 ### Random Number Generator `rnorm(n, mean, sd)`
@@ -500,7 +511,7 @@ $$
 
 #### Standard Normal Curve
 
-![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-16-1.png)
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-17-1.png)
 
 ### Real-Life Uses
 
