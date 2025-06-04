@@ -491,7 +491,7 @@ The **Central Limit Theorem** states that:
 
 #### Negative Exponentail Distribution
 
-![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-5-1.png)![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-5-2.png)
 
 #### Uniform Distribution
 
