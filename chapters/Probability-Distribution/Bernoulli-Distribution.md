@@ -92,8 +92,11 @@ Then over 100 tosses, we’d expect **about 50 heads**, so the **mean =
 $$
 \large \mu = E(X) = p
 $$
-\#### Variance Variance tells us **how spread out** the outcomes are —
-how much they **vary** from the mean.
+
+#### Variance
+
+Variance tells us **how spread out** the outcomes are — how much they
+**vary** from the mean.
 
 -   Low variance = outcomes are consistent
 -   High variance = outcomes fluctuate more
@@ -321,9 +324,11 @@ The outcome follows:
 This ML algorithm **assumes features are binary**, and each follows a
 Bernoulli distribution.
 
-Used when: \* Features are presence/absence (e.g., word present in a
-document = 1, absent = 0) \* Especially common in **text
-classification** (e.g., spam detection)
+Used when:
+
+-   Features are presence/absence (e.g., word present in a document = 1,
+    absent = 0)
+-   Especially common in **text classification** (e.g., spam detection)
 
 #### 3. Simulating Binary Labels in ML
 
@@ -575,7 +580,92 @@ pass a driving test?
 ![](Bernoulli-Distribution_files/figure-markdown_strict/unnamed-chunk-9-1.png)
 
     # Reset plotting layout
-    par(mfrow = c(1, 1))
+    #par(mfrow = c(1, 1))
+
+#### Explanation
+
+-   **Bernoulli Distribution** models a single trial with two possible
+    outcomes, success (p = 0.7) and failure.A taller bar at 1 (success)
+    → indicating success is more likely. **Binomial Distribution** (n =
+    10, p = 0.5). represents the number of successes (e.g., heads) in 10
+    independent trials (e.g., coin tosses), each with success
+    probability 0.5.The bars show the probability of getting 0 to 10
+    successes. The distribution is symmetric, peaking at 5 successes.
+    **Geometric Distribution** (p = 0.3). shows the probability that the
+    first success occurs on the k-th trial. Bar heights decrease as
+    trial number increases — the more you wait, the less likely the
+    first success. Most of the mass is in early values (trial 1, 2, 3).
+    **Categorical Distribution** (Fair Die). Models outcomes with more
+    than two categories (e.g., 6 outcomes from a die). Each outcome is
+    equally likely with a probability of 1/6. All bars are same height,
+    indicating uniform probability.
+
+------------------------------------------------------------------------
+
+### Real Life Scenario
+
+Suppose you’re a quality control inspector in a light bulb factory. Each
+bulb has a 90% chance of working (success), and a 10% chance of being
+defective (failure).
+
+You want to model whether a single bulb works or not. Here we are
+looking for single bulb,hence we will use Bernoulli Distribution.
+
+#### Bernoulli Distribution Basics
+
+Let:
+
+-   *X* = 1 if the bulb **works** (success)
+-   *X* = 0 if the bulb is **defective** (failure)
+-   *p* = 0.9: probability that a bulb works
+
+So
+
+*P*(*X* = 1) = 0.9, *P*(*X* = 0) = 1 − 0.9 = 0.1
+
+    # Probability of a working bulb
+    p <- 0.9
+
+    # Possible outcomes: 0 = failure, 1 = success
+    x <- c(0, 1)
+
+    # Corresponding probabilities
+    prob <- c(1 - p, p)
+
+    # View the probability
+    prob
+
+    ## [1] 0.1 0.9
+
+    # Plot the distribution
+    barplot(prob,
+            names.arg = c("Defective (0)", "Working (1)"),
+            col = c("red", "green"),
+            ylim = c(0, 1),
+            main = "Bernoulli Distribution (Bulb Test)",
+            ylab = "Probability")
+
+![](Bernoulli-Distribution_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+
+#### Interpretation
+
+-   This tells us there’s a 90% chance a randomly selected bulb will
+    work.
+-   It’s a single trial, so the Bernoulli distribution is ideal.
+
+#### Simulate Many Bulbs
+
+    set.seed(42)
+    sim_bulbs <- rbinom(n = 1000, size = 1, prob = p)
+    table(sim_bulbs)
+
+    ## sim_bulbs
+    ##   0   1 
+    ## 111 889
+
+    mean(sim_bulbs)
+
+    ## [1] 0.889
 
 ------------------------------------------------------------------------
 
@@ -628,3 +718,5 @@ class="math inline"><em>p</em> = 0.5</span></td>
 </tr>
 </tbody>
 </table>
+
+------------------------------------------------------------------------
