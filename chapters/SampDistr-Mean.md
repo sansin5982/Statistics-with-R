@@ -190,7 +190,7 @@ along with confidence level (e.g., “The average height is between
 ## Sampling Distribution?
 
 A **sampling distribution** is the probability distribution of a given
-statistic (like the mean) based on a \*\*random sample\*.
+statistic (like the mean) based on a **random sample**.
 
 > In simpler terms: Imagine we repeatedly take samples from a population
 > and compute the sample mean each time. The distribution of all those
@@ -202,6 +202,12 @@ Suppose a population has 10,000 students with an average height of 160
 cm. If we randomly **select samples of 50 students** and calculate their
 mean height every time, you get many different means. The **distribution
 of those sample means** is the **sampling distribution of the mean**.
+
+#### Left plot: Skewed exponential population (non-normal).
+
+#### Right plot: Sampling distribution of sample means → Looks like a bell curve due to the Central Limit Theorem.
+
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
 -   It helps us **estimate population parameters** using sample
     statistics.
