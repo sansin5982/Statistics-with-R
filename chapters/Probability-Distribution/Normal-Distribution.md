@@ -175,9 +175,11 @@ You measured the heights of **15 students** in cm:
 We calculate:
 
 $$
-\mu = \frac{1}{n} \sum\_{i=1}^n x\_i
-\quad \text{and} \quad
-\sigma = \sqrt{\frac{1}{n-1} \sum\_{i=1}^n (x\_i - \mu)^2}
+\mu = \frac{1}{n} \sum\_{i=1}^n x{\scriptstyle i}
+$$
+
+$$
+\large s^2 = \frac{1}{n-1} \underset{i=1}{\sum}^{n} (x{\scriptstyle i} - \bar{x})^2
 $$
 
     mu <- mean(heights)
@@ -191,6 +193,11 @@ $$
 
     ## [1] 3.394674
 
+-   Mean *x̄* = 166.33
+-   Std *s* ≈ 3.39
+
+We want to find density at height *x* = 170
+
 ------------------------------------------------------------------------
 
 ### Step 2: Normal Distribution Formula
@@ -198,11 +205,31 @@ $$
 The general formula for the **normal distribution** is:
 
 $$
-f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \cdot e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+f(x) = \frac{1}{\sqrt{2\pi s^2}} \cdot e^{-\frac{(x - \bar{x})^2}{2s^2}}
 $$
 
 We apply this manually to **each height value** to compute the
 probability density:
+
+#### Compute denominator:
+
+$$
+\sqrt{2\pi s^2} = \sqrt{2 \* 3.1416 \* (3.39)^2} = \sqrt{2 \* 3.1416 \* 11.4921} = \sqrt{72.20716} = 8.49748
+$$
+
+#### Compute exponent:
+
+$$
+-\frac{(x - \bar{x})^2}{2s^2} = -\frac{(170 - 166.33)^2}{2 \* 3.39^2} = -\frac{(3.67)^2}{2 \* 11.4921} = -\frac{13.4689}{22.9842} = -0.586
+$$
+
+#### Apply expnentiation
+
+*e*<sup>−0.586</sup> = 0.5565
+\#### Final Density
+$$
+f(170) = \frac{0.5565}{8.49748} = 0.06549
+$$
 
     manual_density <- function(x, mu, sigma) {
       num <- exp(-((x - mu)^2) / (2 * sigma^2))
