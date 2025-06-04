@@ -174,9 +174,7 @@ You measured the heights of **15 students** in cm:
 
 We calculate:
 
-$$
-\mu = \frac{1}{n} \sum\_{i=1}^n x{\scriptstyle i}
-$$
+$$ \large \bar{x} = \frac{1}{n} \underset{i=1}{\sum}^{n} x{\scriptstyle i}  $$
 
 $$
 \large s^2 = \frac{1}{n-1} \underset{i=1}{\sum}^{n} (x{\scriptstyle i} - \bar{x})^2
@@ -320,7 +318,7 @@ $$
 -   Each value’s density reflects how **common or likely** that value is
     under a normal distribution.
 
--   For instance, values near the mean (~166.6 cm) have **higher
+-   For instance, values near the mean (~166.33 cm) have **higher
     densities**.
 
 -   Extremes (e.g., 160 or 172) are **less likely** and have **lower
@@ -333,7 +331,130 @@ $$
 
 -   Plotted the full normal curve and overlaid student data
 
--   ## You now know how to compute and interpret probability **density**, not direct probability, for continuous distributions
+-   You now know how to compute and interpret probability **density**,
+    not direct probability, for continuous distributions
+
+------------------------------------------------------------------------
+
+There are 4 built-in functions in R — `dnorm()`, `pnorm()`, `qnorm()`,
+and `rnorm()` — are part of R’s consistent naming convention for working
+with probability distributions.
+
+### Density Function `dnorm(x, mean, sd)`
+
+This returns the **height of the normal curve** at a specific value *x*.
+
+#### Purpose:
+
+Used to **get the probability density** — not actual probability — at a
+given value.
+
+    dnorm(170, mean = 166.6, sd = 3.39)
+
+    ## [1] 0.07116724
+
+-   This means **170 cm** is a reasonably likely height, with a moderate
+    density.
+
+### Cumulative Distribution Function (CDF) `pnorm(q, mean, sd)`
+
+This gives the **probability that a value is less than or equal** to *q*
+
+#### Purpose:
+
+Used to calculate **area under the curve**, or “less than”
+probabilities.
+
+    pnorm(170, mean = 166.33, sd = 3.39)
+
+    ## [1] 0.8605061
+
+-   This means **~82.7% of students are shorter than or equal to 170
+    cm**.
+
+### Quantile Function (Inverse of pnorm) `qnorm(p, mean, sd)`
+
+This gives the **value (x)** below which a proportion `p` of the data
+falls.
+
+#### Purpose:
+
+Used to find **cutoff scores** or **percentile thresholds**.
+
+    qnorm(0.827, mean = 166.6, sd = 3.45)
+
+    ## [1] 169.8512
+
+-   So, if we want the height at the 82.7th percentile, it’s 170 cm.
+
+### Random Number Generator `rnorm(n, mean, sd)`
+
+This generates **n random values** that follow a normal distribution.
+
+#### Purpose:
+
+Used to **simulate data, bootstrap**, or generate **synthetic
+datasets**.
+
+    set.seed(123)
+    rnorm(5, mean = 166.6, sd = 3.45)
+
+    ## [1] 164.6664 165.8059 171.9775 166.8433 167.0460
+
+-   Great for **simulation, sampling**, or **model testing**.
+
+#### Summary Table
+
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 27%" />
+<col style="width: 10%" />
+<col style="width: 16%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+<th>Input</th>
+<th>Output</th>
+<th>Example Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dnorm()</code></td>
+<td>Density (height of curve)</td>
+<td>x value</td>
+<td>Density value</td>
+<td>How likely is exactly 170 cm?</td>
+</tr>
+<tr>
+<td><code>pnorm()</code></td>
+<td>Cumulative probability</td>
+<td>x value</td>
+<td>Prob(≤ x)</td>
+<td>What’s the % shorter than 170 cm?</td>
+</tr>
+<tr>
+<td><code>qnorm()</code></td>
+<td>Quantile (inverse of pnorm)</td>
+<td>Prob value</td>
+<td>x value (cutoff)</td>
+<td>What height is the 90th percentile?</td>
+</tr>
+<tr>
+<td><code>rnorm()</code></td>
+<td>Random sampling</td>
+<td>n values</td>
+<td>Simulated data</td>
+<td>Generate 1000 random student heights</td>
+</tr>
+</tbody>
+</table>
+
+------------------------------------------------------------------------
 
 ### Importance of Normal Distribution
 
@@ -360,7 +481,7 @@ $$
 
 #### Standard Normal Curve
 
-![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-14-1.png)
 
 ### Real-Life Uses
 
