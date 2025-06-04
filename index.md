@@ -17,8 +17,7 @@ Chapters:
         Distribution](chapters/Probability-Distribution/Poisson-Distribution)
     -   [Normal
         Distribution](chapters/Probability-Distribution/Normal-Distribution)
--   [Sampling Distribution of the
-    Mean](chapters/Sampling-Distribution-Mean)
+-   [Sampling Distribution of the Mean](chapters/SampDistr-Mean)
 -   [Confidence Interval](chapters/Confidence-Interval)
 -   [Hypothesis Testing](chapters/Hypothesis-testing)
 -   [Z Test](chapters/Z-Test)
