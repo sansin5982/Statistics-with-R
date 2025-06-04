@@ -9,6 +9,184 @@
 
 ## Statistical Inference
 
+**Statistical inference** is the process of drawing conclusions about a
+**population** based on information from a **sample**.
+
+> Since studying an entire population is often impractical or
+> impossible, we collect data from a sample and use statistical methods
+> to make educated guesses about the whole population.
+
+Example: You want to know the **average height** of adults in India, but
+you can’t measure everyone. Instead, you:
+
+-   Measure 1000 randomly selected adults (sample),
+-   Calculate their average height,
+-   Use statistical inference to **estimate the average height** of all
+    adults in India (population).
+
+### Why Is Statistical Inference Required?
+
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr>
+<th>Reason</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Population is too large</strong></td>
+<td>We can’t collect data from every individual. Inference helps
+generalize.</td>
+</tr>
+<tr>
+<td><strong>2. Saves time and cost</strong></td>
+<td>Working with samples is faster and cheaper than a full census.</td>
+</tr>
+<tr>
+<td><strong>3. Allows decision making</strong></td>
+<td>Enables predictions, testing of hypotheses, and drawing
+conclusions.</td>
+</tr>
+<tr>
+<td><strong>4. Manages uncertainty</strong></td>
+<td>Uses probability to quantify how reliable the conclusions are.</td>
+</tr>
+</tbody>
+</table>
+
+### Basic Components
+
+#### Population:
+
+The entire group you want to study (e.g., all Indian adults).
+
+#### Sample:
+
+A smaller group selected from the population (e.g., 1000 adults).
+
+#### Parameter:
+
+A numerical summary of the population (e.g., true average height μ).
+
+#### Statistic:
+
+A numerical summary of the sample (e.g., sample mean x̄).
+
+#### Inference:
+
+Using the statistic to estimate the parameter.
+
+#### Types of Statistical Inference
+
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 49%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Estimation</strong></td>
+<td>Estimating population parameters using sample data</td>
+<td>Confidence intervals</td>
+</tr>
+<tr>
+<td><strong>2. Hypothesis Testing</strong></td>
+<td>Testing assumptions or claims about the population</td>
+<td>Z-test, t-test</td>
+</tr>
+<tr>
+<td><strong>3. Prediction</strong></td>
+<td>Predicting future outcomes based on current data</td>
+<td>Regression models</td>
+</tr>
+<tr>
+<td><strong>4. Bayesian Inference</strong></td>
+<td>Updating beliefs based on new data using Bayes’ theorem</td>
+<td>Posterior probability estimation</td>
+</tr>
+</tbody>
+</table>
+
+### Estimation in Detail
+
+#### Point Estimation:
+
+Provides a single best guess (e.g., sample mean *x̄* estimates population
+mean *μ*).
+
+#### Interval Estimation:
+
+Provides a range of values within which the parameter likely falls,
+along with confidence level (e.g., “The average height is between
+165–170 cm with 95% confidence”).
+
+### Hypothesis Testing
+
+-   To test a claim or belief about a population parameter.
+
+### Confidence Intervals
+
+-   A confidence interval gives a range of plausible values for a
+    population parameter.
+
+#### Importance of Probability
+
+-   Probability theory is the backbone of statistical inference.
+-   It quantifies **uncertainty** in decision-making.
+-   Helps interpret **confidence**, **p-values**, and **risk**.
+
+#### Summary Table
+
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inference</strong></td>
+<td>Drawing conclusions about population from sample</td>
+</tr>
+<tr>
+<td><strong>Estimation</strong></td>
+<td>Finding approximate value of population parameter</td>
+</tr>
+<tr>
+<td><strong>Hypothesis testing</strong></td>
+<td>Testing claims with sample data</td>
+</tr>
+<tr>
+<td><strong>Standard error</strong></td>
+<td>Measures variability of sample statistic</td>
+</tr>
+<tr>
+<td><strong>Confidence level</strong></td>
+<td>Probability that interval contains true parameter</td>
+</tr>
+</tbody>
+</table>
+
+------------------------------------------------------------------------
+
 ## Sampling Distribution?
 
 A **sampling distribution** is the probability distribution of a given
