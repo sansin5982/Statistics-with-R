@@ -353,6 +353,8 @@ given value.
 
     ## [1] 0.07116724
 
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-11-1.png)
+
 -   This means **170 cm** is a reasonably likely height, with a moderate
     density.
 
@@ -481,7 +483,7 @@ $$
 
 #### Standard Normal Curve
 
-![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-14-1.png)
+![](Normal-Distribution_files/figure-markdown_strict/unnamed-chunk-15-1.png)
 
 ### Real-Life Uses
 
