@@ -202,7 +202,7 @@ We want to find density at height *x* = 170
 
 ### Step 2: Normal Distribution Formula
 
-The general formula for the **normal distribution** is:
+The general formula for the **normal distribution** for sample is:
 
 $$
 f(x) = \frac{1}{\sqrt{2\pi s^2}} \cdot e^{-\frac{(x - \bar{x})^2}{2s^2}}
@@ -214,19 +214,21 @@ probability density:
 #### Compute denominator:
 
 $$
-\sqrt{2\pi s^2} = \sqrt{2 \* 3.1416 \* (3.39)^2} = \sqrt{2 \* 3.1416 \* 11.4921} = \sqrt{72.20716} = 8.49748
+\sqrt{2\pi s^2} = \sqrt{2 \cdot 3.1416 \cdot (3.39)^2} = \sqrt{2 \cdot 3.1416 \cdot 11.4921} = \sqrt{72.20716} = 8.49748
 $$
 
 #### Compute exponent:
 
 $$
--\frac{(x - \bar{x})^2}{2s^2} = -\frac{(170 - 166.33)^2}{2 \* 3.39^2} = -\frac{(3.67)^2}{2 \* 11.4921} = -\frac{13.4689}{22.9842} = -0.586
+-\frac{(x - \bar{x})^2}{2s^2} = -\frac{(170 - 166.33)^2}{2 \cdot 3.39^2} = -\frac{(3.67)^2}{2 \cdot 11.4921} = -\frac{13.4689}{22.9842} = -0.586
 $$
 
 #### Apply expnentiation
 
 *e*<sup>−0.586</sup> = 0.5565
-\#### Final Density
+
+#### Final Density
+
 $$
 f(170) = \frac{0.5565}{8.49748} = 0.06549
 $$
