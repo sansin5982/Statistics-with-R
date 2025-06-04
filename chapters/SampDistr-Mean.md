@@ -485,7 +485,13 @@ The **Central Limit Theorem** states that:
 -   **Sample means**: As we take more and more samples, their
     distribution starts to look like a bell curve.
 
-![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-4-1.png)![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-4-2.png)
+
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-5-1.png)![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-5-2.png)
+
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-6-1.png)![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-6-2.png)
+
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-7-1.png)![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-7-2.png)
 
 #### Key Points
 
