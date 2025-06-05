@@ -552,6 +552,8 @@ The **Central Limit Theorem** states that:
 
 -   **Right plot**: The distribution of sample means (n = 30)
 
+------------------------------------------------------------------------
+
 #### CLT with Varying Sample Sizes (Negative Exponential)
 
 ![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-8-1.png)
@@ -597,11 +599,15 @@ The **Central Limit Theorem** states that:
 </tbody>
 </table>
 
+------------------------------------------------------------------------
+
 ### Applications of CLT:
 
 -   Construction of **confidence intervals**
 -   **Hypothesis testing** (Z-tests, t-tests)
 -   Simplifies complex population distributions
+
+------------------------------------------------------------------------
 
 ## Real-Life Example:
 
@@ -626,3 +632,168 @@ Helps determine if any batch **deviates significantly** from the target.
 
 They apply the **CLT** to assume normality and perform **Z-tests** for
 quality control.
+
+------------------------------------------------------------------------
+
+### Key Assumptions of the Central Limit Theorem
+
+<table>
+<colgroup>
+<col style="width: 1%" />
+<col style="width: 18%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Assumption</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣</td>
+<td><strong>Independent Observations</strong></td>
+<td>Each data point in the sample must be collected
+<strong>independently</strong>. The selection of one value <strong>must
+not influence</strong> the selection of another.</td>
+</tr>
+<tr>
+<td>2️⃣</td>
+<td><strong>Identically Distributed</strong></td>
+<td>Each observation should come from the <strong>same
+population</strong> (same distribution and same parameters).</td>
+</tr>
+<tr>
+<td>3️⃣</td>
+<td><strong>Sample Size (n) is Large Enough</strong></td>
+<td>The larger the sample size, the more closely the sampling
+distribution of the mean <strong>approximates a normal
+distribution</strong>. Usually <strong>n ≥ 30</strong> is
+sufficient.</td>
+</tr>
+<tr>
+<td>4️⃣</td>
+<td><strong>Finite Population Variance</strong></td>
+<td>The population from which samples are drawn should have a
+<strong>finite variance</strong> (i.e., not infinite or undefined).</td>
+</tr>
+<tr>
+<td>5️⃣</td>
+<td><strong>Random Sampling</strong></td>
+<td>The sample should be drawn using a <strong>random process</strong>
+to avoid bias and ensure generalization.</td>
+</tr>
+</tbody>
+</table>
+
+#### Interpretation of Each Assumption:
+
+-   **1. Independent Observations**
+
+> “Each friend you ask about their height must be answering without
+> knowing the others’ answers.”
+
+If people copy each other’s responses, the sample isn’t truly random,
+and the CLT won’t work properly.
+
+#### CLT with and without Independence
+
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr>
+<th>Plot</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Left (Independent)</strong></td>
+<td>Smooth, bell-shaped curve — CLT works</td>
+</tr>
+<tr>
+<td><strong>Right (Non-Independent)</strong></td>
+<td>Bumpy, irregular, less normal — CLT <strong>doesn’t hold
+properly</strong></td>
+</tr>
+</tbody>
+</table>
+
+-   **2. Identical Distribution**
+
+> “You should ask only students from the same college, not mix them with
+> athletes or primary school kids.”
+
+You can’t mix different populations and expect the CLT to behave
+normally unless you account for stratification.
+
+-   **3. Large Sample Size**
+
+> “If you only ask 5 people, their average height could vary a lot. Ask
+> 30 or more, and you get a stable, reliable estimate.”
+
+The more data you have, the smoother the bell curve of sample means
+becomes.
+
+-   **4. Finite Variance**
+
+> “If the population has wildly unpredictable values (e.g., infinite
+> salaries), averages can’t behave normally.”
+
+If the variance is infinite (e.g., heavy-tailed distributions like
+Cauchy), the CLT doesn’t apply in the usual form.
+
+![](SampDistr-Mean_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 17%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr>
+<th>Plot</th>
+<th>Violation</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left (n=5, Skewed)</td>
+<td>Small Sample Size</td>
+<td>Highly <strong>skewed</strong>, not bell-shaped</td>
+</tr>
+<tr>
+<td>Right (Cauchy)</td>
+<td>Infinite Variance</td>
+<td><strong>Wildly erratic</strong> distribution, <strong>no
+convergence</strong> to normal</td>
+</tr>
+</tbody>
+</table>
+
+-   **5. Random Sampling**
+
+> “If you only ask your tall basketball teammates about height, you
+> won’t get an average that reflects the full population.”
+
+Bias in sample selection can ruin the representativeness and the CLT
+assumption.
+
+### When CLT May Not Apply
+
+-   When sampling from a **very small sample size** from a **highly
+    skewed** or **heavy-tailed distribution**.
+
+-   When data are not independent (e.g., time-series data with
+    autocorrelation).
+
+-   When **outliers** dominate the sample due to **infinite** or
+    **undefined variance**.
