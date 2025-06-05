@@ -797,3 +797,104 @@ assumption.
 
 -   When **outliers** dominate the sample due to **infinite** or
     **undefined variance**.
+
+### Z-score formula for the Sample Mean
+
+$$
+\large Z = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt n}}
+$$
+
+where:
+
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline"><em>X̄</em></span></td>
+<td>Sample mean</td>
+</tr>
+<tr>
+<td><span class="math inline"><em>μ</em></span></td>
+<td>Population mean</td>
+</tr>
+<tr>
+<td><span class="math inline"><em>σ</em></span></td>
+<td>Population standard deviation</td>
+</tr>
+<tr>
+<td><span class="math inline"><em>n</em></span></td>
+<td>Sample size</td>
+</tr>
+<tr>
+<td><span class="math inline"><em>Z</em></span></td>
+<td>Z-score (number of standard errors the sample mean is from the
+population mean)</td>
+</tr>
+</tbody>
+</table>
+
+#### Purpose:
+
+To test whether the **sample mean is significantly different** from the
+population mean.
+
+#### Example:
+
+Imagine a cereal company claims that their boxes contain **on average
+500g** of cereal.
+
+You take a **sample of 36 boxes**, and the **average weight is 490g**,
+with a known **population standard deviation** of 30g.
+
+> Is this deviation significant or just random variation?
+
+$Z = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt n}}$
+
+$Z = \frac{490 - 500}{\frac{30}{\sqrt 36}} = \frac{-10}{\frac{30}{6}} = \frac{-10}{5} = -2$
+
+#### Interpretation:
+
+-   A **Z-score of -2** means the sample mean is **2 standard errors
+    below** the population mean.
+
+-   If using a **significance level of 0.05**, the critical Z-value is
+    **±1.96**.
+
+-   Since **−2 &lt; −1.96**, we **reject the null hypothesis**:
+
+> It’s unlikely to get this sample mean if the population mean is truly
+> 500g.
+
+### When to Use This Formula?
+
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Population SD known</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Sample size large (n ≥ 30) OR population normal</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Sampling is random &amp; independent</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
