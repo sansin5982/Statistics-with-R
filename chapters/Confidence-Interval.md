@@ -297,11 +297,8 @@ conservative)</td>
 #### Summary
 
 -   CI provides a range, not just a guess.
-
 -   Point estimate is precise but risky; CI is safer and more
     informative.
-
 -   Choose 95% CI for standard work; 99% for critical decisions.
-
 -   More data (higher **n**) or lower spread (low s) leads to better
     estimates.
