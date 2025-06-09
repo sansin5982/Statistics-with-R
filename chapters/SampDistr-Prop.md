@@ -7,11 +7,20 @@
 
 # Sampling Distribution of Proportion
 
-## What is a Sampling Distribution of a Proportion?
+## What is a Sampling Distribution ?
 
-A **sampling distribution of a proportion** is the probability
-distribution of sample proportions, computed from multiple random
-samples of the same size drawn from the same population.
+When we calculate a sample proportion (*p̂*) from one sample, it may
+differ from the true population proportion (*p*) because of **random
+chance**.
+
+If we:
+
+-   Take many random samples of the same size,
+-   Calculate the **proportion of “successes”** (like defective items or
+    yes votes) in each,
+-   Then plot all these sample proportions…
+
+We get a **sampling distribution of the proportion**.
 
 > When we repeat a survey or experiment many times and record the
 > proportion of successes each time, the distribution of those sample
@@ -28,67 +37,59 @@ samples of the same size drawn from the same population.
 
 ------------------------------------------------------------------------
 
-## Example:
+### Key characteristics of the Sampling Distribution of Proportion
 
-You want to estimate the proportion of people in a city who support a
-policy. - The true proportion in the population is $ p = 0.6$. - You
-take **100 different random samples**, each of size *n* = 50. - In each
-sample, you calculate the proportion of people who support the policy. -
-The distribution of those 100 sample proportions *p̂* forms the
-**sampling distribution of the proportion**.
+Let:
 
-------------------------------------------------------------------------
+-   *p*: true population proportion
+-   *p̂*
+-   *n*: sample size
 
-## Formula and Properties
-
-Let: - *p*: true population proportion - *p̂*: sample proportion - *n*:
-sample size
-
-### Mean of the Sampling Distribution:
-
-$$
-\large E(\hat{p}) = p
-$$
-
-### Standard Error (SE) of Proportion:
-
-$$
-\large SE\_{\hat{p}} = \sqrt{\frac{p(1 - p)}{n}}
-$$
-
--   Larger *n*s how much *p̂* varies from sample to sample
+Then: | Quantity | Formula | | ———————– | ——————————————- | | **Mean** |
+*E*(*p̂*) = *p* | | **Standard Error (SE)** |
+$SE\_{\hat{p}} = \sqrt{\frac{p(1 - p)}{n}}$ | | **Shape (CLT)** |
+Approximately normal if CLT conditions hold |
 
 ------------------------------------------------------------------------
 
-## R Simulation Example
+## What is the Central Limit Theorem (CLT)?
 
-    set.seed(123)
-    p <- 0.6        # true population proportion
-    n <- 50         # sample size
-    num_samples <- 1000
+The **Central Limit Theorem** is one of the most powerful concepts in
+statistics. It says:
 
-    # Generate many sample proportions
-    sample_props <- replicate(num_samples, {
-      sample_data <- rbinom(n, 1, p)  # 1 = success, 0 = failure
-      mean(sample_data)              # sample proportion
-    })
+> If you repeatedly take random samples of size *n* from a population
+> and calculate a statistic (like the mean or proportion), then the
+> distribution of those statistics will tend to be **normal
+> (bell-shaped)** as *n* becomes large — **no matter what the shape of
+> the original population**.
 
-    # Plot histogram
-    hist(sample_props, breaks = 30,
-         main = "Sampling Distribution of Proportion",
-         xlab = "Sample Proportion", col = "lightblue",
-         probability = TRUE)
-
-    # Add normal curve
-    curve(dnorm(x, mean = mean(sample_props), sd = sd(sample_props)),
-          col = "red", lwd = 2, add = TRUE)
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td>## Example: You want to estimate the proportion of people in a city
+who support a policy. - The true proportion in the population is $ p =
+0.6$. - You take <strong>100 different random samples</strong>, each of
+size <span class="math inline"><em>n</em> = 50</span>. - In each sample,
+you calculate the proportion of people who support the policy. - The
+distribution of those 100 sample proportions <span
+class="math inline"><em>p̂</em></span> forms the <strong>sampling
+distribution of the proportion</strong>.</td>
+</tr>
+</tbody>
+</table>
 
 ![](SampDistr-Prop_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
-### Conditions for Approximate Normality
+### CLT Conditions for Proportions
 
-The sampling distribution of *p̂* is approximately normal when:
-*n**p* ≥  = 10 and *n*(1 − *p*) ≥ 10
+The sampling distribution of *p̂* is approximately normal if:
+
+$$
+\large \text {np} \geq= 10 \space and \space n(1 - p) \geq 10
+$$
 
 <table>
 <thead>
@@ -106,7 +107,7 @@ class="math inline"><em>n</em><em>p</em> ≥ 10</span></td>
 <tr>
 <td style="text-align: left;"><span
 class="math inline"><em>n</em>(1 − <em>p</em>) ≥ 10</span></td>
-<td style="text-align: left;">Enough exprected failure</td>
+<td style="text-align: left;">Enough expected failure</td>
 </tr>
 </tbody>
 </table>
