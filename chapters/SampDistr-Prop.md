@@ -47,34 +47,19 @@ Let:
 
 Then:
 
-<table>
-<colgroup>
-<col style="width: 34%" />
-<col style="width: 65%" />
-</colgroup>
-<thead>
-<tr>
-<th>Quantity</th>
-<th>Formula</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Mean</strong></td>
-<td><span
-class="math inline"><em>E</em>(<em>p̂</em>) = <em>p</em></span></td>
-</tr>
-<tr>
-<td><strong>Standard Error (SE)</strong></td>
-<td><span class="math inline">$SE_{\hat{p}} = \sqrt{\frac{p(1 -
-p)}{n}}$</span></td>
-</tr>
-<tr>
-<td><strong>Shape (CLT)</strong></td>
-<td>Approximately normal if CLT conditions hold</td>
-</tr>
-</tbody>
-</table>
+#### Mean
+
+*E*(*p̂*) = *p*
+
+#### Standard Error (SE)
+
+$$
+SE = \sqrt{\frac{p(1 - p)}{n}}
+$$
+
+#### Shape
+
+Approximately normal if CLT conditions hold
 
 ------------------------------------------------------------------------
 
