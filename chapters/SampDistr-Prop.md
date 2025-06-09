@@ -76,23 +76,18 @@ statistics. It says:
 > (bell-shaped)** as *n* becomes large — **no matter what the shape of
 > the original population**.
 
-<table style="width:6%;">
-<colgroup>
-<col style="width: 5%" />
-</colgroup>
-<tbody>
-<tr>
-<td>## Example: You want to estimate the proportion of people in a city
-who support a policy. - The true proportion in the population is $ p =
-0.6$. - You take <strong>100 different random samples</strong>, each of
-size <span class="math inline"><em>n</em> = 50</span>. - In each sample,
-you calculate the proportion of people who support the policy. - The
-distribution of those 100 sample proportions <span
-class="math inline"><em>p̂</em></span> forms the <strong>sampling
-distribution of the proportion</strong>.</td>
-</tr>
-</tbody>
-</table>
+------------------------------------------------------------------------
+
+## Example:
+
+You want to estimate the proportion of people in a city who support a
+policy. - The true proportion in the population is $ p = 0.6$. - You
+take **100 different random samples**, each of size *n* = 50. - In each
+sample, you calculate the proportion of people who support the policy. -
+The distribution of those 100 sample proportions *p̂* forms the
+**sampling distribution of the proportion**.
+
+------------------------------------------------------------------------
 
 ![](SampDistr-Prop_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
