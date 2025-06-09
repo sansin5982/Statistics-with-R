@@ -49,12 +49,14 @@ Then:
 
 #### Mean
 
-*E*(*p̂*) = *p*
+$$
+\large E(\hat{p}) = p
+$$
 
 #### Standard Error (SE)
 
 $$
-SE = \sqrt{\frac{p(1 - p)}{n}}
+\large  = \sqrt{\frac{p(1 - p)}{n}}
 $$
 
 #### Shape
