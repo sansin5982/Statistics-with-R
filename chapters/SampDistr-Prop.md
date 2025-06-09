@@ -81,10 +81,10 @@ statistics. It says:
 ## Example:
 
 You want to estimate the proportion of people in a city who support a
-policy. - The true proportion in the population is $ p = 0.6$. - You
-take **100 different random samples**, each of size *n* = 50. - In each
-sample, you calculate the proportion of people who support the policy. -
-The distribution of those 100 sample proportions *p̂* forms the
+policy. \* The true proportion in the population is $ p = 0.6$. \* You
+take **100 different random samples**, each of size *n* = 50. \* In each
+sample, you calculate the proportion of people who support the policy.
+\* The distribution of those 100 sample proportions *p̂* forms the
 **sampling distribution of the proportion**.
 
 ------------------------------------------------------------------------
