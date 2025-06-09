@@ -64,6 +64,8 @@ contains the true value.</td>
 > So you check **both sides**: “We are 95% confident the true average
 > lies **between** 168 cm and 172 cm.”
 
+#### Two-Sided Confidence Interval (95%)
+
 ![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
 ### One-Sided Confidence Interval
@@ -78,7 +80,13 @@ contains the true value.</td>
 > care if it lowers it. → You use a **one-sided test**: “We are 95%
 > confident the average pressure is **greater than 130 mmHg.**”
 
+#### One-Sided Confidence Interval (Lower Bound)
+
 ![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+
+#### One-Sided Confidence Interval (Upper Bound)
+
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 ### Mathematical Formula
 
@@ -89,7 +97,7 @@ For a sample mean *x̄*, standard deviation *s*, and sample size *n*:
 #### Standard Error
 
 $$
-SE = \frac{s}{\sqrt n}
+\large SE = \frac{s}{\sqrt n}
 $$
 
 $$
@@ -119,7 +127,7 @@ Where:
 
 -   **Upper Bound** (for testing if it’s **lesser** than)
 
-∞, *x̄* + *Z* ⋅ *S**E*
+∞, *x̄* + *Z* ⋅ SE
 
 > For **one-sided 95%, Z = 1.645** (less extreme than two sided 1.96)
 
@@ -154,7 +162,7 @@ or “less than”).</td>
 
     ## One-sided 95% CI (Upper Bound Only): -∞ to 102.94
 
-![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 ### Common Confidence Levels
 
@@ -189,7 +197,7 @@ uncertainty).</td>
 > Higher confidence = **wider interval** (more cautious) Lower
 > confidence = **narrower interval** (more precise but less confident)
 
-![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
 ### How std, n, and Confidence Level Affect CI
 
