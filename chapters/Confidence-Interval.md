@@ -48,7 +48,76 @@ contains the true value.</td>
 
 > 95% CI = \[168 cm, 172 cm\]
 
-### One-Sided vs Two-Sided Confidence Intervals
+## One-Sided vs Two-Sided Confidence Intervals
+
+### Two-Sided Confidence Interval
+
+-   It captures uncertainty **both above and below** the estimate.
+-   **Used when we are unsure of the direction** of the effect or
+    change.
+
+#### Example (Two-sided):
+
+> You’re measuring the average height of a group. You don’t know if it’s
+> taller or shorter than the national average.
+
+> So you check **both sides**: “We are 95% confident the true average
+> lies **between** 168 cm and 172 cm.”
+
+### One-Sided Confidence Interval
+
+-   It checks uncertainty in **only one direction**.
+
+-   **Used when you care only if it’s higher or lower** than a value.
+
+#### Example (One-sided):
+
+> You want to **prove a medicine increases blood pressure**. You don’t
+> care if it lowers it. → You use a **one-sided test**: “We are 95%
+> confident the average pressure is **greater than 130 mmHg.**”
+
+### Mathematical Formula
+
+For a sample mean *x̄*, standard deviation *s*, and sample size *n*:
+
+#### CI Formula for Sample Mean
+
+#### Standard Error
+
+$$
+SE = \frac{s}{\sqrt n}
+$$
+
+$$
+\large CI = \bar{x} \pm  Z \cdot \frac{s}{\sqrt n}
+$$
+
+Where:
+
+-   *x̄*: Sample mean
+-   *Z*: Z-score based on confidence level (1.96 for 95%)
+-   *s*: Sample standard deviation
+-   *n*: Sample Size
+
+#### Two sided CI (e.g. 95%)
+
+*x̄* ± *Z* ⋅ *S**E*
+
+Where:
+
+*Z* = 1.96 for 95%
+
+#### One Sided CI (Upper or Lower)
+
+-   **Lower Bound** (for testing if it’s **greater** than)
+
+*x̄* − *Z* ⋅ *S**E*, ∞
+
+-   **Upper Bound** (for testing if it’s **lesser** than)
+
+∞, *x̄* + *Z* ⋅ *S**E*
+
+> For **one-sided 95%, Z = 1.645** (less extreme than two sided 1.96)
 
 <table>
 <colgroup>
@@ -75,12 +144,19 @@ or “less than”).</td>
 </tbody>
 </table>
 
-#### Example:
+    ## Two-sided 95% CI: 98.7 103.31
 
--   **Two-sided 95% CI: \[168, 172\] → “The mean is likely between these
-    values.”**
--   **One-sided 95% CI: “Mean is greater than 169” or “Mean is less than
-    171”.**
+    ## One-sided 95% CI (Lower Bound Only): 99.07 to ∞
+
+    ## One-sided 95% CI (Upper Bound Only): -∞ to 102.94
+
+    ## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+    ## ℹ Please use `linewidth` instead.
+    ## This warning is displayed once every 8 hours.
+    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+    ## generated.
+
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
 ### Common Confidence Levels
 
@@ -115,20 +191,7 @@ uncertainty).</td>
 > Higher confidence = **wider interval** (more cautious) Lower
 > confidence = **narrower interval** (more precise but less confident)
 
-#### CI Formula for Sample Mean
-
-$$
-\large CI = \bar{x} \pm  Z \cdot \frac{s}{\sqrt n}
-$$
-
-Where:
-
--   *x̄*: Sample mean
--   *Z*: Z-score based on confidence level (1.96 for 95%)
--   *s*: Sample standard deviation
--   *n*: Sample Size
-
-![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 ### How std, n, and Confidence Level Affect CI
 
