@@ -64,6 +64,8 @@ contains the true value.</td>
 > So you check **both sides**: “We are 95% confident the true average
 > lies **between** 168 cm and 172 cm.”
 
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+
 ### One-Sided Confidence Interval
 
 -   It checks uncertainty in **only one direction**.
@@ -75,6 +77,8 @@ contains the true value.</td>
 > You want to **prove a medicine increases blood pressure**. You don’t
 > care if it lowers it. → You use a **one-sided test**: “We are 95%
 > confident the average pressure is **greater than 130 mmHg.**”
+
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 ### Mathematical Formula
 
@@ -101,7 +105,7 @@ Where:
 
 #### Two sided CI (e.g. 95%)
 
-*x̄* ± *Z* ⋅ *S**E*
+*x̄* ± *Z* ⋅ SE
 
 Where:
 
@@ -111,7 +115,7 @@ Where:
 
 -   **Lower Bound** (for testing if it’s **greater** than)
 
-*x̄* − *Z* ⋅ *S**E*, ∞
+*x̄* − *Z* ⋅ SE, ∞
 
 -   **Upper Bound** (for testing if it’s **lesser** than)
 
@@ -150,13 +154,7 @@ or “less than”).</td>
 
     ## One-sided 95% CI (Upper Bound Only): -∞ to 102.94
 
-    ## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-    ## ℹ Please use `linewidth` instead.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
-![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 ### Common Confidence Levels
 
@@ -191,7 +189,7 @@ uncertainty).</td>
 > Higher confidence = **wider interval** (more cautious) Lower
 > confidence = **narrower interval** (more precise but less confident)
 
-![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 ### How std, n, and Confidence Level Affect CI
 
