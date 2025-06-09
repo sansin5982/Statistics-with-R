@@ -199,7 +199,45 @@ uncertainty).</td>
 
 ![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
-### How std, n, and Confidence Level Affect CI
+### Effect of Standard deviation on confidence level
+
+-   **Standard deviation (SD)** measures how spread out the data is.
+-   **Larger SD** ⇒ **more uncertainty** ⇒ wider CI
+-   Even if two groups have the **same sample size and mean**, the one
+    with a higher SD will have a **wider confidence interval**.
+
+> Think of trying to measure the average height of a group. If people’s
+> heights vary a lot (high SD), you’ll be **less certain** about the
+> average — so the CI will be wider.
+
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+
+-   **Narrowest bell curve** (smallest SD) will have the **tightest
+    CI**.
+-   **Widest bell curve** (largest SD) will have the **widest CI**.
+-   All distributions are centered at the same mean.
+
+### Effect of Sample size (n) on confidence level
+
+-   **Larger sample size ⇒ more information ⇒ narrower CI**
+-   The more people you survey, the more accurate your estimate becomes.
+
+> If you measure the height of only 5 people, your estimate is
+> uncertain. Measure 500 people? Your estimate is much more precise, and
+> the confidence interval is tighter.
+
+-   $\frac {s}{\sqrt n}$ = Standard error
+-   A n **increases**, **SE decreases**, so CI becomes **narrower**
+
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+
+-   All curves look the **same shape** (because SD is fixed).
+-   CI width is:
+    -   **Widest for n = 10**
+    -   **Narrower for n = 30**
+    -   **Narrowest for n = 100**
+
+### How standard deviation, sample size, and Confidence Level Affect CI
 
 <table>
 <colgroup>
