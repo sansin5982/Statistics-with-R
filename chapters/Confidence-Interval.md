@@ -194,12 +194,36 @@ uncertainty).</td>
 </tbody>
 </table>
 
-> Higher confidence = **wider interval** (more cautious) Lower
-> confidence = **narrower interval** (more precise but less confident)
+### Effect of Confidence level on confidence interval
+
+-   The **confidence level** tells you **how sure you want to be** that
+    your CI includes the true value.
+
+-   **Higher confidence = wider interval** (You’re being more cautious
+    by allowing a bigger range to ensure you capture the truth.)
+
+> Think of throwing darts blindfolded: \* **90% confident → narrower
+> area, you take more risk.** \* **99% confident → very wide area, but
+> you’re more sure the dart lands there.**
+
+-   *Z* increases as confidence increases:
+    -   90% CI → *Z* = 1.645
+    -   95% CI → *Z* = 1.96
+    -   99% CI → *Z* = 2.576
 
 ![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
-### Effect of Standard deviation on confidence level
+-   The **curve shapes are the same** (same mean and SD).
+-   CI width increases as confidence increases:
+    -   **90% CI** is the narrowest.
+    -   **99% CI** is the widest.
+
+> Higher confidence = **wider interval** (more cautious) Lower
+> confidence = **narrower interval** (more precise but less confident)
+
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+
+### Effect of Standard deviation on confidence interval
 
 -   **Standard deviation (SD)** measures how spread out the data is.
 -   **Larger SD** ⇒ **more uncertainty** ⇒ wider CI
@@ -210,14 +234,14 @@ uncertainty).</td>
 > heights vary a lot (high SD), you’ll be **less certain** about the
 > average — so the CI will be wider.
 
-![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-7-1.png)
 
 -   **Narrowest bell curve** (smallest SD) will have the **tightest
     CI**.
 -   **Widest bell curve** (largest SD) will have the **widest CI**.
 -   All distributions are centered at the same mean.
 
-### Effect of Sample size (n) on confidence level
+### Effect of Sample size (n) on confidence interval
 
 -   **Larger sample size ⇒ more information ⇒ narrower CI**
 -   The more people you survey, the more accurate your estimate becomes.
@@ -229,7 +253,7 @@ uncertainty).</td>
 -   $\frac {s}{\sqrt n}$ = Standard error
 -   A n **increases**, **SE decreases**, so CI becomes **narrower**
 
-![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![](Confidence-Interval_files/figure-markdown_strict/unnamed-chunk-8-1.png)
 
 -   All curves look the **same shape** (because SD is fixed).
 -   CI width is:
