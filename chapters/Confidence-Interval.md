@@ -202,9 +202,11 @@ uncertainty).</td>
 -   **Higher confidence = wider interval** (You’re being more cautious
     by allowing a bigger range to ensure you capture the truth.)
 
-> Think of throwing darts blindfolded: \* **90% confident → narrower
-> area, you take more risk.** \* **99% confident → very wide area, but
-> you’re more sure the dart lands there.**
+> Think of throwing darts blindfolded:
+
+> -   **90% confident → narrower area, you take more risk.**
+> -   **99% confident → very wide area, but you’re more sure the dart
+>     lands there.**
 
 -   *Z* increases as confidence increases:
     -   90% CI → *Z* = 1.645
