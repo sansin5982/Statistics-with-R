@@ -716,7 +716,7 @@ Kurtosis measures the **4th standardized** moment about the mean.
 The **population kurtosis** is defined as:
 
 $$
-\Large Kurtosis = \frac{E{\[(X - \mu)^4\]}{\sigma^4}
+\Large Kurtosis = \frac{E\[(X - \mu)^4\]}{\sigma^4}
 $$
 
 where:
