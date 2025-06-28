@@ -716,7 +716,7 @@ Kurtosis measures the **4th standardized** moment about the mean.
 The **population kurtosis** is defined as:
 
 $$
-\Large Kurtosis = \frac{E\[(X - \mu)^4\]}{\sigma^4}
+\Large Kurtosis = \frac{E{\[(X - \mu)^4\]}{\sigma^4}
 $$
 
 where:
@@ -735,7 +735,7 @@ In practice, we usually work with sample data, not population. So, the
 **sample kurtosis** is:
 
 $$
-\Large g\_{2} = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum(\frac{X\_{i} - \bar X}{s})^4 - \frac{3(n-1)^2}{(n-2) (n-3)}
+\Large g\_2 = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum(\frac{X\_i - \bar X}{s})^4 - \frac{3(n-1)^2}{(n-2) (n-3)}
 $$
 
 where:
@@ -766,6 +766,9 @@ where:
 
 <!-- -->
 
+    # 📦 Load required libraries
+    library(moments)  # for kurtosis
+
     ## 
     ## Attaching package: 'moments'
 
@@ -773,11 +776,50 @@ where:
     ## 
     ##     kurtosis, moment, skewness
 
+    library(ggplot2)  # for plotting
+
+    # 📊 1️⃣ Generate dummy datasets
+    set.seed(123)
+
+    # Mesokurtic: Normal distribution
+    meso <- rnorm(1000)
+
+    # Leptokurtic: t-distribution with low df (heavy tails)
+    lepto <- rt(1000, df = 2)
+
+    # Platykurtic: Uniform distribution (flat)
+    platy <- runif(1000)
+
+    # 📏 2️⃣ Calculate kurtosis
+    meso_kurt <- kurtosis(meso)
+    lepto_kurt <- kurtosis(lepto)
+    platy_kurt <- kurtosis(platy)
+
+    cat("Mesokurtic (Normal):", meso_kurt, "\n")
+
     ## Mesokurtic (Normal): 2.925747
+
+    cat("Leptokurtic (t-dist):", lepto_kurt, "\n")
 
     ## Leptokurtic (t-dist): 164.8149
 
+    cat("Platykurtic (Uniform):", platy_kurt, "\n")
+
     ## Platykurtic (Uniform): 1.7865
+
+    # 📈 3️⃣ Combine and plot
+    data <- data.frame(
+      value = c(meso, lepto, platy),
+      type = rep(c("Mesokurtic", "Leptokurtic", "Platykurtic"), each = 1000)
+    )
+
+    ggplot(data, aes(x = value, fill = type)) +
+      geom_density(alpha = 0.6) +
+      facet_wrap(~type, scales = "free") +
+      labs(title = "Types of Kurtosis",
+           x = "Value",
+           y = "Density") +
+      theme_minimal()
 
 ![](Numerical-Measures_files/figure-markdown_strict/unnamed-chunk-20-1.png)
 
@@ -808,7 +850,7 @@ $$
 #### Key Formula
 
 $$
-\Large Kurtosis = \frac{1}{n} \sum (\frac {X\_{i} - {\bar X}} {s})^4
+\Large Kurtosis = \frac{1}{n} \sum (\frac {X\_i - {\bar X}} {s})^4
 $$
 
 [⬅ Back to Home](../index.md)
