@@ -394,7 +394,7 @@ Data = (6, 9, 14, 10, 5, 8, 11)
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">Data</th>
 <th style="text-align: left;">Deviation from mean <span
 class="math inline">(<em>x</em><sub><em>i</em></sub> − <em>x̄</em>)</span></th>
@@ -403,42 +403,42 @@ class="math inline">(<em>x</em><sub><em>i</em></sub> − <em>x̄</em>)<sup>2
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">6</td>
 <td style="text-align: left;">-3</td>
 <td style="text-align: left;">9</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">9</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">14</td>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">25</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">-4</td>
 <td style="text-align: left;">16</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">8</td>
 <td style="text-align: left;">-1</td>
 <td style="text-align: left;">1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">11</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">4</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;"><span
 class="math inline"><em>x̄</em></span> = 9</td>
 <td style="text-align: left;"><span
@@ -695,5 +695,120 @@ the data’s distributional characteristics.
 
 As skewness value is 0.42 suggests that data is symmetrically
 distributed.
+
+### Kurtosis
+
+**Kurtosis** is a way to describe the **shape of the tails** of a
+distribution — in other words, how **peaked or flat** the data is and
+how heavy or light the tails are compared to a normal distribution.
+
+-   **Mean** tells us the **center**.
+-   **Variance** or **Standard Deviation** tells us the spread.
+-   **Kurtosis** tells us about the **shape of the tails and peak**.
+
+In simple terms:
+
+-   High kurtosis: more data in the tails, sharper peak.
+-   Low kurtosis: less data in the tails, flatter peak.
+
+Kurtosis measures the **4th standardized** moment about the mean.
+
+The **population kurtosis** is defined as:
+
+$$
+\Large Kurtosis = \frac{E\[(X - \mu)^4\]}{\sigma^4}
+$$
+
+where:
+
+-   *E* means **Expected value** (average for population)
+-   *X* is each data point
+-   *μ* is the **mean**
+-   *σ* is the **standard deviation**
+
+So it’s the **4th moment** divided by the **square of the variance
+squared** — which measures how fat the tails are.
+
+#### Sample Kurtosis
+
+In practice, we usually work with sample data, not population. So, the
+**sample kurtosis** is:
+
+$$
+\Large g\_{2} = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum(\frac{X\_{i} - \bar X}{s})^4 - \frac{3(n-1)^2}{(n-2) (n-3)}
+$$
+
+where:
+
+-   *n* = number of data points
+-   *X̄* = sample mean
+-   *s* = sample standard deviation
+
+#### Types of Kurtosis
+
+#### 1. Mesokurtic
+
+-   Kurtosis ≈ 3 (Excess Kurtosis = 0)
+-   Like a normal distribution (bell curve).
+-   Moderate tails, moderate peak.
+
+#### 2. Leptokurtic
+
+-   Kurtosis &gt; 3 (Excess Kurtosis &gt; 0)
+-   More peaked, fatter tails.
+-   More extreme values.
+
+#### 3. Platykurtic
+
+-   Kurtosis &lt; 3 (Excess Kurtosis &lt; 0)
+-   Flatter peak, thinner tails.
+-   Fewer extreme values.
+
+<!-- -->
+
+    ## 
+    ## Attaching package: 'moments'
+
+    ## The following objects are masked from 'package:e1071':
+    ## 
+    ##     kurtosis, moment, skewness
+
+    ## Mesokurtic (Normal): 2.925747
+
+    ## Leptokurtic (t-dist): 164.8149
+
+    ## Platykurtic (Uniform): 1.7865
+
+![](Numerical-Measures_files/figure-markdown_strict/unnamed-chunk-20-1.png)
+
+#### Plots the shapes side-by-side so you can see the difference:
+
+-   **Leptokurtic**: taller peak, fatter tails
+-   **Mesokurtic**: normal bell curve
+-   **Platykurtic**: flatter and wider
+
+#### Key takeaway
+
+-   Kurtosis helps you understand the risk of outliers.
+-   Useful in finance, quality control, machine learning.
+
+#### Excess Kurtosis
+
+By default, **kurtosis for a normal distribution is 3**. So we often
+report **Excess Kurtosis**:
+
+$$
+\large \text {Excess Kurtosis} = Kurtosis - 3
+$$
+
+-   **&gt; 0**: Leptokurtic (heavy tails)
+-   **= 0**: Mesokurtic (normal)
+-   **&lt; 0**: Platykurtic (light tails)
+
+#### Key Formula
+
+$$
+\Large Kurtosis = \frac{1}{n} \sum (\frac {X\_{i} - {\bar X}} {s})^4
+$$
 
 [⬅ Back to Home](../index.md)
