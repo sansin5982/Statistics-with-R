@@ -287,7 +287,7 @@ germination_table <- table(
   seed_data$germinated
 )
 
-germination_table
+print(germination_table)
 ```
 
     ##           
@@ -986,23 +986,18 @@ gene_expression <- data.frame(
   expression = c(8.4, 9.1, 8.8, 9.3, 11.2, 10.7, 11.8, 10.9)
 )
 
-gene_expression
+print(gene_expression)
 ```
 
-<div class="kable-table">
-
-| sample_id | group   | expression |
-|:----------|:--------|-----------:|
-| Sample_1  | Control |        8.4 |
-| Sample_2  | Control |        9.1 |
-| Sample_3  | Control |        8.8 |
-| Sample_4  | Control |        9.3 |
-| Sample_5  | Treated |       11.2 |
-| Sample_6  | Treated |       10.7 |
-| Sample_7  | Treated |       11.8 |
-| Sample_8  | Treated |       10.9 |
-
-</div>
+    ##   sample_id   group expression
+    ## 1  Sample_1 Control        8.4
+    ## 2  Sample_2 Control        9.1
+    ## 3  Sample_3 Control        8.8
+    ## 4  Sample_4 Control        9.3
+    ## 5  Sample_5 Treated       11.2
+    ## 6  Sample_6 Treated       10.7
+    ## 7  Sample_7 Treated       11.8
+    ## 8  Sample_8 Treated       10.9
 
 ## 16.1 Summarize each group
 
@@ -1032,17 +1027,12 @@ group_summary <- data.frame(
   standard_deviation = sd_summary$expression
 )
 
-group_summary
+print(group_summary)
 ```
 
-<div class="kable-table">
-
-| group   | sample_size | mean_expression | standard_deviation |
-|:--------|------------:|----------------:|-------------------:|
-| Control |           4 |            8.90 |          0.3915780 |
-| Treated |           4 |           11.15 |          0.4795832 |
-
-</div>
+    ##     group sample_size mean_expression standard_deviation
+    ## 1 Control           4            8.90          0.3915780
+    ## 2 Treated           4           11.15          0.4795832
 
 ## 16.2 Visualize the observations
 

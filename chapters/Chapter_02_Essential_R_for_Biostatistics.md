@@ -1262,21 +1262,16 @@ sample_data <- data.frame(
   stringsAsFactors = FALSE
 )
 
-sample_data
+print(sample_data)
 ```
 
-<div class="kable-table">
-
-| sample_id | tissue | treatment | expression | qc_pass |
-|:----------|:-------|:----------|-----------:|:--------|
-| S01       | Blood  | Control   |        8.2 | TRUE    |
-| S02       | Blood  | Treated   |       10.1 | TRUE    |
-| S03       | Liver  | Control   |        7.5 | FALSE   |
-| S04       | Liver  | Treated   |        9.8 | TRUE    |
-| S05       | Blood  | Control   |        8.7 | TRUE    |
-| S06       | Liver  | Treated   |       10.4 | TRUE    |
-
-</div>
+    ##   sample_id tissue treatment expression qc_pass
+    ## 1       S01  Blood   Control        8.2    TRUE
+    ## 2       S02  Blood   Treated       10.1    TRUE
+    ## 3       S03  Liver   Control        7.5   FALSE
+    ## 4       S04  Liver   Treated        9.8    TRUE
+    ## 5       S05  Blood   Control        8.7    TRUE
+    ## 6       S06  Liver   Treated       10.4    TRUE
 
 Each row is one biological sample. Each column is one variable.
 
@@ -1299,84 +1294,59 @@ sample_data[, "expression"]
     ## [1]  8.2 10.1  7.5  9.8  8.7 10.4
 
 ``` r
-sample_data[, c("sample_id", "expression")]
+print(sample_data[, c("sample_id", "expression")])
 ```
 
-<div class="kable-table">
-
-| sample_id | expression |
-|:----------|-----------:|
-| S01       |        8.2 |
-| S02       |       10.1 |
-| S03       |        7.5 |
-| S04       |        9.8 |
-| S05       |        8.7 |
-| S06       |       10.4 |
-
-</div>
+    ##   sample_id expression
+    ## 1       S01        8.2
+    ## 2       S02       10.1
+    ## 3       S03        7.5
+    ## 4       S04        9.8
+    ## 5       S05        8.7
+    ## 6       S06       10.4
 
 ## 17.2 Selecting rows
 
 ``` r
-sample_data[1, ]
+print(sample_data[1, ])
 ```
 
-<div class="kable-table">
-
-| sample_id | tissue | treatment | expression | qc_pass |
-|:----------|:-------|:----------|-----------:|:--------|
-| S01       | Blood  | Control   |        8.2 | TRUE    |
-
-</div>
+    ##   sample_id tissue treatment expression qc_pass
+    ## 1       S01  Blood   Control        8.2    TRUE
 
 ``` r
-sample_data[1:3, ]
+print(sample_data[1:3, ])
 ```
 
-<div class="kable-table">
-
-| sample_id | tissue | treatment | expression | qc_pass |
-|:----------|:-------|:----------|-----------:|:--------|
-| S01       | Blood  | Control   |        8.2 | TRUE    |
-| S02       | Blood  | Treated   |       10.1 | TRUE    |
-| S03       | Liver  | Control   |        7.5 | FALSE   |
-
-</div>
+    ##   sample_id tissue treatment expression qc_pass
+    ## 1       S01  Blood   Control        8.2    TRUE
+    ## 2       S02  Blood   Treated       10.1    TRUE
+    ## 3       S03  Liver   Control        7.5   FALSE
 
 ## 17.3 Selecting rows with conditions
 
 ``` r
-sample_data[sample_data$qc_pass, ]
+print(sample_data[sample_data$qc_pass, ])
 ```
 
-<div class="kable-table">
-
-|     | sample_id | tissue | treatment | expression | qc_pass |
-|:----|:----------|:-------|:----------|-----------:|:--------|
-| 1   | S01       | Blood  | Control   |        8.2 | TRUE    |
-| 2   | S02       | Blood  | Treated   |       10.1 | TRUE    |
-| 4   | S04       | Liver  | Treated   |        9.8 | TRUE    |
-| 5   | S05       | Blood  | Control   |        8.7 | TRUE    |
-| 6   | S06       | Liver  | Treated   |       10.4 | TRUE    |
-
-</div>
+    ##   sample_id tissue treatment expression qc_pass
+    ## 1       S01  Blood   Control        8.2    TRUE
+    ## 2       S02  Blood   Treated       10.1    TRUE
+    ## 4       S04  Liver   Treated        9.8    TRUE
+    ## 5       S05  Blood   Control        8.7    TRUE
+    ## 6       S06  Liver   Treated       10.4    TRUE
 
 ``` r
-sample_data[
+print(sample_data[
   sample_data$treatment == "Treated" &
     sample_data$qc_pass,
-]
+])
 ```
 
-<div class="kable-table">
-
-|     | sample_id | tissue | treatment | expression | qc_pass |
-|:----|:----------|:-------|:----------|-----------:|:--------|
-| 2   | S02       | Blood  | Treated   |       10.1 | TRUE    |
-| 4   | S04       | Liver  | Treated   |        9.8 | TRUE    |
-| 6   | S06       | Liver  | Treated   |       10.4 | TRUE    |
-
-</div>
+    ##   sample_id tissue treatment expression qc_pass
+    ## 2       S02  Blood   Treated       10.1    TRUE
+    ## 4       S04  Liver   Treated        9.8    TRUE
+    ## 6       S06  Liver   Treated       10.4    TRUE
 
 ## 17.4 Adding a column
 
@@ -1384,21 +1354,16 @@ sample_data[
 sample_data$expression_high <-
   sample_data$expression >= 9
 
-sample_data
+print(sample_data)
 ```
 
-<div class="kable-table">
-
-| sample_id | tissue | treatment | expression | qc_pass | expression_high |
-|:----------|:-------|:----------|-----------:|:--------|:----------------|
-| S01       | Blood  | Control   |        8.2 | TRUE    | FALSE           |
-| S02       | Blood  | Treated   |       10.1 | TRUE    | TRUE            |
-| S03       | Liver  | Control   |        7.5 | FALSE   | FALSE           |
-| S04       | Liver  | Treated   |        9.8 | TRUE    | TRUE            |
-| S05       | Blood  | Control   |        8.7 | TRUE    | FALSE           |
-| S06       | Liver  | Treated   |       10.4 | TRUE    | TRUE            |
-
-</div>
+    ##   sample_id tissue treatment expression qc_pass expression_high
+    ## 1       S01  Blood   Control        8.2    TRUE           FALSE
+    ## 2       S02  Blood   Treated       10.1    TRUE            TRUE
+    ## 3       S03  Liver   Control        7.5   FALSE           FALSE
+    ## 4       S04  Liver   Treated        9.8    TRUE            TRUE
+    ## 5       S05  Blood   Control        8.7    TRUE           FALSE
+    ## 6       S06  Liver   Treated       10.4    TRUE            TRUE
 
 The comparison creates `TRUE` or `FALSE` for each row.
 
@@ -1409,38 +1374,28 @@ The comparison creates `TRUE` or `FALSE` for each row.
 Never begin a statistical analysis without first inspecting the dataset.
 
 ``` r
-head(sample_data)
+print(head(sample_data))
 ```
 
-<div class="kable-table">
-
-| sample_id | tissue | treatment | expression | qc_pass | expression_high |
-|:----------|:-------|:----------|-----------:|:--------|:----------------|
-| S01       | Blood  | Control   |        8.2 | TRUE    | FALSE           |
-| S02       | Blood  | Treated   |       10.1 | TRUE    | TRUE            |
-| S03       | Liver  | Control   |        7.5 | FALSE   | FALSE           |
-| S04       | Liver  | Treated   |        9.8 | TRUE    | TRUE            |
-| S05       | Blood  | Control   |        8.7 | TRUE    | FALSE           |
-| S06       | Liver  | Treated   |       10.4 | TRUE    | TRUE            |
-
-</div>
+    ##   sample_id tissue treatment expression qc_pass expression_high
+    ## 1       S01  Blood   Control        8.2    TRUE           FALSE
+    ## 2       S02  Blood   Treated       10.1    TRUE            TRUE
+    ## 3       S03  Liver   Control        7.5   FALSE           FALSE
+    ## 4       S04  Liver   Treated        9.8    TRUE            TRUE
+    ## 5       S05  Blood   Control        8.7    TRUE           FALSE
+    ## 6       S06  Liver   Treated       10.4    TRUE            TRUE
 
 ``` r
-tail(sample_data)
+print(tail(sample_data))
 ```
 
-<div class="kable-table">
-
-| sample_id | tissue | treatment | expression | qc_pass | expression_high |
-|:----------|:-------|:----------|-----------:|:--------|:----------------|
-| S01       | Blood  | Control   |        8.2 | TRUE    | FALSE           |
-| S02       | Blood  | Treated   |       10.1 | TRUE    | TRUE            |
-| S03       | Liver  | Control   |        7.5 | FALSE   | FALSE           |
-| S04       | Liver  | Treated   |        9.8 | TRUE    | TRUE            |
-| S05       | Blood  | Control   |        8.7 | TRUE    | FALSE           |
-| S06       | Liver  | Treated   |       10.4 | TRUE    | TRUE            |
-
-</div>
+    ##   sample_id tissue treatment expression qc_pass expression_high
+    ## 1       S01  Blood   Control        8.2    TRUE           FALSE
+    ## 2       S02  Blood   Treated       10.1    TRUE            TRUE
+    ## 3       S03  Liver   Control        7.5   FALSE           FALSE
+    ## 4       S04  Liver   Treated        9.8    TRUE            TRUE
+    ## 5       S05  Blood   Control        8.7    TRUE           FALSE
+    ## 6       S06  Liver   Treated       10.4    TRUE            TRUE
 
 ``` r
 dim(sample_data)
@@ -1634,17 +1589,12 @@ mean_by_treatment <- aggregate(
   FUN = mean
 )
 
-mean_by_treatment
+print(mean_by_treatment)
 ```
 
-<div class="kable-table">
-
-| treatment | expression |
-|:----------|-----------:|
-| Control   |   8.133333 |
-| Treated   |  10.100000 |
-
-</div>
+    ##   treatment expression
+    ## 1   Control   8.133333
+    ## 2   Treated  10.100000
 
 The output reports the sample mean in each treatment group. It does not
 by itself establish a treatment effect.
@@ -2128,23 +2078,18 @@ qc_data <- data.frame(
   stringsAsFactors = FALSE
 )
 
-qc_data
+print(qc_data)
 ```
 
-<div class="kable-table">
-
-| sample_id | group   | mapped_reads_million | mapping_rate | contamination |
-|:----------|:--------|---------------------:|-------------:|--------------:|
-| S01       | Control |                   42 |         0.92 |          0.01 |
-| S02       | Control |                   38 |         0.89 |          0.02 |
-| S03       | Control |                   19 |         0.61 |          0.08 |
-| S04       | Control |                   45 |         0.94 |          0.01 |
-| S05       | Treated |                   51 |         0.95 |          0.01 |
-| S06       | Treated |                   48 |         0.93 |          0.02 |
-| S07       | Treated |                   44 |         0.90 |          0.02 |
-| S08       | Treated |                   21 |         0.64 |          0.09 |
-
-</div>
+    ##   sample_id   group mapped_reads_million mapping_rate contamination
+    ## 1       S01 Control                   42         0.92          0.01
+    ## 2       S02 Control                   38         0.89          0.02
+    ## 3       S03 Control                   19         0.61          0.08
+    ## 4       S04 Control                   45         0.94          0.01
+    ## 5       S05 Treated                   51         0.95          0.01
+    ## 6       S06 Treated                   48         0.93          0.02
+    ## 7       S07 Treated                   44         0.90          0.02
+    ## 8       S08 Treated                   21         0.64          0.09
 
 ## 27.1 Inspect the dataset
 
@@ -2203,23 +2148,18 @@ qc_data$qc_pass <-
   qc_data$mapping_rate >= 0.80 &
   qc_data$contamination <= 0.05
 
-qc_data
+print(qc_data)
 ```
 
-<div class="kable-table">
-
-| sample_id | group   | mapped_reads_million | mapping_rate | contamination | qc_pass |
-|:----------|:--------|---------------------:|-------------:|--------------:|:--------|
-| S01       | Control |                   42 |         0.92 |          0.01 | TRUE    |
-| S02       | Control |                   38 |         0.89 |          0.02 | TRUE    |
-| S03       | Control |                   19 |         0.61 |          0.08 | FALSE   |
-| S04       | Control |                   45 |         0.94 |          0.01 | TRUE    |
-| S05       | Treated |                   51 |         0.95 |          0.01 | TRUE    |
-| S06       | Treated |                   48 |         0.93 |          0.02 | TRUE    |
-| S07       | Treated |                   44 |         0.90 |          0.02 | TRUE    |
-| S08       | Treated |                   21 |         0.64 |          0.09 | FALSE   |
-
-</div>
+    ##   sample_id   group mapped_reads_million mapping_rate contamination qc_pass
+    ## 1       S01 Control                   42         0.92          0.01    TRUE
+    ## 2       S02 Control                   38         0.89          0.02    TRUE
+    ## 3       S03 Control                   19         0.61          0.08   FALSE
+    ## 4       S04 Control                   45         0.94          0.01    TRUE
+    ## 5       S05 Treated                   51         0.95          0.01    TRUE
+    ## 6       S06 Treated                   48         0.93          0.02    TRUE
+    ## 7       S07 Treated                   44         0.90          0.02    TRUE
+    ## 8       S08 Treated                   21         0.64          0.09   FALSE
 
 These thresholds are hypothetical. Real thresholds must be justified
 using the assay, protocol and study context.
@@ -2246,21 +2186,16 @@ prop.table(table(qc_data$qc_pass))
 
 ``` r
 qc_passed_data <- qc_data[qc_data$qc_pass, ]
-qc_passed_data
+print(qc_passed_data)
 ```
 
-<div class="kable-table">
-
-|     | sample_id | group   | mapped_reads_million | mapping_rate | contamination | qc_pass |
-|:----|:----------|:--------|---------------------:|-------------:|--------------:|:--------|
-| 1   | S01       | Control |                   42 |         0.92 |          0.01 | TRUE    |
-| 2   | S02       | Control |                   38 |         0.89 |          0.02 | TRUE    |
-| 4   | S04       | Control |                   45 |         0.94 |          0.01 | TRUE    |
-| 5   | S05       | Treated |                   51 |         0.95 |          0.01 | TRUE    |
-| 6   | S06       | Treated |                   48 |         0.93 |          0.02 | TRUE    |
-| 7   | S07       | Treated |                   44 |         0.90 |          0.02 | TRUE    |
-
-</div>
+    ##   sample_id   group mapped_reads_million mapping_rate contamination qc_pass
+    ## 1       S01 Control                   42         0.92          0.01    TRUE
+    ## 2       S02 Control                   38         0.89          0.02    TRUE
+    ## 4       S04 Control                   45         0.94          0.01    TRUE
+    ## 5       S05 Treated                   51         0.95          0.01    TRUE
+    ## 6       S06 Treated                   48         0.93          0.02    TRUE
+    ## 7       S07 Treated                   44         0.90          0.02    TRUE
 
 ## 27.5 Visualize the two QC measurements
 
