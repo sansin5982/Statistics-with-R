@@ -251,35 +251,30 @@ seed_data <- data.frame(
   )
 )
 
-seed_data
+print(seed_data)
 ```
 
-<div class="kable-table">
-
-| seed_id | treatment | germinated |
-|:--------|:----------|:-----------|
-| S1      | Water     | Yes        |
-| S2      | Water     | Yes        |
-| S3      | Water     | No         |
-| S4      | Water     | Yes        |
-| S5      | Water     | No         |
-| S6      | Water     | Yes        |
-| S7      | Water     | No         |
-| S8      | Water     | Yes        |
-| S9      | Water     | No         |
-| S10     | Water     | Yes        |
-| S11     | Nutrient  | Yes        |
-| S12     | Nutrient  | Yes        |
-| S13     | Nutrient  | Yes        |
-| S14     | Nutrient  | No         |
-| S15     | Nutrient  | Yes        |
-| S16     | Nutrient  | Yes        |
-| S17     | Nutrient  | Yes        |
-| S18     | Nutrient  | Yes        |
-| S19     | Nutrient  | No         |
-| S20     | Nutrient  | Yes        |
-
-</div>
+    ##    seed_id treatment germinated
+    ## 1       S1     Water        Yes
+    ## 2       S2     Water        Yes
+    ## 3       S3     Water         No
+    ## 4       S4     Water        Yes
+    ## 5       S5     Water         No
+    ## 6       S6     Water        Yes
+    ## 7       S7     Water         No
+    ## 8       S8     Water        Yes
+    ## 9       S9     Water         No
+    ## 10     S10     Water        Yes
+    ## 11     S11  Nutrient        Yes
+    ## 12     S12  Nutrient        Yes
+    ## 13     S13  Nutrient        Yes
+    ## 14     S14  Nutrient         No
+    ## 15     S15  Nutrient        Yes
+    ## 16     S16  Nutrient        Yes
+    ## 17     S17  Nutrient        Yes
+    ## 18     S18  Nutrient        Yes
+    ## 19     S19  Nutrient         No
+    ## 20     S20  Nutrient        Yes
 
 Each row represents one seed. Each column records a characteristic of
 the seed.
