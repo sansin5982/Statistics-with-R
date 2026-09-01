@@ -2,5 +2,6 @@
 
 Chapters:
 
-- [Chapter 1: What Is
-  Biostatistics](chapters/Chapter_01_What_Is_Biostatistics)
+- [What Is Biostatistics](chapters/Chapter_01_What_Is_Biostatistics)
+- [Essential R for
+  Biostatistics](chapters/Chapter_02_Essential_R_for_Biostatistics)
