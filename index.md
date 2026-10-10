@@ -21,3 +21,5 @@ Chapters:
 - [Distribution Shape and
   Outliers](chapters/Chapter_10_Distribution_Shape_and_Outliers)
 - [Data Visualization](chapters/Chapter_11_Data_Visualization_with_R)
+- [Probability Foundations for Statistical
+  Inference](chapters/Chapter_12_Probability_Foundations_for_Statistical_Inference)
