@@ -16,7 +16,6 @@ Chapter 12: Probability Foundations for Statistical Inference
 ================
 Sandeep Singh
 
-- [Learning objectives](#learning-objectives)
 - [1. Why probability matters in
   biology](#1-why-probability-matters-in-biology)
 - [2. The basic language of
@@ -133,28 +132,6 @@ Sandeep Singh
 <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
 </script>
-
-# Learning objectives
-
-After completing this chapter, we should be able to:
-
-1.  explain experiments, outcomes, sample spaces, and events in plain
-    language;
-2.  interpret probability as long-run relative frequency;
-3.  apply complement, addition, multiplication, and
-    conditional-probability rules;
-4.  distinguish mutually exclusive events from independent events;
-5.  use Bayes’ theorem in a simple diagnostic-testing example;
-6.  explain what a random variable and a probability distribution are;
-7.  distinguish discrete from continuous random variables;
-8.  interpret a probability mass function, probability density function,
-    and cumulative distribution function;
-9.  calculate an expected value, variance, and standard deviation from a
-    small distribution;
-10. recognize R’s `d`, `p`, `q`, and `r` distribution-function pattern;
-    and
-11. use simulation to connect theoretical probability with repeated
-    observations.
 
 # 1. Why probability matters in biology
 
