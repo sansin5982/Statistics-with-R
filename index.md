@@ -23,3 +23,5 @@ Chapters:
 - [Data Visualization](chapters/Chapter_11_Data_Visualization_with_R)
 - [Probability Foundations for Statistical
   Inference](chapters/Chapter_12_Probability_Foundations_for_Statistical_Inference)
+- [Random\_Variables and Distribution
+  Functions](chapters/Chapter_13_Random_Variables_and_Distribution_Functions)
