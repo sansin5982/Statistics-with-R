@@ -345,28 +345,33 @@ $$P(X=0)+P(X=1)=(1-p)+p=1.$$
 p_resistant <- 0.20
 
 bernoulli_pmf <- data.frame(
-  x = c(0, 1),
-  outcome = c("Susceptible", "Resistant"),
-  probability = c(1 - p_resistant, p_resistant)
+  Outcome_value = c(0, 1),
+  Biological_outcome = c("Susceptible", "Resistant"),
+  Probability = c(1 - p_resistant, p_resistant)
 )
 
-bernoulli_pmf
+cat(
+  knitr::kable(
+    bernoulli_pmf,
+    format = "pipe",
+    digits = 2,
+    row.names = FALSE,
+    caption = "Bernoulli probability distribution for antibiotic resistance."
+  ),
+  sep = "\n"
+)
 ```
 
-<div class="kable-table">
+| Outcome_value | Biological_outcome | Probability |
+|--------------:|:-------------------|------------:|
+|             0 | Susceptible        |         0.8 |
+|             1 | Resistant          |         0.2 |
 
-|   x | outcome     | probability |
-|----:|:------------|------------:|
-|   0 | Susceptible |         0.8 |
-|   1 | Resistant   |         0.2 |
-
-</div>
+Bernoulli probability distribution for antibiotic resistance.
 
 ``` r
-sum(bernoulli_pmf$probability)
+cat("\n\n")
 ```
-
-    ## [1] 1
 
 # 6. How the PMF changes with $p$
 
@@ -665,30 +670,37 @@ In R, logical values can be converted to 0 and 1 using `as.integer()`.
 biomarker <- c(8.1, 10.7, 6.4, 12.2, 9.8, 11.5)
 above_10 <- as.integer(biomarker > 10)
 
-data.frame(
-  biomarker = biomarker,
-  above_10 = above_10
+biomarker_table <- data.frame(
+  Biomarker_value = biomarker,
+  Above_10 = above_10
+)
+
+cat(
+  knitr::kable(
+    biomarker_table,
+    format = "pipe",
+    digits = 1,
+    row.names = FALSE,
+    caption = "Conversion of biomarker measurements into a binary indicator."
+  ),
+  sep = "\n"
 )
 ```
 
-<div class="kable-table">
+| Biomarker_value | Above_10 |
+|----------------:|---------:|
+|             8.1 |        0 |
+|            10.7 |        1 |
+|             6.4 |        0 |
+|            12.2 |        1 |
+|             9.8 |        0 |
+|            11.5 |        1 |
 
-| biomarker | above_10 |
-|----------:|---------:|
-|       8.1 |        0 |
-|      10.7 |        1 |
-|       6.4 |        0 |
-|      12.2 |        1 |
-|       9.8 |        0 |
-|      11.5 |        1 |
-
-</div>
+Conversion of biomarker measurements into a binary indicator.
 
 ``` r
-mean(above_10)
+cat("\n\n")
 ```
-
-    ## [1] 0.5
 
 The mean of the indicator is the observed proportion above 10.
 
