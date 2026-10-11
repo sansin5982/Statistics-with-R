@@ -243,9 +243,9 @@ A probability is a number between 0 and 1:
 
 $$0\leq P(A)\leq1.$$
 
-- $P(A)=0$: the event is impossible under the model.
-- $P(A)=1$: the event is certain under the model.
-- $P(A)=0.30$: the event is expected in about 30% of comparable
+- $P(A)=0$ -the event is impossible under the model.
+- $P(A)=1$ -the event is certain under the model.
+- $P(A)=0.30$ -the event is expected in about 30% of comparable
   repetitions.
 
 Probability may also be written as a percentage. A probability of 0.30
