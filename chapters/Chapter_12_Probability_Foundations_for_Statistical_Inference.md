@@ -126,8 +126,6 @@ Sandeep Singh
 - [22. Glossary](#22-glossary)
 - [References](#references)
 
-<!-- Suggested filename: Chapter_12_Probability_Foundations_for_Statistical_Inference.Rmd -->
-
 # Learning objectives
 
 After completing this chapter, we should be able to:
