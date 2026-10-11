@@ -437,7 +437,7 @@ probabilities are **not** independent.
 
 # 5. Bayes’ theorem: reversing a conditional probability
 
-Bayes’ theorem connects $P(A\mid B)$ with $P(B\mid A)$:
+Bayes’ theorem connects $P(A\mid B$ with $P(B\mid A)$:
 
 $$P(A\mid B)=
 \frac{P(B\mid A)P(A)}{P(B)}.$$
@@ -489,34 +489,64 @@ specificity <- 0.95
 
 diseased <- population * prevalence
 not_diseased <- population - diseased
+
 true_positive <- diseased * sensitivity
 false_positive <- not_diseased * (1 - specificity)
+
 positive_predictive_value <-
-  true_positive / (true_positive + false_positive)
+  true_positive /
+  (true_positive + false_positive)
 
 diagnostic_table <- data.frame(
-  group = c("Disease present", "Disease absent"),
-  population_count = c(diseased, not_diseased),
-  positive_test_count = c(true_positive, false_positive)
+  Group = c(
+    "Disease present",
+    "Disease absent"
+  ),
+  Population = c(
+    diseased,
+    not_diseased
+  ),
+  Positive_tests = c(
+    true_positive,
+    false_positive
+  )
 )
 
-diagnostic_table
+cat(
+  knitr::kable(
+    diagnostic_table,
+    format = "pipe",
+    digits = 0,
+    row.names = FALSE,
+    caption = "Expected diagnostic-test results among 10,000 people."
+  ),
+  sep = "\n"
+)
 ```
 
-<div class="kable-table">
+| Group           | Population | Positive_tests |
+|:----------------|-----------:|---------------:|
+| Disease present |        100 |             90 |
+| Disease absent  |       9900 |            495 |
 
-| group           | population_count | positive_test_count |
-|:----------------|-----------------:|--------------------:|
-| Disease present |              100 |                  90 |
-| Disease absent  |             9900 |                 495 |
-
-</div>
+Expected diagnostic-test results among 10,000 people.
 
 ``` r
-positive_predictive_value
+cat("\n\n")
 ```
 
-    ## [1] 0.1538462
+``` r
+cat(
+  "**Positive predictive value:** ",
+  sprintf("%.4f", positive_predictive_value),
+  " or ",
+  sprintf("%.1f%%", 100 * positive_predictive_value),
+  "\n",
+  sep = ""
+)
+```
+
+**Positive predictive value:** 0.1538 or 15.4%
 
 # 6. From events to random variables
 
@@ -641,45 +671,46 @@ $$P(X\geq1)=1-P(X=0)=1-0.125=0.875.$$
 
 ``` r
 x_discrete <- 0:3
-p_discrete <- c(0.125, 0.375, 0.375, 0.125)
-
-discrete_distribution <- data.frame(
-  resistant_isolates = x_discrete,
-  probability = p_discrete,
-  cumulative_probability = cumsum(p_discrete)
+p_discrete <- c(
+  0.125,
+  0.375,
+  0.375,
+  0.125
 )
 
-discrete_distribution
+discrete_distribution <- data.frame(
+  Resistant_isolates = x_discrete,
+  Probability = p_discrete,
+  Cumulative_probability = cumsum(p_discrete)
+)
+
+cat(
+  knitr::kable(
+    discrete_distribution,
+    format = "pipe",
+    digits = 3,
+    row.names = FALSE,
+    caption = paste(
+      "Probability distribution for the number",
+      "of resistant isolates."
+    )
+  ),
+  sep = "\n"
+)
 ```
 
-<div class="kable-table">
-
-| resistant_isolates | probability | cumulative_probability |
+| Resistant_isolates | Probability | Cumulative_probability |
 |-------------------:|------------:|-----------------------:|
 |                  0 |       0.125 |                  0.125 |
 |                  1 |       0.375 |                  0.500 |
 |                  2 |       0.375 |                  0.875 |
 |                  3 |       0.125 |                  1.000 |
 
-</div>
+Probability distribution for the number of resistant isolates.
 
 ``` r
-sum(p_discrete)
+cat("\n\n")
 ```
-
-    ## [1] 1
-
-``` r
-sum(p_discrete[x_discrete <= 1])
-```
-
-    ## [1] 0.5
-
-``` r
-1 - p_discrete[x_discrete == 0]
-```
-
-    ## [1] 0.875
 
 ## 8.2 Cumulative distribution function for a discrete variable
 
@@ -1227,7 +1258,7 @@ Always check support, mechanism, assumptions, and observed variation.
 2.  Give a biological example of two mutually exclusive events and
     explain why they are not independent if both have positive
     probability.
-3.  Construct a valid PMF on $\{0,1,2,3\}$, calculate its CDF, and draw
+3.  Construct a valid PMF on ${0,1,2,3\}$, calculate its CDF, and draw
     both functions in R.
 4.  Simulate 10,000 Binomial observations with $n=20$ and $p=0.10$.
     Compare the simulated mean and variance with their theoretical
