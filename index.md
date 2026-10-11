@@ -25,3 +25,4 @@ Chapters:
   Inference](chapters/Chapter_12_Probability_Foundations_for_Statistical_Inference)
 - [Random\_Variables and Distribution
   Functions](chapters/Chapter_13_Random_Variables_and_Distribution_Functions)
+- [Bernoulli Distribution](chapters/Chapter_14_Bernoulli_Distribution)
