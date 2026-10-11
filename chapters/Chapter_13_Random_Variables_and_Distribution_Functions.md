@@ -132,12 +132,20 @@ Sandeep Singh
 - [27. Glossary](#27-glossary)
 - [References](#references)
 
-<script type="text/javascript" async
-    src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
 </script>
 
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
 </script>
 
 <!-- Suggested filename: Chapter_13_Random_Variables_and_Distribution_Functions.Rmd -->
