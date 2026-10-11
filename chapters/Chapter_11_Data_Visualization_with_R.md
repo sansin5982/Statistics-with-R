@@ -153,6 +153,22 @@ Sandeep Singh
 - [47. References](#47-references)
 - [48. Reproducibility Information](#48-reproducibility-information)
 
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
 # 1. Introduction
 
 A statistical figure is not decoration added after analysis. It is a

@@ -16,7 +16,6 @@ Chapter 13: Random Variables and Distribution Functions
 ================
 Sandeep Singh
 
-- [Learning objectives](#learning-objectives)
 - [1. Where this chapter fits](#1-where-this-chapter-fits)
 - [2. A random variable is a numerical
   rule](#2-a-random-variable-is-a-numerical-rule)
@@ -149,29 +148,6 @@ window.MathJax = {
 </script>
 
 <!-- Suggested filename: Chapter_13_Random_Variables_and_Distribution_Functions.Rmd -->
-
-# Learning objectives
-
-After completing this chapter, we should be able to:
-
-1.  explain how a random variable maps uncertain outcomes to numbers;
-2.  identify the support of a random variable;
-3.  distinguish discrete, continuous, and mixed random variables;
-4.  construct and validate a probability mass function;
-5.  interpret a probability density function without confusing density
-    with probability;
-6.  use a cumulative distribution function for both discrete and
-    continuous variables;
-7.  calculate interval and tail probabilities from a CDF;
-8.  interpret survival functions and quantiles;
-9.  calculate expectation, variance, and standard deviation by hand and
-    in R;
-10. calculate the expectation of a function of a random variable;
-11. describe the effect of a linear transformation on a distribution;
-12. explain indicator variables and why they are useful for count data;
-13. use R’s `d`, `p`, `q`, and `r` distribution functions correctly; and
-14. compare theoretical probability distributions with simulated and
-    empirical distributions.
 
 # 1. Where this chapter fits
 
@@ -401,30 +377,65 @@ allele_distribution <- data.frame(
   probability = c(0.36, 0.48, 0.16)
 )
 
-allele_distribution
+total_probability <- sum(allele_distribution$probability)
+
+p_at_least_one <-
+  sum(
+    allele_distribution$probability[
+      allele_distribution$allele_copies >= 1
+    ]
+  )
+
+cat(
+  knitr::kable(
+    allele_distribution,
+    format = "pipe",
+    digits = 2,
+    row.names = FALSE,
+    col.names = c(
+      "Genotype",
+      "Allele copies",
+      "Probability"
+    ),
+    caption = "Genotype distribution according to the number of A alleles."
+  ),
+  sep = "\n"
+)
 ```
 
-<div class="kable-table">
-
-| genotype | allele_copies | probability |
+| Genotype | Allele copies | Probability |
 |:---------|--------------:|------------:|
 | aa       |             0 |        0.36 |
 | Aa       |             1 |        0.48 |
 | AA       |             2 |        0.16 |
 
-</div>
+Genotype distribution according to the number of A alleles.
 
 ``` r
-sum(allele_distribution$probability)
+cat("\n\n")
 ```
-
-    ## [1] 1
 
 ``` r
-sum(allele_distribution$probability[allele_distribution$allele_copies >= 1])
+cat(
+  "**Sum of probabilities:** ",
+  sprintf("%.2f", total_probability),
+  "\n\n",
+  sep = ""
+)
 ```
 
-    ## [1] 0.64
+**Sum of probabilities:** 1.00
+
+``` r
+cat(
+  "**Probability of at least one A allele:** ",
+  sprintf("%.2f", p_at_least_one),
+  "\n\n",
+  sep = ""
+)
+```
+
+**Probability of at least one A allele:** 0.64
 
 ## 5.3 Adding probability masses
 
@@ -510,9 +521,10 @@ plot(
   type = "h", lwd = 10, lend = 2,
   col = "#3182BD", xaxt = "n",
   xlab = "Copies of allele A", ylab = "Probability mass",
-  ylim = c(0, 0.55), main = "Discrete PMF"
+  xlim = c(-0.25, 2.25), ylim = c(0, 0.55),
+  main = "Discrete PMF"
 )
-axis(1, at = 0:2)
+axis(1, at = allele_distribution$allele_copies)
 points(
   allele_distribution$allele_copies,
   allele_distribution$probability,
@@ -523,7 +535,8 @@ x_tri <- seq(0, 1, length.out = 500)
 plot(
   x_tri, 2 * x_tri, type = "l", lwd = 3,
   col = "#756BB1", xlab = "x", ylab = "Density",
-  ylim = c(0, 2.1), main = "Continuous PDF"
+  xlim = c(0, 1), ylim = c(0, 2.1),
+  main = "Continuous PDF"
 )
 shade_x <- x_tri[x_tri >= 0.2 & x_tri <= 0.6]
 polygon(
@@ -588,20 +601,65 @@ For the allele-copy example:
 The jumps equal the probability masses.
 
 ``` r
-allele_distribution$cumulative_probability <-
-  cumsum(allele_distribution$probability)
-allele_distribution
+amplified_x <- 0:3
+amplified_p <- c(0.01, 0.09, 0.36, 0.54)
+
+amplified_mean <- sum(amplified_x * amplified_p)
+amplified_ex2 <- sum(amplified_x^2 * amplified_p)
+amplified_variance <- amplified_ex2 - amplified_mean^2
+
+amplified_distribution <- data.frame(
+  Copy_number = amplified_x,
+  Probability = amplified_p,
+  Cumulative_probability = cumsum(amplified_p)
+)
+
+cat(
+  knitr::kable(
+    amplified_distribution,
+    format = "pipe",
+    digits = 2,
+    row.names = FALSE,
+    caption = "Probability distribution for the amplified copy number."
+  ),
+  sep = "\n"
+)
 ```
 
-<div class="kable-table">
+| Copy_number | Probability | Cumulative_probability |
+|------------:|------------:|-----------------------:|
+|           0 |        0.01 |                   0.01 |
+|           1 |        0.09 |                   0.10 |
+|           2 |        0.36 |                   0.46 |
+|           3 |        0.54 |                   1.00 |
 
-| genotype | allele_copies | probability | cumulative_probability |
-|:---------|--------------:|------------:|-----------------------:|
-| aa       |             0 |        0.36 |                   0.36 |
-| Aa       |             1 |        0.48 |                   0.84 |
-| AA       |             2 |        0.16 |                   1.00 |
+Probability distribution for the amplified copy number.
 
-</div>
+``` r
+cat("\n\n")
+```
+
+``` r
+cat(
+  "**Expected value:** ",
+  sprintf("%.2f", amplified_mean),
+  "\n\n",
+  sep = ""
+)
+```
+
+**Expected value:** 2.43
+
+``` r
+cat(
+  "**Variance:** ",
+  sprintf("%.4f", amplified_variance),
+  "\n\n",
+  sep = ""
+)
+```
+
+**Variance:** 0.4851
 
 ## 8.3 Continuous CDF
 
@@ -640,24 +698,31 @@ The subtraction of 1 in the discrete expression is essential because
 $P(X=k)$ can be positive.
 
 ``` r
-old_par <- par(mfrow = c(1, 2), mar = c(4.3, 4.5, 3, 1))
+old_par <- par(
+  mfrow = c(1, 2),
+  mar = c(4.3, 4.5, 3, 1)
+)
+
+allele_x <- allele_distribution$allele_copies
+allele_cdf <- cumsum(allele_distribution$probability)
 
 discrete_cdf <- stepfun(
-  x = allele_distribution$allele_copies,
-  y = c(0, allele_distribution$cumulative_probability)
+  x = allele_x,
+  y = c(0, allele_cdf)
 )
 plot(
   discrete_cdf,
   verticals = TRUE, do.points = TRUE,
   xlim = c(-0.5, 2.5), ylim = c(0, 1.05),
-  xlab = "x", ylab = expression(F[X](x)),
+  xlab = "Copies of allele A", ylab = expression(F[X](x)),
   main = "Discrete CDF", col = "#238B45", lwd = 2
 )
 
+x_tri_cdf <- seq(0, 1, length.out = 500)
 plot(
-  x_tri, x_tri^2, type = "l", lwd = 3,
+  x_tri_cdf, x_tri_cdf^2, type = "l", lwd = 3,
   col = "#D95F0E", xlab = "x", ylab = expression(F[X](x)),
-  ylim = c(0, 1.05), main = "Continuous CDF"
+  xlim = c(0, 1), ylim = c(0, 1.05), main = "Continuous CDF"
 )
 abline(h = c(0, 1), col = "grey85", lty = 2)
 ```
@@ -1407,37 +1472,68 @@ amplified_mean <- sum(amplified_x * amplified_p)
 amplified_ex2 <- sum(amplified_x^2 * amplified_p)
 amplified_variance <- amplified_ex2 - amplified_mean^2
 
-data.frame(
+amplified_summary <- data.frame(
   x = amplified_x,
   probability = amplified_p,
   cumulative_probability = cumsum(amplified_p)
 )
+
+probability_at_least_two <- sum(amplified_p[amplified_x >= 2])
+amplified_sd <- sqrt(amplified_variance)
+
+cat(
+  knitr::kable(
+    amplified_summary,
+    format = "pipe",
+    digits = 4,
+    row.names = FALSE,
+    col.names = c("x", "Probability", "Cumulative probability"),
+    caption = "PMF and CDF for the number of successfully amplified samples."
+  ),
+  sep = "\n"
+)
 ```
 
-<div class="kable-table">
-
-|   x | probability | cumulative_probability |
+|   x | Probability | Cumulative probability |
 |----:|------------:|-----------------------:|
 |   0 |        0.01 |                   0.01 |
 |   1 |        0.09 |                   0.10 |
 |   2 |        0.36 |                   0.46 |
 |   3 |        0.54 |                   1.00 |
 
-</div>
+PMF and CDF for the number of successfully amplified samples.
 
 ``` r
-c(
-  probability_at_least_two = sum(amplified_p[amplified_x >= 2]),
-  mean = amplified_mean,
-  variance = amplified_variance,
-  standard_deviation = sqrt(amplified_variance)
-)
+cat("\n\n")
 ```
 
-    ## probability_at_least_two                     mean                 variance 
-    ##                0.9000000                2.4300000                0.4851000 
-    ##       standard_deviation 
-    ##                0.6964912
+``` r
+cat("**Probability of at least two successes:** ",
+    sprintf("%.2f", probability_at_least_two), "\n\n", sep = "")
+```
+
+**Probability of at least two successes:** 0.90
+
+``` r
+cat("**Expected value:** ", sprintf("%.2f", amplified_mean),
+    "\n\n", sep = "")
+```
+
+**Expected value:** 2.43
+
+``` r
+cat("**Variance:** ", sprintf("%.4f", amplified_variance),
+    "\n\n", sep = "")
+```
+
+**Variance:** 0.4851
+
+``` r
+cat("**Standard deviation:** ", sprintf("%.4f", amplified_sd),
+    "\n\n", sep = "")
+```
+
+**Standard deviation:** 0.6965
 
 # 23. Practice exercises
 
