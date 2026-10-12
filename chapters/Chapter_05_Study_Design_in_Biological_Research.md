@@ -17,136 +17,135 @@ Chapter 5: Study Design in Biological Research
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. Start with a Research Question](#3-start-with-a-research-question)
-  - [3.1 PICO framework](#31-pico-framework)
-  - [3.2 A genetics-oriented
-    framework](#32-a-genetics-oriented-framework)
-- [4. Study Objective: Description, Association, Prediction or
-  Causation?](#4-study-objective-description-association-prediction-or-causation)
-  - [4.1 Description](#41-description)
-  - [4.2 Association](#42-association)
-  - [4.3 Prediction](#43-prediction)
-  - [4.4 Causal effect](#44-causal-effect)
-- [5. Major Families of Study Design](#5-major-families-of-study-design)
-- [6. Observational Studies](#6-observational-studies)
-- [7. Cross-Sectional Studies](#7-cross-sectional-studies)
+- [2. Start with a Research Question](#2-start-with-a-research-question)
+  - [2.1 PICO framework](#21-pico-framework)
+  - [2.2 A genetics-oriented
+    framework](#22-a-genetics-oriented-framework)
+- [3. Study Objective: Description, Association, Prediction or
+  Causation?](#3-study-objective-description-association-prediction-or-causation)
+  - [3.1 Description](#31-description)
+  - [3.2 Association](#32-association)
+  - [3.3 Prediction](#33-prediction)
+  - [3.4 Causal effect](#34-causal-effect)
+- [4. Major Families of Study Design](#4-major-families-of-study-design)
+- [5. Observational Studies](#5-observational-studies)
+- [6. Cross-Sectional Studies](#6-cross-sectional-studies)
+  - [6.1 Strengths](#61-strengths)
+  - [6.2 Limitations](#62-limitations)
+  - [6.3 Bioinformatics example](#63-bioinformatics-example)
+- [7. Case-Control Studies](#7-case-control-studies)
   - [7.1 Strengths](#71-strengths)
   - [7.2 Limitations](#72-limitations)
-  - [7.3 Bioinformatics example](#73-bioinformatics-example)
-- [8. Case-Control Studies](#8-case-control-studies)
-  - [8.1 Strengths](#81-strengths)
-  - [8.2 Limitations](#82-limitations)
-  - [8.3 Selecting controls](#83-selecting-controls)
-  - [8.4 Odds ratio](#84-odds-ratio)
-- [9. Cohort Studies](#9-cohort-studies)
-  - [9.1 Prospective cohort](#91-prospective-cohort)
-  - [9.2 Retrospective cohort](#92-retrospective-cohort)
-  - [9.3 Strengths](#93-strengths)
-  - [9.4 Limitations](#94-limitations)
-- [10. Prospective and Retrospective Are Not Synonyms for Design
-  Type](#10-prospective-and-retrospective-are-not-synonyms-for-design-type)
-- [11. Experimental and Interventional
-  Studies](#11-experimental-and-interventional-studies)
-- [12. Randomized Controlled Trials](#12-randomized-controlled-trials)
-  - [12.1 Why randomize?](#121-why-randomize)
-  - [12.2 Control group](#122-control-group)
-  - [12.3 Parallel-group design](#123-parallel-group-design)
-  - [12.4 Intention-to-treat
-    principle](#124-intention-to-treat-principle)
-- [13. Simple Randomization in R](#13-simple-randomization-in-r)
-- [14. Allocation Concealment and
-  Blinding](#14-allocation-concealment-and-blinding)
-  - [14.1 Allocation concealment](#141-allocation-concealment)
-  - [14.2 Blinding](#142-blinding)
-  - [14.3 Why the distinction matters](#143-why-the-distinction-matters)
-- [15. Experimental Unit, Measurement Unit and Analysis
-  Unit](#15-experimental-unit-measurement-unit-and-analysis-unit)
-  - [15.1 Experimental unit](#151-experimental-unit)
-  - [15.2 Measurement unit](#152-measurement-unit)
-  - [15.3 Unit of analysis](#153-unit-of-analysis)
-  - [15.4 Example: mice in cages](#154-example-mice-in-cages)
-- [16. Pseudoreplication](#16-pseudoreplication)
-  - [16.1 Illustrative example](#161-illustrative-example)
-- [17. Biological and Technical
-  Replication](#17-biological-and-technical-replication)
-  - [17.1 Biological replicates](#171-biological-replicates)
-  - [17.2 Technical replicates](#172-technical-replicates)
-  - [17.3 Replicate identifiers](#173-replicate-identifiers)
-- [18. Blocking](#18-blocking)
-  - [18.1 Blocked randomization in R](#181-blocked-randomization-in-r)
-- [19. Batch Effects and Confounding in
-  Omics](#19-batch-effects-and-confounding-in-omics)
-  - [19.1 Confounded batch design](#191-confounded-batch-design)
-  - [19.2 Balanced batch design](#192-balanced-batch-design)
-- [20. Randomization in Laboratory
-  Workflows](#20-randomization-in-laboratory-workflows)
-  - [20.1 Why randomize processing
-    order?](#201-why-randomize-processing-order)
-  - [20.2 Record the randomization
-    plan](#202-record-the-randomization-plan)
-- [21. Factorial Designs](#21-factorial-designs)
-  - [21.1 Create the design in R](#211-create-the-design-in-r)
-- [22. Cross-Over Designs](#22-cross-over-designs)
-  - [22.1 Requirements and
-    limitations](#221-requirements-and-limitations)
-- [23. Repeated-Measures and Longitudinal
-  Designs](#23-repeated-measures-and-longitudinal-designs)
-  - [23.1 Simulated longitudinal
-    profiles](#231-simulated-longitudinal-profiles)
-- [24. Before-and-After Designs](#24-before-and-after-designs)
-- [25. Clinical Trial Design
-  Concepts](#25-clinical-trial-design-concepts)
-  - [25.1 Primary outcome](#251-primary-outcome)
-  - [25.2 Surrogate outcomes](#252-surrogate-outcomes)
-  - [25.3 Multiple outcomes](#253-multiple-outcomes)
-- [26. Bias](#26-bias)
-  - [26.1 Selection bias](#261-selection-bias)
-  - [26.2 Information bias](#262-information-bias)
-  - [26.3 Confounding](#263-confounding)
-- [27. Matching](#27-matching)
-  - [27.1 Risks of matching](#271-risks-of-matching)
-- [28. Restriction and
-  Stratification](#28-restriction-and-stratification)
-  - [28.1 Restriction](#281-restriction)
-  - [28.2 Stratification](#282-stratification)
-- [29. Population-Based Genetic Association
-  Studies](#29-population-based-genetic-association-studies)
-  - [29.1 Major design considerations](#291-major-design-considerations)
-  - [29.2 Population stratification](#292-population-stratification)
-- [30. Family-Based Genetic Designs](#30-family-based-genetic-designs)
-  - [30.1 Advantages](#301-advantages)
-  - [30.2 Limitations](#302-limitations)
-  - [30.3 Trio example](#303-trio-example)
-- [31. Omics Study Design](#31-omics-study-design)
-  - [31.1 Design questions before generating
-    data](#311-design-questions-before-generating-data)
-  - [31.2 Avoid sample–batch
-    confounding](#312-avoid-samplebatch-confounding)
-  - [31.3 Record metadata](#313-record-metadata)
-- [32. RNA-Seq Design Example](#32-rna-seq-design-example)
-- [33. Single-Cell Study Design](#33-single-cell-study-design)
-- [34. Sample Size and Power Begin at the Design
-  Stage](#34-sample-size-and-power-begin-at-the-design-stage)
-  - [34.1 More samples are not always the only
-    solution](#341-more-samples-are-not-always-the-only-solution)
-- [35. Generalizability and External
-  Validity](#35-generalizability-and-external-validity)
-- [36. Preregistration, Protocols and Analysis
-  Plans](#36-preregistration-protocols-and-analysis-plans)
-- [37. Integrated Case Study: Design an RNA-Seq Drug-Response
-  Experiment](#37-integrated-case-study-design-an-rna-seq-drug-response-experiment)
-  - [37.1 Biological question](#371-biological-question)
-  - [37.2 Study objective](#372-study-objective)
-  - [37.3 Experimental units](#373-experimental-units)
-  - [37.4 Proposed factors](#374-proposed-factors)
-  - [37.5 Create the design in R](#375-create-the-design-in-r)
-  - [37.6 Balance library batches](#376-balance-library-batches)
-  - [37.7 Randomize processing order](#377-randomize-processing-order)
-  - [37.8 Design diagram](#378-design-diagram)
-  - [37.9 Prespecified metadata](#379-prespecified-metadata)
-  - [37.10 Primary analysis concept](#3710-primary-analysis-concept)
-- [38. Study Design Checklist](#38-study-design-checklist)
+  - [7.3 Selecting controls](#73-selecting-controls)
+  - [7.4 Odds ratio](#74-odds-ratio)
+- [8. Cohort Studies](#8-cohort-studies)
+  - [8.1 Prospective cohort](#81-prospective-cohort)
+  - [8.2 Retrospective cohort](#82-retrospective-cohort)
+  - [8.3 Strengths](#83-strengths)
+  - [8.4 Limitations](#84-limitations)
+- [9. Prospective and Retrospective Are Not Synonyms for Design
+  Type](#9-prospective-and-retrospective-are-not-synonyms-for-design-type)
+- [10. Experimental and Interventional
+  Studies](#10-experimental-and-interventional-studies)
+- [11. Randomized Controlled Trials](#11-randomized-controlled-trials)
+  - [11.1 Why randomize?](#111-why-randomize)
+  - [11.2 Control group](#112-control-group)
+  - [11.3 Parallel-group design](#113-parallel-group-design)
+  - [11.4 Intention-to-treat
+    principle](#114-intention-to-treat-principle)
+- [12. Simple Randomization in R](#12-simple-randomization-in-r)
+- [13. Allocation Concealment and
+  Blinding](#13-allocation-concealment-and-blinding)
+  - [13.1 Allocation concealment](#131-allocation-concealment)
+  - [13.2 Blinding](#132-blinding)
+  - [13.3 Why the distinction matters](#133-why-the-distinction-matters)
+- [14. Experimental Unit, Measurement Unit and Analysis
+  Unit](#14-experimental-unit-measurement-unit-and-analysis-unit)
+  - [14.1 Experimental unit](#141-experimental-unit)
+  - [14.2 Measurement unit](#142-measurement-unit)
+  - [14.3 Unit of analysis](#143-unit-of-analysis)
+  - [14.4 Example: mice in cages](#144-example-mice-in-cages)
+- [15. Pseudoreplication](#15-pseudoreplication)
+  - [15.1 Illustrative example](#151-illustrative-example)
+- [16. Biological and Technical
+  Replication](#16-biological-and-technical-replication)
+  - [16.1 Biological replicates](#161-biological-replicates)
+  - [16.2 Technical replicates](#162-technical-replicates)
+  - [16.3 Replicate identifiers](#163-replicate-identifiers)
+- [17. Blocking](#17-blocking)
+  - [17.1 Blocked randomization in R](#171-blocked-randomization-in-r)
+- [18. Batch Effects and Confounding in
+  Omics](#18-batch-effects-and-confounding-in-omics)
+  - [18.1 Confounded batch design](#181-confounded-batch-design)
+  - [18.2 Balanced batch design](#182-balanced-batch-design)
+- [19. Randomization in Laboratory
+  Workflows](#19-randomization-in-laboratory-workflows)
+  - [19.1 Why randomize processing
+    order?](#191-why-randomize-processing-order)
+  - [19.2 Record the randomization
+    plan](#192-record-the-randomization-plan)
+- [20. Factorial Designs](#20-factorial-designs)
+  - [20.1 Create the design in R](#201-create-the-design-in-r)
+- [21. Cross-Over Designs](#21-cross-over-designs)
+  - [21.1 Requirements and
+    limitations](#211-requirements-and-limitations)
+- [22. Repeated-Measures and Longitudinal
+  Designs](#22-repeated-measures-and-longitudinal-designs)
+  - [22.1 Simulated longitudinal
+    profiles](#221-simulated-longitudinal-profiles)
+- [23. Before-and-After Designs](#23-before-and-after-designs)
+- [24. Clinical Trial Design
+  Concepts](#24-clinical-trial-design-concepts)
+  - [24.1 Primary outcome](#241-primary-outcome)
+  - [24.2 Surrogate outcomes](#242-surrogate-outcomes)
+  - [24.3 Multiple outcomes](#243-multiple-outcomes)
+- [25. Bias](#25-bias)
+  - [25.1 Selection bias](#251-selection-bias)
+  - [25.2 Information bias](#252-information-bias)
+  - [25.3 Confounding](#253-confounding)
+- [26. Matching](#26-matching)
+  - [26.1 Risks of matching](#261-risks-of-matching)
+- [27. Restriction and
+  Stratification](#27-restriction-and-stratification)
+  - [27.1 Restriction](#271-restriction)
+  - [27.2 Stratification](#272-stratification)
+- [28. Population-Based Genetic Association
+  Studies](#28-population-based-genetic-association-studies)
+  - [28.1 Major design considerations](#281-major-design-considerations)
+  - [28.2 Population stratification](#282-population-stratification)
+- [29. Family-Based Genetic Designs](#29-family-based-genetic-designs)
+  - [29.1 Advantages](#291-advantages)
+  - [29.2 Limitations](#292-limitations)
+  - [29.3 Trio example](#293-trio-example)
+- [30. Omics Study Design](#30-omics-study-design)
+  - [30.1 Design questions before generating
+    data](#301-design-questions-before-generating-data)
+  - [30.2 Avoid sample–batch
+    confounding](#302-avoid-samplebatch-confounding)
+  - [30.3 Record metadata](#303-record-metadata)
+- [31. RNA-Seq Design Example](#31-rna-seq-design-example)
+- [32. Single-Cell Study Design](#32-single-cell-study-design)
+- [33. Sample Size and Power Begin at the Design
+  Stage](#33-sample-size-and-power-begin-at-the-design-stage)
+  - [33.1 More samples are not always the only
+    solution](#331-more-samples-are-not-always-the-only-solution)
+- [34. Generalizability and External
+  Validity](#34-generalizability-and-external-validity)
+- [35. Preregistration, Protocols and Analysis
+  Plans](#35-preregistration-protocols-and-analysis-plans)
+- [36. Integrated Case Study: Design an RNA-Seq Drug-Response
+  Experiment](#36-integrated-case-study-design-an-rna-seq-drug-response-experiment)
+  - [36.1 Biological question](#361-biological-question)
+  - [36.2 Study objective](#362-study-objective)
+  - [36.3 Experimental units](#363-experimental-units)
+  - [36.4 Proposed factors](#364-proposed-factors)
+  - [36.5 Create the design in R](#365-create-the-design-in-r)
+  - [36.6 Balance library batches](#366-balance-library-batches)
+  - [36.7 Randomize processing order](#367-randomize-processing-order)
+  - [36.8 Design diagram](#368-design-diagram)
+  - [36.9 Prespecified metadata](#369-prespecified-metadata)
+  - [36.10 Primary analysis concept](#3610-primary-analysis-concept)
+- [37. Study Design Checklist](#37-study-design-checklist)
   - [Scientific question](#scientific-question)
   - [Population and sampling](#population-and-sampling)
   - [Units and dependence](#units-and-dependence)
@@ -154,7 +153,7 @@ Sandeep Singh
   - [Bias control](#bias-control)
   - [Technical design](#technical-design)
   - [Analysis planning](#analysis-planning)
-- [39. Common Beginner Mistakes](#39-common-beginner-mistakes)
+- [38. Common Beginner Mistakes](#38-common-beginner-mistakes)
   - [Mistake 1: Choosing a test before defining the
     design](#mistake-1-choosing-a-test-before-defining-the-design)
   - [Mistake 2: Counting technical measurements as biological
@@ -179,8 +178,8 @@ Sandeep Singh
     results](#mistake-11-defining-exclusions-after-seeing-results)
   - [Mistake 12: Believing large sample size fixes poor
     design](#mistake-12-believing-large-sample-size-fixes-poor-design)
-- [40. Chapter Summary](#40-chapter-summary)
-- [41. Check Your Understanding](#41-check-your-understanding)
+- [39. Chapter Summary](#39-chapter-summary)
+- [40. Check Your Understanding](#40-check-your-understanding)
   - [Question 1](#question-1)
   - [Question 2](#question-2)
   - [Question 3](#question-3)
@@ -191,7 +190,7 @@ Sandeep Singh
   - [Question 8](#question-8)
   - [Question 9](#question-9)
   - [Question 10](#question-10)
-- [42. Practice with R](#42-practice-with-r)
+- [41. Practice with R](#41-practice-with-r)
   - [Exercise 1: Create a simple randomization
     schedule](#exercise-1-create-a-simple-randomization-schedule)
   - [Exercise 2: Block by cell line](#exercise-2-block-by-cell-line)
@@ -202,12 +201,54 @@ Sandeep Singh
   - [Exercise 5: Build a factorial
     design](#exercise-5-build-a-factorial-design)
   - [Exercise 6: Classify designs](#exercise-6-classify-designs)
-- [43. Mini-Project: Design a Biological Study Before Collecting
-  Data](#43-mini-project-design-a-biological-study-before-collecting-data)
-- [44. Glossary](#44-glossary)
-- [45. References and Further
-  Reading](#45-references-and-further-reading)
-- [46. Reproducibility Information](#46-reproducibility-information)
+- [42. Mini-Project: Design a Biological Study Before Collecting
+  Data](#42-mini-project-design-a-biological-study-before-collecting-data)
+- [43. Glossary](#43-glossary)
+- [44. References and Further
+  Reading](#44-references-and-further-reading)
+- [45. Reproducibility Information](#45-reproducibility-information)
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+&#10;table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+&#10;table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+&#10;table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
 
 # 1. Introduction
 
@@ -236,36 +277,7 @@ confounded. No later calculation can reliably separate their effects.
 This chapter introduces the major study designs used in biology,
 medicine, epidemiology, genetics and bioinformatics.
 
-------------------------------------------------------------------------
-
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  explain why study design comes before statistical testing;
-2.  convert a broad biological idea into a focused research question;
-3.  distinguish observational and experimental studies;
-4.  describe cross-sectional, case-control and cohort designs;
-5.  distinguish prospective and retrospective data collection;
-6.  explain randomized controlled, laboratory and cross-over
-    experiments;
-7.  distinguish experimental units, measurement units and analysis
-    units;
-8.  recognize pseudoreplication;
-9.  explain control groups, randomization, allocation concealment and
-    blinding;
-10. distinguish biological replication from technical replication;
-11. use blocking and balanced batch allocation;
-12. recognize selection, information and confounding biases;
-13. describe repeated-measures and longitudinal designs;
-14. compare population-based and family-based genetic designs;
-15. identify important design issues in RNA-seq and other omics studies;
-16. create a basic randomization schedule in R; and
-17. prepare a structured study-design plan before collecting data.
-
-------------------------------------------------------------------------
-
-# 3. Start with a Research Question
+# 2. Start with a Research Question
 
 A broad topic is not yet a research question.
 
@@ -288,7 +300,7 @@ A well-defined question should clarify:
 - the time frame; and
 - the intended interpretation.
 
-## 3.1 PICO framework
+## 2.1 PICO framework
 
 The PICO framework is useful for many clinical and experimental
 questions.
@@ -303,7 +315,7 @@ questions.
 For observational studies, the `I` is commonly interpreted as an
 exposure rather than an assigned intervention.
 
-## 3.2 A genetics-oriented framework
+## 2.2 A genetics-oriented framework
 
 For a genetic association study, specify:
 
@@ -317,30 +329,30 @@ For a genetic association study, specify:
 
 ------------------------------------------------------------------------
 
-# 4. Study Objective: Description, Association, Prediction or Causation?
+# 3. Study Objective: Description, Association, Prediction or Causation?
 
 The study objective affects the design.
 
-## 4.1 Description
+## 3.1 Description
 
 Example:
 
 > What proportion of sequenced samples carries a particular allele?
 
-## 4.2 Association
+## 3.2 Association
 
 Example:
 
 > Is allele dosage associated with LDL cholesterol?
 
-## 4.3 Prediction
+## 3.3 Prediction
 
 Example:
 
 > Can clinical and genomic variables predict treatment response in
 > future patients?
 
-## 4.4 Causal effect
+## 3.4 Causal effect
 
 Example:
 
@@ -353,7 +365,7 @@ analysis.
 
 ------------------------------------------------------------------------
 
-# 5. Major Families of Study Design
+# 4. Major Families of Study Design
 
 Studies are commonly divided into:
 
@@ -433,7 +445,7 @@ within a cohort or randomized trial.
 
 ------------------------------------------------------------------------
 
-# 6. Observational Studies
+# 5. Observational Studies
 
 In an observational study, the researcher does not assign the primary
 exposure.
@@ -458,7 +470,7 @@ The three common designs introduced here are:
 
 ------------------------------------------------------------------------
 
-# 7. Cross-Sectional Studies
+# 6. Cross-Sectional Studies
 
 A **cross-sectional study** measures exposure and outcome at one time
 point or during a short defined period.
@@ -468,21 +480,21 @@ Example:
 > Measure current obesity status and current blood pressure in a
 > community sample.
 
-## 7.1 Strengths
+## 6.1 Strengths
 
 - relatively quick;
 - useful for estimating prevalence;
 - can measure several variables simultaneously; and
 - useful for generating hypotheses.
 
-## 7.2 Limitations
+## 6.2 Limitations
 
 - temporal order may be unclear;
 - unsuitable for estimating incidence directly;
 - survivor bias may occur; and
 - rare or short-duration conditions may be poorly represented.
 
-## 7.3 Bioinformatics example
+## 6.3 Bioinformatics example
 
 A cross-sectional transcriptomic study might compare blood-expression
 profiles between individuals with and without a disease at recruitment.
@@ -493,7 +505,7 @@ from disease or reflected treatment and other factors.
 
 ------------------------------------------------------------------------
 
-# 8. Case-Control Studies
+# 7. Case-Control Studies
 
 A **case-control study** begins by selecting individuals based on
 outcome status.
@@ -509,14 +521,14 @@ Example:
 > Compare the frequency of a genetic variant between patients with a
 > rare adverse drug reaction and suitable controls.
 
-## 8.1 Strengths
+## 7.1 Strengths
 
 - efficient for rare outcomes;
 - can examine several exposures;
 - often faster than following a large cohort; and
 - useful when the disease has a long development period.
 
-## 8.2 Limitations
+## 7.2 Limitations
 
 - cannot directly estimate population risk without additional
   information;
@@ -524,14 +536,14 @@ Example:
 - retrospective exposure measurement may be inaccurate; and
 - temporal interpretation may remain uncertain.
 
-## 8.3 Selecting controls
+## 7.3 Selecting controls
 
 Controls should represent the population from which the cases arose with
 respect to opportunity for case ascertainment.
 
 Controls should not simply be the most convenient people available.
 
-## 8.4 Odds ratio
+## 7.4 Odds ratio
 
 Case-control studies commonly estimate an odds ratio. The odds ratio can
 approximate a risk ratio under certain rare-outcome conditions, but they
@@ -539,7 +551,7 @@ are not generally identical.
 
 ------------------------------------------------------------------------
 
-# 9. Cohort Studies
+# 8. Cohort Studies
 
 A **cohort study** begins with individuals classified by exposure or
 other baseline characteristics and observes outcomes over time.
@@ -549,28 +561,28 @@ Example:
 > Follow carriers and non-carriers of a genetic risk factor to compare
 > disease occurrence.
 
-## 9.1 Prospective cohort
+## 8.1 Prospective cohort
 
 Participants are enrolled before the relevant outcomes occur and
 followed forward.
 
 Advantages include planned measurements and clearer temporal ordering.
 
-## 9.2 Retrospective cohort
+## 8.2 Retrospective cohort
 
 The cohort and follow-up are reconstructed from existing records.
 
 The direction of reasoning is still from exposure to outcome, even
 though the data already exist.
 
-## 9.3 Strengths
+## 8.3 Strengths
 
 - can estimate incidence and risk;
 - establishes exposure before outcome more clearly;
 - can examine multiple outcomes; and
 - supports repeated measurements.
 
-## 9.4 Limitations
+## 8.4 Limitations
 
 - may require long follow-up;
 - can be expensive;
@@ -580,7 +592,7 @@ though the data already exist.
 
 ------------------------------------------------------------------------
 
-# 10. Prospective and Retrospective Are Not Synonyms for Design Type
+# 9. Prospective and Retrospective Are Not Synonyms for Design Type
 
 The terms describe when data are planned and collected relative to the
 research process.
@@ -598,7 +610,7 @@ case-control studies may be planned within a prospective cohort.
 
 ------------------------------------------------------------------------
 
-# 11. Experimental and Interventional Studies
+# 10. Experimental and Interventional Studies
 
 In an experimental study, the researcher assigns a treatment, exposure
 or condition.
@@ -625,12 +637,12 @@ However, experiments can still suffer from:
 
 ------------------------------------------------------------------------
 
-# 12. Randomized Controlled Trials
+# 11. Randomized Controlled Trials
 
 A **randomized controlled trial** assigns eligible participants to
 intervention groups using a random mechanism.
 
-## 12.1 Why randomize?
+## 11.1 Why randomize?
 
 Randomization aims to make treatment assignment independent of baseline
 characteristics, including characteristics that were not measured.
@@ -639,7 +651,7 @@ In sufficiently large samples, it tends to create comparable groups on
 average. It does not guarantee perfect balance in one particular small
 study.
 
-## 12.2 Control group
+## 11.2 Control group
 
 A control group provides the comparison needed to interpret what would
 have happened without the intervention of interest.
@@ -651,12 +663,12 @@ Controls may receive:
 - no intervention when ethically appropriate; or
 - another active treatment.
 
-## 12.3 Parallel-group design
+## 11.3 Parallel-group design
 
 Each participant receives one assigned intervention and is followed over
 time.
 
-## 12.4 Intention-to-treat principle
+## 11.4 Intention-to-treat principle
 
 In many randomized trials, participants are analysed according to their
 assigned group regardless of adherence. This helps preserve the
@@ -667,7 +679,7 @@ clinical-biostatistics chapter.
 
 ------------------------------------------------------------------------
 
-# 13. Simple Randomization in R
+# 12. Simple Randomization in R
 
 Suppose 12 experimental cultures must be assigned equally to control and
 drug treatment.
@@ -685,35 +697,276 @@ randomization_schedule <- data.frame(
   stringsAsFactors = FALSE
 )
 
-randomization_schedule
+print_html_table(
+  randomization_schedule,
+  caption = "Random assignment of cultures to control and drug groups."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| culture_id | assigned_group |
-|:-----------|:---------------|
-| C01        | Control        |
-| C02        | Drug           |
-| C03        | Drug           |
-| C04        | Control        |
-| C05        | Control        |
-| C06        | Drug           |
-| C07        | Control        |
-| C08        | Control        |
-| C09        | Drug           |
-| C10        | Drug           |
-| C11        | Control        |
-| C12        | Drug           |
+<caption>
 
-</div>
+Random assignment of cultures to control and drug groups.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+culture id
+</th>
+
+<th style="text-align:left;">
+
+assigned group
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+C01
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C02
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C03
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C04
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C05
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C06
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C07
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C08
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C09
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C10
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C11
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C12
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-table(randomization_schedule$assigned_group)
+print_html_table(
+  table(randomization_schedule$assigned_group),
+  caption = "Number of cultures assigned to each group."
+)
 ```
 
-    ## 
-    ## Control    Drug 
-    ##       6       6
+<table class="chapter-table">
+
+<caption>
+
+Number of cultures assigned to each group.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 `set.seed()` was used in the hidden setup chunk so this teaching
 allocation is reproducible.
@@ -724,11 +977,11 @@ analysis script.
 
 ------------------------------------------------------------------------
 
-# 14. Allocation Concealment and Blinding
+# 13. Allocation Concealment and Blinding
 
 These concepts are related but different.
 
-## 14.1 Allocation concealment
+## 13.1 Allocation concealment
 
 Allocation concealment prevents the upcoming assignment from being known
 before enrolment or assignment.
@@ -736,13 +989,13 @@ before enrolment or assignment.
 It protects against consciously or unconsciously selecting participants
 based on the next treatment.
 
-## 14.2 Blinding
+## 13.2 Blinding
 
 Blinding prevents participants, care providers, outcome assessors or
 analysts from knowing assigned treatment when that knowledge could
 influence behaviour, measurement or interpretation.
 
-## 14.3 Why the distinction matters
+## 13.3 Why the distinction matters
 
 - Allocation concealment acts **before and during assignment**.
 - Blinding acts **after assignment**.
@@ -755,25 +1008,25 @@ and analysts to biological groups.
 
 ------------------------------------------------------------------------
 
-# 15. Experimental Unit, Measurement Unit and Analysis Unit
+# 14. Experimental Unit, Measurement Unit and Analysis Unit
 
 These units may differ.
 
-## 15.1 Experimental unit
+## 14.1 Experimental unit
 
 The **experimental unit** is the smallest independent unit that can
 receive a treatment assignment.
 
-## 15.2 Measurement unit
+## 14.2 Measurement unit
 
 The **measurement unit** is the unit on which a measurement is recorded.
 
-## 15.3 Unit of analysis
+## 14.3 Unit of analysis
 
 The **unit of analysis** is the unit treated as independent in the
 statistical model.
 
-## 15.4 Example: mice in cages
+## 14.4 Example: mice in cages
 
 Suppose four cages each contain five mice, and treatment is added to the
 drinking water of an entire cage.
@@ -788,7 +1041,7 @@ exaggerate the effective amount of information.
 
 ------------------------------------------------------------------------
 
-# 16. Pseudoreplication
+# 15. Pseudoreplication
 
 **Pseudoreplication** occurs when non-independent measurements are
 treated as independent evidence for a treatment effect.
@@ -804,7 +1057,7 @@ Common examples include:
 - repeated measurements from one participant analysed as different
   participants.
 
-## 16.1 Illustrative example
+## 15.1 Illustrative example
 
 A researcher uses:
 
@@ -822,9 +1075,9 @@ does not have 100 independent biological replicates per group.
 
 ------------------------------------------------------------------------
 
-# 17. Biological and Technical Replication
+# 16. Biological and Technical Replication
 
-## 17.1 Biological replicates
+## 16.1 Biological replicates
 
 Biological replicates are independently sampled biological units.
 
@@ -837,7 +1090,7 @@ Examples include:
 
 They help estimate biological variability.
 
-## 17.2 Technical replicates
+## 16.2 Technical replicates
 
 Technical replicates repeat measurement or processing of the same
 biological material.
@@ -851,7 +1104,7 @@ Examples include:
 
 They help assess technical variability or improve measurement precision.
 
-## 17.3 Replicate identifiers
+## 16.3 Replicate identifiers
 
 ``` r
 replicate_data <- data.frame(
@@ -861,27 +1114,202 @@ replicate_data <- data.frame(
   expression = c(8.1, 8.3, 9.4, 9.2, 7.8, 7.9)
 )
 
-replicate_data
+print_html_table(
+  replicate_data,
+  caption = "Biological specimens and their technical replicates."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| subject_id | biospecimen_id | technical_replicate | expression |
-|:-----------|:---------------|:--------------------|-----------:|
-| P01        | B01            | R1                  |        8.1 |
-| P01        | B01            | R2                  |        8.3 |
-| P02        | B02            | R1                  |        9.4 |
-| P02        | B02            | R2                  |        9.2 |
-| P03        | B03            | R1                  |        7.8 |
-| P03        | B03            | R2                  |        7.9 |
+<caption>
 
-</div>
+Biological specimens and their technical replicates.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+subject id
+</th>
+
+<th style="text-align:left;">
+
+biospecimen id
+</th>
+
+<th style="text-align:left;">
+
+technical replicate
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:left;">
+
+B01
+</td>
+
+<td style="text-align:left;">
+
+R1
+</td>
+
+<td style="text-align:right;">
+
+8.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:left;">
+
+B01
+</td>
+
+<td style="text-align:left;">
+
+R2
+</td>
+
+<td style="text-align:right;">
+
+8.3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:left;">
+
+B02
+</td>
+
+<td style="text-align:left;">
+
+R1
+</td>
+
+<td style="text-align:right;">
+
+9.4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:left;">
+
+B02
+</td>
+
+<td style="text-align:left;">
+
+R2
+</td>
+
+<td style="text-align:right;">
+
+9.2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:left;">
+
+B03
+</td>
+
+<td style="text-align:left;">
+
+R1
+</td>
+
+<td style="text-align:right;">
+
+7.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:left;">
+
+B03
+</td>
+
+<td style="text-align:left;">
+
+R2
+</td>
+
+<td style="text-align:right;">
+
+7.9
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The six measurements do not represent six independent patients.
 
 ------------------------------------------------------------------------
 
-# 18. Blocking
+# 17. Blocking
 
 **Blocking** groups similar experimental units before randomization so
 that known nuisance variation is distributed across treatment groups.
@@ -898,7 +1326,7 @@ Potential blocking factors include:
 
 Within each block, units are randomized to treatments.
 
-## 18.1 Blocked randomization in R
+## 17.1 Blocked randomization in R
 
 Suppose eight cultures come from two cell lines.
 
@@ -916,35 +1344,283 @@ blocked_design$assigned_group <- unlist(
   )
 )
 
-blocked_design
-```
-
-<div class="kable-table">
-
-| culture_id | cell_line | assigned_group |
-|:-----------|:----------|:---------------|
-| C1         | Line_A    | Drug           |
-| C2         | Line_A    | Control        |
-| C3         | Line_A    | Drug           |
-| C4         | Line_A    | Control        |
-| C5         | Line_B    | Control        |
-| C6         | Line_B    | Drug           |
-| C7         | Line_B    | Drug           |
-| C8         | Line_B    | Control        |
-
-</div>
-
-``` r
-table(
-  blocked_design$cell_line,
-  blocked_design$assigned_group
+print_html_table(
+  blocked_design,
+  caption = "Treatment allocation within cell-line blocks."
 )
 ```
 
-    ##         
-    ##          Control Drug
-    ##   Line_A       2    2
-    ##   Line_B       2    2
+<table class="chapter-table">
+
+<caption>
+
+Treatment allocation within cell-line blocks.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+culture id
+</th>
+
+<th style="text-align:left;">
+
+cell line
+</th>
+
+<th style="text-align:left;">
+
+assigned group
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+C1
+</td>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C2
+</td>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C3
+</td>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C4
+</td>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C5
+</td>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C6
+</td>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C7
+</td>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C8
+</td>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+``` r
+print_html_table(
+  table(
+    Cell_line = blocked_design$cell_line,
+    Assigned_group = blocked_design$assigned_group
+  ),
+  caption = "Treatment balance within cell lines."
+)
+```
+
+<table class="chapter-table">
+
+<caption>
+
+Treatment balance within cell lines.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Cell line
+</th>
+
+<th style="text-align:right;">
+
+Control
+</th>
+
+<th style="text-align:right;">
+
+Drug
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The code balances treatments within each cell line. In a real study,
 verify row alignment carefully when creating allocation schedules from
@@ -952,7 +1628,7 @@ split data.
 
 ------------------------------------------------------------------------
 
-# 19. Batch Effects and Confounding in Omics
+# 18. Batch Effects and Confounding in Omics
 
 A **batch effect** is systematic technical variation associated with
 processing groups such as:
@@ -967,12 +1643,12 @@ processing groups such as:
 Batch effects become especially dangerous when batch is aligned with the
 biological comparison.
 
-## 19.1 Confounded batch design
+## 18.1 Confounded batch design
 
 If every control sample is processed in Batch 1 and every case sample in
 Batch 2, disease status and batch cannot be separated reliably.
 
-## 19.2 Balanced batch design
+## 18.2 Balanced batch design
 
 Cases and controls should be distributed across batches when possible,
 while respecting other constraints.
@@ -1046,7 +1722,7 @@ never contained.
 
 ------------------------------------------------------------------------
 
-# 20. Randomization in Laboratory Workflows
+# 19. Randomization in Laboratory Workflows
 
 Randomization can be applied at several stages:
 
@@ -1057,13 +1733,13 @@ Randomization can be applied at several stages:
 - assigning libraries to sequencing lanes; and
 - choosing measurement order.
 
-## 20.1 Why randomize processing order?
+## 19.1 Why randomize processing order?
 
 Instrument drift or changing reagent performance can create trends over
 time. If all controls are measured first and all treated samples later,
 processing order can mimic a treatment effect.
 
-## 20.2 Record the randomization plan
+## 19.2 Record the randomization plan
 
 The plan should include:
 
@@ -1078,7 +1754,7 @@ Randomization should be planned before outcomes are examined.
 
 ------------------------------------------------------------------------
 
-# 21. Factorial Designs
+# 20. Factorial Designs
 
 A **factorial design** studies two or more experimental factors
 simultaneously.
@@ -1104,7 +1780,7 @@ A factorial design can estimate:
 - whether the drug effect changes under low oxygen, called an
   **interaction**.
 
-## 21.1 Create the design in R
+## 20.1 Create the design in R
 
 ``` r
 factorial_design <- expand.grid(
@@ -1115,39 +1791,359 @@ factorial_design <- expand.grid(
   stringsAsFactors = FALSE
 )
 
-factorial_design
-```
-
-<div class="kable-table">
-
-| drug    | oxygen | replicate |
-|:--------|:-------|----------:|
-| Control | Normal |         1 |
-| Drug    | Normal |         1 |
-| Control | Low    |         1 |
-| Drug    | Low    |         1 |
-| Control | Normal |         2 |
-| Drug    | Normal |         2 |
-| Control | Low    |         2 |
-| Drug    | Low    |         2 |
-| Control | Normal |         3 |
-| Drug    | Normal |         3 |
-| Control | Low    |         3 |
-| Drug    | Low    |         3 |
-
-</div>
-
-``` r
-table(
-  factorial_design$drug,
-  factorial_design$oxygen
+print_html_table(
+  factorial_design,
+  caption = "Two-factor drug-by-oxygen experimental design."
 )
 ```
 
-    ##          
-    ##           Low Normal
-    ##   Control   3      3
-    ##   Drug      3      3
+<table class="chapter-table">
+
+<caption>
+
+Two-factor drug-by-oxygen experimental design.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+drug
+</th>
+
+<th style="text-align:left;">
+
+oxygen
+</th>
+
+<th style="text-align:right;">
+
+replicate
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Normal
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+<td style="text-align:left;">
+
+Normal
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Low
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+<td style="text-align:left;">
+
+Low
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Normal
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+<td style="text-align:left;">
+
+Normal
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Low
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+<td style="text-align:left;">
+
+Low
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Normal
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+<td style="text-align:left;">
+
+Normal
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Low
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+<td style="text-align:left;">
+
+Low
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+``` r
+print_html_table(
+  table(
+    Drug = factorial_design$drug,
+    Oxygen = factorial_design$oxygen
+  ),
+  caption = "Replicate counts for each factorial combination."
+)
+```
+
+<table class="chapter-table">
+
+<caption>
+
+Replicate counts for each factorial combination.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Drug
+</th>
+
+<th style="text-align:right;">
+
+Low
+</th>
+
+<th style="text-align:right;">
+
+Normal
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Drug
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Factorial designs can be more efficient than conducting separate
 experiments, but interactions and experimental units must be planned
@@ -1155,7 +2151,7 @@ carefully.
 
 ------------------------------------------------------------------------
 
-# 22. Cross-Over Designs
+# 21. Cross-Over Designs
 
 In a **cross-over design**, each participant receives more than one
 treatment during different periods.
@@ -1168,7 +2164,7 @@ Example sequence:
 Each participant can serve as their own control, reducing between-person
 variability.
 
-## 22.1 Requirements and limitations
+## 21.1 Requirements and limitations
 
 Cross-over designs are most suitable when:
 
@@ -1184,7 +2180,7 @@ Analysis must account for repeated measurements, period and sequence.
 
 ------------------------------------------------------------------------
 
-# 23. Repeated-Measures and Longitudinal Designs
+# 22. Repeated-Measures and Longitudinal Designs
 
 A **repeated-measures design** records the same unit more than once. A
 **longitudinal study** follows units over time.
@@ -1198,7 +2194,7 @@ Examples include:
 
 Measurements from the same individual are correlated.
 
-## 23.1 Simulated longitudinal profiles
+## 22.1 Simulated longitudinal profiles
 
 ``` r
 longitudinal_data <- data.frame(
@@ -1218,23 +2214,244 @@ longitudinal_data <- data.frame(
   )
 )
 
-head(longitudinal_data, 8)
+print_html_table(
+  head(longitudinal_data, 8),
+  caption = "First eight observations in the longitudinal dataset."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| patient_id | treatment | week | biomarker |
-|:-----------|:----------|-----:|----------:|
-| P1         | Control   |    0 |       8.1 |
-| P1         | Control   |    4 |       8.0 |
-| P1         | Control   |    8 |       8.2 |
-| P1         | Control   |   12 |       8.1 |
-| P2         | Control   |    0 |       7.8 |
-| P2         | Control   |    4 |       7.9 |
-| P2         | Control   |    8 |       7.7 |
-| P2         | Control   |   12 |       7.8 |
+<caption>
 
-</div>
+First eight observations in the longitudinal dataset.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+week
+</th>
+
+<th style="text-align:right;">
+
+biomarker
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P1
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+8.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P1
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+8.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P1
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P1
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+8.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P2
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+7.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P2
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+7.9
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P2
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+7.7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P2
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+7.8
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 plot(
@@ -1290,7 +2507,7 @@ models.
 
 ------------------------------------------------------------------------
 
-# 24. Before-and-After Designs
+# 23. Before-and-After Designs
 
 A simple before-and-after design measures outcomes before and after an
 intervention in the same units.
@@ -1313,7 +2530,7 @@ A change after treatment is not necessarily caused by treatment.
 
 ------------------------------------------------------------------------
 
-# 25. Clinical Trial Design Concepts
+# 24. Clinical Trial Design Concepts
 
 Clinical trials require ethical oversight, prospective protocols and
 detailed operational procedures.
@@ -1334,18 +2551,18 @@ Important concepts include:
 - analysis population; and
 - trial registration.
 
-## 25.1 Primary outcome
+## 24.1 Primary outcome
 
 The primary outcome should be specified before data examination because
 it guides sample-size planning and the main conclusion.
 
-## 25.2 Surrogate outcomes
+## 24.2 Surrogate outcomes
 
 A biomarker may respond quickly but may not reliably represent the
 clinical outcome that matters to patients. Surrogate validity must be
 justified.
 
-## 25.3 Multiple outcomes
+## 24.3 Multiple outcomes
 
 Measuring many outcomes increases the opportunity for selective emphasis
 and false-positive results. Outcome hierarchy and multiplicity handling
@@ -1353,7 +2570,7 @@ should be planned.
 
 ------------------------------------------------------------------------
 
-# 26. Bias
+# 25. Bias
 
 **Bias** is a systematic process that can move an estimate away from the
 target truth.
@@ -1362,7 +2579,7 @@ Random error produces variability. Bias produces systematic distortion.
 
 Three broad categories are introduced here.
 
-## 26.1 Selection bias
+## 25.1 Selection bias
 
 Selection bias occurs when inclusion, participation, follow-up or
 analysis depends on factors related to the exposure and outcome.
@@ -1375,7 +2592,7 @@ Examples:
 - omics samples selected because high-quality material was more
   available in one group.
 
-## 26.2 Information bias
+## 25.2 Information bias
 
 Information bias arises from systematic measurement or classification
 errors.
@@ -1387,7 +2604,7 @@ Examples:
 - one group measured with a different instrument; or
 - genotype calling quality differing by phenotype group.
 
-## 26.3 Confounding
+## 25.3 Confounding
 
 Confounding occurs when the exposure–outcome relationship is mixed with
 the effect of another factor.
@@ -1403,7 +2620,7 @@ each with assumptions and trade-offs.
 
 ------------------------------------------------------------------------
 
-# 27. Matching
+# 26. Matching
 
 **Matching** selects comparison observations with similar values of
 specified variables.
@@ -1418,7 +2635,7 @@ Examples include matching cases and controls on:
 Matching can improve comparability or efficiency, but it creates design
 constraints that must be reflected in the analysis.
 
-## 27.1 Risks of matching
+## 26.1 Risks of matching
 
 - matching on variables unrelated to confounding can reduce efficiency;
 - matching on consequences of exposure can introduce bias;
@@ -1430,9 +2647,9 @@ Matching is not a substitute for careful causal reasoning.
 
 ------------------------------------------------------------------------
 
-# 28. Restriction and Stratification
+# 27. Restriction and Stratification
 
-## 28.1 Restriction
+## 27.1 Restriction
 
 Restriction limits eligibility to one level or range of a variable.
 
@@ -1444,7 +2661,7 @@ Example:
 Restriction may reduce confounding but narrows generalizability and
 prevents evaluation of the restricted factor.
 
-## 28.2 Stratification
+## 27.2 Stratification
 
 Stratification examines results within levels of a variable.
 
@@ -1458,7 +2675,7 @@ many strata can produce sparse data.
 
 ------------------------------------------------------------------------
 
-# 29. Population-Based Genetic Association Studies
+# 28. Population-Based Genetic Association Studies
 
 Population-based studies compare genotypes or allele dosages across
 unrelated or approximately unrelated individuals.
@@ -1470,7 +2687,7 @@ Common designs include:
 - population cohort studies; and
 - biobank analyses.
 
-## 29.1 Major design considerations
+## 28.1 Major design considerations
 
 - phenotype definition;
 - ancestry and population structure;
@@ -1482,7 +2699,7 @@ Common designs include:
 - sample overlap; and
 - replication in independent data.
 
-## 29.2 Population stratification
+## 28.2 Population stratification
 
 Allele frequencies and disease risks may differ across ancestry-related
 population structure. If structure is associated with both genotype and
@@ -1501,7 +2718,7 @@ contexts but are not interchangeable variables.
 
 ------------------------------------------------------------------------
 
-# 30. Family-Based Genetic Designs
+# 29. Family-Based Genetic Designs
 
 Family-based designs include:
 
@@ -1511,14 +2728,14 @@ Family-based designs include:
 - twins; and
 - extended families.
 
-## 30.1 Advantages
+## 29.1 Advantages
 
 - useful for studying transmission;
 - can be robust to some forms of population stratification;
 - allow study of relatedness and inheritance; and
 - support rare-disease and linkage analyses.
 
-## 30.2 Limitations
+## 29.2 Limitations
 
 - families may be difficult to recruit;
 - observations are correlated;
@@ -1526,7 +2743,7 @@ Family-based designs include:
 - analyses require specialized methods; and
 - results may not generalize beyond ascertained families.
 
-## 30.3 Trio example
+## 29.3 Trio example
 
 A trio contains an affected child and two biological parents.
 Transmission-based tests compare transmitted and non-transmitted alleles
@@ -1537,7 +2754,7 @@ dataset.
 
 ------------------------------------------------------------------------
 
-# 31. Omics Study Design
+# 30. Omics Study Design
 
 High-dimensional omics studies measure many features simultaneously.
 
@@ -1550,7 +2767,7 @@ Examples include:
 - metabolomics; and
 - single-cell measurements.
 
-## 31.1 Design questions before generating data
+## 30.1 Design questions before generating data
 
 - What is the biological unit?
 - How many independent biological replicates are available?
@@ -1563,12 +2780,12 @@ Examples include:
   another scale?
 - How will multiple testing be addressed?
 
-## 31.2 Avoid sample–batch confounding
+## 30.2 Avoid sample–batch confounding
 
 Every biological group should overlap with every major technical batch
 whenever practical.
 
-## 31.3 Record metadata
+## 30.3 Record metadata
 
 Useful metadata include:
 
@@ -1588,7 +2805,7 @@ Unrecorded technical factors cannot be adjusted later.
 
 ------------------------------------------------------------------------
 
-# 32. RNA-Seq Design Example
+# 31. RNA-Seq Design Example
 
 Suppose the aim is to compare gene expression between disease cases and
 controls.
@@ -1618,7 +2835,7 @@ groups across batches.
 
 ------------------------------------------------------------------------
 
-# 33. Single-Cell Study Design
+# 32. Single-Cell Study Design
 
 Single-cell data contain many cells, but the donor or biological
 specimen often remains the main independent biological unit.
@@ -1643,7 +2860,7 @@ coexist with a small biological sample size.
 
 ------------------------------------------------------------------------
 
-# 34. Sample Size and Power Begin at the Design Stage
+# 33. Sample Size and Power Begin at the Design Stage
 
 Formal calculations will be covered later, but study planning should
 identify:
@@ -1660,7 +2877,7 @@ identify:
 - multiple testing; and
 - practical constraints.
 
-## 34.1 More samples are not always the only solution
+## 33.1 More samples are not always the only solution
 
 Precision can also improve through:
 
@@ -1676,7 +2893,7 @@ replicates that were never collected.
 
 ------------------------------------------------------------------------
 
-# 35. Generalizability and External Validity
+# 34. Generalizability and External Validity
 
 **Internal validity** concerns whether the study estimates the intended
 relationship correctly within the studied sample.
@@ -1702,7 +2919,7 @@ Generalization should not exceed the population supported by the design.
 
 ------------------------------------------------------------------------
 
-# 36. Preregistration, Protocols and Analysis Plans
+# 35. Preregistration, Protocols and Analysis Plans
 
 A prospective protocol reduces decisions made after seeing the results.
 
@@ -1728,25 +2945,25 @@ analyses should be labelled honestly as exploratory.
 
 ------------------------------------------------------------------------
 
-# 37. Integrated Case Study: Design an RNA-Seq Drug-Response Experiment
+# 36. Integrated Case Study: Design an RNA-Seq Drug-Response Experiment
 
-## 37.1 Biological question
+## 36.1 Biological question
 
 > Does Drug A change gene expression in independently grown human cell
 > cultures after 24 hours compared with vehicle control?
 
-## 37.2 Study objective
+## 36.2 Study objective
 
 Estimate the effect of Drug A on gene-expression counts while separating
 treatment from cell-line and library-preparation variation.
 
-## 37.3 Experimental units
+## 36.3 Experimental units
 
 Independently grown cultures are the experimental units. Multiple wells
 or sequencing reads from one culture are not independent biological
 treatment replicates.
 
-## 37.4 Proposed factors
+## 36.4 Proposed factors
 
 - two cell lines;
 - two treatments: vehicle and Drug A;
@@ -1754,7 +2971,7 @@ treatment replicates.
 - two library-preparation batches; and
 - one sequencing library per biological culture.
 
-## 37.5 Create the design in R
+## 36.5 Create the design in R
 
 ``` r
 rna_design <- expand.grid(
@@ -1779,33 +2996,438 @@ rna_design <- rna_design[
 ]
 
 rownames(rna_design) <- NULL
-rna_design
+print_html_table(
+  rna_design,
+  caption = "Planned RNA-seq drug-response design."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| cell_line | treatment | biological_replicate | culture_id |
-|:----------|:----------|---------------------:|:-----------|
-| Line_A    | Drug_A    |                    1 | C03        |
-| Line_A    | Vehicle   |                    1 | C01        |
-| Line_A    | Drug_A    |                    2 | C07        |
-| Line_A    | Vehicle   |                    2 | C05        |
-| Line_A    | Drug_A    |                    3 | C11        |
-| Line_A    | Vehicle   |                    3 | C09        |
-| Line_A    | Drug_A    |                    4 | C15        |
-| Line_A    | Vehicle   |                    4 | C13        |
-| Line_B    | Drug_A    |                    1 | C04        |
-| Line_B    | Vehicle   |                    1 | C02        |
-| Line_B    | Drug_A    |                    2 | C08        |
-| Line_B    | Vehicle   |                    2 | C06        |
-| Line_B    | Drug_A    |                    3 | C12        |
-| Line_B    | Vehicle   |                    3 | C10        |
-| Line_B    | Drug_A    |                    4 | C16        |
-| Line_B    | Vehicle   |                    4 | C14        |
+<caption>
 
-</div>
+Planned RNA-seq drug-response design.
+</caption>
 
-## 37.6 Balance library batches
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+cell line
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+biological replicate
+</th>
+
+<th style="text-align:left;">
+
+culture id
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:left;">
+
+C03
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:left;">
+
+C01
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:left;">
+
+C07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:left;">
+
+C05
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:left;">
+
+C11
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:left;">
+
+C09
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:left;">
+
+C15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:left;">
+
+C13
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:left;">
+
+C04
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:left;">
+
+C02
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:left;">
+
+C08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:left;">
+
+C06
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:left;">
+
+C12
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:left;">
+
+C10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:left;">
+
+C16
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:left;">
+
+C14
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 36.6 Balance library batches
 
 Within each cell line and treatment, two cultures are assigned to each
 library batch.
@@ -1818,28 +3440,250 @@ rna_design$library_batch <- ave(
   FUN = function(x) sample(rep(c("Batch_1", "Batch_2"), each = 2))
 )
 
-table(
-  rna_design$cell_line,
-  rna_design$treatment,
-  rna_design$library_batch
+print_html_table(
+  table(
+    Cell_line = rna_design$cell_line,
+    Treatment = rna_design$treatment,
+    Library_batch = rna_design$library_batch
+  ),
+  caption = "Cell-line and treatment balance across library batches."
 )
 ```
 
-    ## , ,  = Batch_1
-    ## 
-    ##         
-    ##          Drug_A Vehicle
-    ##   Line_A      2       2
-    ##   Line_B      2       2
-    ## 
-    ## , ,  = Batch_2
-    ## 
-    ##         
-    ##          Drug_A Vehicle
-    ##   Line_A      2       2
-    ##   Line_B      2       2
+<table class="chapter-table">
 
-## 37.7 Randomize processing order
+<caption>
+
+Cell-line and treatment balance across library batches.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Cell line
+</th>
+
+<th style="text-align:left;">
+
+Treatment
+</th>
+
+<th style="text-align:left;">
+
+Library batch
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 36.7 Randomize processing order
 
 ``` r
 rna_design$processing_order <- sample(
@@ -1851,33 +3695,608 @@ rna_design <- rna_design[
 ]
 
 rownames(rna_design) <- NULL
-rna_design
+print_html_table(
+  rna_design,
+  caption = "RNA-seq samples in randomized processing order."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| cell_line | treatment | biological_replicate | culture_id | library_batch | processing_order |
-|:---|:---|---:|:---|:---|---:|
-| Line_B | Vehicle | 2 | C06 | Batch_2 | 1 |
-| Line_B | Drug_A | 3 | C12 | Batch_2 | 2 |
-| Line_B | Vehicle | 1 | C02 | Batch_1 | 3 |
-| Line_B | Vehicle | 4 | C14 | Batch_2 | 4 |
-| Line_A | Drug_A | 4 | C15 | Batch_2 | 5 |
-| Line_B | Drug_A | 2 | C08 | Batch_1 | 6 |
-| Line_A | Vehicle | 1 | C01 | Batch_1 | 7 |
-| Line_B | Vehicle | 3 | C10 | Batch_1 | 8 |
-| Line_A | Drug_A | 2 | C07 | Batch_1 | 9 |
-| Line_A | Drug_A | 3 | C11 | Batch_1 | 10 |
-| Line_A | Vehicle | 4 | C13 | Batch_2 | 11 |
-| Line_B | Drug_A | 1 | C04 | Batch_1 | 12 |
-| Line_A | Drug_A | 1 | C03 | Batch_2 | 13 |
-| Line_A | Vehicle | 2 | C05 | Batch_1 | 14 |
-| Line_A | Vehicle | 3 | C09 | Batch_2 | 15 |
-| Line_B | Drug_A | 4 | C16 | Batch_2 | 16 |
+<caption>
 
-</div>
+RNA-seq samples in randomized processing order.
+</caption>
 
-## 37.8 Design diagram
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+cell line
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+biological replicate
+</th>
+
+<th style="text-align:left;">
+
+culture id
+</th>
+
+<th style="text-align:left;">
+
+library batch
+</th>
+
+<th style="text-align:right;">
+
+processing order
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:left;">
+
+C06
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:left;">
+
+C12
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:left;">
+
+C02
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:left;">
+
+C14
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:left;">
+
+C15
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:left;">
+
+C08
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:left;">
+
+C01
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:left;">
+
+C10
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:left;">
+
+C07
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:left;">
+
+C11
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:left;">
+
+C13
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:left;">
+
+C04
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:left;">
+
+C03
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+13
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:left;">
+
+C05
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+14
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_A
+</td>
+
+<td style="text-align:left;">
+
+Vehicle
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:left;">
+
+C09
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Line_B
+</td>
+
+<td style="text-align:left;">
+
+Drug_A
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:left;">
+
+C16
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+16
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 36.8 Design diagram
 
 ``` r
 design_counts <- table(
@@ -1913,7 +4332,7 @@ library-preparation batches in the planned RNA-seq experiment.
 
 </div>
 
-## 37.9 Prespecified metadata
+## 36.9 Prespecified metadata
 
 The final metadata table should include:
 
@@ -1930,7 +4349,7 @@ The final metadata table should include:
 - processing order; and
 - sample-level QC status.
 
-## 37.10 Primary analysis concept
+## 36.10 Primary analysis concept
 
 The later differential-expression model would commonly include treatment
 and cell line, and may include library batch when appropriate. Raw read
@@ -1941,7 +4360,7 @@ technical and ethical justification.
 
 ------------------------------------------------------------------------
 
-# 38. Study Design Checklist
+# 37. Study Design Checklist
 
 Before collecting data, answer the following.
 
@@ -1994,7 +4413,7 @@ Before collecting data, answer the following.
 
 ------------------------------------------------------------------------
 
-# 39. Common Beginner Mistakes
+# 38. Common Beginner Mistakes
 
 ## Mistake 1: Choosing a test before defining the design
 
@@ -2050,7 +4469,7 @@ Large biased studies can produce precise but wrong conclusions.
 
 ------------------------------------------------------------------------
 
-# 40. Chapter Summary
+# 39. Chapter Summary
 
 In this chapter, you learned that:
 
@@ -2079,7 +4498,7 @@ In this chapter, you learned that:
 
 ------------------------------------------------------------------------
 
-# 41. Check Your Understanding
+# 40. Check Your Understanding
 
 ## Question 1
 
@@ -2128,7 +4547,7 @@ Name three design issues that can create false genetic associations.
 
 ------------------------------------------------------------------------
 
-# 42. Practice with R
+# 41. Practice with R
 
 ## Exercise 1: Create a simple randomization schedule
 
@@ -2192,7 +4611,7 @@ Classify each scenario:
 
 ------------------------------------------------------------------------
 
-# 43. Mini-Project: Design a Biological Study Before Collecting Data
+# 42. Mini-Project: Design a Biological Study Before Collecting Data
 
 Choose one question:
 
@@ -2230,7 +4649,7 @@ analysis begins with design.
 
 ------------------------------------------------------------------------
 
-# 44. Glossary
+# 43. Glossary
 
 | Term | Beginner-friendly meaning |
 |----|----|
@@ -2264,7 +4683,7 @@ analysis begins with design.
 
 ------------------------------------------------------------------------
 
-# 45. References and Further Reading
+# 44. References and Further Reading
 
 1.  Fisher RA. *The Design of Experiments*. Edinburgh: Oliver and Boyd;
     1935.
@@ -2318,7 +4737,7 @@ analysis begins with design.
 
 ------------------------------------------------------------------------
 
-# 46. Reproducibility Information
+# 45. Reproducibility Information
 
 All allocations, datasets and study scenarios in this chapter are
 hypothetical and intended for teaching. Real studies require
