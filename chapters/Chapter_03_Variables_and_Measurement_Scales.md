@@ -8,7 +8,6 @@ output:
     toc_depth: 3
     fig_width: 8
     fig_height: 5
-    df_print: kable
     preserve_yaml: true
 ---
 
@@ -17,117 +16,116 @@ Chapter 3: Variables and Measurement Scales
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. What Is a Variable?](#3-what-is-a-variable)
-  - [3.1 Variable versus value](#31-variable-versus-value)
-  - [3.2 A constant is not varying in the observed
-    data](#32-a-constant-is-not-varying-in-the-observed-data)
-- [4. The Two Broad Families of
-  Variables](#4-the-two-broad-families-of-variables)
-- [5. Categorical Variables](#5-categorical-variables)
-  - [5.1 Numerical codes can still represent
-    categories](#51-numerical-codes-can-still-represent-categories)
-- [6. Nominal Variables](#6-nominal-variables)
-  - [6.1 Binary nominal variables](#61-binary-nominal-variables)
-  - [6.2 Representing nominal variables in
-    R](#62-representing-nominal-variables-in-r)
-- [7. Ordinal Variables](#7-ordinal-variables)
-  - [7.1 Creating an ordered factor in
-    R](#71-creating-an-ordered-factor-in-r)
-  - [7.2 Why coding order matters](#72-why-coding-order-matters)
-- [8. Quantitative Variables](#8-quantitative-variables)
-- [9. Discrete Variables](#9-discrete-variables)
-  - [9.1 Count variables have special statistical
-    behaviour](#91-count-variables-have-special-statistical-behaviour)
-  - [9.2 A count vector in R](#92-a-count-vector-in-r)
-- [10. Continuous Variables](#10-continuous-variables)
-  - [10.1 Measurement precision](#101-measurement-precision)
-  - [10.2 A continuous vector in R](#102-a-continuous-vector-in-r)
-- [11. Discrete Versus Continuous: A Visual
-  Comparison](#11-discrete-versus-continuous-a-visual-comparison)
-- [12. Levels of Measurement](#12-levels-of-measurement)
-- [13. Nominal Scale](#13-nominal-scale)
-- [14. Ordinal Scale](#14-ordinal-scale)
-- [15. Interval Scale](#15-interval-scale)
-- [16. Ratio Scale](#16-ratio-scale)
-- [17. Variable Type and Measurement Scale Are Related but
-  Different](#17-variable-type-and-measurement-scale-are-related-but-different)
-- [18. Identifiers Are Labels, Not
-  Measurements](#18-identifiers-are-labels-not-measurements)
-- [19. Special Outcome Types in
-  Biostatistics](#19-special-outcome-types-in-biostatistics)
-  - [19.1 Continuous outcome](#191-continuous-outcome)
-  - [19.2 Binary outcome](#192-binary-outcome)
-  - [19.3 Multicategory nominal
-    outcome](#193-multicategory-nominal-outcome)
-  - [19.4 Ordinal outcome](#194-ordinal-outcome)
-  - [19.5 Count outcome](#195-count-outcome)
-  - [19.6 Time-to-event outcome](#196-time-to-event-outcome)
-- [20. A Variable’s Role in a Study](#20-a-variables-role-in-a-study)
-  - [20.1 Outcome](#201-outcome)
-  - [20.2 Predictor](#202-predictor)
-  - [20.3 Exposure](#203-exposure)
-  - [20.4 Covariate](#204-covariate)
-  - [20.5 Example](#205-example)
-- [21. Confounders and Effect
-  Modifiers](#21-confounders-and-effect-modifiers)
-  - [21.1 Confounder](#211-confounder)
-  - [21.2 Effect modifier](#212-effect-modifier)
-- [22. Statistical Meaning Versus R Storage
-  Type](#22-statistical-meaning-versus-r-storage-type)
-  - [22.1 Correcting representation in
-    R](#221-correcting-representation-in-r)
-- [23. Genetic Variables](#23-genetic-variables)
-  - [23.1 Genotype as a nominal
-    category](#231-genotype-as-a-nominal-category)
-  - [23.2 Genotype as allele dosage](#232-genotype-as-allele-dosage)
-  - [23.3 Imputed dosage](#233-imputed-dosage)
-  - [23.4 Other genetic variables](#234-other-genetic-variables)
-- [24. Bioinformatics and Omics
-  Variables](#24-bioinformatics-and-omics-variables)
-  - [24.1 Raw RNA-seq counts](#241-raw-rna-seq-counts)
-  - [24.2 Normalized expression](#242-normalized-expression)
-  - [24.3 Variant annotations](#243-variant-annotations)
-  - [24.4 Quality-control variables](#244-quality-control-variables)
-- [25. Proportions, Percentages and
-  Rates](#25-proportions-percentages-and-rates)
-  - [25.1 Proportion](#251-proportion)
-  - [25.2 Percentage](#252-percentage)
-  - [25.3 Rate](#253-rate)
-- [26. Dates, Time and Repeated
-  Measurements](#26-dates-time-and-repeated-measurements)
-  - [26.1 Repeated measurements](#261-repeated-measurements)
-- [27. Choosing Summaries Based on Variable
-  Type](#27-choosing-summaries-based-on-variable-type)
-  - [27.1 One dataset, different
-    summaries](#271-one-dataset-different-summaries)
-- [28. Choosing Figures Based on Variable
-  Type](#28-choosing-figures-based-on-variable-type)
-- [29. Units and Transformations](#29-units-and-transformations)
-  - [29.1 Store units in metadata, not inside every numeric
-    cell](#291-store-units-in-metadata-not-inside-every-numeric-cell)
-  - [29.2 Transformations change
-    scale](#292-transformations-change-scale)
-- [30. Missing Values and Special
-  Codes](#30-missing-values-and-special-codes)
-  - [30.1 Missingness should not become a category
-    accidentally](#301-missingness-should-not-become-a-category-accidentally)
-- [31. Build a Data Dictionary Before
-  Analysis](#31-build-a-data-dictionary-before-analysis)
-- [32. Integrated Case Study: A Small Pharmacogenomic
-  Dataset](#32-integrated-case-study-a-small-pharmacogenomic-dataset)
-  - [32.1 Inspect the imported-style
-    structure](#321-inspect-the-imported-style-structure)
-  - [32.2 Correct the R
-    representations](#322-correct-the-r-representations)
-  - [32.3 Derive G-allele dosage](#323-derive-g-allele-dosage)
-  - [32.4 Summarize variables
-    appropriately](#324-summarize-variables-appropriately)
-  - [32.5 Visualize genotype and
-    biomarker](#325-visualize-genotype-and-biomarker)
-  - [32.6 Identify variable roles for one
-    question](#326-identify-variable-roles-for-one-question)
-- [33. Common Beginner Mistakes](#33-common-beginner-mistakes)
+- [2. What Is a Variable?](#2-what-is-a-variable)
+  - [2.1 Variable versus value](#21-variable-versus-value)
+  - [2.2 A constant is not varying in the observed
+    data](#22-a-constant-is-not-varying-in-the-observed-data)
+- [3. The Two Broad Families of
+  Variables](#3-the-two-broad-families-of-variables)
+- [4. Categorical Variables](#4-categorical-variables)
+  - [4.1 Numerical codes can still represent
+    categories](#41-numerical-codes-can-still-represent-categories)
+- [5. Nominal Variables](#5-nominal-variables)
+  - [5.1 Binary nominal variables](#51-binary-nominal-variables)
+  - [5.2 Representing nominal variables in
+    R](#52-representing-nominal-variables-in-r)
+- [6. Ordinal Variables](#6-ordinal-variables)
+  - [6.1 Creating an ordered factor in
+    R](#61-creating-an-ordered-factor-in-r)
+  - [6.2 Why coding order matters](#62-why-coding-order-matters)
+- [7. Quantitative Variables](#7-quantitative-variables)
+- [8. Discrete Variables](#8-discrete-variables)
+  - [8.1 Count variables have special statistical
+    behaviour](#81-count-variables-have-special-statistical-behaviour)
+  - [8.2 A count vector in R](#82-a-count-vector-in-r)
+- [9. Continuous Variables](#9-continuous-variables)
+  - [9.1 Measurement precision](#91-measurement-precision)
+  - [9.2 A continuous vector in R](#92-a-continuous-vector-in-r)
+- [10. Discrete Versus Continuous: A Visual
+  Comparison](#10-discrete-versus-continuous-a-visual-comparison)
+- [11. Levels of Measurement](#11-levels-of-measurement)
+- [12. Nominal Scale](#12-nominal-scale)
+- [13. Ordinal Scale](#13-ordinal-scale)
+- [14. Interval Scale](#14-interval-scale)
+- [15. Ratio Scale](#15-ratio-scale)
+- [16. Variable Type and Measurement Scale Are Related but
+  Different](#16-variable-type-and-measurement-scale-are-related-but-different)
+- [17. Identifiers Are Labels, Not
+  Measurements](#17-identifiers-are-labels-not-measurements)
+- [18. Special Outcome Types in
+  Biostatistics](#18-special-outcome-types-in-biostatistics)
+  - [18.1 Continuous outcome](#181-continuous-outcome)
+  - [18.2 Binary outcome](#182-binary-outcome)
+  - [18.3 Multicategory nominal
+    outcome](#183-multicategory-nominal-outcome)
+  - [18.4 Ordinal outcome](#184-ordinal-outcome)
+  - [18.5 Count outcome](#185-count-outcome)
+  - [18.6 Time-to-event outcome](#186-time-to-event-outcome)
+- [19. A Variable’s Role in a Study](#19-a-variables-role-in-a-study)
+  - [19.1 Outcome](#191-outcome)
+  - [19.2 Predictor](#192-predictor)
+  - [19.3 Exposure](#193-exposure)
+  - [19.4 Covariate](#194-covariate)
+  - [19.5 Example](#195-example)
+- [20. Confounders and Effect
+  Modifiers](#20-confounders-and-effect-modifiers)
+  - [20.1 Confounder](#201-confounder)
+  - [20.2 Effect modifier](#202-effect-modifier)
+- [21. Statistical Meaning Versus R Storage
+  Type](#21-statistical-meaning-versus-r-storage-type)
+  - [21.1 Correcting representation in
+    R](#211-correcting-representation-in-r)
+- [22. Genetic Variables](#22-genetic-variables)
+  - [22.1 Genotype as a nominal
+    category](#221-genotype-as-a-nominal-category)
+  - [22.2 Genotype as allele dosage](#222-genotype-as-allele-dosage)
+  - [22.3 Imputed dosage](#223-imputed-dosage)
+  - [22.4 Other genetic variables](#224-other-genetic-variables)
+- [23. Bioinformatics and Omics
+  Variables](#23-bioinformatics-and-omics-variables)
+  - [23.1 Raw RNA-seq counts](#231-raw-rna-seq-counts)
+  - [23.2 Normalized expression](#232-normalized-expression)
+  - [23.3 Variant annotations](#233-variant-annotations)
+  - [23.4 Quality-control variables](#234-quality-control-variables)
+- [24. Proportions, Percentages and
+  Rates](#24-proportions-percentages-and-rates)
+  - [24.1 Proportion](#241-proportion)
+  - [24.2 Percentage](#242-percentage)
+  - [24.3 Rate](#243-rate)
+- [25. Dates, Time and Repeated
+  Measurements](#25-dates-time-and-repeated-measurements)
+  - [25.1 Repeated measurements](#251-repeated-measurements)
+- [26. Choosing Summaries Based on Variable
+  Type](#26-choosing-summaries-based-on-variable-type)
+  - [26.1 One dataset, different
+    summaries](#261-one-dataset-different-summaries)
+- [27. Choosing Figures Based on Variable
+  Type](#27-choosing-figures-based-on-variable-type)
+- [28. Units and Transformations](#28-units-and-transformations)
+  - [28.1 Store units in metadata, not inside every numeric
+    cell](#281-store-units-in-metadata-not-inside-every-numeric-cell)
+  - [28.2 Transformations change
+    scale](#282-transformations-change-scale)
+- [29. Missing Values and Special
+  Codes](#29-missing-values-and-special-codes)
+  - [29.1 Missingness should not become a category
+    accidentally](#291-missingness-should-not-become-a-category-accidentally)
+- [30. Build a Data Dictionary Before
+  Analysis](#30-build-a-data-dictionary-before-analysis)
+- [31. Integrated Case Study: A Small Pharmacogenomic
+  Dataset](#31-integrated-case-study-a-small-pharmacogenomic-dataset)
+  - [31.1 Inspect the imported-style
+    structure](#311-inspect-the-imported-style-structure)
+  - [31.2 Correct the R
+    representations](#312-correct-the-r-representations)
+  - [31.3 Derive G-allele dosage](#313-derive-g-allele-dosage)
+  - [31.4 Summarize variables
+    appropriately](#314-summarize-variables-appropriately)
+  - [31.5 Visualize genotype and
+    biomarker](#315-visualize-genotype-and-biomarker)
+  - [31.6 Identify variable roles for one
+    question](#316-identify-variable-roles-for-one-question)
+- [32. Common Beginner Mistakes](#32-common-beginner-mistakes)
   - [Mistake 1: Treating every number as
     quantitative](#mistake-1-treating-every-number-as-quantitative)
   - [Mistake 2: Treating ordered categories as equally
@@ -148,8 +146,8 @@ Sandeep Singh
   - [Mistake 10: Selecting a statistical test before identifying the
     outcome
     type](#mistake-10-selecting-a-statistical-test-before-identifying-the-outcome-type)
-- [34. Chapter Summary](#34-chapter-summary)
-- [35. Check Your Understanding](#35-check-your-understanding)
+- [33. Chapter Summary](#33-chapter-summary)
+- [34. Check Your Understanding](#34-check-your-understanding)
   - [Question 1](#question-1)
   - [Question 2](#question-2)
   - [Question 3](#question-3)
@@ -159,7 +157,7 @@ Sandeep Singh
   - [Question 7](#question-7)
   - [Question 8](#question-8)
   - [Question 9](#question-9)
-- [36. Practice with R](#36-practice-with-r)
+- [35. Practice with R](#35-practice-with-r)
   - [Exercise 1: Correct variable
     representations](#exercise-1-correct-variable-representations)
   - [Exercise 2: Classify genetic
@@ -170,12 +168,54 @@ Sandeep Singh
     roles](#exercise-4-identify-variable-roles)
   - [Exercise 5: Interpret coding
     decisions](#exercise-5-interpret-coding-decisions)
-- [37. Mini-Project: Create a Biological Data
-  Dictionary](#37-mini-project-create-a-biological-data-dictionary)
-- [38. Glossary](#38-glossary)
-- [39. References and Further
-  Reading](#39-references-and-further-reading)
-- [40. Reproducibility Information](#40-reproducibility-information)
+- [36. Mini-Project: Create a Biological Data
+  Dictionary](#36-mini-project-create-a-biological-data-dictionary)
+- [37. Glossary](#37-glossary)
+- [38. References and Further
+  Reading](#38-references-and-further-reading)
+- [39. Reproducibility Information](#39-reproducibility-information)
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
 
 # 1. Introduction
 
@@ -207,28 +247,7 @@ decisions.
 
 ------------------------------------------------------------------------
 
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  explain what a statistical variable represents;
-2.  distinguish categorical and quantitative variables;
-3.  distinguish nominal and ordinal variables;
-4.  distinguish discrete and continuous variables;
-5.  explain nominal, ordinal, interval and ratio measurement scales;
-6.  identify binary, count and time-to-event outcomes;
-7.  distinguish outcome, predictor, exposure and covariate roles;
-8.  explain confounding and effect modification at an introductory
-    level;
-9.  classify common genetic, genomic and bioinformatics variables;
-10. distinguish statistical meaning from R storage type;
-11. code categorical and ordered variables correctly in R;
-12. select suitable summaries and figures based on variable type; and
-13. create a data dictionary for a biological dataset.
-
-------------------------------------------------------------------------
-
-# 3. What Is a Variable?
+# 2. What Is a Variable?
 
 A **variable** is a characteristic that can differ across observations
 or measurement occasions.
@@ -242,7 +261,7 @@ Examples include:
 - colony count differing among culture plates; and
 - blood pressure changing across follow-up visits.
 
-## 3.1 Variable versus value
+## 2.1 Variable versus value
 
 Consider three biological samples:
 
@@ -255,13 +274,124 @@ sample_data <- data.frame(
   stringsAsFactors = FALSE
 )
 
-print(sample_data)
+print_html_table(
+  sample_data,
+  caption = "Example biological sample data."
+)
 ```
 
-    ##   sample_id tissue expression qc_pass
-    ## 1       S01  Blood        8.2    TRUE
-    ## 2       S02  Liver       10.5    TRUE
-    ## 3       S03  Blood        7.9   FALSE
+<table class="chapter-table">
+
+<caption>
+
+Example biological sample data.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:right;">
+
+10.5
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S03
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+7.9
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 In this dataset:
 
@@ -270,7 +400,7 @@ In this dataset:
 - `expression` is a variable; and
 - `8.2` is one observed expression value.
 
-## 3.2 A constant is not varying in the observed data
+## 2.2 A constant is not varying in the observed data
 
 If every sample was sequenced using the same instrument, the instrument
 does not vary within that dataset. It may still be important metadata,
@@ -281,7 +411,7 @@ and study design.
 
 ------------------------------------------------------------------------
 
-# 4. The Two Broad Families of Variables
+# 3. The Two Broad Families of Variables
 
 Variables are commonly divided into two broad families:
 
@@ -357,7 +487,7 @@ a category or encoded as allele dosage for a specific genetic model.
 
 ------------------------------------------------------------------------
 
-# 5. Categorical Variables
+# 4. Categorical Variables
 
 A **categorical variable** places observations into groups or
 categories.
@@ -375,7 +505,7 @@ Examples include:
 Categorical values may be written as text or numerical codes. The codes
 do not automatically make the variable quantitative.
 
-## 5.1 Numerical codes can still represent categories
+## 4.1 Numerical codes can still represent categories
 
 Suppose blood groups are coded as:
 
@@ -392,7 +522,7 @@ Calculating the mean of 1, 2, 3 and 4 would not produce a meaningful
 
 ------------------------------------------------------------------------
 
-# 6. Nominal Variables
+# 5. Nominal Variables
 
 A **nominal variable** contains categories that do not have a natural
 order.
@@ -409,7 +539,7 @@ Examples include:
 We can ask whether two observations belong to the same category, but we
 cannot say that one category is greater than another.
 
-## 6.1 Binary nominal variables
+## 5.1 Binary nominal variables
 
 A categorical variable with exactly two categories is called **binary**
 or **dichotomous**.
@@ -425,7 +555,7 @@ Examples include:
 Binary variables are particularly important because they are analysed
 using methods such as proportion tests and logistic regression.
 
-## 6.2 Representing nominal variables in R
+## 5.2 Representing nominal variables in R
 
 ``` r
 tissue <- factor(
@@ -445,19 +575,91 @@ levels(tissue)
     ## [1] "Blood" "Brain" "Liver"
 
 ``` r
-table(tissue)
+print_html_table(
+  table(tissue),
+  caption = "Frequency of each tissue type."
+)
 ```
 
-    ## tissue
-    ## Blood Brain Liver 
-    ##     2     1     2
+<table class="chapter-table">
+
+<caption>
+
+Frequency of each tissue type.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The order in which factor levels are displayed does not imply a
 scientific ranking.
 
 ------------------------------------------------------------------------
 
-# 7. Ordinal Variables
+# 6. Ordinal Variables
 
 An **ordinal variable** contains categories with a meaningful order.
 
@@ -475,7 +677,7 @@ assumed to be equal.
 The difference between `Mild` and `Moderate` is not necessarily the same
 as the difference between `Moderate` and `Severe`.
 
-## 7.1 Creating an ordered factor in R
+## 6.1 Creating an ordered factor in R
 
 ``` r
 disease_stage <- factor(
@@ -498,7 +700,7 @@ levels(disease_stage)
 
 Specifying the levels prevents R from arranging them alphabetically.
 
-## 7.2 Why coding order matters
+## 6.2 Why coding order matters
 
 Incorrect:
 
@@ -526,7 +728,7 @@ factor(
 
 ------------------------------------------------------------------------
 
-# 8. Quantitative Variables
+# 7. Quantitative Variables
 
 A **quantitative variable** represents a numerical amount for which
 arithmetic has scientific meaning.
@@ -546,7 +748,7 @@ Quantitative variables are often divided into **discrete** and
 
 ------------------------------------------------------------------------
 
-# 9. Discrete Variables
+# 8. Discrete Variables
 
 A **discrete variable** takes separate, countable values.
 
@@ -564,7 +766,7 @@ Examples include:
 Values between adjacent counts are not possible. A culture plate can
 have 20 or 21 colonies, but not 20.4 colonies.
 
-## 9.1 Count variables have special statistical behaviour
+## 8.1 Count variables have special statistical behaviour
 
 Counts are often:
 
@@ -578,7 +780,7 @@ Therefore, counts may require Poisson or negative-binomial methods
 rather than methods designed for normally distributed continuous
 measurements.
 
-## 9.2 A count vector in R
+## 8.2 A count vector in R
 
 ``` r
 colony_count <- c(12L, 18L, 7L, 21L, 15L, 9L)
@@ -612,7 +814,7 @@ complete statistical description.
 
 ------------------------------------------------------------------------
 
-# 10. Continuous Variables
+# 9. Continuous Variables
 
 A **continuous variable** can, in principle, take any value within a
 range.
@@ -630,7 +832,7 @@ Examples include:
 A person’s measured height may be recorded as 170 cm, 170.2 cm or 170.24
 cm depending on instrument precision.
 
-## 10.1 Measurement precision
+## 9.1 Measurement precision
 
 Continuous variables appear rounded in datasets because instruments have
 limited precision.
@@ -638,7 +840,7 @@ limited precision.
 A laboratory value recorded to one decimal place is still conceptually
 continuous even though only certain displayed values appear in the file.
 
-## 10.2 A continuous vector in R
+## 9.2 A continuous vector in R
 
 ``` r
 protein_concentration <- c(4.21, 5.18, 4.76, 6.02, 5.44)
@@ -656,7 +858,7 @@ typeof(protein_concentration)
 
 ------------------------------------------------------------------------
 
-# 11. Discrete Versus Continuous: A Visual Comparison
+# 10. Discrete Versus Continuous: A Visual Comparison
 
 ``` r
 colony_frequency <- table(colony_count)
@@ -705,7 +907,7 @@ groups continuous measurements into intervals.
 
 ------------------------------------------------------------------------
 
-# 12. Levels of Measurement
+# 11. Levels of Measurement
 
 Another classification describes what comparisons and mathematical
 operations are meaningful.
@@ -730,7 +932,7 @@ fit perfectly into a single category.
 
 ------------------------------------------------------------------------
 
-# 13. Nominal Scale
+# 12. Nominal Scale
 
 The nominal scale identifies categories without ranking them.
 
@@ -747,7 +949,7 @@ The mean and standard deviation are not meaningful for category codes.
 
 ------------------------------------------------------------------------
 
-# 14. Ordinal Scale
+# 13. Ordinal Scale
 
 The ordinal scale ranks categories but does not guarantee equal
 distances.
@@ -765,7 +967,7 @@ underlying category structure should never be forgotten.
 
 ------------------------------------------------------------------------
 
-# 15. Interval Scale
+# 14. Interval Scale
 
 An interval-scale variable has ordered values with equal numerical
 intervals but no meaningful absolute zero.
@@ -784,7 +986,7 @@ For interval variables:
 
 ------------------------------------------------------------------------
 
-# 16. Ratio Scale
+# 15. Ratio Scale
 
 A ratio-scale variable has:
 
@@ -811,7 +1013,7 @@ complete biological absence.
 
 ------------------------------------------------------------------------
 
-# 17. Variable Type and Measurement Scale Are Related but Different
+# 16. Variable Type and Measurement Scale Are Related but Different
 
 The terms are sometimes mixed together, so it helps to separate them.
 
@@ -834,7 +1036,7 @@ Examples:
 
 ------------------------------------------------------------------------
 
-# 18. Identifiers Are Labels, Not Measurements
+# 17. Identifiers Are Labels, Not Measurements
 
 Identifiers may look numerical but should not be analysed as quantities.
 
@@ -858,11 +1060,11 @@ identifying information in analytical datasets.
 
 ------------------------------------------------------------------------
 
-# 19. Special Outcome Types in Biostatistics
+# 18. Special Outcome Types in Biostatistics
 
 The outcome type strongly influences the statistical method.
 
-## 19.1 Continuous outcome
+## 18.1 Continuous outcome
 
 Examples:
 
@@ -871,7 +1073,7 @@ Examples:
 - biomarker concentration; and
 - normalized expression.
 
-## 19.2 Binary outcome
+## 18.2 Binary outcome
 
 Examples:
 
@@ -879,7 +1081,7 @@ Examples:
 - responder or non-responder; and
 - sample passed or failed.
 
-## 19.3 Multicategory nominal outcome
+## 18.3 Multicategory nominal outcome
 
 Examples:
 
@@ -887,7 +1089,7 @@ Examples:
 - tissue of origin; and
 - bacterial species.
 
-## 19.4 Ordinal outcome
+## 18.4 Ordinal outcome
 
 Examples:
 
@@ -895,7 +1097,7 @@ Examples:
 - tumour stage; and
 - ordered treatment response.
 
-## 19.5 Count outcome
+## 18.5 Count outcome
 
 Examples:
 
@@ -904,7 +1106,7 @@ Examples:
 - number of hospital admissions; and
 - RNA-seq read count.
 
-## 19.6 Time-to-event outcome
+## 18.6 Time-to-event outcome
 
 A time-to-event outcome contains at least two pieces of information:
 
@@ -918,14 +1120,123 @@ survival_data <- data.frame(
   event = c(1, 0, 1, 0)
 )
 
-print(survival_data)
+print_html_table(
+  survival_data,
+  caption = "Example time-to-event data."
+)
 ```
 
-    ##   patient_id follow_up_months event
-    ## 1        P01                8     1
-    ## 2        P02               12     0
-    ## 3        P03                6     1
-    ## 4        P04               15     0
+<table class="chapter-table">
+
+<caption>
+
+Example time-to-event data.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+follow up months
+</th>
+
+<th style="text-align:right;">
+
+event
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P04
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Here, `event = 1` means the event occurred and `event = 0` means the
 observation was censored. The zero does not mean zero follow-up or “no
@@ -936,14 +1247,14 @@ experiences the event during observation.
 
 ------------------------------------------------------------------------
 
-# 20. A Variable’s Role in a Study
+# 19. A Variable’s Role in a Study
 
 Variable **type** describes the form of information. Variable **role**
 describes how it is used in a particular research question.
 
 The same variable may have different roles in different studies.
 
-## 20.1 Outcome
+## 19.1 Outcome
 
 The **outcome** is the main variable being explained, compared or
 predicted.
@@ -951,20 +1262,20 @@ predicted.
 Examples include disease status, blood pressure, expression level and
 survival time.
 
-## 20.2 Predictor
+## 19.2 Predictor
 
 A **predictor** is a variable used to explain or predict the outcome.
 
 Examples include age, treatment, genotype and environmental exposure.
 
-## 20.3 Exposure
+## 19.3 Exposure
 
 An **exposure** is a predictor representing a condition, behaviour,
 intervention or environmental factor of scientific interest.
 
 Examples include smoking, drug treatment, radiation exposure and diet.
 
-## 20.4 Covariate
+## 19.4 Covariate
 
 A **covariate** is an additional variable included in an analysis
 because it may explain variation, improve precision or help address
@@ -973,7 +1284,7 @@ confounding.
 Examples include age, sex, study centre, experimental batch and genetic
 principal components.
 
-## 20.5 Example
+## 19.5 Example
 
 Research question:
 
@@ -991,12 +1302,12 @@ The exact coding and interpretation must be defined before analysis.
 
 ------------------------------------------------------------------------
 
-# 21. Confounders and Effect Modifiers
+# 20. Confounders and Effect Modifiers
 
 These concepts will be developed in later chapters, but beginners should
 recognize the distinction.
 
-## 21.1 Confounder
+## 20.1 Confounder
 
 A **confounder** is a variable that can distort the estimated
 relationship between an exposure and an outcome.
@@ -1015,7 +1326,7 @@ Not every variable associated with both exposure and outcome should
 automatically be adjusted for. Study design and causal reasoning are
 required.
 
-## 21.2 Effect modifier
+## 20.2 Effect modifier
 
 An **effect modifier** is a variable across whose levels the
 exposure–outcome association differs.
@@ -1031,7 +1342,7 @@ and interpret.
 
 ------------------------------------------------------------------------
 
-# 22. Statistical Meaning Versus R Storage Type
+# 21. Statistical Meaning Versus R Storage Type
 
 This is a crucial distinction.
 
@@ -1069,7 +1380,7 @@ R stores `patient_id` and `disease_code` numerically. Statistically:
 - `disease_code` is binary categorical; and
 - `biomarker` is quantitative continuous.
 
-## 22.1 Correcting representation in R
+## 21.1 Correcting representation in R
 
 ``` r
 example_data$patient_id <-
@@ -1101,12 +1412,12 @@ interpretations.
 
 ------------------------------------------------------------------------
 
-# 23. Genetic Variables
+# 22. Genetic Variables
 
 Genetic data illustrate why variable classification depends on the
 analytical question.
 
-## 23.1 Genotype as a nominal category
+## 22.1 Genotype as a nominal category
 
 For a variant with alleles A and G, genotypes may be:
 
@@ -1122,14 +1433,86 @@ genotype <- factor(
   levels = c("AA", "AG", "GG")
 )
 
-table(genotype)
+print_html_table(
+  table(genotype),
+  caption = "Observed genotype frequencies."
+)
 ```
 
-    ## genotype
-    ## AA AG GG 
-    ##  2  2  1
+<table class="chapter-table">
 
-## 23.2 Genotype as allele dosage
+<caption>
+
+Observed genotype frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+genotype
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 22.2 Genotype as allele dosage
 
 Under an additive genetic model, the number of G alleles can be coded
 as:
@@ -1151,7 +1534,7 @@ scale.
 
 The coding does not prove that the biological effect is additive.
 
-## 23.3 Imputed dosage
+## 22.3 Imputed dosage
 
 Imputed allele dosage may contain values such as 0.08, 0.94 or 1.87
 because it represents an expected allele count under genotype
@@ -1164,7 +1547,7 @@ imputed_dosage <- c(0.08, 0.94, 1.87, 1.12)
 It is stored as continuous numeric data, but its meaning remains
 expected allele dosage bounded approximately between 0 and 2.
 
-## 23.4 Other genetic variables
+## 22.4 Other genetic variables
 
 | Variable | Common statistical form |
 |----|----|
@@ -1179,9 +1562,9 @@ expected allele dosage bounded approximately between 0 and 2.
 
 ------------------------------------------------------------------------
 
-# 24. Bioinformatics and Omics Variables
+# 23. Bioinformatics and Omics Variables
 
-## 24.1 Raw RNA-seq counts
+## 23.1 Raw RNA-seq counts
 
 Raw RNA-seq expression values are counts of reads or fragments assigned
 to features.
@@ -1196,7 +1579,7 @@ They are:
 They should not automatically be analysed as normally distributed
 continuous measurements.
 
-## 24.2 Normalized expression
+## 23.2 Normalized expression
 
 Normalized expression measures such as counts per million, transcripts
 per million or transformed values may be stored as continuous numbers.
@@ -1205,7 +1588,7 @@ However, normalization changes the scale and interpretation. Different
 methods serve different purposes, and normalized values are not
 interchangeable with raw counts.
 
-## 24.3 Variant annotations
+## 23.3 Variant annotations
 
 | Annotation | Variable type |
 |----|----|
@@ -1217,7 +1600,7 @@ interchangeable with raw counts.
 | Allele frequency | Proportion |
 | CADD-like score | Quantitative score whose scale requires documentation |
 
-## 24.4 Quality-control variables
+## 23.4 Quality-control variables
 
 | QC variable            | Variable type                             |
 |------------------------|-------------------------------------------|
@@ -1233,11 +1616,11 @@ dictionary.
 
 ------------------------------------------------------------------------
 
-# 25. Proportions, Percentages and Rates
+# 24. Proportions, Percentages and Rates
 
 These quantities are related but should not be confused.
 
-## 25.1 Proportion
+## 24.1 Proportion
 
 A proportion has a numerator contained within its denominator.
 
@@ -1251,7 +1634,7 @@ response_proportion
 
     ## [1] 0.75
 
-## 25.2 Percentage
+## 24.2 Percentage
 
 A percentage is a proportion multiplied by 100.
 
@@ -1262,7 +1645,7 @@ response_percentage
 
     ## [1] 75
 
-## 25.3 Rate
+## 24.3 Rate
 
 A rate includes an amount of time, person-time, area, sequence length or
 another exposure unit.
@@ -1277,7 +1660,7 @@ Rates can exceed 1, whereas proportions must lie between 0 and 1.
 
 ------------------------------------------------------------------------
 
-# 26. Dates, Time and Repeated Measurements
+# 25. Dates, Time and Repeated Measurements
 
 Calendar dates and elapsed times are different.
 
@@ -1299,7 +1682,7 @@ collection_date[3] - collection_date[1]
 
 The difference between dates produces elapsed time.
 
-## 26.1 Repeated measurements
+## 25.1 Repeated measurements
 
 If the same patient is measured at baseline, month 3 and month 6, the
 observations are not independent.
@@ -1318,23 +1701,168 @@ repeated_data <- data.frame(
   biomarker = c(8.2, 7.6, 7.1, 9.1, 8.7, 8.4)
 )
 
-print(repeated_data)
+print_html_table(
+  repeated_data,
+  caption = "Repeated biomarker measurements by patient and visit."
+)
 ```
 
-    ##   patient_id visit_month biomarker
-    ## 1        P01           0       8.2
-    ## 2        P01           3       7.6
-    ## 3        P01           6       7.1
-    ## 4        P02           0       9.1
-    ## 5        P02           3       8.7
-    ## 6        P02           6       8.4
+<table class="chapter-table">
+
+<caption>
+
+Repeated biomarker measurements by patient and visit.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+visit month
+</th>
+
+<th style="text-align:right;">
+
+biomarker
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+7.6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+7.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+9.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+8.7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+8.4
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The patient identifier is nominal, visit month is quantitative time, and
 biomarker is a continuous outcome.
 
 ------------------------------------------------------------------------
 
-# 27. Choosing Summaries Based on Variable Type
+# 26. Choosing Summaries Based on Variable Type
 
 | Variable type | Common summaries | Common displays |
 |----|----|----|
@@ -1349,7 +1877,7 @@ biomarker is a continuous outcome.
 This is a starting guide, not a mechanical rule. Distribution shape,
 study design and scientific purpose also matter.
 
-## 27.1 One dataset, different summaries
+## 26.1 One dataset, different summaries
 
 ``` r
 teaching_data <- data.frame(
@@ -1364,20 +1892,178 @@ teaching_data <- data.frame(
   response = factor(c("No", "Yes", "Yes", "No", "Yes", "Yes"))
 )
 
-table(teaching_data$tissue)
+print_html_table(
+  table(teaching_data$tissue),
+  caption = "Tissue frequencies."
+)
 ```
 
-    ## 
-    ## Blood Brain Liver 
-    ##     3     1     2
+<table class="chapter-table">
+
+<caption>
+
+Tissue frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-table(teaching_data$stage)
+print_html_table(
+  table(teaching_data$stage),
+  caption = "Disease-stage frequencies."
+)
 ```
 
-    ## 
-    ##   I  II III  IV 
-    ##   2   3   1   0
+<table class="chapter-table">
+
+<caption>
+
+Disease-stage frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+I
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+II
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+III
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+IV
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 mean(teaching_data$age)
@@ -1404,16 +2090,78 @@ var(teaching_data$mutation_count)
     ## [1] 6.966667
 
 ``` r
-prop.table(table(teaching_data$response))
+response_proportions <- prop.table(table(teaching_data$response))
+print_html_table(
+  data.frame(
+    Response = names(response_proportions),
+    Proportion = as.numeric(response_proportions)
+  ),
+  caption = "Treatment-response proportions."
+)
 ```
 
-    ## 
-    ##        No       Yes 
-    ## 0.3333333 0.6666667
+<table class="chapter-table">
+
+<caption>
+
+Treatment-response proportions.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Response
+</th>
+
+<th style="text-align:right;">
+
+Proportion
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+0.333
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+0.667
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ------------------------------------------------------------------------
 
-# 28. Choosing Figures Based on Variable Type
+# 27. Choosing Figures Based on Variable Type
 
 ``` r
 plot_data <- data.frame(
@@ -1477,7 +2225,7 @@ values or using a histogram for unordered categories.
 
 ------------------------------------------------------------------------
 
-# 29. Units and Transformations
+# 28. Units and Transformations
 
 A numerical value is incomplete without its unit and measurement
 definition.
@@ -1489,7 +2237,7 @@ Compare:
 
 The numbers differ because the units differ.
 
-## 29.1 Store units in metadata, not inside every numeric cell
+## 28.1 Store units in metadata, not inside every numeric cell
 
 Problematic:
 
@@ -1508,7 +2256,7 @@ glucose_mg_dl <- c(100, 95, 110)
 The unit appears in the variable name or, preferably, in a separate data
 dictionary.
 
-## 29.2 Transformations change scale
+## 28.2 Transformations change scale
 
 Log transformation may make a right-skewed biological variable easier to
 model.
@@ -1517,31 +2265,136 @@ model.
 raw_expression <- c(1, 2, 5, 10, 50, 100)
 log2_expression <- log2(raw_expression + 1)
 
-data.frame(
-  raw_expression = raw_expression,
-  log2_expression = round(log2_expression, 3)
+print_html_table(
+  data.frame(
+    raw_expression = raw_expression,
+    log2_expression = round(log2_expression, 3)
+  ),
+  caption = "Raw and log2-transformed expression values."
 )
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| raw_expression | log2_expression |
-|---------------:|----------------:|
-|              1 |           1.000 |
-|              2 |           1.585 |
-|              5 |           2.585 |
-|             10 |           3.459 |
-|             50 |           5.672 |
-|            100 |           6.658 |
+<caption>
 
-</div>
+Raw and log2-transformed expression values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+raw expression
+</th>
+
+<th style="text-align:right;">
+
+log2 expression
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+1.000
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+1.585
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+<td style="text-align:right;">
+
+2.585
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+3.459
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+50
+</td>
+
+<td style="text-align:right;">
+
+5.672
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+100
+</td>
+
+<td style="text-align:right;">
+
+6.658
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The transformed variable has a different interpretation. The
 transformation and any added constant must be reported.
 
 ------------------------------------------------------------------------
 
-# 30. Missing Values and Special Codes
+# 29. Missing Values and Special Codes
 
 Missing data should be represented as `NA` in R.
 
@@ -1567,14 +2420,14 @@ height_cm
 Never assume that every unusual value is missing. For a temperature
 measurement, `-9` may be scientifically valid.
 
-## 30.1 Missingness should not become a category accidentally
+## 29.1 Missingness should not become a category accidentally
 
 `"Unknown"` may mean that a category was not recorded. Treating it as a
 genuine biological category without justification can distort analysis.
 
 ------------------------------------------------------------------------
 
-# 31. Build a Data Dictionary Before Analysis
+# 30. Build a Data Dictionary Before Analysis
 
 A **data dictionary** documents what every variable means.
 
@@ -1631,32 +2484,227 @@ data_dictionary <- data.frame(
   stringsAsFactors = FALSE
 )
 
-print(data_dictionary)
+print_html_table(
+  data_dictionary,
+  caption = "Example biological data dictionary."
+)
 ```
 
-    ##        variable                             description    statistical_type
-    ## 1    patient_id       Study-specific patient identifier  Nominal identifier
-    ## 2     treatment                Assigned treatment group Nominal categorical
-    ## 3     age_years                      Age at recruitment    Continuous ratio
-    ## 4 disease_stage                  Clinical disease stage Ordinal categorical
-    ## 5      genotype Observed genotype at the target variant Nominal categorical
-    ## 6    read_count       Reads assigned to the target gene      Discrete count
-    ## 7      response            Clinical response at week 12  Binary categorical
-    ##       unit_or_levels
-    ## 1        Unique text
-    ## 2 Control; Treatment
-    ## 3              Years
-    ## 4     I; II; III; IV
-    ## 5         AA; AG; GG
-    ## 6              Reads
-    ## 7            No; Yes
+<table class="chapter-table">
+
+<caption>
+
+Example biological data dictionary.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+variable
+</th>
+
+<th style="text-align:left;">
+
+description
+</th>
+
+<th style="text-align:left;">
+
+statistical type
+</th>
+
+<th style="text-align:left;">
+
+unit or levels
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+patient_id
+</td>
+
+<td style="text-align:left;">
+
+Study-specific patient identifier
+</td>
+
+<td style="text-align:left;">
+
+Nominal identifier
+</td>
+
+<td style="text-align:left;">
+
+Unique text
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+treatment
+</td>
+
+<td style="text-align:left;">
+
+Assigned treatment group
+</td>
+
+<td style="text-align:left;">
+
+Nominal categorical
+</td>
+
+<td style="text-align:left;">
+
+Control; Treatment
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+age_years
+</td>
+
+<td style="text-align:left;">
+
+Age at recruitment
+</td>
+
+<td style="text-align:left;">
+
+Continuous ratio
+</td>
+
+<td style="text-align:left;">
+
+Years
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+disease_stage
+</td>
+
+<td style="text-align:left;">
+
+Clinical disease stage
+</td>
+
+<td style="text-align:left;">
+
+Ordinal categorical
+</td>
+
+<td style="text-align:left;">
+
+I; II; III; IV
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+genotype
+</td>
+
+<td style="text-align:left;">
+
+Observed genotype at the target variant
+</td>
+
+<td style="text-align:left;">
+
+Nominal categorical
+</td>
+
+<td style="text-align:left;">
+
+AA; AG; GG
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+read_count
+</td>
+
+<td style="text-align:left;">
+
+Reads assigned to the target gene
+</td>
+
+<td style="text-align:left;">
+
+Discrete count
+</td>
+
+<td style="text-align:left;">
+
+Reads
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+response
+</td>
+
+<td style="text-align:left;">
+
+Clinical response at week 12
+</td>
+
+<td style="text-align:left;">
+
+Binary categorical
+</td>
+
+<td style="text-align:left;">
+
+No; Yes
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 A data dictionary reduces ambiguity and prevents accidental misuse of
 numerical codes.
 
 ------------------------------------------------------------------------
 
-# 32. Integrated Case Study: A Small Pharmacogenomic Dataset
+# 31. Integrated Case Study: A Small Pharmacogenomic Dataset
 
 Consider a hypothetical study examining whether genotype is associated
 with treatment response.
@@ -1682,37 +2730,602 @@ pgx_data <- data.frame(
   stringsAsFactors = FALSE
 )
 
-print(pgx_data)
+print_html_table(
+  pgx_data,
+  caption = "Hypothetical pharmacogenomic dataset."
+)
 ```
 
-    ##    patient_id age_years sex_recorded disease_stage genotype read_depth
-    ## 1         P01        45       Female            II       AA         42
-    ## 2         P02        52         Male           III       AG         38
-    ## 3         P03        61         Male            II       GG         51
-    ## 4         P04        39       Female             I       AA         29
-    ## 5         P05        57       Female           III       AG         44
-    ## 6         P06        48         Male            II       AG         47
-    ## 7         P07        66         Male           III       GG         55
-    ## 8         P08        42       Female             I       AA         33
-    ## 9         P09        55         Male            II       AG         41
-    ## 10        P10        50       Female            II       AA         36
-    ## 11        P11        63       Female           III       GG         58
-    ## 12        P12        46         Male             I       AG         45
-    ##    biomarker response
-    ## 1        5.2       No
-    ## 2        6.1      Yes
-    ## 3        7.4      Yes
-    ## 4        4.9       No
-    ## 5        6.5      Yes
-    ## 6        6.0      Yes
-    ## 7        7.8      Yes
-    ## 8        5.1       No
-    ## 9        6.3      Yes
-    ## 10       5.5       No
-    ## 11       7.2      Yes
-    ## 12       6.4      Yes
+<table class="chapter-table">
 
-## 32.1 Inspect the imported-style structure
+<caption>
+
+Hypothetical pharmacogenomic dataset.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:left;">
+
+sex recorded
+</th>
+
+<th style="text-align:left;">
+
+disease stage
+</th>
+
+<th style="text-align:left;">
+
+genotype
+</th>
+
+<th style="text-align:right;">
+
+read depth
+</th>
+
+<th style="text-align:right;">
+
+biomarker
+</th>
+
+<th style="text-align:left;">
+
+response
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+II
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+42
+</td>
+
+<td style="text-align:right;">
+
+5.2
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+52
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+III
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+<td style="text-align:right;">
+
+6.1
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+II
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+<td style="text-align:right;">
+
+7.4
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P04
+</td>
+
+<td style="text-align:right;">
+
+39
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+I
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+29
+</td>
+
+<td style="text-align:right;">
+
+4.9
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P05
+</td>
+
+<td style="text-align:right;">
+
+57
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+III
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+<td style="text-align:right;">
+
+6.5
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P06
+</td>
+
+<td style="text-align:right;">
+
+48
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+II
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+47
+</td>
+
+<td style="text-align:right;">
+
+6.0
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P07
+</td>
+
+<td style="text-align:right;">
+
+66
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+III
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+55
+</td>
+
+<td style="text-align:right;">
+
+7.8
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P08
+</td>
+
+<td style="text-align:right;">
+
+42
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+I
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+33
+</td>
+
+<td style="text-align:right;">
+
+5.1
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P09
+</td>
+
+<td style="text-align:right;">
+
+55
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+II
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+41
+</td>
+
+<td style="text-align:right;">
+
+6.3
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P10
+</td>
+
+<td style="text-align:right;">
+
+50
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+II
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+<td style="text-align:right;">
+
+5.5
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P11
+</td>
+
+<td style="text-align:right;">
+
+63
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+III
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+58
+</td>
+
+<td style="text-align:right;">
+
+7.2
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P12
+</td>
+
+<td style="text-align:right;">
+
+46
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+I
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:right;">
+
+6.4
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 31.1 Inspect the imported-style structure
 
 ``` r
 str(pgx_data)
@@ -1731,7 +3344,7 @@ str(pgx_data)
 Several categorical variables are currently stored as character text. We
 can define them explicitly.
 
-## 32.2 Correct the R representations
+## 31.2 Correct the R representations
 
 ``` r
 pgx_data$patient_id <- as.character(pgx_data$patient_id)
@@ -1767,65 +3380,531 @@ str(pgx_data)
     ##  $ biomarker    : num  5.2 6.1 7.4 4.9 6.5 6 7.8 5.1 6.3 5.5 ...
     ##  $ response     : Factor w/ 2 levels "No","Yes": 1 2 2 1 2 2 2 1 2 1 ...
 
-## 32.3 Derive G-allele dosage
+## 31.3 Derive G-allele dosage
 
 ``` r
 pgx_data$g_allele_dosage <-
   c(AA = 0, AG = 1, GG = 2)[as.character(pgx_data$genotype)]
 
-print(pgx_data[, c("genotype", "g_allele_dosage")])
+print_html_table(
+  pgx_data[, c("genotype", "g_allele_dosage")],
+  caption = "Genotypes and their derived G-allele dosages."
+)
 ```
 
-    ##    genotype g_allele_dosage
-    ## 1        AA               0
-    ## 2        AG               1
-    ## 3        GG               2
-    ## 4        AA               0
-    ## 5        AG               1
-    ## 6        AG               1
-    ## 7        GG               2
-    ## 8        AA               0
-    ## 9        AG               1
-    ## 10       AA               0
-    ## 11       GG               2
-    ## 12       AG               1
+<table class="chapter-table">
+
+<caption>
+
+Genotypes and their derived G-allele dosages.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+genotype
+</th>
+
+<th style="text-align:right;">
+
+g allele dosage
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The dosage is derived from genotype using an explicitly documented
 coding rule.
 
-## 32.4 Summarize variables appropriately
+## 31.4 Summarize variables appropriately
 
 ``` r
-table(pgx_data$sex_recorded)
+print_html_table(
+  table(pgx_data$sex_recorded),
+  caption = "Recorded sex frequencies."
+)
 ```
 
-    ## 
-    ## Female   Male 
-    ##      6      6
+<table class="chapter-table">
+
+<caption>
+
+Recorded sex frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-table(pgx_data$disease_stage)
+print_html_table(
+  table(pgx_data$disease_stage),
+  caption = "Disease-stage frequencies."
+)
 ```
 
-    ## 
-    ##   I  II III  IV 
-    ##   3   5   4   0
+<table class="chapter-table">
+
+<caption>
+
+Disease-stage frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+I
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+II
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+III
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+IV
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-table(pgx_data$genotype)
+print_html_table(
+  table(pgx_data$genotype),
+  caption = "Genotype frequencies."
+)
 ```
 
-    ## 
-    ## AA AG GG 
-    ##  4  5  3
+<table class="chapter-table">
+
+<caption>
+
+Genotype frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-prop.table(table(pgx_data$response))
+pgx_response_proportions <- prop.table(table(pgx_data$response))
+print_html_table(
+  data.frame(
+    Response = names(pgx_response_proportions),
+    Proportion = as.numeric(pgx_response_proportions)
+  ),
+  caption = "Treatment-response proportions."
+)
 ```
 
-    ## 
-    ##        No       Yes 
-    ## 0.3333333 0.6666667
+<table class="chapter-table">
+
+<caption>
+
+Treatment-response proportions.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Response
+</th>
+
+<th style="text-align:right;">
+
+Proportion
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+0.333
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+0.667
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 mean(pgx_data$age_years)
@@ -1852,7 +3931,7 @@ quantile(pgx_data$biomarker, probs = c(0.25, 0.75))
     ##   25%   75% 
     ## 5.425 6.675
 
-## 32.5 Visualize genotype and biomarker
+## 31.5 Visualize genotype and biomarker
 
 ``` r
 boxplot(
@@ -1890,7 +3969,7 @@ The figure describes the observed sample. It does not establish a
 genotype effect, and the dataset is far too small for a reliable
 pharmacogenomic conclusion.
 
-## 32.6 Identify variable roles for one question
+## 31.6 Identify variable roles for one question
 
 Research question:
 
@@ -1910,7 +3989,7 @@ without scientific reasoning.
 
 ------------------------------------------------------------------------
 
-# 33. Common Beginner Mistakes
+# 32. Common Beginner Mistakes
 
 ## Mistake 1: Treating every number as quantitative
 
@@ -1959,7 +4038,7 @@ definitions.
 
 ------------------------------------------------------------------------
 
-# 34. Chapter Summary
+# 33. Chapter Summary
 
 In this chapter, you learned that:
 
@@ -1988,7 +4067,7 @@ In this chapter, you learned that:
 
 ------------------------------------------------------------------------
 
-# 35. Check Your Understanding
+# 34. Check Your Understanding
 
 ## Question 1
 
@@ -2042,7 +4121,7 @@ way as log-transformed normalized expression?
 
 ------------------------------------------------------------------------
 
-# 36. Practice with R
+# 35. Practice with R
 
 ## Exercise 1: Correct variable representations
 
@@ -2121,7 +4200,7 @@ A researcher replaces genotypes AA, AG and GG with 0, 1 and 2.
 
 ------------------------------------------------------------------------
 
-# 37. Mini-Project: Create a Biological Data Dictionary
+# 36. Mini-Project: Create a Biological Data Dictionary
 
 Imagine a study investigating whether a genetic variant is associated
 with antibiotic-treatment response.
@@ -2156,7 +4235,7 @@ Then select three variables and create suitable R summaries or figures.
 
 ------------------------------------------------------------------------
 
-# 38. Glossary
+# 37. Glossary
 
 | Term | Beginner-friendly meaning |
 |----|----|
@@ -2184,7 +4263,7 @@ Then select three variables and create suitable R summaries or figures.
 
 ------------------------------------------------------------------------
 
-# 39. References and Further Reading
+# 38. References and Further Reading
 
 1.  Stevens SS. On the theory of scales of measurement. *Science*.
     1946;103(2684):677–680. <doi:10.1126/science.103.2684.677>.
@@ -2225,7 +4304,7 @@ Then select three variables and create suitable R summaries or figures.
 
 ------------------------------------------------------------------------
 
-# 40. Reproducibility Information
+# 39. Reproducibility Information
 
 All datasets in this chapter are hypothetical or simulated for teaching.
 They are not intended to support biological, clinical or pharmacogenomic
