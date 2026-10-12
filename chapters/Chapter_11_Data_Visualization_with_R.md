@@ -17,7 +17,6 @@ Chapter 11: Data Visualization with R
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
 - [3. A Visualization Workflow](#3-a-visualization-workflow)
   - [3.1 What is the scientific
     question?](#31-what-is-the-scientific-question)
@@ -133,7 +132,7 @@ Sandeep Singh
   - [Mistake 10: Editing the final figure
     manually](#mistake-10-editing-the-final-figure-manually)
 - [42. Chapter Summary](#42-chapter-summary)
-- [43. Check Your Understanding](#43-check-your-understanding)
+- [43. Knowledge Check](#43-knowledge-check)
 - [44. R Exercises](#44-r-exercises)
   - [Exercise 1: Chart selection](#exercise-1-chart-selection)
   - [Exercise 2: Base and ggplot2](#exercise-2-base-and-ggplot2)
@@ -198,31 +197,6 @@ scientific question honestly.
 
 > **Start with the question and data type. Choose the graph only after
 > those are clear.**
-
-------------------------------------------------------------------------
-
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  define the scientific purpose and audience of a figure;
-2.  select a graph based on variable type and analytical question;
-3.  create clear base R graphics;
-4.  explain the data–aesthetic–geometry structure of `ggplot2`;
-5.  construct bar charts, histograms, density plots, ECDFs and boxplots;
-6.  show raw observations instead of hiding them behind summary bars;
-7.  create scatterplots and distinguish association from causation;
-8.  visualize longitudinal and repeated-measures data;
-9.  display SD, SE and confidence intervals without confusing them;
-10. create heatmaps, PCA plots, volcano plots, Manhattan plots and
-    forest plots;
-11. use qualitative, sequential and diverging colour scales
-    appropriately;
-12. design figures accessible to colour-vision-deficient readers;
-13. recognize misleading axes, area encodings and dual-axis plots;
-14. use facets and annotations without creating clutter;
-15. export raster and vector graphics at appropriate dimensions; and
-16. create reproducible publication-quality figures from R Markdown.
 
 ------------------------------------------------------------------------
 
@@ -333,10 +307,17 @@ clinical_viz$Group <- factor(
   levels = c("Control", "Treatment_A", "Treatment_B")
 )
 
-head(clinical_viz)
+cat(
+  knitr::kable(
+    head(clinical_viz),
+    format = "pipe",
+    digits = 2,
+    row.names = FALSE,
+    caption = "First six participants in the simulated visualization dataset."
+  ),
+  sep = "\n"
+)
 ```
-
-<div class="kable-table">
 
 | Participant | Group | Recorded_sex | Age | Sequencing_depth | Batch | Biomarker | Detected_genes |
 |:---|:---|:---|---:|---:|:---|---:|---:|
@@ -347,7 +328,11 @@ head(clinical_viz)
 | P005 | Treatment_B | Male | 49 | 46.6 | Batch_4 | 2.87 | 12689 |
 | P006 | Control | Female | 49 | 32.5 | Batch_3 | 1.77 | 12013 |
 
-</div>
+First six participants in the simulated visualization dataset.
+
+``` r
+cat("\n\n")
+```
 
 These are simulated educational data and have no clinical
 interpretation.
@@ -1078,21 +1063,32 @@ longitudinal$Blood_pressure <-
     (longitudinal$Treatment == "Treatment") +
   rnorm(nrow(longitudinal), sd = 3)
 
-head(longitudinal)
+cat(
+  knitr::kable(
+    head(longitudinal),
+    format = "pipe",
+    digits = 2,
+    row.names = FALSE,
+    caption = "First six observations in the simulated longitudinal dataset."
+  ),
+  sep = "\n"
+)
 ```
-
-<div class="kable-table">
 
 | Participant | Week | Treatment | Blood_pressure |
 |:------------|-----:|:----------|---------------:|
-| D01         |    0 | Control   |       114.0170 |
-| D02         |    0 | Control   |       120.3946 |
-| D03         |    0 | Control   |       116.7717 |
-| D04         |    0 | Control   |       114.5601 |
-| D05         |    0 | Control   |       117.7216 |
-| D06         |    0 | Control   |       113.1798 |
+| D01         |    0 | Control   |         114.02 |
+| D02         |    0 | Control   |         120.39 |
+| D03         |    0 | Control   |         116.77 |
+| D04         |    0 | Control   |         114.56 |
+| D05         |    0 | Control   |         117.72 |
+| D06         |    0 | Control   |         113.18 |
 
-</div>
+First six observations in the simulated longitudinal dataset.
+
+``` r
+cat("\n\n")
+```
 
 ## 17.1 Spaghetti plot
 
@@ -1170,21 +1166,34 @@ longitudinal_summary <- longitudinal_summary[
   order(longitudinal_summary$Treatment, longitudinal_summary$Week),
 ]
 
-head(longitudinal_summary)
+cat(
+  knitr::kable(
+    longitudinal_summary,
+    format = "pipe",
+    digits = 2,
+    row.names = FALSE,
+    caption = "Time-specific blood-pressure summaries by treatment group."
+  ),
+  sep = "\n"
+)
 ```
 
-<div class="kable-table">
+| Treatment | Week |   N |   Mean |    SD |   SE |
+|:----------|-----:|----:|-------:|------:|-----:|
+| Control   |    0 |  12 | 120.32 |  9.69 | 2.80 |
+| Control   |    4 |  12 | 120.02 | 10.24 | 2.96 |
+| Control   |    8 |  12 | 119.51 | 10.61 | 3.06 |
+| Control   |   12 |  12 | 120.08 |  9.34 | 2.70 |
+| Treatment |    0 |  12 | 119.42 |  8.85 | 2.56 |
+| Treatment |    4 |  12 | 115.68 |  9.67 | 2.79 |
+| Treatment |    8 |  12 | 115.46 |  9.31 | 2.69 |
+| Treatment |   12 |  12 | 111.45 |  8.66 | 2.50 |
 
-|     | Treatment | Week |   N |     Mean |        SD |       SE |
-|:----|:----------|-----:|----:|---------:|----------:|---------:|
-| 1   | Control   |    0 |  12 | 120.3200 |  9.689428 | 2.797097 |
-| 3   | Control   |    4 |  12 | 120.0236 | 10.242449 | 2.956740 |
-| 5   | Control   |    8 |  12 | 119.5143 | 10.612283 | 3.063502 |
-| 7   | Control   |   12 |  12 | 120.0754 |  9.339702 | 2.696140 |
-| 2   | Treatment |    0 |  12 | 119.4170 |  8.854202 | 2.555988 |
-| 4   | Treatment |    4 |  12 | 115.6786 |  9.670470 | 2.791624 |
+Time-specific blood-pressure summaries by treatment group.
 
-</div>
+``` r
+cat("\n\n")
+```
 
 ``` r
 plot(
@@ -1370,25 +1379,43 @@ relative high and low expression within each gene.
 ``` r
 row_z <- t(scale(t(expression_matrix)))
 
-data.frame(
+row_scaling_check <- data.frame(
   Gene = rownames(row_z)[1:5],
   Row_mean_after_scaling = round(rowMeans(row_z)[1:5], 5),
   Row_SD_after_scaling = round(apply(row_z, 1, sd)[1:5], 5),
   stringsAsFactors = FALSE
 )
+
+cat(
+  knitr::kable(
+    row_scaling_check,
+    format = "pipe",
+    digits = 5,
+    row.names = FALSE,
+    col.names = c(
+      "Gene",
+      "Row mean after scaling",
+      "Row SD after scaling"
+    ),
+    caption = "Verification of row-wise z-score standardization."
+  ),
+  sep = "\n"
+)
 ```
 
-<div class="kable-table">
+| Gene    | Row mean after scaling | Row SD after scaling |
+|:--------|-----------------------:|---------------------:|
+| Gene_01 |                      0 |                    1 |
+| Gene_02 |                      0 |                    1 |
+| Gene_03 |                      0 |                    1 |
+| Gene_04 |                      0 |                    1 |
+| Gene_05 |                      0 |                    1 |
 
-|         | Gene    | Row_mean_after_scaling | Row_SD_after_scaling |
-|:--------|:--------|-----------------------:|---------------------:|
-| Gene_01 | Gene_01 |                      0 |                    1 |
-| Gene_02 | Gene_02 |                      0 |                    1 |
-| Gene_03 | Gene_03 |                      0 |                    1 |
-| Gene_04 | Gene_04 |                      0 |                    1 |
-| Gene_05 | Gene_05 |                      0 |                    1 |
+Verification of row-wise z-score standardization.
 
-</div>
+``` r
+cat("\n\n")
+```
 
 ``` r
 heatmap(
@@ -2417,7 +2444,7 @@ Put titles, colours, labels and annotations in reproducible code.
 - Reproducible code should generate the complete figure and caption
   information.
 
-# 43. Check Your Understanding
+# 43. Knowledge Check
 
 1.  What five questions should be answered before plotting?
 2.  How does an exploratory figure differ from an explanatory figure?
@@ -2501,7 +2528,7 @@ data. Produce a four-panel figure containing:
 3.  an expression PCA plot; and
 4.  either a volcano or Manhattan plot.
 
-Your workflow should:
+Our workflow should:
 
 - define the purpose of every panel;
 - state the observational unit;
