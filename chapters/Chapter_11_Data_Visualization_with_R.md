@@ -168,6 +168,30 @@ window.MathJax = {
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
 </script>
 
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+&#10;table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+&#10;table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+&#10;table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
+
 # 1. Introduction
 
 A statistical figure is not decoration added after analysis. It is a
@@ -307,32 +331,337 @@ clinical_viz$Group <- factor(
   levels = c("Control", "Treatment_A", "Treatment_B")
 )
 
-cat(
-  knitr::kable(
-    head(clinical_viz),
-    format = "pipe",
-    digits = 2,
-    row.names = FALSE,
-    caption = "First six participants in the simulated visualization dataset."
-  ),
-  sep = "\n"
+print_html_table(
+  head(clinical_viz),
+  digits = 2,
+  caption = "First six participants in the simulated visualization dataset."
 )
 ```
 
-| Participant | Group | Recorded_sex | Age | Sequencing_depth | Batch | Biomarker | Detected_genes |
-|:---|:---|:---|---:|---:|:---|---:|---:|
-| P001 | Control | Male | 38 | 32.6 | Batch_4 | 3.25 | 9689 |
-| P002 | Treatment_B | Female | 68 | 44.0 | Batch_1 | 2.26 | 11204 |
-| P003 | Treatment_A | Male | 47 | 38.5 | Batch_1 | 6.42 | 11833 |
-| P004 | Treatment_B | Female | 41 | 50.1 | Batch_3 | 6.38 | 12902 |
-| P005 | Treatment_B | Male | 49 | 46.6 | Batch_4 | 2.87 | 12689 |
-| P006 | Control | Female | 49 | 32.5 | Batch_3 | 1.77 | 12013 |
+<table class="chapter-table">
+
+<caption>
 
 First six participants in the simulated visualization dataset.
+</caption>
 
-``` r
-cat("\n\n")
-```
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Participant
+</th>
+
+<th style="text-align:left;">
+
+Group
+</th>
+
+<th style="text-align:left;">
+
+Recorded sex
+</th>
+
+<th style="text-align:right;">
+
+Age
+</th>
+
+<th style="text-align:right;">
+
+Sequencing depth
+</th>
+
+<th style="text-align:left;">
+
+Batch
+</th>
+
+<th style="text-align:right;">
+
+Biomarker
+</th>
+
+<th style="text-align:right;">
+
+Detected genes
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P001
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+<td style="text-align:right;">
+
+32.6
+</td>
+
+<td style="text-align:left;">
+
+Batch_4
+</td>
+
+<td style="text-align:right;">
+
+3.25
+</td>
+
+<td style="text-align:right;">
+
+9689
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P002
+</td>
+
+<td style="text-align:left;">
+
+Treatment_B
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+68
+</td>
+
+<td style="text-align:right;">
+
+44.0
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+2.26
+</td>
+
+<td style="text-align:right;">
+
+11204
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P003
+</td>
+
+<td style="text-align:left;">
+
+Treatment_A
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+47
+</td>
+
+<td style="text-align:right;">
+
+38.5
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+6.42
+</td>
+
+<td style="text-align:right;">
+
+11833
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P004
+</td>
+
+<td style="text-align:left;">
+
+Treatment_B
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+41
+</td>
+
+<td style="text-align:right;">
+
+50.1
+</td>
+
+<td style="text-align:left;">
+
+Batch_3
+</td>
+
+<td style="text-align:right;">
+
+6.38
+</td>
+
+<td style="text-align:right;">
+
+12902
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P005
+</td>
+
+<td style="text-align:left;">
+
+Treatment_B
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+49
+</td>
+
+<td style="text-align:right;">
+
+46.6
+</td>
+
+<td style="text-align:left;">
+
+Batch_4
+</td>
+
+<td style="text-align:right;">
+
+2.87
+</td>
+
+<td style="text-align:right;">
+
+12689
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P006
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+49
+</td>
+
+<td style="text-align:right;">
+
+32.5
+</td>
+
+<td style="text-align:left;">
+
+Batch_3
+</td>
+
+<td style="text-align:right;">
+
+1.77
+</td>
+
+<td style="text-align:right;">
+
+12013
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 These are simulated educational data and have no clinical
 interpretation.
@@ -1063,32 +1392,197 @@ longitudinal$Blood_pressure <-
     (longitudinal$Treatment == "Treatment") +
   rnorm(nrow(longitudinal), sd = 3)
 
-cat(
-  knitr::kable(
-    head(longitudinal),
-    format = "pipe",
-    digits = 2,
-    row.names = FALSE,
-    caption = "First six observations in the simulated longitudinal dataset."
-  ),
-  sep = "\n"
+print_html_table(
+  head(longitudinal),
+  digits = 2,
+  caption = "First six observations in the simulated longitudinal dataset."
 )
 ```
 
-| Participant | Week | Treatment | Blood_pressure |
-|:------------|-----:|:----------|---------------:|
-| D01         |    0 | Control   |         114.02 |
-| D02         |    0 | Control   |         120.39 |
-| D03         |    0 | Control   |         116.77 |
-| D04         |    0 | Control   |         114.56 |
-| D05         |    0 | Control   |         117.72 |
-| D06         |    0 | Control   |         113.18 |
+<table class="chapter-table">
+
+<caption>
 
 First six observations in the simulated longitudinal dataset.
+</caption>
 
-``` r
-cat("\n\n")
-```
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Participant
+</th>
+
+<th style="text-align:right;">
+
+Week
+</th>
+
+<th style="text-align:left;">
+
+Treatment
+</th>
+
+<th style="text-align:right;">
+
+Blood pressure
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+D01
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+114.02
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D02
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+120.39
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D03
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+116.77
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D04
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+114.56
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D05
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+117.72
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D06
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+113.18
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ## 17.1 Spaghetti plot
 
@@ -1166,34 +1660,335 @@ longitudinal_summary <- longitudinal_summary[
   order(longitudinal_summary$Treatment, longitudinal_summary$Week),
 ]
 
-cat(
-  knitr::kable(
-    longitudinal_summary,
-    format = "pipe",
-    digits = 2,
-    row.names = FALSE,
-    caption = "Time-specific blood-pressure summaries by treatment group."
-  ),
-  sep = "\n"
+print_html_table(
+  longitudinal_summary,
+  digits = 2,
+  caption = "Time-specific blood-pressure summaries by treatment group."
 )
 ```
 
-| Treatment | Week |   N |   Mean |    SD |   SE |
-|:----------|-----:|----:|-------:|------:|-----:|
-| Control   |    0 |  12 | 120.32 |  9.69 | 2.80 |
-| Control   |    4 |  12 | 120.02 | 10.24 | 2.96 |
-| Control   |    8 |  12 | 119.51 | 10.61 | 3.06 |
-| Control   |   12 |  12 | 120.08 |  9.34 | 2.70 |
-| Treatment |    0 |  12 | 119.42 |  8.85 | 2.56 |
-| Treatment |    4 |  12 | 115.68 |  9.67 | 2.79 |
-| Treatment |    8 |  12 | 115.46 |  9.31 | 2.69 |
-| Treatment |   12 |  12 | 111.45 |  8.66 | 2.50 |
+<table class="chapter-table">
+
+<caption>
 
 Time-specific blood-pressure summaries by treatment group.
+</caption>
 
-``` r
-cat("\n\n")
-```
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Treatment
+</th>
+
+<th style="text-align:right;">
+
+Week
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+<th style="text-align:right;">
+
+SE
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+120.32
+</td>
+
+<td style="text-align:right;">
+
+9.69
+</td>
+
+<td style="text-align:right;">
+
+2.80
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+120.02
+</td>
+
+<td style="text-align:right;">
+
+10.24
+</td>
+
+<td style="text-align:right;">
+
+2.96
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+119.51
+</td>
+
+<td style="text-align:right;">
+
+10.61
+</td>
+
+<td style="text-align:right;">
+
+3.06
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+120.08
+</td>
+
+<td style="text-align:right;">
+
+9.34
+</td>
+
+<td style="text-align:right;">
+
+2.70
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Treatment
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+119.42
+</td>
+
+<td style="text-align:right;">
+
+8.85
+</td>
+
+<td style="text-align:right;">
+
+2.56
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Treatment
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+115.68
+</td>
+
+<td style="text-align:right;">
+
+9.67
+</td>
+
+<td style="text-align:right;">
+
+2.79
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Treatment
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+115.46
+</td>
+
+<td style="text-align:right;">
+
+9.31
+</td>
+
+<td style="text-align:right;">
+
+2.69
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Treatment
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+111.45
+</td>
+
+<td style="text-align:right;">
+
+8.66
+</td>
+
+<td style="text-align:right;">
+
+2.50
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 plot(
@@ -1386,36 +2181,148 @@ row_scaling_check <- data.frame(
   stringsAsFactors = FALSE
 )
 
-cat(
-  knitr::kable(
-    row_scaling_check,
-    format = "pipe",
-    digits = 5,
-    row.names = FALSE,
-    col.names = c(
-      "Gene",
-      "Row mean after scaling",
-      "Row SD after scaling"
-    ),
-    caption = "Verification of row-wise z-score standardization."
+print_html_table(
+  row_scaling_check,
+  digits = 5,
+  col.names = c(
+    "Gene",
+    "Row mean after scaling",
+    "Row SD after scaling"
   ),
-  sep = "\n"
+  caption = "Verification of row-wise z-score standardization."
 )
 ```
 
-| Gene    | Row mean after scaling | Row SD after scaling |
-|:--------|-----------------------:|---------------------:|
-| Gene_01 |                      0 |                    1 |
-| Gene_02 |                      0 |                    1 |
-| Gene_03 |                      0 |                    1 |
-| Gene_04 |                      0 |                    1 |
-| Gene_05 |                      0 |                    1 |
+<table class="chapter-table">
+
+<caption>
 
 Verification of row-wise z-score standardization.
+</caption>
 
-``` r
-cat("\n\n")
-```
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Gene
+</th>
+
+<th style="text-align:right;">
+
+Row mean after scaling
+</th>
+
+<th style="text-align:right;">
+
+Row SD after scaling
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_01
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_02
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_03
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_04
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_05
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 heatmap(
