@@ -8,7 +8,6 @@ output:
     toc_depth: 3
     fig_width: 8
     fig_height: 5
-    df_print: kable
     preserve_yaml: true
 ---
 
@@ -17,133 +16,132 @@ Chapter 2: Essential R for Biostatistics
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. R and RStudio Are Not the Same
-  Thing](#3-r-and-rstudio-are-not-the-same-thing)
-  - [3.1 R](#31-r)
-  - [3.2 RStudio](#32-rstudio)
-- [4. Console, Script and
-  Environment](#4-console-script-and-environment)
-  - [4.1 The console](#41-the-console)
-  - [4.2 An R script](#42-an-r-script)
-  - [4.3 The environment](#43-the-environment)
-- [5. Understanding Basic R Syntax](#5-understanding-basic-r-syntax)
-  - [5.1 R is case-sensitive](#51-r-is-case-sensitive)
-  - [5.2 Comments](#52-comments)
-  - [5.3 Parentheses, brackets and
-    braces](#53-parentheses-brackets-and-braces)
-- [6. Objects and Assignment](#6-objects-and-assignment)
-  - [6.1 Why use `<-`?](#61-why-use--)
-  - [6.2 Naming objects](#62-naming-objects)
-- [7. R as a Calculator](#7-r-as-a-calculator)
-  - [7.1 Order of operations](#71-order-of-operations)
-  - [7.2 A biological calculation](#72-a-biological-calculation)
-- [8. Functions and Arguments](#8-functions-and-arguments)
-  - [8.1 Named arguments](#81-named-arguments)
-  - [8.2 Functions can return values](#82-functions-can-return-values)
-  - [8.3 Getting help](#83-getting-help)
-- [9. Vectors: The Foundation of R](#9-vectors-the-foundation-of-r)
-  - [9.1 Creating a vector with `c()`](#91-creating-a-vector-with-c)
-  - [9.2 Examining a vector](#92-examining-a-vector)
-  - [9.3 Vectorized calculations](#93-vectorized-calculations)
-  - [9.4 Combining vectors in
-    calculations](#94-combining-vectors-in-calculations)
-  - [9.5 Recycling warning](#95-recycling-warning)
-- [10. Basic Data Types](#10-basic-data-types)
-  - [10.1 Numeric data](#101-numeric-data)
-  - [10.2 Integer data](#102-integer-data)
-  - [10.3 Character data](#103-character-data)
-  - [10.4 Logical data](#104-logical-data)
-  - [10.5 Special numeric values](#105-special-numeric-values)
-- [11. Coercion: When R Changes a Data
-  Type](#11-coercion-when-r-changes-a-data-type)
-  - [11.1 Explicit conversion](#111-explicit-conversion)
-- [12. Selecting Values from a
-  Vector](#12-selecting-values-from-a-vector)
-  - [12.1 Selecting by position](#121-selecting-by-position)
-  - [12.2 Excluding positions](#122-excluding-positions)
-  - [12.3 Selecting a range](#123-selecting-a-range)
-  - [12.4 Selecting with a logical
-    condition](#124-selecting-with-a-logical-condition)
-  - [12.5 Named vectors](#125-named-vectors)
-- [13. Comparison and Logical
-  Operators](#13-comparison-and-logical-operators)
-- [14. Missing Values](#14-missing-values)
-  - [14.1 Detecting missing values](#141-detecting-missing-values)
-  - [14.2 Missing values affect
-    calculations](#142-missing-values-affect-calculations)
-  - [14.3 Do not compare missing values with
-    `==`](#143-do-not-compare-missing-values-with-)
-  - [14.4 Zero is not automatically
-    missing](#144-zero-is-not-automatically-missing)
-- [15. Factors: Representing
-  Categories](#15-factors-representing-categories)
-  - [15.1 Reference levels matter](#151-reference-levels-matter)
-  - [15.2 Ordered factors](#152-ordered-factors)
-- [16. Matrices](#16-matrices)
-  - [16.1 Matrix dimensions](#161-matrix-dimensions)
-  - [16.2 Selecting matrix values](#162-selecting-matrix-values)
-- [17. Data Frames](#17-data-frames)
-  - [17.1 Selecting columns](#171-selecting-columns)
-  - [17.2 Selecting rows](#172-selecting-rows)
-  - [17.3 Selecting rows with
-    conditions](#173-selecting-rows-with-conditions)
-  - [17.4 Adding a column](#174-adding-a-column)
-- [18. Inspecting a Dataset Before
-  Analysis](#18-inspecting-a-dataset-before-analysis)
-  - [18.1 What these functions tell
-    us](#181-what-these-functions-tell-us)
-  - [18.2 Useful inspection questions](#182-useful-inspection-questions)
-- [19. Basic Summary Functions](#19-basic-summary-functions)
-  - [19.1 Counting categories](#191-counting-categories)
-  - [19.2 Calculating proportions](#192-calculating-proportions)
-  - [19.3 Summarizing by group](#193-summarizing-by-group)
-- [20. Importing Data](#20-importing-data)
-  - [20.1 CSV files](#201-csv-files)
-  - [20.2 Tab-separated files](#202-tab-separated-files)
-  - [20.3 Immediately inspect imported
-    data](#203-immediately-inspect-imported-data)
-  - [20.4 Relative and absolute paths](#204-relative-and-absolute-paths)
-- [21. Exporting Data and Results](#21-exporting-data-and-results)
-- [22. Basic Figures in R](#22-basic-figures-in-r)
-  - [22.1 Scatterplot](#221-scatterplot)
-  - [22.2 Boxplot with individual
-    observations](#222-boxplot-with-individual-observations)
-  - [22.3 Histogram](#223-histogram)
-- [23. Packages](#23-packages)
-  - [23.1 Installing a package](#231-installing-a-package)
-  - [23.2 Loading a package](#232-loading-a-package)
-  - [23.3 Installation versus loading](#233-installation-versus-loading)
-  - [23.4 Function conflicts](#234-function-conflicts)
-- [24. Errors, Warnings and Messages](#24-errors-warnings-and-messages)
-  - [24.1 Error](#241-error)
-  - [24.2 Warning](#242-warning)
-  - [24.3 Message](#243-message)
-  - [24.4 A practical debugging
-    sequence](#244-a-practical-debugging-sequence)
-- [25. Reproducible R Scripts](#25-reproducible-r-scripts)
-  - [25.1 Recommended script order](#251-recommended-script-order)
-  - [25.2 Use a random seed](#252-use-a-random-seed)
-  - [25.3 Avoid manual changes to analysed
-    data](#253-avoid-manual-changes-to-analysed-data)
-  - [25.4 Test from a clean session](#254-test-from-a-clean-session)
-- [26. R Markdown and GitHub
-  Markdown](#26-r-markdown-and-github-markdown)
-  - [26.1 YAML header](#261-yaml-header)
-  - [26.2 R code chunks](#262-r-code-chunks)
-  - [26.3 Important chunk options](#263-important-chunk-options)
-  - [26.4 Knitting the document](#264-knitting-the-document)
-- [27. Integrated Case Study: Biological Sample Quality
-  Control](#27-integrated-case-study-biological-sample-quality-control)
-  - [27.1 Inspect the dataset](#271-inspect-the-dataset)
-  - [27.2 Define transparent quality-control
-    rules](#272-define-transparent-quality-control-rules)
-  - [27.3 Count passed and failed
-    samples](#273-count-passed-and-failed-samples)
-  - [27.4 Select samples that passed](#274-select-samples-that-passed)
-  - [27.5 Visualize the two QC
-    measurements](#275-visualize-the-two-qc-measurements)
-- [28. Common Beginner Mistakes](#28-common-beginner-mistakes)
+- [2. R and RStudio Are Not the Same
+  Thing](#2-r-and-rstudio-are-not-the-same-thing)
+  - [2.1 R](#21-r)
+  - [2.2 RStudio](#22-rstudio)
+- [3. Console, Script and
+  Environment](#3-console-script-and-environment)
+  - [3.1 The console](#31-the-console)
+  - [3.2 An R script](#32-an-r-script)
+  - [3.3 The environment](#33-the-environment)
+- [4. Understanding Basic R Syntax](#4-understanding-basic-r-syntax)
+  - [4.1 R is case-sensitive](#41-r-is-case-sensitive)
+  - [4.2 Comments](#42-comments)
+  - [4.3 Parentheses, brackets and
+    braces](#43-parentheses-brackets-and-braces)
+- [5. Objects and Assignment](#5-objects-and-assignment)
+  - [5.1 Why use `<-`?](#51-why-use--)
+  - [5.2 Naming objects](#52-naming-objects)
+- [6. R as a Calculator](#6-r-as-a-calculator)
+  - [6.1 Order of operations](#61-order-of-operations)
+  - [6.2 A biological calculation](#62-a-biological-calculation)
+- [7. Functions and Arguments](#7-functions-and-arguments)
+  - [7.1 Named arguments](#71-named-arguments)
+  - [7.2 Functions can return values](#72-functions-can-return-values)
+  - [7.3 Getting help](#73-getting-help)
+- [8. Vectors: The Foundation of R](#8-vectors-the-foundation-of-r)
+  - [8.1 Creating a vector with `c()`](#81-creating-a-vector-with-c)
+  - [8.2 Examining a vector](#82-examining-a-vector)
+  - [8.3 Vectorized calculations](#83-vectorized-calculations)
+  - [8.4 Combining vectors in
+    calculations](#84-combining-vectors-in-calculations)
+  - [8.5 Recycling warning](#85-recycling-warning)
+- [9. Basic Data Types](#9-basic-data-types)
+  - [9.1 Numeric data](#91-numeric-data)
+  - [9.2 Integer data](#92-integer-data)
+  - [9.3 Character data](#93-character-data)
+  - [9.4 Logical data](#94-logical-data)
+  - [9.5 Special numeric values](#95-special-numeric-values)
+- [10. Coercion: When R Changes a Data
+  Type](#10-coercion-when-r-changes-a-data-type)
+  - [10.1 Explicit conversion](#101-explicit-conversion)
+- [11. Selecting Values from a
+  Vector](#11-selecting-values-from-a-vector)
+  - [11.1 Selecting by position](#111-selecting-by-position)
+  - [11.2 Excluding positions](#112-excluding-positions)
+  - [11.3 Selecting a range](#113-selecting-a-range)
+  - [11.4 Selecting with a logical
+    condition](#114-selecting-with-a-logical-condition)
+  - [11.5 Named vectors](#115-named-vectors)
+- [12. Comparison and Logical
+  Operators](#12-comparison-and-logical-operators)
+- [13. Missing Values](#13-missing-values)
+  - [13.1 Detecting missing values](#131-detecting-missing-values)
+  - [13.2 Missing values affect
+    calculations](#132-missing-values-affect-calculations)
+  - [13.3 Do not compare missing values with
+    `==`](#133-do-not-compare-missing-values-with-)
+  - [13.4 Zero is not automatically
+    missing](#134-zero-is-not-automatically-missing)
+- [14. Factors: Representing
+  Categories](#14-factors-representing-categories)
+  - [14.1 Reference levels matter](#141-reference-levels-matter)
+  - [14.2 Ordered factors](#142-ordered-factors)
+- [15. Matrices](#15-matrices)
+  - [15.1 Matrix dimensions](#151-matrix-dimensions)
+  - [15.2 Selecting matrix values](#152-selecting-matrix-values)
+- [16. Data Frames](#16-data-frames)
+  - [16.1 Selecting columns](#161-selecting-columns)
+  - [16.2 Selecting rows](#162-selecting-rows)
+  - [16.3 Selecting rows with
+    conditions](#163-selecting-rows-with-conditions)
+  - [16.4 Adding a column](#164-adding-a-column)
+- [17. Inspecting a Dataset Before
+  Analysis](#17-inspecting-a-dataset-before-analysis)
+  - [17.1 What these functions tell
+    us](#171-what-these-functions-tell-us)
+  - [17.2 Useful inspection questions](#172-useful-inspection-questions)
+- [18. Basic Summary Functions](#18-basic-summary-functions)
+  - [18.1 Counting categories](#181-counting-categories)
+  - [18.2 Calculating proportions](#182-calculating-proportions)
+  - [18.3 Summarizing by group](#183-summarizing-by-group)
+- [19. Importing Data](#19-importing-data)
+  - [19.1 CSV files](#191-csv-files)
+  - [19.2 Tab-separated files](#192-tab-separated-files)
+  - [19.3 Immediately inspect imported
+    data](#193-immediately-inspect-imported-data)
+  - [19.4 Relative and absolute paths](#194-relative-and-absolute-paths)
+- [20. Exporting Data and Results](#20-exporting-data-and-results)
+- [21. Basic Figures in R](#21-basic-figures-in-r)
+  - [21.1 Scatterplot](#211-scatterplot)
+  - [21.2 Boxplot with individual
+    observations](#212-boxplot-with-individual-observations)
+  - [21.3 Histogram](#213-histogram)
+- [22. Packages](#22-packages)
+  - [22.1 Installing a package](#221-installing-a-package)
+  - [22.2 Loading a package](#222-loading-a-package)
+  - [22.3 Installation versus loading](#223-installation-versus-loading)
+  - [22.4 Function conflicts](#224-function-conflicts)
+- [23. Errors, Warnings and Messages](#23-errors-warnings-and-messages)
+  - [23.1 Error](#231-error)
+  - [23.2 Warning](#232-warning)
+  - [23.3 Message](#233-message)
+  - [23.4 A practical debugging
+    sequence](#234-a-practical-debugging-sequence)
+- [24. Reproducible R Scripts](#24-reproducible-r-scripts)
+  - [24.1 Recommended script order](#241-recommended-script-order)
+  - [24.2 Use a random seed](#242-use-a-random-seed)
+  - [24.3 Avoid manual changes to analysed
+    data](#243-avoid-manual-changes-to-analysed-data)
+  - [24.4 Test from a clean session](#244-test-from-a-clean-session)
+- [25. R Markdown and GitHub
+  Markdown](#25-r-markdown-and-github-markdown)
+  - [25.1 YAML header](#251-yaml-header)
+  - [25.2 R code chunks](#252-r-code-chunks)
+  - [25.3 Important chunk options](#253-important-chunk-options)
+  - [25.4 Knitting the document](#254-knitting-the-document)
+- [26. Integrated Case Study: Biological Sample Quality
+  Control](#26-integrated-case-study-biological-sample-quality-control)
+  - [26.1 Inspect the dataset](#261-inspect-the-dataset)
+  - [26.2 Define transparent quality-control
+    rules](#262-define-transparent-quality-control-rules)
+  - [26.3 Count passed and failed
+    samples](#263-count-passed-and-failed-samples)
+  - [26.4 Select samples that passed](#264-select-samples-that-passed)
+  - [26.5 Visualize the two QC
+    measurements](#265-visualize-the-two-qc-measurements)
+- [27. Common Beginner Mistakes](#27-common-beginner-mistakes)
   - [Mistake 1: Using an object before creating
     it](#mistake-1-using-an-object-before-creating-it)
   - [Mistake 2: Confusing `<-` and `==`](#mistake-2-confusing---and-)
@@ -165,8 +163,8 @@ Sandeep Singh
     them](#mistake-10-clearing-errors-without-reading-them)
   - [Mistake 11: Trusting an analysis that works only in an old
     environment](#mistake-11-trusting-an-analysis-that-works-only-in-an-old-environment)
-- [29. Chapter Summary](#29-chapter-summary)
-- [30. Check Your Understanding](#30-check-your-understanding)
+- [28. Chapter Summary](#28-chapter-summary)
+- [29. Check Your Understanding](#29-check-your-understanding)
   - [Question 1](#question-1)
   - [Question 2](#question-2)
   - [Question 3](#question-3)
@@ -175,7 +173,7 @@ Sandeep Singh
   - [Question 6](#question-6)
   - [Question 7](#question-7)
   - [Question 8](#question-8)
-- [31. Practice with R](#31-practice-with-r)
+- [30. Practice with R](#30-practice-with-r)
   - [Exercise 1: Create biological
     objects](#exercise-1-create-biological-objects)
   - [Exercise 2: Work with a vector](#exercise-2-work-with-a-vector)
@@ -185,12 +183,54 @@ Sandeep Singh
   - [Exercise 5: Explore a data frame](#exercise-5-explore-a-data-frame)
   - [Exercise 6: Find and correct
     problems](#exercise-6-find-and-correct-problems)
-- [32. Mini-Project: Build and Explore a Small Biological
-  Dataset](#32-mini-project-build-and-explore-a-small-biological-dataset)
-- [33. Glossary](#33-glossary)
-- [34. References and Further
-  Reading](#34-references-and-further-reading)
-- [35. Reproducibility Information](#35-reproducibility-information)
+- [31. Mini-Project: Build and Explore a Small Biological
+  Dataset](#31-mini-project-build-and-explore-a-small-biological-dataset)
+- [32. Glossary](#32-glossary)
+- [33. References and Further
+  Reading](#33-references-and-further-reading)
+- [34. Reproducibility Information](#34-reproducibility-information)
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
 
 # 1. Introduction
 
@@ -214,33 +254,12 @@ No previous programming knowledge is required.
 
 ------------------------------------------------------------------------
 
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  explain the difference between R and RStudio;
-2.  use the console and an R script appropriately;
-3.  create and name R objects;
-4.  perform basic arithmetic and use functions;
-5.  create, inspect and subset vectors;
-6.  recognize numeric, character and logical data;
-7.  work with missing values;
-8.  create factors, matrices and data frames;
-9.  inspect and summarize a biological dataset;
-10. import and export simple tabular files;
-11. produce basic statistical figures;
-12. understand packages, errors and warnings;
-13. write reproducible R code; and
-14. understand how R Markdown generates a GitHub Markdown chapter.
-
-------------------------------------------------------------------------
-
-# 3. R and RStudio Are Not the Same Thing
+# 2. R and RStudio Are Not the Same Thing
 
 Beginners often use the words **R** and **RStudio** as if they mean the
 same thing. They do not.
 
-## 3.1 R
+## 2.1 R
 
 R is the language and computational engine that performs the analysis.
 
@@ -254,7 +273,7 @@ R can:
 - analyse genetic and genomic datasets; and
 - create reproducible reports.
 
-## 3.2 RStudio
+## 2.2 RStudio
 
 RStudio is an integrated development environment, commonly called an
 **IDE**. It provides a convenient interface for working with R.
@@ -273,9 +292,9 @@ used to control the engine.
 
 ------------------------------------------------------------------------
 
-# 4. Console, Script and Environment
+# 3. Console, Script and Environment
 
-## 4.1 The console
+## 3.1 The console
 
 The console is useful for quick calculations and experiments.
 
@@ -289,7 +308,7 @@ The console executes a command immediately after you press Enter.
 However, commands typed only in the console are easy to lose and
 difficult to reproduce.
 
-## 4.2 An R script
+## 3.2 An R script
 
 An R script is a plain-text file normally saved with the extension `.R`.
 
@@ -304,7 +323,7 @@ Use a script when you want to:
 In RStudio, a selected line can usually be run with **Ctrl + Enter** on
 Windows or Linux and **Command + Enter** on macOS.
 
-## 4.3 The environment
+## 3.3 The environment
 
 The R environment contains the objects created during the current
 session.
@@ -324,18 +343,19 @@ Use `ls()` to list objects in the current environment.
 ls()
 ```
 
-    ## [1] "gene_name"       "mean_expression" "sample_count"
+    ## [1] "gene_name"             "mean_expression"       "prepare_display_table"
+    ## [4] "print_html_table"      "sample_count"
 
 An object exists only after the code that creates it has been executed.
 
 ------------------------------------------------------------------------
 
-# 5. Understanding Basic R Syntax
+# 4. Understanding Basic R Syntax
 
 Syntax means the rules used to write instructions in a programming
 language.
 
-## 5.1 R is case-sensitive
+## 4.1 R is case-sensitive
 
 R treats uppercase and lowercase letters as different.
 
@@ -356,7 +376,7 @@ Gene
 
 The objects `gene` and `Gene` are separate objects.
 
-## 5.2 Comments
+## 4.2 Comments
 
 A comment begins with `#`. R does not execute text appearing after `#`
 on the same line.
@@ -388,7 +408,7 @@ More useful comment:
 mean(expression_qc_pass)
 ```
 
-## 5.3 Parentheses, brackets and braces
+## 4.3 Parentheses, brackets and braces
 
 These symbols have different purposes:
 
@@ -404,7 +424,7 @@ later.
 
 ------------------------------------------------------------------------
 
-# 6. Objects and Assignment
+# 5. Objects and Assignment
 
 An **object** is a named place where R stores information.
 
@@ -437,13 +457,13 @@ Read the first instruction as:
 
 > Store the value 46 in an object called `patient_age`.
 
-## 6.1 Why use `<-`?
+## 5.1 Why use `<-`?
 
 R also permits `=` in many assignment situations, but `<-` clearly
 distinguishes object assignment from named function arguments. This book
 will use `<-` consistently.
 
-## 6.2 Naming objects
+## 5.2 Naming objects
 
 Good object names describe their contents.
 
@@ -474,7 +494,7 @@ examples, but meaningful names are safer in real analyses.
 
 ------------------------------------------------------------------------
 
-# 7. R as a Calculator
+# 6. R as a Calculator
 
 R supports standard arithmetic operations.
 
@@ -530,7 +550,7 @@ R supports standard arithmetic operations.
 
     ## [1] 1
 
-## 7.1 Order of operations
+## 6.1 Order of operations
 
 R follows the usual mathematical order of operations. Use parentheses
 when they make the intended calculation clearer.
@@ -547,7 +567,7 @@ when they make the intended calculation clearer.
 
     ## [1] 21
 
-## 7.2 A biological calculation
+## 6.2 A biological calculation
 
 Suppose 18 of 24 tissue samples pass quality control.
 
@@ -567,7 +587,7 @@ The result is a percentage because the proportion was multiplied by 100.
 
 ------------------------------------------------------------------------
 
-# 8. Functions and Arguments
+# 7. Functions and Arguments
 
 A **function** is a reusable instruction that performs a task.
 
@@ -587,7 +607,7 @@ sqrt(144)
 
 The value `144` is an **argument** supplied to the function.
 
-## 8.1 Named arguments
+## 7.1 Named arguments
 
 Some functions accept several arguments. Naming them makes code easier
 to understand.
@@ -598,7 +618,7 @@ round(x = 3.14159, digits = 2)
 
     ## [1] 3.14
 
-## 8.2 Functions can return values
+## 7.2 Functions can return values
 
 The result of a function can be stored in an object.
 
@@ -609,7 +629,7 @@ rounded_value
 
     ## [1] 3.14
 
-## 8.3 Getting help
+## 7.3 Getting help
 
 Use `?` or `help()` to open the documentation for a function.
 
@@ -633,7 +653,7 @@ R documentation may feel difficult initially. Focus first on:
 
 ------------------------------------------------------------------------
 
-# 9. Vectors: The Foundation of R
+# 8. Vectors: The Foundation of R
 
 A **vector** is a one-dimensional collection of values of the same basic
 type.
@@ -650,7 +670,7 @@ Examples include:
 - treatment labels; and
 - quality-control outcomes.
 
-## 9.1 Creating a vector with `c()`
+## 8.1 Creating a vector with `c()`
 
 The `c()` function combines values.
 
@@ -676,7 +696,7 @@ qc_pass
 
     ## [1]  TRUE  TRUE FALSE  TRUE
 
-## 9.2 Examining a vector
+## 8.2 Examining a vector
 
 ``` r
 length(plant_height)
@@ -711,7 +731,7 @@ These functions answer different questions:
 | `typeof()` | How is the object stored internally? |
 | `str()`    | What is its compact structure?       |
 
-## 9.3 Vectorized calculations
+## 8.3 Vectorized calculations
 
 R can perform the same calculation on every element without an explicit
 loop.
@@ -730,7 +750,7 @@ fragment_kb
 
 This is called a **vectorized operation**.
 
-## 9.4 Combining vectors in calculations
+## 8.4 Combining vectors in calculations
 
 ``` r
 control_expression <- c(7.2, 7.8, 8.1, 7.5)
@@ -748,7 +768,7 @@ R subtracts corresponding elements. This calculation makes sense only if
 the two vectors have compatible lengths and correctly aligned
 observations.
 
-## 9.5 Recycling warning
+## 8.5 Recycling warning
 
 If vector lengths differ, R may repeat values from the shorter vector.
 This is called **recycling** and can cause unnoticed errors.
@@ -765,9 +785,9 @@ Avoid relying on recycling unless it is deliberate and obvious.
 
 ------------------------------------------------------------------------
 
-# 10. Basic Data Types
+# 9. Basic Data Types
 
-## 10.1 Numeric data
+## 9.1 Numeric data
 
 Numeric values include decimal measurements.
 
@@ -778,7 +798,7 @@ typeof(body_temperature)
 
     ## [1] "double"
 
-## 10.2 Integer data
+## 9.2 Integer data
 
 Integers are whole numbers stored using an `L` suffix when created
 explicitly.
@@ -790,7 +810,7 @@ typeof(mutation_count)
 
     ## [1] "integer"
 
-## 10.3 Character data
+## 9.3 Character data
 
 Character values are text enclosed in quotation marks.
 
@@ -801,7 +821,7 @@ typeof(tissue_type)
 
     ## [1] "character"
 
-## 10.4 Logical data
+## 9.4 Logical data
 
 Logical values are `TRUE` or `FALSE`.
 
@@ -815,7 +835,7 @@ typeof(sample_passed_qc)
 Do not place quotation marks around logical values. `TRUE` is logical,
 while `"TRUE"` is character text.
 
-## 10.5 Special numeric values
+## 9.5 Special numeric values
 
 R also recognizes:
 
@@ -840,7 +860,7 @@ These values are different from missing data, which are represented by
 
 ------------------------------------------------------------------------
 
-# 11. Coercion: When R Changes a Data Type
+# 10. Coercion: When R Changes a Data Type
 
 A basic vector can contain only one underlying data type. If different
 types are combined, R converts them to a common type.
@@ -866,7 +886,7 @@ This can happen accidentally during data import. A numeric laboratory
 column may become character if one entry contains text such as
 `"not measured"`.
 
-## 11.1 Explicit conversion
+## 10.1 Explicit conversion
 
 Common conversion functions include:
 
@@ -896,7 +916,7 @@ indicate that some entries cannot be converted safely.
 
 ------------------------------------------------------------------------
 
-# 12. Selecting Values from a Vector
+# 11. Selecting Values from a Vector
 
 Selection is also called **indexing** or **subsetting**.
 
@@ -904,7 +924,7 @@ Selection is also called **indexing** or **subsetting**.
 gene_expression <- c(8.2, 7.6, 10.4, 9.1, 11.3)
 ```
 
-## 12.1 Selecting by position
+## 11.1 Selecting by position
 
 ``` r
 gene_expression[1]
@@ -926,7 +946,7 @@ gene_expression[c(1, 3, 5)]
 
 R positions begin at 1, not 0.
 
-## 12.2 Excluding positions
+## 11.2 Excluding positions
 
 ``` r
 gene_expression[-2]
@@ -936,7 +956,7 @@ gene_expression[-2]
 
 This returns all elements except the second.
 
-## 12.3 Selecting a range
+## 11.3 Selecting a range
 
 ``` r
 gene_expression[2:4]
@@ -944,7 +964,7 @@ gene_expression[2:4]
 
     ## [1]  7.6 10.4  9.1
 
-## 12.4 Selecting with a logical condition
+## 11.4 Selecting with a logical condition
 
 ``` r
 gene_expression > 9
@@ -961,7 +981,7 @@ gene_expression[gene_expression > 9]
 The first instruction creates logical values. The second uses those
 logical values to retain only measurements greater than 9.
 
-## 12.5 Named vectors
+## 11.5 Named vectors
 
 ``` r
 expression_by_gene <- c(
@@ -981,7 +1001,7 @@ Names can make small vectors easier to interpret.
 
 ------------------------------------------------------------------------
 
-# 13. Comparison and Logical Operators
+# 12. Comparison and Logical Operators
 
 Logical conditions are essential for filtering data and defining groups.
 
@@ -1017,7 +1037,7 @@ not test equality.
 
 ------------------------------------------------------------------------
 
-# 14. Missing Values
+# 13. Missing Values
 
 Missing information is represented by `NA`.
 
@@ -1028,7 +1048,7 @@ glucose
 
     ## [1]  92 105  NA 110  98
 
-## 14.1 Detecting missing values
+## 13.1 Detecting missing values
 
 ``` r
 is.na(glucose)
@@ -1048,7 +1068,7 @@ anyNA(glucose)
 
     ## [1] TRUE
 
-## 14.2 Missing values affect calculations
+## 13.2 Missing values affect calculations
 
 ``` r
 mean(glucose)
@@ -1067,7 +1087,7 @@ calculation.
 
 It does not permanently delete the missing entries from the dataset.
 
-## 14.3 Do not compare missing values with `==`
+## 13.3 Do not compare missing values with `==`
 
 Incorrect:
 
@@ -1085,7 +1105,7 @@ is.na(glucose)
 
     ## [1] FALSE FALSE  TRUE FALSE FALSE
 
-## 14.4 Zero is not automatically missing
+## 13.4 Zero is not automatically missing
 
 A zero can be a valid biological measurement.
 
@@ -1101,7 +1121,7 @@ depends on the data documentation and scientific context.
 
 ------------------------------------------------------------------------
 
-# 15. Factors: Representing Categories
+# 14. Factors: Representing Categories
 
 A **factor** represents categorical data with a defined set of possible
 categories called **levels**.
@@ -1123,7 +1143,7 @@ levels(treatment)
 
     ## [1] "Control" "Treated"
 
-## 15.1 Reference levels matter
+## 14.1 Reference levels matter
 
 In many statistical models, one category becomes the reference group.
 
@@ -1136,7 +1156,7 @@ levels(treatment)
 
 This makes `Control` the reference level.
 
-## 15.2 Ordered factors
+## 14.2 Ordered factors
 
 Some categories have a meaningful order.
 
@@ -1158,7 +1178,7 @@ Although the levels are ordered, the distance between `Mild` and
 
 ------------------------------------------------------------------------
 
-# 16. Matrices
+# 15. Matrices
 
 A **matrix** is a two-dimensional structure in which every value has the
 same basic type.
@@ -1183,14 +1203,102 @@ colnames(expression_matrix) <- c(
   "Treated_1"
 )
 
-expression_matrix
+print_html_table(
+  expression_matrix,
+  caption = "Example gene-expression matrix."
+)
 ```
 
-    ##        Control_1 Control_2 Treated_1
-    ## Gene_A       8.1       7.9      10.2
-    ## Gene_B       6.5       6.8       9.4
+<table class="chapter-table">
 
-## 16.1 Matrix dimensions
+<caption>
+
+Example gene-expression matrix.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Control 1
+</th>
+
+<th style="text-align:right;">
+
+Control 2
+</th>
+
+<th style="text-align:right;">
+
+Treated 1
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_A
+</td>
+
+<td style="text-align:right;">
+
+8.1
+</td>
+
+<td style="text-align:right;">
+
+7.9
+</td>
+
+<td style="text-align:right;">
+
+10.2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_B
+</td>
+
+<td style="text-align:right;">
+
+6.5
+</td>
+
+<td style="text-align:right;">
+
+6.8
+</td>
+
+<td style="text-align:right;">
+
+9.4
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 15.1 Matrix dimensions
 
 ``` r
 dim(expression_matrix)
@@ -1210,7 +1318,7 @@ ncol(expression_matrix)
 
     ## [1] 3
 
-## 16.2 Selecting matrix values
+## 15.2 Selecting matrix values
 
 Matrices use `[row, column]` indexing.
 
@@ -1245,7 +1353,7 @@ position empty selects every row.
 
 ------------------------------------------------------------------------
 
-# 17. Data Frames
+# 16. Data Frames
 
 A **data frame** is a two-dimensional table in which different columns
 may contain different data types.
@@ -1262,20 +1370,235 @@ sample_data <- data.frame(
   stringsAsFactors = FALSE
 )
 
-print(sample_data)
+print_html_table(
+  sample_data,
+  caption = "Example biological sample data."
+)
 ```
 
-    ##   sample_id tissue treatment expression qc_pass
-    ## 1       S01  Blood   Control        8.2    TRUE
-    ## 2       S02  Blood   Treated       10.1    TRUE
-    ## 3       S03  Liver   Control        7.5   FALSE
-    ## 4       S04  Liver   Treated        9.8    TRUE
-    ## 5       S05  Blood   Control        8.7    TRUE
-    ## 6       S06  Liver   Treated       10.4    TRUE
+<table class="chapter-table">
+
+<caption>
+
+Example biological sample data.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.1
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S03
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+7.5
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+9.8
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S05
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.7
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.4
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Each row is one biological sample. Each column is one variable.
 
-## 17.1 Selecting columns
+## 16.1 Selecting columns
 
 The `$` operator selects a column by name.
 
@@ -1294,108 +1617,1492 @@ sample_data[, "expression"]
     ## [1]  8.2 10.1  7.5  9.8  8.7 10.4
 
 ``` r
-print(sample_data[, c("sample_id", "expression")])
+print_html_table(
+  sample_data[, c("sample_id", "expression")],
+  caption = "Selected sample identifier and expression columns."
+)
 ```
 
-    ##   sample_id expression
-    ## 1       S01        8.2
-    ## 2       S02       10.1
-    ## 3       S03        7.5
-    ## 4       S04        9.8
-    ## 5       S05        8.7
-    ## 6       S06       10.4
+<table class="chapter-table">
 
-## 17.2 Selecting rows
+<caption>
+
+Selected sample identifier and expression columns.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:right;">
+
+10.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S03
+</td>
+
+<td style="text-align:right;">
+
+7.5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:right;">
+
+9.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S05
+</td>
+
+<td style="text-align:right;">
+
+8.7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:right;">
+
+10.4
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 16.2 Selecting rows
 
 ``` r
-print(sample_data[1, ])
+print_html_table(
+  sample_data[1, ],
+  caption = "The first observation."
+)
 ```
 
-    ##   sample_id tissue treatment expression qc_pass
-    ## 1       S01  Blood   Control        8.2    TRUE
+<table class="chapter-table">
+
+<caption>
+
+The first observation.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-print(sample_data[1:3, ])
+print_html_table(
+  sample_data[1:3, ],
+  caption = "The first three observations."
+)
 ```
 
-    ##   sample_id tissue treatment expression qc_pass
-    ## 1       S01  Blood   Control        8.2    TRUE
-    ## 2       S02  Blood   Treated       10.1    TRUE
-    ## 3       S03  Liver   Control        7.5   FALSE
+<table class="chapter-table">
 
-## 17.3 Selecting rows with conditions
+<caption>
+
+The first three observations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.1
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S03
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+7.5
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 16.3 Selecting rows with conditions
 
 ``` r
-print(sample_data[sample_data$qc_pass, ])
+print_html_table(
+  sample_data[sample_data$qc_pass, ],
+  caption = "Samples that passed quality control."
+)
 ```
 
-    ##   sample_id tissue treatment expression qc_pass
-    ## 1       S01  Blood   Control        8.2    TRUE
-    ## 2       S02  Blood   Treated       10.1    TRUE
-    ## 4       S04  Liver   Treated        9.8    TRUE
-    ## 5       S05  Blood   Control        8.7    TRUE
-    ## 6       S06  Liver   Treated       10.4    TRUE
+<table class="chapter-table">
+
+<caption>
+
+Samples that passed quality control.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.1
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+9.8
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S05
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.7
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.4
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-print(sample_data[
-  sample_data$treatment == "Treated" &
-    sample_data$qc_pass,
-])
+print_html_table(
+  sample_data[
+    sample_data$treatment == "Treated" &
+      sample_data$qc_pass,
+  ],
+  caption = "Treated samples that passed quality control."
+)
 ```
 
-    ##   sample_id tissue treatment expression qc_pass
-    ## 2       S02  Blood   Treated       10.1    TRUE
-    ## 4       S04  Liver   Treated        9.8    TRUE
-    ## 6       S06  Liver   Treated       10.4    TRUE
+<table class="chapter-table">
 
-## 17.4 Adding a column
+<caption>
+
+Treated samples that passed quality control.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.1
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+9.8
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.4
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 16.4 Adding a column
 
 ``` r
 sample_data$expression_high <-
   sample_data$expression >= 9
 
-print(sample_data)
+print_html_table(
+  sample_data,
+  caption = "Sample data after adding the expression-high indicator."
+)
 ```
 
-    ##   sample_id tissue treatment expression qc_pass expression_high
-    ## 1       S01  Blood   Control        8.2    TRUE           FALSE
-    ## 2       S02  Blood   Treated       10.1    TRUE            TRUE
-    ## 3       S03  Liver   Control        7.5   FALSE           FALSE
-    ## 4       S04  Liver   Treated        9.8    TRUE            TRUE
-    ## 5       S05  Blood   Control        8.7    TRUE           FALSE
-    ## 6       S06  Liver   Treated       10.4    TRUE            TRUE
+<table class="chapter-table">
+
+<caption>
+
+Sample data after adding the expression-high indicator.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+<th style="text-align:left;">
+
+expression high
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.1
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S03
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+7.5
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+9.8
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S05
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.7
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.4
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The comparison creates `TRUE` or `FALSE` for each row.
 
 ------------------------------------------------------------------------
 
-# 18. Inspecting a Dataset Before Analysis
+# 17. Inspecting a Dataset Before Analysis
 
 Never begin a statistical analysis without first inspecting the dataset.
 
 ``` r
-print(head(sample_data))
+print_html_table(
+  head(sample_data),
+  caption = "First observations in the sample dataset."
+)
 ```
 
-    ##   sample_id tissue treatment expression qc_pass expression_high
-    ## 1       S01  Blood   Control        8.2    TRUE           FALSE
-    ## 2       S02  Blood   Treated       10.1    TRUE            TRUE
-    ## 3       S03  Liver   Control        7.5   FALSE           FALSE
-    ## 4       S04  Liver   Treated        9.8    TRUE            TRUE
-    ## 5       S05  Blood   Control        8.7    TRUE           FALSE
-    ## 6       S06  Liver   Treated       10.4    TRUE            TRUE
+<table class="chapter-table">
+
+<caption>
+
+First observations in the sample dataset.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+<th style="text-align:left;">
+
+expression high
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.1
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S03
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+7.5
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+9.8
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S05
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.7
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.4
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-print(tail(sample_data))
+print_html_table(
+  tail(sample_data),
+  caption = "Last observations in the sample dataset."
+)
 ```
 
-    ##   sample_id tissue treatment expression qc_pass expression_high
-    ## 1       S01  Blood   Control        8.2    TRUE           FALSE
-    ## 2       S02  Blood   Treated       10.1    TRUE            TRUE
-    ## 3       S03  Liver   Control        7.5   FALSE           FALSE
-    ## 4       S04  Liver   Treated        9.8    TRUE            TRUE
-    ## 5       S05  Blood   Control        8.7    TRUE           FALSE
-    ## 6       S06  Liver   Treated       10.4    TRUE            TRUE
+<table class="chapter-table">
+
+<caption>
+
+Last observations in the sample dataset.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+<th style="text-align:left;">
+
+expression high
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.1
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S03
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+7.5
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+9.8
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S05
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.7
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.4
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 dim(sample_data)
@@ -1453,7 +3160,7 @@ summary(sample_data)
     ##                                 
     ## 
 
-## 18.1 What these functions tell us
+## 17.1 What these functions tell us
 
 | Function    | Information provided          |
 |-------------|-------------------------------|
@@ -1466,7 +3173,7 @@ summary(sample_data)
 | `str()`     | Structure and data types      |
 | `summary()` | Basic summary of every column |
 
-## 18.2 Useful inspection questions
+## 17.2 Useful inspection questions
 
 Before analysis, ask:
 
@@ -1481,7 +3188,7 @@ Before analysis, ask:
 
 ------------------------------------------------------------------------
 
-# 19. Basic Summary Functions
+# 18. Basic Summary Functions
 
 ``` r
 expression_values <- sample_data$expression
@@ -1543,44 +3250,294 @@ quantile(expression_values)
 These functions describe the observed sample. Later chapters will
 explain their statistical meaning and appropriate use in detail.
 
-## 19.1 Counting categories
+## 18.1 Counting categories
 
 ``` r
-table(sample_data$tissue)
+print_html_table(
+  table(sample_data$tissue),
+  caption = "Tissue frequencies."
+)
 ```
 
-    ## 
-    ## Blood Liver 
-    ##     3     3
+<table class="chapter-table">
+
+<caption>
+
+Tissue frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-table(sample_data$treatment)
+print_html_table(
+  table(sample_data$treatment),
+  caption = "Treatment-group frequencies."
+)
 ```
 
-    ## 
-    ## Control Treated 
-    ##       3       3
+<table class="chapter-table">
+
+<caption>
+
+Treatment-group frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-table(sample_data$treatment, sample_data$qc_pass)
+print_html_table(
+  table(sample_data$treatment, sample_data$qc_pass),
+  caption = "Treatment group by quality-control status."
+)
 ```
 
-    ##          
-    ##           FALSE TRUE
-    ##   Control     1    2
-    ##   Treated     0    3
+<table class="chapter-table">
 
-## 19.2 Calculating proportions
+<caption>
+
+Treatment group by quality-control status.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+FALSE.
+</th>
+
+<th style="text-align:right;">
+
+TRUE.
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 18.2 Calculating proportions
 
 ``` r
-prop.table(table(sample_data$tissue))
+tissue_proportions <- prop.table(table(sample_data$tissue))
+print_html_table(
+  data.frame(
+    Tissue = names(tissue_proportions),
+    Proportion = as.numeric(tissue_proportions)
+  ),
+  caption = "Proportion of samples from each tissue."
+)
 ```
 
-    ## 
-    ## Blood Liver 
-    ##   0.5   0.5
+<table class="chapter-table">
 
-## 19.3 Summarizing by group
+<caption>
+
+Proportion of samples from each tissue.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Tissue
+</th>
+
+<th style="text-align:right;">
+
+Proportion
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+0.5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:right;">
+
+0.5
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 18.3 Summarizing by group
 
 ``` r
 mean_by_treatment <- aggregate(
@@ -1589,23 +3546,81 @@ mean_by_treatment <- aggregate(
   FUN = mean
 )
 
-print(mean_by_treatment)
+print_html_table(
+  mean_by_treatment,
+  caption = "Mean expression by treatment group."
+)
 ```
 
-    ##   treatment expression
-    ## 1   Control   8.133333
-    ## 2   Treated  10.100000
+<table class="chapter-table">
+
+<caption>
+
+Mean expression by treatment group.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.133
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.100
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The output reports the sample mean in each treatment group. It does not
 by itself establish a treatment effect.
 
 ------------------------------------------------------------------------
 
-# 20. Importing Data
+# 19. Importing Data
 
 Biological data are often stored in CSV or tab-separated text files.
 
-## 20.1 CSV files
+## 19.1 CSV files
 
 A comma-separated values file can be imported with `read.csv()`.
 
@@ -1616,7 +3631,7 @@ clinical_data <- read.csv(
 )
 ```
 
-## 20.2 Tab-separated files
+## 19.2 Tab-separated files
 
 ``` r
 expression_data <- read.delim(
@@ -1625,7 +3640,7 @@ expression_data <- read.delim(
 )
 ```
 
-## 20.3 Immediately inspect imported data
+## 19.3 Immediately inspect imported data
 
 ``` r
 dim(clinical_data)
@@ -1638,7 +3653,7 @@ summary(clinical_data)
 Successful import does not guarantee correct import. Always check the
 dimensions, column names, data types and example values.
 
-## 20.4 Relative and absolute paths
+## 19.4 Relative and absolute paths
 
 An absolute path describes the complete location of a file on one
 computer. A relative path describes a file location relative to the
@@ -1664,7 +3679,7 @@ and share.
 
 ------------------------------------------------------------------------
 
-# 21. Exporting Data and Results
+# 20. Exporting Data and Results
 
 Use `write.csv()` to save a data frame as a CSV file.
 
@@ -1696,12 +3711,12 @@ be performed through documented code.
 
 ------------------------------------------------------------------------
 
-# 22. Basic Figures in R
+# 21. Basic Figures in R
 
 Statistical graphics allow us to see patterns that may be hidden in
 numerical summaries.
 
-## 22.1 Scatterplot
+## 21.1 Scatterplot
 
 Suppose we measure sequencing read length and quality score for eight
 reads.
@@ -1738,7 +3753,7 @@ Each point represents one sequencing read. The plot shows an increasing
 pattern in this hypothetical example, but it does not establish
 causation.
 
-## 22.2 Boxplot with individual observations
+## 21.2 Boxplot with individual observations
 
 ``` r
 boxplot(
@@ -1774,7 +3789,7 @@ Gene-expression values in control and treated biological samples.
 Showing individual observations is especially useful when the sample is
 small.
 
-## 22.3 Histogram
+## 21.3 Histogram
 
 ``` r
 simulated_gene_counts <- rpois(
@@ -1811,7 +3826,7 @@ numerical values.
 
 ------------------------------------------------------------------------
 
-# 23. Packages
+# 22. Packages
 
 Base R contains many functions, but additional functions are distributed
 in **packages**.
@@ -1824,7 +3839,7 @@ A package may contain:
 - tutorials; and
 - supporting code.
 
-## 23.1 Installing a package
+## 22.1 Installing a package
 
 A package normally needs to be installed only once for a particular R
 installation.
@@ -1833,7 +3848,7 @@ installation.
 install.packages("ggplot2")
 ```
 
-## 23.2 Loading a package
+## 22.2 Loading a package
 
 A package must usually be loaded in each new R session before its
 functions are used.
@@ -1842,7 +3857,7 @@ functions are used.
 library(ggplot2)
 ```
 
-## 23.3 Installation versus loading
+## 22.3 Installation versus loading
 
 | Command | Purpose | Typical frequency |
 |----|----|----|
@@ -1853,7 +3868,7 @@ Do not place `install.packages()` inside an analysis script that will be
 run repeatedly. Record required packages separately and load them near
 the beginning of the script.
 
-## 23.4 Function conflicts
+## 22.4 Function conflicts
 
 Different packages may contain functions with the same name. The `::`
 operator identifies the package explicitly.
@@ -1868,11 +3883,11 @@ and managed deliberately.
 
 ------------------------------------------------------------------------
 
-# 24. Errors, Warnings and Messages
+# 23. Errors, Warnings and Messages
 
 R communicates different kinds of information.
 
-## 24.1 Error
+## 23.1 Error
 
 An error means the requested operation could not be completed.
 
@@ -1883,7 +3898,7 @@ mean(gene_expresion)
 If the correct object is `gene_expression`, this code fails because the
 name is misspelled.
 
-## 24.2 Warning
+## 23.2 Warning
 
 A warning means R completed the operation but detected a possible
 problem.
@@ -1895,12 +3910,12 @@ as.numeric(c("10", "not_measured", "12"))
 R converts valid numbers but warns that `"not_measured"` cannot be
 converted numerically.
 
-## 24.3 Message
+## 23.3 Message
 
 A message provides information about an operation. It does not
 necessarily indicate a problem.
 
-## 24.4 A practical debugging sequence
+## 23.4 A practical debugging sequence
 
 When code fails:
 
@@ -1918,12 +3933,12 @@ error.
 
 ------------------------------------------------------------------------
 
-# 25. Reproducible R Scripts
+# 24. Reproducible R Scripts
 
 A reproducible script should produce the same result when run again with
 the same inputs and software environment.
 
-## 25.1 Recommended script order
+## 24.1 Recommended script order
 
 ``` r
 # 1. Project description
@@ -1937,7 +3952,7 @@ the same inputs and software environment.
 # 9. Record session information
 ```
 
-## 25.2 Use a random seed
+## 24.2 Use a random seed
 
 Random operations may produce different results each time. `set.seed()`
 makes a simulation reproducible.
@@ -1959,7 +3974,7 @@ sample(1:100, size = 5)
 Both samples are identical because the same seed was set immediately
 before each operation.
 
-## 25.3 Avoid manual changes to analysed data
+## 24.3 Avoid manual changes to analysed data
 
 If a value must be corrected, document the correction in code.
 
@@ -1978,7 +3993,7 @@ Such corrections should be made only when supported by source
 documentation. An unusual value should not be changed merely because it
 looks inconvenient.
 
-## 25.4 Test from a clean session
+## 24.4 Test from a clean session
 
 A script may appear to work because required objects remain in the
 environment from earlier work.
@@ -1992,7 +4007,7 @@ Before sharing or publishing an analysis:
 
 ------------------------------------------------------------------------
 
-# 26. R Markdown and GitHub Markdown
+# 25. R Markdown and GitHub Markdown
 
 An R Markdown file usually has the extension `.Rmd`. It combines:
 
@@ -2002,7 +4017,7 @@ An R Markdown file usually has the extension `.Rmd`. It combines:
 - R code; and
 - results generated by that code.
 
-## 26.1 YAML header
+## 25.1 YAML header
 
 The YAML header appears at the beginning of an R Markdown file.
 
@@ -2017,7 +4032,7 @@ output:
 
 It controls the document title and output format.
 
-## 26.2 R code chunks
+## 25.2 R code chunks
 
 An executable R chunk has this structure:
 
@@ -2034,7 +4049,7 @@ mean(c(10, 12, 14))
 
 Chunk names should be unique and descriptive.
 
-## 26.3 Important chunk options
+## 25.3 Important chunk options
 
 | Option            | Meaning                                    |
 |-------------------|--------------------------------------------|
@@ -2049,7 +4064,7 @@ Chunk names should be unique and descriptive.
 Warnings should be hidden only after the analyst understands why they
 occur.
 
-## 26.4 Knitting the document
+## 25.4 Knitting the document
 
 When the chapter is knitted:
 
@@ -2064,7 +4079,7 @@ object creation matter.
 
 ------------------------------------------------------------------------
 
-# 27. Integrated Case Study: Biological Sample Quality Control
+# 26. Integrated Case Study: Biological Sample Quality Control
 
 Suppose a small sequencing study contains eight biological samples.
 
@@ -2078,20 +4093,291 @@ qc_data <- data.frame(
   stringsAsFactors = FALSE
 )
 
-print(qc_data)
+print_html_table(
+  qc_data,
+  caption = "Hypothetical sequencing quality-control dataset."
+)
 ```
 
-    ##   sample_id   group mapped_reads_million mapping_rate contamination
-    ## 1       S01 Control                   42         0.92          0.01
-    ## 2       S02 Control                   38         0.89          0.02
-    ## 3       S03 Control                   19         0.61          0.08
-    ## 4       S04 Control                   45         0.94          0.01
-    ## 5       S05 Treated                   51         0.95          0.01
-    ## 6       S06 Treated                   48         0.93          0.02
-    ## 7       S07 Treated                   44         0.90          0.02
-    ## 8       S08 Treated                   21         0.64          0.09
+<table class="chapter-table">
 
-## 27.1 Inspect the dataset
+<caption>
+
+Hypothetical sequencing quality-control dataset.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+group
+</th>
+
+<th style="text-align:right;">
+
+mapped reads million
+</th>
+
+<th style="text-align:right;">
+
+mapping rate
+</th>
+
+<th style="text-align:right;">
+
+contamination
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+42
+</td>
+
+<td style="text-align:right;">
+
+0.92
+</td>
+
+<td style="text-align:right;">
+
+0.01
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+<td style="text-align:right;">
+
+0.89
+</td>
+
+<td style="text-align:right;">
+
+0.02
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S03
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+19
+</td>
+
+<td style="text-align:right;">
+
+0.61
+</td>
+
+<td style="text-align:right;">
+
+0.08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:right;">
+
+0.01
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S05
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+<td style="text-align:right;">
+
+0.95
+</td>
+
+<td style="text-align:right;">
+
+0.01
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+48
+</td>
+
+<td style="text-align:right;">
+
+0.93
+</td>
+
+<td style="text-align:right;">
+
+0.02
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S07
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+<td style="text-align:right;">
+
+0.90
+</td>
+
+<td style="text-align:right;">
+
+0.02
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S08
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+21
+</td>
+
+<td style="text-align:right;">
+
+0.64
+</td>
+
+<td style="text-align:right;">
+
+0.09
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 26.1 Inspect the dataset
 
 ``` r
 dim(qc_data)
@@ -2136,7 +4422,7 @@ summary(qc_data)
     ##  3rd Qu.:0.0350  
     ##  Max.   :0.0900
 
-## 27.2 Define transparent quality-control rules
+## 26.2 Define transparent quality-control rules
 
 For this teaching example, suppose a sample passes if:
 
@@ -2148,56 +4434,742 @@ qc_data$qc_pass <-
   qc_data$mapping_rate >= 0.80 &
   qc_data$contamination <= 0.05
 
-print(qc_data)
+print_html_table(
+  qc_data,
+  caption = "Quality-control dataset after applying the pass rules."
+)
 ```
 
-    ##   sample_id   group mapped_reads_million mapping_rate contamination qc_pass
-    ## 1       S01 Control                   42         0.92          0.01    TRUE
-    ## 2       S02 Control                   38         0.89          0.02    TRUE
-    ## 3       S03 Control                   19         0.61          0.08   FALSE
-    ## 4       S04 Control                   45         0.94          0.01    TRUE
-    ## 5       S05 Treated                   51         0.95          0.01    TRUE
-    ## 6       S06 Treated                   48         0.93          0.02    TRUE
-    ## 7       S07 Treated                   44         0.90          0.02    TRUE
-    ## 8       S08 Treated                   21         0.64          0.09   FALSE
+<table class="chapter-table">
+
+<caption>
+
+Quality-control dataset after applying the pass rules.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+group
+</th>
+
+<th style="text-align:right;">
+
+mapped reads million
+</th>
+
+<th style="text-align:right;">
+
+mapping rate
+</th>
+
+<th style="text-align:right;">
+
+contamination
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+42
+</td>
+
+<td style="text-align:right;">
+
+0.92
+</td>
+
+<td style="text-align:right;">
+
+0.01
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+<td style="text-align:right;">
+
+0.89
+</td>
+
+<td style="text-align:right;">
+
+0.02
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S03
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+19
+</td>
+
+<td style="text-align:right;">
+
+0.61
+</td>
+
+<td style="text-align:right;">
+
+0.08
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:right;">
+
+0.01
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S05
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+<td style="text-align:right;">
+
+0.95
+</td>
+
+<td style="text-align:right;">
+
+0.01
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+48
+</td>
+
+<td style="text-align:right;">
+
+0.93
+</td>
+
+<td style="text-align:right;">
+
+0.02
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S07
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+<td style="text-align:right;">
+
+0.90
+</td>
+
+<td style="text-align:right;">
+
+0.02
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S08
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+21
+</td>
+
+<td style="text-align:right;">
+
+0.64
+</td>
+
+<td style="text-align:right;">
+
+0.09
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 These thresholds are hypothetical. Real thresholds must be justified
 using the assay, protocol and study context.
 
-## 27.3 Count passed and failed samples
+## 26.3 Count passed and failed samples
 
 ``` r
-table(qc_data$qc_pass)
+print_html_table(
+  table(qc_data$qc_pass),
+  caption = "Numbers of samples passing and failing quality control."
+)
 ```
 
-    ## 
-    ## FALSE  TRUE 
-    ##     2     6
+<table class="chapter-table">
+
+<caption>
+
+Numbers of samples passing and failing quality control.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-prop.table(table(qc_data$qc_pass))
+qc_pass_proportions <- prop.table(table(qc_data$qc_pass))
+print_html_table(
+  data.frame(
+    QC_status = names(qc_pass_proportions),
+    Proportion = as.numeric(qc_pass_proportions)
+  ),
+  caption = "Proportions of samples passing and failing quality control."
+)
 ```
 
-    ## 
-    ## FALSE  TRUE 
-    ##  0.25  0.75
+<table class="chapter-table">
 
-## 27.4 Select samples that passed
+<caption>
+
+Proportions of samples passing and failing quality control.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+QC status
+</th>
+
+<th style="text-align:right;">
+
+Proportion
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:right;">
+
+0.25
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:right;">
+
+0.75
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 26.4 Select samples that passed
 
 ``` r
 qc_passed_data <- qc_data[qc_data$qc_pass, ]
-print(qc_passed_data)
+print_html_table(
+  qc_passed_data,
+  caption = "Samples retained after quality control."
+)
 ```
 
-    ##   sample_id   group mapped_reads_million mapping_rate contamination qc_pass
-    ## 1       S01 Control                   42         0.92          0.01    TRUE
-    ## 2       S02 Control                   38         0.89          0.02    TRUE
-    ## 4       S04 Control                   45         0.94          0.01    TRUE
-    ## 5       S05 Treated                   51         0.95          0.01    TRUE
-    ## 6       S06 Treated                   48         0.93          0.02    TRUE
-    ## 7       S07 Treated                   44         0.90          0.02    TRUE
+<table class="chapter-table">
 
-## 27.5 Visualize the two QC measurements
+<caption>
+
+Samples retained after quality control.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+group
+</th>
+
+<th style="text-align:right;">
+
+mapped reads million
+</th>
+
+<th style="text-align:right;">
+
+mapping rate
+</th>
+
+<th style="text-align:right;">
+
+contamination
+</th>
+
+<th style="text-align:left;">
+
+qc pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S01
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+42
+</td>
+
+<td style="text-align:right;">
+
+0.92
+</td>
+
+<td style="text-align:right;">
+
+0.01
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S02
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+<td style="text-align:right;">
+
+0.89
+</td>
+
+<td style="text-align:right;">
+
+0.02
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S04
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:right;">
+
+0.01
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S05
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+<td style="text-align:right;">
+
+0.95
+</td>
+
+<td style="text-align:right;">
+
+0.01
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S06
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+48
+</td>
+
+<td style="text-align:right;">
+
+0.93
+</td>
+
+<td style="text-align:right;">
+
+0.02
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S07
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+<td style="text-align:right;">
+
+0.90
+</td>
+
+<td style="text-align:right;">
+
+0.02
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 26.5 Visualize the two QC measurements
 
 ``` r
 qc_colours <- ifelse(
@@ -2254,7 +5226,7 @@ frames, subsetting, summaries and visualization.
 
 ------------------------------------------------------------------------
 
-# 28. Common Beginner Mistakes
+# 27. Common Beginner Mistakes
 
 ## Mistake 1: Using an object before creating it
 
@@ -2304,7 +5276,7 @@ Restart R and run the complete script from the beginning.
 
 ------------------------------------------------------------------------
 
-# 29. Chapter Summary
+# 28. Chapter Summary
 
 In this chapter, you learned that:
 
@@ -2331,7 +5303,7 @@ In this chapter, you learned that:
 
 ------------------------------------------------------------------------
 
-# 30. Check Your Understanding
+# 29. Check Your Understanding
 
 ## Question 1
 
@@ -2387,7 +5359,7 @@ What is the difference between installing and loading a package?
 
 ------------------------------------------------------------------------
 
-# 31. Practice with R
+# 30. Practice with R
 
 ## Exercise 1: Create biological objects
 
@@ -2478,7 +5450,7 @@ sample_data$Treatment == "Control"
 
 ------------------------------------------------------------------------
 
-# 32. Mini-Project: Build and Explore a Small Biological Dataset
+# 31. Mini-Project: Build and Explore a Small Biological Dataset
 
 Create a data frame containing at least 10 biological samples and the
 following variables:
@@ -2507,7 +5479,7 @@ Do not perform a formal hypothesis test yet.
 
 ------------------------------------------------------------------------
 
-# 33. Glossary
+# 32. Glossary
 
 | Term | Beginner-friendly meaning |
 |----|----|
@@ -2534,7 +5506,7 @@ Do not perform a formal hypothesis test yet.
 
 ------------------------------------------------------------------------
 
-# 34. References and Further Reading
+# 33. References and Further Reading
 
 1.  R Core Team. *R: A Language and Environment for Statistical
     Computing*. Vienna, Austria: R Foundation for Statistical Computing.
@@ -2573,7 +5545,7 @@ Do not perform a formal hypothesis test yet.
 
 ------------------------------------------------------------------------
 
-# 35. Reproducibility Information
+# 34. Reproducibility Information
 
 The datasets in this chapter are hypothetical or simulated for teaching.
 They should not be used to support biological or clinical conclusions.
