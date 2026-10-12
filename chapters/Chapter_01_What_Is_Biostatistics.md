@@ -8,7 +8,6 @@ output:
     toc_depth: 3
     fig_width: 8
     fig_height: 5
-    df_print: kable
     preserve_yaml: true
 ---
 
@@ -17,69 +16,68 @@ Chapter 1: What Is Biostatistics?
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. Why Do We Need Biostatistics?](#3-why-do-we-need-biostatistics)
-  - [3.1 From observation to evidence](#31-from-observation-to-evidence)
-- [4. A First Biological Dataset](#4-a-first-biological-dataset)
-- [5. Population and Sample](#5-population-and-sample)
-  - [5.1 Population](#51-population)
-  - [5.2 Sample](#52-sample)
-  - [5.3 Why sample selection matters](#53-why-sample-selection-matters)
-  - [5.4 Visualizing a population and a sample in
-    R](#54-visualizing-a-population-and-a-sample-in-r)
-- [6. Observation, Variable and
-  Value](#6-observation-variable-and-value)
-  - [6.1 Observation](#61-observation)
-  - [6.2 Variable](#62-variable)
-  - [6.3 Value](#63-value)
-  - [6.4 A simple way to remember](#64-a-simple-way-to-remember)
-- [7. Parameters and Statistics](#7-parameters-and-statistics)
-  - [7.1 Parameter](#71-parameter)
-  - [7.2 Statistic](#72-statistic)
-  - [7.3 Example: mean DNA-fragment
-    length](#73-example-mean-dna-fragment-length)
-- [8. Descriptive and Inferential
-  Statistics](#8-descriptive-and-inferential-statistics)
-  - [8.1 Descriptive statistics](#81-descriptive-statistics)
-  - [8.2 Inferential statistics](#82-inferential-statistics)
-  - [8.3 Description and inference work
-    together](#83-description-and-inference-work-together)
-- [9. Biological Variation and Technical
-  Variation](#9-biological-variation-and-technical-variation)
-  - [9.1 Biological variation](#91-biological-variation)
-  - [9.2 Technical variation](#92-technical-variation)
-  - [9.3 Biological and technical
-    replicates](#93-biological-and-technical-replicates)
-  - [9.4 Comparing variation in R](#94-comparing-variation-in-r)
-- [10. Types of Questions in
-  Biostatistics](#10-types-of-questions-in-biostatistics)
-  - [10.1 Description](#101-description)
-  - [10.2 Comparison](#102-comparison)
-  - [10.3 Association](#103-association)
-  - [10.4 Prediction](#104-prediction)
-  - [10.5 Time-to-event analysis](#105-time-to-event-analysis)
-  - [10.6 Genetic association](#106-genetic-association)
-- [11. Turning a Biological Question into a Statistical
-  Question](#11-turning-a-biological-question-into-a-statistical-question)
-  - [11.1 The PICO framework](#111-the-pico-framework)
-- [12. Outcome, Predictor and
-  Covariate](#12-outcome-predictor-and-covariate)
-  - [12.1 Outcome variable](#121-outcome-variable)
-  - [12.2 Predictor variable](#122-predictor-variable)
-  - [12.3 Covariate](#123-covariate)
-- [13. Variation, Chance and
-  Uncertainty](#13-variation-chance-and-uncertainty)
-  - [13.1 A simulation of sampling
-    variation](#131-a-simulation-of-sampling-variation)
-- [14. Statistical Significance Is Not the Whole
-  Story](#14-statistical-significance-is-not-the-whole-story)
-- [15. Association Is Not Necessarily
-  Causation](#15-association-is-not-necessarily-causation)
-- [16. A Beginner-Friendly Bioinformatics
-  Example](#16-a-beginner-friendly-bioinformatics-example)
-  - [16.1 Summarize each group](#161-summarize-each-group)
-  - [16.2 Visualize the observations](#162-visualize-the-observations)
-- [17. The Biostatistical Workflow](#17-the-biostatistical-workflow)
+- [2. Why Do We Need Biostatistics?](#2-why-do-we-need-biostatistics)
+  - [2.1 From observation to evidence](#21-from-observation-to-evidence)
+- [3. A First Biological Dataset](#3-a-first-biological-dataset)
+- [4. Population and Sample](#4-population-and-sample)
+  - [4.1 Population](#41-population)
+  - [4.2 Sample](#42-sample)
+  - [4.3 Why sample selection matters](#43-why-sample-selection-matters)
+  - [4.4 Visualizing a population and a sample in
+    R](#44-visualizing-a-population-and-a-sample-in-r)
+- [5. Observation, Variable and
+  Value](#5-observation-variable-and-value)
+  - [5.1 Observation](#51-observation)
+  - [5.2 Variable](#52-variable)
+  - [5.3 Value](#53-value)
+  - [5.4 A simple way to remember](#54-a-simple-way-to-remember)
+- [6. Parameters and Statistics](#6-parameters-and-statistics)
+  - [6.1 Parameter](#61-parameter)
+  - [6.2 Statistic](#62-statistic)
+  - [6.3 Example: mean DNA-fragment
+    length](#63-example-mean-dna-fragment-length)
+- [7. Descriptive and Inferential
+  Statistics](#7-descriptive-and-inferential-statistics)
+  - [7.1 Descriptive statistics](#71-descriptive-statistics)
+  - [7.2 Inferential statistics](#72-inferential-statistics)
+  - [7.3 Description and inference work
+    together](#73-description-and-inference-work-together)
+- [8. Biological Variation and Technical
+  Variation](#8-biological-variation-and-technical-variation)
+  - [8.1 Biological variation](#81-biological-variation)
+  - [8.2 Technical variation](#82-technical-variation)
+  - [8.3 Biological and technical
+    replicates](#83-biological-and-technical-replicates)
+  - [8.4 Comparing variation in R](#84-comparing-variation-in-r)
+- [9. Types of Questions in
+  Biostatistics](#9-types-of-questions-in-biostatistics)
+  - [9.1 Description](#91-description)
+  - [9.2 Comparison](#92-comparison)
+  - [9.3 Association](#93-association)
+  - [9.4 Prediction](#94-prediction)
+  - [9.5 Time-to-event analysis](#95-time-to-event-analysis)
+  - [9.6 Genetic association](#96-genetic-association)
+- [10. Turning a Biological Question into a Statistical
+  Question](#10-turning-a-biological-question-into-a-statistical-question)
+  - [10.1 The PICO framework](#101-the-pico-framework)
+- [11. Outcome, Predictor and
+  Covariate](#11-outcome-predictor-and-covariate)
+  - [11.1 Outcome variable](#111-outcome-variable)
+  - [11.2 Predictor variable](#112-predictor-variable)
+  - [11.3 Covariate](#113-covariate)
+- [12. Variation, Chance and
+  Uncertainty](#12-variation-chance-and-uncertainty)
+  - [12.1 A simulation of sampling
+    variation](#121-a-simulation-of-sampling-variation)
+- [13. Statistical Significance Is Not the Whole
+  Story](#13-statistical-significance-is-not-the-whole-story)
+- [14. Association Is Not Necessarily
+  Causation](#14-association-is-not-necessarily-causation)
+- [15. A Beginner-Friendly Bioinformatics
+  Example](#15-a-beginner-friendly-bioinformatics-example)
+  - [15.1 Summarize each group](#151-summarize-each-group)
+  - [15.2 Visualize the observations](#152-visualize-the-observations)
+- [16. The Biostatistical Workflow](#16-the-biostatistical-workflow)
   - [Step 1: Define the research
     question](#step-1-define-the-research-question)
   - [Step 2: Choose an appropriate study
@@ -99,9 +97,9 @@ Sandeep Singh
     biologically](#step-9-interpret-the-result-biologically)
   - [Step 10: Report the analysis
     reproducibly](#step-10-report-the-analysis-reproducibly)
-- [18. What R Contributes to
-  Biostatistics](#18-what-r-contributes-to-biostatistics)
-- [19. Common Beginner Mistakes](#19-common-beginner-mistakes)
+- [17. What R Contributes to
+  Biostatistics](#17-what-r-contributes-to-biostatistics)
+- [18. Common Beginner Mistakes](#18-common-beginner-mistakes)
   - [Mistake 1: Treating the sample as the
     population](#mistake-1-treating-the-sample-as-the-population)
   - [Mistake 2: Believing a larger sample removes every
@@ -116,14 +114,14 @@ Sandeep Singh
     causation](#mistake-6-assuming-association-proves-causation)
   - [Mistake 7: Trusting software output without checking the
     data](#mistake-7-trusting-software-output-without-checking-the-data)
-- [20. Chapter Summary](#20-chapter-summary)
-- [21. Check Your Understanding](#21-check-your-understanding)
+- [19. Chapter Summary](#19-chapter-summary)
+- [20. Check Your Understanding](#20-check-your-understanding)
   - [Question 1](#question-1)
   - [Question 2](#question-2)
   - [Question 3](#question-3)
   - [Question 4](#question-4)
   - [Question 5](#question-5)
-- [22. Practice with R](#22-practice-with-r)
+- [21. Practice with R](#21-practice-with-r)
   - [Exercise 1: Describe a biological
     sample](#exercise-1-describe-a-biological-sample)
   - [Exercise 2: Summarize binary
@@ -131,12 +129,54 @@ Sandeep Singh
   - [Exercise 3: Work with groups](#exercise-3-work-with-groups)
   - [Exercise 4: Identify dataset
     components](#exercise-4-identify-dataset-components)
-- [23. Mini-Project: From a Biological Question to a Data
-  Plan](#23-mini-project-from-a-biological-question-to-a-data-plan)
-- [24. Glossary](#24-glossary)
-- [25. References and Further
-  Reading](#25-references-and-further-reading)
-- [26. Reproducibility Information](#26-reproducibility-information)
+- [22. Mini-Project: From a Biological Question to a Data
+  Plan](#22-mini-project-from-a-biological-question-to-a-data-plan)
+- [23. Glossary](#23-glossary)
+- [24. References and Further
+  Reading](#24-references-and-further-reading)
+- [25. Reproducibility Information](#25-reproducibility-information)
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
 
 # 1. Introduction
 
@@ -171,24 +211,7 @@ It helps us decide:
 
 ------------------------------------------------------------------------
 
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  explain biostatistics in plain language;
-2.  distinguish a **population** from a **sample**;
-3.  identify observations, variables and values in a dataset;
-4.  distinguish a **parameter** from a **statistic**;
-5.  explain descriptive and inferential statistics;
-6.  distinguish biological variation from technical variation;
-7.  convert a biological question into a statistical question;
-8.  recognize the role of uncertainty in scientific conclusions;
-9.  perform a few simple summaries and plots in R; and
-10. describe the main stages of a biostatistical investigation.
-
-------------------------------------------------------------------------
-
-# 3. Why Do We Need Biostatistics?
+# 2. Why Do We Need Biostatistics?
 
 Suppose a researcher gives a new nutrient treatment to 10 plants. Eight
 plants grow taller after treatment.
@@ -207,7 +230,7 @@ Not necessarily. Several questions must be considered:
 
 Biostatistics helps organize these questions and evaluate the evidence.
 
-## 3.1 From observation to evidence
+## 2.1 From observation to evidence
 
 A visible difference is not automatically convincing evidence.
 
@@ -229,7 +252,7 @@ Therefore, a useful statistical analysis considers both:
 
 ------------------------------------------------------------------------
 
-# 4. A First Biological Dataset
+# 3. A First Biological Dataset
 
 Consider a small seed-germination experiment. Twenty seeds are divided
 into two groups:
@@ -251,30 +274,427 @@ seed_data <- data.frame(
   )
 )
 
-print(seed_data)
+print_html_table(
+  seed_data,
+  caption = "Seed-germination experiment data."
+)
 ```
 
-    ##    seed_id treatment germinated
-    ## 1       S1     Water        Yes
-    ## 2       S2     Water        Yes
-    ## 3       S3     Water         No
-    ## 4       S4     Water        Yes
-    ## 5       S5     Water         No
-    ## 6       S6     Water        Yes
-    ## 7       S7     Water         No
-    ## 8       S8     Water        Yes
-    ## 9       S9     Water         No
-    ## 10     S10     Water        Yes
-    ## 11     S11  Nutrient        Yes
-    ## 12     S12  Nutrient        Yes
-    ## 13     S13  Nutrient        Yes
-    ## 14     S14  Nutrient         No
-    ## 15     S15  Nutrient        Yes
-    ## 16     S16  Nutrient        Yes
-    ## 17     S17  Nutrient        Yes
-    ## 18     S18  Nutrient        Yes
-    ## 19     S19  Nutrient         No
-    ## 20     S20  Nutrient        Yes
+<table class="chapter-table">
+
+<caption>
+
+Seed-germination experiment data.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+seed id
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:left;">
+
+germinated
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S1
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S2
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S3
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S4
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S5
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S6
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S7
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S8
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S9
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S10
+</td>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S11
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S12
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S13
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S14
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S15
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S16
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S17
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S18
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S19
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S20
+</td>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Each row represents one seed. Each column records a characteristic of
 the seed.
@@ -287,13 +707,85 @@ germination_table <- table(
   seed_data$germinated
 )
 
-print(germination_table)
+print_html_table(
+  germination_table,
+  caption = "Germination outcome by treatment group."
+)
 ```
 
-    ##           
-    ##            No Yes
-    ##   Nutrient  2   8
-    ##   Water     4   6
+<table class="chapter-table">
+
+<caption>
+
+Germination outcome by treatment group.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+No
+</th>
+
+<th style="text-align:right;">
+
+Yes
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 We can also calculate the proportion of seeds that germinated.
 
@@ -310,17 +802,85 @@ germination_proportion <- aggregate(
 germination_proportion$percentage <-
   100 * germination_proportion$germinated
 
-germination_proportion
+print_html_table(
+  germination_proportion,
+  caption = "Observed germination proportions and percentages."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| treatment | germinated | percentage |
-|:----------|-----------:|-----------:|
-| Nutrient  |        0.8 |         80 |
-| Water     |        0.6 |         60 |
+<caption>
 
-</div>
+Observed germination proportions and percentages.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:right;">
+
+germinated
+</th>
+
+<th style="text-align:right;">
+
+percentage
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Nutrient
+</td>
+
+<td style="text-align:right;">
+
+0.8
+</td>
+
+<td style="text-align:right;">
+
+80
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Water
+</td>
+
+<td style="text-align:right;">
+
+0.6
+</td>
+
+<td style="text-align:right;">
+
+60
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The nutrient group has a higher observed germination percentage. At this
 stage, this is a **description of the sample**. It is not yet proof that
@@ -331,9 +891,9 @@ This distinction is one of the most important ideas in biostatistics.
 
 ------------------------------------------------------------------------
 
-# 5. Population and Sample
+# 4. Population and Sample
 
-## 5.1 Population
+## 4.1 Population
 
 A **population** is the complete group about which we want to draw a
 conclusion.
@@ -353,7 +913,7 @@ vague. A better definition might be:
 > All adults with type 2 diabetes attending government hospitals in
 > Delhi during 2026.
 
-## 5.2 Sample
+## 4.2 Sample
 
 A **sample** is the smaller group that is actually observed or measured.
 
@@ -367,7 +927,7 @@ population may be too expensive, too slow, unethical or impossible.
 | Genomics | All individuals in a target ancestry group | 5,000 genotyped participants |
 | RNA sequencing | All biological specimens satisfying the study criteria | 24 tissue samples selected for sequencing |
 
-## 5.3 Why sample selection matters
+## 4.3 Why sample selection matters
 
 A large sample is not automatically a good sample. If the sample differs
 systematically from the target population, the study may produce a
@@ -380,7 +940,7 @@ the number of students does not remove this selection problem.
 > **Sample size affects precision, but sampling quality affects
 > validity.**
 
-## 5.4 Visualizing a population and a sample in R
+## 4.4 Visualizing a population and a sample in R
 
 The following example creates a hypothetical population of 1,000
 bacterial cell lengths and selects a random sample of 40 cells.
@@ -440,11 +1000,11 @@ called **sampling variation**.
 
 ------------------------------------------------------------------------
 
-# 6. Observation, Variable and Value
+# 5. Observation, Variable and Value
 
 These three terms describe the structure of a dataset.
 
-## 6.1 Observation
+## 5.1 Observation
 
 An **observation** is the unit being studied. It is usually represented
 by one row of a dataset.
@@ -459,7 +1019,7 @@ Depending on the study, an observation may be:
 - one genetic variant; or
 - one measurement occasion.
 
-## 6.2 Variable
+## 5.2 Variable
 
 A **variable** is a characteristic recorded for each observation. It is
 usually represented by one column.
@@ -474,7 +1034,7 @@ Examples include:
 - gene-expression count; or
 - sequencing-quality score.
 
-## 6.3 Value
+## 5.3 Value
 
 A **value** is the particular entry recorded for one variable in one
 observation.
@@ -485,7 +1045,7 @@ In the seed dataset:
 - `Water` is a value of the variable `treatment`; and
 - `No` is a value of the variable `germinated`.
 
-## 6.4 A simple way to remember
+## 5.4 A simple way to remember
 
 | Dataset component | Meaning                         | Usually represented by |
 |-------------------|---------------------------------|------------------------|
@@ -495,12 +1055,12 @@ In the seed dataset:
 
 ------------------------------------------------------------------------
 
-# 7. Parameters and Statistics
+# 6. Parameters and Statistics
 
 The words **parameter** and **statistic** are related, but they do not
 mean the same thing.
 
-## 7.1 Parameter
+## 6.1 Parameter
 
 A **parameter** is a numerical characteristic of a population.
 
@@ -514,7 +1074,7 @@ Examples include:
 Population parameters are usually unknown because the entire population
 is rarely measured.
 
-## 7.2 Statistic
+## 6.2 Statistic
 
 A **statistic** is a numerical value calculated from a sample.
 
@@ -534,7 +1094,7 @@ We use a sample statistic to estimate an unknown population parameter.
 | Standard deviation | Parameter, often written as $\sigma$ | Statistic, often written as $s$ |
 | Proportion | Parameter, often written as $p$ | Statistic, often written as $\hat{p}$ |
 
-## 7.3 Example: mean DNA-fragment length
+## 6.3 Example: mean DNA-fragment length
 
 Suppose five DNA fragments have lengths of 180, 195, 205, 210 and 220
 base pairs.
@@ -558,9 +1118,9 @@ the true population mean and population standard deviation.
 
 ------------------------------------------------------------------------
 
-# 8. Descriptive and Inferential Statistics
+# 7. Descriptive and Inferential Statistics
 
-## 8.1 Descriptive statistics
+## 7.1 Descriptive statistics
 
 **Descriptive statistics** summarize the data that were observed.
 
@@ -575,7 +1135,7 @@ Common descriptive methods include:
 For the seed experiment, reporting that 80% of nutrient-treated seeds
 and 60% of water-treated seeds germinated is descriptive.
 
-## 8.2 Inferential statistics
+## 7.2 Inferential statistics
 
 **Inferential statistics** use sample data to learn about a larger
 population or process.
@@ -593,7 +1153,7 @@ For the seed experiment, asking whether the nutrient solution improves
 germination beyond what might occur through random variation is an
 inferential question.
 
-## 8.3 Description and inference work together
+## 7.3 Description and inference work together
 
 Inference should not begin before the data have been described and
 checked. A statistical test cannot rescue incorrect data, poor
@@ -601,12 +1161,12 @@ measurements or a badly designed study.
 
 ------------------------------------------------------------------------
 
-# 9. Biological Variation and Technical Variation
+# 8. Biological Variation and Technical Variation
 
 Variation is expected in biological research, but not all variation has
 the same origin.
 
-## 9.1 Biological variation
+## 8.1 Biological variation
 
 **Biological variation** represents real differences among biological
 units.
@@ -623,7 +1183,7 @@ Examples include differences among:
 Such variation can arise from genetics, age, sex, environment, disease
 severity and many other biological factors.
 
-## 9.2 Technical variation
+## 8.2 Technical variation
 
 **Technical variation** is introduced by measurement or laboratory
 procedures.
@@ -638,7 +1198,7 @@ Examples include variation caused by:
 - image-analysis settings; or
 - data-processing pipelines.
 
-## 9.3 Biological and technical replicates
+## 8.3 Biological and technical replicates
 
 A **biological replicate** is an independently sampled biological unit.
 A **technical replicate** is a repeated measurement of the same
@@ -652,7 +1212,7 @@ biological material.
 Ten technical measurements of one patient do not provide information
 equivalent to measurements from ten independent patients.
 
-## 9.4 Comparing variation in R
+## 8.4 Comparing variation in R
 
 ``` r
 biological_expression <- c(8.1, 10.4, 12.8, 9.6, 14.2, 11.1)
@@ -706,44 +1266,44 @@ advanced statistical model.
 
 ------------------------------------------------------------------------
 
-# 10. Types of Questions in Biostatistics
+# 9. Types of Questions in Biostatistics
 
 Before selecting a statistical method, we must know what question is
 being asked.
 
-## 10.1 Description
+## 9.1 Description
 
 **Question:** What is happening in the observed data?
 
 Example: What is the median age of patients in the study?
 
-## 10.2 Comparison
+## 9.2 Comparison
 
 **Question:** Do two or more groups differ?
 
 Example: Is mean gene expression different between treated and untreated
 cells?
 
-## 10.3 Association
+## 9.3 Association
 
 **Question:** Are two variables related?
 
 Example: Is body mass associated with fasting glucose concentration?
 
-## 10.4 Prediction
+## 9.4 Prediction
 
 **Question:** Can one or more variables predict an outcome?
 
 Example: Can clinical measurements predict whether a patient will
 respond to treatment?
 
-## 10.5 Time-to-event analysis
+## 9.5 Time-to-event analysis
 
 **Question:** How long does it take for an event to occur?
 
 Example: How long do patients remain free of disease recurrence?
 
-## 10.6 Genetic association
+## 9.6 Genetic association
 
 **Question:** Is a genetic variant associated with a phenotype?
 
@@ -756,7 +1316,7 @@ not good statistical practice.
 
 ------------------------------------------------------------------------
 
-# 11. Turning a Biological Question into a Statistical Question
+# 10. Turning a Biological Question into a Statistical Question
 
 Consider the broad question:
 
@@ -784,7 +1344,7 @@ This can be translated into a statistical question:
 > and water-treated tomato plants, and how uncertain is that estimated
 > difference?
 
-## 11.1 The PICO framework
+## 10.1 The PICO framework
 
 For clinical and experimental questions, the PICO framework is often
 useful:
@@ -801,9 +1361,9 @@ an intervention.
 
 ------------------------------------------------------------------------
 
-# 12. Outcome, Predictor and Covariate
+# 11. Outcome, Predictor and Covariate
 
-## 12.1 Outcome variable
+## 11.1 Outcome variable
 
 The **outcome** is the main variable we want to explain, compare or
 predict.
@@ -819,7 +1379,7 @@ Examples:
 
 The outcome is also called the **response** or **dependent variable**.
 
-## 12.2 Predictor variable
+## 11.2 Predictor variable
 
 A **predictor** is a variable used to explain or predict the outcome.
 
@@ -834,7 +1394,7 @@ Examples:
 Predictors may also be called **explanatory variables**, **independent
 variables** or **features**, depending on the field.
 
-## 12.3 Covariate
+## 11.3 Covariate
 
 A **covariate** is a variable included in an analysis because it may
 explain some outcome variation or influence the estimated association.
@@ -845,7 +1405,7 @@ scientific question and study design.
 
 ------------------------------------------------------------------------
 
-# 13. Variation, Chance and Uncertainty
+# 12. Variation, Chance and Uncertainty
 
 Suppose two independent studies estimate the effect of the same
 treatment. One study reports an improvement of 3.2 units, while another
@@ -867,7 +1427,7 @@ Important tools for this purpose include:
 
 These tools will be developed gradually in later chapters.
 
-## 13.1 A simulation of sampling variation
+## 12.1 A simulation of sampling variation
 
 The following simulation repeatedly selects 30 observations from the
 same population. Each sample produces a slightly different mean.
@@ -927,7 +1487,7 @@ determine the amount of uncertainty.
 
 ------------------------------------------------------------------------
 
-# 14. Statistical Significance Is Not the Whole Story
+# 13. Statistical Significance Is Not the Whole Story
 
 Scientific interpretation should not depend only on whether a p-value is
 below a chosen threshold.
@@ -955,7 +1515,7 @@ Therefore:
 
 ------------------------------------------------------------------------
 
-# 15. Association Is Not Necessarily Causation
+# 14. Association Is Not Necessarily Causation
 
 If two variables are associated, changes in one do not necessarily cause
 changes in the other.
@@ -974,7 +1534,7 @@ prove causation.
 
 ------------------------------------------------------------------------
 
-# 16. A Beginner-Friendly Bioinformatics Example
+# 15. A Beginner-Friendly Bioinformatics Example
 
 Suppose a researcher measures the expression of one gene in four control
 samples and four treated samples.
@@ -986,20 +1546,201 @@ gene_expression <- data.frame(
   expression = c(8.4, 9.1, 8.8, 9.3, 11.2, 10.7, 11.8, 10.9)
 )
 
-print(gene_expression)
+print_html_table(
+  gene_expression,
+  caption = "Hypothetical gene-expression measurements."
+)
 ```
 
-    ##   sample_id   group expression
-    ## 1  Sample_1 Control        8.4
-    ## 2  Sample_2 Control        9.1
-    ## 3  Sample_3 Control        8.8
-    ## 4  Sample_4 Control        9.3
-    ## 5  Sample_5 Treated       11.2
-    ## 6  Sample_6 Treated       10.7
-    ## 7  Sample_7 Treated       11.8
-    ## 8  Sample_8 Treated       10.9
+<table class="chapter-table">
 
-## 16.1 Summarize each group
+<caption>
+
+Hypothetical gene-expression measurements.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+group
+</th>
+
+<th style="text-align:right;">
+
+expression
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_1
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_2
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+9.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_3
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+8.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_4
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+9.3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_5
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+11.2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_6
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_7
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+11.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_8
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+10.9
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 15.1 Summarize each group
 
 ``` r
 mean_summary <- aggregate(
@@ -1027,14 +1768,102 @@ group_summary <- data.frame(
   standard_deviation = sd_summary$expression
 )
 
-print(group_summary)
+print_html_table(
+  group_summary,
+  caption = "Gene-expression summary by experimental group."
+)
 ```
 
-    ##     group sample_size mean_expression standard_deviation
-    ## 1 Control           4            8.90          0.3915780
-    ## 2 Treated           4           11.15          0.4795832
+<table class="chapter-table">
 
-## 16.2 Visualize the observations
+<caption>
+
+Gene-expression summary by experimental group.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+group
+</th>
+
+<th style="text-align:right;">
+
+sample size
+</th>
+
+<th style="text-align:right;">
+
+mean expression
+</th>
+
+<th style="text-align:right;">
+
+standard deviation
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+8.90
+</td>
+
+<td style="text-align:right;">
+
+0.392
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+11.15
+</td>
+
+<td style="text-align:right;">
+
+0.480
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 15.2 Visualize the observations
 
 ``` r
 boxplot(
@@ -1084,7 +1913,7 @@ and scientific context.
 
 ------------------------------------------------------------------------
 
-# 17. The Biostatistical Workflow
+# 16. The Biostatistical Workflow
 
 A reliable analysis generally follows a sequence.
 
@@ -1137,7 +1966,7 @@ figures and limitations.
 
 ------------------------------------------------------------------------
 
-# 18. What R Contributes to Biostatistics
+# 17. What R Contributes to Biostatistics
 
 R is useful because it can support an entire statistical workflow:
 
@@ -1159,7 +1988,7 @@ provided by the analyst.
 
 ------------------------------------------------------------------------
 
-# 19. Common Beginner Mistakes
+# 18. Common Beginner Mistakes
 
 ## Mistake 1: Treating the sample as the population
 
@@ -1198,7 +2027,7 @@ method is inappropriate.
 
 ------------------------------------------------------------------------
 
-# 20. Chapter Summary
+# 19. Chapter Summary
 
 In this chapter, you learned that:
 
@@ -1223,7 +2052,7 @@ In this chapter, you learned that:
 
 ------------------------------------------------------------------------
 
-# 21. Check Your Understanding
+# 20. Check Your Understanding
 
 ## Question 1
 
@@ -1273,7 +2102,7 @@ Classify each question as **descriptive**, **comparative**,
 
 ------------------------------------------------------------------------
 
-# 22. Practice with R
+# 21. Practice with R
 
 ## Exercise 1: Describe a biological sample
 
@@ -1327,7 +2156,7 @@ For `bacterial_data`, identify:
 
 ------------------------------------------------------------------------
 
-# 23. Mini-Project: From a Biological Question to a Data Plan
+# 22. Mini-Project: From a Biological Question to a Data Plan
 
 Choose one of the following questions:
 
@@ -1354,7 +2183,7 @@ the scientific question and data structure before choosing a method.
 
 ------------------------------------------------------------------------
 
-# 24. Glossary
+# 23. Glossary
 
 | Term | Beginner-friendly meaning |
 |----|----|
@@ -1379,7 +2208,7 @@ the scientific question and data structure before choosing a method.
 
 ------------------------------------------------------------------------
 
-# 25. References and Further Reading
+# 24. References and Further Reading
 
 1.  Rosner B. *Fundamentals of Biostatistics*. 8th ed. Boston, MA:
     Cengage Learning; 2015.
@@ -1414,7 +2243,7 @@ the scientific question and data structure before choosing a method.
 
 ------------------------------------------------------------------------
 
-# 26. Reproducibility Information
+# 25. Reproducibility Information
 
 The examples in this chapter use either small hypothetical datasets or
 simulated data created for teaching. They are not intended to support
