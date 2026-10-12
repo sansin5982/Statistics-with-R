@@ -17,77 +17,76 @@ Chapter 8: Measures of Central Tendency
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. What Does “Centre” Mean?](#3-what-does-centre-mean)
-- [4. The Arithmetic Mean](#4-the-arithmetic-mean)
-  - [4.1 Manual calculation](#41-manual-calculation)
-  - [4.2 Why the mean is a balancing
-    point](#42-why-the-mean-is-a-balancing-point)
-  - [4.3 When the arithmetic mean is
-    useful](#43-when-the-arithmetic-mean-is-useful)
-- [5. Population Mean and Sample
-  Mean](#5-population-mean-and-sample-mean)
-- [6. The Median](#6-the-median)
-  - [6.1 Odd sample size](#61-odd-sample-size)
-  - [6.2 Even sample size](#62-even-sample-size)
-  - [6.3 What the median tells us](#63-what-the-median-tells-us)
-- [7. Mean Versus Median Under an
-  Outlier](#7-mean-versus-median-under-an-outlier)
-- [8. The Mode](#8-the-mode)
-  - [8.1 R does not provide a simple statistical `mode()`
-    function](#81-r-does-not-provide-a-simple-statistical-mode-function)
-  - [8.2 Unimodal, bimodal and multimodal
-    data](#82-unimodal-bimodal-and-multimodal-data)
-- [9. How Distribution Shape Affects the
-  Centre](#9-how-distribution-shape-affects-the-centre)
-  - [9.1 Symmetric distribution](#91-symmetric-distribution)
-  - [9.2 Right-skewed distribution](#92-right-skewed-distribution)
-  - [9.3 Left-skewed distribution](#93-left-skewed-distribution)
-- [10. The Weighted Mean](#10-the-weighted-mean)
-  - [10.1 Combining clinic means](#101-combining-clinic-means)
-  - [10.2 Weights do not automatically improve an
-    analysis](#102-weights-do-not-automatically-improve-an-analysis)
-- [11. The Geometric Mean](#11-the-geometric-mean)
-  - [11.1 Fold-change example](#111-fold-change-example)
-  - [11.2 Restrictions](#112-restrictions)
-- [12. Log-Transformed Data and
-  Back-Transformation](#12-log-transformed-data-and-back-transformation)
-- [13. The Harmonic Mean](#13-the-harmonic-mean)
-  - [13.1 Laboratory throughput
-    example](#131-laboratory-throughput-example)
-  - [13.2 Important condition](#132-important-condition)
-- [14. Relationship Among Three
-  Means](#14-relationship-among-three-means)
-- [15. Trimmed Mean](#15-trimmed-mean)
-- [16. Winsorized Mean](#16-winsorized-mean)
-- [17. Midrange and Midhinge](#17-midrange-and-midhinge)
-- [18. Centre as an Optimization
-  Problem](#18-centre-as-an-optimization-problem)
-- [19. Central Tendency by Measurement
-  Scale](#19-central-tendency-by-measurement-scale)
-- [20. Missing Values](#20-missing-values)
-- [21. Grouped Data and Approximate
-  Means](#21-grouped-data-and-approximate-means)
-- [22. Do Not Average Percentages
-  Blindly](#22-do-not-average-percentages-blindly)
-- [23. Mean of Ratios Versus Ratio of
-  Totals](#23-mean-of-ratios-versus-ratio-of-totals)
-- [24. Hierarchical Data: Cells Are Nested Within
-  Donors](#24-hierarchical-data-cells-are-nested-within-donors)
-- [25. Same Centre, Different
-  Distributions](#25-same-centre-different-distributions)
-- [26. Choosing the Most Appropriate
-  Measure](#26-choosing-the-most-appropriate-measure)
-- [27. Reporting Central Tendency](#27-reporting-central-tendency)
-- [28. Integrated Case Study: Inflammatory Biomarker
-  Data](#28-integrated-case-study-inflammatory-biomarker-data)
-  - [28.1 Scientific setting](#281-scientific-setting)
-  - [28.2 Visual inspection](#282-visual-inspection)
-  - [28.3 Build a group-summary
-    function](#283-build-a-group-summary-function)
-  - [28.4 Summarize each group](#284-summarize-each-group)
-  - [28.5 Interpretation](#285-interpretation)
-- [29. Common Mistakes](#29-common-mistakes)
+- [2. What Does “Centre” Mean?](#2-what-does-centre-mean)
+- [3. The Arithmetic Mean](#3-the-arithmetic-mean)
+  - [3.1 Manual calculation](#31-manual-calculation)
+  - [3.2 Why the mean is a balancing
+    point](#32-why-the-mean-is-a-balancing-point)
+  - [3.3 When the arithmetic mean is
+    useful](#33-when-the-arithmetic-mean-is-useful)
+- [4. Population Mean and Sample
+  Mean](#4-population-mean-and-sample-mean)
+- [5. The Median](#5-the-median)
+  - [5.1 Odd sample size](#51-odd-sample-size)
+  - [5.2 Even sample size](#52-even-sample-size)
+  - [5.3 What the median tells us](#53-what-the-median-tells-us)
+- [6. Mean Versus Median Under an
+  Outlier](#6-mean-versus-median-under-an-outlier)
+- [7. The Mode](#7-the-mode)
+  - [7.1 R does not provide a simple statistical `mode()`
+    function](#71-r-does-not-provide-a-simple-statistical-mode-function)
+  - [7.2 Unimodal, bimodal and multimodal
+    data](#72-unimodal-bimodal-and-multimodal-data)
+- [8. How Distribution Shape Affects the
+  Centre](#8-how-distribution-shape-affects-the-centre)
+  - [8.1 Symmetric distribution](#81-symmetric-distribution)
+  - [8.2 Right-skewed distribution](#82-right-skewed-distribution)
+  - [8.3 Left-skewed distribution](#83-left-skewed-distribution)
+- [9. The Weighted Mean](#9-the-weighted-mean)
+  - [9.1 Combining clinic means](#91-combining-clinic-means)
+  - [9.2 Weights do not automatically improve an
+    analysis](#92-weights-do-not-automatically-improve-an-analysis)
+- [10. The Geometric Mean](#10-the-geometric-mean)
+  - [10.1 Fold-change example](#101-fold-change-example)
+  - [10.2 Restrictions](#102-restrictions)
+- [11. Log-Transformed Data and
+  Back-Transformation](#11-log-transformed-data-and-back-transformation)
+- [12. The Harmonic Mean](#12-the-harmonic-mean)
+  - [12.1 Laboratory throughput
+    example](#121-laboratory-throughput-example)
+  - [12.2 Important condition](#122-important-condition)
+- [13. Relationship Among Three
+  Means](#13-relationship-among-three-means)
+- [14. Trimmed Mean](#14-trimmed-mean)
+- [15. Winsorized Mean](#15-winsorized-mean)
+- [16. Midrange and Midhinge](#16-midrange-and-midhinge)
+- [17. Centre as an Optimization
+  Problem](#17-centre-as-an-optimization-problem)
+- [18. Central Tendency by Measurement
+  Scale](#18-central-tendency-by-measurement-scale)
+- [19. Missing Values](#19-missing-values)
+- [20. Grouped Data and Approximate
+  Means](#20-grouped-data-and-approximate-means)
+- [21. Do Not Average Percentages
+  Blindly](#21-do-not-average-percentages-blindly)
+- [22. Mean of Ratios Versus Ratio of
+  Totals](#22-mean-of-ratios-versus-ratio-of-totals)
+- [23. Hierarchical Data: Cells Are Nested Within
+  Donors](#23-hierarchical-data-cells-are-nested-within-donors)
+- [24. Same Centre, Different
+  Distributions](#24-same-centre-different-distributions)
+- [25. Choosing the Most Appropriate
+  Measure](#25-choosing-the-most-appropriate-measure)
+- [26. Reporting Central Tendency](#26-reporting-central-tendency)
+- [27. Integrated Case Study: Inflammatory Biomarker
+  Data](#27-integrated-case-study-inflammatory-biomarker-data)
+  - [27.1 Scientific setting](#271-scientific-setting)
+  - [27.2 Visual inspection](#272-visual-inspection)
+  - [27.3 Build a group-summary
+    function](#273-build-a-group-summary-function)
+  - [27.4 Summarize each group](#274-summarize-each-group)
+  - [27.5 Interpretation](#275-interpretation)
+- [28. Common Mistakes](#28-common-mistakes)
   - [Mistake 1: Using “average” without defining
     it](#mistake-1-using-average-without-defining-it)
   - [Mistake 2: Calculating a mean for category
@@ -108,10 +107,10 @@ Sandeep Singh
     participants](#mistake-9-treating-cells-or-reads-as-independent-participants)
   - [Mistake 10: Hiding the analysis
     scale](#mistake-10-hiding-the-analysis-scale)
-- [30. Practical Decision Workflow](#30-practical-decision-workflow)
-- [31. Chapter Summary](#31-chapter-summary)
-- [32. Check Your Understanding](#32-check-your-understanding)
-- [33. R Exercises](#33-r-exercises)
+- [29. Practical Decision Workflow](#29-practical-decision-workflow)
+- [30. Chapter Summary](#30-chapter-summary)
+- [31. Check Your Understanding](#31-check-your-understanding)
+- [32. R Exercises](#32-r-exercises)
   - [Exercise 1: Manual arithmetic
     mean](#exercise-1-manual-arithmetic-mean)
   - [Exercise 2: Odd and even medians](#exercise-2-odd-and-even-medians)
@@ -126,11 +125,53 @@ Sandeep Singh
     approximation](#exercise-9-grouped-data-approximation)
   - [Exercise 10: Hierarchical
     averaging](#exercise-10-hierarchical-averaging)
-- [34. Mini-Project: Central Tendency in Gene-Expression
-  Data](#34-mini-project-central-tendency-in-gene-expression-data)
-- [35. Glossary](#35-glossary)
-- [36. References](#36-references)
-- [37. Reproducibility Information](#37-reproducibility-information)
+- [33. Mini-Project: Central Tendency in Gene-Expression
+  Data](#33-mini-project-central-tendency-in-gene-expression-data)
+- [34. Glossary](#34-glossary)
+- [35. References](#35-references)
+- [36. Reproducibility Information](#36-reproducibility-information)
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+&#10;table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+&#10;table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+&#10;table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
 
 # 1. Introduction
 
@@ -162,34 +203,7 @@ question.
 > **A measure of centre is a model of what “typical” means. It should be
 > chosen scientifically, not automatically.**
 
-------------------------------------------------------------------------
-
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  explain why biological datasets need a measure of centre;
-2.  calculate and interpret the arithmetic mean;
-3.  calculate a weighted mean and select appropriate weights;
-4.  calculate and interpret the median;
-5.  identify one or multiple modes;
-6.  compare the effects of skewness and outliers on mean and median;
-7.  calculate geometric and harmonic means;
-8.  explain when geometric and harmonic means are appropriate;
-9.  calculate trimmed and Winsorized means;
-10. choose a centre appropriate to nominal, ordinal, interval and ratio
-    variables;
-11. handle missing values explicitly in R;
-12. avoid incorrect averaging of percentages, ratios and subgroup means;
-13. recognize hierarchical averaging problems in single-cell and
-    repeated-measure data;
-14. summarize centre by biological group; and
-15. report central tendency with its units, denominator and
-    complementary measure of spread.
-
-------------------------------------------------------------------------
-
-# 3. What Does “Centre” Mean?
+# 2. What Does “Centre” Mean?
 
 Consider five expression values:
 
@@ -208,27 +222,90 @@ These definitions lead to different measures.
 ``` r
 x <- c(4, 5, 5, 6, 10)
 
-data.frame(
+print_html_table(data.frame(
   Statistic = c("Mean", "Median", "Mode"),
   Value = c(mean(x), median(x), 5),
   stringsAsFactors = FALSE
-)
+), caption = "Arithmetic mean, median and mode for the same observations.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Statistic | Value |
-|:----------|------:|
-| Mean      |     6 |
-| Median    |     5 |
-| Mode      |     5 |
+<caption>
 
-</div>
+Arithmetic mean, median and mode for the same observations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Statistic
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Median
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mode
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The three values are not competing answers to an identical question.
 They describe different aspects of the data.
 
-# 4. The Arithmetic Mean
+# 3. The Arithmetic Mean
 
 For observations $x_1, x_2, \ldots, x_n$, the sample arithmetic mean is:
 
@@ -239,7 +316,7 @@ In plain language:
 1.  add all observed values; and
 2.  divide by the number of values.
 
-## 4.1 Manual calculation
+## 3.1 Manual calculation
 
 Suppose the serum albumin values of five participants are:
 
@@ -253,29 +330,105 @@ n_albumin <- length(albumin)
 manual_mean <- sum_albumin / n_albumin
 r_mean <- mean(albumin)
 
-data.frame(
+print_html_table(data.frame(
   Calculation = c("Sum", "Number of observations",
                   "Manual mean", "mean() result"),
   Value = c(sum_albumin, n_albumin, manual_mean, r_mean),
   stringsAsFactors = FALSE
-)
+), caption = "Manual and R calculations of the arithmetic mean.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Calculation            | Value |
-|:-----------------------|------:|
-| Sum                    |  20.5 |
-| Number of observations |   5.0 |
-| Manual mean            |   4.1 |
-| mean() result          |   4.1 |
+<caption>
 
-</div>
+Manual and R calculations of the arithmetic mean.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Calculation
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sum
+</td>
+
+<td style="text-align:right;">
+
+20.5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Number of observations
+</td>
+
+<td style="text-align:right;">
+
+5.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Manual mean
+</td>
+
+<td style="text-align:right;">
+
+4.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mean() result
+</td>
+
+<td style="text-align:right;">
+
+4.1
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The mean has the same measurement unit as the original variable. Here,
 the mean is reported in g/dL.
 
-## 4.2 Why the mean is a balancing point
+## 3.2 Why the mean is a balancing point
 
 Deviations from the mean sum to zero:
 
@@ -284,23 +437,112 @@ $$\sum_{i=1}^{n}(x_i - \bar{x}) = 0.$$
 ``` r
 deviations <- albumin - mean(albumin)
 
-data.frame(
+print_html_table(data.frame(
   Albumin = albumin,
   Deviation_from_mean = round(deviations, 3)
-)
+), caption = "Albumin values and their deviations from the mean.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Albumin | Deviation_from_mean |
-|--------:|--------------------:|
-|     3.8 |                -0.3 |
-|     4.0 |                -0.1 |
-|     4.1 |                 0.0 |
-|     4.2 |                 0.1 |
-|     4.4 |                 0.3 |
+<caption>
 
-</div>
+Albumin values and their deviations from the mean.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Albumin
+</th>
+
+<th style="text-align:right;">
+
+Deviation from mean
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+3.8
+</td>
+
+<td style="text-align:right;">
+
+-0.3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4.0
+</td>
+
+<td style="text-align:right;">
+
+-0.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4.1
+</td>
+
+<td style="text-align:right;">
+
+0.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4.2
+</td>
+
+<td style="text-align:right;">
+
+0.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4.4
+</td>
+
+<td style="text-align:right;">
+
+0.3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 sum(deviations)
@@ -311,7 +553,7 @@ sum(deviations)
 The displayed result may be extremely close to zero rather than exactly
 zero because computers store decimal values with finite precision.
 
-## 4.3 When the arithmetic mean is useful
+## 3.3 When the arithmetic mean is useful
 
 The mean is often appropriate when:
 
@@ -324,7 +566,7 @@ The mean is often appropriate when:
 Examples may include height, normally distributed assay measurements, or
 change in blood pressure when the distribution is not severely skewed.
 
-# 5. Population Mean and Sample Mean
+# 4. Population Mean and Sample Mean
 
 The population mean is a parameter, commonly written as $\mu$:
 
@@ -338,26 +580,76 @@ set.seed(123)
 population_values <- rnorm(10000, mean = 120, sd = 15)
 sample_values <- sample(population_values, size = 100, replace = FALSE)
 
-data.frame(
+print_html_table(data.frame(
   Quantity = c("Population mean", "Sample mean"),
   Value = round(c(mean(population_values), mean(sample_values)), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Population and sample means from simulated values.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Quantity        |  Value |
-|:----------------|-------:|
-| Population mean | 119.96 |
-| Sample mean     | 119.91 |
+<caption>
 
-</div>
+Population and sample means from simulated values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Quantity
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Population mean
+</td>
+
+<td style="text-align:right;">
+
+119.96
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample mean
+</td>
+
+<td style="text-align:right;">
+
+119.91
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 A different random sample will usually have a different mean. Sampling
 distributions and standard errors will be studied later.
 
-# 6. The Median
+# 5. The Median
 
 The **median** is the middle value after sorting the observations.
 
@@ -365,29 +657,118 @@ The **median** is the middle value after sorting the observations.
 - For an even number, it is usually the arithmetic mean of the two
   middle values.
 
-## 6.1 Odd sample size
+## 5.1 Odd sample size
 
 ``` r
 odd_values <- c(12, 7, 10, 15, 9)
 sorted_odd <- sort(odd_values)
 
-data.frame(
+print_html_table(data.frame(
   Original = odd_values,
   Sorted = sorted_odd
-)
+), caption = "Original and ordered observations for an odd sample size.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Original | Sorted |
-|---------:|-------:|
-|       12 |      7 |
-|        7 |      9 |
-|       10 |     10 |
-|       15 |     12 |
-|        9 |     15 |
+<caption>
 
-</div>
+Original and ordered observations for an odd sample size.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Original
+</th>
+
+<th style="text-align:right;">
+
+Sorted
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 median(odd_values)
@@ -397,7 +778,7 @@ median(odd_values)
 
 The ordered values are 7, 9, 10, 12 and 15. The median is 10.
 
-## 6.2 Even sample size
+## 5.2 Even sample size
 
 ``` r
 even_values <- c(12, 7, 10, 15, 9, 20)
@@ -406,19 +787,54 @@ middle_positions <- c(length(even_values) / 2,
                       length(even_values) / 2 + 1)
 middle_values <- sorted_even[middle_positions]
 
-data.frame(
+print_html_table(data.frame(
   Middle_value = middle_values
-)
+), caption = "Two middle observations for an even sample size.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Middle_value |
-|-------------:|
-|           10 |
-|           12 |
+<caption>
 
-</div>
+Two middle observations for an even sample size.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Middle value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 mean(middle_values)
@@ -432,7 +848,7 @@ median(even_values)
 
     ## [1] 11
 
-## 6.3 What the median tells us
+## 5.3 What the median tells us
 
 Approximately half of observations are at or below the median and half
 are at or above it. With repeated values, the division need not be
@@ -441,7 +857,7 @@ exactly 50% on each strict side.
 The median depends on order rather than the numerical distance of
 extreme observations. This makes it **robust** to outliers.
 
-# 7. Mean Versus Median Under an Outlier
+# 6. Mean Versus Median Under an Outlier
 
 Consider typical sequencing depths, in millions of reads:
 
@@ -456,17 +872,85 @@ centre_comparison <- data.frame(
   stringsAsFactors = FALSE
 )
 
-centre_comparison
+print_html_table(
+  centre_comparison,
+  caption = "Effect of an extreme sequencing-depth value on mean and median."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Dataset               | Mean | Median |
-|:----------------------|-----:|-------:|
-| Without extreme value | 21.0 |   21.0 |
-| With extreme value    | 42.5 |   21.5 |
+<caption>
 
-</div>
+Effect of an extreme sequencing-depth value on mean and median.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Dataset
+</th>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+Median
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Without extreme value
+</td>
+
+<td style="text-align:right;">
+
+21.0
+</td>
+
+<td style="text-align:right;">
+
+21.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+With extreme value
+</td>
+
+<td style="text-align:right;">
+
+42.5
+</td>
+
+<td style="text-align:right;">
+
+21.5
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The extreme library pulls the mean strongly upward, while the median
 changes much less.
@@ -511,7 +995,7 @@ First determine whether it is:
 - a result of a different measurement unit; or
 - evidence of a biologically distinct subgroup.
 
-# 8. The Mode
+# 7. The Mode
 
 The **mode** is the most frequently observed value or category.
 
@@ -520,16 +1004,102 @@ categories such as blood group, species or genotype class.
 
 ``` r
 blood_group <- c("A", "O", "B", "O", "A", "O", "AB", "O", "B")
-table(blood_group)
+print_html_table(
+  as.data.frame(table(blood_group), stringsAsFactors = FALSE),
+  caption = "Frequency distribution of blood groups."
+)
 ```
 
-    ## blood_group
-    ##  A AB  B  O 
-    ##  2  1  2  4
+<table class="chapter-table">
+
+<caption>
+
+Frequency distribution of blood groups.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+blood group
+</th>
+
+<th style="text-align:right;">
+
+Freq
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+A
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AB
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+B
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+O
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The modal blood group is `O`.
 
-## 8.1 R does not provide a simple statistical `mode()` function
+## 7.1 R does not provide a simple statistical `mode()` function
 
 In R, `mode()` describes an object’s storage mode; it does **not**
 calculate the most frequent value.
@@ -562,7 +1132,7 @@ statistical_mode(blood_group)
 
     ## [1] "O"
 
-## 8.2 Unimodal, bimodal and multimodal data
+## 7.2 Unimodal, bimodal and multimodal data
 
 A dataset may have:
 
@@ -581,14 +1151,14 @@ statistical_mode(genotype_example)
 The function correctly returns both `AA` and `AG`. A function that
 returns only the first maximum would hide the tie.
 
-# 9. How Distribution Shape Affects the Centre
+# 8. How Distribution Shape Affects the Centre
 
-## 9.1 Symmetric distribution
+## 8.1 Symmetric distribution
 
 In a perfectly symmetric unimodal distribution, mean and median are
 often equal or very similar, and the mode lies near them.
 
-## 9.2 Right-skewed distribution
+## 8.2 Right-skewed distribution
 
 A long right tail commonly gives:
 
@@ -597,7 +1167,7 @@ $$\text{mode} < \text{median} < \text{mean}.$$
 Examples include hospital length of stay, many biomarker concentrations,
 healthcare costs and raw gene-expression values.
 
-## 9.3 Left-skewed distribution
+## 8.3 Left-skewed distribution
 
 A long left tail commonly gives:
 
@@ -642,7 +1212,7 @@ skew.
 par(mfrow = c(1, 1))
 ```
 
-# 10. The Weighted Mean
+# 9. The Weighted Mean
 
 The ordinary mean gives every observation equal weight. A **weighted
 mean** gives observation $i$ a weight $w_i$:
@@ -657,7 +1227,7 @@ Weights may represent:
 - exposure time; or
 - another scientifically justified contribution.
 
-## 10.1 Combining clinic means
+## 9.1 Combining clinic means
 
 Three clinics report different sample sizes and mean systolic blood
 pressures.
@@ -676,42 +1246,178 @@ patient_weighted_mean <- weighted.mean(
   w = clinic_summary$Sample_size
 )
 
-clinic_summary
+print_html_table(
+  clinic_summary,
+  caption = "Clinic sample sizes and mean systolic blood pressures."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Clinic | Sample_size | Mean_SBP |
-|:-------|------------:|---------:|
-| A      |          20 |      118 |
-| B      |          80 |      126 |
-| C      |         200 |      132 |
+<caption>
 
-</div>
+Clinic sample sizes and mean systolic blood pressures.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Clinic
+</th>
+
+<th style="text-align:right;">
+
+Sample size
+</th>
+
+<th style="text-align:right;">
+
+Mean SBP
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+A
+</td>
+
+<td style="text-align:right;">
+
+20
+</td>
+
+<td style="text-align:right;">
+
+118
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+B
+</td>
+
+<td style="text-align:right;">
+
+80
+</td>
+
+<td style="text-align:right;">
+
+126
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+C
+</td>
+
+<td style="text-align:right;">
+
+200
+</td>
+
+<td style="text-align:right;">
+
+132
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Method = c("Unweighted mean of clinic means",
              "Mean weighted by clinic sample size"),
   Mean_SBP = round(c(unweighted_mean_of_means,
                      patient_weighted_mean), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Unweighted and patient-weighted clinic means.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Method                              | Mean_SBP |
-|:------------------------------------|---------:|
-| Unweighted mean of clinic means     |   125.33 |
-| Mean weighted by clinic sample size |   129.47 |
+<caption>
 
-</div>
+Unweighted and patient-weighted clinic means.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Method
+</th>
+
+<th style="text-align:right;">
+
+Mean SBP
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Unweighted mean of clinic means
+</td>
+
+<td style="text-align:right;">
+
+125.33
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean weighted by clinic sample size
+</td>
+
+<td style="text-align:right;">
+
+129.47
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The weighted result equals the overall individual-level mean if the
 clinic means and sizes were calculated from all relevant individuals.
 
-## 10.2 Weights do not automatically improve an analysis
+## 9.2 Weights do not automatically improve an analysis
 
 A weight must have a scientific interpretation. Using sequencing depth
 as a weight for donor phenotype means, for example, may give technically
@@ -721,7 +1427,7 @@ dependence.
 Survey weights, precision weights and frequency weights serve different
 purposes and should not be used interchangeably.
 
-# 11. The Geometric Mean
+# 10. The Geometric Mean
 
 For positive observations $x_1, x_2, \ldots, x_n$, the geometric mean
 is:
@@ -741,7 +1447,7 @@ as:
 - titres; and
 - some right-skewed positive measurements analyzed on a log scale.
 
-## 11.1 Fold-change example
+## 10.1 Fold-change example
 
 ``` r
 fold_changes <- c(0.5, 1, 2, 4)
@@ -749,21 +1455,71 @@ fold_changes <- c(0.5, 1, 2, 4)
 arithmetic_fc <- mean(fold_changes)
 geometric_fc <- exp(mean(log(fold_changes)))
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Arithmetic mean", "Geometric mean"),
   Fold_change = round(c(arithmetic_fc, geometric_fc), 3),
   stringsAsFactors = FALSE
-)
+), caption = "Arithmetic and geometric means of fold changes.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure         | Fold_change |
-|:----------------|------------:|
-| Arithmetic mean |       1.875 |
-| Geometric mean  |       1.414 |
+<caption>
 
-</div>
+Arithmetic and geometric means of fold changes.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Fold change
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Arithmetic mean
+</td>
+
+<td style="text-align:right;">
+
+1.875
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Geometric mean
+</td>
+
+<td style="text-align:right;">
+
+1.414
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The geometric mean respects reciprocal changes: a two-fold increase and
 a two-fold decrease are represented by factors 2 and 0.5, whose
@@ -781,7 +1537,7 @@ mean(c(2, 0.5))
 
     ## [1] 1.25
 
-## 11.2 Restrictions
+## 10.2 Restrictions
 
 The standard geometric mean requires strictly positive values.
 
@@ -817,7 +1573,7 @@ geometric_mean(c(0, 2, 4))
 
     ## [1] NA
 
-# 12. Log-Transformed Data and Back-Transformation
+# 11. Log-Transformed Data and Back-Transformation
 
 For positive right-skewed data, researchers may calculate the arithmetic
 mean after taking logarithms and then exponentiate it. The result is a
@@ -830,25 +1586,88 @@ cytokine <- rlnorm(100, meanlog = log(12), sdlog = 0.7)
 log_mean <- mean(log(cytokine))
 back_transformed_mean <- exp(log_mean)
 
-data.frame(
+print_html_table(data.frame(
   Summary = c("Arithmetic mean on original scale",
               "Median on original scale",
               "Mean on log scale, back-transformed"),
   Value = round(c(mean(cytokine), median(cytokine),
                   back_transformed_mean), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Centres calculated on the original and logarithmic scales.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Summary                             | Value |
-|:------------------------------------|------:|
-| Arithmetic mean on original scale   | 14.66 |
-| Median on original scale            | 12.42 |
-| Mean on log scale, back-transformed | 11.81 |
+<caption>
 
-</div>
+Centres calculated on the original and logarithmic scales.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Summary
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Arithmetic mean on original scale
+</td>
+
+<td style="text-align:right;">
+
+14.66
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Median on original scale
+</td>
+
+<td style="text-align:right;">
+
+12.42
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean on log scale, back-transformed
+</td>
+
+<td style="text-align:right;">
+
+11.81
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The back-transformed mean of logged observations is not the same as the
 arithmetic mean on the original scale. State the scale and
@@ -859,7 +1678,7 @@ Ct, $\Delta$Ct, relative expression or fold change answers different
 questions. Follow an analysis plan appropriate to the assay rather than
 applying a geometric mean mechanically.
 
-# 13. The Harmonic Mean
+# 12. The Harmonic Mean
 
 For positive values, the harmonic mean is:
 
@@ -868,7 +1687,7 @@ $$HM = \frac{n}{\sum_{i=1}^{n}\frac{1}{x_i}}.$$
 It is useful for averaging rates when each rate applies to an equal
 amount of work, distance or another denominator.
 
-## 13.1 Laboratory throughput example
+## 12.1 Laboratory throughput example
 
 A machine processes one equal-sized batch at 20 samples per hour and
 another equal-sized batch at 60 samples per hour.
@@ -879,21 +1698,71 @@ rates <- c(20, 60)
 arithmetic_rate <- mean(rates)
 harmonic_rate <- length(rates) / sum(1 / rates)
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Arithmetic mean", "Harmonic mean"),
   Samples_per_hour = c(arithmetic_rate, harmonic_rate),
   stringsAsFactors = FALSE
-)
+), caption = "Arithmetic and harmonic means of laboratory processing rates.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure         | Samples_per_hour |
-|:----------------|-----------------:|
-| Arithmetic mean |               40 |
-| Harmonic mean   |               30 |
+<caption>
 
-</div>
+Arithmetic and harmonic means of laboratory processing rates.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Samples per hour
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Arithmetic mean
+</td>
+
+<td style="text-align:right;">
+
+40
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Harmonic mean
+</td>
+
+<td style="text-align:right;">
+
+30
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 For two equal batches of 60 samples:
 
@@ -904,14 +1773,14 @@ For two equal batches of 60 samples:
 
 That is the harmonic mean, not 40.
 
-## 13.2 Important condition
+## 12.2 Important condition
 
 The correct averaging method depends on what is held equal. If time,
 rather than workload, is equal at each rate, the arithmetic mean may be
 appropriate. Always reconstruct the numerator and denominator of the
 scientific rate.
 
-# 14. Relationship Among Three Means
+# 13. Relationship Among Three Means
 
 For positive data:
 
@@ -933,22 +1802,88 @@ three_means <- data.frame(
 )
 
 three_means$Value <- round(three_means$Value, 3)
-three_means
+print_html_table(
+  three_means,
+  caption = "Harmonic, geometric and arithmetic means of positive values."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Mean_type  | Value |
-|:-----------|------:|
-| Harmonic   | 4.267 |
-| Geometric  | 5.657 |
-| Arithmetic | 7.500 |
+<caption>
 
-</div>
+Harmonic, geometric and arithmetic means of positive values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Mean type
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Harmonic
+</td>
+
+<td style="text-align:right;">
+
+4.267
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Geometric
+</td>
+
+<td style="text-align:right;">
+
+5.657
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Arithmetic
+</td>
+
+<td style="text-align:right;">
+
+7.500
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 They are equal only when all values are identical.
 
-# 15. Trimmed Mean
+# 14. Trimmed Mean
 
 A **trimmed mean** removes a specified proportion of the smallest and
 largest observations before calculating the mean.
@@ -959,7 +1894,7 @@ For a 10% trimmed mean, approximately 10% is removed from each tail.
 lab_values <- c(9.8, 10.1, 10.2, 10.3, 10.4,
                 10.5, 10.6, 10.8, 11.0, 35.0)
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Mean", "10% trimmed mean", "Median"),
   Value = round(c(
     mean(lab_values),
@@ -967,18 +1902,81 @@ data.frame(
     median(lab_values)
   ), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Ordinary mean, trimmed mean and median.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure          | Value |
-|:-----------------|------:|
-| Mean             | 12.87 |
-| 10% trimmed mean | 10.49 |
-| Median           | 10.45 |
+<caption>
 
-</div>
+Ordinary mean, trimmed mean and median.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean
+</td>
+
+<td style="text-align:right;">
+
+12.87
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+10% trimmed mean
+</td>
+
+<td style="text-align:right;">
+
+10.49
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Median
+</td>
+
+<td style="text-align:right;">
+
+10.45
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 A trimmed mean is a compromise between the efficient arithmetic mean for
 well-behaved symmetric data and the robust median.
@@ -986,7 +1984,7 @@ well-behaved symmetric data and the robust median.
 Trimming should be prespecified or scientifically justified. It is not
 permission to remove inconvenient observations.
 
-# 16. Winsorized Mean
+# 15. Winsorized Mean
 
 Winsorization does not delete tail observations. Instead, it replaces
 values below and above chosen limits with the corresponding boundary
@@ -1010,27 +2008,77 @@ winsorize <- function(x, proportion = 0.10, na.rm = TRUE) {
 
 winsorized_values <- winsorize(lab_values, proportion = 0.10)
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Ordinary mean", "10% Winsorized mean"),
   Value = round(c(mean(lab_values), mean(winsorized_values)), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Ordinary and Winsorized means.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure             | Value |
-|:--------------------|------:|
-| Ordinary mean       | 12.87 |
-| 10% Winsorized mean | 10.74 |
+<caption>
 
-</div>
+Ordinary and Winsorized means.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Ordinary mean
+</td>
+
+<td style="text-align:right;">
+
+12.87
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+10% Winsorized mean
+</td>
+
+<td style="text-align:right;">
+
+10.74
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Trimming removes a tail fraction before averaging; Winsorization keeps
 the same number of observations but limits extreme values. Both must be
 reported transparently.
 
-# 17. Midrange and Midhinge
+# 16. Midrange and Midhinge
 
 The **midrange** is the midpoint between the minimum and maximum:
 
@@ -1046,29 +2094,79 @@ $$\text{Midhinge} = \frac{Q_1 + Q_3}{2}.$$
 ``` r
 quartiles <- quantile(lab_values, probs = c(0.25, 0.75), names = FALSE)
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Midrange", "Midhinge"),
   Value = round(c(
     (min(lab_values) + max(lab_values)) / 2,
     mean(quartiles)
   ), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Midrange and midhinge of laboratory values.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure  | Value |
-|:---------|------:|
-| Midrange | 22.40 |
-| Midhinge | 10.49 |
+<caption>
 
-</div>
+Midrange and midhinge of laboratory values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Midrange
+</td>
+
+<td style="text-align:right;">
+
+22.40
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Midhinge
+</td>
+
+<td style="text-align:right;">
+
+10.49
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 These measures are useful mainly for understanding alternatives. Mean
 and median remain more common in biostatistics.
 
-# 18. Centre as an Optimization Problem
+# 17. Centre as an Optimization Problem
 
 The arithmetic mean and median also have mathematical interpretations.
 
@@ -1118,7 +2216,7 @@ par(mfrow = c(1, 1))
 This explains why the mean reacts strongly to large deviations: squaring
 gives extreme distances much greater influence.
 
-# 19. Central Tendency by Measurement Scale
+# 18. Central Tendency by Measurement Scale
 
 | Measurement scale | Meaningful common centres | Example |
 |----|----|----|
@@ -1134,7 +2232,7 @@ centre.
 For an ordinal scale, a median category can be meaningful because order
 exists, although numerical gaps between categories may not be equal.
 
-# 20. Missing Values
+# 19. Missing Values
 
 R returns `NA` when the input contains a missing value unless the
 function is told how to handle it.
@@ -1165,27 +2263,84 @@ the missing data problem disappear.
 Always report the number of available observations:
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Total_records = length(glucose),
   Observed_values = sum(!is.na(glucose)),
   Missing_values = sum(is.na(glucose)),
   Observed_mean = mean(glucose, na.rm = TRUE)
-)
+), caption = "Observed and missing glucose measurements.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Total_records | Observed_values | Missing_values | Observed_mean |
-|--------------:|----------------:|---------------:|--------------:|
-|             5 |               4 |              1 |           100 |
+<caption>
 
-</div>
+Observed and missing glucose measurements.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Total records
+</th>
+
+<th style="text-align:right;">
+
+Observed values
+</th>
+
+<th style="text-align:right;">
+
+Missing values
+</th>
+
+<th style="text-align:right;">
+
+Observed mean
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+100
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 If severely ill participants are more likely to lack a measurement, the
 observed mean may be biased. Missing-data mechanisms and methods will be
 covered later.
 
-# 21. Grouped Data and Approximate Means
+# 20. Grouped Data and Approximate Means
 
 Sometimes only a grouped frequency table is available. We can estimate
 the mean using class midpoints:
@@ -1207,20 +2362,142 @@ estimated_mean_age <- weighted.mean(
   w = grouped_age$Frequency
 )
 
-grouped_age
+print_html_table(
+  grouped_age,
+  caption = "Grouped age distribution with class midpoints."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Age_group | Midpoint | Frequency |
-|:----------|---------:|----------:|
-| 20-29     |     24.5 |        12 |
-| 30-39     |     34.5 |        24 |
-| 40-49     |     44.5 |        31 |
-| 50-59     |     54.5 |        22 |
-| 60-69     |     64.5 |        11 |
+<caption>
 
-</div>
+Grouped age distribution with class midpoints.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Age group
+</th>
+
+<th style="text-align:right;">
+
+Midpoint
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+20-29
+</td>
+
+<td style="text-align:right;">
+
+24.5
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+30-39
+</td>
+
+<td style="text-align:right;">
+
+34.5
+</td>
+
+<td style="text-align:right;">
+
+24
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+40-49
+</td>
+
+<td style="text-align:right;">
+
+44.5
+</td>
+
+<td style="text-align:right;">
+
+31
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+50-59
+</td>
+
+<td style="text-align:right;">
+
+54.5
+</td>
+
+<td style="text-align:right;">
+
+22
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+60-69
+</td>
+
+<td style="text-align:right;">
+
+64.5
+</td>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 estimated_mean_age
@@ -1233,7 +2510,7 @@ its midpoint. It is less precise than calculating the mean from original
 values. Open-ended classes such as “70+” require an additional
 assumption and can make the estimate unreliable.
 
-# 22. Do Not Average Percentages Blindly
+# 21. Do Not Average Percentages Blindly
 
 Suppose two hospitals report infection percentages:
 
@@ -1258,41 +2535,174 @@ unweighted_percent <- mean(hospital_data$Percent)
 combined_percent <- 100 * sum(hospital_data$Infections) /
   sum(hospital_data$Patients)
 
-hospital_data
+print_html_table(
+  hospital_data,
+  caption = "Hospital-specific infection counts and percentages."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Hospital | Infections | Patients | Percent |
-|:---------|-----------:|---------:|--------:|
-| A        |          2 |       10 |      20 |
-| B        |         90 |     1000 |       9 |
+<caption>
 
-</div>
+Hospital-specific infection counts and percentages.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Hospital
+</th>
+
+<th style="text-align:right;">
+
+Infections
+</th>
+
+<th style="text-align:right;">
+
+Patients
+</th>
+
+<th style="text-align:right;">
+
+Percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+A
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+20
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+B
+</td>
+
+<td style="text-align:right;">
+
+90
+</td>
+
+<td style="text-align:right;">
+
+1000
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Method = c("Unweighted average of hospital percentages",
              "Combined infections / combined patients"),
   Percent = round(c(unweighted_percent, combined_percent), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Unweighted and denominator-based infection percentages.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Method                                     | Percent |
-|:-------------------------------------------|--------:|
-| Unweighted average of hospital percentages |   14.50 |
-| Combined infections / combined patients    |    9.11 |
+<caption>
 
-</div>
+Unweighted and denominator-based infection percentages.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Method
+</th>
+
+<th style="text-align:right;">
+
+Percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Unweighted average of hospital percentages
+</td>
+
+<td style="text-align:right;">
+
+14.50
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Combined infections / combined patients
+</td>
+
+<td style="text-align:right;">
+
+9.11
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Reconstruct the numerator and denominator whenever possible. Weighting
 subgroup percentages by subgroup denominators gives the combined
 percentage.
 
-# 23. Mean of Ratios Versus Ratio of Totals
+# 22. Mean of Ratios Versus Ratio of Totals
 
 These answer different questions.
 
@@ -1313,41 +2723,197 @@ mean_sample_proportion <- mean(read_data$Sample_proportion)
 pooled_proportion <- sum(read_data$Target_reads) /
   sum(read_data$Total_reads)
 
-read_data
-```
-
-<div class="kable-table">
-
-| Sample | Target_reads | Total_reads | Sample_proportion |
-|:-------|-------------:|------------:|------------------:|
-| S1     |           50 |         100 |              0.50 |
-| S2     |           50 |        1000 |              0.05 |
-| S3     |          900 |       10000 |              0.09 |
-
-</div>
-
-``` r
-data.frame(
-  Summary = c("Mean of sample proportions", "Ratio of pooled totals"),
-  Value = round(c(mean_sample_proportion, pooled_proportion), 4),
-  stringsAsFactors = FALSE
+print_html_table(
+  read_data,
+  caption = "Target and total sequencing reads by sample."
 )
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Summary                    |  Value |
-|:---------------------------|-------:|
-| Mean of sample proportions | 0.2133 |
-| Ratio of pooled totals     | 0.0901 |
+<caption>
 
-</div>
+Target and total sequencing reads by sample.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Sample
+</th>
+
+<th style="text-align:right;">
+
+Target reads
+</th>
+
+<th style="text-align:right;">
+
+Total reads
+</th>
+
+<th style="text-align:right;">
+
+Sample proportion
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S1
+</td>
+
+<td style="text-align:right;">
+
+50
+</td>
+
+<td style="text-align:right;">
+
+100
+</td>
+
+<td style="text-align:right;">
+
+0.50
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S2
+</td>
+
+<td style="text-align:right;">
+
+50
+</td>
+
+<td style="text-align:right;">
+
+1000
+</td>
+
+<td style="text-align:right;">
+
+0.05
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S3
+</td>
+
+<td style="text-align:right;">
+
+900
+</td>
+
+<td style="text-align:right;">
+
+10000
+</td>
+
+<td style="text-align:right;">
+
+0.09
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+``` r
+print_html_table(data.frame(
+  Summary = c("Mean of sample proportions", "Ratio of pooled totals"),
+  Value = round(c(mean_sample_proportion, pooled_proportion), 4),
+  stringsAsFactors = FALSE
+), caption = "Mean sample proportion and ratio of pooled totals.")
+```
+
+<table class="chapter-table">
+
+<caption>
+
+Mean sample proportion and ratio of pooled totals.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Summary
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean of sample proportions
+</td>
+
+<td style="text-align:right;">
+
+0.213
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Ratio of pooled totals
+</td>
+
+<td style="text-align:right;">
+
+0.090
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The mean of sample proportions gives every sample equal influence. The
 pooled ratio gives every read equal influence. Neither is automatically
 correct; the estimand determines which should be used.
 
-# 24. Hierarchical Data: Cells Are Nested Within Donors
+# 23. Hierarchical Data: Cells Are Nested Within Donors
 
 In single-cell RNA-seq, donors may contribute different numbers of
 cells. An overall cell-level mean gives donors with more captured cells
@@ -1367,36 +2933,172 @@ cell_weighted_mean <- weighted.mean(
   w = cell_summary$Captured_cells
 )
 
-cell_summary
+print_html_table(
+  cell_summary,
+  caption = "Captured cells and mean expression by donor."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Donor | Captured_cells | Donor_mean_expression |
-|:------|---------------:|----------------------:|
-| D1    |            100 |                     2 |
-| D2    |           1000 |                     5 |
-| D3    |           5000 |                     8 |
+<caption>
 
-</div>
+Captured cells and mean expression by donor.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Donor
+</th>
+
+<th style="text-align:right;">
+
+Captured cells
+</th>
+
+<th style="text-align:right;">
+
+Donor mean expression
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+D1
+</td>
+
+<td style="text-align:right;">
+
+100
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D2
+</td>
+
+<td style="text-align:right;">
+
+1000
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D3
+</td>
+
+<td style="text-align:right;">
+
+5000
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Target = c("Mean of donor means",
              "Mean expression across all captured cells"),
   Value = round(c(equal_donor_mean, cell_weighted_mean), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Donor-weighted and cell-weighted expression means.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Target                                    | Value |
-|:------------------------------------------|------:|
-| Mean of donor means                       |  5.00 |
-| Mean expression across all captured cells |  7.41 |
+<caption>
 
-</div>
+Donor-weighted and cell-weighted expression means.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Target
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean of donor means
+</td>
+
+<td style="text-align:right;">
+
+5.00
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean expression across all captured cells
+</td>
+
+<td style="text-align:right;">
+
+7.41
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The first estimates a typical donor-level mean if donors are equally
 weighted. The second estimates a typical captured cell in this dataset.
@@ -1407,7 +3109,7 @@ These are different scientific targets.
 The same issue arises with multiple biopsies per patient, technical
 replicates per sample and repeated visits per participant.
 
-# 25. Same Centre, Different Distributions
+# 24. Same Centre, Different Distributions
 
 A measure of central tendency cannot describe variability, skewness,
 multiple peaks or outliers by itself.
@@ -1458,7 +3160,7 @@ All three means are 10, but the datasets have different biological
 implications. Every measure of centre should be accompanied by an
 appropriate measure of dispersion and usually a visualization.
 
-# 26. Choosing the Most Appropriate Measure
+# 25. Choosing the Most Appropriate Measure
 
 | Situation | Often useful centre | Reason or caution |
 |----|----|----|
@@ -1476,7 +3178,7 @@ appropriate measure of dispersion and usually a visualization.
 This table provides starting points, not automatic rules. The primary
 measure should match the target population quantity and analysis plan.
 
-# 27. Reporting Central Tendency
+# 26. Reporting Central Tendency
 
 A good report states:
 
@@ -1502,9 +3204,9 @@ Examples:
 Avoid writing only “average = 6.2.” The word *average* can mean mean,
 median or another summary.
 
-# 28. Integrated Case Study: Inflammatory Biomarker Data
+# 27. Integrated Case Study: Inflammatory Biomarker Data
 
-## 28.1 Scientific setting
+## 27.1 Scientific setting
 
 We simulate C-reactive protein-like positive biomarker values for
 controls and cases. The values are right-skewed, and a small number of
@@ -1530,23 +3232,163 @@ biomarker_data <- data.frame(
 biomarker_data$Biomarker[c(151, 184)] <- c(38, 52)
 biomarker_data$Biomarker <- round(biomarker_data$Biomarker, 2)
 
-head(biomarker_data)
+print_html_table(
+  head(biomarker_data),
+  caption = "First six observations in the simulated biomarker dataset."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Participant | Group   | Biomarker |
-|:------------|:--------|----------:|
-| P001        | Control |      2.09 |
-| P002        | Control |      3.30 |
-| P003        | Control |      3.07 |
-| P004        | Control |      7.06 |
-| P005        | Control |      0.94 |
-| P006        | Control |      4.07 |
+<caption>
 
-</div>
+First six observations in the simulated biomarker dataset.
+</caption>
 
-## 28.2 Visual inspection
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Participant
+</th>
+
+<th style="text-align:left;">
+
+Group
+</th>
+
+<th style="text-align:right;">
+
+Biomarker
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P001
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+2.09
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P002
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+3.30
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P003
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+3.07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P004
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+7.06
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P005
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P006
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+4.07
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 27.2 Visual inspection
 
 ``` r
 par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
@@ -1576,7 +3418,7 @@ The simulated biomarker is positive and right-skewed in both groups.
 par(mfrow = c(1, 1))
 ```
 
-## 28.3 Build a group-summary function
+## 27.3 Build a group-summary function
 
 ``` r
 centre_summary <- function(x) {
@@ -1593,7 +3435,7 @@ centre_summary <- function(x) {
 }
 ```
 
-## 28.4 Summarize each group
+## 27.4 Summarize each group
 
 ``` r
 group_parts <- split(biomarker_data$Biomarker, biomarker_data$Group)
@@ -1619,19 +3461,132 @@ biomarker_summary[numeric_columns] <- round(
   2
 )
 
-biomarker_summary
+print_html_table(
+  biomarker_summary,
+  caption = "Measures of central tendency by biomarker group."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Group   |   N | Mean | Median | Geometric_mean | Trimmed_mean_10_percent |
-|:--------|----:|-----:|-------:|---------------:|------------------------:|
-| Case    | 100 | 6.25 |   4.08 |           4.31 |                     4.6 |
-| Control | 100 | 2.91 |   2.58 |           2.54 |                     2.7 |
+<caption>
 
-</div>
+Measures of central tendency by biomarker group.
+</caption>
 
-## 28.5 Interpretation
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Group
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+Median
+</th>
+
+<th style="text-align:right;">
+
+Geometric mean
+</th>
+
+<th style="text-align:right;">
+
+Trimmed mean 10 percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:right;">
+
+100
+</td>
+
+<td style="text-align:right;">
+
+6.25
+</td>
+
+<td style="text-align:right;">
+
+4.08
+</td>
+
+<td style="text-align:right;">
+
+4.31
+</td>
+
+<td style="text-align:right;">
+
+4.6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+100
+</td>
+
+<td style="text-align:right;">
+
+2.91
+</td>
+
+<td style="text-align:right;">
+
+2.58
+</td>
+
+<td style="text-align:right;">
+
+2.54
+</td>
+
+<td style="text-align:right;">
+
+2.7
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 27.5 Interpretation
 
 The mean is larger than the median and geometric mean, especially among
 cases, because high values pull the arithmetic mean upward. This is not
@@ -1647,7 +3602,7 @@ For a confirmatory comparison, the measure and statistical model should
 be prespecified. Selecting a method only after seeing which produces the
 preferred result introduces bias.
 
-# 29. Common Mistakes
+# 28. Common Mistakes
 
 ## Mistake 1: Using “average” without defining it
 
@@ -1692,7 +3647,7 @@ Define the biological unit and target of inference before averaging.
 State whether a result is on the original, log, standardized or
 back-transformed scale.
 
-# 30. Practical Decision Workflow
+# 29. Practical Decision Workflow
 
 Before selecting a measure of centre:
 
@@ -1707,7 +3662,7 @@ Before selecting a measure of centre:
 9.  Calculate the prespecified measure.
 10. Report it with sample size, units and dispersion.
 
-# 31. Chapter Summary
+# 30. Chapter Summary
 
 - Central tendency describes a representative centre of a distribution.
 - The arithmetic mean is the sum divided by the number of observations.
@@ -1735,7 +3690,7 @@ Before selecting a measure of centre:
   questions.
 - A centre cannot describe distribution shape or variability by itself.
 
-# 32. Check Your Understanding
+# 31. Check Your Understanding
 
 1.  What does the arithmetic mean represent mathematically?
 2.  Why do deviations from the mean sum to approximately zero?
@@ -1753,7 +3708,7 @@ Before selecting a measure of centre:
 14. Why can an all-cell mean overrepresent one single-cell donor?
 15. Why should a centre be reported with a measure of dispersion?
 
-# 33. R Exercises
+# 32. R Exercises
 
 ## Exercise 1: Manual arithmetic mean
 
@@ -1808,7 +3763,7 @@ Create data for four donors with unequal cell counts and donor means.
 Compare the equally weighted donor mean with the cell-count-weighted
 mean and define both estimands.
 
-# 34. Mini-Project: Central Tendency in Gene-Expression Data
+# 33. Mini-Project: Central Tendency in Gene-Expression Data
 
 Create or simulate a dataset containing at least 100 biological samples
 with:
@@ -1836,7 +3791,7 @@ Your report should:
     9; and
 10. provide reproducible R code and a short scientific interpretation.
 
-# 35. Glossary
+# 34. Glossary
 
 | Term | Plain-language definition |
 |----|----|
@@ -1862,7 +3817,7 @@ Your report should:
 | Estimand | Precisely defined population quantity a study aims to estimate |
 | Pseudocount | Constant added to values, often before a transformation |
 
-# 36. References
+# 35. References
 
 1.  Altman, D. G. (1991). *Practical Statistics for Medical Research*.
     Chapman and Hall.
@@ -1901,7 +3856,7 @@ Your report should:
 
 ------------------------------------------------------------------------
 
-# 37. Reproducibility Information
+# 36. Reproducibility Information
 
 ``` r
 sessionInfo()
