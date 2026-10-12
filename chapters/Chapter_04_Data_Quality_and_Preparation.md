@@ -17,115 +17,114 @@ Chapter 4: Data Quality and Data Preparation
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. What Does Data Quality Mean?](#3-what-does-data-quality-mean)
-  - [3.1 Fitness for purpose](#31-fitness-for-purpose)
-- [4. Raw, Cleaned and Analysis-Ready
-  Data](#4-raw-cleaned-and-analysis-ready-data)
-  - [4.1 Raw data](#41-raw-data)
-  - [4.2 Cleaned data](#42-cleaned-data)
-  - [4.3 Analysis-ready data](#43-analysis-ready-data)
-  - [4.4 Never overwrite the raw file](#44-never-overwrite-the-raw-file)
-- [5. Begin with the Observational
-  Unit](#5-begin-with-the-observational-unit)
-  - [5.1 Define a candidate key](#51-define-a-candidate-key)
-- [6. A Deliberately Messy Biological
-  Dataset](#6-a-deliberately-messy-biological-dataset)
-- [7. Preserve the Original Object](#7-preserve-the-original-object)
-- [8. First Structural Inspection](#8-first-structural-inspection)
-  - [8.1 Questions to ask immediately](#81-questions-to-ask-immediately)
-  - [8.2 Check column names](#82-check-column-names)
-- [9. Create a Data Dictionary and Validation
-  Rules](#9-create-a-data-dictionary-and-validation-rules)
-- [10. Exact Duplicate Rows](#10-exact-duplicate-rows)
-  - [10.1 Display every member of a duplicate
-    group](#101-display-every-member-of-a-duplicate-group)
-  - [10.2 Should exact duplicates be
-    removed?](#102-should-exact-duplicates-be-removed)
-- [11. Duplicated Identifiers](#11-duplicated-identifiers)
-  - [11.1 Duplicate does not always mean
-    error](#111-duplicate-does-not-always-mean-error)
-- [12. Standardizing Text Categories](#12-standardizing-text-categories)
-  - [12.1 Remove leading and trailing
-    spaces](#121-remove-leading-and-trailing-spaces)
-  - [12.2 Standardize capitalization](#122-standardize-capitalization)
-  - [12.3 Recode using explicit
-    mappings](#123-recode-using-explicit-mappings)
-  - [12.4 Identify unmapped values](#124-identify-unmapped-values)
-- [13. Impossible and Implausible
-  Values](#13-impossible-and-implausible-values)
-  - [13.1 Range checks](#131-range-checks)
-  - [13.2 Flag first, correct later](#132-flag-first-correct-later)
-- [14. Unit Inconsistency](#14-unit-inconsistency)
-  - [14.1 Compare suspicious values with source
-    information](#141-compare-suspicious-values-with-source-information)
-  - [14.2 Record measurement units
-    explicitly](#142-record-measurement-units-explicitly)
-- [15. Documented Missing-Value
-  Codes](#15-documented-missing-value-codes)
-  - [15.1 Do not confuse zero with
-    missing](#151-do-not-confuse-zero-with-missing)
-- [16. Missingness Assessment](#16-missingness-assessment)
-  - [16.1 Count missing values by
-    variable](#161-count-missing-values-by-variable)
-  - [16.2 Calculate missing
-    percentages](#162-calculate-missing-percentages)
-  - [16.3 Visualize missingness](#163-visualize-missingness)
-  - [16.4 Missingness patterns matter](#164-missingness-patterns-matter)
-- [17. Complete Cases](#17-complete-cases)
-- [18. Logic and Cross-Variable
-  Checks](#18-logic-and-cross-variable-checks)
-  - [18.1 QC consistency check](#181-qc-consistency-check)
-- [19. Dates and Formats](#19-dates-and-formats)
-  - [19.1 Parse known formats
-    explicitly](#191-parse-known-formats-explicitly)
-  - [19.2 Ambiguous dates](#192-ambiguous-dates)
-- [20. Outliers Versus Errors](#20-outliers-versus-errors)
-  - [20.1 Visual inspection](#201-visual-inspection)
-  - [20.2 IQR rule as a flag](#202-iqr-rule-as-a-flag)
-  - [20.3 Appropriate responses to an
-    outlier](#203-appropriate-responses-to-an-outlier)
-- [21. Biological and Technical
-  Replicates](#21-biological-and-technical-replicates)
-  - [21.1 Biological replicate](#211-biological-replicate)
-  - [21.2 Technical replicate](#212-technical-replicate)
-  - [21.3 Why accidental averaging can be
-    harmful](#213-why-accidental-averaging-can-be-harmful)
-- [22. Wide and Long Data Formats](#22-wide-and-long-data-formats)
-  - [22.1 Wide format](#221-wide-format)
-  - [22.2 Long format](#222-long-format)
-  - [22.3 Tidy-data principle](#223-tidy-data-principle)
-- [23. Joining Datasets Safely](#23-joining-datasets-safely)
-  - [23.1 Check keys before merging](#231-check-keys-before-merging)
-  - [23.2 Check row counts and unmatched
-    IDs](#232-check-row-counts-and-unmatched-ids)
-- [24. Quality-Control Flags Versus
-  Deletion](#24-quality-control-flags-versus-deletion)
-  - [24.1 Visualize the flag matrix](#241-visualize-the-flag-matrix)
-- [25. Data Cleaning Log](#25-data-cleaning-log)
-- [26. Do Not Hide Data Problems](#26-do-not-hide-data-problems)
-- [27. Constructing the Cleaned
-  Dataset](#27-constructing-the-cleaned-dataset)
-  - [27.1 Copy the working data](#271-copy-the-working-data)
-  - [27.2 Apply only verified handling
-    decisions](#272-apply-only-verified-handling-decisions)
-  - [27.3 Convert categories to
-    factors](#273-convert-categories-to-factors)
-  - [27.4 Inspect the cleaned
-    structure](#274-inspect-the-cleaned-structure)
-- [28. Build an Analysis-Ready
-  Dataset](#28-build-an-analysis-ready-dataset)
-  - [28.1 Define inclusion explicitly](#281-define-inclusion-explicitly)
-  - [28.2 Record exclusion reasons](#282-record-exclusion-reasons)
-  - [28.3 Select required columns and
-    observations](#283-select-required-columns-and-observations)
-  - [28.4 Final checks](#284-final-checks)
-- [29. Before-and-After Quality
-  Summary](#29-before-and-after-quality-summary)
-- [30. Saving Data Safely](#30-saving-data-safely)
-- [31. A Reproducible Data-Preparation
-  Workflow](#31-a-reproducible-data-preparation-workflow)
-- [32. Common Beginner Mistakes](#32-common-beginner-mistakes)
+- [2. What Does Data Quality Mean?](#2-what-does-data-quality-mean)
+  - [2.1 Fitness for purpose](#21-fitness-for-purpose)
+- [3. Raw, Cleaned and Analysis-Ready
+  Data](#3-raw-cleaned-and-analysis-ready-data)
+  - [3.1 Raw data](#31-raw-data)
+  - [3.2 Cleaned data](#32-cleaned-data)
+  - [3.3 Analysis-ready data](#33-analysis-ready-data)
+  - [3.4 Never overwrite the raw file](#34-never-overwrite-the-raw-file)
+- [4. Begin with the Observational
+  Unit](#4-begin-with-the-observational-unit)
+  - [4.1 Define a candidate key](#41-define-a-candidate-key)
+- [5. A Deliberately Messy Biological
+  Dataset](#5-a-deliberately-messy-biological-dataset)
+- [6. Preserve the Original Object](#6-preserve-the-original-object)
+- [7. First Structural Inspection](#7-first-structural-inspection)
+  - [7.1 Questions to ask immediately](#71-questions-to-ask-immediately)
+  - [7.2 Check column names](#72-check-column-names)
+- [8. Create a Data Dictionary and Validation
+  Rules](#8-create-a-data-dictionary-and-validation-rules)
+- [9. Exact Duplicate Rows](#9-exact-duplicate-rows)
+  - [9.1 Display every member of a duplicate
+    group](#91-display-every-member-of-a-duplicate-group)
+  - [9.2 Should exact duplicates be
+    removed?](#92-should-exact-duplicates-be-removed)
+- [10. Duplicated Identifiers](#10-duplicated-identifiers)
+  - [10.1 Duplicate does not always mean
+    error](#101-duplicate-does-not-always-mean-error)
+- [11. Standardizing Text Categories](#11-standardizing-text-categories)
+  - [11.1 Remove leading and trailing
+    spaces](#111-remove-leading-and-trailing-spaces)
+  - [11.2 Standardize capitalization](#112-standardize-capitalization)
+  - [11.3 Recode using explicit
+    mappings](#113-recode-using-explicit-mappings)
+  - [11.4 Identify unmapped values](#114-identify-unmapped-values)
+- [12. Impossible and Implausible
+  Values](#12-impossible-and-implausible-values)
+  - [12.1 Range checks](#121-range-checks)
+  - [12.2 Flag first, correct later](#122-flag-first-correct-later)
+- [13. Unit Inconsistency](#13-unit-inconsistency)
+  - [13.1 Compare suspicious values with source
+    information](#131-compare-suspicious-values-with-source-information)
+  - [13.2 Record measurement units
+    explicitly](#132-record-measurement-units-explicitly)
+- [14. Documented Missing-Value
+  Codes](#14-documented-missing-value-codes)
+  - [14.1 Do not confuse zero with
+    missing](#141-do-not-confuse-zero-with-missing)
+- [15. Missingness Assessment](#15-missingness-assessment)
+  - [15.1 Count missing values by
+    variable](#151-count-missing-values-by-variable)
+  - [15.2 Calculate missing
+    percentages](#152-calculate-missing-percentages)
+  - [15.3 Visualize missingness](#153-visualize-missingness)
+  - [15.4 Missingness patterns matter](#154-missingness-patterns-matter)
+- [16. Complete Cases](#16-complete-cases)
+- [17. Logic and Cross-Variable
+  Checks](#17-logic-and-cross-variable-checks)
+  - [17.1 QC consistency check](#171-qc-consistency-check)
+- [18. Dates and Formats](#18-dates-and-formats)
+  - [18.1 Parse known formats
+    explicitly](#181-parse-known-formats-explicitly)
+  - [18.2 Ambiguous dates](#182-ambiguous-dates)
+- [19. Outliers Versus Errors](#19-outliers-versus-errors)
+  - [19.1 Visual inspection](#191-visual-inspection)
+  - [19.2 IQR rule as a flag](#192-iqr-rule-as-a-flag)
+  - [19.3 Appropriate responses to an
+    outlier](#193-appropriate-responses-to-an-outlier)
+- [20. Biological and Technical
+  Replicates](#20-biological-and-technical-replicates)
+  - [20.1 Biological replicate](#201-biological-replicate)
+  - [20.2 Technical replicate](#202-technical-replicate)
+  - [20.3 Why accidental averaging can be
+    harmful](#203-why-accidental-averaging-can-be-harmful)
+- [21. Wide and Long Data Formats](#21-wide-and-long-data-formats)
+  - [21.1 Wide format](#211-wide-format)
+  - [21.2 Long format](#212-long-format)
+  - [21.3 Tidy-data principle](#213-tidy-data-principle)
+- [22. Joining Datasets Safely](#22-joining-datasets-safely)
+  - [22.1 Check keys before merging](#221-check-keys-before-merging)
+  - [22.2 Check row counts and unmatched
+    IDs](#222-check-row-counts-and-unmatched-ids)
+- [23. Quality-Control Flags Versus
+  Deletion](#23-quality-control-flags-versus-deletion)
+  - [23.1 Visualize the flag matrix](#231-visualize-the-flag-matrix)
+- [24. Data Cleaning Log](#24-data-cleaning-log)
+- [25. Do Not Hide Data Problems](#25-do-not-hide-data-problems)
+- [26. Constructing the Cleaned
+  Dataset](#26-constructing-the-cleaned-dataset)
+  - [26.1 Copy the working data](#261-copy-the-working-data)
+  - [26.2 Apply only verified handling
+    decisions](#262-apply-only-verified-handling-decisions)
+  - [26.3 Convert categories to
+    factors](#263-convert-categories-to-factors)
+  - [26.4 Inspect the cleaned
+    structure](#264-inspect-the-cleaned-structure)
+- [27. Build an Analysis-Ready
+  Dataset](#27-build-an-analysis-ready-dataset)
+  - [27.1 Define inclusion explicitly](#271-define-inclusion-explicitly)
+  - [27.2 Record exclusion reasons](#272-record-exclusion-reasons)
+  - [27.3 Select required columns and
+    observations](#273-select-required-columns-and-observations)
+  - [27.4 Final checks](#274-final-checks)
+- [28. Before-and-After Quality
+  Summary](#28-before-and-after-quality-summary)
+- [29. Saving Data Safely](#29-saving-data-safely)
+- [30. A Reproducible Data-Preparation
+  Workflow](#30-a-reproducible-data-preparation-workflow)
+- [31. Common Beginner Mistakes](#31-common-beginner-mistakes)
   - [Mistake 1: Overwriting raw data](#mistake-1-overwriting-raw-data)
   - [Mistake 2: Removing every duplicate
     ID](#mistake-2-removing-every-duplicate-id)
@@ -145,8 +144,8 @@ Sandeep Singh
   - [Mistake 10: Cleaning without a
     log](#mistake-10-cleaning-without-a-log)
   - [Mistake 11: Hiding exclusions](#mistake-11-hiding-exclusions)
-- [33. Chapter Summary](#33-chapter-summary)
-- [34. Check Your Understanding](#34-check-your-understanding)
+- [32. Chapter Summary](#32-chapter-summary)
+- [33. Check Your Understanding](#33-check-your-understanding)
   - [Question 1](#question-1)
   - [Question 2](#question-2)
   - [Question 3](#question-3)
@@ -157,7 +156,7 @@ Sandeep Singh
   - [Question 8](#question-8)
   - [Question 9](#question-9)
   - [Question 10](#question-10)
-- [35. Practice with R](#35-practice-with-r)
+- [34. Practice with R](#34-practice-with-r)
   - [Exercise 1: Find exact
     duplicates](#exercise-1-find-exact-duplicates)
   - [Exercise 2: Standardize
@@ -167,12 +166,54 @@ Sandeep Singh
   - [Exercise 5: Check a merge](#exercise-5-check-a-merge)
   - [Exercise 6: Reshape repeated
     measurements](#exercise-6-reshape-repeated-measurements)
-- [36. Mini-Project: Clean a Small Omics Metadata
-  Table](#36-mini-project-clean-a-small-omics-metadata-table)
-- [37. Glossary](#37-glossary)
-- [38. References and Further
-  Reading](#38-references-and-further-reading)
-- [39. Reproducibility Information](#39-reproducibility-information)
+- [35. Mini-Project: Clean a Small Omics Metadata
+  Table](#35-mini-project-clean-a-small-omics-metadata-table)
+- [36. Glossary](#36-glossary)
+- [37. References and Further
+  Reading](#37-references-and-further-reading)
+- [38. Reproducibility Information](#38-reproducibility-information)
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+&#10;table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+&#10;table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+&#10;table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
 
 # 1. Introduction
 
@@ -204,34 +245,7 @@ The goal is not to create a perfect-looking dataset. The goal is to
 create an analysis-ready dataset while preserving the evidence needed to
 understand every decision.
 
-------------------------------------------------------------------------
-
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  explain data quality in biological research;
-2.  distinguish raw, cleaned and analysis-ready data;
-3.  identify the observational unit of a dataset;
-4.  check dimensions, names, storage types and category values;
-5.  identify exact duplicates and duplicated identifiers;
-6.  distinguish duplicate records from legitimate repeated measurements;
-7.  standardize inconsistent text categories;
-8.  detect impossible and implausible values;
-9.  identify undocumented missing-value codes;
-10. distinguish outliers from data errors;
-11. perform range, logic and cross-variable checks;
-12. investigate unit and date inconsistencies;
-13. summarize and visualize missingness;
-14. distinguish biological and technical replicates during data
-    preparation;
-15. understand wide and long data formats;
-16. document changes in a cleaning log; and
-17. construct an analysis-ready dataset reproducibly in R.
-
-------------------------------------------------------------------------
-
-# 3. What Does Data Quality Mean?
+# 2. What Does Data Quality Mean?
 
 Data quality is not a single number. It has several dimensions.
 
@@ -248,7 +262,7 @@ Data quality is not a single number. It has several dimensions.
 A dataset can perform well in one dimension and poorly in another. For
 example, every field may be complete but recorded in inconsistent units.
 
-## 3.1 Fitness for purpose
+## 2.1 Fitness for purpose
 
 Quality also depends on the intended analysis.
 
@@ -266,9 +280,9 @@ Therefore, data quality should be evaluated relative to:
 
 ------------------------------------------------------------------------
 
-# 4. Raw, Cleaned and Analysis-Ready Data
+# 3. Raw, Cleaned and Analysis-Ready Data
 
-## 4.1 Raw data
+## 3.1 Raw data
 
 **Raw data** are the original data received from an instrument,
 database, laboratory or data-collection system.
@@ -283,7 +297,7 @@ Examples include:
 
 Raw data should normally be preserved unchanged.
 
-## 4.2 Cleaned data
+## 3.2 Cleaned data
 
 **Cleaned data** contain documented corrections or standardized
 representations.
@@ -295,7 +309,7 @@ Examples include:
 - converting dates into one format; and
 - correcting an entry after verifying it against the source record.
 
-## 4.3 Analysis-ready data
+## 3.3 Analysis-ready data
 
 **Analysis-ready data** contain the observations and variables needed
 for a specific analysis, with appropriate types, coding and exclusions.
@@ -304,7 +318,7 @@ One cleaned master dataset may produce several analysis-ready datasets
 because different research questions require different populations,
 outcomes or time points.
 
-## 4.4 Never overwrite the raw file
+## 3.4 Never overwrite the raw file
 
 A safe project structure is:
 
@@ -323,7 +337,7 @@ Every cleaned dataset should be reproducible from the raw data and code.
 
 ------------------------------------------------------------------------
 
-# 5. Begin with the Observational Unit
+# 4. Begin with the Observational Unit
 
 Before checking individual values, ask:
 
@@ -344,7 +358,7 @@ If one row represents one patient, repeated patient IDs may indicate
 duplicates or repeated visits. If one row represents one visit, repeated
 patient IDs are expected.
 
-## 5.1 Define a candidate key
+## 4.1 Define a candidate key
 
 A **key** is one variable or a combination of variables that should
 uniquely identify a row.
@@ -364,7 +378,7 @@ defined.
 
 ------------------------------------------------------------------------
 
-# 6. A Deliberately Messy Biological Dataset
+# 5. A Deliberately Messy Biological Dataset
 
 The following hypothetical dataset contains several quality problems. It
 is intentionally small so that each problem can be inspected manually.
@@ -412,31 +426,621 @@ raw_sample_data <- data.frame(
   stringsAsFactors = FALSE
 )
 
-print(raw_sample_data)
+print_html_table(
+  raw_sample_data,
+  caption = "Deliberately messy biological dataset used in this chapter."
+)
 ```
 
-    ##    sample_id patient_id age_years treatment tissue genotype read_count
-    ## 1       S001        P01        45   Control  Blood       AA    1250000
-    ## 2       S002        P02        52  treated   blood       AG    1480000
-    ## 3       S003        P03        61   Control  Liver       GG     980000
-    ## 4       S003        P03        61   Control  Liver       GG     980000
-    ## 5       S004        P04        -4 Treatment  Brain       AG        -10
-    ## 6       S005        P05       150   CONTROL Brain        --    1750000
-    ## 7       S006        P06        39   Treated  BLOOD       AA          0
-    ## 8       S007        P07        NA  Treatmnt  Liver       AG    1320000
-    ## 9       S008        P08        57   control  Blood       GG    1600000
-    ## 10      S009        P09        48   Treated  Brain       AA    1410000
-    ##    mapping_rate qc_status collection_date
-    ## 1          0.92      Pass      2026-01-05
-    ## 2          0.89      PASS      2026/01/07
-    ## 3          0.94      Pass      2026-01-08
-    ## 4          0.94      Pass      2026-01-08
-    ## 5          0.88      pass      05-01-2026
-    ## 6         92.00      Pass      2026-01-10
-    ## 7          0.61      Fail      2026-01-11
-    ## 8          0.91    Passed      2026-13-01
-    ## 9            NA   Unknown                
-    ## 10         0.93      Pass      2026-01-15
+<table class="chapter-table">
+
+<caption>
+
+Deliberately messy biological dataset used in this chapter.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+genotype
+</th>
+
+<th style="text-align:right;">
+
+read count
+</th>
+
+<th style="text-align:right;">
+
+mapping rate
+</th>
+
+<th style="text-align:left;">
+
+qc status
+</th>
+
+<th style="text-align:left;">
+
+collection date
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S001
+</td>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+1250000
+</td>
+
+<td style="text-align:right;">
+
+0.92
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-05
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S002
+</td>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+52
+</td>
+
+<td style="text-align:left;">
+
+treated
+</td>
+
+<td style="text-align:left;">
+
+blood
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1480000
+</td>
+
+<td style="text-align:right;">
+
+0.89
+</td>
+
+<td style="text-align:left;">
+
+PASS
+</td>
+
+<td style="text-align:left;">
+
+2026/01/07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+980000
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+980000
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+<td style="text-align:left;">
+
+P04
+</td>
+
+<td style="text-align:right;">
+
+-4
+</td>
+
+<td style="text-align:left;">
+
+Treatment
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+-10
+</td>
+
+<td style="text-align:right;">
+
+0.88
+</td>
+
+<td style="text-align:left;">
+
+pass
+</td>
+
+<td style="text-align:left;">
+
+05-01-2026
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+<td style="text-align:left;">
+
+P05
+</td>
+
+<td style="text-align:right;">
+
+150
+</td>
+
+<td style="text-align:left;">
+
+CONTROL
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+–
+</td>
+
+<td style="text-align:right;">
+
+1750000
+</td>
+
+<td style="text-align:right;">
+
+92.00
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S006
+</td>
+
+<td style="text-align:left;">
+
+P06
+</td>
+
+<td style="text-align:right;">
+
+39
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:left;">
+
+BLOOD
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+0.61
+</td>
+
+<td style="text-align:left;">
+
+Fail
+</td>
+
+<td style="text-align:left;">
+
+2026-01-11
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S007
+</td>
+
+<td style="text-align:left;">
+
+P07
+</td>
+
+<td style="text-align:right;">
+
+NA
+</td>
+
+<td style="text-align:left;">
+
+Treatmnt
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1320000
+</td>
+
+<td style="text-align:right;">
+
+0.91
+</td>
+
+<td style="text-align:left;">
+
+Passed
+</td>
+
+<td style="text-align:left;">
+
+2026-13-01
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S008
+</td>
+
+<td style="text-align:left;">
+
+P08
+</td>
+
+<td style="text-align:right;">
+
+57
+</td>
+
+<td style="text-align:left;">
+
+control
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+1600000
+</td>
+
+<td style="text-align:right;">
+
+NA
+</td>
+
+<td style="text-align:left;">
+
+Unknown
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S009
+</td>
+
+<td style="text-align:left;">
+
+P09
+</td>
+
+<td style="text-align:right;">
+
+48
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+1410000
+</td>
+
+<td style="text-align:right;">
+
+0.93
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-15
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Potential issues include:
 
@@ -455,7 +1059,7 @@ corrected. Investigation comes before editing.
 
 ------------------------------------------------------------------------
 
-# 7. Preserve the Original Object
+# 6. Preserve the Original Object
 
 When exploring problems, create a separate working object.
 
@@ -478,7 +1082,7 @@ becomes difficult to know which processing stage it represents.
 
 ------------------------------------------------------------------------
 
-# 8. First Structural Inspection
+# 7. First Structural Inspection
 
 ``` r
 dim(working_data)
@@ -511,23 +1115,406 @@ str(working_data)
     ##  $ collection_date: chr  "2026-01-05" "2026/01/07" "2026-01-08" "2026-01-08" ...
 
 ``` r
-print(head(working_data))
+print_html_table(
+  head(working_data),
+  caption = "First six records in the working dataset."
+)
 ```
 
-    ##   sample_id patient_id age_years treatment tissue genotype read_count
-    ## 1      S001        P01        45   Control  Blood       AA    1250000
-    ## 2      S002        P02        52  treated   blood       AG    1480000
-    ## 3      S003        P03        61   Control  Liver       GG     980000
-    ## 4      S003        P03        61   Control  Liver       GG     980000
-    ## 5      S004        P04        -4 Treatment  Brain       AG        -10
-    ## 6      S005        P05       150   CONTROL Brain        --    1750000
-    ##   mapping_rate qc_status collection_date
-    ## 1         0.92      Pass      2026-01-05
-    ## 2         0.89      PASS      2026/01/07
-    ## 3         0.94      Pass      2026-01-08
-    ## 4         0.94      Pass      2026-01-08
-    ## 5         0.88      pass      05-01-2026
-    ## 6        92.00      Pass      2026-01-10
+<table class="chapter-table">
+
+<caption>
+
+First six records in the working dataset.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+genotype
+</th>
+
+<th style="text-align:right;">
+
+read count
+</th>
+
+<th style="text-align:right;">
+
+mapping rate
+</th>
+
+<th style="text-align:left;">
+
+qc status
+</th>
+
+<th style="text-align:left;">
+
+collection date
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S001
+</td>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+1250000
+</td>
+
+<td style="text-align:right;">
+
+0.92
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-05
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S002
+</td>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+52
+</td>
+
+<td style="text-align:left;">
+
+treated
+</td>
+
+<td style="text-align:left;">
+
+blood
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1480000
+</td>
+
+<td style="text-align:right;">
+
+0.89
+</td>
+
+<td style="text-align:left;">
+
+PASS
+</td>
+
+<td style="text-align:left;">
+
+2026/01/07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+980000
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+980000
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+<td style="text-align:left;">
+
+P04
+</td>
+
+<td style="text-align:right;">
+
+-4
+</td>
+
+<td style="text-align:left;">
+
+Treatment
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+-10
+</td>
+
+<td style="text-align:right;">
+
+0.88
+</td>
+
+<td style="text-align:left;">
+
+pass
+</td>
+
+<td style="text-align:left;">
+
+05-01-2026
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+<td style="text-align:left;">
+
+P05
+</td>
+
+<td style="text-align:right;">
+
+150
+</td>
+
+<td style="text-align:left;">
+
+CONTROL
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+–
+</td>
+
+<td style="text-align:right;">
+
+1750000
+</td>
+
+<td style="text-align:right;">
+
+92.00
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-10
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 summary(working_data)
@@ -558,7 +1545,7 @@ summary(working_data)
     ##                                       
     ## 
 
-## 8.1 Questions to ask immediately
+## 7.1 Questions to ask immediately
 
 - Does the number of rows match expectations?
 - Does each row represent the intended unit?
@@ -569,7 +1556,7 @@ summary(working_data)
 - Did character values force a numeric column to become text?
 - Are there unexpected missing values?
 
-## 8.2 Check column names
+## 7.2 Check column names
 
 ``` r
 names(working_data)
@@ -590,7 +1577,7 @@ resolved using the source documentation.
 
 ------------------------------------------------------------------------
 
-# 9. Create a Data Dictionary and Validation Rules
+# 8. Create a Data Dictionary and Validation Rules
 
 Cleaning decisions should be based on documented expectations.
 
@@ -617,25 +1604,206 @@ validation_rules <- data.frame(
   stringsAsFactors = FALSE
 )
 
-print(validation_rules)
+print_html_table(
+  validation_rules,
+  caption = "Hypothetical data dictionary and validation rules."
+)
 ```
 
-    ##       variable      expected_type permitted_values_or_range
-    ## 1    sample_id        Unique text    Unique and non-missing
-    ## 2    age_years            Numeric           18 to 100 years
-    ## 3    treatment        Categorical          Control; Treated
-    ## 4       tissue        Categorical       Blood; Brain; Liver
-    ## 5     genotype        Categorical       AA; AG; GG; missing
-    ## 6   read_count Non-negative count              0 or greater
-    ## 7 mapping_rate         Proportion                    0 to 1
-    ## 8    qc_status        Categorical       Pass; Fail; missing
+<table class="chapter-table">
+
+<caption>
+
+Hypothetical data dictionary and validation rules.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+variable
+</th>
+
+<th style="text-align:left;">
+
+expected type
+</th>
+
+<th style="text-align:left;">
+
+permitted values or range
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+sample_id
+</td>
+
+<td style="text-align:left;">
+
+Unique text
+</td>
+
+<td style="text-align:left;">
+
+Unique and non-missing
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+age_years
+</td>
+
+<td style="text-align:left;">
+
+Numeric
+</td>
+
+<td style="text-align:left;">
+
+18 to 100 years
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+treatment
+</td>
+
+<td style="text-align:left;">
+
+Categorical
+</td>
+
+<td style="text-align:left;">
+
+Control; Treated
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+tissue
+</td>
+
+<td style="text-align:left;">
+
+Categorical
+</td>
+
+<td style="text-align:left;">
+
+Blood; Brain; Liver
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+genotype
+</td>
+
+<td style="text-align:left;">
+
+Categorical
+</td>
+
+<td style="text-align:left;">
+
+AA; AG; GG; missing
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+read_count
+</td>
+
+<td style="text-align:left;">
+
+Non-negative count
+</td>
+
+<td style="text-align:left;">
+
+0 or greater
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mapping_rate
+</td>
+
+<td style="text-align:left;">
+
+Proportion
+</td>
+
+<td style="text-align:left;">
+
+0 to 1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+qc_status
+</td>
+
+<td style="text-align:left;">
+
+Categorical
+</td>
+
+<td style="text-align:left;">
+
+Pass; Fail; missing
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 These rules are hypothetical. In real work they must come from the
 protocol, codebook, instrument documentation and scientific team.
 
 ------------------------------------------------------------------------
 
-# 10. Exact Duplicate Rows
+# 9. Exact Duplicate Rows
 
 An **exact duplicate** occurs when every recorded value in one row
 matches another row.
@@ -653,36 +1821,334 @@ sum(duplicated(working_data))
     ## [1] 1
 
 ``` r
-print(working_data[duplicated(working_data), ])
+print_html_table(
+  working_data[duplicated(working_data), ],
+  caption = "Rows identified as later copies of exact duplicates."
+)
 ```
 
-    ##   sample_id patient_id age_years treatment tissue genotype read_count
-    ## 4      S003        P03        61   Control  Liver       GG     980000
-    ##   mapping_rate qc_status collection_date
-    ## 4         0.94      Pass      2026-01-08
+<table class="chapter-table">
+
+<caption>
+
+Rows identified as later copies of exact duplicates.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+genotype
+</th>
+
+<th style="text-align:right;">
+
+read count
+</th>
+
+<th style="text-align:right;">
+
+mapping rate
+</th>
+
+<th style="text-align:left;">
+
+qc status
+</th>
+
+<th style="text-align:left;">
+
+collection date
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+980000
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The first occurrence is not marked by `duplicated()`. Later repeated
 copies are marked `TRUE`.
 
-## 10.1 Display every member of a duplicate group
+## 9.1 Display every member of a duplicate group
 
 ``` r
 duplicate_from_top <- duplicated(working_data)
 duplicate_from_bottom <- duplicated(working_data, fromLast = TRUE)
 
-print(working_data[
-  duplicate_from_top | duplicate_from_bottom,
-])
+print_html_table(
+  working_data[
+    duplicate_from_top | duplicate_from_bottom,
+  ],
+  caption = "Every member of each exact-duplicate group."
+)
 ```
 
-    ##   sample_id patient_id age_years treatment tissue genotype read_count
-    ## 3      S003        P03        61   Control  Liver       GG     980000
-    ## 4      S003        P03        61   Control  Liver       GG     980000
-    ##   mapping_rate qc_status collection_date
-    ## 3         0.94      Pass      2026-01-08
-    ## 4         0.94      Pass      2026-01-08
+<table class="chapter-table">
 
-## 10.2 Should exact duplicates be removed?
+<caption>
+
+Every member of each exact-duplicate group.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+genotype
+</th>
+
+<th style="text-align:right;">
+
+read count
+</th>
+
+<th style="text-align:right;">
+
+mapping rate
+</th>
+
+<th style="text-align:left;">
+
+qc status
+</th>
+
+<th style="text-align:left;">
+
+collection date
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+980000
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+980000
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 9.2 Should exact duplicates be removed?
 
 Only after confirming that they are unintended duplicate records.
 
@@ -709,7 +2175,7 @@ The reason and number of removed rows should be recorded.
 
 ------------------------------------------------------------------------
 
-# 11. Duplicated Identifiers
+# 10. Duplicated Identifiers
 
 An identifier can be duplicated even when the complete rows are
 different.
@@ -729,7 +2195,7 @@ working_data$sample_id[duplicated(working_data$sample_id)]
 After removal of the confirmed exact duplicate, no sample IDs should be
 duplicated in this example.
 
-## 11.1 Duplicate does not always mean error
+## 10.1 Duplicate does not always mean error
 
 Repeated patient IDs may be valid when the dataset contains:
 
@@ -750,7 +2216,7 @@ are understood.
 
 ------------------------------------------------------------------------
 
-# 12. Standardizing Text Categories
+# 11. Standardizing Text Categories
 
 Text categories can differ because of capitalization, spaces or
 spelling.
@@ -774,7 +2240,7 @@ sort(unique(working_data$qc_status))
 
     ## [1] "Fail"    "pass"    "Pass"    "PASS"    "Passed"  "Unknown"
 
-## 12.1 Remove leading and trailing spaces
+## 11.1 Remove leading and trailing spaces
 
 ``` r
 working_data$treatment <- trimws(working_data$treatment)
@@ -782,7 +2248,7 @@ working_data$tissue <- trimws(working_data$tissue)
 working_data$qc_status <- trimws(working_data$qc_status)
 ```
 
-## 12.2 Standardize capitalization
+## 11.2 Standardize capitalization
 
 ``` r
 working_data$treatment <- tolower(working_data$treatment)
@@ -806,7 +2272,7 @@ sort(unique(working_data$qc_status))
 
     ## [1] "fail"    "pass"    "passed"  "unknown"
 
-## 12.3 Recode using explicit mappings
+## 11.3 Recode using explicit mappings
 
 ``` r
 treatment_map <- c(
@@ -837,23 +2303,372 @@ working_data$tissue_clean <-
 working_data$qc_status_clean <-
   unname(qc_map[working_data$qc_status])
 
-print(working_data[, c(
-  "treatment", "treatment_clean",
-  "tissue", "tissue_clean",
-  "qc_status", "qc_status_clean"
-)])
+print_html_table(
+  working_data[, c(
+    "treatment", "treatment_clean",
+    "tissue", "tissue_clean",
+    "qc_status", "qc_status_clean"
+  )],
+  caption = "Original and standardized category values."
+)
 ```
 
-    ##   treatment treatment_clean tissue tissue_clean qc_status qc_status_clean
-    ## 1   control         Control  blood        Blood      pass            Pass
-    ## 2   treated         Treated  blood        Blood      pass            Pass
-    ## 3   control         Control  liver        Liver      pass            Pass
-    ## 4 treatment            <NA>  brain        Brain      pass            Pass
-    ## 5   control         Control  brain        Brain      pass            Pass
-    ## 6   treated         Treated  blood        Blood      fail            Fail
-    ## 7  treatmnt         Treated  liver        Liver    passed            Pass
-    ## 8   control         Control  blood        Blood   unknown            <NA>
-    ## 9   treated         Treated  brain        Brain      pass            Pass
+<table class="chapter-table">
+
+<caption>
+
+Original and standardized category values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+<th style="text-align:left;">
+
+treatment clean
+</th>
+
+<th style="text-align:left;">
+
+tissue
+</th>
+
+<th style="text-align:left;">
+
+tissue clean
+</th>
+
+<th style="text-align:left;">
+
+qc status
+</th>
+
+<th style="text-align:left;">
+
+qc status clean
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+control
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+blood
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+pass
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+treated
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:left;">
+
+blood
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+pass
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+control
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+liver
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+pass
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+treatment
+</td>
+
+<td style="text-align:left;">
+
+NA
+</td>
+
+<td style="text-align:left;">
+
+brain
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+pass
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+control
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+brain
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+pass
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+treated
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:left;">
+
+blood
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+fail
+</td>
+
+<td style="text-align:left;">
+
+Fail
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+treatmnt
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:left;">
+
+liver
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+passed
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+control
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+blood
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+unknown
+</td>
+
+<td style="text-align:left;">
+
+NA
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+treated
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:left;">
+
+brain
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+pass
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The misspelling `treatmnt` is mapped to `Treated` only because the
 intended value is assumed to have been verified for this teaching
@@ -862,23 +2677,68 @@ example.
 Unknown or unmapped categories should be investigated, not silently
 converted.
 
-## 12.4 Identify unmapped values
+## 11.4 Identify unmapped values
 
 ``` r
-print(working_data[
-  is.na(working_data$treatment_clean),
-  c("sample_id", "treatment")
-])
+print_html_table(
+  working_data[
+    is.na(working_data$treatment_clean),
+    c("sample_id", "treatment")
+  ],
+  caption = "Treatment values that remain unmapped."
+)
 ```
 
-    ##   sample_id treatment
-    ## 4      S004 treatment
+<table class="chapter-table">
+
+<caption>
+
+Treatment values that remain unmapped.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+treatment
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+<td style="text-align:left;">
+
+treatment
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 No unexplained treatment category remains in this example.
 
 ------------------------------------------------------------------------
 
-# 13. Impossible and Implausible Values
+# 12. Impossible and Implausible Values
 
 An **impossible value** cannot occur under the variable definition.
 
@@ -900,7 +2760,7 @@ Examples might include:
 
 The distinction depends on context and documentation.
 
-## 13.1 Range checks
+## 12.1 Range checks
 
 ``` r
 working_data$age_out_of_range <-
@@ -915,27 +2775,155 @@ working_data$mapping_rate_invalid <-
   !is.na(working_data$mapping_rate) &
   (working_data$mapping_rate < 0 | working_data$mapping_rate > 1)
 
-working_data[
-  working_data$age_out_of_range |
-    working_data$read_count_invalid |
-    working_data$mapping_rate_invalid,
-  c(
-    "sample_id", "age_years", "read_count", "mapping_rate",
-    "age_out_of_range", "read_count_invalid", "mapping_rate_invalid"
-  )
-]
+print_html_table(
+  working_data[
+    working_data$age_out_of_range |
+      working_data$read_count_invalid |
+      working_data$mapping_rate_invalid,
+    c(
+      "sample_id", "age_years", "read_count", "mapping_rate",
+      "age_out_of_range", "read_count_invalid", "mapping_rate_invalid"
+    )
+  ],
+  caption = "Records flagged by range and validity rules."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-|  | sample_id | age_years | read_count | mapping_rate | age_out_of_range | read_count_invalid | mapping_rate_invalid |
-|:---|:---|---:|---:|---:|:---|:---|:---|
-| 4 | S004 | -4 | -10 | 0.88 | TRUE | TRUE | FALSE |
-| 5 | S005 | 150 | 1750000 | 92.00 | TRUE | FALSE | TRUE |
+<caption>
 
-</div>
+Records flagged by range and validity rules.
+</caption>
 
-## 13.2 Flag first, correct later
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:right;">
+
+read count
+</th>
+
+<th style="text-align:right;">
+
+mapping rate
+</th>
+
+<th style="text-align:left;">
+
+age out of range
+</th>
+
+<th style="text-align:left;">
+
+read count invalid
+</th>
+
+<th style="text-align:left;">
+
+mapping rate invalid
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+<td style="text-align:right;">
+
+-4
+</td>
+
+<td style="text-align:right;">
+
+-10
+</td>
+
+<td style="text-align:right;">
+
+0.88
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+<td style="text-align:right;">
+
+150
+</td>
+
+<td style="text-align:right;">
+
+1750000
+</td>
+
+<td style="text-align:right;">
+
+92.00
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 12.2 Flag first, correct later
 
 Creating quality flags preserves the original values for investigation.
 
@@ -952,7 +2940,7 @@ actions include:
 
 ------------------------------------------------------------------------
 
-# 14. Unit Inconsistency
+# 13. Unit Inconsistency
 
 The value `92` in `mapping_rate` may represent 92%, whereas other values
 are proportions such as 0.92.
@@ -960,7 +2948,7 @@ are proportions such as 0.92.
 This is a likely unit inconsistency, but dividing by 100 automatically
 would be unsafe without verification.
 
-## 14.1 Compare suspicious values with source information
+## 13.1 Compare suspicious values with source information
 
 For this teaching example, assume the laboratory report confirms that
 sample `S005` was recorded as 92% and should be represented as 0.92.
@@ -976,7 +2964,7 @@ working_data$mapping_rate_clean[
 The correction is targeted to the verified record rather than applied as
 a general rule to every value greater than 1.
 
-## 14.2 Record measurement units explicitly
+## 13.2 Record measurement units explicitly
 
 Variable names or data dictionaries should specify whether a measurement
 is:
@@ -989,7 +2977,7 @@ is:
 
 ------------------------------------------------------------------------
 
-# 15. Documented Missing-Value Codes
+# 14. Documented Missing-Value Codes
 
 Missing data may be encoded as:
 
@@ -1016,7 +3004,7 @@ working_data$genotype_clean
 
     ## [1] "AA" "AG" "GG" "AG" NA   "AA" "AG" "GG" "AA"
 
-## 15.1 Do not confuse zero with missing
+## 14.1 Do not confuse zero with missing
 
 Sample `S006` has a read count of zero. Zero may mean:
 
@@ -1030,9 +3018,9 @@ interpretation is correct.
 
 ------------------------------------------------------------------------
 
-# 16. Missingness Assessment
+# 15. Missingness Assessment
 
-## 16.1 Count missing values by variable
+## 15.1 Count missing values by variable
 
 ``` r
 missing_count <- colSums(is.na(working_data))
@@ -1052,7 +3040,7 @@ missing_count
     ## mapping_rate_invalid   mapping_rate_clean       genotype_clean 
     ##                    0                    1                    1
 
-## 16.2 Calculate missing percentages
+## 15.2 Calculate missing percentages
 
 ``` r
 missing_summary <- data.frame(
@@ -1065,20 +3053,165 @@ missing_summary <- data.frame(
   row.names = NULL
 )
 
-print(missing_summary[
-  missing_summary$missing_n > 0,
-])
+print_html_table(
+  missing_summary[
+    missing_summary$missing_n > 0,
+  ],
+  caption = "Variables containing missing observations."
+)
 ```
 
-    ##              variable missing_n missing_percent
-    ## 3           age_years         1            11.1
-    ## 8        mapping_rate         1            11.1
-    ## 11    treatment_clean         1            11.1
-    ## 13    qc_status_clean         1            11.1
-    ## 17 mapping_rate_clean         1            11.1
-    ## 18     genotype_clean         1            11.1
+<table class="chapter-table">
 
-## 16.3 Visualize missingness
+<caption>
+
+Variables containing missing observations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+variable
+</th>
+
+<th style="text-align:right;">
+
+missing n
+</th>
+
+<th style="text-align:right;">
+
+missing percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+age_years
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+11.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mapping_rate
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+11.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+treatment_clean
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+11.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+qc_status_clean
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+11.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mapping_rate_clean
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+11.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+genotype_clean
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+11.1
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 15.3 Visualize missingness
 
 ``` r
 missing_for_plot <- missing_summary[
@@ -1108,7 +3241,7 @@ missing observation after initial recoding.
 
 </div>
 
-## 16.4 Missingness patterns matter
+## 15.4 Missingness patterns matter
 
 The overall percentage is not enough. Ask:
 
@@ -1123,7 +3256,7 @@ chapter.
 
 ------------------------------------------------------------------------
 
-# 17. Complete Cases
+# 16. Complete Cases
 
 `complete.cases()` identifies rows without any missing values across
 selected variables.
@@ -1140,12 +3273,70 @@ complete_for_selected <- complete.cases(
   working_data[, analysis_variables]
 )
 
-table(complete_for_selected)
+print_html_table(
+  table(complete_for_selected),
+  caption = "Complete-case status for the selected analysis variables."
+)
 ```
 
-    ## complete_for_selected
-    ## FALSE  TRUE 
-    ##     4     5
+<table class="chapter-table">
+
+<caption>
+
+Complete-case status for the selected analysis variables.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+complete for selected
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Do not automatically discard every incomplete row. Complete-case
 analysis can reduce sample size and introduce bias when missingness is
@@ -1153,7 +3344,7 @@ related to observed or unobserved factors.
 
 ------------------------------------------------------------------------
 
-# 18. Logic and Cross-Variable Checks
+# 17. Logic and Cross-Variable Checks
 
 Range checks examine one variable. **Logic checks** compare information
 across variables.
@@ -1167,7 +3358,7 @@ Examples include:
 - genotype call present despite a documented assay failure; or
 - treatment response recorded before treatment began.
 
-## 18.1 QC consistency check
+## 17.1 QC consistency check
 
 Assume the teaching protocol requires mapping rate of at least 0.80 for
 a pass.
@@ -1183,43 +3374,231 @@ working_data$qc_mapping_inconsistent <-
        working_data$mapping_rate_clean >= 0.80)
   )
 
-print(working_data[
-  working_data$qc_mapping_inconsistent,
-  c("sample_id", "mapping_rate_clean", "qc_status_clean")
-])
+print_html_table(
+  working_data[
+    working_data$qc_mapping_inconsistent,
+    c("sample_id", "mapping_rate_clean", "qc_status_clean")
+  ],
+  caption = "Records with inconsistent QC status and mapping rate."
+)
 ```
 
-    ## [1] sample_id          mapping_rate_clean qc_status_clean   
-    ## <0 rows> (or 0-length row.names)
+<table class="chapter-table">
+
+<caption>
+
+Records with inconsistent QC status and mapping rate.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:right;">
+
+mapping rate clean
+</th>
+
+<th style="text-align:left;">
+
+qc status clean
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+</tr>
+
+</tbody>
+
+</table>
 
 An inconsistency is a request for investigation. It does not tell us
 automatically which field is wrong.
 
 ------------------------------------------------------------------------
 
-# 19. Dates and Formats
+# 18. Dates and Formats
 
 Dates should be stored as R `Date` objects rather than inconsistent
 character strings.
 
 ``` r
-print(working_data[, c("sample_id", "collection_date")])
+print_html_table(
+  working_data[, c("sample_id", "collection_date")],
+  caption = "Original collection-date values."
+)
 ```
 
-    ##   sample_id collection_date
-    ## 1      S001      2026-01-05
-    ## 2      S002      2026/01/07
-    ## 3      S003      2026-01-08
-    ## 4      S004      05-01-2026
-    ## 5      S005      2026-01-10
-    ## 6      S006      2026-01-11
-    ## 7      S007      2026-13-01
-    ## 8      S008                
-    ## 9      S009      2026-01-15
+<table class="chapter-table">
+
+<caption>
+
+Original collection-date values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+collection date
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S001
+</td>
+
+<td style="text-align:left;">
+
+2026-01-05
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S002
+</td>
+
+<td style="text-align:left;">
+
+2026/01/07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+<td style="text-align:left;">
+
+05-01-2026
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+<td style="text-align:left;">
+
+2026-01-10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S006
+</td>
+
+<td style="text-align:left;">
+
+2026-01-11
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S007
+</td>
+
+<td style="text-align:left;">
+
+2026-13-01
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S008
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S009
+</td>
+
+<td style="text-align:left;">
+
+2026-01-15
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Several formats are present, and one value contains an impossible month.
 
-## 19.1 Parse known formats explicitly
+## 18.1 Parse known formats explicitly
 
 We can create a function that attempts the documented formats.
 
@@ -1247,28 +3626,226 @@ parse_collection_date <- function(x) {
 working_data$collection_date_clean <-
   parse_collection_date(working_data$collection_date)
 
-print(working_data[, c(
-  "sample_id",
-  "collection_date",
-  "collection_date_clean"
-)])
+print_html_table(
+  working_data[, c(
+    "sample_id",
+    "collection_date",
+    "collection_date_clean"
+  )],
+  caption = "Original and parsed collection dates."
+)
 ```
 
-    ##   sample_id collection_date collection_date_clean
-    ## 1      S001      2026-01-05            2026-01-05
-    ## 2      S002      2026/01/07            2026-01-07
-    ## 3      S003      2026-01-08            2026-01-08
-    ## 4      S004      05-01-2026            0005-01-20
-    ## 5      S005      2026-01-10            2026-01-10
-    ## 6      S006      2026-01-11            2026-01-11
-    ## 7      S007      2026-13-01                  <NA>
-    ## 8      S008                                  <NA>
-    ## 9      S009      2026-01-15            2026-01-15
+<table class="chapter-table">
+
+<caption>
+
+Original and parsed collection dates.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+collection date
+</th>
+
+<th style="text-align:left;">
+
+collection date clean
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S001
+</td>
+
+<td style="text-align:left;">
+
+2026-01-05
+</td>
+
+<td style="text-align:left;">
+
+2026-01-05
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S002
+</td>
+
+<td style="text-align:left;">
+
+2026/01/07
+</td>
+
+<td style="text-align:left;">
+
+2026-01-07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+<td style="text-align:left;">
+
+05-01-2026
+</td>
+
+<td style="text-align:left;">
+
+0005-01-20
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+<td style="text-align:left;">
+
+2026-01-10
+</td>
+
+<td style="text-align:left;">
+
+2026-01-10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S006
+</td>
+
+<td style="text-align:left;">
+
+2026-01-11
+</td>
+
+<td style="text-align:left;">
+
+2026-01-11
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S007
+</td>
+
+<td style="text-align:left;">
+
+2026-13-01
+</td>
+
+<td style="text-align:left;">
+
+NA
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S008
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+NA
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S009
+</td>
+
+<td style="text-align:left;">
+
+2026-01-15
+</td>
+
+<td style="text-align:left;">
+
+2026-01-15
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The invalid date remains missing after parsing and should be checked
 against the source.
 
-## 19.2 Ambiguous dates
+## 18.2 Ambiguous dates
 
 The string `05-01-2026` could mean 5 January or 1 May depending on
 convention. Never guess. Use the data-collection specification or source
@@ -1276,7 +3853,7 @@ record.
 
 ------------------------------------------------------------------------
 
-# 20. Outliers Versus Errors
+# 19. Outliers Versus Errors
 
 An **outlier** is an observation far from most others. An outlier is not
 automatically incorrect.
@@ -1291,7 +3868,7 @@ An extreme biological value may represent:
 - a unit problem; or
 - a transcription error.
 
-## 20.1 Visual inspection
+## 19.1 Visual inspection
 
 ``` r
 biomarker <- c(
@@ -1329,7 +3906,7 @@ biological observation or an error.
 
 </div>
 
-## 20.2 IQR rule as a flag
+## 19.2 IQR rule as a flag
 
 ``` r
 q1 <- quantile(biomarker, 0.25)
@@ -1349,7 +3926,7 @@ biomarker[
 
 The 1.5 × IQR rule is a descriptive flag, not a deletion rule.
 
-## 20.3 Appropriate responses to an outlier
+## 19.3 Appropriate responses to an outlier
 
 - verify the source value;
 - inspect laboratory and sample metadata;
@@ -1364,11 +3941,11 @@ unacceptable.
 
 ------------------------------------------------------------------------
 
-# 21. Biological and Technical Replicates
+# 20. Biological and Technical Replicates
 
 Data preparation must preserve the replicate structure.
 
-## 21.1 Biological replicate
+## 20.1 Biological replicate
 
 An independently sampled biological unit, such as:
 
@@ -1377,7 +3954,7 @@ An independently sampled biological unit, such as:
 - an independently grown culture; or
 - a separate tissue specimen.
 
-## 21.2 Technical replicate
+## 20.2 Technical replicate
 
 A repeated measurement or processing of the same biological material,
 such as:
@@ -1387,7 +3964,7 @@ such as:
 - multiple libraries from one RNA sample; or
 - resequencing the same library.
 
-## 21.3 Why accidental averaging can be harmful
+## 20.3 Why accidental averaging can be harmful
 
 Technical replicates may sometimes be summarized, but only according to
 a documented procedure. Biological replicates usually should not be
@@ -1407,9 +3984,9 @@ statistical models must address.
 
 ------------------------------------------------------------------------
 
-# 22. Wide and Long Data Formats
+# 21. Wide and Long Data Formats
 
-## 22.1 Wide format
+## 21.1 Wide format
 
 In wide format, repeated measurements are stored in separate columns.
 
@@ -1421,15 +3998,126 @@ wide_biomarker <- data.frame(
   month_6 = c(7.1, 8.4, 7.0)
 )
 
-print(wide_biomarker)
+print_html_table(
+  wide_biomarker,
+  caption = "Repeated biomarker measurements in wide format."
+)
 ```
 
-    ##   patient_id baseline month_3 month_6
-    ## 1        P01      8.2     7.6     7.1
-    ## 2        P02      9.1     8.7     8.4
-    ## 3        P03      7.8     7.4     7.0
+<table class="chapter-table">
 
-## 22.2 Long format
+<caption>
+
+Repeated biomarker measurements in wide format.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+baseline
+</th>
+
+<th style="text-align:right;">
+
+month 3
+</th>
+
+<th style="text-align:right;">
+
+month 6
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:right;">
+
+7.6
+</td>
+
+<td style="text-align:right;">
+
+7.1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+9.1
+</td>
+
+<td style="text-align:right;">
+
+8.7
+</td>
+
+<td style="text-align:right;">
+
+8.4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+7.8
+</td>
+
+<td style="text-align:right;">
+
+7.4
+</td>
+
+<td style="text-align:right;">
+
+7.0
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 21.2 Long format
 
 In long format, each row represents one patient-time combination.
 
@@ -1448,24 +4136,273 @@ long_biomarker <- long_biomarker[
   order(long_biomarker$patient_id, long_biomarker$visit),
 ]
 
-print(long_biomarker)
+print_html_table(
+  long_biomarker,
+  caption = "Repeated biomarker measurements in long format."
+)
 ```
 
-    ##   patient_id    visit biomarker id
-    ## 1        P01 Baseline       8.2  1
-    ## 4        P01  Month 3       7.6  1
-    ## 7        P01  Month 6       7.1  1
-    ## 2        P02 Baseline       9.1  2
-    ## 5        P02  Month 3       8.7  2
-    ## 8        P02  Month 6       8.4  2
-    ## 3        P03 Baseline       7.8  3
-    ## 6        P03  Month 3       7.4  3
-    ## 9        P03  Month 6       7.0  3
+<table class="chapter-table">
+
+<caption>
+
+Repeated biomarker measurements in long format.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:left;">
+
+visit
+</th>
+
+<th style="text-align:right;">
+
+biomarker
+</th>
+
+<th style="text-align:right;">
+
+id
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:left;">
+
+Baseline
+</td>
+
+<td style="text-align:right;">
+
+8.2
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:left;">
+
+Month 3
+</td>
+
+<td style="text-align:right;">
+
+7.6
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:left;">
+
+Month 6
+</td>
+
+<td style="text-align:right;">
+
+7.1
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:left;">
+
+Baseline
+</td>
+
+<td style="text-align:right;">
+
+9.1
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:left;">
+
+Month 3
+</td>
+
+<td style="text-align:right;">
+
+8.7
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:left;">
+
+Month 6
+</td>
+
+<td style="text-align:right;">
+
+8.4
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:left;">
+
+Baseline
+</td>
+
+<td style="text-align:right;">
+
+7.8
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:left;">
+
+Month 3
+</td>
+
+<td style="text-align:right;">
+
+7.4
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:left;">
+
+Month 6
+</td>
+
+<td style="text-align:right;">
+
+7.0
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Long format is often useful for plotting and repeated-measures models
 because the observational unit of each row is explicit.
 
-## 22.3 Tidy-data principle
+## 21.3 Tidy-data principle
 
 A commonly used tidy-data structure has:
 
@@ -1478,7 +4415,7 @@ defined scientifically.
 
 ------------------------------------------------------------------------
 
-# 23. Joining Datasets Safely
+# 22. Joining Datasets Safely
 
 Biological analyses often combine clinical, phenotype and molecular
 data.
@@ -1503,15 +4440,106 @@ combined_data <- merge(
   all = FALSE
 )
 
-print(combined_data)
+print_html_table(
+  combined_data,
+  caption = "Safely merged phenotype and genotype data."
+)
 ```
 
-    ##   patient_id age_years genotype
-    ## 1        P01        45       AA
-    ## 2        P02        52       AG
-    ## 3        P03        61       GG
+<table class="chapter-table">
 
-## 23.1 Check keys before merging
+<caption>
+
+Safely merged phenotype and genotype data.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:left;">
+
+genotype
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+52
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 22.1 Check keys before merging
 
 ``` r
 anyDuplicated(phenotype_data$patient_id)
@@ -1528,7 +4556,7 @@ anyDuplicated(genotype_data$patient_id)
 If one table contains duplicate keys, a merge can unexpectedly multiply
 rows.
 
-## 23.2 Check row counts and unmatched IDs
+## 22.2 Check row counts and unmatched IDs
 
 ``` r
 setdiff(phenotype_data$patient_id, genotype_data$patient_id)
@@ -1564,7 +4592,7 @@ Never assume that a successful merge is a correct merge.
 
 ------------------------------------------------------------------------
 
-# 24. Quality-Control Flags Versus Deletion
+# 23. Quality-Control Flags Versus Deletion
 
 Flags keep information about why an observation may require attention.
 
@@ -1577,17 +4605,75 @@ working_data$any_basic_problem <-
   is.na(working_data$treatment_clean) |
   is.na(working_data$tissue_clean)
 
-table(working_data$any_basic_problem)
+print_html_table(
+  table(working_data$any_basic_problem),
+  caption = "Overall basic data-quality flag."
+)
 ```
 
-    ## 
-    ## FALSE  TRUE 
-    ##     7     2
+<table class="chapter-table">
+
+<caption>
+
+Overall basic data-quality flag.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 An overall flag can support review, but individual flags should also be
 retained so the reason is known.
 
-## 24.1 Visualize the flag matrix
+## 23.1 Visualize the flag matrix
 
 ``` r
 flag_names <- c(
@@ -1652,7 +4738,7 @@ automatic deletion.
 
 ------------------------------------------------------------------------
 
-# 25. Data Cleaning Log
+# 24. Data Cleaning Log
 
 A cleaning log records what changed, why and how.
 
@@ -1689,25 +4775,220 @@ cleaning_log <- data.frame(
   stringsAsFactors = FALSE
 )
 
-print(cleaning_log)
+print_html_table(
+  cleaning_log,
+  caption = "Documented data-cleaning log."
+)
 ```
 
-    ##   step                              issue
-    ## 1    1                Exact duplicate row
-    ## 2    2     Inconsistent category spelling
-    ## 3    3              Genotype missing code
-    ## 4    4    Mapping-rate unit inconsistency
-    ## 5    5         Age outside protocol range
-    ## 6    6                Negative read count
-    ## 7    7 Invalid or missing collection date
-    ##                                                      action affected_records
-    ## 1 Removed one confirmed duplicate after source verification  Second S003 row
-    ## 2                 Standardized using explicit lookup tables         Multiple
-    ## 3                        Converted documented -- code to NA             S005
-    ## 4                      Corrected verified 92% value to 0.92             S005
-    ## 5                     Flagged; source verification required       S004; S005
-    ## 6                     Flagged; source verification required             S004
-    ## 7  Parsed documented formats and flagged unresolved entries       S007; S008
+<table class="chapter-table">
+
+<caption>
+
+Documented data-cleaning log.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+step
+</th>
+
+<th style="text-align:left;">
+
+issue
+</th>
+
+<th style="text-align:left;">
+
+action
+</th>
+
+<th style="text-align:left;">
+
+affected records
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:left;">
+
+Exact duplicate row
+</td>
+
+<td style="text-align:left;">
+
+Removed one confirmed duplicate after source verification
+</td>
+
+<td style="text-align:left;">
+
+Second S003 row
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:left;">
+
+Inconsistent category spelling
+</td>
+
+<td style="text-align:left;">
+
+Standardized using explicit lookup tables
+</td>
+
+<td style="text-align:left;">
+
+Multiple
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:left;">
+
+Genotype missing code
+</td>
+
+<td style="text-align:left;">
+
+Converted documented – code to NA
+</td>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:left;">
+
+Mapping-rate unit inconsistency
+</td>
+
+<td style="text-align:left;">
+
+Corrected verified 92% value to 0.92
+</td>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+<td style="text-align:left;">
+
+Age outside protocol range
+</td>
+
+<td style="text-align:left;">
+
+Flagged; source verification required
+</td>
+
+<td style="text-align:left;">
+
+S004; S005
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:left;">
+
+Negative read count
+</td>
+
+<td style="text-align:left;">
+
+Flagged; source verification required
+</td>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+<td style="text-align:left;">
+
+Invalid or missing collection date
+</td>
+
+<td style="text-align:left;">
+
+Parsed documented formats and flagged unresolved entries
+</td>
+
+<td style="text-align:left;">
+
+S007; S008
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 A production log should also contain:
 
@@ -1721,7 +5002,7 @@ A production log should also contain:
 
 ------------------------------------------------------------------------
 
-# 26. Do Not Hide Data Problems
+# 25. Do Not Hide Data Problems
 
 Some practices make analysis easier while weakening traceability.
 
@@ -1741,7 +5022,7 @@ accordingly.
 
 ------------------------------------------------------------------------
 
-# 27. Constructing the Cleaned Dataset
+# 26. Constructing the Cleaned Dataset
 
 For this teaching example, suppose source review confirms the following:
 
@@ -1754,13 +5035,13 @@ For this teaching example, suppose source review confirms the following:
   missing; and
 - `2026-13-01` is invalid and cannot be recovered.
 
-## 27.1 Copy the working data
+## 26.1 Copy the working data
 
 ``` r
 clean_data <- working_data
 ```
 
-## 27.2 Apply only verified handling decisions
+## 26.2 Apply only verified handling decisions
 
 ``` r
 clean_data$age_years_clean <- clean_data$age_years
@@ -1777,7 +5058,7 @@ clean_data$read_count_clean[
 The cleaned values are stored in new columns so the original values
 remain available for comparison.
 
-## 27.3 Convert categories to factors
+## 26.3 Convert categories to factors
 
 ``` r
 clean_data$treatment_clean <- factor(
@@ -1801,7 +5082,7 @@ clean_data$qc_status_clean <- factor(
 )
 ```
 
-## 27.4 Inspect the cleaned structure
+## 26.4 Inspect the cleaned structure
 
 ``` r
 str(clean_data[, c(
@@ -1830,7 +5111,7 @@ str(clean_data[, c(
 
 ------------------------------------------------------------------------
 
-# 28. Build an Analysis-Ready Dataset
+# 27. Build an Analysis-Ready Dataset
 
 Suppose the planned analysis requires:
 
@@ -1842,7 +5123,7 @@ Suppose the planned analysis requires:
 - read count; and
 - only samples with confirmed QC pass.
 
-## 28.1 Define inclusion explicitly
+## 27.1 Define inclusion explicitly
 
 ``` r
 clean_data$include_in_analysis <-
@@ -1854,14 +5135,72 @@ clean_data$include_in_analysis <-
   !is.na(clean_data$mapping_rate_clean) &
   !is.na(clean_data$read_count_clean)
 
-table(clean_data$include_in_analysis)
+print_html_table(
+  table(clean_data$include_in_analysis),
+  caption = "Analysis-inclusion status after applying eligibility rules."
+)
 ```
 
-    ## 
-    ## FALSE  TRUE 
-    ##     3     6
+<table class="chapter-table">
 
-## 28.2 Record exclusion reasons
+<caption>
+
+Analysis-inclusion status after applying eligibility rules.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 27.2 Record exclusion reasons
 
 ``` r
 clean_data$exclusion_reason <- NA_character_
@@ -1883,22 +5222,93 @@ clean_data$exclusion_reason[
   is.na(clean_data$read_count_clean)
 ] <- "Invalid read count"
 
-print(clean_data[
-  !clean_data$include_in_analysis,
-  c("sample_id", "exclusion_reason")
-])
+print_html_table(
+  clean_data[
+    !clean_data$include_in_analysis,
+    c("sample_id", "exclusion_reason")
+  ],
+  caption = "Excluded samples and their primary exclusion reasons."
+)
 ```
 
-    ##   sample_id   exclusion_reason
-    ## 4      S004 Invalid read count
-    ## 6      S006          QC failed
-    ## 8      S008  QC status missing
+<table class="chapter-table">
+
+<caption>
+
+Excluded samples and their primary exclusion reasons.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+exclusion reason
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+<td style="text-align:left;">
+
+Invalid read count
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S006
+</td>
+
+<td style="text-align:left;">
+
+QC failed
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S008
+</td>
+
+<td style="text-align:left;">
+
+QC status missing
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 When several reasons apply, a production workflow should preserve all
 reasons rather than allowing later assignments to overwrite earlier
 ones. This simplified example reports one primary reason.
 
-## 28.3 Select required columns and observations
+## 27.3 Select required columns and observations
 
 ``` r
 analysis_data <- clean_data[
@@ -1917,25 +5327,373 @@ analysis_data <- clean_data[
 ]
 
 rownames(analysis_data) <- NULL
-print(analysis_data)
+print_html_table(
+  analysis_data,
+  caption = "Final analysis-ready dataset."
+)
 ```
 
-    ##   sample_id patient_id age_years_clean treatment_clean tissue_clean
-    ## 1      S001        P01              45         Control        Blood
-    ## 2      S002        P02              52         Treated        Blood
-    ## 3      S003        P03              61         Control        Liver
-    ## 4      S005        P05              NA         Control        Brain
-    ## 5      S007        P07              NA         Treated        Liver
-    ## 6      S009        P09              48         Treated        Brain
-    ##   genotype_clean read_count_clean mapping_rate_clean collection_date_clean
-    ## 1             AA          1250000               0.92            2026-01-05
-    ## 2             AG          1480000               0.89            2026-01-07
-    ## 3             GG           980000               0.94            2026-01-08
-    ## 4           <NA>          1750000               0.92            2026-01-10
-    ## 5             AG          1320000               0.91                  <NA>
-    ## 6             AA          1410000               0.93            2026-01-15
+<table class="chapter-table">
 
-## 28.4 Final checks
+<caption>
+
+Final analysis-ready dataset.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:right;">
+
+age years clean
+</th>
+
+<th style="text-align:left;">
+
+treatment clean
+</th>
+
+<th style="text-align:left;">
+
+tissue clean
+</th>
+
+<th style="text-align:left;">
+
+genotype clean
+</th>
+
+<th style="text-align:right;">
+
+read count clean
+</th>
+
+<th style="text-align:right;">
+
+mapping rate clean
+</th>
+
+<th style="text-align:left;">
+
+collection date clean
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S001
+</td>
+
+<td style="text-align:left;">
+
+P01
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+1250000
+</td>
+
+<td style="text-align:right;">
+
+0.92
+</td>
+
+<td style="text-align:left;">
+
+2026-01-05
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S002
+</td>
+
+<td style="text-align:left;">
+
+P02
+</td>
+
+<td style="text-align:right;">
+
+52
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1480000
+</td>
+
+<td style="text-align:right;">
+
+0.89
+</td>
+
+<td style="text-align:left;">
+
+2026-01-07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+P03
+</td>
+
+<td style="text-align:right;">
+
+61
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+980000
+</td>
+
+<td style="text-align:right;">
+
+0.94
+</td>
+
+<td style="text-align:left;">
+
+2026-01-08
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+<td style="text-align:left;">
+
+P05
+</td>
+
+<td style="text-align:right;">
+
+NA
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+NA
+</td>
+
+<td style="text-align:right;">
+
+1750000
+</td>
+
+<td style="text-align:right;">
+
+0.92
+</td>
+
+<td style="text-align:left;">
+
+2026-01-10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S007
+</td>
+
+<td style="text-align:left;">
+
+P07
+</td>
+
+<td style="text-align:right;">
+
+NA
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:left;">
+
+Liver
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+1320000
+</td>
+
+<td style="text-align:right;">
+
+0.91
+</td>
+
+<td style="text-align:left;">
+
+NA
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S009
+</td>
+
+<td style="text-align:left;">
+
+P09
+</td>
+
+<td style="text-align:right;">
+
+48
+</td>
+
+<td style="text-align:left;">
+
+Treated
+</td>
+
+<td style="text-align:left;">
+
+Brain
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+1410000
+</td>
+
+<td style="text-align:right;">
+
+0.93
+</td>
+
+<td style="text-align:left;">
+
+2026-01-15
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 27.4 Final checks
 
 ``` r
 dim(analysis_data)
@@ -2009,7 +5767,7 @@ population and exclusions must still be reviewed against the protocol.
 
 ------------------------------------------------------------------------
 
-# 29. Before-and-After Quality Summary
+# 28. Before-and-After Quality Summary
 
 ``` r
 quality_summary <- data.frame(
@@ -2054,23 +5812,168 @@ quality_summary <- data.frame(
   stringsAsFactors = FALSE
 )
 
-print(quality_summary)
+print_html_table(
+  quality_summary,
+  caption = "Before-and-after data-quality summary."
+)
 ```
 
-    ##                                  measure raw_or_initial cleaned_or_flagged
-    ## 1                                   Rows             10                  9
-    ## 2                   Exact duplicate rows              1                  0
-    ## 3              Age values outside 18–100              2                  2
-    ## 4                   Negative read counts              1                  1
-    ## 5              Mapping rates outside 0–1              1                  0
-    ## 6 Missing genotype values after recoding              1                  1
+<table class="chapter-table">
+
+<caption>
+
+Before-and-after data-quality summary.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+measure
+</th>
+
+<th style="text-align:right;">
+
+raw or initial
+</th>
+
+<th style="text-align:right;">
+
+cleaned or flagged
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Rows
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Exact duplicate rows
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Age values outside 18–100
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Negative read counts
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mapping rates outside 0–1
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Missing genotype values after recoding
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The “cleaned or flagged” column does not mean the data became perfect.
 It summarizes how documented problems were represented after processing.
 
 ------------------------------------------------------------------------
 
-# 30. Saving Data Safely
+# 29. Saving Data Safely
 
 The following code is shown but not executed because file locations
 differ across projects.
@@ -2109,7 +6012,7 @@ Useful safeguards include:
 
 ------------------------------------------------------------------------
 
-# 31. A Reproducible Data-Preparation Workflow
+# 30. A Reproducible Data-Preparation Workflow
 
 A practical sequence is:
 
@@ -2133,7 +6036,7 @@ A practical sequence is:
 
 ------------------------------------------------------------------------
 
-# 32. Common Beginner Mistakes
+# 31. Common Beginner Mistakes
 
 ## Mistake 1: Overwriting raw data
 
@@ -2185,7 +6088,7 @@ Report how many observations were excluded and why.
 
 ------------------------------------------------------------------------
 
-# 33. Chapter Summary
+# 32. Chapter Summary
 
 In this chapter, you learned that:
 
@@ -2217,7 +6120,7 @@ In this chapter, you learned that:
 
 ------------------------------------------------------------------------
 
-# 34. Check Your Understanding
+# 33. Check Your Understanding
 
 ## Question 1
 
@@ -2265,7 +6168,7 @@ List five items that should appear in a data-cleaning log.
 
 ------------------------------------------------------------------------
 
-# 35. Practice with R
+# 34. Practice with R
 
 ## Exercise 1: Find exact duplicates
 
@@ -2348,7 +6251,7 @@ and identify the observational unit of each long-format row.
 
 ------------------------------------------------------------------------
 
-# 36. Mini-Project: Clean a Small Omics Metadata Table
+# 35. Mini-Project: Clean a Small Omics Metadata Table
 
 Create a deliberately messy metadata table containing at least 15
 samples and the following variables:
@@ -2393,7 +6296,7 @@ Then:
 
 ------------------------------------------------------------------------
 
-# 37. Glossary
+# 36. Glossary
 
 | Term | Beginner-friendly meaning |
 |----|----|
@@ -2421,7 +6324,7 @@ Then:
 
 ------------------------------------------------------------------------
 
-# 38. References and Further Reading
+# 37. References and Further Reading
 
 1.  Van den Broeck J, Cunningham SA, Eeckels R, Herbst K. Data cleaning:
     detecting, diagnosing, and editing data abnormalities. *PLoS
@@ -2463,7 +6366,7 @@ Then:
 
 ------------------------------------------------------------------------
 
-# 39. Reproducibility Information
+# 38. Reproducibility Information
 
 All datasets and validation rules in this chapter are hypothetical and
 were created for teaching. They must not be applied directly to real
