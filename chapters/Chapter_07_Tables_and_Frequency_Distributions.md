@@ -17,90 +17,88 @@ Chapter 7: Tables and Frequency Distributions
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. A Small Biological Dataset](#3-a-small-biological-dataset)
-- [4. What Is a Frequency
-  Distribution?](#4-what-is-a-frequency-distribution)
-- [5. One-Way Frequency Tables](#5-one-way-frequency-tables)
-  - [5.1 Counts with `table()`](#51-counts-with-table)
-  - [5.2 Convert the table to a data
-    frame](#52-convert-the-table-to-a-data-frame)
-  - [5.3 Relative frequencies and
-    percentages](#53-relative-frequencies-and-percentages)
-- [6. Category Order and Factors](#6-category-order-and-factors)
-  - [6.1 Showing categories with zero
-    observations](#61-showing-categories-with-zero-observations)
-- [7. Missing Values in Frequency
-  Tables](#7-missing-values-in-frequency-tables)
-  - [7.1 Missing as a value versus missing as a
-    category](#71-missing-as-a-value-versus-missing-as-a-category)
-  - [7.2 A complete missingness table](#72-a-complete-missingness-table)
-- [8. Cumulative Frequency](#8-cumulative-frequency)
-- [9. Numerical Data: Ungrouped Frequency
-  Tables](#9-numerical-data-ungrouped-frequency-tables)
-- [10. Grouped Frequency
-  Distributions](#10-grouped-frequency-distributions)
-  - [10.1 Create age groups with
-    `cut()`](#101-create-age-groups-with-cut)
-  - [10.2 Understanding interval
-    boundaries](#102-understanding-interval-boundaries)
-- [11. Choosing the Number and Width of
-  Classes](#11-choosing-the-number-and-width-of-classes)
-  - [11.1 Sturges’ rule](#111-sturges-rule)
-  - [11.2 Freedman–Diaconis rule](#112-freedmandiaconis-rule)
-- [12. Bar Charts for Categorical
-  Data](#12-bar-charts-for-categorical-data)
-  - [12.1 Counts or percentages?](#121-counts-or-percentages)
-- [13. Histograms for Continuous
-  Data](#13-histograms-for-continuous-data)
-  - [13.1 Bar chart versus histogram](#131-bar-chart-versus-histogram)
-- [14. Frequency Polygon and Cumulative
-  Distribution](#14-frequency-polygon-and-cumulative-distribution)
-  - [14.1 Empirical cumulative distribution
-    function](#141-empirical-cumulative-distribution-function)
-- [15. Two-Way Contingency Tables](#15-two-way-contingency-tables)
-  - [15.1 Disease status by recorded
-    sex](#151-disease-status-by-recorded-sex)
-  - [15.2 Add marginal totals](#152-add-marginal-totals)
-  - [15.3 Create a contingency table with
-    `xtabs()`](#153-create-a-contingency-table-with-xtabs)
-- [16. Joint, Row and Column
-  Proportions](#16-joint-row-and-column-proportions)
-  - [16.1 Joint proportions](#161-joint-proportions)
-  - [16.2 Row proportions](#162-row-proportions)
-  - [16.3 Column proportions](#163-column-proportions)
-- [17. Visualizing a Two-Way Table](#17-visualizing-a-two-way-table)
-- [18. Three-Way and Multi-Way
-  Tables](#18-three-way-and-multi-way-tables)
-- [19. Counts, Proportions, Percentages, Ratios and
-  Rates](#19-counts-proportions-percentages-ratios-and-rates)
-  - [19.1 Example calculations](#191-example-calculations)
-- [20. Genotype and Allele Frequency
-  Tables](#20-genotype-and-allele-frequency-tables)
-  - [20.1 Genotype frequencies](#201-genotype-frequencies)
-  - [20.2 Allele counts](#202-allele-counts)
-  - [20.3 Genotype by disease status](#203-genotype-by-disease-status)
-- [21. Bioinformatics Count Tables](#21-bioinformatics-count-tables)
-  - [21.1 RNA-seq count matrix](#211-rna-seq-count-matrix)
-  - [21.2 Variant consequence counts](#212-variant-consequence-counts)
-- [22. Zero Counts, Sparse Tables and Small
-  Numbers](#22-zero-counts-sparse-tables-and-small-numbers)
-- [23. Creating a Clean Summary
-  Table](#23-creating-a-clean-summary-table)
-  - [23.1 Add a display column](#231-add-a-display-column)
-- [24. An Introductory “Table 1”](#24-an-introductory-table-1)
-- [25. Integrated Case Study: Sequencing Quality-Control
-  Summary](#25-integrated-case-study-sequencing-quality-control-summary)
-  - [25.1 Scientific setting](#251-scientific-setting)
-  - [25.2 Simulate the sample-level
-    data](#252-simulate-the-sample-level-data)
-  - [25.3 Overall QC frequency](#253-overall-qc-frequency)
-  - [25.4 QC by centre](#254-qc-by-centre)
-  - [25.5 QC by disease group and
-    batch](#255-qc-by-disease-group-and-batch)
-  - [25.6 Plot centre-specific failure
-    percentages](#256-plot-centre-specific-failure-percentages)
-- [26. Common Mistakes](#26-common-mistakes)
+- [2. A Small Biological Dataset](#2-a-small-biological-dataset)
+- [3. What Is a Frequency
+  Distribution?](#3-what-is-a-frequency-distribution)
+- [4. One-Way Frequency Tables](#4-one-way-frequency-tables)
+  - [4.1 Counts with `table()`](#41-counts-with-table)
+  - [4.2 Convert the table to a data
+    frame](#42-convert-the-table-to-a-data-frame)
+  - [4.3 Relative frequencies and
+    percentages](#43-relative-frequencies-and-percentages)
+- [5. Category Order and Factors](#5-category-order-and-factors)
+  - [5.1 Showing categories with zero
+    observations](#51-showing-categories-with-zero-observations)
+- [6. Missing Values in Frequency
+  Tables](#6-missing-values-in-frequency-tables)
+  - [6.1 Missing as a value versus missing as a
+    category](#61-missing-as-a-value-versus-missing-as-a-category)
+  - [6.2 A complete missingness table](#62-a-complete-missingness-table)
+- [7. Cumulative Frequency](#7-cumulative-frequency)
+- [8. Numerical Data: Ungrouped Frequency
+  Tables](#8-numerical-data-ungrouped-frequency-tables)
+- [9. Grouped Frequency
+  Distributions](#9-grouped-frequency-distributions)
+  - [9.1 Create age groups with `cut()`](#91-create-age-groups-with-cut)
+  - [9.2 Understanding interval
+    boundaries](#92-understanding-interval-boundaries)
+- [10. Choosing the Number and Width of
+  Classes](#10-choosing-the-number-and-width-of-classes)
+  - [10.1 Sturges’ rule](#101-sturges-rule)
+  - [10.2 Freedman–Diaconis rule](#102-freedmandiaconis-rule)
+- [11. Bar Charts for Categorical
+  Data](#11-bar-charts-for-categorical-data)
+  - [11.1 Counts or percentages?](#111-counts-or-percentages)
+- [12. Histograms for Continuous
+  Data](#12-histograms-for-continuous-data)
+  - [12.1 Bar chart versus histogram](#121-bar-chart-versus-histogram)
+- [13. Frequency Polygon and Cumulative
+  Distribution](#13-frequency-polygon-and-cumulative-distribution)
+  - [13.1 Empirical cumulative distribution
+    function](#131-empirical-cumulative-distribution-function)
+- [14. Two-Way Contingency Tables](#14-two-way-contingency-tables)
+  - [14.1 Disease status by recorded
+    sex](#141-disease-status-by-recorded-sex)
+  - [14.2 Add marginal totals](#142-add-marginal-totals)
+  - [14.3 Create a contingency table with
+    `xtabs()`](#143-create-a-contingency-table-with-xtabs)
+- [15. Joint, Row and Column
+  Proportions](#15-joint-row-and-column-proportions)
+  - [15.1 Joint proportions](#151-joint-proportions)
+  - [15.2 Row proportions](#152-row-proportions)
+  - [15.3 Column proportions](#153-column-proportions)
+- [16. Visualizing a Two-Way Table](#16-visualizing-a-two-way-table)
+- [17. Three-Way and Multi-Way
+  Tables](#17-three-way-and-multi-way-tables)
+- [18. Counts, Proportions, Percentages, Ratios and
+  Rates](#18-counts-proportions-percentages-ratios-and-rates)
+  - [18.1 Example calculations](#181-example-calculations)
+- [19. Genotype and Allele Frequency
+  Tables](#19-genotype-and-allele-frequency-tables)
+  - [19.1 Genotype frequencies](#191-genotype-frequencies)
+  - [19.2 Allele counts](#192-allele-counts)
+  - [19.3 Genotype by disease status](#193-genotype-by-disease-status)
+- [20. Bioinformatics Count Tables](#20-bioinformatics-count-tables)
+  - [20.1 RNA-seq count matrix](#201-rna-seq-count-matrix)
+  - [20.2 Variant consequence counts](#202-variant-consequence-counts)
+- [21. Zero Counts, Sparse Tables and Small
+  Numbers](#21-zero-counts-sparse-tables-and-small-numbers)
+- [22. Creating a Clean Summary
+  Table](#22-creating-a-clean-summary-table)
+  - [22.1 Add a display column](#221-add-a-display-column)
+- [23. An Introductory “Table 1”](#23-an-introductory-table-1)
+- [24. Integrated Case Study: Sequencing Quality-Control
+  Summary](#24-integrated-case-study-sequencing-quality-control-summary)
+  - [24.1 Scientific setting](#241-scientific-setting)
+  - [24.2 Simulate the sample-level
+    data](#242-simulate-the-sample-level-data)
+  - [24.3 Overall QC frequency](#243-overall-qc-frequency)
+  - [24.4 QC by centre](#244-qc-by-centre)
+  - [24.5 QC by disease group and
+    batch](#245-qc-by-disease-group-and-batch)
+  - [24.6 Plot centre-specific failure
+    percentages](#246-plot-centre-specific-failure-percentages)
+- [25. Common Mistakes](#25-common-mistakes)
   - [Mistake 1: Reporting percentages without
     counts](#mistake-1-reporting-percentages-without-counts)
   - [Mistake 2: Ignoring missing
@@ -121,10 +119,10 @@ Sandeep Singh
     proof](#mistake-9-interpreting-descriptive-differences-as-proof)
   - [Mistake 10: Calculating prevalence from a case-control
     sample](#mistake-10-calculating-prevalence-from-a-case-control-sample)
-- [27. Practical Reporting Checklist](#27-practical-reporting-checklist)
-- [28. Chapter Summary](#28-chapter-summary)
-- [29. Check Your Understanding](#29-check-your-understanding)
-- [30. R Exercises](#30-r-exercises)
+- [26. Practical Reporting Checklist](#26-practical-reporting-checklist)
+- [27. Chapter Summary](#27-chapter-summary)
+- [28. Check Your Understanding](#28-check-your-understanding)
+- [29. R Exercises](#29-r-exercises)
   - [Exercise 1: One-way table](#exercise-1-one-way-table)
   - [Exercise 2: Ordered categories](#exercise-2-ordered-categories)
   - [Exercise 3: Missingness](#exercise-3-missingness)
@@ -135,11 +133,53 @@ Sandeep Singh
   - [Exercise 8: Variant annotation](#exercise-8-variant-annotation)
   - [Exercise 9: QC summary function](#exercise-9-qc-summary-function)
   - [Exercise 10: Sparse table](#exercise-10-sparse-table)
-- [31. Mini-Project: Pathogen Genomic Surveillance
-  Summary](#31-mini-project-pathogen-genomic-surveillance-summary)
-- [32. Glossary](#32-glossary)
-- [33. References](#33-references)
-- [34. Reproducibility Information](#34-reproducibility-information)
+- [30. Mini-Project: Pathogen Genomic Surveillance
+  Summary](#30-mini-project-pathogen-genomic-surveillance-summary)
+- [31. Glossary](#31-glossary)
+- [32. References](#32-references)
+- [33. Reproducibility Information](#33-reproducibility-information)
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+&#10;table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+&#10;table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+&#10;table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
 
 # 1. Introduction
 
@@ -164,31 +204,7 @@ analysis.
 > **A good frequency table converts a column of raw values into a
 > scientific summary without hiding the denominator.**
 
-------------------------------------------------------------------------
-
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  define frequency, relative frequency, percentage and cumulative
-    frequency;
-2.  construct one-way frequency tables in R;
-3.  preserve biologically meaningful category order using factors;
-4.  include and report missing values correctly;
-5.  build grouped frequency distributions for numerical data;
-6.  select sensible class intervals and understand boundary rules;
-7.  distinguish a bar chart from a histogram;
-8.  construct two-way and multi-way contingency tables;
-9.  calculate joint, row and column proportions;
-10. distinguish a count, proportion, percentage, ratio and rate;
-11. summarize genotype and allele counts;
-12. interpret zero cells and sparse tables;
-13. produce publication-ready summary tables with base R; and
-14. recognize misleading tabular and graphical summaries.
-
-------------------------------------------------------------------------
-
-# 3. A Small Biological Dataset
+# 2. A Small Biological Dataset
 
 We will use a simulated clinical-genomics dataset throughout the
 chapter. Each row represents one participant.
@@ -234,26 +250,341 @@ clinical_data$biomarker <- round(
   2
 )
 
-head(clinical_data)
+print_html_table(
+  head(clinical_data),
+  caption = "First six participants in the simulated clinical-genomics dataset."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| patient_id | disease_status | recorded_sex | age_years | expression_group | genotype | qc_status | biomarker |
-|:---|:---|:---|---:|:---|:---|:---|---:|
-| P001 | Control | Male | 53 | Medium | AA | Pass | 7.95 |
-| P002 | Case | Female | 38 | Low | AG | Pass | 5.90 |
-| P003 | Control | Female | 44 | Medium | AA | Pass | 4.69 |
-| P004 | Case | Female | 47 | High | AA | Pass | 8.09 |
-| P005 | Case | Female | 77 | Low | AA | Pass | 4.28 |
-| P006 | Control | Male | 42 | Medium | AG | Pass | 3.90 |
+<caption>
 
-</div>
+First six participants in the simulated clinical-genomics dataset.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+patient id
+</th>
+
+<th style="text-align:left;">
+
+disease status
+</th>
+
+<th style="text-align:left;">
+
+recorded sex
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:left;">
+
+expression group
+</th>
+
+<th style="text-align:left;">
+
+genotype
+</th>
+
+<th style="text-align:left;">
+
+qc status
+</th>
+
+<th style="text-align:right;">
+
+biomarker
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P001
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+53
+</td>
+
+<td style="text-align:left;">
+
+Medium
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+7.95
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P002
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+<td style="text-align:left;">
+
+Low
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+5.90
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P003
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+<td style="text-align:left;">
+
+Medium
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+4.69
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P004
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+47
+</td>
+
+<td style="text-align:left;">
+
+High
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+8.09
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P005
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+77
+</td>
+
+<td style="text-align:left;">
+
+Low
+</td>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+4.28
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P006
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+42
+</td>
+
+<td style="text-align:left;">
+
+Medium
+</td>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+3.90
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 This is **simulated educational data**. It does not describe real
 patients and should not be used for clinical conclusions.
 
-# 4. What Is a Frequency Distribution?
+# 3. What Is a Frequency Distribution?
 
 A **frequency distribution** shows how observations are distributed
 across values or categories.
@@ -286,24 +617,82 @@ $$p_i = \frac{f_i}{n} \times 100.$$
 Always state the denominator. Saying “15 samples passed” has a different
 meaning if 20 samples were tested than if 200 were tested.
 
-# 5. One-Way Frequency Tables
+# 4. One-Way Frequency Tables
 
 A **one-way table** summarizes one categorical variable.
 
-## 5.1 Counts with `table()`
+## 4.1 Counts with `table()`
 
 ``` r
 disease_counts <- table(clinical_data$disease_status)
-disease_counts
+print_html_table(
+  disease_counts,
+  caption = "Disease-status frequency counts."
+)
 ```
 
-    ## 
-    ##    Case Control 
-    ##      51      69
+<table class="chapter-table">
+
+<caption>
+
+Disease-status frequency counts.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+69
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 `table()` counts how many times each category appears.
 
-## 5.2 Convert the table to a data frame
+## 4.2 Convert the table to a data frame
 
 A data frame is convenient when we want to add proportions or rename
 columns.
@@ -315,19 +704,72 @@ disease_frequency <- data.frame(
   stringsAsFactors = FALSE
 )
 
-disease_frequency
+print_html_table(
+  disease_frequency,
+  caption = "Disease-status frequency table."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Disease_status | Frequency |
-|:---------------|----------:|
-| Case           |        51 |
-| Control        |        69 |
+<caption>
 
-</div>
+Disease-status frequency table.
+</caption>
 
-## 5.3 Relative frequencies and percentages
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Disease status
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+69
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 4.3 Relative frequencies and percentages
 
 ``` r
 disease_frequency$Proportion <- disease_frequency$Frequency /
@@ -338,32 +780,173 @@ disease_frequency$Percentage <- 100 * disease_frequency$Proportion
 disease_frequency$Proportion <- round(disease_frequency$Proportion, 3)
 disease_frequency$Percentage <- round(disease_frequency$Percentage, 1)
 
-disease_frequency
+print_html_table(
+  disease_frequency,
+  caption = "Disease-status counts, proportions and percentages."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Disease_status | Frequency | Proportion | Percentage |
-|:---------------|----------:|-----------:|-----------:|
-| Case           |        51 |      0.425 |       42.5 |
-| Control        |        69 |      0.575 |       57.5 |
+<caption>
 
-</div>
+Disease-status counts, proportions and percentages.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Disease status
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+<th style="text-align:right;">
+
+Proportion
+</th>
+
+<th style="text-align:right;">
+
+Percentage
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+<td style="text-align:right;">
+
+0.425
+</td>
+
+<td style="text-align:right;">
+
+42.5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+69
+</td>
+
+<td style="text-align:right;">
+
+0.575
+</td>
+
+<td style="text-align:right;">
+
+57.5
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The same relative frequencies can be calculated directly:
 
 ``` r
-prop.table(disease_counts)
+print_html_table(
+  prop.table(disease_counts),
+  caption = "Disease-status relative frequencies."
+)
 ```
 
-    ## 
-    ##    Case Control 
-    ##   0.425   0.575
+<table class="chapter-table">
+
+<caption>
+
+Disease-status relative frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:right;">
+
+0.425
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+0.575
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Do not round values too early. Calculate with full precision, then round
 only for display.
 
-# 6. Category Order and Factors
+# 5. Category Order and Factors
 
 Character categories are often displayed alphabetically. Alphabetical
 order is not always scientifically meaningful.
@@ -381,16 +964,88 @@ clinical_data$expression_group <- factor(
   ordered = TRUE
 )
 
-table(clinical_data$expression_group)
+print_html_table(
+  table(clinical_data$expression_group),
+  caption = "Ordered gene-expression categories."
+)
 ```
 
-    ## 
-    ##    Low Medium   High 
-    ##     34     50     30
+<table class="chapter-table">
+
+<caption>
+
+Ordered gene-expression categories.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Low
+</td>
+
+<td style="text-align:right;">
+
+34
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Medium
+</td>
+
+<td style="text-align:right;">
+
+50
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+High
+</td>
+
+<td style="text-align:right;">
+
+30
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The factor levels control the order in tables, models and many plots.
 
-## 6.1 Showing categories with zero observations
+## 5.1 Showing categories with zero observations
 
 If a biologically possible category is absent from a sample, it can
 still be useful to display it.
@@ -401,38 +1056,268 @@ response <- factor(
   levels = c("Complete", "Partial", "No response")
 )
 
-table(response)
+print_html_table(
+  table(response),
+  caption = "Response categories including an unobserved level."
+)
 ```
 
-    ## response
-    ##    Complete     Partial No response 
-    ##           2           2           0
+<table class="chapter-table">
+
+<caption>
+
+Response categories including an unobserved level.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+response
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Complete
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Partial
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+No response
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 A zero count means the category was defined but not observed. It does
 not prove that the category is impossible in the population.
 
-# 7. Missing Values in Frequency Tables
+# 6. Missing Values in Frequency Tables
 
 By default, `table()` excludes `NA` values. This can silently change the
 denominator.
 
 ``` r
 # Default: missing genotypes are not displayed
-table(clinical_data$genotype)
+print_html_table(
+  table(clinical_data$genotype),
+  caption = "Genotype frequencies excluding missing values."
+)
 ```
 
-    ## 
-    ## AA AG GG 
-    ## 59 49  9
+<table class="chapter-table">
+
+<caption>
+
+Genotype frequencies excluding missing values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+59
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+49
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 # Display missing values explicitly
-table(clinical_data$genotype, useNA = "ifany")
+print_html_table(
+  table(clinical_data$genotype, useNA = "ifany"),
+  caption = "Genotype frequencies including missing values."
+)
 ```
 
-    ## 
-    ##   AA   AG   GG <NA> 
-    ##   59   49    9    3
+<table class="chapter-table">
+
+<caption>
+
+Genotype frequencies including missing values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+59
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+49
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+NA
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The `useNA` argument can be:
 
@@ -440,7 +1325,7 @@ The `useNA` argument can be:
 - `"ifany"`: display missing values only if they exist; or
 - `"always"`: always display an `NA` category.
 
-## 7.1 Missing as a value versus missing as a category
+## 6.1 Missing as a value versus missing as a category
 
 `NA` means the value is unknown or unavailable. The text `"Unknown"` is
 an ordinary category. They are not automatically equivalent.
@@ -454,7 +1339,7 @@ For example:
 
 Preserve these distinctions when they matter scientifically.
 
-## 7.2 A complete missingness table
+## 6.2 A complete missingness table
 
 ``` r
 missing_summary <- data.frame(
@@ -468,28 +1353,204 @@ missing_summary$Missing_percent <- round(
   1
 )
 
-missing_summary
+print_html_table(
+  missing_summary,
+  caption = "Missing observations by variable."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-|                  | Variable         | Missing_n | Missing_percent |
-|:-----------------|:-----------------|----------:|----------------:|
-| patient_id       | patient_id       |         0 |             0.0 |
-| disease_status   | disease_status   |         0 |             0.0 |
-| recorded_sex     | recorded_sex     |         0 |             0.0 |
-| age_years        | age_years        |         0 |             0.0 |
-| expression_group | expression_group |         6 |             5.0 |
-| genotype         | genotype         |         3 |             2.5 |
-| qc_status        | qc_status        |         0 |             0.0 |
-| biomarker        | biomarker        |         0 |             0.0 |
+<caption>
 
-</div>
+Missing observations by variable.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Variable
+</th>
+
+<th style="text-align:right;">
+
+Missing n
+</th>
+
+<th style="text-align:right;">
+
+Missing percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+patient_id
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+0.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+disease_status
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+0.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+recorded_sex
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+0.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+age_years
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+0.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+expression_group
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+5.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+genotype
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+2.5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+qc_status
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+0.0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+biomarker
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+0.0
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 This describes the amount of missingness, not its cause. Patterns and
 mechanisms of missing data will be studied later.
 
-# 8. Cumulative Frequency
+# 7. Cumulative Frequency
 
 A **cumulative frequency** is a running total. It is meaningful only
 when categories have a natural order.
@@ -515,24 +1576,153 @@ stage_distribution <- data.frame(
   stringsAsFactors = FALSE
 )
 
-stage_distribution
+print_html_table(
+  stage_distribution,
+  caption = "Disease-stage frequencies and cumulative frequencies."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Stage | Frequency | Cumulative_frequency | Cumulative_percent |
-|:------|----------:|---------------------:|-------------------:|
-| I     |         3 |                    3 |                 30 |
-| II    |         3 |                    6 |                 60 |
-| III   |         3 |                    9 |                 90 |
-| IV    |         1 |                   10 |                100 |
+<caption>
 
-</div>
+Disease-stage frequencies and cumulative frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Stage
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+<th style="text-align:right;">
+
+Cumulative frequency
+</th>
+
+<th style="text-align:right;">
+
+Cumulative percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+I
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+30
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+II
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+60
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+III
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+90
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+IV
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+100
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Cumulative frequency is not meaningful for unordered categories such as
 blood type A, B, AB and O because no natural “up to” order exists.
 
-# 9. Numerical Data: Ungrouped Frequency Tables
+# 8. Numerical Data: Ungrouped Frequency Tables
 
 For discrete numerical variables with relatively few possible values,
 each value can be counted separately.
@@ -562,30 +1752,274 @@ resistance_distribution$Cumulative_frequency <- cumsum(
   resistance_distribution$Frequency
 )
 
-resistance_distribution
+print_html_table(
+  resistance_distribution,
+  caption = "Distribution of antibiotic-resistance gene counts."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Gene_count | Frequency | Percentage | Cumulative_frequency |
-|-----------:|----------:|-----------:|---------------------:|
-|          0 |         3 |        3.8 |                    3 |
-|          1 |         9 |       11.2 |                   12 |
-|          2 |        22 |       27.5 |                   34 |
-|          3 |        19 |       23.8 |                   53 |
-|          4 |         9 |       11.2 |                   62 |
-|          5 |         8 |       10.0 |                   70 |
-|          6 |         8 |       10.0 |                   78 |
-|          7 |         1 |        1.2 |                   79 |
-|          8 |         1 |        1.2 |                   80 |
+<caption>
 
-</div>
+Distribution of antibiotic-resistance gene counts.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Gene count
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+<th style="text-align:right;">
+
+Percentage
+</th>
+
+<th style="text-align:right;">
+
+Cumulative frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+3.8
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+11.2
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+22
+</td>
+
+<td style="text-align:right;">
+
+27.5
+</td>
+
+<td style="text-align:right;">
+
+34
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+19
+</td>
+
+<td style="text-align:right;">
+
+23.8
+</td>
+
+<td style="text-align:right;">
+
+53
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+11.2
+</td>
+
+<td style="text-align:right;">
+
+62
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+10.0
+</td>
+
+<td style="text-align:right;">
+
+70
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+10.0
+</td>
+
+<td style="text-align:right;">
+
+78
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+1.2
+</td>
+
+<td style="text-align:right;">
+
+79
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+1.2
+</td>
+
+<td style="text-align:right;">
+
+80
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 An ungrouped table preserves exact values. It becomes unwieldy when a
 variable has many distinct values, such as age, blood pressure or gene
 expression.
 
-# 10. Grouped Frequency Distributions
+# 9. Grouped Frequency Distributions
 
 A **grouped frequency distribution** divides numerical values into
 intervals called **classes** or **bins**.
@@ -606,7 +2040,7 @@ Each interval has:
 - a class width; and
 - a frequency.
 
-## 10.1 Create age groups with `cut()`
+## 9.1 Create age groups with `cut()`
 
 ``` r
 age_breaks <- c(-Inf, 29, 39, 49, 59, 69, Inf)
@@ -639,23 +2073,233 @@ age_distribution$Cumulative_percent <- round(
   1
 )
 
-age_distribution
+print_html_table(
+  age_distribution,
+  caption = "Grouped age-frequency distribution."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Age_group | Frequency | Percentage | Cumulative_frequency | Cumulative_percent |
-|:----------|----------:|-----------:|---------------------:|-------------------:|
-| 18-29     |         3 |        2.5 |                    3 |                2.5 |
-| 30-39     |        22 |       18.3 |                   25 |               20.8 |
-| 40-49     |        37 |       30.8 |                   62 |               51.7 |
-| 50-59     |        29 |       24.2 |                   91 |               75.8 |
-| 60-69     |        18 |       15.0 |                  109 |               90.8 |
-| 70+       |        11 |        9.2 |                  120 |              100.0 |
+<caption>
 
-</div>
+Grouped age-frequency distribution.
+</caption>
 
-## 10.2 Understanding interval boundaries
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Age group
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+<th style="text-align:right;">
+
+Percentage
+</th>
+
+<th style="text-align:right;">
+
+Cumulative frequency
+</th>
+
+<th style="text-align:right;">
+
+Cumulative percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+18-29
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+2.5
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+2.5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+30-39
+</td>
+
+<td style="text-align:right;">
+
+22
+</td>
+
+<td style="text-align:right;">
+
+18.3
+</td>
+
+<td style="text-align:right;">
+
+25
+</td>
+
+<td style="text-align:right;">
+
+20.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+40-49
+</td>
+
+<td style="text-align:right;">
+
+37
+</td>
+
+<td style="text-align:right;">
+
+30.8
+</td>
+
+<td style="text-align:right;">
+
+62
+</td>
+
+<td style="text-align:right;">
+
+51.7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+50-59
+</td>
+
+<td style="text-align:right;">
+
+29
+</td>
+
+<td style="text-align:right;">
+
+24.2
+</td>
+
+<td style="text-align:right;">
+
+91
+</td>
+
+<td style="text-align:right;">
+
+75.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+60-69
+</td>
+
+<td style="text-align:right;">
+
+18
+</td>
+
+<td style="text-align:right;">
+
+15.0
+</td>
+
+<td style="text-align:right;">
+
+109
+</td>
+
+<td style="text-align:right;">
+
+90.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+70+
+</td>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:right;">
+
+9.2
+</td>
+
+<td style="text-align:right;">
+
+120
+</td>
+
+<td style="text-align:right;">
+
+100.0
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 9.2 Understanding interval boundaries
 
 With `right = TRUE`, intervals are right-closed. For example, `(29, 39]`
 contains values greater than 29 and less than or equal to 39.
@@ -666,30 +2310,103 @@ to 30 and less than 40.
 ``` r
 test_ages <- c(29, 30, 39, 40)
 
-data.frame(
+print_html_table(data.frame(
   Age = test_ages,
   Right_closed = cut(test_ages, breaks = c(20, 30, 40, 50),
                      right = TRUE, include.lowest = TRUE),
   Left_closed = cut(test_ages, breaks = c(20, 30, 40, 50),
                     right = FALSE, include.lowest = TRUE)
-)
+), caption = "Comparison of right-closed and left-closed intervals.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Age | Right_closed | Left_closed |
-|----:|:-------------|:------------|
-|  29 | \[20,30\]    | \[20,30)    |
-|  30 | \[20,30\]    | \[30,40)    |
-|  39 | (30,40\]     | \[30,40)    |
-|  40 | (30,40\]     | \[40,50\]   |
+<caption>
 
-</div>
+Comparison of right-closed and left-closed intervals.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Age
+</th>
+
+<th style="text-align:left;">
+
+Right closed
+</th>
+
+<th style="text-align:left;">
+
+Left closed
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+29
+</td>
+
+<td style="text-align:left;">
+
+\[20,30\]
+</td>
+
+<td style="text-align:left;">
+
+\[20,30)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+30
+</td>
+
+<td style="text-align:left;">
+
+\[20,30\]
+</td>
+
+<td style="text-align:left;">
+
+\[30,40) \]
+</td>
+
+<td style="text-align:left;">
+
+\[30,40) \]
+</td>
+
+<td style="text-align:left;">
+
+\[40,50\]
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 State boundary rules clearly. Ambiguous labels such as “20–30” can make
 it unclear where age 30 belongs.
 
-# 11. Choosing the Number and Width of Classes
+# 10. Choosing the Number and Width of Classes
 
 Too few classes hide important structure. Too many classes produce a
 noisy summary.
@@ -697,7 +2414,7 @@ noisy summary.
 There is no single correct choice, but common rules provide starting
 points.
 
-## 11.1 Sturges’ rule
+## 10.1 Sturges’ rule
 
 For a sample of size $n$:
 
@@ -713,7 +2430,7 @@ k_sturges
 
     ## [1] 8
 
-## 11.2 Freedman–Diaconis rule
+## 10.2 Freedman–Diaconis rule
 
 The Freedman–Diaconis class width is:
 
@@ -744,7 +2461,7 @@ Rules are guides. Class boundaries should also be interpretable.
 Clinically meaningful cut-offs may be preferable when the goal is
 clinical classification rather than exploring distribution shape.
 
-# 12. Bar Charts for Categorical Data
+# 11. Bar Charts for Categorical Data
 
 A bar chart displays category frequencies. Bars are separated because
 the categories are distinct.
@@ -771,7 +2488,7 @@ participants.
 
 </div>
 
-## 12.1 Counts or percentages?
+## 11.1 Counts or percentages?
 
 Use counts when actual sample size matters. Use percentages when
 comparing groups of different sizes. Often the clearest report includes
@@ -781,7 +2498,7 @@ both:
 
 Avoid a percentage without its denominator.
 
-# 13. Histograms for Continuous Data
+# 12. Histograms for Continuous Data
 
 A histogram divides a numerical scale into intervals. Adjacent bars
 touch because the intervals are continuous.
@@ -808,7 +2525,7 @@ Histogram of the simulated continuous biomarker values.
 
 </div>
 
-## 13.1 Bar chart versus histogram
+## 12.1 Bar chart versus histogram
 
 | Feature | Bar chart | Histogram |
 |----|----|----|
@@ -823,7 +2540,7 @@ Do not use a histogram for genotype labels such as `AA`, `AG` and `GG`.
 Do not use a categorical bar chart of every unique biomarker value when
 the variable is continuous.
 
-# 14. Frequency Polygon and Cumulative Distribution
+# 13. Frequency Polygon and Cumulative Distribution
 
 A **frequency polygon** joins frequencies at class midpoints. It is
 useful for comparing multiple distributions.
@@ -870,7 +2587,7 @@ controls.
 The two groups must use identical class boundaries for a fair
 comparison.
 
-## 14.1 Empirical cumulative distribution function
+## 13.1 Empirical cumulative distribution function
 
 The empirical cumulative distribution function, or ECDF, gives the
 proportion of observations less than or equal to each value.
@@ -904,12 +2621,12 @@ status.
 
 Unlike a histogram, an ECDF does not require choosing bins.
 
-# 15. Two-Way Contingency Tables
+# 14. Two-Way Contingency Tables
 
 A **contingency table**, or cross-tabulation, summarizes two categorical
 variables together.
 
-## 15.1 Disease status by recorded sex
+## 14.1 Disease status by recorded sex
 
 ``` r
 sex_disease_table <- table(
@@ -917,61 +2634,387 @@ sex_disease_table <- table(
   Disease_status = clinical_data$disease_status
 )
 
-sex_disease_table
+print_html_table(
+  sex_disease_table,
+  caption = "Disease status by recorded sex."
+)
 ```
 
-    ##             Disease_status
-    ## Recorded_sex Case Control
-    ##       Female   31      36
-    ##       Male     20      33
+<table class="chapter-table">
+
+<caption>
+
+Disease status by recorded sex.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Recorded sex
+</th>
+
+<th style="text-align:right;">
+
+Case
+</th>
+
+<th style="text-align:right;">
+
+Control
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+31
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+20
+</td>
+
+<td style="text-align:right;">
+
+33
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Each interior cell is a **joint frequency**. For example, the cell at
 row `Female` and column `Case` counts participants who satisfy both
 conditions.
 
-## 15.2 Add marginal totals
+## 14.2 Add marginal totals
 
 ``` r
-addmargins(sex_disease_table)
+print_html_table(
+  addmargins(sex_disease_table),
+  caption = "Disease status by recorded sex with marginal totals."
+)
 ```
 
-    ##             Disease_status
-    ## Recorded_sex Case Control Sum
-    ##       Female   31      36  67
-    ##       Male     20      33  53
-    ##       Sum      51      69 120
+<table class="chapter-table">
+
+<caption>
+
+Disease status by recorded sex with marginal totals.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Recorded sex
+</th>
+
+<th style="text-align:right;">
+
+Case
+</th>
+
+<th style="text-align:right;">
+
+Control
+</th>
+
+<th style="text-align:right;">
+
+Sum
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+31
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+<td style="text-align:right;">
+
+67
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+20
+</td>
+
+<td style="text-align:right;">
+
+33
+</td>
+
+<td style="text-align:right;">
+
+53
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sum
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+<td style="text-align:right;">
+
+69
+</td>
+
+<td style="text-align:right;">
+
+120
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The final row contains column totals, the final column contains row
 totals, and the bottom-right value is the grand total.
 
-## 15.3 Create a contingency table with `xtabs()`
+## 14.3 Create a contingency table with `xtabs()`
 
 ``` r
-xtabs(~ recorded_sex + disease_status, data = clinical_data)
+print_html_table(
+  xtabs(~ recorded_sex + disease_status, data = clinical_data),
+  caption = "Contingency table created with xtabs()."
+)
 ```
 
-    ##             disease_status
-    ## recorded_sex Case Control
-    ##       Female   31      36
-    ##       Male     20      33
+<table class="chapter-table">
+
+<caption>
+
+Contingency table created with xtabs().
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+recorded sex
+</th>
+
+<th style="text-align:right;">
+
+Case
+</th>
+
+<th style="text-align:right;">
+
+Control
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+31
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+20
+</td>
+
+<td style="text-align:right;">
+
+33
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 `xtabs()` is convenient because its formula syntax extends naturally to
 more variables.
 
-# 16. Joint, Row and Column Proportions
+# 15. Joint, Row and Column Proportions
 
 The denominator changes the scientific question.
 
-## 16.1 Joint proportions
+## 15.1 Joint proportions
 
 ``` r
-round(prop.table(sex_disease_table), 3)
+print_html_table(
+  round(prop.table(sex_disease_table), 3),
+  caption = "Joint proportions of recorded sex and disease status."
+)
 ```
 
-    ##             Disease_status
-    ## Recorded_sex  Case Control
-    ##       Female 0.258   0.300
-    ##       Male   0.167   0.275
+<table class="chapter-table">
+
+<caption>
+
+Joint proportions of recorded sex and disease status.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Recorded sex
+</th>
+
+<th style="text-align:right;">
+
+Case
+</th>
+
+<th style="text-align:right;">
+
+Control
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+0.258
+</td>
+
+<td style="text-align:right;">
+
+0.300
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+0.167
+</td>
+
+<td style="text-align:right;">
+
+0.275
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Every cell is divided by the grand total. All cells sum to 1.
 
@@ -980,16 +3023,88 @@ Question answered:
 > What proportion of all participants belongs to each sex–disease
 > combination?
 
-## 16.2 Row proportions
+## 15.2 Row proportions
 
 ``` r
-round(prop.table(sex_disease_table, margin = 1), 3)
+print_html_table(
+  round(prop.table(sex_disease_table, margin = 1), 3),
+  caption = "Disease-status proportions within recorded-sex groups."
+)
 ```
 
-    ##             Disease_status
-    ## Recorded_sex  Case Control
-    ##       Female 0.463   0.537
-    ##       Male   0.377   0.623
+<table class="chapter-table">
+
+<caption>
+
+Disease-status proportions within recorded-sex groups.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Recorded sex
+</th>
+
+<th style="text-align:right;">
+
+Case
+</th>
+
+<th style="text-align:right;">
+
+Control
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+0.463
+</td>
+
+<td style="text-align:right;">
+
+0.537
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+0.377
+</td>
+
+<td style="text-align:right;">
+
+0.623
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Every row sums to 1.
 
@@ -998,16 +3113,88 @@ Question answered:
 > Within each recorded-sex group, what proportion are cases and
 > controls?
 
-## 16.3 Column proportions
+## 15.3 Column proportions
 
 ``` r
-round(prop.table(sex_disease_table, margin = 2), 3)
+print_html_table(
+  round(prop.table(sex_disease_table, margin = 2), 3),
+  caption = "Recorded-sex proportions within disease-status groups."
+)
 ```
 
-    ##             Disease_status
-    ## Recorded_sex  Case Control
-    ##       Female 0.608   0.522
-    ##       Male   0.392   0.478
+<table class="chapter-table">
+
+<caption>
+
+Recorded-sex proportions within disease-status groups.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Recorded sex
+</th>
+
+<th style="text-align:right;">
+
+Case
+</th>
+
+<th style="text-align:right;">
+
+Control
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:right;">
+
+0.608
+</td>
+
+<td style="text-align:right;">
+
+0.522
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:right;">
+
+0.392
+</td>
+
+<td style="text-align:right;">
+
+0.478
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Every column sums to 1.
 
@@ -1018,7 +3205,7 @@ Question answered:
 
 > **Never report “the percentage” without specifying its denominator.**
 
-# 17. Visualizing a Two-Way Table
+# 16. Visualizing a Two-Way Table
 
 A grouped bar chart can display a contingency table.
 
@@ -1086,7 +3273,7 @@ Each disease-status column sums to 100%.
 The 100% chart shows composition but hides the difference in group
 sample sizes. Counts and percentages serve different purposes.
 
-# 18. Three-Way and Multi-Way Tables
+# 17. Three-Way and Multi-Way Tables
 
 More than two categorical variables can be summarized together.
 
@@ -1096,42 +3283,372 @@ three_way <- xtabs(
   data = clinical_data
 )
 
-three_way
+print_html_table(
+  three_way,
+  caption = "Three-way frequencies by recorded sex, disease status and QC status."
+)
 ```
 
-    ## , , qc_status = Fail
-    ## 
-    ##             disease_status
-    ## recorded_sex Case Control
-    ##       Female    2       0
-    ##       Male      1       6
-    ## 
-    ## , , qc_status = Pass
-    ## 
-    ##             disease_status
-    ## recorded_sex Case Control
-    ##       Female   29      36
-    ##       Male     19      27
+<table class="chapter-table">
+
+<caption>
+
+Three-way frequencies by recorded sex, disease status and QC status.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+recorded sex
+</th>
+
+<th style="text-align:left;">
+
+disease status
+</th>
+
+<th style="text-align:left;">
+
+qc status
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Fail
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Fail
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Fail
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Fail
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+29
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+19
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+27
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The result is a three-dimensional array. `ftable()` displays it in a
 flatter layout.
 
 ``` r
-ftable(three_way)
+print_html_table(
+  ftable(three_way),
+  caption = "Flattened three-way contingency table."
+)
 ```
 
-    ##                             qc_status Fail Pass
-    ## recorded_sex disease_status                    
-    ## Female       Case                        2   29
-    ##              Control                     0   36
-    ## Male         Case                        1   19
-    ##              Control                     6   27
+<table class="chapter-table">
+
+<caption>
+
+Flattened three-way contingency table.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Fail
+</th>
+
+<th style="text-align:right;">
+
+Pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female_Case
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+29
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female_Control
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male_Case
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+19
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Male_Control
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+27
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Multi-way tables can become difficult to read, especially when many
 cells are empty. Use them to answer a defined question rather than
 displaying every possible combination.
 
-# 19. Counts, Proportions, Percentages, Ratios and Rates
+# 18. Counts, Proportions, Percentages, Ratios and Rates
 
 These terms are related but not interchangeable.
 
@@ -1143,7 +3660,7 @@ These terms are related but not interchangeable.
 | Ratio | Numerator need not be part of denominator | 24 infected : 176 uninfected |
 | Rate | Occurrence per amount of time at risk | 8 infections per 1,000 person-months |
 
-## 19.1 Example calculations
+## 18.1 Example calculations
 
 ``` r
 infected <- 24
@@ -1154,30 +3671,106 @@ proportion_infected <- infected / participants
 percentage_infected <- 100 * proportion_infected
 incidence_rate <- infected / person_months * 1000
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Count", "Proportion", "Percentage",
               "Rate per 1,000 person-months"),
   Value = c(infected, proportion_infected,
             percentage_infected, incidence_rate)
-)
+), caption = "Count, proportion, percentage and incidence rate.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure                      | Value |
-|:-----------------------------|------:|
-| Count                        | 24.00 |
-| Proportion                   |  0.12 |
-| Percentage                   | 12.00 |
-| Rate per 1,000 person-months |  8.00 |
+<caption>
 
-</div>
+Count, proportion, percentage and incidence rate.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Count
+</td>
+
+<td style="text-align:right;">
+
+24.00
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Proportion
+</td>
+
+<td style="text-align:right;">
+
+0.12
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Percentage
+</td>
+
+<td style="text-align:right;">
+
+12.00
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Rate per 1,000 person-months
+</td>
+
+<td style="text-align:right;">
+
+8.00
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 A rate requires a time component or person-time denominator. The
 percentage of participants who already have a disease is a prevalence
 proportion, not an incidence rate.
 
-# 20. Genotype and Allele Frequency Tables
+# 19. Genotype and Allele Frequency Tables
 
 Genetic data provide an important biological application of frequency
 tables.
@@ -1185,16 +3778,102 @@ tables.
 Suppose a biallelic locus has alleles `A` and `G`, producing genotypes
 `AA`, `AG` and `GG`.
 
-## 20.1 Genotype frequencies
+## 19.1 Genotype frequencies
 
 ``` r
 genotype_counts <- table(clinical_data$genotype, useNA = "ifany")
-genotype_counts
+print_html_table(
+  genotype_counts,
+  caption = "Genotype counts including missing observations."
+)
 ```
 
-    ## 
-    ##   AA   AG   GG <NA> 
-    ##   59   49    9    3
+<table class="chapter-table">
+
+<caption>
+
+Genotype counts including missing observations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+59
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+49
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+NA
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 For genotype-frequency calculations, missing genotypes should be
 excluded from the denominator but reported separately.
@@ -1211,20 +3890,106 @@ genotype_distribution <- data.frame(
   stringsAsFactors = FALSE
 )
 
-genotype_distribution
+print_html_table(
+  genotype_distribution,
+  caption = "Genotype counts and frequencies among called genotypes."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Genotype | Count | Frequency |
-|:---------|------:|----------:|
-| AA       |    59 |     0.504 |
-| AG       |    49 |     0.419 |
-| GG       |     9 |     0.077 |
+<caption>
 
-</div>
+Genotype counts and frequencies among called genotypes.
+</caption>
 
-## 20.2 Allele counts
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Genotype
+</th>
+
+<th style="text-align:right;">
+
+Count
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+59
+</td>
+
+<td style="text-align:right;">
+
+0.504
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+49
+</td>
+
+<td style="text-align:right;">
+
+0.419
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+0.077
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 19.2 Allele counts
 
 Every successfully genotyped diploid individual contributes two alleles.
 
@@ -1250,17 +4015,85 @@ allele_distribution <- data.frame(
   stringsAsFactors = FALSE
 )
 
-allele_distribution
+print_html_table(
+  allele_distribution,
+  caption = "Allele counts and frequencies."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Allele | Count | Frequency |
-|:-------|------:|----------:|
-| A      |   167 |     0.714 |
-| G      |    67 |     0.286 |
+<caption>
 
-</div>
+Allele counts and frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Allele
+</th>
+
+<th style="text-align:right;">
+
+Count
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+A
+</td>
+
+<td style="text-align:right;">
+
+167
+</td>
+
+<td style="text-align:right;">
+
+0.714
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+G
+</td>
+
+<td style="text-align:right;">
+
+67
+</td>
+
+<td style="text-align:right;">
+
+0.286
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The two allele frequencies should sum to 1, apart from display rounding.
 
@@ -1270,7 +4103,7 @@ sum(allele_distribution$Count / total_alleles)
 
     ## [1] 1
 
-## 20.3 Genotype by disease status
+## 19.3 Genotype by disease status
 
 ``` r
 genotype_disease <- table(
@@ -1280,35 +4113,215 @@ genotype_disease <- table(
   useNA = "no"
 )
 
-genotype_disease
+print_html_table(
+  genotype_disease,
+  caption = "Genotype counts by disease status."
+)
 ```
 
-    ##         Disease_status
-    ## Genotype Case Control
-    ##       AA   21      38
-    ##       AG   25      24
-    ##       GG    4       5
+<table class="chapter-table">
+
+<caption>
+
+Genotype counts by disease status.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Genotype
+</th>
+
+<th style="text-align:right;">
+
+Case
+</th>
+
+<th style="text-align:right;">
+
+Control
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+21
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+25
+</td>
+
+<td style="text-align:right;">
+
+24
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-round(100 * prop.table(genotype_disease, margin = 2), 1)
+print_html_table(
+  round(100 * prop.table(genotype_disease, margin = 2), 1),
+  caption = "Genotype percentages within disease-status groups."
+)
 ```
 
-    ##         Disease_status
-    ## Genotype Case Control
-    ##       AA 42.0    56.7
-    ##       AG 50.0    35.8
-    ##       GG  8.0     7.5
+<table class="chapter-table">
+
+<caption>
+
+Genotype percentages within disease-status groups.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Genotype
+</th>
+
+<th style="text-align:right;">
+
+Case
+</th>
+
+<th style="text-align:right;">
+
+Control
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+AA
+</td>
+
+<td style="text-align:right;">
+
+42
+</td>
+
+<td style="text-align:right;">
+
+56.7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AG
+</td>
+
+<td style="text-align:right;">
+
+50
+</td>
+
+<td style="text-align:right;">
+
+35.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GG
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+7.5
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 These descriptive differences do not establish genetic association.
 Later chapters will introduce chi-squared tests, Fisher’s exact test,
 logistic regression, Hardy–Weinberg equilibrium and adjustment for
 population structure.
 
-# 21. Bioinformatics Count Tables
+# 20. Bioinformatics Count Tables
 
 The word **count** has different roles in bioinformatics.
 
-## 21.1 RNA-seq count matrix
+## 20.1 RNA-seq count matrix
 
 In an RNA-seq count matrix:
 
@@ -1328,16 +4341,266 @@ rna_counts <- matrix(
   )
 )
 
-rna_counts
+print_html_table(
+  rna_counts,
+  caption = "Simulated RNA-seq count matrix."
+)
 ```
 
-    ##        Sample_1 Sample_2 Sample_3 Sample_4 Sample_5
-    ## Gene_A       43       44       36       28       44
-    ## Gene_B       25       37       36       38       44
-    ## Gene_C       44       36       35       45       36
-    ## Gene_D       36       36       58       38       31
-    ## Gene_E       39       40       33       37       38
-    ## Gene_F       26       36       30       42       40
+<table class="chapter-table">
+
+<caption>
+
+Simulated RNA-seq count matrix.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Sample 1
+</th>
+
+<th style="text-align:right;">
+
+Sample 2
+</th>
+
+<th style="text-align:right;">
+
+Sample 3
+</th>
+
+<th style="text-align:right;">
+
+Sample 4
+</th>
+
+<th style="text-align:right;">
+
+Sample 5
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_A
+</td>
+
+<td style="text-align:right;">
+
+43
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+<td style="text-align:right;">
+
+28
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_B
+</td>
+
+<td style="text-align:right;">
+
+25
+</td>
+
+<td style="text-align:right;">
+
+37
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_C
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+<td style="text-align:right;">
+
+35
+</td>
+
+<td style="text-align:right;">
+
+45
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_D
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+<td style="text-align:right;">
+
+58
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+<td style="text-align:right;">
+
+31
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_E
+</td>
+
+<td style="text-align:right;">
+
+39
+</td>
+
+<td style="text-align:right;">
+
+40
+</td>
+
+<td style="text-align:right;">
+
+33
+</td>
+
+<td style="text-align:right;">
+
+37
+</td>
+
+<td style="text-align:right;">
+
+38
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Gene_F
+</td>
+
+<td style="text-align:right;">
+
+26
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+<td style="text-align:right;">
+
+30
+</td>
+
+<td style="text-align:right;">
+
+42
+</td>
+
+<td style="text-align:right;">
+
+40
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 This matrix is not a one-way frequency table of participants. Each entry
 is a molecular count produced through a sequencing process. Library
@@ -1345,30 +4608,119 @@ size, gene length, composition and biological variability affect
 interpretation.
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Sample = colnames(rna_counts),
   Total_assigned_reads = colSums(rna_counts),
   stringsAsFactors = FALSE
-)
+), caption = "Total assigned RNA-seq reads by sample.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-|          | Sample   | Total_assigned_reads |
-|:---------|:---------|---------------------:|
-| Sample_1 | Sample_1 |                  213 |
-| Sample_2 | Sample_2 |                  229 |
-| Sample_3 | Sample_3 |                  228 |
-| Sample_4 | Sample_4 |                  228 |
-| Sample_5 | Sample_5 |                  233 |
+<caption>
 
-</div>
+Total assigned RNA-seq reads by sample.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Sample
+</th>
+
+<th style="text-align:right;">
+
+Total assigned reads
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_1
+</td>
+
+<td style="text-align:right;">
+
+213
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_2
+</td>
+
+<td style="text-align:right;">
+
+229
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_3
+</td>
+
+<td style="text-align:right;">
+
+228
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_4
+</td>
+
+<td style="text-align:right;">
+
+228
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample_5
+</td>
+
+<td style="text-align:right;">
+
+233
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Raw RNA-seq counts should not normally be converted to percentages and
 compared naively across samples for differential-expression inference.
 Specialized models and normalization are needed.
 
-## 21.2 Variant consequence counts
+## 20.2 Variant consequence counts
 
 A simple frequency table is appropriate for summarizing annotated
 variant consequences.
@@ -1392,26 +4744,148 @@ consequence_distribution <- data.frame(
   stringsAsFactors = FALSE
 )
 
-consequence_distribution
+print_html_table(
+  consequence_distribution,
+  caption = "Annotated variant-consequence frequencies."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Consequence | Count | Percentage |
-|:------------|------:|-----------:|
-| Intronic    |   219 |       43.8 |
-| Intergenic  |   139 |       27.8 |
-| Missense    |    68 |       13.6 |
-| Synonymous  |    67 |       13.4 |
-| Stop gained |     7 |        1.4 |
+<caption>
 
-</div>
+Annotated variant-consequence frequencies.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Consequence
+</th>
+
+<th style="text-align:right;">
+
+Count
+</th>
+
+<th style="text-align:right;">
+
+Percentage
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Intronic
+</td>
+
+<td style="text-align:right;">
+
+219
+</td>
+
+<td style="text-align:right;">
+
+43.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Intergenic
+</td>
+
+<td style="text-align:right;">
+
+139
+</td>
+
+<td style="text-align:right;">
+
+27.8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Missense
+</td>
+
+<td style="text-align:right;">
+
+68
+</td>
+
+<td style="text-align:right;">
+
+13.6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Synonymous
+</td>
+
+<td style="text-align:right;">
+
+67
+</td>
+
+<td style="text-align:right;">
+
+13.4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Stop gained
+</td>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+<td style="text-align:right;">
+
+1.4
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Counts depend on the annotation rules. A single variant can have
 multiple transcript consequences, so specify whether you counted
 variants, transcripts or one selected consequence per variant.
 
-# 22. Zero Counts, Sparse Tables and Small Numbers
+# 21. Zero Counts, Sparse Tables and Small Numbers
 
 A **zero cell** means no observations occurred in a category
 combination. It may reflect:
@@ -1433,7 +4907,7 @@ Small counts can also threaten participant privacy. Public reports may
 need suppression or aggregation according to institutional and legal
 rules.
 
-# 23. Creating a Clean Summary Table
+# 22. Creating a Clean Summary Table
 
 A useful descriptive table reports a count and percentage together.
 
@@ -1453,17 +4927,85 @@ frequency_table <- function(x, include_missing = TRUE, digits = 1) {
   result
 }
 
-frequency_table(clinical_data$qc_status)
+print_html_table(
+  frequency_table(clinical_data$qc_status),
+  caption = "QC-status counts and percentages."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Category |   N | Percent |
-|:---------|----:|--------:|
-| Fail     |   9 |     7.5 |
-| Pass     | 111 |    92.5 |
+<caption>
 
-</div>
+QC-status counts and percentages.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Fail
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+7.5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+111
+</td>
+
+<td style="text-align:right;">
+
+92.5
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The function:
 
@@ -1471,10 +5013,10 @@ The function:
 2.  decides whether to include missing values;
 3.  counts categories with `table()`;
 4.  calculates percentages using the displayed total; and
-5.  returns a regular data frame that is safe to print with
-    `knitr::kable()`.
+5.  returns a regular data frame that is safe to display with
+    `print_html_table()`.
 
-## 23.1 Add a display column
+## 22.1 Add a display column
 
 ``` r
 qc_summary <- frequency_table(clinical_data$qc_status)
@@ -1486,22 +5028,105 @@ qc_summary$Display <- paste0(
   "%)"
 )
 
-qc_summary
+print_html_table(
+  qc_summary,
+  caption = "QC-status summary with an n-percent display column."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Category |   N | Percent | Display     |
-|:---------|----:|--------:|:------------|
-| Fail     |   9 |     7.5 | 9 ( 7.5%)   |
-| Pass     | 111 |    92.5 | 111 (92.5%) |
+<caption>
 
-</div>
+QC-status summary with an n-percent display column.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Percent
+</th>
+
+<th style="text-align:left;">
+
+Display
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Fail
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+7.5
+</td>
+
+<td style="text-align:left;">
+
+9 ( 7.5%)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+111
+</td>
+
+<td style="text-align:right;">
+
+92.5
+</td>
+
+<td style="text-align:left;">
+
+111 (92.5%)
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Keep numerical count and percentage columns in the analysis dataset. The
 combined display column is mainly for a report.
 
-# 24. An Introductory “Table 1”
+# 23. An Introductory “Table 1”
 
 Clinical and epidemiological reports often begin with a table describing
 the sample. It is commonly called **Table 1**.
@@ -1548,35 +5173,157 @@ table_one <- data.frame(
   check.names = FALSE
 )
 
-table_one
+print_html_table(
+  table_one,
+  caption = "Introductory descriptive Table 1 by disease status."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Characteristic  | Control    | Case       |
-|:----------------|:-----------|:-----------|
-| Participants, n | 69         | 51         |
-| Female, n (%)   | 36 (52.2%) | 31 (60.8%) |
-| QC pass, n (%)  | 63 (91.3%) | 48 (94.1%) |
-| Age, mean       | 50.1       | 51.4       |
-| Biomarker, mean | 4.76       | 6.07       |
+<caption>
 
-</div>
+Introductory descriptive Table 1 by disease status.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Characteristic
+</th>
+
+<th style="text-align:left;">
+
+Control
+</th>
+
+<th style="text-align:left;">
+
+Case
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Participants, n
+</td>
+
+<td style="text-align:left;">
+
+69
+</td>
+
+<td style="text-align:left;">
+
+51
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Female, n (%)
+</td>
+
+<td style="text-align:left;">
+
+36 (52.2%)
+</td>
+
+<td style="text-align:left;">
+
+31 (60.8%)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+QC pass, n (%)
+</td>
+
+<td style="text-align:left;">
+
+63 (91.3%)
+</td>
+
+<td style="text-align:left;">
+
+48 (94.1%)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Age, mean
+</td>
+
+<td style="text-align:left;">
+
+50.1
+</td>
+
+<td style="text-align:left;">
+
+51.4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Biomarker, mean
+</td>
+
+<td style="text-align:left;">
+
+4.76
+</td>
+
+<td style="text-align:left;">
+
+6.07
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Table 1 is descriptive. It should help readers understand who was
 studied. Automatic hypothesis tests in every Table 1 row are often
 unhelpful, particularly in randomized trials where any baseline
 differences arose by chance.
 
-# 25. Integrated Case Study: Sequencing Quality-Control Summary
+# 24. Integrated Case Study: Sequencing Quality-Control Summary
 
-## 25.1 Scientific setting
+## 24.1 Scientific setting
 
 A laboratory sequenced 240 samples across two disease groups, three
 centres and four batches. We want to describe QC outcomes before
 downstream analysis.
 
-## 25.2 Simulate the sample-level data
+## 24.2 Simulate the sample-level data
 
 ``` r
 set.seed(246)
@@ -1599,39 +5346,317 @@ qc_data$qc_result <- ifelse(
   "Fail", "Pass"
 )
 
-head(qc_data)
+print_html_table(
+  head(qc_data),
+  caption = "First six samples in the sequencing QC case study."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| sample_id | centre   | disease_group | batch   | qc_result |
-|:----------|:---------|:--------------|:--------|:----------|
-| SEQ001    | Centre_B | Control       | Batch_3 | Pass      |
-| SEQ002    | Centre_A | Control       | Batch_4 | Pass      |
-| SEQ003    | Centre_B | Control       | Batch_1 | Pass      |
-| SEQ004    | Centre_A | Control       | Batch_2 | Pass      |
-| SEQ005    | Centre_A | Case          | Batch_2 | Pass      |
-| SEQ006    | Centre_B | Control       | Batch_2 | Pass      |
+<caption>
 
-</div>
+First six samples in the sequencing QC case study.
+</caption>
 
-## 25.3 Overall QC frequency
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+centre
+</th>
+
+<th style="text-align:left;">
+
+disease group
+</th>
+
+<th style="text-align:left;">
+
+batch
+</th>
+
+<th style="text-align:left;">
+
+qc result
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ001
+</td>
+
+<td style="text-align:left;">
+
+Centre_B
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_3
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ002
+</td>
+
+<td style="text-align:left;">
+
+Centre_A
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_4
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ003
+</td>
+
+<td style="text-align:left;">
+
+Centre_B
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ004
+</td>
+
+<td style="text-align:left;">
+
+Centre_A
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ005
+</td>
+
+<td style="text-align:left;">
+
+Centre_A
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ006
+</td>
+
+<td style="text-align:left;">
+
+Centre_B
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 24.3 Overall QC frequency
 
 ``` r
 overall_qc <- frequency_table(qc_data$qc_result)
-overall_qc
+print_html_table(
+  overall_qc,
+  caption = "Overall sequencing QC frequencies."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Category |   N | Percent |
-|:---------|----:|--------:|
-| Fail     |  31 |    12.9 |
-| Pass     | 209 |    87.1 |
+<caption>
 
-</div>
+Overall sequencing QC frequencies.
+</caption>
 
-## 25.4 QC by centre
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Fail
+</td>
+
+<td style="text-align:right;">
+
+31
+</td>
+
+<td style="text-align:right;">
+
+12.9
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Pass
+</td>
+
+<td style="text-align:right;">
+
+209
+</td>
+
+<td style="text-align:right;">
+
+87.1
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 24.4 QC by centre
 
 ``` r
 qc_by_centre <- table(
@@ -1639,30 +5664,210 @@ qc_by_centre <- table(
   QC_result = qc_data$qc_result
 )
 
-qc_by_centre
+print_html_table(
+  qc_by_centre,
+  caption = "Sequencing QC counts by centre."
+)
 ```
 
-    ##           QC_result
-    ## Centre     Fail Pass
-    ##   Centre_A   13   99
-    ##   Centre_B   11   71
-    ##   Centre_C    7   39
+<table class="chapter-table">
+
+<caption>
+
+Sequencing QC counts by centre.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Centre
+</th>
+
+<th style="text-align:right;">
+
+Fail
+</th>
+
+<th style="text-align:right;">
+
+Pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Centre_A
+</td>
+
+<td style="text-align:right;">
+
+13
+</td>
+
+<td style="text-align:right;">
+
+99
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Centre_B
+</td>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:right;">
+
+71
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Centre_C
+</td>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+<td style="text-align:right;">
+
+39
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-round(100 * prop.table(qc_by_centre, margin = 1), 1)
+print_html_table(
+  round(100 * prop.table(qc_by_centre, margin = 1), 1),
+  caption = "Sequencing QC percentages within centres."
+)
 ```
 
-    ##           QC_result
-    ## Centre     Fail Pass
-    ##   Centre_A 11.6 88.4
-    ##   Centre_B 13.4 86.6
-    ##   Centre_C 15.2 84.8
+<table class="chapter-table">
+
+<caption>
+
+Sequencing QC percentages within centres.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Centre
+</th>
+
+<th style="text-align:right;">
+
+Fail
+</th>
+
+<th style="text-align:right;">
+
+Pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Centre_A
+</td>
+
+<td style="text-align:right;">
+
+11.6
+</td>
+
+<td style="text-align:right;">
+
+88.4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Centre_B
+</td>
+
+<td style="text-align:right;">
+
+13.4
+</td>
+
+<td style="text-align:right;">
+
+86.6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Centre_C
+</td>
+
+<td style="text-align:right;">
+
+15.2
+</td>
+
+<td style="text-align:right;">
+
+84.8
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Row percentages are appropriate because the question is:
 
 > Within each centre, what percentage of samples passed or failed?
 
-## 25.5 QC by disease group and batch
+## 24.5 QC by disease group and batch
 
 ``` r
 qc_three_way <- xtabs(
@@ -1670,21 +5875,201 @@ qc_three_way <- xtabs(
   data = qc_data
 )
 
-ftable(qc_three_way)
+print_html_table(
+  ftable(qc_three_way),
+  caption = "QC outcome by disease group and sequencing batch."
+)
 ```
 
-    ##                       qc_result Fail Pass
-    ## disease_group batch                      
-    ## Case          Batch_1              0   29
-    ##               Batch_2              8   28
-    ##               Batch_3              6   21
-    ##               Batch_4              3   21
-    ## Control       Batch_1              5   26
-    ##               Batch_2              5   30
-    ##               Batch_3              2   23
-    ##               Batch_4              2   31
+<table class="chapter-table">
 
-## 25.6 Plot centre-specific failure percentages
+<caption>
+
+QC outcome by disease group and sequencing batch.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Fail
+</th>
+
+<th style="text-align:right;">
+
+Pass
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Case_Batch_1
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+29
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Case_Batch_2
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+28
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Case_Batch_3
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+21
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Case_Batch_4
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+21
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control_Batch_1
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+<td style="text-align:right;">
+
+26
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control_Batch_2
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+<td style="text-align:right;">
+
+30
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control_Batch_3
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+23
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control_Batch_4
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+31
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 24.6 Plot centre-specific failure percentages
 
 ``` r
 centre_percent <- 100 * prop.table(qc_by_centre, margin = 1)
@@ -1717,7 +6102,7 @@ This descriptive difference is a signal to investigate. It does not by
 itself prove that the centre caused the failures. Sample type, storage,
 extraction method or batch allocation might differ between centres.
 
-# 26. Common Mistakes
+# 25. Common Mistakes
 
 ## Mistake 1: Reporting percentages without counts
 
@@ -1767,7 +6152,7 @@ interpretation require additional design and analysis.
 The case-to-control ratio was often fixed by design and does not
 estimate population prevalence.
 
-# 27. Practical Reporting Checklist
+# 26. Practical Reporting Checklist
 
 Before presenting a table, ask:
 
@@ -1785,7 +6170,7 @@ Before presenting a table, ask:
   setting?
 - Can another researcher reproduce the table from the code?
 
-# 28. Chapter Summary
+# 27. Chapter Summary
 
 - Frequency is the number of times a value or category occurs.
 - Relative frequency divides a category count by a stated total.
@@ -1810,7 +6195,7 @@ Before presenting a table, ask:
 - A descriptive table organizes evidence but does not itself establish
   association or causation.
 
-# 29. Check Your Understanding
+# 28. Check Your Understanding
 
 1.  What is the difference between frequency and relative frequency?
 2.  Why should a percentage usually be accompanied by a count?
@@ -1832,7 +6217,7 @@ Before presenting a table, ask:
 15. Can a QC table prove that a sequencing centre caused failures?
     Explain.
 
-# 30. R Exercises
+# 29. R Exercises
 
 ## Exercise 1: One-way table
 
@@ -1886,7 +6271,7 @@ Create a 4-by-4 contingency table containing several zero cells.
 Identify scientifically defensible and indefensible ways to combine
 categories.
 
-# 31. Mini-Project: Pathogen Genomic Surveillance Summary
+# 30. Mini-Project: Pathogen Genomic Surveillance Summary
 
 Create or simulate a sample-level dataset containing at least 500
 pathogen genomes with:
@@ -1915,7 +6300,7 @@ Your report should:
     and
 11. provide reproducible R code and a brief scientific interpretation.
 
-# 32. Glossary
+# 31. Glossary
 
 | Term | Plain-language definition |
 |----|----|
@@ -1941,7 +6326,7 @@ Your report should:
 | Sparse table | Table containing many small or zero cell counts |
 | Denominator | Total quantity used to calculate a fraction or rate |
 
-# 33. References
+# 32. References
 
 1.  Altman, D. G. (1991). *Practical Statistics for Medical Research*.
     Chapman and Hall.
@@ -1981,7 +6366,7 @@ Your report should:
 
 ------------------------------------------------------------------------
 
-# 34. Reproducibility Information
+# 33. Reproducibility Information
 
 ``` r
 sessionInfo()
