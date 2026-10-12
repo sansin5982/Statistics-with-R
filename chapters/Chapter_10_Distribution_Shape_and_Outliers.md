@@ -17,100 +17,98 @@ Chapter 10: Distribution Shape and Outliers
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. Distribution Shape: The Big
-  Picture](#3-distribution-shape-the-big-picture)
-- [4. Common Distribution Shapes](#4-common-distribution-shapes)
-  - [4.1 Symmetric unimodal
-    distribution](#41-symmetric-unimodal-distribution)
-  - [4.2 Right-skewed distribution](#42-right-skewed-distribution)
-  - [4.3 Left-skewed distribution](#43-left-skewed-distribution)
-  - [4.4 Uniform distribution](#44-uniform-distribution)
-  - [4.5 Bimodal or multimodal
-    distribution](#45-bimodal-or-multimodal-distribution)
-- [5. Discrete, Bounded and Zero-Inflated
-  Data](#5-discrete-bounded-and-zero-inflated-data)
-  - [5.1 Discrete data](#51-discrete-data)
-  - [5.2 Bounded data](#52-bounded-data)
-  - [5.3 Zero-inflated data](#53-zero-inflated-data)
-- [6. Censoring, Truncation and Detection
-  Limits](#6-censoring-truncation-and-detection-limits)
-  - [6.1 Censoring](#61-censoring)
-  - [6.2 Truncation](#62-truncation)
-  - [6.3 Ceiling and floor effects](#63-ceiling-and-floor-effects)
-- [7. Histograms: Shape Depends on
-  Bins](#7-histograms-shape-depends-on-bins)
-- [8. Density Plots](#8-density-plots)
-- [9. ECDFs: Shape Without Bins](#9-ecdfs-shape-without-bins)
-- [10. Boxplots and Individual
-  Points](#10-boxplots-and-individual-points)
-- [11. Symmetry and Skewness](#11-symmetry-and-skewness)
-  - [11.1 Skewness is not a complete
-    description](#111-skewness-is-not-a-complete-description)
-- [12. Kurtosis and Tail Weight](#12-kurtosis-and-tail-weight)
-- [13. Modality and Mixtures](#13-modality-and-mixtures)
-- [14. Heavy Tails Versus Individual
-  Outliers](#14-heavy-tails-versus-individual-outliers)
-- [15. Q–Q Plots](#15-qq-plots)
-- [16. Normality Tests](#16-normality-tests)
-  - [16.1 Why p-values are not enough](#161-why-p-values-are-not-enough)
-- [17. What Is an Outlier?](#17-what-is-an-outlier)
-- [18. Types of Unusual Observations](#18-types-of-unusual-observations)
-- [19. Global, Group-Specific and Conditional
-  Outliers](#19-global-group-specific-and-conditional-outliers)
-  - [19.1 Global outlier](#191-global-outlier)
-  - [19.2 Group-specific outlier](#192-group-specific-outlier)
-  - [19.3 Conditional outlier](#193-conditional-outlier)
-- [20. The IQR Outlier Rule](#20-the-iqr-outlier-rule)
-- [21. Z-Score Rule](#21-z-score-rule)
-- [22. Robust Z-Scores Using the MAD](#22-robust-z-scores-using-the-mad)
-- [23. Comparing Detection Rules](#23-comparing-detection-rules)
-- [24. Masking and Swamping](#24-masking-and-swamping)
-- [25. Outlier Versus Influential
-  Observation](#25-outlier-versus-influential-observation)
-  - [25.1 Leave-one-out influence on a
-    mean](#251-leave-one-out-influence-on-a-mean)
-- [26. Multivariate Outliers](#26-multivariate-outliers)
-- [27. Transformations and Distribution
-  Shape](#27-transformations-and-distribution-shape)
-  - [27.1 Log transformation](#271-log-transformation)
-  - [27.2 Square-root transformation](#272-square-root-transformation)
-  - [27.3 Rank transformation](#273-rank-transformation)
-  - [27.4 Box–Cox and Yeo–Johnson
-    families](#274-boxcox-and-yeojohnson-families)
-- [28. Transforming Outliers Does Not Decide Their
-  Validity](#28-transforming-outliers-does-not-decide-their-validity)
-- [29. Outliers in Genome-Wide Association Study
-  QC](#29-outliers-in-genome-wide-association-study-qc)
-  - [29.1 Heterozygosity outliers](#291-heterozygosity-outliers)
-  - [29.2 Principal-component ancestry
-    context](#292-principal-component-ancestry-context)
-- [30. Outliers in RNA-seq and Other Omics
-  Data](#30-outliers-in-rna-seq-and-other-omics-data)
-- [31. An Outlier Investigation
-  Workflow](#31-an-outlier-investigation-workflow)
-- [32. What Should We Do With an
-  Outlier?](#32-what-should-we-do-with-an-outlier)
-  - [32.1 Practices to avoid](#321-practices-to-avoid)
-- [33. Sensitivity Analysis](#33-sensitivity-analysis)
-- [34. Winsorization and Trimming](#34-winsorization-and-trimming)
-- [35. Integrated Case Study: Multi-Metric Sequencing
-  QC](#35-integrated-case-study-multi-metric-sequencing-qc)
-  - [35.1 Scientific setting](#351-scientific-setting)
-  - [35.2 Examine each distribution](#352-examine-each-distribution)
-  - [35.3 Create an auditable flag
-    table](#353-create-an-auditable-flag-table)
-  - [35.4 Compare IQR and robust z-score
-    flags](#354-compare-iqr-and-robust-z-score-flags)
-  - [35.5 Add investigation decisions without changing raw
-    data](#355-add-investigation-decisions-without-changing-raw-data)
-  - [35.6 Sensitivity analysis for mean read
-    depth](#356-sensitivity-analysis-for-mean-read-depth)
-- [36. A Reusable Shape Summary
-  Function](#36-a-reusable-shape-summary-function)
-- [37. Reproducible Outlier
-  Reporting](#37-reproducible-outlier-reporting)
-- [38. Common Mistakes](#38-common-mistakes)
+- [2. Distribution Shape: The Big
+  Picture](#2-distribution-shape-the-big-picture)
+- [3. Common Distribution Shapes](#3-common-distribution-shapes)
+  - [3.1 Symmetric unimodal
+    distribution](#31-symmetric-unimodal-distribution)
+  - [3.2 Right-skewed distribution](#32-right-skewed-distribution)
+  - [3.3 Left-skewed distribution](#33-left-skewed-distribution)
+  - [3.4 Uniform distribution](#34-uniform-distribution)
+  - [3.5 Bimodal or multimodal
+    distribution](#35-bimodal-or-multimodal-distribution)
+- [4. Discrete, Bounded and Zero-Inflated
+  Data](#4-discrete-bounded-and-zero-inflated-data)
+  - [4.1 Discrete data](#41-discrete-data)
+  - [4.2 Bounded data](#42-bounded-data)
+  - [4.3 Zero-inflated data](#43-zero-inflated-data)
+- [5. Censoring, Truncation and Detection
+  Limits](#5-censoring-truncation-and-detection-limits)
+  - [5.1 Censoring](#51-censoring)
+  - [5.2 Truncation](#52-truncation)
+  - [5.3 Ceiling and floor effects](#53-ceiling-and-floor-effects)
+- [6. Histograms: Shape Depends on
+  Bins](#6-histograms-shape-depends-on-bins)
+- [7. Density Plots](#7-density-plots)
+- [8. ECDFs: Shape Without Bins](#8-ecdfs-shape-without-bins)
+- [9. Boxplots and Individual Points](#9-boxplots-and-individual-points)
+- [10. Symmetry and Skewness](#10-symmetry-and-skewness)
+  - [10.1 Skewness is not a complete
+    description](#101-skewness-is-not-a-complete-description)
+- [11. Kurtosis and Tail Weight](#11-kurtosis-and-tail-weight)
+- [12. Modality and Mixtures](#12-modality-and-mixtures)
+- [13. Heavy Tails Versus Individual
+  Outliers](#13-heavy-tails-versus-individual-outliers)
+- [14. Q–Q Plots](#14-qq-plots)
+- [15. Normality Tests](#15-normality-tests)
+  - [15.1 Why p-values are not enough](#151-why-p-values-are-not-enough)
+- [16. What Is an Outlier?](#16-what-is-an-outlier)
+- [17. Types of Unusual Observations](#17-types-of-unusual-observations)
+- [18. Global, Group-Specific and Conditional
+  Outliers](#18-global-group-specific-and-conditional-outliers)
+  - [18.1 Global outlier](#181-global-outlier)
+  - [18.2 Group-specific outlier](#182-group-specific-outlier)
+  - [18.3 Conditional outlier](#183-conditional-outlier)
+- [19. The IQR Outlier Rule](#19-the-iqr-outlier-rule)
+- [20. Z-Score Rule](#20-z-score-rule)
+- [21. Robust Z-Scores Using the MAD](#21-robust-z-scores-using-the-mad)
+- [22. Comparing Detection Rules](#22-comparing-detection-rules)
+- [23. Masking and Swamping](#23-masking-and-swamping)
+- [24. Outlier Versus Influential
+  Observation](#24-outlier-versus-influential-observation)
+  - [24.1 Leave-one-out influence on a
+    mean](#241-leave-one-out-influence-on-a-mean)
+- [25. Multivariate Outliers](#25-multivariate-outliers)
+- [26. Transformations and Distribution
+  Shape](#26-transformations-and-distribution-shape)
+  - [26.1 Log transformation](#261-log-transformation)
+  - [26.2 Square-root transformation](#262-square-root-transformation)
+  - [26.3 Rank transformation](#263-rank-transformation)
+  - [26.4 Box–Cox and Yeo–Johnson
+    families](#264-boxcox-and-yeojohnson-families)
+- [27. Transforming Outliers Does Not Decide Their
+  Validity](#27-transforming-outliers-does-not-decide-their-validity)
+- [28. Outliers in Genome-Wide Association Study
+  QC](#28-outliers-in-genome-wide-association-study-qc)
+  - [28.1 Heterozygosity outliers](#281-heterozygosity-outliers)
+  - [28.2 Principal-component ancestry
+    context](#282-principal-component-ancestry-context)
+- [29. Outliers in RNA-seq and Other Omics
+  Data](#29-outliers-in-rna-seq-and-other-omics-data)
+- [30. An Outlier Investigation
+  Workflow](#30-an-outlier-investigation-workflow)
+- [31. What Should We Do With an
+  Outlier?](#31-what-should-we-do-with-an-outlier)
+  - [31.1 Practices to avoid](#311-practices-to-avoid)
+- [32. Sensitivity Analysis](#32-sensitivity-analysis)
+- [33. Winsorization and Trimming](#33-winsorization-and-trimming)
+- [34. Integrated Case Study: Multi-Metric Sequencing
+  QC](#34-integrated-case-study-multi-metric-sequencing-qc)
+  - [34.1 Scientific setting](#341-scientific-setting)
+  - [34.2 Examine each distribution](#342-examine-each-distribution)
+  - [34.3 Create an auditable flag
+    table](#343-create-an-auditable-flag-table)
+  - [34.4 Compare IQR and robust z-score
+    flags](#344-compare-iqr-and-robust-z-score-flags)
+  - [34.5 Add investigation decisions without changing raw
+    data](#345-add-investigation-decisions-without-changing-raw-data)
+  - [34.6 Sensitivity analysis for mean read
+    depth](#346-sensitivity-analysis-for-mean-read-depth)
+- [35. A Reusable Shape Summary
+  Function](#35-a-reusable-shape-summary-function)
+- [36. Reproducible Outlier
+  Reporting](#36-reproducible-outlier-reporting)
+- [37. Common Mistakes](#37-common-mistakes)
   - [Mistake 1: Defining normality by histogram appearance
     alone](#mistake-1-defining-normality-by-histogram-appearance-alone)
   - [Mistake 2: Treating skewness near zero as proof of
@@ -131,11 +129,11 @@ Sandeep Singh
     p-values](#mistake-9-choosing-exclusions-after-seeing-p-values)
   - [Mistake 10: Reporting only the cleaned
     analysis](#mistake-10-reporting-only-the-cleaned-analysis)
-- [39. Practical Shape-and-Outlier
-  Checklist](#39-practical-shape-and-outlier-checklist)
-- [40. Chapter Summary](#40-chapter-summary)
-- [41. Check Your Understanding](#41-check-your-understanding)
-- [42. R Exercises](#42-r-exercises)
+- [38. Practical Shape-and-Outlier
+  Checklist](#38-practical-shape-and-outlier-checklist)
+- [39. Chapter Summary](#39-chapter-summary)
+- [40. Knowledge Check](#40-knowledge-check)
+- [41. R Exercises](#41-r-exercises)
   - [Exercise 1: Distribution gallery](#exercise-1-distribution-gallery)
   - [Exercise 2: Bin and bandwidth
     choices](#exercise-2-bin-and-bandwidth-choices)
@@ -150,11 +148,53 @@ Sandeep Singh
   - [Exercise 8: Influence](#exercise-8-influence)
   - [Exercise 9: Transformation](#exercise-9-transformation)
   - [Exercise 10: QC audit trail](#exercise-10-qc-audit-trail)
-- [43. Mini-Project: Outlier Assessment in Multi-Omics
-  QC](#43-mini-project-outlier-assessment-in-multi-omics-qc)
-- [44. Glossary](#44-glossary)
-- [45. References](#45-references)
-- [46. Reproducibility Information](#46-reproducibility-information)
+- [42. Mini-Project: Outlier Assessment in Multi-Omics
+  QC](#42-mini-project-outlier-assessment-in-multi-omics-qc)
+- [43. Glossary](#43-glossary)
+- [44. References](#44-references)
+- [45. Reproducibility Information](#45-reproducibility-information)
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+&#10;table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+&#10;table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+&#10;table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
 
 # 1. Introduction
 
@@ -190,36 +230,7 @@ value may be:
 > **Outlier detection identifies observations to investigate. It does
 > not automatically identify observations to delete.**
 
-------------------------------------------------------------------------
-
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  describe symmetric, skewed, uniform, multimodal and heavy-tailed
-    distributions;
-2.  distinguish distribution shape from centre and spread;
-3.  recognize bounded, discrete, censored and zero-inflated biological
-    data;
-4.  assess shape using histograms, density plots, ECDFs, boxplots and
-    Q–Q plots;
-5.  calculate moment-based skewness and excess kurtosis in R;
-6.  explain limitations of numerical shape measures;
-7.  distinguish an outlier from an influential observation;
-8.  identify data errors, technical outliers and valid biological
-    extremes;
-9.  apply IQR, z-score and robust MAD-based outlier rules;
-10. perform outlier detection within scientifically relevant groups;
-11. understand masking and swamping;
-12. evaluate transformations without hiding the analysis scale;
-13. interpret normality tests cautiously;
-14. recognize sample-level QC outliers in genomics and bioinformatics;
-15. conduct a transparent sensitivity analysis; and
-16. create an auditable outlier-investigation report.
-
-------------------------------------------------------------------------
-
-# 3. Distribution Shape: The Big Picture
+# 2. Distribution Shape: The Big Picture
 
 The **distribution** of a variable describes which values occur and how
 frequently they occur.
@@ -239,15 +250,15 @@ A useful description of shape considers:
 Do not reduce shape to one number. Graphical and numerical descriptions
 should work together.
 
-# 4. Common Distribution Shapes
+# 3. Common Distribution Shapes
 
-## 4.1 Symmetric unimodal distribution
+## 3.1 Symmetric unimodal distribution
 
 A symmetric unimodal distribution has one central peak and approximately
 mirror-image sides. The normal distribution is the best-known example,
 but symmetry does not guarantee normality.
 
-## 4.2 Right-skewed distribution
+## 3.2 Right-skewed distribution
 
 A right-skewed, or positively skewed, distribution has a long right
 tail. A small number of high observations pull the arithmetic mean
@@ -261,18 +272,18 @@ Biological examples include:
 - pathogen load; and
 - time until an event when many events occur early.
 
-## 4.3 Left-skewed distribution
+## 3.3 Left-skewed distribution
 
 A left-skewed, or negatively skewed, distribution has a long left tail.
 Examples can occur when most values approach an upper measurement limit,
 such as a simple test with many near-perfect scores.
 
-## 4.4 Uniform distribution
+## 3.4 Uniform distribution
 
 In a uniform distribution, values across an interval occur with similar
 density. It has no strong central peak.
 
-## 4.5 Bimodal or multimodal distribution
+## 3.5 Bimodal or multimodal distribution
 
 A bimodal distribution has two peaks. It may indicate:
 
@@ -334,16 +345,16 @@ distributions.
 par(mfrow = c(1, 1))
 ```
 
-# 5. Discrete, Bounded and Zero-Inflated Data
+# 4. Discrete, Bounded and Zero-Inflated Data
 
 Not every variable is continuous or bell-shaped.
 
-## 5.1 Discrete data
+## 4.1 Discrete data
 
 Counts take separated values such as 0, 1, 2 and 3. Examples include
 mutation counts, colony counts and number of hospital visits.
 
-## 5.2 Bounded data
+## 4.2 Bounded data
 
 Some variables cannot cross fixed limits:
 
@@ -355,7 +366,7 @@ Some variables cannot cross fixed limits:
 Boundaries can create skewness and prevent a normal distribution even
 when no data error exists.
 
-## 5.3 Zero-inflated data
+## 4.3 Zero-inflated data
 
 A zero-inflated variable contains more zeros than a simple count model
 would predict. Possible reasons include:
@@ -399,9 +410,9 @@ and a right-skewed positive component.
 The zeros should not be changed to missing values without understanding
 what they represent.
 
-# 6. Censoring, Truncation and Detection Limits
+# 5. Censoring, Truncation and Detection Limits
 
-## 6.1 Censoring
+## 5.1 Censoring
 
 A value is **censored** when we know it lies beyond a limit but do not
 know its exact value.
@@ -409,7 +420,7 @@ know its exact value.
 Example: an assay reports “below 0.2 ng/mL.” The true value is not
 necessarily zero; it is somewhere below 0.2.
 
-## 6.2 Truncation
+## 5.2 Truncation
 
 Data are **truncated** when observations outside a range cannot enter
 the dataset at all.
@@ -417,7 +428,7 @@ the dataset at all.
 Example: a study enrolling only adults aged 18–65 has a truncated age
 distribution relative to all adults.
 
-## 6.3 Ceiling and floor effects
+## 5.3 Ceiling and floor effects
 
 A **ceiling effect** occurs when many observations accumulate at the
 maximum measurable score. A **floor effect** occurs at the minimum.
@@ -426,7 +437,7 @@ Replacing all below-detection values with zero or half the detection
 limit is a modeling decision, not neutral data cleaning. The appropriate
 approach depends on the amount and mechanism of censoring.
 
-# 7. Histograms: Shape Depends on Bins
+# 6. Histograms: Shape Depends on Bins
 
 A histogram is often the first tool for examining continuous data.
 However, its appearance depends on class width and boundary placement.
@@ -466,7 +477,7 @@ par(mfrow = c(1, 1))
 During exploration, inspect multiple reasonable bin widths. Do not
 choose bins solely because they support a preferred story.
 
-# 8. Density Plots
+# 7. Density Plots
 
 A kernel density plot gives a smoothed representation of a continuous
 distribution.
@@ -506,7 +517,7 @@ hide real subgroups. A density plot is an estimate, not the raw data.
 For small samples, show individual points rather than relying on a
 smooth curve.
 
-# 9. ECDFs: Shape Without Bins
+# 8. ECDFs: Shape Without Bins
 
 The empirical cumulative distribution function, or ECDF, shows the
 proportion of observations less than or equal to each value.
@@ -535,7 +546,7 @@ An ECDF shows every observed step and requires no bin or bandwidth.
 ECDFs are useful for comparing groups, reading medians and percentiles,
 and detecting shifts or tail differences.
 
-# 10. Boxplots and Individual Points
+# 9. Boxplots and Individual Points
 
 Boxplots compactly display median, IQR, whiskers and potential outliers.
 They can hide sample size, multiple modes and raw-value clustering.
@@ -587,7 +598,7 @@ distribution.
 No single plot is always sufficient. Histograms, ECDFs, boxplots and raw
 points emphasize different features.
 
-# 11. Symmetry and Skewness
+# 10. Symmetry and Skewness
 
 **Skewness** quantifies asymmetry.
 
@@ -636,29 +647,95 @@ skewness_summary <- data.frame(
   stringsAsFactors = FALSE
 )
 
-skewness_summary
+print_html_table(
+  skewness_summary,
+  caption = "Moment skewness for three illustrative distributions."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Distribution | Moment_skewness |
-|:-------------|----------------:|
-| Symmetric    |          -0.019 |
-| Right-skewed |           2.680 |
-| Left-skewed  |          -2.476 |
+<caption>
 
-</div>
+Moment skewness for three illustrative distributions.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Distribution
+</th>
+
+<th style="text-align:right;">
+
+Moment skewness
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Symmetric
+</td>
+
+<td style="text-align:right;">
+
+-0.019
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Right-skewed
+</td>
+
+<td style="text-align:right;">
+
+2.680
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Left-skewed
+</td>
+
+<td style="text-align:right;">
+
+-2.476
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Different software packages use different small-sample corrections.
 Always state the estimator or package when exact values matter.
 
-## 11.1 Skewness is not a complete description
+## 10.1 Skewness is not a complete description
 
 A skewness value near zero can occur in a symmetric normal distribution,
 a symmetric bimodal distribution or a symmetric heavy-tailed
 distribution. Always inspect a plot.
 
-# 12. Kurtosis and Tail Weight
+# 11. Kurtosis and Tail Weight
 
 The fourth standardized moment is:
 
@@ -697,7 +774,7 @@ normal_tail <- rnorm(5000)
 heavy_tail <- rt(5000, df = 4)
 light_tail <- runif(5000, min = -sqrt(3), max = sqrt(3))
 
-data.frame(
+kurtosis_summary <- data.frame(
   Distribution = c("Normal", "Heavy-tailed t", "Uniform"),
   Excess_kurtosis = round(c(
     moment_excess_kurtosis(normal_tail),
@@ -706,17 +783,85 @@ data.frame(
   ), 3),
   stringsAsFactors = FALSE
 )
+
+print_html_table(
+  kurtosis_summary,
+  caption = "Excess kurtosis for normal, heavy-tailed and uniform samples."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Distribution   | Excess_kurtosis |
-|:---------------|----------------:|
-| Normal         |           0.008 |
-| Heavy-tailed t |          15.299 |
-| Uniform        |          -1.163 |
+<caption>
 
-</div>
+Excess kurtosis for normal, heavy-tailed and uniform samples.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Distribution
+</th>
+
+<th style="text-align:right;">
+
+Excess kurtosis
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Normal
+</td>
+
+<td style="text-align:right;">
+
+0.008
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Heavy-tailed t
+</td>
+
+<td style="text-align:right;">
+
+15.299
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Uniform
+</td>
+
+<td style="text-align:right;">
+
+-1.163
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 High kurtosis mainly indicates greater tail extremity and outlier
 propensity relative to a normal distribution. Describing kurtosis only
@@ -725,7 +870,7 @@ as “peakedness” is incomplete and can be misleading.
 Like skewness, kurtosis is unstable in small samples and can be
 dominated by a few observations.
 
-# 13. Modality and Mixtures
+# 12. Modality and Mixtures
 
 A mode is a peak in a distribution. Multiple peaks may arise from a
 mixture of groups.
@@ -784,7 +929,7 @@ subgroup has alone.
 Do not summarize an unexplained bimodal distribution with only one mean
 and SD. First ask what creates the subgroups.
 
-# 14. Heavy Tails Versus Individual Outliers
+# 13. Heavy Tails Versus Individual Outliers
 
 A heavy-tailed distribution naturally produces more extreme observations
 than a normal distribution. A point that appears unusual under a normal
@@ -806,17 +951,70 @@ extreme_counts <- data.frame(
   stringsAsFactors = FALSE
 )
 
-extreme_counts
+print_html_table(
+  extreme_counts,
+  caption = "Number of observations with an absolute z-score greater than 3."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Distribution   | Absolute_z_over_3 |
-|:---------------|------------------:|
-| Normal         |                 3 |
-| Heavy-tailed t |                19 |
+<caption>
 
-</div>
+Number of observations with an absolute z-score greater than 3.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Distribution
+</th>
+
+<th style="text-align:right;">
+
+Absolute z over 3
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Normal
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Heavy-tailed t
+</td>
+
+<td style="text-align:right;">
+
+19
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 boxplot(
@@ -842,7 +1040,7 @@ normal data.
 Outlier rules are always relative to a reference distribution, group or
 scientific expectation.
 
-# 15. Q–Q Plots
+# 14. Q–Q Plots
 
 A quantile–quantile plot compares sample quantiles with theoretical
 quantiles from a reference distribution, commonly the normal
@@ -897,7 +1095,7 @@ Interpret common patterns cautiously:
 
 A Q–Q plot does not require that every point sit perfectly on the line.
 
-# 16. Normality Tests
+# 15. Normality Tests
 
 The Shapiro–Wilk test evaluates the null hypothesis that data are
 normally distributed.
@@ -911,7 +1109,7 @@ skewed_test_data <- rlnorm(100, sdlog = 0.8)
 shapiro_normal <- shapiro.test(normal_test_data)
 shapiro_skewed <- shapiro.test(skewed_test_data)
 
-data.frame(
+shapiro_summary <- data.frame(
   Dataset = c("Simulated normal", "Simulated skewed"),
   W = round(c(unname(shapiro_normal$statistic),
               unname(shapiro_skewed$statistic)), 4),
@@ -919,18 +1117,89 @@ data.frame(
               shapiro_skewed$p.value),
   stringsAsFactors = FALSE
 )
+
+print_html_table(
+  shapiro_summary,
+  caption = "Shapiro-Wilk tests for simulated normal and skewed data.",
+  digits = 4
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Dataset          |      W |   P_value |
-|:-----------------|-------:|----------:|
-| Simulated normal | 0.9850 | 0.3199884 |
-| Simulated skewed | 0.7202 | 0.0000000 |
+<caption>
 
-</div>
+Shapiro-Wilk tests for simulated normal and skewed data.
+</caption>
 
-## 16.1 Why p-values are not enough
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Dataset
+</th>
+
+<th style="text-align:right;">
+
+W
+</th>
+
+<th style="text-align:right;">
+
+P value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Simulated normal
+</td>
+
+<td style="text-align:right;">
+
+0.9850
+</td>
+
+<td style="text-align:right;">
+
+0.32
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Simulated skewed
+</td>
+
+<td style="text-align:right;">
+
+0.7202
+</td>
+
+<td style="text-align:right;">
+
+0.00
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 15.1 Why p-values are not enough
 
 - In small samples, the test may miss important non-normality.
 - In large samples, it may detect tiny, scientifically unimportant
@@ -944,7 +1213,7 @@ data.frame(
 R’s `shapiro.test()` accepts 3 to 5,000 non-missing observations. Use
 plots, study design and model context together with any formal test.
 
-# 17. What Is an Outlier?
+# 16. What Is an Outlier?
 
 An **outlier** is an observation that is unusually distant from a
 reference pattern.
@@ -960,7 +1229,7 @@ expected in a study of a particular skeletal dysplasia. A
 sequencing-depth value may be acceptable for variant calling but
 inadequate for rare-variant detection.
 
-# 18. Types of Unusual Observations
+# 17. Types of Unusual Observations
 
 | Type | Example | Possible action |
 |----|----|----|
@@ -975,18 +1244,18 @@ inadequate for rare-variant detection.
 
 The correct response depends on cause, not merely numerical distance.
 
-# 19. Global, Group-Specific and Conditional Outliers
+# 18. Global, Group-Specific and Conditional Outliers
 
-## 19.1 Global outlier
+## 18.1 Global outlier
 
 A value is unusual relative to the entire dataset.
 
-## 19.2 Group-specific outlier
+## 18.2 Group-specific outlier
 
 A value may be ordinary globally but unusual within its biological
 group.
 
-## 19.3 Conditional outlier
+## 18.3 Conditional outlier
 
 A value may be unusual after accounting for another variable. A heart
 rate of 160 may be expected during intense exercise but unusual at rest.
@@ -1025,7 +1294,7 @@ A value may look ordinary globally but unusual within its own group.
 The value 8 is not extreme relative to all observations, but it is high
 relative to the low-dose group.
 
-# 20. The IQR Outlier Rule
+# 19. The IQR Outlier Rule
 
 A common descriptive rule flags values below:
 
@@ -1059,47 +1328,235 @@ iqr_outlier_flags <- function(x, multiplier = 1.5, na.rm = TRUE) {
 outlier_values <- c(10, 11, 11, 12, 12, 13, 13, 14, 35)
 iqr_result <- iqr_outlier_flags(outlier_values)
 
-data.frame(
+iqr_flag_table <- data.frame(
   Value = outlier_values,
   IQR_flag = iqr_result$flag
 )
-```
 
-<div class="kable-table">
-
-| Value | IQR_flag |
-|------:|:---------|
-|    10 | FALSE    |
-|    11 | FALSE    |
-|    11 | FALSE    |
-|    12 | FALSE    |
-|    12 | FALSE    |
-|    13 | FALSE    |
-|    13 | FALSE    |
-|    14 | FALSE    |
-|    35 | TRUE     |
-
-</div>
-
-``` r
-data.frame(
+iqr_fence_table <- data.frame(
   Lower_fence = iqr_result$lower_fence,
   Upper_fence = iqr_result$upper_fence
 )
+
+print_html_table(
+  iqr_flag_table,
+  caption = "Observations flagged by the 1.5-IQR rule."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Lower_fence | Upper_fence |
-|------------:|------------:|
-|           8 |          16 |
+<caption>
 
-</div>
+Observations flagged by the 1.5-IQR rule.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+<th style="text-align:left;">
+
+IQR flag
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+13
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+13
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+14
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+35
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+``` r
+print_html_table(
+  iqr_fence_table,
+  caption = "Lower and upper fences from the 1.5-IQR rule."
+)
+```
+
+<table class="chapter-table">
+
+<caption>
+
+Lower and upper fences from the 1.5-IQR rule.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Lower fence
+</th>
+
+<th style="text-align:right;">
+
+Upper fence
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+16
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The 1.5-IQR rule is a screening convention. It is not a biological law
 or formal proof of contamination.
 
-# 21. Z-Score Rule
+# 20. Z-Score Rule
 
 A z-score is:
 
@@ -1110,28 +1567,224 @@ A common rule flags $|z|>3$.
 ``` r
 z_values <- as.numeric(scale(outlier_values))
 
-data.frame(
+z_score_table <- data.frame(
   Value = outlier_values,
   Z_score = round(z_values, 3),
   Z_over_3 = abs(z_values) > 3
 )
+
+print_html_table(
+  z_score_table,
+  caption = "Ordinary z-scores and the absolute z-score screening rule."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Value | Z_score | Z_over_3 |
-|------:|--------:|:---------|
-|    10 |  -0.587 | FALSE    |
-|    11 |  -0.458 | FALSE    |
-|    11 |  -0.458 | FALSE    |
-|    12 |  -0.329 | FALSE    |
-|    12 |  -0.329 | FALSE    |
-|    13 |  -0.200 | FALSE    |
-|    13 |  -0.200 | FALSE    |
-|    14 |  -0.072 | FALSE    |
-|    35 |   2.633 | FALSE    |
+<caption>
 
-</div>
+Ordinary z-scores and the absolute z-score screening rule.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+<th style="text-align:right;">
+
+Z score
+</th>
+
+<th style="text-align:left;">
+
+Z over 3
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+-0.587
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:right;">
+
+-0.458
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:right;">
+
+-0.458
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+-0.329
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+-0.329
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+13
+</td>
+
+<td style="text-align:right;">
+
+-0.200
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+13
+</td>
+
+<td style="text-align:right;">
+
+-0.200
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+14
+</td>
+
+<td style="text-align:right;">
+
+-0.072
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+35
+</td>
+
+<td style="text-align:right;">
+
+2.633
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The mean and SD are themselves sensitive to outliers. An extreme value
 can pull the mean and inflate the SD, making its own z-score less
@@ -1141,7 +1794,7 @@ The $|z|>3$ rule is most interpretable for approximately normal data. It
 is inappropriate as a universal filter for skewed counts or bounded
 variables.
 
-# 22. Robust Z-Scores Using the MAD
+# 21. Robust Z-Scores Using the MAD
 
 A robust standardized score can use the median and raw MAD:
 
@@ -1167,29 +1820,275 @@ robust_z_score <- function(x, na.rm = TRUE) {
 ``` r
 robust_z <- robust_z_score(outlier_values)
 
-data.frame(
+robust_z_table <- data.frame(
   Value = outlier_values,
   Ordinary_z = round(z_values, 3),
   Robust_z = round(robust_z, 3),
   Absolute_robust_z_over_3_5 = abs(robust_z) > 3.5
 )
+
+print_html_table(
+  robust_z_table,
+  caption = "Comparison of ordinary and MAD-based robust z-scores."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Value | Ordinary_z | Robust_z | Absolute_robust_z_over_3_5 |
-|------:|-----------:|---------:|:---------------------------|
-|    10 |     -0.587 |   -1.349 | FALSE                      |
-|    11 |     -0.458 |   -0.674 | FALSE                      |
-|    11 |     -0.458 |   -0.674 | FALSE                      |
-|    12 |     -0.329 |    0.000 | FALSE                      |
-|    12 |     -0.329 |    0.000 | FALSE                      |
-|    13 |     -0.200 |    0.674 | FALSE                      |
-|    13 |     -0.200 |    0.674 | FALSE                      |
-|    14 |     -0.072 |    1.349 | FALSE                      |
-|    35 |      2.633 |   15.513 | TRUE                       |
+<caption>
 
-</div>
+Comparison of ordinary and MAD-based robust z-scores.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+<th style="text-align:right;">
+
+Ordinary z
+</th>
+
+<th style="text-align:right;">
+
+Robust z
+</th>
+
+<th style="text-align:left;">
+
+Absolute robust z over 3 5
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+-0.587
+</td>
+
+<td style="text-align:right;">
+
+-1.349
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:right;">
+
+-0.458
+</td>
+
+<td style="text-align:right;">
+
+-0.674
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:right;">
+
+-0.458
+</td>
+
+<td style="text-align:right;">
+
+-0.674
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+-0.329
+</td>
+
+<td style="text-align:right;">
+
+0.000
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+-0.329
+</td>
+
+<td style="text-align:right;">
+
+0.000
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+13
+</td>
+
+<td style="text-align:right;">
+
+-0.200
+</td>
+
+<td style="text-align:right;">
+
+0.674
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+13
+</td>
+
+<td style="text-align:right;">
+
+-0.200
+</td>
+
+<td style="text-align:right;">
+
+0.674
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+14
+</td>
+
+<td style="text-align:right;">
+
+-0.072
+</td>
+
+<td style="text-align:right;">
+
+1.349
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+35
+</td>
+
+<td style="text-align:right;">
+
+2.633
+</td>
+
+<td style="text-align:right;">
+
+15.513
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The commonly cited $|z^*|>3.5$ threshold is another screening rule, not
 an automatic exclusion rule.
@@ -1198,7 +2097,7 @@ If more than half the observations equal the same value, raw MAD may be
 zero. A different method or direct understanding of the discrete
 distribution is then needed.
 
-# 23. Comparing Detection Rules
+# 22. Comparing Detection Rules
 
 ``` r
 comparison_data <- c(8, 9, 10, 10, 10, 11, 11, 12, 18, 35)
@@ -1214,31 +2113,298 @@ detection_table <- data.frame(
   Robust_z_over_3_5 = abs(robust_z) > 3.5
 )
 
-detection_table
+print_html_table(
+  detection_table,
+  caption = "Comparison of three descriptive outlier-screening rules."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Value | IQR_flag | Z_over_3 | Robust_z_over_3_5 |
-|------:|:---------|:---------|:------------------|
-|     8 | FALSE    | FALSE    | FALSE             |
-|     9 | FALSE    | FALSE    | FALSE             |
-|    10 | FALSE    | FALSE    | FALSE             |
-|    10 | FALSE    | FALSE    | FALSE             |
-|    10 | FALSE    | FALSE    | FALSE             |
-|    11 | FALSE    | FALSE    | FALSE             |
-|    11 | FALSE    | FALSE    | FALSE             |
-|    12 | FALSE    | FALSE    | FALSE             |
-|    18 | TRUE     | FALSE    | TRUE              |
-|    35 | TRUE     | FALSE    | TRUE              |
+<caption>
 
-</div>
+Comparison of three descriptive outlier-screening rules.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+<th style="text-align:left;">
+
+IQR flag
+</th>
+
+<th style="text-align:left;">
+
+Z over 3
+</th>
+
+<th style="text-align:left;">
+
+Robust z over 3 5
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+18
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+35
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Different rules can flag different observations because they make
 different assumptions and use different centres and scales. Agreement
 does not prove an error; disagreement does not mean one rule failed.
 
-# 24. Masking and Swamping
+# 23. Masking and Swamping
 
 **Masking** occurs when multiple extreme observations influence the
 centre and spread enough that they fail to flag one another.
@@ -1251,36 +2417,251 @@ assumed model is wrong.
 core_values <- c(9, 10, 10, 10, 11, 11, 12)
 masked_values <- c(core_values, 30, 32, 34)
 
-data.frame(
+masking_table <- data.frame(
   Value = masked_values,
   Ordinary_z = round(as.numeric(scale(masked_values)), 2),
   Robust_z = round(robust_z_score(masked_values), 2)
 )
+
+print_html_table(
+  masking_table,
+  caption = "Ordinary and robust z-scores in a masking example.",
+  digits = 2
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Value | Ordinary_z | Robust_z |
-|------:|-----------:|---------:|
-|     9 |      -0.75 |    -1.35 |
-|    10 |      -0.66 |    -0.67 |
-|    10 |      -0.66 |    -0.67 |
-|    10 |      -0.66 |    -0.67 |
-|    11 |      -0.56 |     0.00 |
-|    11 |      -0.56 |     0.00 |
-|    12 |      -0.47 |     0.67 |
-|    30 |       1.25 |    12.82 |
-|    32 |       1.44 |    14.16 |
-|    34 |       1.63 |    15.51 |
+<caption>
 
-</div>
+Ordinary and robust z-scores in a masking example.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+<th style="text-align:right;">
+
+Ordinary z
+</th>
+
+<th style="text-align:right;">
+
+Robust z
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+-0.75
+</td>
+
+<td style="text-align:right;">
+
+-1.35
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+-0.66
+</td>
+
+<td style="text-align:right;">
+
+-0.67
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+-0.66
+</td>
+
+<td style="text-align:right;">
+
+-0.67
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+-0.66
+</td>
+
+<td style="text-align:right;">
+
+-0.67
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:right;">
+
+-0.56
+</td>
+
+<td style="text-align:right;">
+
+0.00
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:right;">
+
+-0.56
+</td>
+
+<td style="text-align:right;">
+
+0.00
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+-0.47
+</td>
+
+<td style="text-align:right;">
+
+0.67
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+30
+</td>
+
+<td style="text-align:right;">
+
+1.25
+</td>
+
+<td style="text-align:right;">
+
+12.82
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+32
+</td>
+
+<td style="text-align:right;">
+
+1.44
+</td>
+
+<td style="text-align:right;">
+
+14.16
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+34
+</td>
+
+<td style="text-align:right;">
+
+1.63
+</td>
+
+<td style="text-align:right;">
+
+15.51
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Sequentially deleting the most extreme value and recomputing rules can
 inflate false exclusions unless the procedure is formally defined.
 Investigation and robust modeling are safer than repeated ad hoc
 trimming.
 
-# 25. Outlier Versus Influential Observation
+# 24. Outlier Versus Influential Observation
 
 An outlier is unusual in an outcome or data space. An **influential
 observation** changes an estimate or model substantially when included.
@@ -1291,7 +2672,7 @@ An observation can be:
 - influential without being far from the main outcome distribution; or
 - both unusual and influential.
 
-## 25.1 Leave-one-out influence on a mean
+## 24.1 Leave-one-out influence on a mean
 
 ``` r
 influence_values <- c(9, 10, 10, 11, 12, 40)
@@ -1301,33 +2682,246 @@ leave_one_out_mean <- sapply(seq_along(influence_values), function(i) {
   mean(influence_values[-i])
 })
 
-data.frame(
+influence_table <- data.frame(
   Observation = seq_along(influence_values),
   Value = influence_values,
   Full_mean = full_mean,
   Mean_without_observation = round(leave_one_out_mean, 2),
   Absolute_change = round(abs(leave_one_out_mean - full_mean), 2)
 )
+
+print_html_table(
+  influence_table,
+  caption = "Leave-one-out influence of each observation on the arithmetic mean.",
+  digits = 2
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Observation | Value | Full_mean | Mean_without_observation | Absolute_change |
-|------------:|------:|----------:|-------------------------:|----------------:|
-|           1 |     9 |  15.33333 |                     16.6 |            1.27 |
-|           2 |    10 |  15.33333 |                     16.4 |            1.07 |
-|           3 |    10 |  15.33333 |                     16.4 |            1.07 |
-|           4 |    11 |  15.33333 |                     16.2 |            0.87 |
-|           5 |    12 |  15.33333 |                     16.0 |            0.67 |
-|           6 |    40 |  15.33333 |                     10.4 |            4.93 |
+<caption>
 
-</div>
+Leave-one-out influence of each observation on the arithmetic mean.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Observation
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+<th style="text-align:right;">
+
+Full mean
+</th>
+
+<th style="text-align:right;">
+
+Mean without observation
+</th>
+
+<th style="text-align:right;">
+
+Absolute change
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+15.33
+</td>
+
+<td style="text-align:right;">
+
+16.6
+</td>
+
+<td style="text-align:right;">
+
+1.27
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+15.33
+</td>
+
+<td style="text-align:right;">
+
+16.4
+</td>
+
+<td style="text-align:right;">
+
+1.07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+15.33
+</td>
+
+<td style="text-align:right;">
+
+16.4
+</td>
+
+<td style="text-align:right;">
+
+1.07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+<td style="text-align:right;">
+
+15.33
+</td>
+
+<td style="text-align:right;">
+
+16.2
+</td>
+
+<td style="text-align:right;">
+
+0.87
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+15.33
+</td>
+
+<td style="text-align:right;">
+
+16.0
+</td>
+
+<td style="text-align:right;">
+
+0.67
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+40
+</td>
+
+<td style="text-align:right;">
+
+15.33
+</td>
+
+<td style="text-align:right;">
+
+10.4
+</td>
+
+<td style="text-align:right;">
+
+4.93
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The value 40 has much greater influence on the mean than the other
 observations. Regression influence diagnostics such as leverage,
 standardized residuals and Cook’s distance will be covered later.
 
-# 26. Multivariate Outliers
+# 25. Multivariate Outliers
 
 A sample may look ordinary on every single variable but unusual in
 combination.
@@ -1374,7 +2968,7 @@ scale and dimension. Ordinary Euclidean distance can be misleading when
 variables are correlated or have different units. Mahalanobis distance
 and robust multivariate methods will be introduced later.
 
-# 27. Transformations and Distribution Shape
+# 26. Transformations and Distribution Shape
 
 Transformations can:
 
@@ -1386,7 +2980,7 @@ Transformations can:
 
 They do not correct incorrect values or poor study design.
 
-## 27.1 Log transformation
+## 26.1 Log transformation
 
 ``` r
 set.seed(1201)
@@ -1422,7 +3016,7 @@ Log transformations require positive values. `log1p(x)` calculates
 $\log(1+x)$ and is numerically stable near zero, but adding 1 changes
 the scale and may be inappropriate for arbitrary units.
 
-## 27.2 Square-root transformation
+## 26.2 Square-root transformation
 
 A square-root transformation can be useful for non-negative counts or
 variance patterns, especially at modest counts.
@@ -1430,7 +3024,7 @@ variance patterns, especially at modest counts.
 ``` r
 count_values <- rpois(100, lambda = 9)
 
-data.frame(
+square_root_summary <- data.frame(
   Scale = c("Original counts", "Square-root counts"),
   Skewness = round(c(
     moment_skewness(count_values),
@@ -1438,24 +3032,79 @@ data.frame(
   ), 3),
   stringsAsFactors = FALSE
 )
+
+print_html_table(
+  square_root_summary,
+  caption = "Skewness before and after a square-root transformation."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Scale              | Skewness |
-|:-------------------|---------:|
-| Original counts    |    0.443 |
-| Square-root counts |    0.112 |
+<caption>
 
-</div>
+Skewness before and after a square-root transformation.
+</caption>
 
-## 27.3 Rank transformation
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Scale
+</th>
+
+<th style="text-align:right;">
+
+Skewness
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Original counts
+</td>
+
+<td style="text-align:right;">
+
+0.443
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Square-root counts
+</td>
+
+<td style="text-align:right;">
+
+0.112
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 26.3 Rank transformation
 
 Ranks retain order but discard original distances. They may be useful in
 some nonparametric analyses but change the estimand and biological
 interpretation.
 
-## 27.4 Box–Cox and Yeo–Johnson families
+## 26.4 Box–Cox and Yeo–Johnson families
 
 Box–Cox transformations select from a family of powers for positive
 data. Yeo–Johnson transformations can accommodate zero and negative
@@ -1463,7 +3112,7 @@ values. These are more advanced tools; transformation choice should be
 made within a complete modeling strategy, not as an automatic normality
 repair.
 
-# 28. Transforming Outliers Does Not Decide Their Validity
+# 27. Transforming Outliers Does Not Decide Their Validity
 
 A log transformation can visually compress a large valid observation. It
 can also compress a data-entry error. The transformed plot does not
@@ -1479,7 +3128,7 @@ Always investigate:
 - raw data or source record; and
 - biological context.
 
-# 29. Outliers in Genome-Wide Association Study QC
+# 28. Outliers in Genome-Wide Association Study QC
 
 Sample-level GWAS QC commonly examines:
 
@@ -1490,7 +3139,7 @@ Sample-level GWAS QC commonly examines:
 - ancestry principal components; and
 - batch or array effects.
 
-## 29.1 Heterozygosity outliers
+## 28.1 Heterozygosity outliers
 
 Extreme heterozygosity may reflect contamination, inbreeding, technical
 problems or true population structure. Detection should usually account
@@ -1538,7 +3187,7 @@ A universal $\pm 3$ SD threshold is not sufficient for every cohort.
 Population structure can broaden or split the distribution, and robust
 or ancestry-stratified approaches may be needed.
 
-## 29.2 Principal-component ancestry context
+## 28.2 Principal-component ancestry context
 
 A sample separated on genetic principal components may be a valid person
 from a different ancestry, not a poor-quality genotype. Whether to
@@ -1593,7 +3242,7 @@ erroneous samples.
 
 </div>
 
-# 30. Outliers in RNA-seq and Other Omics Data
+# 29. Outliers in RNA-seq and Other Omics Data
 
 Useful sample-level checks include:
 
@@ -1619,7 +3268,7 @@ A PCA-separated RNA-seq sample may reflect:
 
 No single QC metric should be interpreted without the others.
 
-# 31. An Outlier Investigation Workflow
+# 30. An Outlier Investigation Workflow
 
 For each flagged observation:
 
@@ -1644,7 +3293,7 @@ For each flagged observation:
 10. **Document everything.** Preserve original value, flag, evidence,
     decision and responsible reviewer.
 
-# 32. What Should We Do With an Outlier?
+# 31. What Should We Do With an Outlier?
 
 | Finding | Defensible response |
 |----|----|
@@ -1656,7 +3305,7 @@ For each flagged observation:
 | Uncertain cause | Retain in primary analysis when appropriate and perform sensitivity analysis |
 | Strong influence on result | Report influence and compare justified analyses |
 
-## 32.1 Practices to avoid
+## 31.1 Practices to avoid
 
 - deleting values only because they reduce statistical significance;
 - selecting a threshold after viewing the desired result;
@@ -1665,7 +3314,7 @@ For each flagged observation:
 - running repeated exclusion until assumptions pass; and
 - reporting only the analysis that supports the hypothesis.
 
-# 33. Sensitivity Analysis
+# 32. Sensitivity Analysis
 
 A **sensitivity analysis** evaluates whether a conclusion changes under
 reasonable alternative decisions.
@@ -1690,25 +3339,104 @@ sensitivity_summary <- data.frame(
   stringsAsFactors = FALSE
 )
 
-sensitivity_summary
+print_html_table(
+  sensitivity_summary,
+  caption = "Sensitivity of the estimated centre to alternative summaries."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Analysis                           | Estimate |
-|:-----------------------------------|---------:|
-| All observations                   |    13.32 |
-| Exclude IQR-flagged observation    |    10.23 |
-| All observations: median           |    10.40 |
-| All observations: 10% trimmed mean |    13.32 |
+<caption>
 
-</div>
+Sensitivity of the estimated centre to alternative summaries.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Analysis
+</th>
+
+<th style="text-align:right;">
+
+Estimate
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+All observations
+</td>
+
+<td style="text-align:right;">
+
+13.32
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Exclude IQR-flagged observation
+</td>
+
+<td style="text-align:right;">
+
+10.23
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+All observations: median
+</td>
+
+<td style="text-align:right;">
+
+10.40
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+All observations: 10% trimmed mean
+</td>
+
+<td style="text-align:right;">
+
+13.32
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The excluded analysis is not automatically better. Its scientific
 legitimacy depends on why the observation was excluded. A sensitivity
 table makes the dependence of conclusions transparent.
 
-# 34. Winsorization and Trimming
+# 33. Winsorization and Trimming
 
 **Trimming** removes a prespecified fraction from both tails before
 estimating a centre.
@@ -1735,30 +3463,164 @@ winsorized_sensitivity <- winsorize_values(
   proportion = 0.10
 )
 
-data.frame(
+winsorization_table <- data.frame(
   Original = sensitivity_values,
   Winsorized = round(winsorized_sensitivity, 2)
 )
+
+print_html_table(
+  winsorization_table,
+  caption = "Original and 10%-Winsorized values.",
+  digits = 2
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Original | Winsorized |
-|---------:|-----------:|
-|      9.2 |       9.62 |
-|      9.8 |       9.80 |
-|     10.1 |      10.10 |
-|     10.3 |      10.30 |
-|     10.5 |      10.50 |
-|     10.7 |      10.70 |
-|     11.0 |      11.00 |
-|     35.0 |      18.20 |
+<caption>
 
-</div>
+Original and 10%-Winsorized values.
+</caption>
 
-# 35. Integrated Case Study: Multi-Metric Sequencing QC
+<thead>
 
-## 35.1 Scientific setting
+<tr>
+
+<th style="text-align:right;">
+
+Original
+</th>
+
+<th style="text-align:right;">
+
+Winsorized
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+9.2
+</td>
+
+<td style="text-align:right;">
+
+9.62
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+9.8
+</td>
+
+<td style="text-align:right;">
+
+9.80
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10.1
+</td>
+
+<td style="text-align:right;">
+
+10.10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10.3
+</td>
+
+<td style="text-align:right;">
+
+10.30
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10.5
+</td>
+
+<td style="text-align:right;">
+
+10.50
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10.7
+</td>
+
+<td style="text-align:right;">
+
+10.70
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11.0
+</td>
+
+<td style="text-align:right;">
+
+11.00
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+35.0
+</td>
+
+<td style="text-align:right;">
+
+18.20
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+# 34. Integrated Case Study: Multi-Metric Sequencing QC
+
+## 34.1 Scientific setting
 
 We simulate 180 germline sequencing samples with read depth, mapping
 rate and heterozygosity. Four unusual observations are inserted
@@ -1791,23 +3653,268 @@ qc_data$Mapping_percent[142] <- 45
 qc_data$Heterozygosity[88] <- 0.31
 qc_data$Read_depth_millions[175] <- 145
 
-head(qc_data)
+print_html_table(
+  head(qc_data),
+  caption = "First six samples in the simulated sequencing-QC dataset."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Sample_ID | Disease_group | Batch | Read_depth_millions | Mapping_percent | Heterozygosity |
-|:---|:---|:---|---:|---:|---:|
-| SEQ001 | Case | Batch_4 | 46.69759 | 94.53943 | 0.2411351 |
-| SEQ002 | Control | Batch_4 | 28.38414 | 98.01250 | 0.2392436 |
-| SEQ003 | Case | Batch_1 | 34.85615 | 94.10864 | 0.2442599 |
-| SEQ004 | Case | Batch_4 | 34.25374 | 96.09065 | 0.2336727 |
-| SEQ005 | Control | Batch_2 | 28.00460 | 97.09502 | 0.2285451 |
-| SEQ006 | Case | Batch_4 | 58.99614 | 94.50617 | 0.2446395 |
+<caption>
 
-</div>
+First six samples in the simulated sequencing-QC dataset.
+</caption>
 
-## 35.2 Examine each distribution
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Sample ID
+</th>
+
+<th style="text-align:left;">
+
+Disease group
+</th>
+
+<th style="text-align:left;">
+
+Batch
+</th>
+
+<th style="text-align:right;">
+
+Read depth millions
+</th>
+
+<th style="text-align:right;">
+
+Mapping percent
+</th>
+
+<th style="text-align:right;">
+
+Heterozygosity
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ001
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_4
+</td>
+
+<td style="text-align:right;">
+
+46.698
+</td>
+
+<td style="text-align:right;">
+
+94.539
+</td>
+
+<td style="text-align:right;">
+
+0.241
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ002
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_4
+</td>
+
+<td style="text-align:right;">
+
+28.384
+</td>
+
+<td style="text-align:right;">
+
+98.013
+</td>
+
+<td style="text-align:right;">
+
+0.239
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ003
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+34.856
+</td>
+
+<td style="text-align:right;">
+
+94.109
+</td>
+
+<td style="text-align:right;">
+
+0.244
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ004
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_4
+</td>
+
+<td style="text-align:right;">
+
+34.254
+</td>
+
+<td style="text-align:right;">
+
+96.091
+</td>
+
+<td style="text-align:right;">
+
+0.234
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ005
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+28.005
+</td>
+
+<td style="text-align:right;">
+
+97.095
+</td>
+
+<td style="text-align:right;">
+
+0.229
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ006
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_4
+</td>
+
+<td style="text-align:right;">
+
+58.996
+</td>
+
+<td style="text-align:right;">
+
+94.506
+</td>
+
+<td style="text-align:right;">
+
+0.245
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 34.2 Examine each distribution
 
 ``` r
 par(mfrow = c(1, 3), mar = c(4, 4, 3, 1))
@@ -1839,7 +3946,7 @@ Each sequencing QC metric has a different scale and shape.
 par(mfrow = c(1, 1))
 ```
 
-## 35.3 Create an auditable flag table
+## 34.3 Create an auditable flag table
 
 ``` r
 depth_flag <- iqr_outlier_flags(qc_data$Read_depth_millions)$flag
@@ -1868,30 +3975,525 @@ flagged_samples$Heterozygosity <- round(
   flagged_samples$Heterozygosity, 4
 )
 
-flagged_samples
+print_html_table(
+  flagged_samples,
+  caption = "Samples flagged by at least one 1.5-IQR screening rule.",
+  digits = 4
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-|  | Sample_ID | Disease_group | Batch | Read_depth_millions | Mapping_percent | Heterozygosity | Depth_IQR_flag | Mapping_IQR_flag | Heterozygosity_IQR_flag |
-|:---|:---|:---|:---|---:|---:|---:|:---|:---|:---|
-| 37 | SEQ037 | Case | Batch_3 | 2.50 | 96.52 | 0.2300 | TRUE | FALSE | FALSE |
-| 60 | SEQ060 | Case | Batch_4 | 65.21 | 97.80 | 0.2400 | TRUE | FALSE | FALSE |
-| 61 | SEQ061 | Control | Batch_1 | 66.95 | 95.35 | 0.2423 | TRUE | FALSE | FALSE |
-| 88 | SEQ088 | Case | Batch_3 | 52.21 | 96.64 | 0.3100 | FALSE | FALSE | TRUE |
-| 122 | SEQ122 | Control | Batch_4 | 66.88 | 97.45 | 0.2394 | TRUE | FALSE | FALSE |
-| 126 | SEQ126 | Control | Batch_3 | 64.67 | 97.52 | 0.2337 | TRUE | FALSE | FALSE |
-| 142 | SEQ142 | Control | Batch_3 | 31.07 | 45.00 | 0.2496 | FALSE | TRUE | FALSE |
-| 164 | SEQ164 | Case | Batch_3 | 67.77 | 94.37 | 0.2316 | TRUE | FALSE | FALSE |
-| 175 | SEQ175 | Case | Batch_2 | 145.00 | 95.38 | 0.2247 | TRUE | FALSE | FALSE |
+<caption>
 
-</div>
+Samples flagged by at least one 1.5-IQR screening rule.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Sample ID
+</th>
+
+<th style="text-align:left;">
+
+Disease group
+</th>
+
+<th style="text-align:left;">
+
+Batch
+</th>
+
+<th style="text-align:right;">
+
+Read depth millions
+</th>
+
+<th style="text-align:right;">
+
+Mapping percent
+</th>
+
+<th style="text-align:right;">
+
+Heterozygosity
+</th>
+
+<th style="text-align:left;">
+
+Depth IQR flag
+</th>
+
+<th style="text-align:left;">
+
+Mapping IQR flag
+</th>
+
+<th style="text-align:left;">
+
+Heterozygosity IQR flag
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ037
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_3
+</td>
+
+<td style="text-align:right;">
+
+2.50
+</td>
+
+<td style="text-align:right;">
+
+96.52
+</td>
+
+<td style="text-align:right;">
+
+0.2300
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ060
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_4
+</td>
+
+<td style="text-align:right;">
+
+65.21
+</td>
+
+<td style="text-align:right;">
+
+97.80
+</td>
+
+<td style="text-align:right;">
+
+0.2400
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ061
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_1
+</td>
+
+<td style="text-align:right;">
+
+66.95
+</td>
+
+<td style="text-align:right;">
+
+95.35
+</td>
+
+<td style="text-align:right;">
+
+0.2423
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ088
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_3
+</td>
+
+<td style="text-align:right;">
+
+52.21
+</td>
+
+<td style="text-align:right;">
+
+96.64
+</td>
+
+<td style="text-align:right;">
+
+0.3100
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ122
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_4
+</td>
+
+<td style="text-align:right;">
+
+66.88
+</td>
+
+<td style="text-align:right;">
+
+97.45
+</td>
+
+<td style="text-align:right;">
+
+0.2394
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ126
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_3
+</td>
+
+<td style="text-align:right;">
+
+64.67
+</td>
+
+<td style="text-align:right;">
+
+97.52
+</td>
+
+<td style="text-align:right;">
+
+0.2337
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ142
+</td>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:left;">
+
+Batch_3
+</td>
+
+<td style="text-align:right;">
+
+31.07
+</td>
+
+<td style="text-align:right;">
+
+45.00
+</td>
+
+<td style="text-align:right;">
+
+0.2496
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ164
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_3
+</td>
+
+<td style="text-align:right;">
+
+67.77
+</td>
+
+<td style="text-align:right;">
+
+94.37
+</td>
+
+<td style="text-align:right;">
+
+0.2316
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ175
+</td>
+
+<td style="text-align:left;">
+
+Case
+</td>
+
+<td style="text-align:left;">
+
+Batch_2
+</td>
+
+<td style="text-align:right;">
+
+145.00
+</td>
+
+<td style="text-align:right;">
+
+95.38
+</td>
+
+<td style="text-align:right;">
+
+0.2247
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Random simulation may flag additional ordinary tail observations. That
 illustrates an important fact: a rule has false positives and does not
 know which values were deliberately inserted.
 
-## 35.4 Compare IQR and robust z-score flags
+## 34.4 Compare IQR and robust z-score flags
 
 ``` r
 qc_data$Depth_robust_z <- robust_z_score(qc_data$Read_depth_millions)
@@ -1911,20 +4513,106 @@ method_summary <- data.frame(
   stringsAsFactors = FALSE
 )
 
-method_summary
+print_html_table(
+  method_summary,
+  caption = "Numbers flagged by IQR and robust z-score rules."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Metric          | IQR_flags | Robust_z_flags |
-|:----------------|----------:|---------------:|
-| Read depth      |         7 |              2 |
-| Mapping percent |         1 |              1 |
-| Heterozygosity  |         1 |              1 |
+<caption>
 
-</div>
+Numbers flagged by IQR and robust z-score rules.
+</caption>
 
-## 35.5 Add investigation decisions without changing raw data
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Metric
+</th>
+
+<th style="text-align:right;">
+
+IQR flags
+</th>
+
+<th style="text-align:right;">
+
+Robust z flags
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Read depth
+</td>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mapping percent
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Heterozygosity
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 34.5 Add investigation decisions without changing raw data
 
 ``` r
 investigation_log <- data.frame(
@@ -1943,31 +4631,160 @@ investigation_log <- data.frame(
   stringsAsFactors = FALSE
 )
 
-investigation_log
+print_html_table(
+  investigation_log,
+  caption = "Investigation log for deliberately inserted unusual samples."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Sample_ID | Issue | Evidence_to_check | Decision |
-|:---|:---|:---|:---|
-| SEQ037 | Very low read depth | Library yield, sequencing run and target coverage | Pending |
-| SEQ088 | High heterozygosity | Contamination, ancestry, inbreeding metric and sample identity | Pending |
-| SEQ142 | Very low mapping percentage | Read quality, reference build, contamination and sample type | Pending |
-| SEQ175 | High read depth | Duplicate sequencing, design intent and library metadata | Pending |
+<caption>
 
-</div>
+Investigation log for deliberately inserted unusual samples.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Sample ID
+</th>
+
+<th style="text-align:left;">
+
+Issue
+</th>
+
+<th style="text-align:left;">
+
+Evidence to check
+</th>
+
+<th style="text-align:left;">
+
+Decision
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ037
+</td>
+
+<td style="text-align:left;">
+
+Very low read depth
+</td>
+
+<td style="text-align:left;">
+
+Library yield, sequencing run and target coverage
+</td>
+
+<td style="text-align:left;">
+
+Pending
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ088
+</td>
+
+<td style="text-align:left;">
+
+High heterozygosity
+</td>
+
+<td style="text-align:left;">
+
+Contamination, ancestry, inbreeding metric and sample identity
+</td>
+
+<td style="text-align:left;">
+
+Pending
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ142
+</td>
+
+<td style="text-align:left;">
+
+Very low mapping percentage
+</td>
+
+<td style="text-align:left;">
+
+Read quality, reference build, contamination and sample type
+</td>
+
+<td style="text-align:left;">
+
+Pending
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SEQ175
+</td>
+
+<td style="text-align:left;">
+
+High read depth
+</td>
+
+<td style="text-align:left;">
+
+Duplicate sequencing, design intent and library metadata
+</td>
+
+<td style="text-align:left;">
+
+Pending
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The log separates statistical flagging from scientific decision-making.
 A final analysis should update `Decision` with evidence and preserve the
 reason.
 
-## 35.6 Sensitivity analysis for mean read depth
+## 34.6 Sensitivity analysis for mean read depth
 
 ``` r
 all_depth <- qc_data$Read_depth_millions
 depth_without_iqr_flags <- all_depth[!depth_flag]
 
-data.frame(
+depth_sensitivity_table <- data.frame(
   Analysis = c("Mean: all samples",
                "Median: all samples",
                "Mean: excluding IQR-flagged depth values",
@@ -1980,23 +4797,105 @@ data.frame(
   ), 2),
   stringsAsFactors = FALSE
 )
+
+print_html_table(
+  depth_sensitivity_table,
+  caption = "Sensitivity of read-depth summaries to IQR-flagged observations.",
+  digits = 2
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Analysis                                 | Read_depth_millions |
-|:-----------------------------------------|--------------------:|
-| Mean: all samples                        |               42.99 |
-| Median: all samples                      |               41.40 |
-| Mean: excluding IQR-flagged depth values |               41.96 |
-| 10% trimmed mean: all samples            |               42.11 |
+<caption>
 
-</div>
+Sensitivity of read-depth summaries to IQR-flagged observations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Analysis
+</th>
+
+<th style="text-align:right;">
+
+Read depth millions
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean: all samples
+</td>
+
+<td style="text-align:right;">
+
+42.99
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Median: all samples
+</td>
+
+<td style="text-align:right;">
+
+41.40
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean: excluding IQR-flagged depth values
+</td>
+
+<td style="text-align:right;">
+
+41.96
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+10% trimmed mean: all samples
+</td>
+
+<td style="text-align:right;">
+
+42.11
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 This table shows sensitivity of a summary, but exclusion still requires
 a QC justification.
 
-# 36. A Reusable Shape Summary Function
+# 35. A Reusable Shape Summary Function
 
 ``` r
 shape_summary <- function(x, na.rm = TRUE) {
@@ -2036,23 +4935,209 @@ numeric_columns <- c("Mean", "Median", "SD", "IQR",
                      "Skewness", "Excess_kurtosis")
 qc_shape[numeric_columns] <- round(qc_shape[numeric_columns], 3)
 
-qc_shape
+print_html_table(
+  qc_shape,
+  caption = "Numerical shape summaries for three sequencing-QC metrics."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Metric          |   N |   Mean | Median |     SD |    IQR | Skewness | Excess_kurtosis |
-|:----------------|----:|-------:|-------:|-------:|-------:|---------:|----------------:|
-| Read depth      | 180 | 42.988 | 41.399 | 12.293 | 11.461 |    3.177 |          25.244 |
-| Mapping percent | 180 | 95.645 | 95.873 |  3.946 |  1.487 |  -11.820 |         149.402 |
-| Heterozygosity  | 180 |  0.236 |  0.236 |  0.010 |  0.011 |    2.237 |          16.661 |
+<caption>
 
-</div>
+Numerical shape summaries for three sequencing-QC metrics.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Metric
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+Median
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+<th style="text-align:right;">
+
+IQR
+</th>
+
+<th style="text-align:right;">
+
+Skewness
+</th>
+
+<th style="text-align:right;">
+
+Excess kurtosis
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Read depth
+</td>
+
+<td style="text-align:right;">
+
+180
+</td>
+
+<td style="text-align:right;">
+
+42.988
+</td>
+
+<td style="text-align:right;">
+
+41.399
+</td>
+
+<td style="text-align:right;">
+
+12.293
+</td>
+
+<td style="text-align:right;">
+
+11.461
+</td>
+
+<td style="text-align:right;">
+
+3.177
+</td>
+
+<td style="text-align:right;">
+
+25.244
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mapping percent
+</td>
+
+<td style="text-align:right;">
+
+180
+</td>
+
+<td style="text-align:right;">
+
+95.645
+</td>
+
+<td style="text-align:right;">
+
+95.873
+</td>
+
+<td style="text-align:right;">
+
+3.946
+</td>
+
+<td style="text-align:right;">
+
+1.487
+</td>
+
+<td style="text-align:right;">
+
+-11.820
+</td>
+
+<td style="text-align:right;">
+
+149.402
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Heterozygosity
+</td>
+
+<td style="text-align:right;">
+
+180
+</td>
+
+<td style="text-align:right;">
+
+0.236
+</td>
+
+<td style="text-align:right;">
+
+0.236
+</td>
+
+<td style="text-align:right;">
+
+0.010
+</td>
+
+<td style="text-align:right;">
+
+0.011
+</td>
+
+<td style="text-align:right;">
+
+2.237
+</td>
+
+<td style="text-align:right;">
+
+16.661
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 This numerical table supplements, but does not replace, the plots and
 audit trail.
 
-# 37. Reproducible Outlier Reporting
+# 36. Reproducible Outlier Reporting
 
 A reproducible outlier report should include:
 
@@ -2074,7 +5159,7 @@ A reproducible outlier report should include:
 Never overwrite raw values. Store corrections in a new version or new
 variable with provenance.
 
-# 38. Common Mistakes
+# 37. Common Mistakes
 
 ## Mistake 1: Defining normality by histogram appearance alone
 
@@ -2118,7 +5203,7 @@ This creates researcher degrees of freedom and biased evidence.
 
 Document exclusion counts, reasons and sensitivity results.
 
-# 39. Practical Shape-and-Outlier Checklist
+# 38. Practical Shape-and-Outlier Checklist
 
 Before analysis, ask:
 
@@ -2137,7 +5222,7 @@ Before analysis, ask:
 - Are results robust to defensible alternatives?
 - Is every decision documented without altering raw data?
 
-# 40. Chapter Summary
+# 39. Chapter Summary
 
 - Distribution shape includes symmetry, modality, tails, boundaries,
   gaps and unusual observations.
@@ -2168,7 +5253,7 @@ Before analysis, ask:
 - Exclusion decisions require evidence, documentation and sensitivity
   analysis.
 
-# 41. Check Your Understanding
+# 40. Knowledge Check
 
 1.  Why is a symmetric distribution not necessarily normal?
 2.  What can create a bimodal biological distribution?
@@ -2189,7 +5274,7 @@ Before analysis, ask:
 16. What evidence should be checked before excluding an RNA-seq sample?
 17. Why does a sensitivity analysis not automatically justify exclusion?
 
-# 42. R Exercises
+# 41. R Exercises
 
 ## Exercise 1: Distribution gallery
 
@@ -2241,7 +5326,7 @@ square-root scales using histograms and skewness.
 Create a table containing sample ID, metric, flagging rule, raw value,
 evidence checked, classification, decision and reason.
 
-# 43. Mini-Project: Outlier Assessment in Multi-Omics QC
+# 42. Mini-Project: Outlier Assessment in Multi-Omics QC
 
 Create or simulate a dataset containing at least 200 samples with:
 
@@ -2257,7 +5342,7 @@ Create or simulate a dataset containing at least 200 samples with:
 - several missing values, technical failures and valid biological
   extremes.
 
-Your report should:
+Our report should:
 
 1.  define every analysis and biological unit;
 2.  classify each variable as continuous, discrete, bounded or censored;
@@ -2273,7 +5358,7 @@ Your report should:
 11. perform and report sensitivity analyses; and
 12. provide a transparent final inclusion/exclusion table.
 
-# 44. Glossary
+# 43. Glossary
 
 | Term | Plain-language definition |
 |----|----|
@@ -2304,7 +5389,7 @@ Your report should:
 | Winsorization | Replacement of tail values with selected boundary values |
 | Audit trail | Documented record of data checks, changes and decisions |
 
-# 45. References
+# 44. References
 
 1.  Tukey, J. W. (1977). *Exploratory Data Analysis*. Addison-Wesley.
 
@@ -2350,7 +5435,7 @@ Your report should:
 
 ------------------------------------------------------------------------
 
-# 46. Reproducibility Information
+# 45. Reproducibility Information
 
 ``` r
 sessionInfo()
