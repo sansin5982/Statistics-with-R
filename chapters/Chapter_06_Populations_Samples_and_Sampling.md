@@ -16,7 +16,7 @@ Chapter 6: Populations, Samples and Sampling
 ================
 Sandeep Singh
 
-- [1. Introductio](#1-introductio)
+- [1. Introduction](#1-introduction)
 - [2. The Population-to-Sample
   Pathway](#2-the-population-to-sample-pathway)
   - [2.1 Eligibility criteria](#21-eligibility-criteria)
@@ -155,7 +155,7 @@ table.chapter-table td {
 }
 </style>
 
-# 1. Introductio
+# 1. Introduction
 
 Biologists rarely measure every individual, organism, tissue, cell or
 sequence that interests them. Instead, they study a **sample** and use
