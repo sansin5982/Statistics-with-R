@@ -17,78 +17,77 @@ Chapter 9: Measures of Dispersion
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. Same Centre, Different Spread](#3-same-centre-different-spread)
-- [4. Absolute and Relative Measures of
-  Dispersion](#4-absolute-and-relative-measures-of-dispersion)
-- [5. The Range](#5-the-range)
-  - [5.1 Advantages and limitations](#51-advantages-and-limitations)
-- [6. Quantiles and Percentiles](#6-quantiles-and-percentiles)
-- [7. The Interquartile Range](#7-the-interquartile-range)
-  - [7.1 Reporting median and IQR](#71-reporting-median-and-iqr)
-- [8. The Five-Number Summary](#8-the-five-number-summary)
-- [9. Boxplots and the IQR Rule](#9-boxplots-and-the-iqr-rule)
-- [10. Deviations From the Mean](#10-deviations-from-the-mean)
-- [11. Population Variance](#11-population-variance)
-- [12. Sample Variance](#12-sample-variance)
-- [13. Why Does Sample Variance Divide by n -
-  1?](#13-why-does-sample-variance-divide-by-n---1)
-- [14. Standard Deviation](#14-standard-deviation)
-- [15. The Empirical Rule for Normal-Like
-  Data](#15-the-empirical-rule-for-normal-like-data)
-- [16. Mean Plus or Minus Standard Deviation Is Not Automatically a
+- [2. Same Centre, Different Spread](#2-same-centre-different-spread)
+- [3. Absolute and Relative Measures of
+  Dispersion](#3-absolute-and-relative-measures-of-dispersion)
+- [4. The Range](#4-the-range)
+  - [4.1 Advantages and limitations](#41-advantages-and-limitations)
+- [5. Quantiles and Percentiles](#5-quantiles-and-percentiles)
+- [6. The Interquartile Range](#6-the-interquartile-range)
+  - [6.1 Reporting median and IQR](#61-reporting-median-and-iqr)
+- [7. The Five-Number Summary](#7-the-five-number-summary)
+- [8. Boxplots and the IQR Rule](#8-boxplots-and-the-iqr-rule)
+- [9. Deviations From the Mean](#9-deviations-from-the-mean)
+- [10. Population Variance](#10-population-variance)
+- [11. Sample Variance](#11-sample-variance)
+- [12. Why Does Sample Variance Divide by n -
+  1?](#12-why-does-sample-variance-divide-by-n---1)
+- [13. Standard Deviation](#13-standard-deviation)
+- [14. The Empirical Rule for Normal-Like
+  Data](#14-the-empirical-rule-for-normal-like-data)
+- [15. Mean Plus or Minus Standard Deviation Is Not Automatically a
   Reference
-  Interval](#16-mean-plus-or-minus-standard-deviation-is-not-automatically-a-reference-interval)
-- [17. Variance and Standard Deviation Under Unit
-  Changes](#17-variance-and-standard-deviation-under-unit-changes)
-- [18. Mean Absolute Deviation and Median Absolute
-  Deviation](#18-mean-absolute-deviation-and-median-absolute-deviation)
-- [19. Robust Versus Non-Robust
-  Dispersion](#19-robust-versus-non-robust-dispersion)
-- [20. Coefficient of Variation](#20-coefficient-of-variation)
-  - [20.1 Comparing assay precision](#201-comparing-assay-precision)
-  - [20.2 When CV is inappropriate](#202-when-cv-is-inappropriate)
-- [21. Geometric Standard Deviation](#21-geometric-standard-deviation)
-- [22. Standard Deviation Versus Standard
-  Error](#22-standard-deviation-versus-standard-error)
-- [23. Z-Scores and Standardization](#23-z-scores-and-standardization)
-- [24. Homoscedasticity and
-  Heteroscedasticity](#24-homoscedasticity-and-heteroscedasticity)
-  - [24.1 Homoscedasticity](#241-homoscedasticity)
-  - [24.2 Heteroscedasticity](#242-heteroscedasticity)
-  - [24.3 Group-specific variances](#243-group-specific-variances)
-- [25. Why Heteroscedasticity
-  Matters](#25-why-heteroscedasticity-matters)
-  - [25.1 Visual assessment before formal
-    testing](#251-visual-assessment-before-formal-testing)
-- [26. Transformations and
-  Dispersion](#26-transformations-and-dispersion)
-- [27. Mean–Variance Relationships in Count
-  Data](#27-meanvariance-relationships-in-count-data)
-  - [27.1 Simulated Poisson counts](#271-simulated-poisson-counts)
-  - [27.2 Simulated overdispersed
-    counts](#272-simulated-overdispersed-counts)
-- [28. Biological and Technical
-  Variation](#28-biological-and-technical-variation)
-- [29. Within-Subject and Between-Subject
-  Variability](#29-within-subject-and-between-subject-variability)
-- [30. Pooled Variance: An
-  Introduction](#30-pooled-variance-an-introduction)
-- [31. Combining Variability Across
-  Groups](#31-combining-variability-across-groups)
-- [32. Missing Values and Dispersion](#32-missing-values-and-dispersion)
-- [33. A Reusable Dispersion
-  Function](#33-a-reusable-dispersion-function)
-- [34. Integrated Case Study: Comparing Assay
-  Variability](#34-integrated-case-study-comparing-assay-variability)
-  - [34.1 Scientific setting](#341-scientific-setting)
-  - [34.2 Calculate measurement
-    errors](#342-calculate-measurement-errors)
-  - [34.3 Visualize error against
-    concentration](#343-visualize-error-against-concentration)
-  - [34.4 Compare low and high concentration
-    ranges](#344-compare-low-and-high-concentration-ranges)
-- [35. Common Mistakes](#35-common-mistakes)
+  Interval](#15-mean-plus-or-minus-standard-deviation-is-not-automatically-a-reference-interval)
+- [16. Variance and Standard Deviation Under Unit
+  Changes](#16-variance-and-standard-deviation-under-unit-changes)
+- [17. Mean Absolute Deviation and Median Absolute
+  Deviation](#17-mean-absolute-deviation-and-median-absolute-deviation)
+- [18. Robust Versus Non-Robust
+  Dispersion](#18-robust-versus-non-robust-dispersion)
+- [19. Coefficient of Variation](#19-coefficient-of-variation)
+  - [19.1 Comparing assay precision](#191-comparing-assay-precision)
+  - [19.2 When CV is inappropriate](#192-when-cv-is-inappropriate)
+- [20. Geometric Standard Deviation](#20-geometric-standard-deviation)
+- [21. Standard Deviation Versus Standard
+  Error](#21-standard-deviation-versus-standard-error)
+- [22. Z-Scores and Standardization](#22-z-scores-and-standardization)
+- [23. Homoscedasticity and
+  Heteroscedasticity](#23-homoscedasticity-and-heteroscedasticity)
+  - [23.1 Homoscedasticity](#231-homoscedasticity)
+  - [23.2 Heteroscedasticity](#232-heteroscedasticity)
+  - [23.3 Group-specific variances](#233-group-specific-variances)
+- [24. Why Heteroscedasticity
+  Matters](#24-why-heteroscedasticity-matters)
+  - [24.1 Visual assessment before formal
+    testing](#241-visual-assessment-before-formal-testing)
+- [25. Transformations and
+  Dispersion](#25-transformations-and-dispersion)
+- [26. Mean–Variance Relationships in Count
+  Data](#26-meanvariance-relationships-in-count-data)
+  - [26.1 Simulated Poisson counts](#261-simulated-poisson-counts)
+  - [26.2 Simulated overdispersed
+    counts](#262-simulated-overdispersed-counts)
+- [27. Biological and Technical
+  Variation](#27-biological-and-technical-variation)
+- [28. Within-Subject and Between-Subject
+  Variability](#28-within-subject-and-between-subject-variability)
+- [29. Pooled Variance: An
+  Introduction](#29-pooled-variance-an-introduction)
+- [30. Combining Variability Across
+  Groups](#30-combining-variability-across-groups)
+- [31. Missing Values and Dispersion](#31-missing-values-and-dispersion)
+- [32. A Reusable Dispersion
+  Function](#32-a-reusable-dispersion-function)
+- [33. Integrated Case Study: Comparing Assay
+  Variability](#33-integrated-case-study-comparing-assay-variability)
+  - [33.1 Scientific setting](#331-scientific-setting)
+  - [33.2 Calculate measurement
+    errors](#332-calculate-measurement-errors)
+  - [33.3 Visualize error against
+    concentration](#333-visualize-error-against-concentration)
+  - [33.4 Compare low and high concentration
+    ranges](#334-compare-low-and-high-concentration-ranges)
+- [34. Common Mistakes](#34-common-mistakes)
   - [Mistake 1: Reporting a centre without
     spread](#mistake-1-reporting-a-centre-without-spread)
   - [Mistake 2: Pairing a skewed distribution only with mean and
@@ -109,10 +108,10 @@ Sandeep Singh
     variance](#mistake-9-ignoring-mean-dependent-variance)
   - [Mistake 10: Treating technical replicates as independent biological
     variation](#mistake-10-treating-technical-replicates-as-independent-biological-variation)
-- [36. Practical Reporting Guide](#36-practical-reporting-guide)
-- [37. Chapter Summary](#37-chapter-summary)
-- [38. Check Your Understanding](#38-check-your-understanding)
-- [39. R Exercises](#39-r-exercises)
+- [35. Practical Reporting Guide](#35-practical-reporting-guide)
+- [36. Chapter Summary](#36-chapter-summary)
+- [37. Check Your Understanding](#37-check-your-understanding)
+- [38. R Exercises](#38-r-exercises)
   - [Exercise 1: Range and IQR](#exercise-1-range-and-iqr)
   - [Exercise 2: Outlier influence](#exercise-2-outlier-influence)
   - [Exercise 3: Manual variance](#exercise-3-manual-variance)
@@ -125,11 +124,37 @@ Sandeep Singh
   - [Exercise 9: Count overdispersion](#exercise-9-count-overdispersion)
   - [Exercise 10: Repeated
     measurements](#exercise-10-repeated-measurements)
-- [40. Mini-Project: Variability in RNA-seq Quality
-  Metrics](#40-mini-project-variability-in-rna-seq-quality-metrics)
-- [41. Glossary](#41-glossary)
-- [42. References](#42-references)
-- [43. Reproducibility Information](#43-reproducibility-information)
+- [39. Mini-Project: Variability in RNA-seq Quality
+  Metrics](#39-mini-project-variability-in-rna-seq-quality-metrics)
+- [40. Glossary](#40-glossary)
+- [41. References](#41-references)
+- [42. Reproducibility Information](#42-reproducibility-information)
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+&#10;table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+&#10;table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+&#10;table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
 
 # 1. Introduction
 
@@ -164,59 +189,125 @@ Dispersion matters throughout biology:
 > **A centre without a measure of spread is an incomplete description of
 > quantitative data.**
 
-------------------------------------------------------------------------
-
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  explain why datasets with the same centre can have different
-    variability;
-2.  calculate and interpret the range;
-3.  calculate quartiles, percentiles and the interquartile range;
-4.  calculate population and sample variance manually and with R;
-5.  explain why sample variance uses $n-1$;
-6.  calculate and interpret the standard deviation;
-7.  distinguish standard deviation from standard error;
-8.  calculate median absolute deviation and understand R’s scaling
-    convention;
-9.  calculate and interpret the coefficient of variation;
-10. recognize when the coefficient of variation is inappropriate;
-11. compare robust and non-robust measures of spread;
-12. explain homoscedasticity and heteroscedasticity;
-13. recognize mean–variance relationships in count and omics data;
-14. distinguish biological from technical variability;
-15. summarize within-subject and between-subject variability;
-16. standardize observations using z-scores; and
-17. report dispersion with an appropriate measure of centre and a
-    visualization.
-
-------------------------------------------------------------------------
-
-# 3. Same Centre, Different Spread
+# 2. Same Centre, Different Spread
 
 ``` r
 group_a <- c(9, 10, 10, 10, 11)
 group_b <- c(2, 6, 10, 14, 18)
 
-data.frame(
+print_html_table(data.frame(
   Group = c("A", "B"),
   Mean = c(mean(group_a), mean(group_b)),
   Median = c(median(group_a), median(group_b)),
   Minimum = c(min(group_a), min(group_b)),
   Maximum = c(max(group_a), max(group_b)),
   stringsAsFactors = FALSE
-)
+), caption = "Comparison of two groups with the same centre but different spread.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Group | Mean | Median | Minimum | Maximum |
-|:------|-----:|-------:|--------:|--------:|
-| A     |   10 |     10 |       9 |      11 |
-| B     |   10 |     10 |       2 |      18 |
+<caption>
 
-</div>
+Comparison of two groups with the same centre but different spread.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Group
+</th>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+Median
+</th>
+
+<th style="text-align:right;">
+
+Minimum
+</th>
+
+<th style="text-align:right;">
+
+Maximum
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+A
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+<td style="text-align:right;">
+
+11
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+B
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+18
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 stripchart(
@@ -245,7 +336,7 @@ dispersion.
 The mean line alone cannot distinguish these groups. We need numerical
 and graphical descriptions of spread.
 
-# 4. Absolute and Relative Measures of Dispersion
+# 3. Absolute and Relative Measures of Dispersion
 
 **Absolute measures** retain a scale related to the original data.
 
@@ -263,7 +354,7 @@ Absolute spread is useful within one scale. Relative spread may help
 compare measurements with different magnitudes, but only when its
 assumptions are appropriate.
 
-# 5. The Range
+# 4. The Range
 
 The range is the difference between the maximum and minimum:
 
@@ -276,22 +367,85 @@ minimum_value <- min(platelet_count)
 maximum_value <- max(platelet_count)
 manual_range <- maximum_value - minimum_value
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Minimum", "Maximum", "Range"),
   Value = c(minimum_value, maximum_value, manual_range),
   stringsAsFactors = FALSE
-)
+), caption = "Minimum, maximum and range of platelet counts.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure | Value |
-|:--------|------:|
-| Minimum |   180 |
-| Maximum |   240 |
-| Range   |    60 |
+<caption>
 
-</div>
+Minimum, maximum and range of platelet counts.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Minimum
+</td>
+
+<td style="text-align:right;">
+
+180
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Maximum
+</td>
+
+<td style="text-align:right;">
+
+240
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Range
+</td>
+
+<td style="text-align:right;">
+
+60
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 range(platelet_count)
@@ -308,7 +462,7 @@ diff(range(platelet_count))
 `range()` returns the minimum and maximum. `diff(range(x))` returns
 their difference.
 
-## 5.1 Advantages and limitations
+## 4.1 Advantages and limitations
 
 The range is:
 
@@ -324,24 +478,74 @@ when drawn from the same population.
 ``` r
 platelet_with_error <- c(platelet_count, 2400)
 
-data.frame(
+print_html_table(data.frame(
   Dataset = c("Original", "With possible unit or entry error"),
   Range = c(diff(range(platelet_count)),
             diff(range(platelet_with_error))),
   stringsAsFactors = FALSE
-)
+), caption = "Effect of one possible data error on the range.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Dataset                           | Range |
-|:----------------------------------|------:|
-| Original                          |    60 |
-| With possible unit or entry error |  2220 |
+<caption>
 
-</div>
+Effect of one possible data error on the range.
+</caption>
 
-# 6. Quantiles and Percentiles
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Dataset
+</th>
+
+<th style="text-align:right;">
+
+Range
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Original
+</td>
+
+<td style="text-align:right;">
+
+60
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+With possible unit or entry error
+</td>
+
+<td style="text-align:right;">
+
+2220
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+# 5. Quantiles and Percentiles
 
 A **quantile** divides ordered data according to cumulative proportion.
 A **percentile** is a quantile expressed on a scale from 0 to 100.
@@ -373,7 +577,7 @@ different interpolation rules, especially for small datasets. R’s
 `quantile()` offers several `type` choices; the default is `type = 7`.
 State the method when exact reproducibility across software matters.
 
-# 7. The Interquartile Range
+# 6. The Interquartile Range
 
 The **interquartile range** is:
 
@@ -386,28 +590,104 @@ quartiles <- quantile(haemoglobin, probs = c(0.25, 0.75), names = FALSE)
 manual_iqr <- quartiles[2] - quartiles[1]
 r_iqr <- IQR(haemoglobin)
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Q1", "Q3", "Manual IQR", "IQR() result"),
   Value = c(quartiles[1], quartiles[2], manual_iqr, r_iqr),
   stringsAsFactors = FALSE
-)
+), caption = "Manual and R calculations of the interquartile range.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure      |  Value |
-|:-------------|-------:|
-| Q1           | 13.075 |
-| Q3           | 14.600 |
-| Manual IQR   |  1.525 |
-| IQR() result |  1.525 |
+<caption>
 
-</div>
+Manual and R calculations of the interquartile range.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Q1
+</td>
+
+<td style="text-align:right;">
+
+13.075
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Q3
+</td>
+
+<td style="text-align:right;">
+
+14.600
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Manual IQR
+</td>
+
+<td style="text-align:right;">
+
+1.525
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+IQR() result
+</td>
+
+<td style="text-align:right;">
+
+1.525
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The IQR is resistant to extreme values because it does not use the
 smallest or largest observations directly.
 
-## 7.1 Reporting median and IQR
+## 6.1 Reporting median and IQR
 
 The median and IQR are commonly reported together for skewed data:
 
@@ -418,7 +698,7 @@ Be clear about whether parentheses contain:
 - the two quartile values, such as `2.1--9.6`; or
 - the IQR width, such as `IQR = 7.5`.
 
-# 8. The Five-Number Summary
+# 7. The Five-Number Summary
 
 The five-number summary contains:
 
@@ -445,7 +725,7 @@ summary(haemoglobin)
 different conventions. For formal reporting, use an explicitly chosen
 and documented method.
 
-# 9. Boxplots and the IQR Rule
+# 8. Boxplots and the IQR Rule
 
 A standard boxplot displays:
 
@@ -470,21 +750,71 @@ iqr_value <- IQR(haemoglobin)
 lower_fence <- q1 - 1.5 * iqr_value
 upper_fence <- q3 + 1.5 * iqr_value
 
-data.frame(
+print_html_table(data.frame(
   Fence = c("Lower", "Upper"),
   Value = c(lower_fence, upper_fence),
   stringsAsFactors = FALSE
-)
+), caption = "Lower and upper 1.5-IQR fences.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Fence |   Value |
-|:------|--------:|
-| Lower | 10.7875 |
-| Upper | 16.8875 |
+<caption>
 
-</div>
+Lower and upper 1.5-IQR fences.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Fence
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Lower
+</td>
+
+<td style="text-align:right;">
+
+10.787
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Upper
+</td>
+
+<td style="text-align:right;">
+
+16.887
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 boxplot(
@@ -509,7 +839,7 @@ A boxplot summarizes the median, IQR, whiskers and potential outliers.
 A boxplot flag is not proof of an error. It marks an observation
 requiring scientific inspection.
 
-# 10. Deviations From the Mean
+# 9. Deviations From the Mean
 
 For observation $x_i$, its deviation from the sample mean is:
 
@@ -525,45 +855,217 @@ deviation_table <- data.frame(
   Squared_deviation = (expression - expression_mean)^2
 )
 
-deviation_table
+print_html_table(
+  deviation_table,
+  caption = "Observed expression values and their deviations from the mean."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Observation | Deviation | Squared_deviation |
-|------------:|----------:|------------------:|
-|           4 |        -4 |                16 |
-|           6 |        -2 |                 4 |
-|           8 |         0 |                 0 |
-|          10 |         2 |                 4 |
-|          12 |         4 |                16 |
+<caption>
 
-</div>
+Observed expression values and their deviations from the mean.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Observation
+</th>
+
+<th style="text-align:right;">
+
+Deviation
+</th>
+
+<th style="text-align:right;">
+
+Squared deviation
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+-4
+</td>
+
+<td style="text-align:right;">
+
+16
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+<td style="text-align:right;">
+
+-2
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+<td style="text-align:right;">
+
+16
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Quantity = c("Sum of deviations", "Sum of squared deviations"),
   Value = c(
     sum(deviation_table$Deviation),
     sum(deviation_table$Squared_deviation)
   ),
   stringsAsFactors = FALSE
-)
+), caption = "Sums of ordinary and squared deviations.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Quantity                  | Value |
-|:--------------------------|------:|
-| Sum of deviations         |     0 |
-| Sum of squared deviations |    40 |
+<caption>
 
-</div>
+Sums of ordinary and squared deviations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Quantity
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sum of deviations
+</td>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sum of squared deviations
+</td>
+
+<td style="text-align:right;">
+
+40
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Positive and negative deviations cancel, so their ordinary sum is zero.
 Squaring makes every contribution non-negative and leads to variance.
 
-# 11. Population Variance
+# 10. Population Variance
 
 If all $N$ population values are observed, population variance is:
 
@@ -584,7 +1086,7 @@ population_variance
 R’s `var()` does not calculate this population formula. It calculates
 sample variance using $n-1$.
 
-# 12. Sample Variance
+# 11. Sample Variance
 
 For a sample of size $n$, the sample variance is:
 
@@ -599,7 +1101,7 @@ manual_sample_variance <- sum_squared_deviations /
   (length(sample_x) - 1)
 r_sample_variance <- var(sample_x)
 
-data.frame(
+print_html_table(data.frame(
   Calculation = c("Sum of squared deviations",
                   "Manual sample variance",
                   "var() result"),
@@ -607,25 +1109,88 @@ data.frame(
             manual_sample_variance,
             r_sample_variance),
   stringsAsFactors = FALSE
-)
+), caption = "Manual and R calculations of sample variance.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Calculation               | Value |
-|:--------------------------|------:|
-| Sum of squared deviations |    40 |
-| Manual sample variance    |    10 |
-| var() result              |    10 |
+<caption>
 
-</div>
+Manual and R calculations of sample variance.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Calculation
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sum of squared deviations
+</td>
+
+<td style="text-align:right;">
+
+40
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Manual sample variance
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+var() result
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Variance is expressed in squared units. If expression is measured in
 arbitrary units, variance is in squared arbitrary units. This makes
 variance useful mathematically but sometimes less intuitive
 biologically.
 
-# 13. Why Does Sample Variance Divide by n - 1?
+# 12. Why Does Sample Variance Divide by n - 1?
 
 The sample mean is estimated from the same data. Once $n-1$ deviations
 are known, the final deviation is fixed because all deviations must sum
@@ -664,18 +1229,84 @@ comparison <- data.frame(
   stringsAsFactors = FALSE
 )
 
-comparison
+print_html_table(
+  comparison,
+  caption = "Average variance estimates across repeated samples."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Estimator       | Average_variance |
-|:----------------|-----------------:|
-| Divide by n     |            7.218 |
-| Divide by n - 1 |            8.986 |
-| True variance   |            9.000 |
+<caption>
 
-</div>
+Average variance estimates across repeated samples.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Estimator
+</th>
+
+<th style="text-align:right;">
+
+Average variance
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Divide by n
+</td>
+
+<td style="text-align:right;">
+
+7.218
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Divide by n - 1
+</td>
+
+<td style="text-align:right;">
+
+8.986
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+True variance
+</td>
+
+<td style="text-align:right;">
+
+9.000
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 boxplot(
@@ -704,7 +1335,7 @@ Unbiased does not mean that every sample estimate equals the truth. It
 means the estimator’s average across repeated samples equals the
 population variance.
 
-# 14. Standard Deviation
+# 13. Standard Deviation
 
 The standard deviation is the positive square root of variance:
 
@@ -714,21 +1345,71 @@ $$s = \sqrt{s^2}.$$
 manual_sd <- sqrt(var(sample_x))
 r_sd <- sd(sample_x)
 
-data.frame(
+print_html_table(data.frame(
   Method = c("Square root of variance", "sd() result"),
   Standard_deviation = c(manual_sd, r_sd),
   stringsAsFactors = FALSE
-)
+), caption = "Manual and R calculations of the standard deviation.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Method                  | Standard_deviation |
-|:------------------------|-------------------:|
-| Square root of variance |           3.162278 |
-| sd() result             |           3.162278 |
+<caption>
 
-</div>
+Manual and R calculations of the standard deviation.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Method
+</th>
+
+<th style="text-align:right;">
+
+Standard deviation
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Square root of variance
+</td>
+
+<td style="text-align:right;">
+
+3.162
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+sd() result
+</td>
+
+<td style="text-align:right;">
+
+3.162
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Unlike variance, standard deviation uses the original measurement unit.
 It describes the typical scale of deviations around the mean, although
@@ -741,7 +1422,7 @@ The standard deviation:
 - is naturally paired with the arithmetic mean; and
 - is especially interpretable for approximately symmetric distributions.
 
-# 15. The Empirical Rule for Normal-Like Data
+# 14. The Empirical Rule for Normal-Like Data
 
 For an approximately normal distribution:
 
@@ -762,29 +1443,92 @@ within_sd <- function(k) {
          normal_values <= mu + k * sigma)
 }
 
-data.frame(
+print_html_table(data.frame(
   Interval = c("Mean +/- 1 SD", "Mean +/- 2 SD", "Mean +/- 3 SD"),
   Percent_inside = round(100 * c(within_sd(1),
                                  within_sd(2),
                                  within_sd(3)), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Observed percentages within one, two and three standard deviations.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Interval      | Percent_inside |
-|:--------------|---------------:|
-| Mean +/- 1 SD |          68.20 |
-| Mean +/- 2 SD |          95.50 |
-| Mean +/- 3 SD |          99.74 |
+<caption>
 
-</div>
+Observed percentages within one, two and three standard deviations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Interval
+</th>
+
+<th style="text-align:right;">
+
+Percent inside
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean +/- 1 SD
+</td>
+
+<td style="text-align:right;">
+
+68.20
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean +/- 2 SD
+</td>
+
+<td style="text-align:right;">
+
+95.50
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean +/- 3 SD
+</td>
+
+<td style="text-align:right;">
+
+99.74
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Do not apply this rule automatically to strongly skewed, bounded,
 discrete or multimodal biological data.
 
-# 16. Mean Plus or Minus Standard Deviation Is Not Automatically a Reference Interval
+# 15. Mean Plus or Minus Standard Deviation Is Not Automatically a Reference Interval
 
 For normal-like data, mean $\pm$ 1.96 SD contains approximately 95% of
 the population distribution. But a clinical **reference interval**
@@ -799,7 +1543,7 @@ quantities answer different questions:
   reference population;
 - confidence interval: uncertainty in an estimated parameter.
 
-# 17. Variance and Standard Deviation Under Unit Changes
+# 16. Variance and Standard Deviation Under Unit Changes
 
 If every observation is multiplied by a constant $a$:
 
@@ -811,28 +1555,108 @@ If every observation is multiplied by a constant $a$:
 height_cm <- c(160, 168, 172, 175, 182)
 height_m <- height_cm / 100
 
-data.frame(
+print_html_table(data.frame(
   Scale = c("Centimetres", "Metres"),
   Mean = c(mean(height_cm), mean(height_m)),
   Variance = c(var(height_cm), var(height_m)),
   SD = c(sd(height_cm), sd(height_m)),
   stringsAsFactors = FALSE
-)
+), caption = "Effect of changing measurement units on mean, variance and SD.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Scale       |    Mean | Variance |        SD |
-|:------------|--------:|---------:|----------:|
-| Centimetres | 171.400 | 66.80000 | 8.1731267 |
-| Metres      |   1.714 |  0.00668 | 0.0817313 |
+<caption>
 
-</div>
+Effect of changing measurement units on mean, variance and SD.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Scale
+</th>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+Variance
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Centimetres
+</td>
+
+<td style="text-align:right;">
+
+171.400
+</td>
+
+<td style="text-align:right;">
+
+66.800
+</td>
+
+<td style="text-align:right;">
+
+8.173
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Metres
+</td>
+
+<td style="text-align:right;">
+
+1.714
+</td>
+
+<td style="text-align:right;">
+
+0.007
+</td>
+
+<td style="text-align:right;">
+
+0.082
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Changing units changes absolute measures of dispersion. This is one
 reason variance should always be reported with context.
 
-# 18. Mean Absolute Deviation and Median Absolute Deviation
+# 17. Mean Absolute Deviation and Median Absolute Deviation
 
 The phrase **mean absolute deviation** can refer to the mean of absolute
 distances from a chosen centre:
@@ -859,30 +1683,93 @@ raw_mad <- median(abs(mad_data - median(mad_data)))
 r_raw_mad <- mad(mad_data, constant = 1)
 r_scaled_mad <- mad(mad_data)
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Manual raw MAD",
               "mad(constant = 1)",
               "R default scaled MAD"),
   Value = c(raw_mad, r_raw_mad, r_scaled_mad),
   stringsAsFactors = FALSE
-)
+), caption = "Raw and scaled median absolute deviations.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure              |  Value |
-|:---------------------|-------:|
-| Manual raw MAD       | 1.0000 |
-| mad(constant = 1)    | 1.0000 |
-| R default scaled MAD | 1.4826 |
+<caption>
 
-</div>
+Raw and scaled median absolute deviations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Manual raw MAD
+</td>
+
+<td style="text-align:right;">
+
+1.000
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+mad(constant = 1)
+</td>
+
+<td style="text-align:right;">
+
+1.000
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+R default scaled MAD
+</td>
+
+<td style="text-align:right;">
+
+1.483
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 R’s default `mad()` multiplies the raw MAD by approximately 1.4826.
 Under normality, this scaled value is comparable to the standard
 deviation. Always state whether MAD is raw or scaled.
 
-# 19. Robust Versus Non-Robust Dispersion
+# 18. Robust Versus Non-Robust Dispersion
 
 ``` r
 base_values <- c(9, 10, 10, 11, 12)
@@ -902,17 +1789,115 @@ robust_comparison[numeric_names] <- round(
   robust_comparison[numeric_names], 2
 )
 
-robust_comparison
+print_html_table(
+  robust_comparison,
+  caption = "Sensitivity of dispersion measures to an extreme value."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Dataset               | Range |  IQR |    SD | Scaled_MAD |
-|:----------------------|------:|-----:|------:|-----------:|
-| Without extreme value |     3 | 1.00 |  1.14 |       1.48 |
-| With extreme value    |    91 | 1.75 | 36.59 |       1.48 |
+<caption>
 
-</div>
+Sensitivity of dispersion measures to an extreme value.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Dataset
+</th>
+
+<th style="text-align:right;">
+
+Range
+</th>
+
+<th style="text-align:right;">
+
+IQR
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+<th style="text-align:right;">
+
+Scaled MAD
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Without extreme value
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+1.00
+</td>
+
+<td style="text-align:right;">
+
+1.14
+</td>
+
+<td style="text-align:right;">
+
+1.48
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+With extreme value
+</td>
+
+<td style="text-align:right;">
+
+91
+</td>
+
+<td style="text-align:right;">
+
+1.75
+</td>
+
+<td style="text-align:right;">
+
+36.59
+</td>
+
+<td style="text-align:right;">
+
+1.48
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The range and SD respond strongly to the extreme observation. IQR and
 MAD change less.
@@ -926,7 +1911,7 @@ MAD change less.
 Pairing should also reflect the scientific model, not just a formatting
 convention.
 
-# 20. Coefficient of Variation
+# 19. Coefficient of Variation
 
 The coefficient of variation, or CV, expresses standard deviation
 relative to the mean:
@@ -962,13 +1947,13 @@ coefficient_of_variation(c(98, 101, 103, 99, 100))
 
     ## [1] 1.919699
 
-## 20.1 Comparing assay precision
+## 19.1 Comparing assay precision
 
 ``` r
 assay_1 <- c(98, 101, 103, 99, 100)
 assay_2 <- c(980, 1010, 1030, 990, 1000)
 
-data.frame(
+print_html_table(data.frame(
   Assay = c("Assay 1", "Assay 2"),
   Mean = c(mean(assay_1), mean(assay_2)),
   SD = c(sd(assay_1), sd(assay_2)),
@@ -977,22 +1962,102 @@ data.frame(
     coefficient_of_variation(assay_2)
   ), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Comparison of absolute and relative assay variability.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Assay   |   Mean |        SD | CV_percent |
-|:--------|-------:|----------:|-----------:|
-| Assay 1 |  100.2 |  1.923538 |       1.92 |
-| Assay 2 | 1002.0 | 19.235384 |       1.92 |
+<caption>
 
-</div>
+Comparison of absolute and relative assay variability.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Assay
+</th>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+<th style="text-align:right;">
+
+CV percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Assay 1
+</td>
+
+<td style="text-align:right;">
+
+100.2
+</td>
+
+<td style="text-align:right;">
+
+1.924
+</td>
+
+<td style="text-align:right;">
+
+1.92
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Assay 2
+</td>
+
+<td style="text-align:right;">
+
+1002.0
+</td>
+
+<td style="text-align:right;">
+
+19.235
+</td>
+
+<td style="text-align:right;">
+
+1.92
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The assays have different absolute scales but similar relative
 variation.
 
-## 20.2 When CV is inappropriate
+## 19.2 When CV is inappropriate
 
 CV is meaningful mainly for ratio-scale variables with a meaningful
 zero. It can be misleading when:
@@ -1008,7 +2073,7 @@ zero. It can be misleading when:
 For expression values centered around zero after normalization, a CV can
 explode or change sign and should generally not be used.
 
-# 21. Geometric Standard Deviation
+# 20. Geometric Standard Deviation
 
 For positive log-normal-like data, variability may be described on the
 log scale. A geometric standard deviation can be defined as:
@@ -1022,21 +2087,71 @@ titre <- rlnorm(100, meanlog = log(80), sdlog = 0.55)
 geometric_mean <- exp(mean(log(titre)))
 geometric_sd <- exp(sd(log(titre)))
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Geometric mean", "Geometric SD"),
   Value = round(c(geometric_mean, geometric_sd), 2),
   stringsAsFactors = FALSE
-)
+), caption = "Geometric centre and multiplicative spread.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure        | Value |
-|:---------------|------:|
-| Geometric mean | 75.11 |
-| Geometric SD   |  1.66 |
+<caption>
 
-</div>
+Geometric centre and multiplicative spread.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Geometric mean
+</td>
+
+<td style="text-align:right;">
+
+75.11
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Geometric SD
+</td>
+
+<td style="text-align:right;">
+
+1.66
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 A multiplicative interval one log-SD from the geometric mean is
 approximately:
@@ -1044,25 +2159,72 @@ approximately:
 $$\left[\frac{GM}{GSD},\;GM \times GSD\right].$$
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Lower = geometric_mean / geometric_sd,
   Geometric_mean = geometric_mean,
   Upper = geometric_mean * geometric_sd
-)
+), caption = "One-log-SD multiplicative interval.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-|    Lower | Geometric_mean |    Upper |
-|---------:|---------------:|---------:|
-| 45.27195 |       75.10694 | 124.6037 |
+<caption>
 
-</div>
+One-log-SD multiplicative interval.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Lower
+</th>
+
+<th style="text-align:right;">
+
+Geometric mean
+</th>
+
+<th style="text-align:right;">
+
+Upper
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+45.272
+</td>
+
+<td style="text-align:right;">
+
+75.107
+</td>
+
+<td style="text-align:right;">
+
+124.604
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Do not write `geometric mean $\pm$ geometric SD`; geometric spread is
 multiplicative, not additive.
 
-# 22. Standard Deviation Versus Standard Error
+# 21. Standard Deviation Versus Standard Error
 
 The standard deviation describes variation among observations. The
 standard error of the mean describes uncertainty in the estimated mean.
@@ -1091,17 +2253,100 @@ sd_se_comparison[c("SD", "SE")] <- round(
   sd_se_comparison[c("SD", "SE")], 2
 )
 
-sd_se_comparison
+print_html_table(
+  sd_se_comparison,
+  caption = "Standard deviation and standard error at two sample sizes."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Sample  |   N |    SD |   SE |
-|:--------|----:|------:|-----:|
-| n = 25  |  25 | 10.05 | 2.01 |
-| n = 400 | 400 | 10.37 | 0.52 |
+<caption>
 
-</div>
+Standard deviation and standard error at two sample sizes.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Sample
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+<th style="text-align:right;">
+
+SE
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+n = 25
+</td>
+
+<td style="text-align:right;">
+
+25
+</td>
+
+<td style="text-align:right;">
+
+10.05
+</td>
+
+<td style="text-align:right;">
+
+2.01
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+n = 400
+</td>
+
+<td style="text-align:right;">
+
+400
+</td>
+
+<td style="text-align:right;">
+
+10.37
+</td>
+
+<td style="text-align:right;">
+
+0.52
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The underlying individual variability is similar, so SD remains around
 10. The larger sample estimates its mean more precisely, so SE is
@@ -1113,7 +2358,7 @@ smaller.
 Error bars must be labelled clearly. An unlabeled “mean $\pm$ error”
 plot is ambiguous.
 
-# 23. Z-Scores and Standardization
+# 22. Z-Scores and Standardization
 
 A z-score expresses an observation in standard-deviation units from the
 mean:
@@ -1127,53 +2372,209 @@ manual_z <- (gene_expression - mean(gene_expression)) /
   sd(gene_expression)
 r_z <- as.numeric(scale(gene_expression))
 
-data.frame(
+print_html_table(data.frame(
   Expression = gene_expression,
   Manual_z = round(manual_z, 3),
   Scale_z = round(r_z, 3)
-)
+), caption = "Manual and R calculations of standardized expression values.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Expression | Manual_z | Scale_z |
-|-----------:|---------:|--------:|
-|        4.2 |   -1.195 |  -1.195 |
-|        5.0 |   -0.531 |  -0.531 |
-|        5.5 |   -0.116 |  -0.116 |
-|        6.1 |    0.382 |   0.382 |
-|        7.4 |    1.460 |   1.460 |
+<caption>
 
-</div>
+Manual and R calculations of standardized expression values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Expression
+</th>
+
+<th style="text-align:right;">
+
+Manual z
+</th>
+
+<th style="text-align:right;">
+
+Scale z
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+4.2
+</td>
+
+<td style="text-align:right;">
+
+-1.195
+</td>
+
+<td style="text-align:right;">
+
+-1.195
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5.0
+</td>
+
+<td style="text-align:right;">
+
+-0.531
+</td>
+
+<td style="text-align:right;">
+
+-0.531
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5.5
+</td>
+
+<td style="text-align:right;">
+
+-0.116
+</td>
+
+<td style="text-align:right;">
+
+-0.116
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+6.1
+</td>
+
+<td style="text-align:right;">
+
+0.382
+</td>
+
+<td style="text-align:right;">
+
+0.382
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+7.4
+</td>
+
+<td style="text-align:right;">
+
+1.460
+</td>
+
+<td style="text-align:right;">
+
+1.460
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 After sample standardization, the z-scores have mean approximately 0 and
 sample SD 1.
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Mean_z = mean(r_z),
   SD_z = sd(r_z)
-)
+), caption = "Mean and standard deviation after z-score standardization.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Mean_z | SD_z |
-|-------:|-----:|
-|      0 |    1 |
+<caption>
 
-</div>
+Mean and standard deviation after z-score standardization.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Mean z
+</th>
+
+<th style="text-align:right;">
+
+SD z
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+0
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 A z-score of 2 means two sample SDs above the sample mean. It does not
 automatically mean “abnormal,” particularly for non-normal data or a
 selected sample.
 
-# 24. Homoscedasticity and Heteroscedasticity
+# 23. Homoscedasticity and Heteroscedasticity
 
 These terms describe whether variability is similar across groups or
 across fitted values.
 
-## 24.1 Homoscedasticity
+## 23.1 Homoscedasticity
 
 **Homoscedasticity** means the conditional variance is approximately
 constant.
@@ -1181,7 +2582,7 @@ constant.
 Example: the spread of residual biomarker values is similar in control,
 treatment A and treatment B groups.
 
-## 24.2 Heteroscedasticity
+## 23.2 Heteroscedasticity
 
 **Heteroscedasticity** means the conditional variance changes.
 
@@ -1234,7 +2635,7 @@ par(mfrow = c(1, 1))
 The right panel has a funnel shape: spread grows as the predictor
 increases.
 
-## 24.3 Group-specific variances
+## 23.3 Group-specific variances
 
 ``` r
 set.seed(889)
@@ -1267,18 +2668,144 @@ group_dispersion[c("Mean", "SD", "Variance")] <- round(
   group_dispersion[c("Mean", "SD", "Variance")], 2
 )
 
-group_dispersion
+print_html_table(
+  group_dispersion,
+  caption = "Group-specific biomarker dispersion."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Group   |   N | Mean |   SD | Variance |
-|:--------|----:|-----:|-----:|---------:|
-| Control |  80 | 5.12 | 1.02 |     1.04 |
-| Mild    |  80 | 6.12 | 2.30 |     5.27 |
-| Severe  |  80 | 7.84 | 4.17 |    17.43 |
+<caption>
 
-</div>
+Group-specific biomarker dispersion.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Group
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+<th style="text-align:right;">
+
+Variance
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Control
+</td>
+
+<td style="text-align:right;">
+
+80
+</td>
+
+<td style="text-align:right;">
+
+5.12
+</td>
+
+<td style="text-align:right;">
+
+1.02
+</td>
+
+<td style="text-align:right;">
+
+1.04
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mild
+</td>
+
+<td style="text-align:right;">
+
+80
+</td>
+
+<td style="text-align:right;">
+
+6.12
+</td>
+
+<td style="text-align:right;">
+
+2.30
+</td>
+
+<td style="text-align:right;">
+
+5.27
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Severe
+</td>
+
+<td style="text-align:right;">
+
+80
+</td>
+
+<td style="text-align:right;">
+
+7.84
+</td>
+
+<td style="text-align:right;">
+
+4.17
+</td>
+
+<td style="text-align:right;">
+
+17.43
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 boxplot(
@@ -1302,7 +2829,7 @@ group.
 
 </div>
 
-# 25. Why Heteroscedasticity Matters
+# 24. Why Heteroscedasticity Matters
 
 Some classical methods assume equal variances across groups or constant
 residual variance. If this assumption is strongly violated:
@@ -1325,7 +2852,7 @@ Possible responses include:
 Do not transform data merely to make a plot look nicer. The
 transformation changes the scale of interpretation.
 
-## 25.1 Visual assessment before formal testing
+## 24.1 Visual assessment before formal testing
 
 Residual-versus-fitted plots and group-specific boxplots are often more
 informative than an automatic variance test. Formal tests can have low
@@ -1336,7 +2863,7 @@ Tests such as Levene’s or Brown–Forsythe’s test are generally more
 robust than Bartlett’s test when normality is doubtful. These procedures
 will be introduced with group-comparison methods.
 
-# 26. Transformations and Dispersion
+# 25. Transformations and Dispersion
 
 Many positive biological measurements have variance that increases with
 the mean. A log transformation can sometimes stabilize multiplicative
@@ -1383,7 +2910,7 @@ par(mfrow = c(1, 1))
 A log transformation requires positive values. Adding a pseudocount to
 zero-valued data changes the result and needs justification.
 
-# 27. Mean–Variance Relationships in Count Data
+# 26. Mean–Variance Relationships in Count Data
 
 For a Poisson distribution, the theoretical mean and variance are equal:
 
@@ -1392,50 +2919,144 @@ $$E(Y) = Var(Y) = \lambda.$$
 Biological count data often have greater variance than the Poisson model
 expects. This is called **overdispersion**.
 
-## 27.1 Simulated Poisson counts
+## 26.1 Simulated Poisson counts
 
 ``` r
 set.seed(1001)
 
 poisson_counts <- rpois(1000, lambda = 20)
 
-data.frame(
+print_html_table(data.frame(
   Mean = mean(poisson_counts),
   Variance = var(poisson_counts),
   Variance_to_mean = var(poisson_counts) / mean(poisson_counts)
-)
+), caption = "Mean and variance of simulated Poisson counts.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-|   Mean | Variance | Variance_to_mean |
-|-------:|---------:|-----------------:|
-| 19.845 | 17.19617 |        0.8665241 |
+<caption>
 
-</div>
+Mean and variance of simulated Poisson counts.
+</caption>
 
-## 27.2 Simulated overdispersed counts
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+Variance
+</th>
+
+<th style="text-align:right;">
+
+Variance to mean
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+19.845
+</td>
+
+<td style="text-align:right;">
+
+17.196
+</td>
+
+<td style="text-align:right;">
+
+0.867
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 26.2 Simulated overdispersed counts
 
 ``` r
 set.seed(1002)
 
 negative_binomial_counts <- rnbinom(1000, mu = 20, size = 2)
 
-data.frame(
+print_html_table(data.frame(
   Mean = mean(negative_binomial_counts),
   Variance = var(negative_binomial_counts),
   Variance_to_mean = var(negative_binomial_counts) /
     mean(negative_binomial_counts)
-)
+), caption = "Mean and variance of simulated overdispersed counts.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-|   Mean | Variance | Variance_to_mean |
-|-------:|---------:|-----------------:|
-| 19.431 |   212.74 |         10.94848 |
+<caption>
 
-</div>
+Mean and variance of simulated overdispersed counts.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Mean
+</th>
+
+<th style="text-align:right;">
+
+Variance
+</th>
+
+<th style="text-align:right;">
+
+Variance to mean
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+19.431
+</td>
+
+<td style="text-align:right;">
+
+212.74
+</td>
+
+<td style="text-align:right;">
+
+10.948
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 RNA-seq differential-expression tools commonly use negative-binomial
 models because biological replicate counts often show a mean-dependent
@@ -1445,7 +3066,7 @@ The variance-to-mean ratio is a descriptive clue, not a complete
 diagnostic for complex RNA-seq data. Library size, normalization, design
 and gene-specific dispersion must be considered.
 
-# 28. Biological and Technical Variation
+# 27. Biological and Technical Variation
 
 Observed variability can arise from several sources.
 
@@ -1477,30 +3098,224 @@ replicate_data$Measurement <- round(
   2
 )
 
-head(replicate_data, 9)
+print_html_table(
+  head(replicate_data, 9),
+  caption = "First nine technical-replicate measurements."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Donor | Technical_replicate | Measurement |
-|:------|--------------------:|------------:|
-| D1    |                   1 |       10.37 |
-| D2    |                   1 |       10.04 |
-| D3    |                   1 |       10.52 |
-| D4    |                   1 |        8.15 |
-| D5    |                   1 |        8.34 |
-| D6    |                   1 |       11.17 |
-| D7    |                   1 |        9.21 |
-| D8    |                   1 |        9.29 |
-| D1    |                   2 |       10.83 |
+<caption>
 
-</div>
+First nine technical-replicate measurements.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Donor
+</th>
+
+<th style="text-align:right;">
+
+Technical replicate
+</th>
+
+<th style="text-align:right;">
+
+Measurement
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+D1
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+10.37
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D2
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+10.04
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D3
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+10.52
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D4
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+8.15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D5
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+8.34
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D6
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+11.17
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D7
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+9.21
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D8
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+9.29
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D1
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+10.83
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The three technical measurements from one donor are dependent. Treating
 all 24 measurements as independent biological replicates would
 underestimate uncertainty.
 
-# 29. Within-Subject and Between-Subject Variability
+# 28. Within-Subject and Between-Subject Variability
 
 Repeated measurements contain multiple variation levels:
 
@@ -1526,49 +3341,275 @@ donor_summary[c("Donor_mean", "Within_donor_SD")] <- round(
   donor_summary[c("Donor_mean", "Within_donor_SD")], 3
 )
 
-donor_summary
+print_html_table(
+  donor_summary,
+  caption = "Donor-level means and within-donor standard deviations."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Donor | Donor_mean | Within_donor_SD |
-|:------|-----------:|----------------:|
-| D1    |     10.693 |           0.281 |
-| D2    |      9.943 |           0.231 |
-| D3    |     10.280 |           0.219 |
-| D4    |      8.037 |           0.163 |
-| D5    |      7.770 |           0.728 |
-| D6    |     10.983 |           0.176 |
-| D7    |      9.160 |           0.210 |
-| D8    |      9.323 |           0.571 |
+<caption>
 
-</div>
+Donor-level means and within-donor standard deviations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Donor
+</th>
+
+<th style="text-align:right;">
+
+Donor mean
+</th>
+
+<th style="text-align:right;">
+
+Within donor SD
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+D1
+</td>
+
+<td style="text-align:right;">
+
+10.693
+</td>
+
+<td style="text-align:right;">
+
+0.281
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D2
+</td>
+
+<td style="text-align:right;">
+
+9.943
+</td>
+
+<td style="text-align:right;">
+
+0.231
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D3
+</td>
+
+<td style="text-align:right;">
+
+10.280
+</td>
+
+<td style="text-align:right;">
+
+0.219
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D4
+</td>
+
+<td style="text-align:right;">
+
+8.037
+</td>
+
+<td style="text-align:right;">
+
+0.163
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D5
+</td>
+
+<td style="text-align:right;">
+
+7.770
+</td>
+
+<td style="text-align:right;">
+
+0.728
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D6
+</td>
+
+<td style="text-align:right;">
+
+10.983
+</td>
+
+<td style="text-align:right;">
+
+0.176
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D7
+</td>
+
+<td style="text-align:right;">
+
+9.160
+</td>
+
+<td style="text-align:right;">
+
+0.210
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D8
+</td>
+
+<td style="text-align:right;">
+
+9.323
+</td>
+
+<td style="text-align:right;">
+
+0.571
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Quantity = c("SD of donor means", "Mean within-donor SD"),
   Value = round(c(
     sd(donor_summary$Donor_mean),
     mean(donor_summary$Within_donor_SD)
   ), 3),
   stringsAsFactors = FALSE
-)
+), caption = "Between-donor and average within-donor variability.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Quantity             | Value |
-|:---------------------|------:|
-| SD of donor means    | 1.177 |
-| Mean within-donor SD | 0.322 |
+<caption>
 
-</div>
+Between-donor and average within-donor variability.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Quantity
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+SD of donor means
+</td>
+
+<td style="text-align:right;">
+
+1.177
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Mean within-donor SD
+</td>
+
+<td style="text-align:right;">
+
+0.322
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 This simple description does not fully partition variance. Mixed-effects
 models and variance-component analysis will later estimate hierarchical
 sources more formally.
 
-# 30. Pooled Variance: An Introduction
+# 29. Pooled Variance: An Introduction
 
 When independent groups are assumed to share one population variance,
 their sample variances can be combined using degrees-of-freedom weights:
@@ -1588,27 +3629,90 @@ pooled_variance <- ((n1 - 1) * s1_sq + (n2 - 1) * s2_sq) /
   (n1 + n2 - 2)
 pooled_sd <- sqrt(pooled_variance)
 
-data.frame(
+print_html_table(data.frame(
   Measure = c("Group 1 SD", "Group 2 SD", "Pooled SD"),
   Value = round(c(sd(group_1), sd(group_2), pooled_sd), 3),
   stringsAsFactors = FALSE
-)
+), caption = "Group-specific and pooled standard deviations.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Measure    | Value |
-|:-----------|------:|
-| Group 1 SD | 1.049 |
-| Group 2 SD | 1.195 |
-| Pooled SD  | 1.137 |
+<caption>
 
-</div>
+Group-specific and pooled standard deviations.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Measure
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Group 1 SD
+</td>
+
+<td style="text-align:right;">
+
+1.049
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Group 2 SD
+</td>
+
+<td style="text-align:right;">
+
+1.195
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Pooled SD
+</td>
+
+<td style="text-align:right;">
+
+1.137
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Pooling is not appropriate merely because a formula exists. It relies on
 a scientifically and statistically plausible common-variance assumption.
 
-# 31. Combining Variability Across Groups
+# 30. Combining Variability Across Groups
 
 The SD of all observations is not generally the weighted average of
 group SDs. Total variability contains:
@@ -1619,7 +3723,7 @@ group SDs. Total variability contains:
 ``` r
 combined_values <- c(group_1, group_2)
 
-data.frame(
+print_html_table(data.frame(
   Quantity = c("Overall SD", "Pooled within-group SD",
                "Simple mean of group SDs"),
   Value = round(c(
@@ -1628,51 +3732,191 @@ data.frame(
     mean(c(sd(group_1), sd(group_2)))
   ), 3),
   stringsAsFactors = FALSE
-)
+), caption = "Overall and within-group measures of variability.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Quantity                 | Value |
-|:-------------------------|------:|
-| Overall SD               | 2.326 |
-| Pooled within-group SD   | 1.137 |
-| Simple mean of group SDs | 1.122 |
+<caption>
 
-</div>
+Overall and within-group measures of variability.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Quantity
+</th>
+
+<th style="text-align:right;">
+
+Value
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Overall SD
+</td>
+
+<td style="text-align:right;">
+
+2.326
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Pooled within-group SD
+</td>
+
+<td style="text-align:right;">
+
+1.137
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Simple mean of group SDs
+</td>
+
+<td style="text-align:right;">
+
+1.122
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Because the group means differ, the overall SD includes that
 between-group separation. Always define whether the target is total
 population variability or within-group variability.
 
-# 32. Missing Values and Dispersion
+# 31. Missing Values and Dispersion
 
 ``` r
 assay_values <- c(10.2, 10.5, NA, 9.8, 10.1, NA, 10.4)
 
-data.frame(
+print_html_table(data.frame(
   Total_n = length(assay_values),
   Observed_n = sum(!is.na(assay_values)),
   Missing_n = sum(is.na(assay_values)),
   SD = sd(assay_values, na.rm = TRUE),
   IQR = IQR(assay_values, na.rm = TRUE),
   MAD = mad(assay_values, na.rm = TRUE)
-)
+), caption = "Dispersion summary in the presence of missing values.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Total_n | Observed_n | Missing_n |        SD | IQR |     MAD |
-|--------:|-----------:|----------:|----------:|----:|--------:|
-|       7 |          5 |         2 | 0.2738613 | 0.3 | 0.29652 |
+<caption>
 
-</div>
+Dispersion summary in the presence of missing values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+Total n
+</th>
+
+<th style="text-align:right;">
+
+Observed n
+</th>
+
+<th style="text-align:right;">
+
+Missing n
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+<th style="text-align:right;">
+
+IQR
+</th>
+
+<th style="text-align:right;">
+
+MAD
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+0.274
+</td>
+
+<td style="text-align:right;">
+
+0.3
+</td>
+
+<td style="text-align:right;">
+
+0.297
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Using `na.rm = TRUE` calculates variability among observed values. If
 extreme or unstable measurements are more likely to fail, observed
 dispersion may be underestimated.
 
-# 33. A Reusable Dispersion Function
+# 32. A Reusable Dispersion Function
 
 ``` r
 dispersion_summary <- function(x, na.rm = TRUE) {
@@ -1708,23 +3952,163 @@ dispersion_summary <- function(x, na.rm = TRUE) {
   )
 }
 
-dispersion_summary(haemoglobin)
+print_html_table(
+  dispersion_summary(haemoglobin),
+  caption = "Reusable dispersion summary for haemoglobin values."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| N | Minimum | Q1 | Median | Q3 | Maximum | Range | IQR | Variance | SD | MAD | CV_percent |
-|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 100 | 10.7 | 13.075 | 13.8 | 14.6 | 16.5 | 5.8 | 1.525 | 1.403309 | 1.184613 | 1.18608 | 8.572973 |
+<caption>
 
-</div>
+Reusable dispersion summary for haemoglobin values.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Minimum
+</th>
+
+<th style="text-align:right;">
+
+Q1
+</th>
+
+<th style="text-align:right;">
+
+Median
+</th>
+
+<th style="text-align:right;">
+
+Q3
+</th>
+
+<th style="text-align:right;">
+
+Maximum
+</th>
+
+<th style="text-align:right;">
+
+Range
+</th>
+
+<th style="text-align:right;">
+
+IQR
+</th>
+
+<th style="text-align:right;">
+
+Variance
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+<th style="text-align:right;">
+
+MAD
+</th>
+
+<th style="text-align:right;">
+
+CV percent
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+100
+</td>
+
+<td style="text-align:right;">
+
+10.7
+</td>
+
+<td style="text-align:right;">
+
+13.075
+</td>
+
+<td style="text-align:right;">
+
+13.8
+</td>
+
+<td style="text-align:right;">
+
+14.6
+</td>
+
+<td style="text-align:right;">
+
+16.5
+</td>
+
+<td style="text-align:right;">
+
+5.8
+</td>
+
+<td style="text-align:right;">
+
+1.525
+</td>
+
+<td style="text-align:right;">
+
+1.403
+</td>
+
+<td style="text-align:right;">
+
+1.185
+</td>
+
+<td style="text-align:right;">
+
+1.186
+</td>
+
+<td style="text-align:right;">
+
+8.573
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 The function returns a regular data frame with one value per column,
 avoiding matrix-column problems during R Markdown table rendering.
 
-# 34. Integrated Case Study: Comparing Assay Variability
+# 33. Integrated Case Study: Comparing Assay Variability
 
-## 34.1 Scientific setting
+## 33.1 Scientific setting
 
 A laboratory compares two assay platforms. Each platform measures the
 same type of positive biomarker in 80 independent specimens. Platform B
@@ -1745,23 +4129,198 @@ assay_case <- data.frame(
   stringsAsFactors = FALSE
 )
 
-head(assay_case)
+print_html_table(
+  head(assay_case),
+  caption = "First six specimens in the simulated assay comparison."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Specimen | True_concentration | Platform_A | Platform_B |
-|:---------|-------------------:|-----------:|-----------:|
-| S001     |           5.567747 |   5.083101 |   5.841428 |
-| S002     |           9.018876 |  10.791182 |   9.133305 |
-| S003     |          10.657680 |   9.538785 |   9.077456 |
-| S004     |          11.085057 |  12.837093 |  11.588821 |
-| S005     |          10.961794 |  10.536821 |  12.186255 |
-| S006     |          12.784680 |  11.902267 |  13.698525 |
+<caption>
 
-</div>
+First six specimens in the simulated assay comparison.
+</caption>
 
-## 34.2 Calculate measurement errors
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Specimen
+</th>
+
+<th style="text-align:right;">
+
+True concentration
+</th>
+
+<th style="text-align:right;">
+
+Platform A
+</th>
+
+<th style="text-align:right;">
+
+Platform B
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S001
+</td>
+
+<td style="text-align:right;">
+
+5.568
+</td>
+
+<td style="text-align:right;">
+
+5.083
+</td>
+
+<td style="text-align:right;">
+
+5.841
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S002
+</td>
+
+<td style="text-align:right;">
+
+9.019
+</td>
+
+<td style="text-align:right;">
+
+10.791
+</td>
+
+<td style="text-align:right;">
+
+9.133
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:right;">
+
+10.658
+</td>
+
+<td style="text-align:right;">
+
+9.539
+</td>
+
+<td style="text-align:right;">
+
+9.077
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+<td style="text-align:right;">
+
+11.085
+</td>
+
+<td style="text-align:right;">
+
+12.837
+</td>
+
+<td style="text-align:right;">
+
+11.589
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+<td style="text-align:right;">
+
+10.962
+</td>
+
+<td style="text-align:right;">
+
+10.537
+</td>
+
+<td style="text-align:right;">
+
+12.186
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S006
+</td>
+
+<td style="text-align:right;">
+
+12.785
+</td>
+
+<td style="text-align:right;">
+
+11.902
+</td>
+
+<td style="text-align:right;">
+
+13.699
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 33.2 Calculate measurement errors
 
 ``` r
 assay_case$Error_A <- assay_case$Platform_A -
@@ -1782,19 +4341,132 @@ error_summary[numeric_columns] <- round(
   error_summary[numeric_columns], 3
 )
 
-error_summary
+print_html_table(
+  error_summary,
+  caption = "Measurement-error dispersion by assay platform."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Platform |   N | Median |   IQR |    SD |   MAD |
-|:---------|----:|-------:|------:|------:|------:|
-| A        |  80 | -0.022 | 1.324 | 1.109 | 1.046 |
-| B        |  80 | -0.065 | 3.038 | 2.978 | 2.201 |
+<caption>
 
-</div>
+Measurement-error dispersion by assay platform.
+</caption>
 
-## 34.3 Visualize error against concentration
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Platform
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Median
+</th>
+
+<th style="text-align:right;">
+
+IQR
+</th>
+
+<th style="text-align:right;">
+
+SD
+</th>
+
+<th style="text-align:right;">
+
+MAD
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+A
+</td>
+
+<td style="text-align:right;">
+
+80
+</td>
+
+<td style="text-align:right;">
+
+-0.022
+</td>
+
+<td style="text-align:right;">
+
+1.324
+</td>
+
+<td style="text-align:right;">
+
+1.109
+</td>
+
+<td style="text-align:right;">
+
+1.046
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+B
+</td>
+
+<td style="text-align:right;">
+
+80
+</td>
+
+<td style="text-align:right;">
+
+-0.065
+</td>
+
+<td style="text-align:right;">
+
+3.038
+</td>
+
+<td style="text-align:right;">
+
+2.978
+</td>
+
+<td style="text-align:right;">
+
+2.201
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 33.3 Visualize error against concentration
 
 ``` r
 par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
@@ -1837,7 +4509,7 @@ heteroscedasticity.
 par(mfrow = c(1, 1))
 ```
 
-## 34.4 Compare low and high concentration ranges
+## 33.4 Compare low and high concentration ranges
 
 ``` r
 assay_case$Concentration_group <- ifelse(
@@ -1863,23 +4535,106 @@ stratified_error[c("SD_Error_A", "SD_Error_B")] <- round(
   stratified_error[c("SD_Error_A", "SD_Error_B")], 3
 )
 
-stratified_error
+print_html_table(
+  stratified_error,
+  caption = "Error SDs at lower and higher concentration ranges."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Concentration_group |   N | SD_Error_A | SD_Error_B |
-|:--------------------|----:|-----------:|-----------:|
-| Lower               |  36 |      1.276 |      1.308 |
-| Higher              |  44 |      0.967 |      3.855 |
+<caption>
 
-</div>
+Error SDs at lower and higher concentration ranges.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Concentration group
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+SD Error A
+</th>
+
+<th style="text-align:right;">
+
+SD Error B
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Lower
+</td>
+
+<td style="text-align:right;">
+
+36
+</td>
+
+<td style="text-align:right;">
+
+1.276
+</td>
+
+<td style="text-align:right;">
+
+1.308
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Higher
+</td>
+
+<td style="text-align:right;">
+
+44
+</td>
+
+<td style="text-align:right;">
+
+0.967
+</td>
+
+<td style="text-align:right;">
+
+3.855
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 An overall SD compresses the error structure into one value and can hide
 concentration-dependent variability. This is why visualizing dispersion
 against the measurement level is important in assay validation.
 
-# 35. Common Mistakes
+# 34. Common Mistakes
 
 ## Mistake 1: Reporting a centre without spread
 
@@ -1926,7 +4681,7 @@ means increase.
 
 Identify every level of the measurement hierarchy.
 
-# 36. Practical Reporting Guide
+# 35. Practical Reporting Guide
 
 | Data pattern or purpose | Centre | Dispersion | Helpful figure |
 |----|----|----|----|
@@ -1948,7 +4703,7 @@ Always report:
 - whether variability is biological, technical or combined; and
 - the exact definition of robust or relative measures.
 
-# 37. Chapter Summary
+# 36. Chapter Summary
 
 - Dispersion describes how observations vary around a centre or across
   their range.
@@ -1979,7 +4734,7 @@ Always report:
 - Total variation contains both within-group and between-group
   components.
 
-# 38. Check Your Understanding
+# 37. Check Your Understanding
 
 1.  Why are measures of central tendency insufficient by themselves?
 2.  How does sample size affect the expected observed range?
@@ -2001,7 +4756,7 @@ Always report:
     biological replicates?
 16. How does an overall SD differ from a pooled within-group SD?
 
-# 39. R Exercises
+# 38. R Exercises
 
 ## Exercise 1: Range and IQR
 
@@ -2053,7 +4808,7 @@ Compare variance-to-mean ratios and histograms.
 Simulate 20 donors with four technical replicates each. Calculate donor
 means, within-donor SDs and the SD of donor means.
 
-# 40. Mini-Project: Variability in RNA-seq Quality Metrics
+# 39. Mini-Project: Variability in RNA-seq Quality Metrics
 
 Create or simulate a sample-level RNA-seq QC dataset containing at least
 150 libraries with:
@@ -2083,7 +4838,7 @@ Your report should:
     and
 10. provide a concise biological and quality-control interpretation.
 
-# 41. Glossary
+# 40. Glossary
 
 | Term | Plain-language definition |
 |----|----|
@@ -2111,7 +4866,7 @@ Your report should:
 | Pooled variance | Degrees-of-freedom-weighted within-group variance |
 | Geometric SD | Multiplicative spread calculated from log-scale SD |
 
-# 42. References
+# 41. References
 
 1.  Altman, D. G. (1991). *Practical Statistics for Medical Research*.
     Chapman and Hall.
@@ -2157,7 +4912,7 @@ Your report should:
 
 ------------------------------------------------------------------------
 
-# 43. Reproducibility Information
+# 42. Reproducibility Information
 
 ``` r
 sessionInfo()
