@@ -17,72 +17,71 @@ Chapter 6: Populations, Samples and Sampling
 Sandeep Singh
 
 - [1. Introduction](#1-introduction)
-- [2. Learning Objectives](#2-learning-objectives)
-- [3. The Population-to-Sample
-  Pathway](#3-the-population-to-sample-pathway)
-  - [3.1 Eligibility criteria](#31-eligibility-criteria)
-- [4. Census, Sample, Parameter and
-  Statistic](#4-census-sample-parameter-and-statistic)
-  - [4.1 Census versus sample](#41-census-versus-sample)
-  - [4.2 Parameter versus statistic](#42-parameter-versus-statistic)
-- [5. Units: What Exactly Was
-  Sampled?](#5-units-what-exactly-was-sampled)
-  - [5.1 The hierarchy in omics data](#51-the-hierarchy-in-omics-data)
-- [6. The Sampling Frame](#6-the-sampling-frame)
-- [7. Probability and Non-Probability
-  Sampling](#7-probability-and-non-probability-sampling)
-  - [7.1 Probability sampling](#71-probability-sampling)
-  - [7.2 Non-probability sampling](#72-non-probability-sampling)
-- [8. Simple Random Sampling](#8-simple-random-sampling)
-  - [8.1 Example: selecting serum
-    samples](#81-example-selecting-serum-samples)
-  - [8.2 With versus without
-    replacement](#82-with-versus-without-replacement)
-- [9. Systematic Sampling](#9-systematic-sampling)
-- [10. Stratified Random Sampling](#10-stratified-random-sampling)
-  - [10.1 Proportional and disproportionate
-    allocation](#101-proportional-and-disproportionate-allocation)
-- [11. Cluster and Multistage
-  Sampling](#11-cluster-and-multistage-sampling)
-- [12. Sampling Error and Sample-to-Sample
-  Variation](#12-sampling-error-and-sample-to-sample-variation)
-- [13. Non-Sampling Errors and Bias](#13-non-sampling-errors-and-bias)
-  - [13.1 Why more data cannot fix biased
-    selection](#131-why-more-data-cannot-fix-biased-selection)
-- [14. Representativeness and
-  Generalizability](#14-representativeness-and-generalizability)
-- [15. Sample Size: A First
-  Introduction](#15-sample-size-a-first-introduction)
-  - [15.1 Finite population
-    correction](#151-finite-population-correction)
-- [16. Sampling Weights](#16-sampling-weights)
-  - [16.1 Oversampling a small group](#161-oversampling-a-small-group)
-- [17. Sampling in Genetics and
-  Bioinformatics](#17-sampling-in-genetics-and-bioinformatics)
-  - [17.1 Biobank ascertainment](#171-biobank-ascertainment)
-  - [17.2 Ancestry representation](#172-ancestry-representation)
-  - [17.3 Case-control sampling](#173-case-control-sampling)
-  - [17.4 Rare-variant enrichment](#174-rare-variant-enrichment)
-  - [17.5 Public bioinformatics
-    databases](#175-public-bioinformatics-databases)
-- [18. Sampling Biospecimens, Cells and
-  Reads](#18-sampling-biospecimens-cells-and-reads)
-  - [18.1 Tissue heterogeneity](#181-tissue-heterogeneity)
-  - [18.2 Single-cell studies](#182-single-cell-studies)
-  - [18.3 Sequencing depth](#183-sequencing-depth)
-  - [18.4 Environmental sampling](#184-environmental-sampling)
-- [19. Integrated Case Study: Building a Biomarker
-  Substudy](#19-integrated-case-study-building-a-biomarker-substudy)
-  - [19.1 Research question](#191-research-question)
-  - [19.2 Sampling problem](#192-sampling-problem)
-  - [19.3 Proposed design](#193-proposed-design)
-  - [19.4 Create a simulated frame](#194-create-a-simulated-frame)
-  - [19.5 Select 15 per site-condition
-    stratum](#195-select-15-per-site-condition-stratum)
-  - [19.6 Randomize assay order](#196-randomize-assay-order)
-- [20. A Sampling Plan Template](#20-a-sampling-plan-template)
-- [21. Reporting a Sample](#21-reporting-a-sample)
-- [22. Common Mistakes](#22-common-mistakes)
+- [2. The Population-to-Sample
+  Pathway](#2-the-population-to-sample-pathway)
+  - [2.1 Eligibility criteria](#21-eligibility-criteria)
+- [3. Census, Sample, Parameter and
+  Statistic](#3-census-sample-parameter-and-statistic)
+  - [3.1 Census versus sample](#31-census-versus-sample)
+  - [3.2 Parameter versus statistic](#32-parameter-versus-statistic)
+- [4. Units: What Exactly Was
+  Sampled?](#4-units-what-exactly-was-sampled)
+  - [4.1 The hierarchy in omics data](#41-the-hierarchy-in-omics-data)
+- [5. The Sampling Frame](#5-the-sampling-frame)
+- [6. Probability and Non-Probability
+  Sampling](#6-probability-and-non-probability-sampling)
+  - [6.1 Probability sampling](#61-probability-sampling)
+  - [6.2 Non-probability sampling](#62-non-probability-sampling)
+- [7. Simple Random Sampling](#7-simple-random-sampling)
+  - [7.1 Example: selecting serum
+    samples](#71-example-selecting-serum-samples)
+  - [7.2 With versus without
+    replacement](#72-with-versus-without-replacement)
+- [8. Systematic Sampling](#8-systematic-sampling)
+- [9. Stratified Random Sampling](#9-stratified-random-sampling)
+  - [9.1 Proportional and disproportionate
+    allocation](#91-proportional-and-disproportionate-allocation)
+- [10. Cluster and Multistage
+  Sampling](#10-cluster-and-multistage-sampling)
+- [11. Sampling Error and Sample-to-Sample
+  Variation](#11-sampling-error-and-sample-to-sample-variation)
+- [12. Non-Sampling Errors and Bias](#12-non-sampling-errors-and-bias)
+  - [12.1 Why more data cannot fix biased
+    selection](#121-why-more-data-cannot-fix-biased-selection)
+- [13. Representativeness and
+  Generalizability](#13-representativeness-and-generalizability)
+- [14. Sample Size: A First
+  Introduction](#14-sample-size-a-first-introduction)
+  - [14.1 Finite population
+    correction](#141-finite-population-correction)
+- [15. Sampling Weights](#15-sampling-weights)
+  - [15.1 Oversampling a small group](#151-oversampling-a-small-group)
+- [16. Sampling in Genetics and
+  Bioinformatics](#16-sampling-in-genetics-and-bioinformatics)
+  - [16.1 Biobank ascertainment](#161-biobank-ascertainment)
+  - [16.2 Ancestry representation](#162-ancestry-representation)
+  - [16.3 Case-control sampling](#163-case-control-sampling)
+  - [16.4 Rare-variant enrichment](#164-rare-variant-enrichment)
+  - [16.5 Public bioinformatics
+    databases](#165-public-bioinformatics-databases)
+- [17. Sampling Biospecimens, Cells and
+  Reads](#17-sampling-biospecimens-cells-and-reads)
+  - [17.1 Tissue heterogeneity](#171-tissue-heterogeneity)
+  - [17.2 Single-cell studies](#172-single-cell-studies)
+  - [17.3 Sequencing depth](#173-sequencing-depth)
+  - [17.4 Environmental sampling](#174-environmental-sampling)
+- [18. Integrated Case Study: Building a Biomarker
+  Substudy](#18-integrated-case-study-building-a-biomarker-substudy)
+  - [18.1 Research question](#181-research-question)
+  - [18.2 Sampling problem](#182-sampling-problem)
+  - [18.3 Proposed design](#183-proposed-design)
+  - [18.4 Create a simulated frame](#184-create-a-simulated-frame)
+  - [18.5 Select 15 per site-condition
+    stratum](#185-select-15-per-site-condition-stratum)
+  - [18.6 Randomize assay order](#186-randomize-assay-order)
+- [19. A Sampling Plan Template](#19-a-sampling-plan-template)
+- [20. Reporting a Sample](#20-reporting-a-sample)
+- [21. Common Mistakes](#21-common-mistakes)
   - [Mistake 1: Calling a convenience sample
     random](#mistake-1-calling-a-convenience-sample-random)
   - [Mistake 2: Treating every cell or read as
@@ -97,9 +96,9 @@ Sandeep Singh
     investigation](#mistake-6-removing-failed-specimens-without-investigation)
   - [Mistake 7: Confusing balance with
     prevalence](#mistake-7-confusing-balance-with-prevalence)
-- [23. Chapter Summary](#23-chapter-summary)
-- [24. Check Your Understanding](#24-check-your-understanding)
-- [25. R Exercises](#25-r-exercises)
+- [22. Chapter Summary](#22-chapter-summary)
+- [23. Check Your Understanding](#23-check-your-understanding)
+- [24. R Exercises](#24-r-exercises)
   - [Exercise 1: Simple random
     sampling](#exercise-1-simple-random-sampling)
   - [Exercise 2: Reproducibility](#exercise-2-reproducibility)
@@ -108,11 +107,53 @@ Sandeep Singh
   - [Exercise 5: Biased sampling](#exercise-5-biased-sampling)
   - [Exercise 6: Nested data](#exercise-6-nested-data)
   - [Exercise 7: Weights](#exercise-7-weights)
-- [26. Mini-Project: Sampling a Genomic Surveillance
-  Database](#26-mini-project-sampling-a-genomic-surveillance-database)
-- [27. Glossary](#27-glossary)
-- [28. References](#28-references)
-- [29. Reproducibility Information](#29-reproducibility-information)
+- [25. Mini-Project: Sampling a Genomic Surveillance
+  Database](#25-mini-project-sampling-a-genomic-surveillance-database)
+- [26. Glossary](#26-glossary)
+- [27. References](#27-references)
+- [28. Reproducibility Information](#28-reproducibility-information)
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+table.chapter-table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+&#10;table.chapter-table th,
+table.chapter-table td {
+  border: 1px solid #d0d7de;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+&#10;table.chapter-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+&#10;table.chapter-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+</style>
 
 # 1. Introduction
 
@@ -136,35 +177,7 @@ selected poorly. Sampling design therefore affects the scientific
 meaning of every estimate, confidence interval and hypothesis test that
 follows.
 
-------------------------------------------------------------------------
-
-# 2. Learning Objectives
-
-After completing this chapter, you should be able to:
-
-1.  distinguish a target, source, accessible and study population;
-2.  define a sample, census, sampling frame and eligibility criteria;
-3.  distinguish a parameter from a statistic;
-4.  identify sampling, observational and experimental units;
-5.  explain why cells, reads and technical replicates may not be
-    independent samples;
-6.  compare probability and non-probability sampling;
-7.  perform simple random, systematic, stratified and cluster sampling
-    in R;
-8.  explain sampling with and without replacement;
-9.  distinguish sampling error from non-sampling error;
-10. recognize selection, coverage, volunteer, nonresponse and
-    survivorship bias;
-11. explain representativeness, precision and generalizability;
-12. understand the basic roles of sample size, finite population
-    correction and sampling weights;
-13. identify sampling problems in clinical, ecological, genetic and
-    omics research; and
-14. design and report a basic biological sampling plan.
-
-------------------------------------------------------------------------
-
-# 3. The Population-to-Sample Pathway
+# 2. The Population-to-Sample Pathway
 
 The word **population** must be defined precisely. It does not always
 mean all humans or all organisms of a species.
@@ -207,7 +220,7 @@ illustrative.
 
 </div>
 
-## 3.1 Eligibility criteria
+## 2.1 Eligibility criteria
 
 **Inclusion criteria** state who may enter. **Exclusion criteria** state
 who may not enter.
@@ -223,9 +236,9 @@ Criteria improve consistency, but very restrictive criteria can reduce
 generalizability. Excluding low-quality specimens can also create bias
 if specimen quality is related to disease severity or collection site.
 
-# 4. Census, Sample, Parameter and Statistic
+# 3. Census, Sample, Parameter and Statistic
 
-## 4.1 Census versus sample
+## 3.1 Census versus sample
 
 A **census** measures every member of a defined finite population. A
 **sample** measures only part of it.
@@ -235,7 +248,7 @@ but not for every animal in a species. Even a census of the facility is
 only a sample of the broader conceptual population to which researchers
 may wish to generalize.
 
-## 4.2 Parameter versus statistic
+## 3.2 Parameter versus statistic
 
 A **parameter** describes a population. A **statistic** is calculated
 from a sample.
@@ -266,26 +279,76 @@ population_mean <- mean(population_hb)
 sample_hb <- sample(population_hb, size = 80, replace = FALSE)
 sample_mean <- mean(sample_hb)
 
-data.frame(
+print_html_table(data.frame(
   Quantity = c("Population mean (parameter)", "Sample mean (statistic)"),
   Value_g_dL = round(c(population_mean, sample_mean), 2)
-)
+), caption = "Population parameter and sample statistic.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Quantity                    | Value_g_dL |
-|:----------------------------|-----------:|
-| Population mean (parameter) |      13.80 |
-| Sample mean (statistic)     |      13.76 |
+<caption>
 
-</div>
+Population parameter and sample statistic.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Quantity
+</th>
+
+<th style="text-align:right;">
+
+Value g dL
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Population mean (parameter)
+</td>
+
+<td style="text-align:right;">
+
+13.80
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Sample mean (statistic)
+</td>
+
+<td style="text-align:right;">
+
+13.76
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Different random samples generally produce different statistics. That
 variability is not necessarily a mistake; it is a natural consequence of
 observing only part of the population.
 
-# 5. Units: What Exactly Was Sampled?
+# 4. Units: What Exactly Was Sampled?
 
 Biological data often have several levels. Confusing them causes
 pseudoreplication and exaggerated certainty.
@@ -297,7 +360,7 @@ pseudoreplication and exaggerated certainty.
 | Observation unit | What entity is measured? | A blood specimen from the mouse |
 | Analysis unit | What entity contributes one independent record to the analysis? | Usually the mouse, unless dependence is modeled |
 
-## 5.1 The hierarchy in omics data
+## 4.1 The hierarchy in omics data
 
 Consider an RNA-seq experiment:
 
@@ -326,29 +389,342 @@ nested_example <- data.frame(
   Expression = round(rnorm(12, mean = rep(c(8.2, 9.1, 7.8), each = 4), sd = 0.25), 2)
 )
 
-nested_example
+print_html_table(
+  nested_example,
+  caption = "Donors, specimens and technical replicates in nested biological data."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Donor | Specimen | Technical_replicate | Expression |
-|:------|:---------|--------------------:|-----------:|
-| D1    | Blood    |                   1 |       8.49 |
-| D1    | Blood    |                   2 |       8.71 |
-| D1    | Tissue   |                   1 |       8.27 |
-| D1    | Tissue   |                   2 |       7.89 |
-| D2    | Blood    |                   1 |       8.33 |
-| D2    | Blood    |                   2 |       9.12 |
-| D2    | Tissue   |                   1 |       9.00 |
-| D2    | Tissue   |                   2 |       8.89 |
-| D3    | Blood    |                   1 |       7.38 |
-| D3    | Blood    |                   2 |       8.13 |
-| D3    | Tissue   |                   1 |       7.66 |
-| D3    | Tissue   |                   2 |       7.57 |
+<caption>
 
-</div>
+Donors, specimens and technical replicates in nested biological data.
+</caption>
 
-# 6. The Sampling Frame
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Donor
+</th>
+
+<th style="text-align:left;">
+
+Specimen
+</th>
+
+<th style="text-align:right;">
+
+Technical replicate
+</th>
+
+<th style="text-align:right;">
+
+Expression
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+D1
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+8.49
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D1
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+8.71
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D1
+</td>
+
+<td style="text-align:left;">
+
+Tissue
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+8.27
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D1
+</td>
+
+<td style="text-align:left;">
+
+Tissue
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+7.89
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D2
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+8.33
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D2
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+9.12
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D2
+</td>
+
+<td style="text-align:left;">
+
+Tissue
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+9.00
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D2
+</td>
+
+<td style="text-align:left;">
+
+Tissue
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+8.89
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D3
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+7.38
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D3
+</td>
+
+<td style="text-align:left;">
+
+Blood
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+8.13
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D3
+</td>
+
+<td style="text-align:left;">
+
+Tissue
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+<td style="text-align:right;">
+
+7.66
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+D3
+</td>
+
+<td style="text-align:left;">
+
+Tissue
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+<td style="text-align:right;">
+
+7.57
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+# 5. The Sampling Frame
 
 A **sampling frame** is the operational list or mechanism used to
 identify selectable units.
@@ -373,9 +749,9 @@ lack access to hospital care. A genetic database may overrepresent
 people of particular ancestries. Random sampling from an incomplete
 frame does not repair the frame’s coverage problem.
 
-# 7. Probability and Non-Probability Sampling
+# 6. Probability and Non-Probability Sampling
 
-## 7.1 Probability sampling
+## 6.1 Probability sampling
 
 In a probability sample, each population unit has a known, non-zero
 probability of selection. Random selection supports design-based
@@ -389,7 +765,7 @@ Major methods are:
 4.  cluster sampling; and
 5.  multistage sampling.
 
-## 7.2 Non-probability sampling
+## 6.2 Non-probability sampling
 
 In non-probability sampling, selection probabilities are unknown.
 
@@ -406,7 +782,7 @@ rare diseases, early discovery and mechanism-focused experiments.
 However, their limits must be reported honestly. A large convenience
 sample does not automatically represent a population.
 
-# 8. Simple Random Sampling
+# 7. Simple Random Sampling
 
 In a **simple random sample** of size $n$, every possible group of $n$
 units has the same chance of selection.
@@ -416,7 +792,7 @@ replacement, each unit has inclusion probability:
 
 $$\pi_i = \frac{n}{N}.$$
 
-## 8.1 Example: selecting serum samples
+## 7.1 Example: selecting serum samples
 
 ``` r
 serum_frame <- data.frame(
@@ -426,61 +802,733 @@ serum_frame <- data.frame(
   biomarker = round(rlnorm(200, meanlog = log(4.5), sdlog = 0.35), 2)
 )
 
-head(serum_frame)
+print_html_table(
+  head(serum_frame),
+  caption = "First six records in the simulated serum-sample frame."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| sample_id | site  | age_years | biomarker |
-|:----------|:------|----------:|----------:|
-| S001      | North |        65 |      4.79 |
-| S002      | North |        62 |      5.10 |
-| S003      | North |        57 |      3.51 |
-| S004      | North |        49 |      4.11 |
-| S005      | North |        48 |      2.46 |
-| S006      | North |        57 |      4.18 |
+<caption>
 
-</div>
+First six records in the simulated serum-sample frame.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+site
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:right;">
+
+biomarker
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S001
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+65
+</td>
+
+<td style="text-align:right;">
+
+4.79
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S002
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+62
+</td>
+
+<td style="text-align:right;">
+
+5.10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S003
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+57
+</td>
+
+<td style="text-align:right;">
+
+3.51
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S004
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+49
+</td>
+
+<td style="text-align:right;">
+
+4.11
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S005
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+48
+</td>
+
+<td style="text-align:right;">
+
+2.46
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S006
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+57
+</td>
+
+<td style="text-align:right;">
+
+4.18
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 set.seed(123)
 selected_rows <- sample(seq_len(nrow(serum_frame)), size = 20, replace = FALSE)
 simple_sample <- serum_frame[selected_rows, ]
 
-simple_sample
+print_html_table(
+  simple_sample,
+  caption = "Simple random sample of 20 serum specimens."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-|     | sample_id | site  | age_years | biomarker |
-|:----|:----------|:------|----------:|----------:|
-| 159 | S159      | West  |        64 |     10.05 |
-| 179 | S179      | West  |        47 |      2.52 |
-| 14  | S014      | North |        60 |      6.37 |
-| 195 | S195      | West  |        55 |      4.71 |
-| 170 | S170      | West  |        52 |      5.26 |
-| 50  | S050      | North |        42 |      3.92 |
-| 118 | S118      | East  |        51 |      5.37 |
-| 43  | S043      | North |        47 |     10.02 |
-| 198 | S198      | West  |        55 |      4.31 |
-| 194 | S194      | West  |        52 |      7.67 |
-| 153 | S153      | West  |        53 |      4.07 |
-| 90  | S090      | South |        53 |      6.95 |
-| 91  | S091      | South |        47 |      3.76 |
-| 188 | S188      | West  |        17 |      6.10 |
-| 185 | S185      | West  |        50 |      3.09 |
-| 92  | S092      | South |        70 |      3.62 |
-| 137 | S137      | East  |        74 |      6.06 |
-| 99  | S099      | South |        51 |      4.84 |
-| 72  | S072      | South |        64 |      4.58 |
-| 26  | S026      | North |        59 |      7.24 |
+<caption>
 
-</div>
+Simple random sample of 20 serum specimens.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+sample id
+</th>
+
+<th style="text-align:left;">
+
+site
+</th>
+
+<th style="text-align:right;">
+
+age years
+</th>
+
+<th style="text-align:right;">
+
+biomarker
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+S159
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+64
+</td>
+
+<td style="text-align:right;">
+
+10.05
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S179
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+47
+</td>
+
+<td style="text-align:right;">
+
+2.52
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S014
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+60
+</td>
+
+<td style="text-align:right;">
+
+6.37
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S195
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+55
+</td>
+
+<td style="text-align:right;">
+
+4.71
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S170
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+52
+</td>
+
+<td style="text-align:right;">
+
+5.26
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S050
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+42
+</td>
+
+<td style="text-align:right;">
+
+3.92
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S118
+</td>
+
+<td style="text-align:left;">
+
+East
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+<td style="text-align:right;">
+
+5.37
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S043
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+47
+</td>
+
+<td style="text-align:right;">
+
+10.02
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S198
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+55
+</td>
+
+<td style="text-align:right;">
+
+4.31
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S194
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+52
+</td>
+
+<td style="text-align:right;">
+
+7.67
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S153
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+53
+</td>
+
+<td style="text-align:right;">
+
+4.07
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S090
+</td>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:right;">
+
+53
+</td>
+
+<td style="text-align:right;">
+
+6.95
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S091
+</td>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:right;">
+
+47
+</td>
+
+<td style="text-align:right;">
+
+3.76
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S188
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+17
+</td>
+
+<td style="text-align:right;">
+
+6.10
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S185
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+50
+</td>
+
+<td style="text-align:right;">
+
+3.09
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S092
+</td>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:right;">
+
+70
+</td>
+
+<td style="text-align:right;">
+
+3.62
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S137
+</td>
+
+<td style="text-align:left;">
+
+East
+</td>
+
+<td style="text-align:right;">
+
+74
+</td>
+
+<td style="text-align:right;">
+
+6.06
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S099
+</td>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:right;">
+
+51
+</td>
+
+<td style="text-align:right;">
+
+4.84
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S072
+</td>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:right;">
+
+64
+</td>
+
+<td style="text-align:right;">
+
+4.58
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+S026
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+59
+</td>
+
+<td style="text-align:right;">
+
+7.24
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Use `set.seed()` when you want the random selection to be reproducible.
 Save the selected identifiers, seed, date and sampling-frame version.
 
-## 8.2 With versus without replacement
+## 7.2 With versus without replacement
 
 - **Without replacement:** a selected unit cannot be selected again.
   This is common when sampling people or specimens.
@@ -499,7 +1547,7 @@ sample(1:10, size = 15, replace = TRUE)
 
     ##  [1]  1  7  5 10  7  9  9 10  7  5  7  5  6  9  2
 
-# 9. Systematic Sampling
+# 8. Systematic Sampling
 
 Systematic sampling selects every $k$th unit after a random start. If
 $N = 1{,}000$ and $n = 100$, then $k = N/n = 10$.
@@ -514,24 +1562,77 @@ random_start <- sample(seq_len(k), size = 1)
 systematic_rows <- seq(from = random_start, to = N, by = k)
 systematic_sample <- serum_frame[systematic_rows, ]
 
-data.frame(random_start = random_start, interval = k,
-           selected_n = nrow(systematic_sample))
+print_html_table(
+  data.frame(
+    random_start = random_start,
+    interval = k,
+    selected_n = nrow(systematic_sample)
+  ),
+  caption = "Systematic-sampling start, interval and selected sample size."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| random_start | interval | selected_n |
-|-------------:|---------:|-----------:|
-|            3 |       10 |         20 |
+<caption>
 
-</div>
+Systematic-sampling start, interval and selected sample size.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+random start
+</th>
+
+<th style="text-align:right;">
+
+interval
+</th>
+
+<th style="text-align:right;">
+
+selected n
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+<td style="text-align:right;">
+
+20
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Systematic sampling is simple, but ordering matters. If the list follows
 a repeating pattern that matches the interval, the result can be biased.
 Randomize the frame first when its ordering is scientifically
 irrelevant.
 
-# 10. Stratified Random Sampling
+# 9. Stratified Random Sampling
 
 The population is divided into non-overlapping **strata**, and a random
 sample is taken within each stratum.
@@ -549,7 +1650,7 @@ Useful strata may include:
 Stratification can ensure representation of small but important groups
 and can improve precision when members within a stratum are similar.
 
-## 10.1 Proportional and disproportionate allocation
+## 9.1 Proportional and disproportionate allocation
 
 - **Proportional allocation:** sample the same fraction from each
   stratum.
@@ -570,12 +1671,98 @@ stratified_list <- lapply(split(serum_frame, serum_frame$site), function(d) {
 stratified_sample <- do.call(rbind, stratified_list)
 rownames(stratified_sample) <- NULL
 
-table(stratified_sample$site)
+print_html_table(
+  table(stratified_sample$site),
+  caption = "Site allocation in the stratified random sample."
+)
 ```
 
-    ## 
-    ##  East North South  West 
-    ##     5     5     5     5
+<table class="chapter-table">
+
+<caption>
+
+Site allocation in the stratified random sample.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Category
+</th>
+
+<th style="text-align:right;">
+
+Frequency
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+East
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 site_levels <- c("North", "South", "East", "West")
@@ -604,7 +1791,7 @@ Site composition under simple random and stratified sampling.
 
 </div>
 
-# 11. Cluster and Multistage Sampling
+# 10. Cluster and Multistage Sampling
 
 In **cluster sampling**, naturally occurring groups are selected,
 followed by all or some units inside those groups.
@@ -617,19 +1804,56 @@ set.seed(123)
 selected_sites <- sample(unique(serum_frame$site), size = 2, replace = FALSE)
 cluster_sample <- serum_frame[serum_frame$site %in% selected_sites, ]
 
-data.frame(
+print_html_table(data.frame(
   selected_clusters = paste(selected_sites, collapse = ", "),
   individuals_observed = nrow(cluster_sample)
-)
+), caption = "Selected clusters and number of observed individuals.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| selected_clusters | individuals_observed |
-|:------------------|---------------------:|
-| East, West        |                  100 |
+<caption>
 
-</div>
+Selected clusters and number of observed individuals.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+selected clusters
+</th>
+
+<th style="text-align:right;">
+
+individuals observed
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+East, West
+</td>
+
+<td style="text-align:right;">
+
+100
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Cluster sampling reduces travel and logistical costs, but individuals
 within one cluster often resemble each other. For example, patients at
@@ -641,7 +1865,7 @@ than that from the same number of independently dispersed individuals.
 study might sample regions, then clinics within regions, then patients
 within clinics.
 
-# 12. Sampling Error and Sample-to-Sample Variation
+# 11. Sampling Error and Sample-to-Sample Variation
 
 **Sampling error** is the difference between a sample statistic and the
 population parameter caused by observing a sample rather than the whole
@@ -708,7 +1932,7 @@ Larger samples produce less variable sample means in this simulation.
 
 </div>
 
-# 13. Non-Sampling Errors and Bias
+# 12. Non-Sampling Errors and Bias
 
 Non-sampling errors can remain even in a very large study.
 
@@ -722,7 +1946,7 @@ Non-sampling errors can remain even in a very large study.
 | Measurement error | Recorded value differs from true value | Assay calibration drift |
 | Processing bias | Laboratory workflow differs systematically by group | All cases sequenced in one batch |
 
-## 13.1 Why more data cannot fix biased selection
+## 12.1 Why more data cannot fix biased selection
 
 The following simulation creates a population in which a disease
 biomarker is higher among cases. A convenience mechanism preferentially
@@ -765,26 +1989,109 @@ is large.
 </div>
 
 ``` r
-data.frame(
+print_html_table(data.frame(
   Group = c("Population", "Random sample", "Convenience sample"),
   N = c(N, length(random_ids), length(convenience_ids)),
   Mean_marker = round(c(mean(population$marker),
                         mean(population$marker[random_ids]),
                         mean(population$marker[convenience_ids])), 2)
-)
+), caption = "Biomarker means under random and biased sampling.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Group              |     N | Mean_marker |
-|:-------------------|------:|------------:|
-| Population         | 10000 |        4.29 |
-| Random sample      |   800 |        4.29 |
-| Convenience sample |   800 |        4.58 |
+<caption>
 
-</div>
+Biomarker means under random and biased sampling.
+</caption>
 
-# 14. Representativeness and Generalizability
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Group
+</th>
+
+<th style="text-align:right;">
+
+N
+</th>
+
+<th style="text-align:right;">
+
+Mean marker
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Population
+</td>
+
+<td style="text-align:right;">
+
+10000
+</td>
+
+<td style="text-align:right;">
+
+4.29
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Random sample
+</td>
+
+<td style="text-align:right;">
+
+800
+</td>
+
+<td style="text-align:right;">
+
+4.29
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Convenience sample
+</td>
+
+<td style="text-align:right;">
+
+800
+</td>
+
+<td style="text-align:right;">
+
+4.58
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+# 13. Representativeness and Generalizability
 
 A **representative sample** resembles the target population in the
 features relevant to the research question. It does not have to match
@@ -811,7 +2118,7 @@ variables that may change the effect or outcome, such as:
 - tissue source and collection method; and
 - healthcare access.
 
-# 15. Sample Size: A First Introduction
+# 14. Sample Size: A First Introduction
 
 Sample size affects precision and statistical power, but there is no
 universally adequate sample size.
@@ -849,7 +2156,7 @@ n_required
 Formal power and sample-size analysis will be covered after estimation
 and hypothesis testing.
 
-## 15.1 Finite population correction
+## 14.1 Finite population correction
 
 When sampling without replacement from a finite population and the
 sample is a substantial fraction of it, the standard error is reduced
@@ -868,7 +2175,7 @@ round(fpc, 3)
 
 The correction is close to 1 when the sampling fraction $n/N$ is small.
 
-# 16. Sampling Weights
+# 15. Sampling Weights
 
 If unit $i$ has inclusion probability $\pi_i$, a basic design weight is:
 
@@ -878,7 +2185,7 @@ A participant selected with probability 0.10 represents approximately 10
 population units, whereas one selected with probability 0.50 represents
 approximately 2.
 
-## 16.1 Oversampling a small group
+## 15.1 Oversampling a small group
 
 Suppose a population is 80% Group A and 20% Group B, but a study selects
 100 people from each group. The unweighted sample is 50% Group B, so an
@@ -898,20 +2205,70 @@ weighted_prevalence <- with(
   weighted.mean(outcome, w = weight)
 )
 
-data.frame(
+print_html_table(data.frame(
   Estimate = c("Unweighted", "Weighted for population composition"),
   Prevalence = round(c(unweighted_prevalence, weighted_prevalence), 3)
-)
+), caption = "Unweighted and sampling-weighted prevalence estimates.")
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| Estimate                            | Prevalence |
-|:------------------------------------|-----------:|
-| Unweighted                          |       0.35 |
-| Weighted for population composition |       0.26 |
+<caption>
 
-</div>
+Unweighted and sampling-weighted prevalence estimates.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Estimate
+</th>
+
+<th style="text-align:right;">
+
+Prevalence
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Unweighted
+</td>
+
+<td style="text-align:right;">
+
+0.35
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Weighted for population composition
+</td>
+
+<td style="text-align:right;">
+
+0.26
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Complex survey analysis requires methods that account for weights,
 strata and clusters together. Base-R weighted means alone are not
@@ -931,16 +2288,16 @@ design_object <- svydesign(
 svymean(~outcome, design = design_object)
 ```
 
-# 17. Sampling in Genetics and Bioinformatics
+# 16. Sampling in Genetics and Bioinformatics
 
-## 17.1 Biobank ascertainment
+## 16.1 Biobank ascertainment
 
 Biobank participants may differ from the general population in age,
 health, ancestry, geography, education and healthcare use. Associations
 estimated within the biobank can still be valuable, but prevalence
 estimates and generalization require care.
 
-## 17.2 Ancestry representation
+## 16.2 Ancestry representation
 
 Human genetic studies have historically sampled some ancestry groups
 much more heavily than others. Consequences may include:
@@ -955,7 +2312,7 @@ Self-identified ethnicity, genetic ancestry and geographic origin are
 related but not interchangeable concepts. Record and interpret each
 according to the scientific question and with appropriate ethical care.
 
-## 17.3 Case-control sampling
+## 16.3 Case-control sampling
 
 Researchers often deliberately sample people with a disease and controls
 without it. This is efficient for rare diseases. However, the fraction
@@ -967,13 +2324,13 @@ appropriate assumptions. Control selection is crucial: controls should
 represent the exposure distribution of the source population that
 produced the cases.
 
-## 17.4 Rare-variant enrichment
+## 16.4 Rare-variant enrichment
 
 Family-based or founder-population studies may enrich rare variants and
 improve discovery. Their allele frequencies and effect estimates may not
 directly describe other populations.
 
-## 17.5 Public bioinformatics databases
+## 16.5 Public bioinformatics databases
 
 Sequences in public repositories are not always a random sample of all
 organisms, patients or infections. Submission may depend on geography,
@@ -988,51 +2345,51 @@ Before interpreting a database-derived frequency, ask:
     present?
 4.  Which regions or time periods are underrepresented?
 
-# 18. Sampling Biospecimens, Cells and Reads
+# 17. Sampling Biospecimens, Cells and Reads
 
 Sampling occurs at several biological and technical levels.
 
-## 18.1 Tissue heterogeneity
+## 17.1 Tissue heterogeneity
 
 A small biopsy may not represent an entire tumour. Spatially separated
 tumour regions can contain different cell populations and mutations. The
 target of inference might be the sampled biopsy, the whole tumour or
 tumours in a patient population; these are different targets.
 
-## 18.2 Single-cell studies
+## 17.2 Single-cell studies
 
 Cells can be lost differentially during dissociation. Fragile cell types
 may appear artificially rare. A large cell count cannot correct the
 absence of donors or the selective loss of a cell type.
 
-## 18.3 Sequencing depth
+## 17.3 Sequencing depth
 
 Increasing read depth improves the measurement of a library. Increasing
 the number of independent donors improves biological replication. These
 investments answer different uncertainty problems.
 
-## 18.4 Environmental sampling
+## 17.4 Environmental sampling
 
 Water, soil and microbiome composition may vary across space, depth,
 season and collection method. A composite sample can estimate an average
 but may hide local heterogeneity. Record exactly how subsamples were
 selected and combined.
 
-# 19. Integrated Case Study: Building a Biomarker Substudy
+# 18. Integrated Case Study: Building a Biomarker Substudy
 
-## 19.1 Research question
+## 18.1 Research question
 
 Among adults in a four-site cohort, what is the mean inflammatory
 biomarker concentration, and does it differ between people with and
 without a diagnosed condition?
 
-## 19.2 Sampling problem
+## 18.2 Sampling problem
 
 Only 120 stored serum samples can be assayed. Site West is smaller than
 the others but must be represented because its sample-processing
 protocol differs.
 
-## 19.3 Proposed design
+## 18.3 Proposed design
 
 1.  Define the target population as eligible adults in the four-site
     cohort.
@@ -1045,7 +2402,7 @@ protocol differs.
 7.  Randomize selected specimens across assay plates.
 8.  Keep laboratory staff blinded to condition where feasible.
 
-## 19.4 Create a simulated frame
+## 18.4 Create a simulated frame
 
 ``` r
 set.seed(321)
@@ -1059,17 +2416,126 @@ cohort <- data.frame(
 )
 
 eligible_frame <- cohort[cohort$sufficient_volume == 1, ]
-table(eligible_frame$site, eligible_frame$condition)
+print_html_table(
+  table(Site = eligible_frame$site,
+        Condition = eligible_frame$condition),
+  caption = "Eligible specimens by site and condition."
+)
 ```
 
-    ##        
-    ##          No Yes
-    ##   East  158  87
-    ##   North 192  90
-    ##   South 156  78
-    ##   West  101  49
+<table class="chapter-table">
 
-## 19.5 Select 15 per site-condition stratum
+<caption>
+
+Eligible specimens by site and condition.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Site
+</th>
+
+<th style="text-align:right;">
+
+No
+</th>
+
+<th style="text-align:right;">
+
+Yes
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+East
+</td>
+
+<td style="text-align:right;">
+
+158
+</td>
+
+<td style="text-align:right;">
+
+87
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:right;">
+
+192
+</td>
+
+<td style="text-align:right;">
+
+90
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:right;">
+
+156
+</td>
+
+<td style="text-align:right;">
+
+78
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:right;">
+
+101
+</td>
+
+<td style="text-align:right;">
+
+49
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## 18.5 Select 15 per site-condition stratum
 
 ``` r
 set.seed(321)
@@ -1093,29 +2559,205 @@ selection_summary <- aggregate(
   FUN = length
 )
 names(selection_summary)[names(selection_summary) == "id"] <- "selected_n"
-selection_summary
+print_html_table(
+  selection_summary,
+  caption = "Selected biomarker specimens by site and condition."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-| site  | condition | selected_n |
-|:------|:----------|-----------:|
-| East  | No        |         15 |
-| North | No        |         15 |
-| South | No        |         15 |
-| West  | No        |         15 |
-| East  | Yes       |         15 |
-| North | Yes       |         15 |
-| South | Yes       |         15 |
-| West  | Yes       |         15 |
+<caption>
 
-</div>
+Selected biomarker specimens by site and condition.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+site
+</th>
+
+<th style="text-align:left;">
+
+condition
+</th>
+
+<th style="text-align:right;">
+
+selected n
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+East
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+East
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+15
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 This creates balance for subgroup comparisons, but it does not reproduce
 the cohort’s natural composition. Population-level means should
 therefore use the recorded design information.
 
-## 19.6 Randomize assay order
+## 18.6 Randomize assay order
 
 ``` r
 set.seed(999)
@@ -1126,31 +2768,303 @@ selected_biomarker_sample <- selected_biomarker_sample[
   order(selected_biomarker_sample$assay_position),
 ]
 
-head(selected_biomarker_sample[, c("id", "site", "condition", "assay_position")], 10)
+print_html_table(
+  head(
+    selected_biomarker_sample[
+      , c("id", "site", "condition", "assay_position")
+    ],
+    10
+  ),
+  caption = "First ten specimens in randomized assay order."
+)
 ```
 
-<div class="kable-table">
+<table class="chapter-table">
 
-|     | id    | site  | condition | assay_position |
-|:----|:------|:------|:----------|---------------:|
-| 65  | P0270 | East  | Yes       |              1 |
-| 34  | P0837 | South | No        |              2 |
-| 82  | P0299 | North | Yes       |              3 |
-| 59  | P0676 | West  | No        |              4 |
-| 120 | P0898 | West  | Yes       |              5 |
-| 72  | P0766 | East  | Yes       |              6 |
-| 16  | P0189 | North | No        |              7 |
-| 88  | P0498 | North | Yes       |              8 |
-| 25  | P0586 | North | No        |              9 |
-| 9   | P0548 | East  | No        |             10 |
+<caption>
 
-</div>
+First ten specimens in randomized assay order.
+</caption>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+id
+</th>
+
+<th style="text-align:left;">
+
+site
+</th>
+
+<th style="text-align:left;">
+
+condition
+</th>
+
+<th style="text-align:right;">
+
+assay position
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0270
+</td>
+
+<td style="text-align:left;">
+
+East
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+1
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0837
+</td>
+
+<td style="text-align:left;">
+
+South
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+2
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0299
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+3
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0676
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+4
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0898
+</td>
+
+<td style="text-align:left;">
+
+West
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+5
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0766
+</td>
+
+<td style="text-align:left;">
+
+East
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+6
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0189
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+7
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0498
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:left;">
+
+Yes
+</td>
+
+<td style="text-align:right;">
+
+8
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0586
+</td>
+
+<td style="text-align:left;">
+
+North
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+9
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+P0548
+</td>
+
+<td style="text-align:left;">
+
+East
+</td>
+
+<td style="text-align:left;">
+
+No
+</td>
+
+<td style="text-align:right;">
+
+10
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 Sampling and laboratory allocation address different risks. Stratified
 random sampling controls who enters the substudy; randomized assay order
 helps prevent group effects from being confounded with laboratory drift.
 
-# 20. A Sampling Plan Template
+# 19. A Sampling Plan Template
 
 Complete this plan before selecting samples.
 
@@ -1169,7 +3083,7 @@ Complete this plan before selecting samples.
 | Laboratory workflow | How will specimens be randomized or blocked across batches? |
 | Generalizability | Which populations or settings will remain outside the claim? |
 
-# 21. Reporting a Sample
+# 20. Reporting a Sample
 
 A reproducible report should describe:
 
@@ -1187,7 +3101,7 @@ A reproducible report should describe:
 
 A participant or specimen flow diagram is often useful.
 
-# 22. Common Mistakes
+# 21. Common Mistakes
 
 ## Mistake 1: Calling a convenience sample random
 
@@ -1224,7 +3138,7 @@ or collection conditions.
 A dataset containing equal numbers of cases and controls does not imply
 50% population disease prevalence.
 
-# 23. Chapter Summary
+# 22. Chapter Summary
 
 - A population is the full group about which a scientific conclusion is
   intended.
@@ -1248,7 +3162,7 @@ A dataset containing equal numbers of cases and controls does not imply
 - Good reporting connects the final analyzed sample back to its intended
   target population.
 
-# 24. Check Your Understanding
+# 23. Check Your Understanding
 
 1.  What is the difference between a target population and a sampling
     frame?
@@ -1266,7 +3180,7 @@ A dataset containing equal numbers of cases and controls does not imply
     prevalence?
 10. When might sampling weights be required?
 
-# 25. R Exercises
+# 24. R Exercises
 
 ## Exercise 1: Simple random sampling
 
@@ -1308,7 +3222,7 @@ Construct two strata with different population sizes and sampling
 fractions. Calculate inclusion probabilities and inverse-probability
 weights.
 
-# 26. Mini-Project: Sampling a Genomic Surveillance Database
+# 25. Mini-Project: Sampling a Genomic Surveillance Database
 
 Imagine a database containing pathogen genomes from four regions and
 three years.
@@ -1328,7 +3242,7 @@ Prepare a short analysis that:
     prevalence; and
 10. provides a reproducible R script with a saved seed.
 
-# 27. Glossary
+# 26. Glossary
 
 | Term | Plain-language definition |
 |----|----|
@@ -1352,7 +3266,7 @@ Prepare a short analysis that:
 | Generalizability | Extent to which results apply beyond the analyzed sample |
 | Pseudoreplication | Treating dependent measurements as independent biological replicates |
 
-# 28. References
+# 27. References
 
 1.  Cochran, W. G. (1977). *Sampling Techniques* (3rd ed.). John Wiley &
     Sons.
@@ -1390,7 +3304,7 @@ Prepare a short analysis that:
 
 ------------------------------------------------------------------------
 
-# 29. Reproducibility Information
+# 28. Reproducibility Information
 
 ``` r
 sessionInfo()
