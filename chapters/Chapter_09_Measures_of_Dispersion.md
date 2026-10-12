@@ -16,7 +16,7 @@ Chapter 9: Measures of Dispersion
 ================
 Sandeep Singh
 
-- [1. Introduction](#1-introduction)
+- [1. Introductio](#1-introductio)
 - [2. Same Centre, Different Spread](#2-same-centre-different-spread)
 - [3. Absolute and Relative Measures of
   Dispersion](#3-absolute-and-relative-measures-of-dispersion)
@@ -156,7 +156,7 @@ table.chapter-table td {
 }
 </style>
 
-# 1. Introduction
+# 1. Introductio
 
 Chapter 8 introduced measures of central tendency. A mean or median
 tells us where observations are centred, but it does not tell us whether
